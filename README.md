@@ -1,7 +1,7 @@
 # php-sdk
 PHP SDK for API2Cart
 
-# What is API2Cart&
+# What is API2Cart
 <b>With API2Cart shopping platform
 integration is easy.</b>
 
