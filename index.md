@@ -39,4 +39,4 @@ You can also reach us at manager@api2cart.com. You can also mail us your ideas a
 
 <h2><b>Support</b></h2>
 
-This API is professionally supported by API2Cart. If you want to discuss details of how API2Cart works, contact our customer success manager at <a href = "mailto: manager@api2cart.com">manager@api2cart.com</a>.
+This API is professionally supported by API2Cart. If you want to discuss details of how API2Cart works, contact our customer success manager at <a href = "mailto: manager@api2cart.com" target="_blank">manager@api2cart.com</a>.
