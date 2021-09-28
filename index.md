@@ -1,4 +1,3 @@
-# php-sdk
 PHP SDK for API2Cart
 
 # What is API2Cart
