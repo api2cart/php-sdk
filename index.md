@@ -16,7 +16,7 @@ To install SDK for PHP language, download the file, and run "composer install" c
 
 
 # We do have composer package!!!
-https://packagist.org/packages/api2cart/api2cart-php-sdk
+<a href="https://packagist.org/packages/api2cart/api2cart-php-sdk" target="_blank">https://packagist.org/packages/api2cart/api2cart-php-sdk</a>
 
 <a href="https://app.getpostman.com/run-collection/c1f578bdddf7ee311593" target="_blank"><img src="https://run.pstmn.io/button.svg" alt="Run in Postman"></a>
 
@@ -28,9 +28,9 @@ Subscribe to events your app needs (e.g. product add or order update) and have t
 
 Retrieve, add, delete, update, and synchronize store data from all or any of the supported shopping carts.
 
-We provide detailed documentation http://docs.api2cart.com to help you connect multiple shopping carts and marketplaces in one go. 
+We provide detailed <a href="http://docs.api2cart.com" target="_blank">documentation</a> to help you connect multiple shopping carts and marketplaces in one go. 
 
-See all supported methods and platforms https://api2cart.com/supported-api-methods/. 
+See all supported <a href="https://api2cart.com/supported-api-methods/" target="_blank">methods and platforms</a>. 
 
 <h2><b>Contact us</b></h2>
   
@@ -39,4 +39,4 @@ You can also reach us at manager@api2cart.com. You can also mail us your ideas a
 
 <h2><b>Support</b></h2>
 
-This API is professionally supported by API2Cart. If you want to discuss details of how API2Cart works, contact our customer success manager at manager@api2cart.com.
+This API is professionally supported by API2Cart. If you want to discuss details of how API2Cart works, contact our customer success manager at <a href = "mailto: manager@api2cart.com">manager@api2cart.com</a>.
