@@ -1,37 +1,92 @@
-## Welcome to GitHub Pages
+PHP SDK for API2Cart
 
-You can use the [editor on GitHub](https://github.com/api2cart/php-sdk/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+# What is API2Cart
+<b>With API2Cart shopping platform
+integration is easy.</b>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+<p align="left">
+  <img src="https://api2cart.com/wp-content/uploads/2018/07/scheme-for-adv.jpg">
+</p>
 
-### Markdown
+Integrate once, save 4-8 weeks and thousands of dollars on each integration. Never worry about maintaining separate connections.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+To get started with API2Cart register an account for a 30-day trial. You can add stores and execute methods to test how API2Cart works with orders, products, categories, and other entities from stores.
 
-```markdown
-Syntax highlighted code block
+# How to install API2Cart SDK?
 
-# Header 1
-## Header 2
-### Header 3
+To install SDK, download an SDK file for programing language you need.
 
-- Bulleted
-- List
+To install SDK for PHP language, download the file, and run "composer install" command from it.
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
+# We do have composer package!!!
+https://packagist.org/packages/api2cart/api2cart-php-sdk
 
-[Link](url) and ![Image](src)
-```
+<a href="https://app.getpostman.com/run-collection/c1f578bdddf7ee311593" target="_blank"><img src="https://run.pstmn.io/button.svg" alt="Run in Postman"></a>
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+<h2><b>Webhooks</b></h2>
 
-### Jekyll Themes
+Subscribe to events your app needs (e.g. product add or order update) and have them delivered right to the specified URL as they happen.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/api2cart/php-sdk/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+<h2><b>100+ methods to manage data</b></h2>
 
-### Support or Contact
+Retrieve, add, delete, update, and synchronize store data from all or any of the supported shopping carts.
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+We provide detailed documentation http://docs.api2cart.com to help you connect multiple shopping carts and marketplaces in one go. 
+
+See all supported methods and platforms https://api2cart.com/supported-api-methods/. 
+
+<h2><b>Contact us</b></h2>
+  
+If you have any questions or problems, please contact us.
+You can also reach us at manager@api2cart.com. You can also mail us your ideas and suggestions about any changes.
+
+<h2><b>Support</b></h2>
+
+This API is professionally supported by API2Cart. If you want to discuss details of how API2Cart works, contact our customer success manager at manager@api2cart.com.
+PHP SDK for API2Cart
+
+# What is API2Cart
+<b>With API2Cart shopping platform
+integration is easy.</b>
+
+<p align="left">
+  <img src="https://api2cart.com/wp-content/uploads/2018/07/scheme-for-adv.jpg">
+</p>
+
+Integrate once, save 4-8 weeks and thousands of dollars on each integration. Never worry about maintaining separate connections.
+
+To get started with API2Cart register an account for a 30-day trial. You can add stores and execute methods to test how API2Cart works with orders, products, categories, and other entities from stores.
+
+# How to install API2Cart SDK?
+
+To install SDK, download an SDK file for programing language you need.
+
+To install SDK for PHP language, download the file, and run "composer install" command from it.
+
+
+# We do have composer package!!!
+https://packagist.org/packages/api2cart/api2cart-php-sdk
+
+<a href="https://app.getpostman.com/run-collection/c1f578bdddf7ee311593" target="_blank"><img src="https://run.pstmn.io/button.svg" alt="Run in Postman"></a>
+
+<h2><b>Webhooks</b></h2>
+
+Subscribe to events your app needs (e.g. product add or order update) and have them delivered right to the specified URL as they happen.
+
+<h2><b>100+ methods to manage data</b></h2>
+
+Retrieve, add, delete, update, and synchronize store data from all or any of the supported shopping carts.
+
+We provide detailed documentation http://docs.api2cart.com to help you connect multiple shopping carts and marketplaces in one go. 
+
+See all supported methods and platforms https://api2cart.com/supported-api-methods/. 
+
+<h2><b>Contact us</b></h2>
+  
+If you have any questions or problems, please contact us.
+You can also reach us at manager@api2cart.com. You can also mail us your ideas and suggestions about any changes.
+
+<h2><b>Support</b></h2>
+
+This API is professionally supported by API2Cart. If you want to discuss details of how API2Cart works, contact our customer success manager at manager@api2cart.com.
