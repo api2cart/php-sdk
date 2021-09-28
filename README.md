@@ -5,9 +5,6 @@ PHP SDK for API2Cart
 <b>With API2Cart shopping platform
 integration is easy.</b>
 
-<p align="left">
-  <img src="https://api2cart.com/wp-content/uploads/2018/07/scheme-for-adv.jpg">
-</p>
 
 Integrate once, save 4-8 weeks and thousands of dollars on each integration. Never worry about maintaining separate connections.
 
