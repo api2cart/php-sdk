@@ -1,0 +1,36 @@
+name: Update csharp SDK
+
+on:
+  # Запускатися раз на тиждень (у неділю о 00:00 за UTC)
+  schedule:
+    - cron: '0 0 * * 0'
+  # Додатково, щоб мати можливість запустити вручну
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update_csharp_sdk:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Download csharp.tgz
+        run: |
+          curl -L -o csharp.tgz https://app.api2cart.com/sdk/openapi/csharp.tgz
+
+      # Розпаковуємо, видаляючи 1 рівень (папку csharp)
+      - name: Extract csharp.tgz
+        run: |
+          tar -xzf csharp.tgz --strip-components=1
+
+      - name: Commit changes
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "action@github.com"
+          git add .
+          git diff-index --quiet HEAD || git commit -m "Update csharp SDK [skip ci]"
+          git push
