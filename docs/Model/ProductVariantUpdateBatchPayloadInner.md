@@ -1,0 +1,56 @@
+# # ProductVariantUpdateBatchPayloadInner
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **string** |  |
+**product_id** | **string** |  |
+**name** | **string** |  | [optional]
+**description** | **string** |  | [optional]
+**short_description** | **string** |  | [optional]
+**sku** | **string** |  | [optional]
+**upc** | **string** |  | [optional]
+**mpn** | **string** |  | [optional]
+**gtin** | **string** |  | [optional]
+**isbn** | **string** |  | [optional]
+**status** | **string** |  | [optional]
+**price** | **float** |  | [optional]
+**special_price** | **float** |  | [optional]
+**cost_price** | **float** |  | [optional]
+**retail_price** | **float** |  | [optional]
+**advanced_prices** | [**\OpenAPI\Client\Model\ProductUpdateBatchPayloadInnerAdvancedPricesInner[]**](ProductUpdateBatchPayloadInnerAdvancedPricesInner.md) | If an empty array is passed, all entries will be deleted when the &#39;nested_items_update_behaviour&#39; parameter is set to &#39;replace&#39;. | [optional]
+**quantity** | **float** |  | [optional]
+**reserve_quantity** | **float** |  | [optional]
+**increase_quantity** | **float** |  | [optional]
+**reduce_quantity** | **float** |  | [optional]
+**warehouse_id** | **string** |  | [optional]
+**manufacturer_id** | **string** |  | [optional]
+**weight** | **float** |  | [optional]
+**height** | **float** |  | [optional]
+**length** | **float** |  | [optional]
+**width** | **float** |  | [optional]
+**store_id** | **string** |  | [optional]
+**lang_id** | **string** |  | [optional]
+**tax_class_id** | **string** |  | [optional]
+**backorder_status** | **string** |  | [optional]
+**visible** | **string** |  | [optional]
+**is_default** | **bool** |  | [optional]
+**in_stock** | **bool** |  | [optional]
+**is_virtual** | **bool** |  | [optional]
+**downloadable** | **bool** |  | [optional]
+**manage_stock** | **bool** |  | [optional]
+**is_free_shipping** | **bool** |  | [optional]
+**seo_url** | **string** |  | [optional]
+**meta_title** | **string** |  | [optional]
+**meta_description** | **string** |  | [optional]
+**meta_keywords** | **string[]** |  | [optional]
+**categories_ids** | **string[]** | If an empty array is passed, all entries will be deleted when the &#39;nested_items_update_behaviour&#39; parameter is set to &#39;replace&#39;. | [optional]
+**stores_ids** | **string[]** |  | [optional]
+**images** | [**\OpenAPI\Client\Model\ProductAddBatchPayloadInnerImagesInner[]**](ProductAddBatchPayloadInnerImagesInner.md) | The passed items will completely replace the original items | [optional]
+**product_images_ids** | **string[]** |  | [optional]
+**related_products_ids** | **string[]** | If an empty array is passed, all entries will be deleted when the &#39;nested_items_update_behaviour&#39; parameter is set to &#39;replace&#39;. | [optional]
+**up_sell_products_ids** | **string[]** | If an empty array is passed, all entries will be deleted when the &#39;nested_items_update_behaviour&#39; parameter is set to &#39;replace&#39;. | [optional]
+**cross_sell_products_ids** | **string[]** | If an empty array is passed, all entries will be deleted when the &#39;nested_items_update_behaviour&#39; parameter is set to &#39;replace&#39;. | [optional]
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
