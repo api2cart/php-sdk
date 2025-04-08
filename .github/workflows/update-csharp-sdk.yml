@@ -1,4 +1,4 @@
-name: Update csharp SDK
+name: Update php-sdk SDK
 
 on:
   # Запускатися раз на тиждень (у неділю о 00:00 за UTC)
@@ -20,17 +20,17 @@ jobs:
 
       - name: Download csharp.tgz
         run: |
-          curl -L -o csharp.tgz https://app.api2cart.com/sdk/openapi/csharp.tgz
+          curl -L -o php.tgz https://app.api2cart.com/sdk/openapi/php.tgz
 
       # Розпаковуємо, видаляючи 1 рівень (папку csharp)
-      - name: Extract csharp.tgz
+      - name: Extract php.tgz
         run: |
-          tar -xzf csharp.tgz --strip-components=1
+          tar -xzf php.tgz --strip-components=1
 
       - name: Commit changes
         run: |
           git config user.name "GitHub Action"
           git config user.email "action@github.com"
           git add .
-          git diff-index --quiet HEAD || git commit -m "Update csharp SDK [skip ci]"
+          git diff-index --quiet HEAD || git commit -m "Update php SDK [skip ci]"
           git push
