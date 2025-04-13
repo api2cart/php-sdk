@@ -88,6 +88,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
         'weight_unit' => 'string',
         'sort_order' => 'int',
         'in_stock' => 'bool',
+        'on_sale' => 'bool',
         'backorders' => 'string',
         'manage_stock' => 'string',
         'is_stock_managed' => 'bool',
@@ -154,6 +155,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
         'weight_unit' => null,
         'sort_order' => null,
         'in_stock' => null,
+        'on_sale' => null,
         'backorders' => null,
         'manage_stock' => null,
         'is_stock_managed' => null,
@@ -218,6 +220,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
         'weight_unit' => false,
         'sort_order' => false,
         'in_stock' => false,
+        'on_sale' => false,
         'backorders' => false,
         'manage_stock' => false,
         'is_stock_managed' => false,
@@ -362,6 +365,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
         'weight_unit' => 'weight_unit',
         'sort_order' => 'sort_order',
         'in_stock' => 'in_stock',
+        'on_sale' => 'on_sale',
         'backorders' => 'backorders',
         'manage_stock' => 'manage_stock',
         'is_stock_managed' => 'is_stock_managed',
@@ -426,6 +430,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
         'weight_unit' => 'setWeightUnit',
         'sort_order' => 'setSortOrder',
         'in_stock' => 'setInStock',
+        'on_sale' => 'setOnSale',
         'backorders' => 'setBackorders',
         'manage_stock' => 'setManageStock',
         'is_stock_managed' => 'setIsStockManaged',
@@ -490,6 +495,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
         'weight_unit' => 'getWeightUnit',
         'sort_order' => 'getSortOrder',
         'in_stock' => 'getInStock',
+        'on_sale' => 'getOnSale',
         'backorders' => 'getBackorders',
         'manage_stock' => 'getManageStock',
         'is_stock_managed' => 'getIsStockManaged',
@@ -605,6 +611,7 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('weight_unit', $data ?? [], null);
         $this->setIfExists('sort_order', $data ?? [], null);
         $this->setIfExists('in_stock', $data ?? [], null);
+        $this->setIfExists('on_sale', $data ?? [], null);
         $this->setIfExists('backorders', $data ?? [], null);
         $this->setIfExists('manage_stock', $data ?? [], null);
         $this->setIfExists('is_stock_managed', $data ?? [], null);
@@ -1481,6 +1488,33 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable in_stock cannot be null');
         }
         $this->container['in_stock'] = $in_stock;
+
+        return $this;
+    }
+
+    /**
+     * Gets on_sale
+     *
+     * @return bool|null
+     */
+    public function getOnSale()
+    {
+        return $this->container['on_sale'];
+    }
+
+    /**
+     * Sets on_sale
+     *
+     * @param bool|null $on_sale on_sale
+     *
+     * @return self
+     */
+    public function setOnSale($on_sale)
+    {
+        if (is_null($on_sale)) {
+            throw new \InvalidArgumentException('non-nullable on_sale cannot be null');
+        }
+        $this->container['on_sale'] = $on_sale;
 
         return $this;
     }

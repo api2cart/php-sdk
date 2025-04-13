@@ -790,4 +790,13 @@ class ProductUpdateTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "on_sale"
+     */
+    public function testPropertyOnSale()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

@@ -136,7 +136,8 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_supply' => 'bool',
         'downloadable' => 'bool',
         'materials' => 'string[]',
-        'auto_renew' => 'bool'
+        'auto_renew' => 'bool',
+        'on_sale' => 'bool'
     ];
 
     /**
@@ -225,7 +226,8 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_supply' => null,
         'downloadable' => null,
         'materials' => null,
-        'auto_renew' => null
+        'auto_renew' => null,
+        'on_sale' => null
     ];
 
     /**
@@ -312,7 +314,8 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_supply' => false,
         'downloadable' => false,
         'materials' => false,
-        'auto_renew' => false
+        'auto_renew' => false,
+        'on_sale' => false
     ];
 
     /**
@@ -479,7 +482,8 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_supply' => 'is_supply',
         'downloadable' => 'downloadable',
         'materials' => 'materials',
-        'auto_renew' => 'auto_renew'
+        'auto_renew' => 'auto_renew',
+        'on_sale' => 'on_sale'
     ];
 
     /**
@@ -566,7 +570,8 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_supply' => 'setIsSupply',
         'downloadable' => 'setDownloadable',
         'materials' => 'setMaterials',
-        'auto_renew' => 'setAutoRenew'
+        'auto_renew' => 'setAutoRenew',
+        'on_sale' => 'setOnSale'
     ];
 
     /**
@@ -653,7 +658,8 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_supply' => 'getIsSupply',
         'downloadable' => 'getDownloadable',
         'materials' => 'getMaterials',
-        'auto_renew' => 'getAutoRenew'
+        'auto_renew' => 'getAutoRenew',
+        'on_sale' => 'getOnSale'
     ];
 
     /**
@@ -792,6 +798,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('downloadable', $data ?? [], false);
         $this->setIfExists('materials', $data ?? [], null);
         $this->setIfExists('auto_renew', $data ?? [], false);
+        $this->setIfExists('on_sale', $data ?? [], false);
     }
 
     /**
@@ -2965,6 +2972,33 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable auto_renew cannot be null');
         }
         $this->container['auto_renew'] = $auto_renew;
+
+        return $this;
+    }
+
+    /**
+     * Gets on_sale
+     *
+     * @return bool|null
+     */
+    public function getOnSale()
+    {
+        return $this->container['on_sale'];
+    }
+
+    /**
+     * Sets on_sale
+     *
+     * @param bool|null $on_sale Set whether the product on sale
+     *
+     * @return self
+     */
+    public function setOnSale($on_sale)
+    {
+        if (is_null($on_sale)) {
+            throw new \InvalidArgumentException('non-nullable on_sale cannot be null');
+        }
+        $this->container['on_sale'] = $on_sale;
 
         return $this;
     }

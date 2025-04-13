@@ -351,6 +351,15 @@ class ProductTest extends TestCase
     }
 
     /**
+     * Test attribute "on_sale"
+     */
+    public function testPropertyOnSale()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "backorders"
      */
     public function testPropertyBackorders()
