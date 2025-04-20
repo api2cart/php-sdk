@@ -528,6 +528,7 @@ Class | Method | HTTP request | Description
 - [ProductAddCertificationsInnerImagesInner](docs/Model/ProductAddCertificationsInnerImagesInner.md)
 - [ProductAddFilesInner](docs/Model/ProductAddFilesInner.md)
 - [ProductAddGroupPricesInner](docs/Model/ProductAddGroupPricesInner.md)
+- [ProductAddLogisticInfoInner](docs/Model/ProductAddLogisticInfoInner.md)
 - [ProductAddManufacturerInfo](docs/Model/ProductAddManufacturerInfo.md)
 - [ProductAddPackageDetails](docs/Model/ProductAddPackageDetails.md)
 - [ProductAddSalesTax](docs/Model/ProductAddSalesTax.md)

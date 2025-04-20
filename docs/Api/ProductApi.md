@@ -448,7 +448,7 @@ try {
 ## `productBrandList()`
 
 ```php
-productBrandList($start, $count, $page_cursor, $params, $brand_ids, $exclude, $store_id, $lang_id, $created_from, $created_to, $modified_from, $modified_to, $parent_id, $response_fields, $find_where, $find_value): \OpenAPI\Client\Model\ModelResponseProductBrandList
+productBrandList($start, $count, $page_cursor, $params, $brand_ids, $exclude, $category_id, $store_id, $lang_id, $created_from, $created_to, $modified_from, $modified_to, $parent_id, $response_fields, $find_where, $find_value): \OpenAPI\Client\Model\ModelResponseProductBrandList
 ```
 
 product.brand.list
@@ -485,6 +485,7 @@ $page_cursor = ; // string | Used to retrieve entities via cursor-based paginati
 $params = id,model,price,images; // string | Set this parameter in order to choose which entity fields you want to retrieve
 $brand_ids = 4,5; // string | Retrieves brands specified by brand ids
 $exclude = false; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+$category_id = 6; // string | Retrieves product brands specified by category id
 $store_id = 1; // string | Store Id
 $lang_id = 3; // string | Language id
 $created_from = 2010-07-29 13:45:52; // string | Retrieve entities from their creation date
@@ -497,7 +498,7 @@ $find_where = name; // string | Entity search that is specified by the comma-sep
 $find_value = Phone; // string | Entity search that is specified by some value
 
 try {
-    $result = $apiInstance->productBrandList($start, $count, $page_cursor, $params, $brand_ids, $exclude, $store_id, $lang_id, $created_from, $created_to, $modified_from, $modified_to, $parent_id, $response_fields, $find_where, $find_value);
+    $result = $apiInstance->productBrandList($start, $count, $page_cursor, $params, $brand_ids, $exclude, $category_id, $store_id, $lang_id, $created_from, $created_to, $modified_from, $modified_to, $parent_id, $response_fields, $find_where, $find_value);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productBrandList: ', $e->getMessage(), PHP_EOL;
@@ -514,6 +515,7 @@ try {
 | **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,name,short_description,active,url&#39;] |
 | **brand_ids** | **string**| Retrieves brands specified by brand ids | [optional] |
 | **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
+| **category_id** | **string**| Retrieves product brands specified by category id | [optional] |
 | **store_id** | **string**| Store Id | [optional] |
 | **lang_id** | **string**| Language id | [optional] |
 | **created_from** | **string**| Retrieve entities from their creation date | [optional] |

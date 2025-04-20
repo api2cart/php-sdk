@@ -290,6 +290,7 @@ docs/Model/ProductAddCertificationsInnerFilesInner.md
 docs/Model/ProductAddCertificationsInnerImagesInner.md
 docs/Model/ProductAddFilesInner.md
 docs/Model/ProductAddGroupPricesInner.md
+docs/Model/ProductAddLogisticInfoInner.md
 docs/Model/ProductAddManufacturerInfo.md
 docs/Model/ProductAddPackageDetails.md
 docs/Model/ProductAddSalesTax.md
@@ -746,6 +747,7 @@ lib/Model/ProductAddCertificationsInnerFilesInner.php
 lib/Model/ProductAddCertificationsInnerImagesInner.php
 lib/Model/ProductAddFilesInner.php
 lib/Model/ProductAddGroupPricesInner.php
+lib/Model/ProductAddLogisticInfoInner.php
 lib/Model/ProductAddManufacturerInfo.php
 lib/Model/ProductAddPackageDetails.php
 lib/Model/ProductAddSalesTax.php
@@ -1197,6 +1199,7 @@ test/Model/ProductAddCertificationsInnerImagesInnerTest.php
 test/Model/ProductAddCertificationsInnerTest.php
 test/Model/ProductAddFilesInnerTest.php
 test/Model/ProductAddGroupPricesInnerTest.php
+test/Model/ProductAddLogisticInfoInnerTest.php
 test/Model/ProductAddManufacturerInfoTest.php
 test/Model/ProductAddPackageDetailsTest.php
 test/Model/ProductAddSalesTaxTest.php

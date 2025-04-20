@@ -693,6 +693,15 @@ class ProductAddTest extends TestCase
     }
 
     /**
+     * Test attribute "additional_image_urls"
+     */
+    public function testPropertyAdditionalImageUrls()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "reserve_price"
      */
     public function testPropertyReservePrice()
@@ -723,6 +732,15 @@ class ProductAddTest extends TestCase
      * Test attribute "auction_confidentiality_level"
      */
     public function testPropertyAuctionConfidentialityLevel()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "logistic_info"
+     */
+    public function testPropertyLogisticInfo()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

@@ -2274,6 +2274,7 @@ class ProductApi
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,short_description,active,url')
      * @param  string|null $brand_ids Retrieves brands specified by brand ids (optional)
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $category_id Retrieves product brands specified by category id (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
@@ -2290,9 +2291,9 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseProductBrandList
      */
-    public function productBrandList($start = 0, $count = 10, $page_cursor = null, $params = 'id,name,short_description,active,url', $brand_ids = null, $exclude = null, $store_id = null, $lang_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $parent_id = null, $response_fields = null, $find_where = null, $find_value = null, string $contentType = self::contentTypes['productBrandList'][0])
+    public function productBrandList($start = 0, $count = 10, $page_cursor = null, $params = 'id,name,short_description,active,url', $brand_ids = null, $exclude = null, $category_id = null, $store_id = null, $lang_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $parent_id = null, $response_fields = null, $find_where = null, $find_value = null, string $contentType = self::contentTypes['productBrandList'][0])
     {
-        list($response) = $this->productBrandListWithHttpInfo($start, $count, $page_cursor, $params, $brand_ids, $exclude, $store_id, $lang_id, $created_from, $created_to, $modified_from, $modified_to, $parent_id, $response_fields, $find_where, $find_value, $contentType);
+        list($response) = $this->productBrandListWithHttpInfo($start, $count, $page_cursor, $params, $brand_ids, $exclude, $category_id, $store_id, $lang_id, $created_from, $created_to, $modified_from, $modified_to, $parent_id, $response_fields, $find_where, $find_value, $contentType);
         return $response;
     }
 
@@ -2307,6 +2308,7 @@ class ProductApi
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,short_description,active,url')
      * @param  string|null $brand_ids Retrieves brands specified by brand ids (optional)
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $category_id Retrieves product brands specified by category id (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
@@ -2323,9 +2325,9 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseProductBrandList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productBrandListWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $params = 'id,name,short_description,active,url', $brand_ids = null, $exclude = null, $store_id = null, $lang_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $parent_id = null, $response_fields = null, $find_where = null, $find_value = null, string $contentType = self::contentTypes['productBrandList'][0])
+    public function productBrandListWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $params = 'id,name,short_description,active,url', $brand_ids = null, $exclude = null, $category_id = null, $store_id = null, $lang_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $parent_id = null, $response_fields = null, $find_where = null, $find_value = null, string $contentType = self::contentTypes['productBrandList'][0])
     {
-        $request = $this->productBrandListRequest($start, $count, $page_cursor, $params, $brand_ids, $exclude, $store_id, $lang_id, $created_from, $created_to, $modified_from, $modified_to, $parent_id, $response_fields, $find_where, $find_value, $contentType);
+        $request = $this->productBrandListRequest($start, $count, $page_cursor, $params, $brand_ids, $exclude, $category_id, $store_id, $lang_id, $created_from, $created_to, $modified_from, $modified_to, $parent_id, $response_fields, $find_where, $find_value, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2447,6 +2449,7 @@ class ProductApi
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,short_description,active,url')
      * @param  string|null $brand_ids Retrieves brands specified by brand ids (optional)
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $category_id Retrieves product brands specified by category id (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
@@ -2462,9 +2465,9 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productBrandListAsync($start = 0, $count = 10, $page_cursor = null, $params = 'id,name,short_description,active,url', $brand_ids = null, $exclude = null, $store_id = null, $lang_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $parent_id = null, $response_fields = null, $find_where = null, $find_value = null, string $contentType = self::contentTypes['productBrandList'][0])
+    public function productBrandListAsync($start = 0, $count = 10, $page_cursor = null, $params = 'id,name,short_description,active,url', $brand_ids = null, $exclude = null, $category_id = null, $store_id = null, $lang_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $parent_id = null, $response_fields = null, $find_where = null, $find_value = null, string $contentType = self::contentTypes['productBrandList'][0])
     {
-        return $this->productBrandListAsyncWithHttpInfo($start, $count, $page_cursor, $params, $brand_ids, $exclude, $store_id, $lang_id, $created_from, $created_to, $modified_from, $modified_to, $parent_id, $response_fields, $find_where, $find_value, $contentType)
+        return $this->productBrandListAsyncWithHttpInfo($start, $count, $page_cursor, $params, $brand_ids, $exclude, $category_id, $store_id, $lang_id, $created_from, $created_to, $modified_from, $modified_to, $parent_id, $response_fields, $find_where, $find_value, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2483,6 +2486,7 @@ class ProductApi
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,short_description,active,url')
      * @param  string|null $brand_ids Retrieves brands specified by brand ids (optional)
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $category_id Retrieves product brands specified by category id (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
@@ -2498,10 +2502,10 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productBrandListAsyncWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $params = 'id,name,short_description,active,url', $brand_ids = null, $exclude = null, $store_id = null, $lang_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $parent_id = null, $response_fields = null, $find_where = null, $find_value = null, string $contentType = self::contentTypes['productBrandList'][0])
+    public function productBrandListAsyncWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $params = 'id,name,short_description,active,url', $brand_ids = null, $exclude = null, $category_id = null, $store_id = null, $lang_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $parent_id = null, $response_fields = null, $find_where = null, $find_value = null, string $contentType = self::contentTypes['productBrandList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseProductBrandList';
-        $request = $this->productBrandListRequest($start, $count, $page_cursor, $params, $brand_ids, $exclude, $store_id, $lang_id, $created_from, $created_to, $modified_from, $modified_to, $parent_id, $response_fields, $find_where, $find_value, $contentType);
+        $request = $this->productBrandListRequest($start, $count, $page_cursor, $params, $brand_ids, $exclude, $category_id, $store_id, $lang_id, $created_from, $created_to, $modified_from, $modified_to, $parent_id, $response_fields, $find_where, $find_value, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2548,6 +2552,7 @@ class ProductApi
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,short_description,active,url')
      * @param  string|null $brand_ids Retrieves brands specified by brand ids (optional)
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $category_id Retrieves product brands specified by category id (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
@@ -2563,8 +2568,9 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function productBrandListRequest($start = 0, $count = 10, $page_cursor = null, $params = 'id,name,short_description,active,url', $brand_ids = null, $exclude = null, $store_id = null, $lang_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $parent_id = null, $response_fields = null, $find_where = null, $find_value = null, string $contentType = self::contentTypes['productBrandList'][0])
+    public function productBrandListRequest($start = 0, $count = 10, $page_cursor = null, $params = 'id,name,short_description,active,url', $brand_ids = null, $exclude = null, $category_id = null, $store_id = null, $lang_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $parent_id = null, $response_fields = null, $find_where = null, $find_value = null, string $contentType = self::contentTypes['productBrandList'][0])
     {
+
 
 
 
@@ -2639,6 +2645,15 @@ class ProductApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $exclude,
             'exclude', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $category_id,
+            'category_id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

@@ -126,10 +126,12 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'specifics' => '\OpenAPI\Client\Model\ProductAddSpecificsInner[]',
         'image_url' => 'string',
         'image_name' => 'string',
+        'additional_image_urls' => 'string[]',
         'reserve_price' => 'float',
         'buyitnow_price' => 'float',
         'condition_description' => 'string',
         'auction_confidentiality_level' => 'string',
+        'logistic_info' => '\OpenAPI\Client\Model\ProductAddLogisticInfoInner[]',
         'avail_from' => 'string',
         'tags' => 'string',
         'clear_cache' => 'bool',
@@ -246,10 +248,12 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'specifics' => null,
         'image_url' => null,
         'image_name' => null,
+        'additional_image_urls' => 'uri',
         'reserve_price' => null,
         'buyitnow_price' => null,
         'condition_description' => null,
         'auction_confidentiality_level' => null,
+        'logistic_info' => null,
         'avail_from' => null,
         'tags' => null,
         'clear_cache' => null,
@@ -364,10 +368,12 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'specifics' => false,
         'image_url' => false,
         'image_name' => false,
+        'additional_image_urls' => false,
         'reserve_price' => false,
         'buyitnow_price' => false,
         'condition_description' => false,
         'auction_confidentiality_level' => false,
+        'logistic_info' => false,
         'avail_from' => false,
         'tags' => false,
         'clear_cache' => false,
@@ -562,10 +568,12 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'specifics' => 'specifics',
         'image_url' => 'image_url',
         'image_name' => 'image_name',
+        'additional_image_urls' => 'additional_image_urls',
         'reserve_price' => 'reserve_price',
         'buyitnow_price' => 'buyitnow_price',
         'condition_description' => 'condition_description',
         'auction_confidentiality_level' => 'auction_confidentiality_level',
+        'logistic_info' => 'logistic_info',
         'avail_from' => 'avail_from',
         'tags' => 'tags',
         'clear_cache' => 'clear_cache',
@@ -680,10 +688,12 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'specifics' => 'setSpecifics',
         'image_url' => 'setImageUrl',
         'image_name' => 'setImageName',
+        'additional_image_urls' => 'setAdditionalImageUrls',
         'reserve_price' => 'setReservePrice',
         'buyitnow_price' => 'setBuyitnowPrice',
         'condition_description' => 'setConditionDescription',
         'auction_confidentiality_level' => 'setAuctionConfidentialityLevel',
+        'logistic_info' => 'setLogisticInfo',
         'avail_from' => 'setAvailFrom',
         'tags' => 'setTags',
         'clear_cache' => 'setClearCache',
@@ -798,10 +808,12 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'specifics' => 'getSpecifics',
         'image_url' => 'getImageUrl',
         'image_name' => 'getImageName',
+        'additional_image_urls' => 'getAdditionalImageUrls',
         'reserve_price' => 'getReservePrice',
         'buyitnow_price' => 'getBuyitnowPrice',
         'condition_description' => 'getConditionDescription',
         'auction_confidentiality_level' => 'getAuctionConfidentialityLevel',
+        'logistic_info' => 'getLogisticInfo',
         'avail_from' => 'getAvailFrom',
         'tags' => 'getTags',
         'clear_cache' => 'getClearCache',
@@ -967,10 +979,12 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('specifics', $data ?? [], null);
         $this->setIfExists('image_url', $data ?? [], null);
         $this->setIfExists('image_name', $data ?? [], null);
+        $this->setIfExists('additional_image_urls', $data ?? [], null);
         $this->setIfExists('reserve_price', $data ?? [], null);
         $this->setIfExists('buyitnow_price', $data ?? [], null);
         $this->setIfExists('condition_description', $data ?? [], null);
         $this->setIfExists('auction_confidentiality_level', $data ?? [], null);
+        $this->setIfExists('logistic_info', $data ?? [], null);
         $this->setIfExists('avail_from', $data ?? [], null);
         $this->setIfExists('tags', $data ?? [], null);
         $this->setIfExists('clear_cache', $data ?? [], true);
@@ -2902,6 +2916,33 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets additional_image_urls
+     *
+     * @return string[]|null
+     */
+    public function getAdditionalImageUrls()
+    {
+        return $this->container['additional_image_urls'];
+    }
+
+    /**
+     * Sets additional_image_urls
+     *
+     * @param string[]|null $additional_image_urls Image Url
+     *
+     * @return self
+     */
+    public function setAdditionalImageUrls($additional_image_urls)
+    {
+        if (is_null($additional_image_urls)) {
+            throw new \InvalidArgumentException('non-nullable additional_image_urls cannot be null');
+        }
+        $this->container['additional_image_urls'] = $additional_image_urls;
+
+        return $this;
+    }
+
+    /**
      * Gets reserve_price
      *
      * @return float|null
@@ -3005,6 +3046,33 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable auction_confidentiality_level cannot be null');
         }
         $this->container['auction_confidentiality_level'] = $auction_confidentiality_level;
+
+        return $this;
+    }
+
+    /**
+     * Gets logistic_info
+     *
+     * @return \OpenAPI\Client\Model\ProductAddLogisticInfoInner[]|null
+     */
+    public function getLogisticInfo()
+    {
+        return $this->container['logistic_info'];
+    }
+
+    /**
+     * Sets logistic_info
+     *
+     * @param \OpenAPI\Client\Model\ProductAddLogisticInfoInner[]|null $logistic_info Defines product's logistic channel settings
+     *
+     * @return self
+     */
+    public function setLogisticInfo($logistic_info)
+    {
+        if (is_null($logistic_info)) {
+            throw new \InvalidArgumentException('non-nullable logistic_info cannot be null');
+        }
+        $this->container['logistic_info'] = $logistic_info;
 
         return $this;
     }
