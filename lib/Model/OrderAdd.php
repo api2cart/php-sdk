@@ -63,68 +63,68 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'store_id' => 'string',
         'channel_id' => 'string',
         'order_status' => 'string',
-        'send_notifications' => 'bool',
-        'send_admin_notifications' => 'bool',
+        'fulfillment_status' => 'string',
+        'financial_status' => 'string',
         'customer_email' => 'string',
-        'bill_first_name' => 'string',
-        'bill_last_name' => 'string',
-        'bill_address_1' => 'string',
-        'bill_city' => 'string',
-        'bill_postcode' => 'string',
-        'bill_state' => 'string',
-        'bill_country' => 'string',
-        'shipp_first_name' => 'string',
-        'shipp_last_name' => 'string',
-        'shipp_address_1' => 'string',
-        'shipp_city' => 'string',
-        'shipp_postcode' => 'string',
-        'shipp_state' => 'string',
-        'shipp_country' => 'string',
-        'total_price' => 'float',
-        'date' => 'string',
-        'order_payment_method' => 'string',
-        'transaction_id' => 'string',
-        'order_shipping_method' => 'string',
-        'currency' => 'string',
-        'bill_address_2' => 'string',
-        'bill_company' => 'string',
-        'bill_phone' => 'string',
-        'bill_fax' => 'string',
-        'comment' => 'string',
-        'admin_comment' => 'string',
-        'admin_private_comment' => 'string',
         'customer_first_name' => 'string',
         'customer_last_name' => 'string',
         'customer_phone' => 'string',
         'customer_country' => 'string',
         'customer_birthday' => 'string',
         'customer_fax' => 'string',
+        'order_payment_method' => 'string',
+        'transaction_id' => 'string',
+        'currency' => 'string',
+        'date' => 'string',
+        'date_modified' => 'string',
+        'date_finished' => 'string',
+        'bill_first_name' => 'string',
+        'bill_last_name' => 'string',
+        'bill_address_1' => 'string',
+        'bill_address_2' => 'string',
+        'bill_city' => 'string',
+        'bill_postcode' => 'string',
+        'bill_state' => 'string',
+        'bill_country' => 'string',
+        'bill_company' => 'string',
+        'bill_phone' => 'string',
+        'bill_fax' => 'string',
+        'shipp_first_name' => 'string',
+        'shipp_last_name' => 'string',
+        'shipp_address_1' => 'string',
         'shipp_address_2' => 'string',
+        'shipp_city' => 'string',
+        'shipp_postcode' => 'string',
+        'shipp_state' => 'string',
+        'shipp_country' => 'string',
         'shipp_company' => 'string',
         'shipp_phone' => 'string',
         'shipp_fax' => 'string',
-        'date_modified' => 'string',
-        'date_finished' => 'string',
         'subtotal_price' => 'float',
         'tax_price' => 'float',
+        'total_price' => 'float',
+        'total_paid' => 'float',
+        'total_weight' => 'int',
         'prices_inc_tax' => 'bool',
         'shipping_price' => 'float',
         'shipping_tax' => 'float',
-        'carrier_id' => 'string',
-        'warehouse_id' => 'string',
         'discount' => 'float',
         'coupon_discount' => 'float',
-        'coupons' => 'string[]',
         'gift_certificate_discount' => 'float',
-        'fulfillment_status' => 'string',
-        'financial_status' => 'string',
-        'total_paid' => 'float',
-        'external_source' => 'string',
+        'order_shipping_method' => 'string',
+        'carrier_id' => 'string',
+        'warehouse_id' => 'string',
+        'coupons' => 'string[]',
         'tags' => 'string',
+        'comment' => 'string',
+        'admin_comment' => 'string',
+        'admin_private_comment' => 'string',
+        'send_notifications' => 'bool',
+        'send_admin_notifications' => 'bool',
+        'external_source' => 'string',
         'inventory_behaviour' => 'string',
         'create_invoice' => 'bool',
         'note_attributes' => '\OpenAPI\Client\Model\OrderAddNoteAttributesInner[]',
-        'total_weight' => 'int',
         'clear_cache' => 'bool',
         'origin' => 'string',
         'order_item' => '\OpenAPI\Client\Model\OrderAddOrderItemInner[]'
@@ -143,68 +143,68 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'store_id' => null,
         'channel_id' => null,
         'order_status' => null,
-        'send_notifications' => null,
-        'send_admin_notifications' => null,
+        'fulfillment_status' => null,
+        'financial_status' => null,
         'customer_email' => null,
-        'bill_first_name' => null,
-        'bill_last_name' => null,
-        'bill_address_1' => null,
-        'bill_city' => null,
-        'bill_postcode' => null,
-        'bill_state' => null,
-        'bill_country' => null,
-        'shipp_first_name' => null,
-        'shipp_last_name' => null,
-        'shipp_address_1' => null,
-        'shipp_city' => null,
-        'shipp_postcode' => null,
-        'shipp_state' => null,
-        'shipp_country' => null,
-        'total_price' => null,
-        'date' => null,
-        'order_payment_method' => null,
-        'transaction_id' => null,
-        'order_shipping_method' => null,
-        'currency' => null,
-        'bill_address_2' => null,
-        'bill_company' => null,
-        'bill_phone' => null,
-        'bill_fax' => null,
-        'comment' => null,
-        'admin_comment' => null,
-        'admin_private_comment' => null,
         'customer_first_name' => null,
         'customer_last_name' => null,
         'customer_phone' => null,
         'customer_country' => null,
         'customer_birthday' => null,
         'customer_fax' => null,
+        'order_payment_method' => null,
+        'transaction_id' => null,
+        'currency' => null,
+        'date' => null,
+        'date_modified' => null,
+        'date_finished' => null,
+        'bill_first_name' => null,
+        'bill_last_name' => null,
+        'bill_address_1' => null,
+        'bill_address_2' => null,
+        'bill_city' => null,
+        'bill_postcode' => null,
+        'bill_state' => null,
+        'bill_country' => null,
+        'bill_company' => null,
+        'bill_phone' => null,
+        'bill_fax' => null,
+        'shipp_first_name' => null,
+        'shipp_last_name' => null,
+        'shipp_address_1' => null,
         'shipp_address_2' => null,
+        'shipp_city' => null,
+        'shipp_postcode' => null,
+        'shipp_state' => null,
+        'shipp_country' => null,
         'shipp_company' => null,
         'shipp_phone' => null,
         'shipp_fax' => null,
-        'date_modified' => null,
-        'date_finished' => null,
         'subtotal_price' => null,
         'tax_price' => null,
+        'total_price' => null,
+        'total_paid' => null,
+        'total_weight' => null,
         'prices_inc_tax' => null,
         'shipping_price' => null,
         'shipping_tax' => null,
-        'carrier_id' => null,
-        'warehouse_id' => null,
         'discount' => null,
         'coupon_discount' => null,
-        'coupons' => null,
         'gift_certificate_discount' => null,
-        'fulfillment_status' => null,
-        'financial_status' => null,
-        'total_paid' => null,
-        'external_source' => null,
+        'order_shipping_method' => null,
+        'carrier_id' => null,
+        'warehouse_id' => null,
+        'coupons' => null,
         'tags' => null,
+        'comment' => null,
+        'admin_comment' => null,
+        'admin_private_comment' => null,
+        'send_notifications' => null,
+        'send_admin_notifications' => null,
+        'external_source' => null,
         'inventory_behaviour' => null,
         'create_invoice' => null,
         'note_attributes' => null,
-        'total_weight' => null,
         'clear_cache' => null,
         'origin' => null,
         'order_item' => null
@@ -221,68 +221,68 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'store_id' => false,
         'channel_id' => false,
         'order_status' => false,
-        'send_notifications' => false,
-        'send_admin_notifications' => false,
+        'fulfillment_status' => false,
+        'financial_status' => false,
         'customer_email' => false,
-        'bill_first_name' => false,
-        'bill_last_name' => false,
-        'bill_address_1' => false,
-        'bill_city' => false,
-        'bill_postcode' => false,
-        'bill_state' => false,
-        'bill_country' => false,
-        'shipp_first_name' => false,
-        'shipp_last_name' => false,
-        'shipp_address_1' => false,
-        'shipp_city' => false,
-        'shipp_postcode' => false,
-        'shipp_state' => false,
-        'shipp_country' => false,
-        'total_price' => false,
-        'date' => false,
-        'order_payment_method' => false,
-        'transaction_id' => false,
-        'order_shipping_method' => false,
-        'currency' => false,
-        'bill_address_2' => false,
-        'bill_company' => false,
-        'bill_phone' => false,
-        'bill_fax' => false,
-        'comment' => false,
-        'admin_comment' => false,
-        'admin_private_comment' => false,
         'customer_first_name' => false,
         'customer_last_name' => false,
         'customer_phone' => false,
         'customer_country' => false,
         'customer_birthday' => false,
         'customer_fax' => false,
+        'order_payment_method' => false,
+        'transaction_id' => false,
+        'currency' => false,
+        'date' => false,
+        'date_modified' => false,
+        'date_finished' => false,
+        'bill_first_name' => false,
+        'bill_last_name' => false,
+        'bill_address_1' => false,
+        'bill_address_2' => false,
+        'bill_city' => false,
+        'bill_postcode' => false,
+        'bill_state' => false,
+        'bill_country' => false,
+        'bill_company' => false,
+        'bill_phone' => false,
+        'bill_fax' => false,
+        'shipp_first_name' => false,
+        'shipp_last_name' => false,
+        'shipp_address_1' => false,
         'shipp_address_2' => false,
+        'shipp_city' => false,
+        'shipp_postcode' => false,
+        'shipp_state' => false,
+        'shipp_country' => false,
         'shipp_company' => false,
         'shipp_phone' => false,
         'shipp_fax' => false,
-        'date_modified' => false,
-        'date_finished' => false,
         'subtotal_price' => false,
         'tax_price' => false,
+        'total_price' => false,
+        'total_paid' => false,
+        'total_weight' => false,
         'prices_inc_tax' => false,
         'shipping_price' => false,
         'shipping_tax' => false,
-        'carrier_id' => false,
-        'warehouse_id' => false,
         'discount' => false,
         'coupon_discount' => false,
-        'coupons' => false,
         'gift_certificate_discount' => false,
-        'fulfillment_status' => false,
-        'financial_status' => false,
-        'total_paid' => false,
-        'external_source' => false,
+        'order_shipping_method' => false,
+        'carrier_id' => false,
+        'warehouse_id' => false,
+        'coupons' => false,
         'tags' => false,
+        'comment' => false,
+        'admin_comment' => false,
+        'admin_private_comment' => false,
+        'send_notifications' => false,
+        'send_admin_notifications' => false,
+        'external_source' => false,
         'inventory_behaviour' => false,
         'create_invoice' => false,
         'note_attributes' => false,
-        'total_weight' => false,
         'clear_cache' => false,
         'origin' => false,
         'order_item' => false
@@ -379,68 +379,68 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'store_id' => 'store_id',
         'channel_id' => 'channel_id',
         'order_status' => 'order_status',
-        'send_notifications' => 'send_notifications',
-        'send_admin_notifications' => 'send_admin_notifications',
+        'fulfillment_status' => 'fulfillment_status',
+        'financial_status' => 'financial_status',
         'customer_email' => 'customer_email',
-        'bill_first_name' => 'bill_first_name',
-        'bill_last_name' => 'bill_last_name',
-        'bill_address_1' => 'bill_address_1',
-        'bill_city' => 'bill_city',
-        'bill_postcode' => 'bill_postcode',
-        'bill_state' => 'bill_state',
-        'bill_country' => 'bill_country',
-        'shipp_first_name' => 'shipp_first_name',
-        'shipp_last_name' => 'shipp_last_name',
-        'shipp_address_1' => 'shipp_address_1',
-        'shipp_city' => 'shipp_city',
-        'shipp_postcode' => 'shipp_postcode',
-        'shipp_state' => 'shipp_state',
-        'shipp_country' => 'shipp_country',
-        'total_price' => 'total_price',
-        'date' => 'date',
-        'order_payment_method' => 'order_payment_method',
-        'transaction_id' => 'transaction_id',
-        'order_shipping_method' => 'order_shipping_method',
-        'currency' => 'currency',
-        'bill_address_2' => 'bill_address_2',
-        'bill_company' => 'bill_company',
-        'bill_phone' => 'bill_phone',
-        'bill_fax' => 'bill_fax',
-        'comment' => 'comment',
-        'admin_comment' => 'admin_comment',
-        'admin_private_comment' => 'admin_private_comment',
         'customer_first_name' => 'customer_first_name',
         'customer_last_name' => 'customer_last_name',
         'customer_phone' => 'customer_phone',
         'customer_country' => 'customer_country',
         'customer_birthday' => 'customer_birthday',
         'customer_fax' => 'customer_fax',
+        'order_payment_method' => 'order_payment_method',
+        'transaction_id' => 'transaction_id',
+        'currency' => 'currency',
+        'date' => 'date',
+        'date_modified' => 'date_modified',
+        'date_finished' => 'date_finished',
+        'bill_first_name' => 'bill_first_name',
+        'bill_last_name' => 'bill_last_name',
+        'bill_address_1' => 'bill_address_1',
+        'bill_address_2' => 'bill_address_2',
+        'bill_city' => 'bill_city',
+        'bill_postcode' => 'bill_postcode',
+        'bill_state' => 'bill_state',
+        'bill_country' => 'bill_country',
+        'bill_company' => 'bill_company',
+        'bill_phone' => 'bill_phone',
+        'bill_fax' => 'bill_fax',
+        'shipp_first_name' => 'shipp_first_name',
+        'shipp_last_name' => 'shipp_last_name',
+        'shipp_address_1' => 'shipp_address_1',
         'shipp_address_2' => 'shipp_address_2',
+        'shipp_city' => 'shipp_city',
+        'shipp_postcode' => 'shipp_postcode',
+        'shipp_state' => 'shipp_state',
+        'shipp_country' => 'shipp_country',
         'shipp_company' => 'shipp_company',
         'shipp_phone' => 'shipp_phone',
         'shipp_fax' => 'shipp_fax',
-        'date_modified' => 'date_modified',
-        'date_finished' => 'date_finished',
         'subtotal_price' => 'subtotal_price',
         'tax_price' => 'tax_price',
+        'total_price' => 'total_price',
+        'total_paid' => 'total_paid',
+        'total_weight' => 'total_weight',
         'prices_inc_tax' => 'prices_inc_tax',
         'shipping_price' => 'shipping_price',
         'shipping_tax' => 'shipping_tax',
-        'carrier_id' => 'carrier_id',
-        'warehouse_id' => 'warehouse_id',
         'discount' => 'discount',
         'coupon_discount' => 'coupon_discount',
-        'coupons' => 'coupons',
         'gift_certificate_discount' => 'gift_certificate_discount',
-        'fulfillment_status' => 'fulfillment_status',
-        'financial_status' => 'financial_status',
-        'total_paid' => 'total_paid',
-        'external_source' => 'external_source',
+        'order_shipping_method' => 'order_shipping_method',
+        'carrier_id' => 'carrier_id',
+        'warehouse_id' => 'warehouse_id',
+        'coupons' => 'coupons',
         'tags' => 'tags',
+        'comment' => 'comment',
+        'admin_comment' => 'admin_comment',
+        'admin_private_comment' => 'admin_private_comment',
+        'send_notifications' => 'send_notifications',
+        'send_admin_notifications' => 'send_admin_notifications',
+        'external_source' => 'external_source',
         'inventory_behaviour' => 'inventory_behaviour',
         'create_invoice' => 'create_invoice',
         'note_attributes' => 'note_attributes',
-        'total_weight' => 'total_weight',
         'clear_cache' => 'clear_cache',
         'origin' => 'origin',
         'order_item' => 'order_item'
@@ -457,68 +457,68 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'store_id' => 'setStoreId',
         'channel_id' => 'setChannelId',
         'order_status' => 'setOrderStatus',
-        'send_notifications' => 'setSendNotifications',
-        'send_admin_notifications' => 'setSendAdminNotifications',
+        'fulfillment_status' => 'setFulfillmentStatus',
+        'financial_status' => 'setFinancialStatus',
         'customer_email' => 'setCustomerEmail',
-        'bill_first_name' => 'setBillFirstName',
-        'bill_last_name' => 'setBillLastName',
-        'bill_address_1' => 'setBillAddress1',
-        'bill_city' => 'setBillCity',
-        'bill_postcode' => 'setBillPostcode',
-        'bill_state' => 'setBillState',
-        'bill_country' => 'setBillCountry',
-        'shipp_first_name' => 'setShippFirstName',
-        'shipp_last_name' => 'setShippLastName',
-        'shipp_address_1' => 'setShippAddress1',
-        'shipp_city' => 'setShippCity',
-        'shipp_postcode' => 'setShippPostcode',
-        'shipp_state' => 'setShippState',
-        'shipp_country' => 'setShippCountry',
-        'total_price' => 'setTotalPrice',
-        'date' => 'setDate',
-        'order_payment_method' => 'setOrderPaymentMethod',
-        'transaction_id' => 'setTransactionId',
-        'order_shipping_method' => 'setOrderShippingMethod',
-        'currency' => 'setCurrency',
-        'bill_address_2' => 'setBillAddress2',
-        'bill_company' => 'setBillCompany',
-        'bill_phone' => 'setBillPhone',
-        'bill_fax' => 'setBillFax',
-        'comment' => 'setComment',
-        'admin_comment' => 'setAdminComment',
-        'admin_private_comment' => 'setAdminPrivateComment',
         'customer_first_name' => 'setCustomerFirstName',
         'customer_last_name' => 'setCustomerLastName',
         'customer_phone' => 'setCustomerPhone',
         'customer_country' => 'setCustomerCountry',
         'customer_birthday' => 'setCustomerBirthday',
         'customer_fax' => 'setCustomerFax',
+        'order_payment_method' => 'setOrderPaymentMethod',
+        'transaction_id' => 'setTransactionId',
+        'currency' => 'setCurrency',
+        'date' => 'setDate',
+        'date_modified' => 'setDateModified',
+        'date_finished' => 'setDateFinished',
+        'bill_first_name' => 'setBillFirstName',
+        'bill_last_name' => 'setBillLastName',
+        'bill_address_1' => 'setBillAddress1',
+        'bill_address_2' => 'setBillAddress2',
+        'bill_city' => 'setBillCity',
+        'bill_postcode' => 'setBillPostcode',
+        'bill_state' => 'setBillState',
+        'bill_country' => 'setBillCountry',
+        'bill_company' => 'setBillCompany',
+        'bill_phone' => 'setBillPhone',
+        'bill_fax' => 'setBillFax',
+        'shipp_first_name' => 'setShippFirstName',
+        'shipp_last_name' => 'setShippLastName',
+        'shipp_address_1' => 'setShippAddress1',
         'shipp_address_2' => 'setShippAddress2',
+        'shipp_city' => 'setShippCity',
+        'shipp_postcode' => 'setShippPostcode',
+        'shipp_state' => 'setShippState',
+        'shipp_country' => 'setShippCountry',
         'shipp_company' => 'setShippCompany',
         'shipp_phone' => 'setShippPhone',
         'shipp_fax' => 'setShippFax',
-        'date_modified' => 'setDateModified',
-        'date_finished' => 'setDateFinished',
         'subtotal_price' => 'setSubtotalPrice',
         'tax_price' => 'setTaxPrice',
+        'total_price' => 'setTotalPrice',
+        'total_paid' => 'setTotalPaid',
+        'total_weight' => 'setTotalWeight',
         'prices_inc_tax' => 'setPricesIncTax',
         'shipping_price' => 'setShippingPrice',
         'shipping_tax' => 'setShippingTax',
-        'carrier_id' => 'setCarrierId',
-        'warehouse_id' => 'setWarehouseId',
         'discount' => 'setDiscount',
         'coupon_discount' => 'setCouponDiscount',
-        'coupons' => 'setCoupons',
         'gift_certificate_discount' => 'setGiftCertificateDiscount',
-        'fulfillment_status' => 'setFulfillmentStatus',
-        'financial_status' => 'setFinancialStatus',
-        'total_paid' => 'setTotalPaid',
-        'external_source' => 'setExternalSource',
+        'order_shipping_method' => 'setOrderShippingMethod',
+        'carrier_id' => 'setCarrierId',
+        'warehouse_id' => 'setWarehouseId',
+        'coupons' => 'setCoupons',
         'tags' => 'setTags',
+        'comment' => 'setComment',
+        'admin_comment' => 'setAdminComment',
+        'admin_private_comment' => 'setAdminPrivateComment',
+        'send_notifications' => 'setSendNotifications',
+        'send_admin_notifications' => 'setSendAdminNotifications',
+        'external_source' => 'setExternalSource',
         'inventory_behaviour' => 'setInventoryBehaviour',
         'create_invoice' => 'setCreateInvoice',
         'note_attributes' => 'setNoteAttributes',
-        'total_weight' => 'setTotalWeight',
         'clear_cache' => 'setClearCache',
         'origin' => 'setOrigin',
         'order_item' => 'setOrderItem'
@@ -535,68 +535,68 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'store_id' => 'getStoreId',
         'channel_id' => 'getChannelId',
         'order_status' => 'getOrderStatus',
-        'send_notifications' => 'getSendNotifications',
-        'send_admin_notifications' => 'getSendAdminNotifications',
+        'fulfillment_status' => 'getFulfillmentStatus',
+        'financial_status' => 'getFinancialStatus',
         'customer_email' => 'getCustomerEmail',
-        'bill_first_name' => 'getBillFirstName',
-        'bill_last_name' => 'getBillLastName',
-        'bill_address_1' => 'getBillAddress1',
-        'bill_city' => 'getBillCity',
-        'bill_postcode' => 'getBillPostcode',
-        'bill_state' => 'getBillState',
-        'bill_country' => 'getBillCountry',
-        'shipp_first_name' => 'getShippFirstName',
-        'shipp_last_name' => 'getShippLastName',
-        'shipp_address_1' => 'getShippAddress1',
-        'shipp_city' => 'getShippCity',
-        'shipp_postcode' => 'getShippPostcode',
-        'shipp_state' => 'getShippState',
-        'shipp_country' => 'getShippCountry',
-        'total_price' => 'getTotalPrice',
-        'date' => 'getDate',
-        'order_payment_method' => 'getOrderPaymentMethod',
-        'transaction_id' => 'getTransactionId',
-        'order_shipping_method' => 'getOrderShippingMethod',
-        'currency' => 'getCurrency',
-        'bill_address_2' => 'getBillAddress2',
-        'bill_company' => 'getBillCompany',
-        'bill_phone' => 'getBillPhone',
-        'bill_fax' => 'getBillFax',
-        'comment' => 'getComment',
-        'admin_comment' => 'getAdminComment',
-        'admin_private_comment' => 'getAdminPrivateComment',
         'customer_first_name' => 'getCustomerFirstName',
         'customer_last_name' => 'getCustomerLastName',
         'customer_phone' => 'getCustomerPhone',
         'customer_country' => 'getCustomerCountry',
         'customer_birthday' => 'getCustomerBirthday',
         'customer_fax' => 'getCustomerFax',
+        'order_payment_method' => 'getOrderPaymentMethod',
+        'transaction_id' => 'getTransactionId',
+        'currency' => 'getCurrency',
+        'date' => 'getDate',
+        'date_modified' => 'getDateModified',
+        'date_finished' => 'getDateFinished',
+        'bill_first_name' => 'getBillFirstName',
+        'bill_last_name' => 'getBillLastName',
+        'bill_address_1' => 'getBillAddress1',
+        'bill_address_2' => 'getBillAddress2',
+        'bill_city' => 'getBillCity',
+        'bill_postcode' => 'getBillPostcode',
+        'bill_state' => 'getBillState',
+        'bill_country' => 'getBillCountry',
+        'bill_company' => 'getBillCompany',
+        'bill_phone' => 'getBillPhone',
+        'bill_fax' => 'getBillFax',
+        'shipp_first_name' => 'getShippFirstName',
+        'shipp_last_name' => 'getShippLastName',
+        'shipp_address_1' => 'getShippAddress1',
         'shipp_address_2' => 'getShippAddress2',
+        'shipp_city' => 'getShippCity',
+        'shipp_postcode' => 'getShippPostcode',
+        'shipp_state' => 'getShippState',
+        'shipp_country' => 'getShippCountry',
         'shipp_company' => 'getShippCompany',
         'shipp_phone' => 'getShippPhone',
         'shipp_fax' => 'getShippFax',
-        'date_modified' => 'getDateModified',
-        'date_finished' => 'getDateFinished',
         'subtotal_price' => 'getSubtotalPrice',
         'tax_price' => 'getTaxPrice',
+        'total_price' => 'getTotalPrice',
+        'total_paid' => 'getTotalPaid',
+        'total_weight' => 'getTotalWeight',
         'prices_inc_tax' => 'getPricesIncTax',
         'shipping_price' => 'getShippingPrice',
         'shipping_tax' => 'getShippingTax',
-        'carrier_id' => 'getCarrierId',
-        'warehouse_id' => 'getWarehouseId',
         'discount' => 'getDiscount',
         'coupon_discount' => 'getCouponDiscount',
-        'coupons' => 'getCoupons',
         'gift_certificate_discount' => 'getGiftCertificateDiscount',
-        'fulfillment_status' => 'getFulfillmentStatus',
-        'financial_status' => 'getFinancialStatus',
-        'total_paid' => 'getTotalPaid',
-        'external_source' => 'getExternalSource',
+        'order_shipping_method' => 'getOrderShippingMethod',
+        'carrier_id' => 'getCarrierId',
+        'warehouse_id' => 'getWarehouseId',
+        'coupons' => 'getCoupons',
         'tags' => 'getTags',
+        'comment' => 'getComment',
+        'admin_comment' => 'getAdminComment',
+        'admin_private_comment' => 'getAdminPrivateComment',
+        'send_notifications' => 'getSendNotifications',
+        'send_admin_notifications' => 'getSendAdminNotifications',
+        'external_source' => 'getExternalSource',
         'inventory_behaviour' => 'getInventoryBehaviour',
         'create_invoice' => 'getCreateInvoice',
         'note_attributes' => 'getNoteAttributes',
-        'total_weight' => 'getTotalWeight',
         'clear_cache' => 'getClearCache',
         'origin' => 'getOrigin',
         'order_item' => 'getOrderItem'
@@ -664,68 +664,68 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('store_id', $data ?? [], null);
         $this->setIfExists('channel_id', $data ?? [], null);
         $this->setIfExists('order_status', $data ?? [], null);
-        $this->setIfExists('send_notifications', $data ?? [], false);
-        $this->setIfExists('send_admin_notifications', $data ?? [], false);
+        $this->setIfExists('fulfillment_status', $data ?? [], null);
+        $this->setIfExists('financial_status', $data ?? [], null);
         $this->setIfExists('customer_email', $data ?? [], null);
-        $this->setIfExists('bill_first_name', $data ?? [], null);
-        $this->setIfExists('bill_last_name', $data ?? [], null);
-        $this->setIfExists('bill_address_1', $data ?? [], null);
-        $this->setIfExists('bill_city', $data ?? [], null);
-        $this->setIfExists('bill_postcode', $data ?? [], null);
-        $this->setIfExists('bill_state', $data ?? [], null);
-        $this->setIfExists('bill_country', $data ?? [], null);
-        $this->setIfExists('shipp_first_name', $data ?? [], null);
-        $this->setIfExists('shipp_last_name', $data ?? [], null);
-        $this->setIfExists('shipp_address_1', $data ?? [], null);
-        $this->setIfExists('shipp_city', $data ?? [], null);
-        $this->setIfExists('shipp_postcode', $data ?? [], null);
-        $this->setIfExists('shipp_state', $data ?? [], null);
-        $this->setIfExists('shipp_country', $data ?? [], null);
-        $this->setIfExists('total_price', $data ?? [], null);
-        $this->setIfExists('date', $data ?? [], null);
-        $this->setIfExists('order_payment_method', $data ?? [], null);
-        $this->setIfExists('transaction_id', $data ?? [], null);
-        $this->setIfExists('order_shipping_method', $data ?? [], null);
-        $this->setIfExists('currency', $data ?? [], null);
-        $this->setIfExists('bill_address_2', $data ?? [], null);
-        $this->setIfExists('bill_company', $data ?? [], null);
-        $this->setIfExists('bill_phone', $data ?? [], null);
-        $this->setIfExists('bill_fax', $data ?? [], null);
-        $this->setIfExists('comment', $data ?? [], null);
-        $this->setIfExists('admin_comment', $data ?? [], null);
-        $this->setIfExists('admin_private_comment', $data ?? [], null);
         $this->setIfExists('customer_first_name', $data ?? [], null);
         $this->setIfExists('customer_last_name', $data ?? [], null);
         $this->setIfExists('customer_phone', $data ?? [], null);
         $this->setIfExists('customer_country', $data ?? [], null);
         $this->setIfExists('customer_birthday', $data ?? [], null);
         $this->setIfExists('customer_fax', $data ?? [], null);
+        $this->setIfExists('order_payment_method', $data ?? [], null);
+        $this->setIfExists('transaction_id', $data ?? [], null);
+        $this->setIfExists('currency', $data ?? [], null);
+        $this->setIfExists('date', $data ?? [], null);
+        $this->setIfExists('date_modified', $data ?? [], null);
+        $this->setIfExists('date_finished', $data ?? [], null);
+        $this->setIfExists('bill_first_name', $data ?? [], null);
+        $this->setIfExists('bill_last_name', $data ?? [], null);
+        $this->setIfExists('bill_address_1', $data ?? [], null);
+        $this->setIfExists('bill_address_2', $data ?? [], null);
+        $this->setIfExists('bill_city', $data ?? [], null);
+        $this->setIfExists('bill_postcode', $data ?? [], null);
+        $this->setIfExists('bill_state', $data ?? [], null);
+        $this->setIfExists('bill_country', $data ?? [], null);
+        $this->setIfExists('bill_company', $data ?? [], null);
+        $this->setIfExists('bill_phone', $data ?? [], null);
+        $this->setIfExists('bill_fax', $data ?? [], null);
+        $this->setIfExists('shipp_first_name', $data ?? [], null);
+        $this->setIfExists('shipp_last_name', $data ?? [], null);
+        $this->setIfExists('shipp_address_1', $data ?? [], null);
         $this->setIfExists('shipp_address_2', $data ?? [], null);
+        $this->setIfExists('shipp_city', $data ?? [], null);
+        $this->setIfExists('shipp_postcode', $data ?? [], null);
+        $this->setIfExists('shipp_state', $data ?? [], null);
+        $this->setIfExists('shipp_country', $data ?? [], null);
         $this->setIfExists('shipp_company', $data ?? [], null);
         $this->setIfExists('shipp_phone', $data ?? [], null);
         $this->setIfExists('shipp_fax', $data ?? [], null);
-        $this->setIfExists('date_modified', $data ?? [], null);
-        $this->setIfExists('date_finished', $data ?? [], null);
         $this->setIfExists('subtotal_price', $data ?? [], null);
         $this->setIfExists('tax_price', $data ?? [], 0);
+        $this->setIfExists('total_price', $data ?? [], null);
+        $this->setIfExists('total_paid', $data ?? [], null);
+        $this->setIfExists('total_weight', $data ?? [], null);
         $this->setIfExists('prices_inc_tax', $data ?? [], false);
         $this->setIfExists('shipping_price', $data ?? [], 0);
         $this->setIfExists('shipping_tax', $data ?? [], null);
-        $this->setIfExists('carrier_id', $data ?? [], null);
-        $this->setIfExists('warehouse_id', $data ?? [], null);
         $this->setIfExists('discount', $data ?? [], null);
         $this->setIfExists('coupon_discount', $data ?? [], null);
-        $this->setIfExists('coupons', $data ?? [], null);
         $this->setIfExists('gift_certificate_discount', $data ?? [], null);
-        $this->setIfExists('fulfillment_status', $data ?? [], null);
-        $this->setIfExists('financial_status', $data ?? [], null);
-        $this->setIfExists('total_paid', $data ?? [], null);
-        $this->setIfExists('external_source', $data ?? [], null);
+        $this->setIfExists('order_shipping_method', $data ?? [], null);
+        $this->setIfExists('carrier_id', $data ?? [], null);
+        $this->setIfExists('warehouse_id', $data ?? [], null);
+        $this->setIfExists('coupons', $data ?? [], null);
         $this->setIfExists('tags', $data ?? [], null);
+        $this->setIfExists('comment', $data ?? [], null);
+        $this->setIfExists('admin_comment', $data ?? [], null);
+        $this->setIfExists('admin_private_comment', $data ?? [], null);
+        $this->setIfExists('send_notifications', $data ?? [], false);
+        $this->setIfExists('send_admin_notifications', $data ?? [], false);
+        $this->setIfExists('external_source', $data ?? [], null);
         $this->setIfExists('inventory_behaviour', $data ?? [], 'bypass');
         $this->setIfExists('create_invoice', $data ?? [], false);
         $this->setIfExists('note_attributes', $data ?? [], null);
-        $this->setIfExists('total_weight', $data ?? [], null);
         $this->setIfExists('clear_cache', $data ?? [], true);
         $this->setIfExists('origin', $data ?? [], null);
         $this->setIfExists('order_item', $data ?? [], null);
@@ -943,55 +943,55 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets send_notifications
+     * Gets fulfillment_status
      *
-     * @return bool|null
+     * @return string|null
      */
-    public function getSendNotifications()
+    public function getFulfillmentStatus()
     {
-        return $this->container['send_notifications'];
+        return $this->container['fulfillment_status'];
     }
 
     /**
-     * Sets send_notifications
+     * Sets fulfillment_status
      *
-     * @param bool|null $send_notifications Send notifications to customer after order was created
+     * @param string|null $fulfillment_status Create order with fulfillment status
      *
      * @return self
      */
-    public function setSendNotifications($send_notifications)
+    public function setFulfillmentStatus($fulfillment_status)
     {
-        if (is_null($send_notifications)) {
-            throw new \InvalidArgumentException('non-nullable send_notifications cannot be null');
+        if (is_null($fulfillment_status)) {
+            throw new \InvalidArgumentException('non-nullable fulfillment_status cannot be null');
         }
-        $this->container['send_notifications'] = $send_notifications;
+        $this->container['fulfillment_status'] = $fulfillment_status;
 
         return $this;
     }
 
     /**
-     * Gets send_admin_notifications
+     * Gets financial_status
      *
-     * @return bool|null
+     * @return string|null
      */
-    public function getSendAdminNotifications()
+    public function getFinancialStatus()
     {
-        return $this->container['send_admin_notifications'];
+        return $this->container['financial_status'];
     }
 
     /**
-     * Sets send_admin_notifications
+     * Sets financial_status
      *
-     * @param bool|null $send_admin_notifications Notify admin when new order was created.
+     * @param string|null $financial_status Create order with financial status
      *
      * @return self
      */
-    public function setSendAdminNotifications($send_admin_notifications)
+    public function setFinancialStatus($financial_status)
     {
-        if (is_null($send_admin_notifications)) {
-            throw new \InvalidArgumentException('non-nullable send_admin_notifications cannot be null');
+        if (is_null($financial_status)) {
+            throw new \InvalidArgumentException('non-nullable financial_status cannot be null');
         }
-        $this->container['send_admin_notifications'] = $send_admin_notifications;
+        $this->container['financial_status'] = $financial_status;
 
         return $this;
     }
@@ -1019,735 +1019,6 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable customer_email cannot be null');
         }
         $this->container['customer_email'] = $customer_email;
-
-        return $this;
-    }
-
-    /**
-     * Gets bill_first_name
-     *
-     * @return string
-     */
-    public function getBillFirstName()
-    {
-        return $this->container['bill_first_name'];
-    }
-
-    /**
-     * Sets bill_first_name
-     *
-     * @param string $bill_first_name Specifies billing first name
-     *
-     * @return self
-     */
-    public function setBillFirstName($bill_first_name)
-    {
-        if (is_null($bill_first_name)) {
-            throw new \InvalidArgumentException('non-nullable bill_first_name cannot be null');
-        }
-        $this->container['bill_first_name'] = $bill_first_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets bill_last_name
-     *
-     * @return string
-     */
-    public function getBillLastName()
-    {
-        return $this->container['bill_last_name'];
-    }
-
-    /**
-     * Sets bill_last_name
-     *
-     * @param string $bill_last_name Specifies billing last name
-     *
-     * @return self
-     */
-    public function setBillLastName($bill_last_name)
-    {
-        if (is_null($bill_last_name)) {
-            throw new \InvalidArgumentException('non-nullable bill_last_name cannot be null');
-        }
-        $this->container['bill_last_name'] = $bill_last_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets bill_address_1
-     *
-     * @return string
-     */
-    public function getBillAddress1()
-    {
-        return $this->container['bill_address_1'];
-    }
-
-    /**
-     * Sets bill_address_1
-     *
-     * @param string $bill_address_1 Specifies first billing address
-     *
-     * @return self
-     */
-    public function setBillAddress1($bill_address_1)
-    {
-        if (is_null($bill_address_1)) {
-            throw new \InvalidArgumentException('non-nullable bill_address_1 cannot be null');
-        }
-        $this->container['bill_address_1'] = $bill_address_1;
-
-        return $this;
-    }
-
-    /**
-     * Gets bill_city
-     *
-     * @return string
-     */
-    public function getBillCity()
-    {
-        return $this->container['bill_city'];
-    }
-
-    /**
-     * Sets bill_city
-     *
-     * @param string $bill_city Specifies billing city
-     *
-     * @return self
-     */
-    public function setBillCity($bill_city)
-    {
-        if (is_null($bill_city)) {
-            throw new \InvalidArgumentException('non-nullable bill_city cannot be null');
-        }
-        $this->container['bill_city'] = $bill_city;
-
-        return $this;
-    }
-
-    /**
-     * Gets bill_postcode
-     *
-     * @return string
-     */
-    public function getBillPostcode()
-    {
-        return $this->container['bill_postcode'];
-    }
-
-    /**
-     * Sets bill_postcode
-     *
-     * @param string $bill_postcode Specifies billing postcode
-     *
-     * @return self
-     */
-    public function setBillPostcode($bill_postcode)
-    {
-        if (is_null($bill_postcode)) {
-            throw new \InvalidArgumentException('non-nullable bill_postcode cannot be null');
-        }
-        $this->container['bill_postcode'] = $bill_postcode;
-
-        return $this;
-    }
-
-    /**
-     * Gets bill_state
-     *
-     * @return string
-     */
-    public function getBillState()
-    {
-        return $this->container['bill_state'];
-    }
-
-    /**
-     * Sets bill_state
-     *
-     * @param string $bill_state Specifies billing state code
-     *
-     * @return self
-     */
-    public function setBillState($bill_state)
-    {
-        if (is_null($bill_state)) {
-            throw new \InvalidArgumentException('non-nullable bill_state cannot be null');
-        }
-        $this->container['bill_state'] = $bill_state;
-
-        return $this;
-    }
-
-    /**
-     * Gets bill_country
-     *
-     * @return string
-     */
-    public function getBillCountry()
-    {
-        return $this->container['bill_country'];
-    }
-
-    /**
-     * Sets bill_country
-     *
-     * @param string $bill_country Specifies billing country code
-     *
-     * @return self
-     */
-    public function setBillCountry($bill_country)
-    {
-        if (is_null($bill_country)) {
-            throw new \InvalidArgumentException('non-nullable bill_country cannot be null');
-        }
-        $this->container['bill_country'] = $bill_country;
-
-        return $this;
-    }
-
-    /**
-     * Gets shipp_first_name
-     *
-     * @return string|null
-     */
-    public function getShippFirstName()
-    {
-        return $this->container['shipp_first_name'];
-    }
-
-    /**
-     * Sets shipp_first_name
-     *
-     * @param string|null $shipp_first_name Specifies shipping first name
-     *
-     * @return self
-     */
-    public function setShippFirstName($shipp_first_name)
-    {
-        if (is_null($shipp_first_name)) {
-            throw new \InvalidArgumentException('non-nullable shipp_first_name cannot be null');
-        }
-        $this->container['shipp_first_name'] = $shipp_first_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets shipp_last_name
-     *
-     * @return string|null
-     */
-    public function getShippLastName()
-    {
-        return $this->container['shipp_last_name'];
-    }
-
-    /**
-     * Sets shipp_last_name
-     *
-     * @param string|null $shipp_last_name Specifies shipping last name
-     *
-     * @return self
-     */
-    public function setShippLastName($shipp_last_name)
-    {
-        if (is_null($shipp_last_name)) {
-            throw new \InvalidArgumentException('non-nullable shipp_last_name cannot be null');
-        }
-        $this->container['shipp_last_name'] = $shipp_last_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets shipp_address_1
-     *
-     * @return string|null
-     */
-    public function getShippAddress1()
-    {
-        return $this->container['shipp_address_1'];
-    }
-
-    /**
-     * Sets shipp_address_1
-     *
-     * @param string|null $shipp_address_1 Specifies first shipping address
-     *
-     * @return self
-     */
-    public function setShippAddress1($shipp_address_1)
-    {
-        if (is_null($shipp_address_1)) {
-            throw new \InvalidArgumentException('non-nullable shipp_address_1 cannot be null');
-        }
-        $this->container['shipp_address_1'] = $shipp_address_1;
-
-        return $this;
-    }
-
-    /**
-     * Gets shipp_city
-     *
-     * @return string|null
-     */
-    public function getShippCity()
-    {
-        return $this->container['shipp_city'];
-    }
-
-    /**
-     * Sets shipp_city
-     *
-     * @param string|null $shipp_city Specifies shipping city
-     *
-     * @return self
-     */
-    public function setShippCity($shipp_city)
-    {
-        if (is_null($shipp_city)) {
-            throw new \InvalidArgumentException('non-nullable shipp_city cannot be null');
-        }
-        $this->container['shipp_city'] = $shipp_city;
-
-        return $this;
-    }
-
-    /**
-     * Gets shipp_postcode
-     *
-     * @return string|null
-     */
-    public function getShippPostcode()
-    {
-        return $this->container['shipp_postcode'];
-    }
-
-    /**
-     * Sets shipp_postcode
-     *
-     * @param string|null $shipp_postcode Specifies shipping postcode
-     *
-     * @return self
-     */
-    public function setShippPostcode($shipp_postcode)
-    {
-        if (is_null($shipp_postcode)) {
-            throw new \InvalidArgumentException('non-nullable shipp_postcode cannot be null');
-        }
-        $this->container['shipp_postcode'] = $shipp_postcode;
-
-        return $this;
-    }
-
-    /**
-     * Gets shipp_state
-     *
-     * @return string|null
-     */
-    public function getShippState()
-    {
-        return $this->container['shipp_state'];
-    }
-
-    /**
-     * Sets shipp_state
-     *
-     * @param string|null $shipp_state Specifies shipping state code
-     *
-     * @return self
-     */
-    public function setShippState($shipp_state)
-    {
-        if (is_null($shipp_state)) {
-            throw new \InvalidArgumentException('non-nullable shipp_state cannot be null');
-        }
-        $this->container['shipp_state'] = $shipp_state;
-
-        return $this;
-    }
-
-    /**
-     * Gets shipp_country
-     *
-     * @return string|null
-     */
-    public function getShippCountry()
-    {
-        return $this->container['shipp_country'];
-    }
-
-    /**
-     * Sets shipp_country
-     *
-     * @param string|null $shipp_country Specifies shipping country code
-     *
-     * @return self
-     */
-    public function setShippCountry($shipp_country)
-    {
-        if (is_null($shipp_country)) {
-            throw new \InvalidArgumentException('non-nullable shipp_country cannot be null');
-        }
-        $this->container['shipp_country'] = $shipp_country;
-
-        return $this;
-    }
-
-    /**
-     * Gets total_price
-     *
-     * @return float|null
-     */
-    public function getTotalPrice()
-    {
-        return $this->container['total_price'];
-    }
-
-    /**
-     * Sets total_price
-     *
-     * @param float|null $total_price Defines order's total price
-     *
-     * @return self
-     */
-    public function setTotalPrice($total_price)
-    {
-        if (is_null($total_price)) {
-            throw new \InvalidArgumentException('non-nullable total_price cannot be null');
-        }
-        $this->container['total_price'] = $total_price;
-
-        return $this;
-    }
-
-    /**
-     * Gets date
-     *
-     * @return string|null
-     */
-    public function getDate()
-    {
-        return $this->container['date'];
-    }
-
-    /**
-     * Sets date
-     *
-     * @param string|null $date Specifies an order creation date in format Y-m-d H:i:s
-     *
-     * @return self
-     */
-    public function setDate($date)
-    {
-        if (is_null($date)) {
-            throw new \InvalidArgumentException('non-nullable date cannot be null');
-        }
-        $this->container['date'] = $date;
-
-        return $this;
-    }
-
-    /**
-     * Gets order_payment_method
-     *
-     * @return string|null
-     */
-    public function getOrderPaymentMethod()
-    {
-        return $this->container['order_payment_method'];
-    }
-
-    /**
-     * Sets order_payment_method
-     *
-     * @param string|null $order_payment_method Defines order payment method.<br/>Setting order_payment_method on Shopify will also change financial_status field value to 'paid'
-     *
-     * @return self
-     */
-    public function setOrderPaymentMethod($order_payment_method)
-    {
-        if (is_null($order_payment_method)) {
-            throw new \InvalidArgumentException('non-nullable order_payment_method cannot be null');
-        }
-        $this->container['order_payment_method'] = $order_payment_method;
-
-        return $this;
-    }
-
-    /**
-     * Gets transaction_id
-     *
-     * @return string|null
-     */
-    public function getTransactionId()
-    {
-        return $this->container['transaction_id'];
-    }
-
-    /**
-     * Sets transaction_id
-     *
-     * @param string|null $transaction_id Payment transaction id
-     *
-     * @return self
-     */
-    public function setTransactionId($transaction_id)
-    {
-        if (is_null($transaction_id)) {
-            throw new \InvalidArgumentException('non-nullable transaction_id cannot be null');
-        }
-        $this->container['transaction_id'] = $transaction_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets order_shipping_method
-     *
-     * @return string|null
-     */
-    public function getOrderShippingMethod()
-    {
-        return $this->container['order_shipping_method'];
-    }
-
-    /**
-     * Sets order_shipping_method
-     *
-     * @param string|null $order_shipping_method Defines order shipping method
-     *
-     * @return self
-     */
-    public function setOrderShippingMethod($order_shipping_method)
-    {
-        if (is_null($order_shipping_method)) {
-            throw new \InvalidArgumentException('non-nullable order_shipping_method cannot be null');
-        }
-        $this->container['order_shipping_method'] = $order_shipping_method;
-
-        return $this;
-    }
-
-    /**
-     * Gets currency
-     *
-     * @return string|null
-     */
-    public function getCurrency()
-    {
-        return $this->container['currency'];
-    }
-
-    /**
-     * Sets currency
-     *
-     * @param string|null $currency Currency code of order
-     *
-     * @return self
-     */
-    public function setCurrency($currency)
-    {
-        if (is_null($currency)) {
-            throw new \InvalidArgumentException('non-nullable currency cannot be null');
-        }
-        $this->container['currency'] = $currency;
-
-        return $this;
-    }
-
-    /**
-     * Gets bill_address_2
-     *
-     * @return string|null
-     */
-    public function getBillAddress2()
-    {
-        return $this->container['bill_address_2'];
-    }
-
-    /**
-     * Sets bill_address_2
-     *
-     * @param string|null $bill_address_2 Specifies second billing address
-     *
-     * @return self
-     */
-    public function setBillAddress2($bill_address_2)
-    {
-        if (is_null($bill_address_2)) {
-            throw new \InvalidArgumentException('non-nullable bill_address_2 cannot be null');
-        }
-        $this->container['bill_address_2'] = $bill_address_2;
-
-        return $this;
-    }
-
-    /**
-     * Gets bill_company
-     *
-     * @return string|null
-     */
-    public function getBillCompany()
-    {
-        return $this->container['bill_company'];
-    }
-
-    /**
-     * Sets bill_company
-     *
-     * @param string|null $bill_company Specifies billing company
-     *
-     * @return self
-     */
-    public function setBillCompany($bill_company)
-    {
-        if (is_null($bill_company)) {
-            throw new \InvalidArgumentException('non-nullable bill_company cannot be null');
-        }
-        $this->container['bill_company'] = $bill_company;
-
-        return $this;
-    }
-
-    /**
-     * Gets bill_phone
-     *
-     * @return string|null
-     */
-    public function getBillPhone()
-    {
-        return $this->container['bill_phone'];
-    }
-
-    /**
-     * Sets bill_phone
-     *
-     * @param string|null $bill_phone Specifies billing phone
-     *
-     * @return self
-     */
-    public function setBillPhone($bill_phone)
-    {
-        if (is_null($bill_phone)) {
-            throw new \InvalidArgumentException('non-nullable bill_phone cannot be null');
-        }
-        $this->container['bill_phone'] = $bill_phone;
-
-        return $this;
-    }
-
-    /**
-     * Gets bill_fax
-     *
-     * @return string|null
-     */
-    public function getBillFax()
-    {
-        return $this->container['bill_fax'];
-    }
-
-    /**
-     * Sets bill_fax
-     *
-     * @param string|null $bill_fax Specifies billing fax
-     *
-     * @return self
-     */
-    public function setBillFax($bill_fax)
-    {
-        if (is_null($bill_fax)) {
-            throw new \InvalidArgumentException('non-nullable bill_fax cannot be null');
-        }
-        $this->container['bill_fax'] = $bill_fax;
-
-        return $this;
-    }
-
-    /**
-     * Gets comment
-     *
-     * @return string|null
-     */
-    public function getComment()
-    {
-        return $this->container['comment'];
-    }
-
-    /**
-     * Sets comment
-     *
-     * @param string|null $comment Specifies order comment
-     *
-     * @return self
-     */
-    public function setComment($comment)
-    {
-        if (is_null($comment)) {
-            throw new \InvalidArgumentException('non-nullable comment cannot be null');
-        }
-        $this->container['comment'] = $comment;
-
-        return $this;
-    }
-
-    /**
-     * Gets admin_comment
-     *
-     * @return string|null
-     */
-    public function getAdminComment()
-    {
-        return $this->container['admin_comment'];
-    }
-
-    /**
-     * Sets admin_comment
-     *
-     * @param string|null $admin_comment Specifies admin's order comment
-     *
-     * @return self
-     */
-    public function setAdminComment($admin_comment)
-    {
-        if (is_null($admin_comment)) {
-            throw new \InvalidArgumentException('non-nullable admin_comment cannot be null');
-        }
-        $this->container['admin_comment'] = $admin_comment;
-
-        return $this;
-    }
-
-    /**
-     * Gets admin_private_comment
-     *
-     * @return string|null
-     */
-    public function getAdminPrivateComment()
-    {
-        return $this->container['admin_private_comment'];
-    }
-
-    /**
-     * Sets admin_private_comment
-     *
-     * @param string|null $admin_private_comment Specifies private admin's order comment
-     *
-     * @return self
-     */
-    public function setAdminPrivateComment($admin_private_comment)
-    {
-        if (is_null($admin_private_comment)) {
-            throw new \InvalidArgumentException('non-nullable admin_private_comment cannot be null');
-        }
-        $this->container['admin_private_comment'] = $admin_private_comment;
 
         return $this;
     }
@@ -1915,6 +1186,546 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets order_payment_method
+     *
+     * @return string|null
+     */
+    public function getOrderPaymentMethod()
+    {
+        return $this->container['order_payment_method'];
+    }
+
+    /**
+     * Sets order_payment_method
+     *
+     * @param string|null $order_payment_method Defines order payment method.<br/>Setting order_payment_method on Shopify will also change financial_status field value to 'paid'
+     *
+     * @return self
+     */
+    public function setOrderPaymentMethod($order_payment_method)
+    {
+        if (is_null($order_payment_method)) {
+            throw new \InvalidArgumentException('non-nullable order_payment_method cannot be null');
+        }
+        $this->container['order_payment_method'] = $order_payment_method;
+
+        return $this;
+    }
+
+    /**
+     * Gets transaction_id
+     *
+     * @return string|null
+     */
+    public function getTransactionId()
+    {
+        return $this->container['transaction_id'];
+    }
+
+    /**
+     * Sets transaction_id
+     *
+     * @param string|null $transaction_id Payment transaction id
+     *
+     * @return self
+     */
+    public function setTransactionId($transaction_id)
+    {
+        if (is_null($transaction_id)) {
+            throw new \InvalidArgumentException('non-nullable transaction_id cannot be null');
+        }
+        $this->container['transaction_id'] = $transaction_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets currency
+     *
+     * @return string|null
+     */
+    public function getCurrency()
+    {
+        return $this->container['currency'];
+    }
+
+    /**
+     * Sets currency
+     *
+     * @param string|null $currency Currency code of order
+     *
+     * @return self
+     */
+    public function setCurrency($currency)
+    {
+        if (is_null($currency)) {
+            throw new \InvalidArgumentException('non-nullable currency cannot be null');
+        }
+        $this->container['currency'] = $currency;
+
+        return $this;
+    }
+
+    /**
+     * Gets date
+     *
+     * @return string|null
+     */
+    public function getDate()
+    {
+        return $this->container['date'];
+    }
+
+    /**
+     * Sets date
+     *
+     * @param string|null $date Specifies an order creation date in format Y-m-d H:i:s
+     *
+     * @return self
+     */
+    public function setDate($date)
+    {
+        if (is_null($date)) {
+            throw new \InvalidArgumentException('non-nullable date cannot be null');
+        }
+        $this->container['date'] = $date;
+
+        return $this;
+    }
+
+    /**
+     * Gets date_modified
+     *
+     * @return string|null
+     */
+    public function getDateModified()
+    {
+        return $this->container['date_modified'];
+    }
+
+    /**
+     * Sets date_modified
+     *
+     * @param string|null $date_modified Specifies order's  modification date
+     *
+     * @return self
+     */
+    public function setDateModified($date_modified)
+    {
+        if (is_null($date_modified)) {
+            throw new \InvalidArgumentException('non-nullable date_modified cannot be null');
+        }
+        $this->container['date_modified'] = $date_modified;
+
+        return $this;
+    }
+
+    /**
+     * Gets date_finished
+     *
+     * @return string|null
+     */
+    public function getDateFinished()
+    {
+        return $this->container['date_finished'];
+    }
+
+    /**
+     * Sets date_finished
+     *
+     * @param string|null $date_finished Specifies order's  finished date
+     *
+     * @return self
+     */
+    public function setDateFinished($date_finished)
+    {
+        if (is_null($date_finished)) {
+            throw new \InvalidArgumentException('non-nullable date_finished cannot be null');
+        }
+        $this->container['date_finished'] = $date_finished;
+
+        return $this;
+    }
+
+    /**
+     * Gets bill_first_name
+     *
+     * @return string
+     */
+    public function getBillFirstName()
+    {
+        return $this->container['bill_first_name'];
+    }
+
+    /**
+     * Sets bill_first_name
+     *
+     * @param string $bill_first_name Specifies billing first name
+     *
+     * @return self
+     */
+    public function setBillFirstName($bill_first_name)
+    {
+        if (is_null($bill_first_name)) {
+            throw new \InvalidArgumentException('non-nullable bill_first_name cannot be null');
+        }
+        $this->container['bill_first_name'] = $bill_first_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets bill_last_name
+     *
+     * @return string
+     */
+    public function getBillLastName()
+    {
+        return $this->container['bill_last_name'];
+    }
+
+    /**
+     * Sets bill_last_name
+     *
+     * @param string $bill_last_name Specifies billing last name
+     *
+     * @return self
+     */
+    public function setBillLastName($bill_last_name)
+    {
+        if (is_null($bill_last_name)) {
+            throw new \InvalidArgumentException('non-nullable bill_last_name cannot be null');
+        }
+        $this->container['bill_last_name'] = $bill_last_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets bill_address_1
+     *
+     * @return string
+     */
+    public function getBillAddress1()
+    {
+        return $this->container['bill_address_1'];
+    }
+
+    /**
+     * Sets bill_address_1
+     *
+     * @param string $bill_address_1 Specifies first billing address
+     *
+     * @return self
+     */
+    public function setBillAddress1($bill_address_1)
+    {
+        if (is_null($bill_address_1)) {
+            throw new \InvalidArgumentException('non-nullable bill_address_1 cannot be null');
+        }
+        $this->container['bill_address_1'] = $bill_address_1;
+
+        return $this;
+    }
+
+    /**
+     * Gets bill_address_2
+     *
+     * @return string|null
+     */
+    public function getBillAddress2()
+    {
+        return $this->container['bill_address_2'];
+    }
+
+    /**
+     * Sets bill_address_2
+     *
+     * @param string|null $bill_address_2 Specifies second billing address
+     *
+     * @return self
+     */
+    public function setBillAddress2($bill_address_2)
+    {
+        if (is_null($bill_address_2)) {
+            throw new \InvalidArgumentException('non-nullable bill_address_2 cannot be null');
+        }
+        $this->container['bill_address_2'] = $bill_address_2;
+
+        return $this;
+    }
+
+    /**
+     * Gets bill_city
+     *
+     * @return string
+     */
+    public function getBillCity()
+    {
+        return $this->container['bill_city'];
+    }
+
+    /**
+     * Sets bill_city
+     *
+     * @param string $bill_city Specifies billing city
+     *
+     * @return self
+     */
+    public function setBillCity($bill_city)
+    {
+        if (is_null($bill_city)) {
+            throw new \InvalidArgumentException('non-nullable bill_city cannot be null');
+        }
+        $this->container['bill_city'] = $bill_city;
+
+        return $this;
+    }
+
+    /**
+     * Gets bill_postcode
+     *
+     * @return string
+     */
+    public function getBillPostcode()
+    {
+        return $this->container['bill_postcode'];
+    }
+
+    /**
+     * Sets bill_postcode
+     *
+     * @param string $bill_postcode Specifies billing postcode
+     *
+     * @return self
+     */
+    public function setBillPostcode($bill_postcode)
+    {
+        if (is_null($bill_postcode)) {
+            throw new \InvalidArgumentException('non-nullable bill_postcode cannot be null');
+        }
+        $this->container['bill_postcode'] = $bill_postcode;
+
+        return $this;
+    }
+
+    /**
+     * Gets bill_state
+     *
+     * @return string
+     */
+    public function getBillState()
+    {
+        return $this->container['bill_state'];
+    }
+
+    /**
+     * Sets bill_state
+     *
+     * @param string $bill_state Specifies billing state code
+     *
+     * @return self
+     */
+    public function setBillState($bill_state)
+    {
+        if (is_null($bill_state)) {
+            throw new \InvalidArgumentException('non-nullable bill_state cannot be null');
+        }
+        $this->container['bill_state'] = $bill_state;
+
+        return $this;
+    }
+
+    /**
+     * Gets bill_country
+     *
+     * @return string
+     */
+    public function getBillCountry()
+    {
+        return $this->container['bill_country'];
+    }
+
+    /**
+     * Sets bill_country
+     *
+     * @param string $bill_country Specifies billing country code
+     *
+     * @return self
+     */
+    public function setBillCountry($bill_country)
+    {
+        if (is_null($bill_country)) {
+            throw new \InvalidArgumentException('non-nullable bill_country cannot be null');
+        }
+        $this->container['bill_country'] = $bill_country;
+
+        return $this;
+    }
+
+    /**
+     * Gets bill_company
+     *
+     * @return string|null
+     */
+    public function getBillCompany()
+    {
+        return $this->container['bill_company'];
+    }
+
+    /**
+     * Sets bill_company
+     *
+     * @param string|null $bill_company Specifies billing company
+     *
+     * @return self
+     */
+    public function setBillCompany($bill_company)
+    {
+        if (is_null($bill_company)) {
+            throw new \InvalidArgumentException('non-nullable bill_company cannot be null');
+        }
+        $this->container['bill_company'] = $bill_company;
+
+        return $this;
+    }
+
+    /**
+     * Gets bill_phone
+     *
+     * @return string|null
+     */
+    public function getBillPhone()
+    {
+        return $this->container['bill_phone'];
+    }
+
+    /**
+     * Sets bill_phone
+     *
+     * @param string|null $bill_phone Specifies billing phone
+     *
+     * @return self
+     */
+    public function setBillPhone($bill_phone)
+    {
+        if (is_null($bill_phone)) {
+            throw new \InvalidArgumentException('non-nullable bill_phone cannot be null');
+        }
+        $this->container['bill_phone'] = $bill_phone;
+
+        return $this;
+    }
+
+    /**
+     * Gets bill_fax
+     *
+     * @return string|null
+     */
+    public function getBillFax()
+    {
+        return $this->container['bill_fax'];
+    }
+
+    /**
+     * Sets bill_fax
+     *
+     * @param string|null $bill_fax Specifies billing fax
+     *
+     * @return self
+     */
+    public function setBillFax($bill_fax)
+    {
+        if (is_null($bill_fax)) {
+            throw new \InvalidArgumentException('non-nullable bill_fax cannot be null');
+        }
+        $this->container['bill_fax'] = $bill_fax;
+
+        return $this;
+    }
+
+    /**
+     * Gets shipp_first_name
+     *
+     * @return string|null
+     */
+    public function getShippFirstName()
+    {
+        return $this->container['shipp_first_name'];
+    }
+
+    /**
+     * Sets shipp_first_name
+     *
+     * @param string|null $shipp_first_name Specifies shipping first name
+     *
+     * @return self
+     */
+    public function setShippFirstName($shipp_first_name)
+    {
+        if (is_null($shipp_first_name)) {
+            throw new \InvalidArgumentException('non-nullable shipp_first_name cannot be null');
+        }
+        $this->container['shipp_first_name'] = $shipp_first_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets shipp_last_name
+     *
+     * @return string|null
+     */
+    public function getShippLastName()
+    {
+        return $this->container['shipp_last_name'];
+    }
+
+    /**
+     * Sets shipp_last_name
+     *
+     * @param string|null $shipp_last_name Specifies shipping last name
+     *
+     * @return self
+     */
+    public function setShippLastName($shipp_last_name)
+    {
+        if (is_null($shipp_last_name)) {
+            throw new \InvalidArgumentException('non-nullable shipp_last_name cannot be null');
+        }
+        $this->container['shipp_last_name'] = $shipp_last_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets shipp_address_1
+     *
+     * @return string|null
+     */
+    public function getShippAddress1()
+    {
+        return $this->container['shipp_address_1'];
+    }
+
+    /**
+     * Sets shipp_address_1
+     *
+     * @param string|null $shipp_address_1 Specifies first shipping address
+     *
+     * @return self
+     */
+    public function setShippAddress1($shipp_address_1)
+    {
+        if (is_null($shipp_address_1)) {
+            throw new \InvalidArgumentException('non-nullable shipp_address_1 cannot be null');
+        }
+        $this->container['shipp_address_1'] = $shipp_address_1;
+
+        return $this;
+    }
+
+    /**
      * Gets shipp_address_2
      *
      * @return string|null
@@ -1937,6 +1748,114 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable shipp_address_2 cannot be null');
         }
         $this->container['shipp_address_2'] = $shipp_address_2;
+
+        return $this;
+    }
+
+    /**
+     * Gets shipp_city
+     *
+     * @return string|null
+     */
+    public function getShippCity()
+    {
+        return $this->container['shipp_city'];
+    }
+
+    /**
+     * Sets shipp_city
+     *
+     * @param string|null $shipp_city Specifies shipping city
+     *
+     * @return self
+     */
+    public function setShippCity($shipp_city)
+    {
+        if (is_null($shipp_city)) {
+            throw new \InvalidArgumentException('non-nullable shipp_city cannot be null');
+        }
+        $this->container['shipp_city'] = $shipp_city;
+
+        return $this;
+    }
+
+    /**
+     * Gets shipp_postcode
+     *
+     * @return string|null
+     */
+    public function getShippPostcode()
+    {
+        return $this->container['shipp_postcode'];
+    }
+
+    /**
+     * Sets shipp_postcode
+     *
+     * @param string|null $shipp_postcode Specifies shipping postcode
+     *
+     * @return self
+     */
+    public function setShippPostcode($shipp_postcode)
+    {
+        if (is_null($shipp_postcode)) {
+            throw new \InvalidArgumentException('non-nullable shipp_postcode cannot be null');
+        }
+        $this->container['shipp_postcode'] = $shipp_postcode;
+
+        return $this;
+    }
+
+    /**
+     * Gets shipp_state
+     *
+     * @return string|null
+     */
+    public function getShippState()
+    {
+        return $this->container['shipp_state'];
+    }
+
+    /**
+     * Sets shipp_state
+     *
+     * @param string|null $shipp_state Specifies shipping state code
+     *
+     * @return self
+     */
+    public function setShippState($shipp_state)
+    {
+        if (is_null($shipp_state)) {
+            throw new \InvalidArgumentException('non-nullable shipp_state cannot be null');
+        }
+        $this->container['shipp_state'] = $shipp_state;
+
+        return $this;
+    }
+
+    /**
+     * Gets shipp_country
+     *
+     * @return string|null
+     */
+    public function getShippCountry()
+    {
+        return $this->container['shipp_country'];
+    }
+
+    /**
+     * Sets shipp_country
+     *
+     * @param string|null $shipp_country Specifies shipping country code
+     *
+     * @return self
+     */
+    public function setShippCountry($shipp_country)
+    {
+        if (is_null($shipp_country)) {
+            throw new \InvalidArgumentException('non-nullable shipp_country cannot be null');
+        }
+        $this->container['shipp_country'] = $shipp_country;
 
         return $this;
     }
@@ -2023,60 +1942,6 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets date_modified
-     *
-     * @return string|null
-     */
-    public function getDateModified()
-    {
-        return $this->container['date_modified'];
-    }
-
-    /**
-     * Sets date_modified
-     *
-     * @param string|null $date_modified Specifies order's  modification date
-     *
-     * @return self
-     */
-    public function setDateModified($date_modified)
-    {
-        if (is_null($date_modified)) {
-            throw new \InvalidArgumentException('non-nullable date_modified cannot be null');
-        }
-        $this->container['date_modified'] = $date_modified;
-
-        return $this;
-    }
-
-    /**
-     * Gets date_finished
-     *
-     * @return string|null
-     */
-    public function getDateFinished()
-    {
-        return $this->container['date_finished'];
-    }
-
-    /**
-     * Sets date_finished
-     *
-     * @param string|null $date_finished Specifies order's  finished date
-     *
-     * @return self
-     */
-    public function setDateFinished($date_finished)
-    {
-        if (is_null($date_finished)) {
-            throw new \InvalidArgumentException('non-nullable date_finished cannot be null');
-        }
-        $this->container['date_finished'] = $date_finished;
-
-        return $this;
-    }
-
-    /**
      * Gets subtotal_price
      *
      * @return float|null
@@ -2126,6 +1991,87 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable tax_price cannot be null');
         }
         $this->container['tax_price'] = $tax_price;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_price
+     *
+     * @return float|null
+     */
+    public function getTotalPrice()
+    {
+        return $this->container['total_price'];
+    }
+
+    /**
+     * Sets total_price
+     *
+     * @param float|null $total_price Defines order's total price
+     *
+     * @return self
+     */
+    public function setTotalPrice($total_price)
+    {
+        if (is_null($total_price)) {
+            throw new \InvalidArgumentException('non-nullable total_price cannot be null');
+        }
+        $this->container['total_price'] = $total_price;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_paid
+     *
+     * @return float|null
+     */
+    public function getTotalPaid()
+    {
+        return $this->container['total_paid'];
+    }
+
+    /**
+     * Sets total_paid
+     *
+     * @param float|null $total_paid Defines total paid amount for the order
+     *
+     * @return self
+     */
+    public function setTotalPaid($total_paid)
+    {
+        if (is_null($total_paid)) {
+            throw new \InvalidArgumentException('non-nullable total_paid cannot be null');
+        }
+        $this->container['total_paid'] = $total_paid;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_weight
+     *
+     * @return int|null
+     */
+    public function getTotalWeight()
+    {
+        return $this->container['total_weight'];
+    }
+
+    /**
+     * Sets total_weight
+     *
+     * @param int|null $total_weight Defines the sum of all line item weights in grams for the order
+     *
+     * @return self
+     */
+    public function setTotalWeight($total_weight)
+    {
+        if (is_null($total_weight)) {
+            throw new \InvalidArgumentException('non-nullable total_weight cannot be null');
+        }
+        $this->container['total_weight'] = $total_weight;
 
         return $this;
     }
@@ -2212,60 +2158,6 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets carrier_id
-     *
-     * @return string|null
-     */
-    public function getCarrierId()
-    {
-        return $this->container['carrier_id'];
-    }
-
-    /**
-     * Sets carrier_id
-     *
-     * @param string|null $carrier_id Defines tracking carrier id
-     *
-     * @return self
-     */
-    public function setCarrierId($carrier_id)
-    {
-        if (is_null($carrier_id)) {
-            throw new \InvalidArgumentException('non-nullable carrier_id cannot be null');
-        }
-        $this->container['carrier_id'] = $carrier_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets warehouse_id
-     *
-     * @return string|null
-     */
-    public function getWarehouseId()
-    {
-        return $this->container['warehouse_id'];
-    }
-
-    /**
-     * Sets warehouse_id
-     *
-     * @param string|null $warehouse_id This parameter is used for selecting a warehouse where you need to set/modify a product quantity.
-     *
-     * @return self
-     */
-    public function setWarehouseId($warehouse_id)
-    {
-        if (is_null($warehouse_id)) {
-            throw new \InvalidArgumentException('non-nullable warehouse_id cannot be null');
-        }
-        $this->container['warehouse_id'] = $warehouse_id;
-
-        return $this;
-    }
-
-    /**
      * Gets discount
      *
      * @return float|null
@@ -2320,6 +2212,114 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets gift_certificate_discount
+     *
+     * @return float|null
+     */
+    public function getGiftCertificateDiscount()
+    {
+        return $this->container['gift_certificate_discount'];
+    }
+
+    /**
+     * Sets gift_certificate_discount
+     *
+     * @param float|null $gift_certificate_discount Discounts for order with gift certificates
+     *
+     * @return self
+     */
+    public function setGiftCertificateDiscount($gift_certificate_discount)
+    {
+        if (is_null($gift_certificate_discount)) {
+            throw new \InvalidArgumentException('non-nullable gift_certificate_discount cannot be null');
+        }
+        $this->container['gift_certificate_discount'] = $gift_certificate_discount;
+
+        return $this;
+    }
+
+    /**
+     * Gets order_shipping_method
+     *
+     * @return string|null
+     */
+    public function getOrderShippingMethod()
+    {
+        return $this->container['order_shipping_method'];
+    }
+
+    /**
+     * Sets order_shipping_method
+     *
+     * @param string|null $order_shipping_method Defines order shipping method
+     *
+     * @return self
+     */
+    public function setOrderShippingMethod($order_shipping_method)
+    {
+        if (is_null($order_shipping_method)) {
+            throw new \InvalidArgumentException('non-nullable order_shipping_method cannot be null');
+        }
+        $this->container['order_shipping_method'] = $order_shipping_method;
+
+        return $this;
+    }
+
+    /**
+     * Gets carrier_id
+     *
+     * @return string|null
+     */
+    public function getCarrierId()
+    {
+        return $this->container['carrier_id'];
+    }
+
+    /**
+     * Sets carrier_id
+     *
+     * @param string|null $carrier_id Defines tracking carrier id
+     *
+     * @return self
+     */
+    public function setCarrierId($carrier_id)
+    {
+        if (is_null($carrier_id)) {
+            throw new \InvalidArgumentException('non-nullable carrier_id cannot be null');
+        }
+        $this->container['carrier_id'] = $carrier_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets warehouse_id
+     *
+     * @return string|null
+     */
+    public function getWarehouseId()
+    {
+        return $this->container['warehouse_id'];
+    }
+
+    /**
+     * Sets warehouse_id
+     *
+     * @param string|null $warehouse_id This parameter is used for selecting a warehouse where you need to set/modify a product quantity.
+     *
+     * @return self
+     */
+    public function setWarehouseId($warehouse_id)
+    {
+        if (is_null($warehouse_id)) {
+            throw new \InvalidArgumentException('non-nullable warehouse_id cannot be null');
+        }
+        $this->container['warehouse_id'] = $warehouse_id;
+
+        return $this;
+    }
+
+    /**
      * Gets coupons
      *
      * @return string[]|null
@@ -2352,109 +2352,163 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets gift_certificate_discount
-     *
-     * @return float|null
-     */
-    public function getGiftCertificateDiscount()
-    {
-        return $this->container['gift_certificate_discount'];
-    }
-
-    /**
-     * Sets gift_certificate_discount
-     *
-     * @param float|null $gift_certificate_discount Discounts for order with gift certificates
-     *
-     * @return self
-     */
-    public function setGiftCertificateDiscount($gift_certificate_discount)
-    {
-        if (is_null($gift_certificate_discount)) {
-            throw new \InvalidArgumentException('non-nullable gift_certificate_discount cannot be null');
-        }
-        $this->container['gift_certificate_discount'] = $gift_certificate_discount;
-
-        return $this;
-    }
-
-    /**
-     * Gets fulfillment_status
+     * Gets tags
      *
      * @return string|null
      */
-    public function getFulfillmentStatus()
+    public function getTags()
     {
-        return $this->container['fulfillment_status'];
+        return $this->container['tags'];
     }
 
     /**
-     * Sets fulfillment_status
+     * Sets tags
      *
-     * @param string|null $fulfillment_status Create order with fulfillment status
+     * @param string|null $tags Order tags
      *
      * @return self
      */
-    public function setFulfillmentStatus($fulfillment_status)
+    public function setTags($tags)
     {
-        if (is_null($fulfillment_status)) {
-            throw new \InvalidArgumentException('non-nullable fulfillment_status cannot be null');
+        if (is_null($tags)) {
+            throw new \InvalidArgumentException('non-nullable tags cannot be null');
         }
-        $this->container['fulfillment_status'] = $fulfillment_status;
+        $this->container['tags'] = $tags;
 
         return $this;
     }
 
     /**
-     * Gets financial_status
+     * Gets comment
      *
      * @return string|null
      */
-    public function getFinancialStatus()
+    public function getComment()
     {
-        return $this->container['financial_status'];
+        return $this->container['comment'];
     }
 
     /**
-     * Sets financial_status
+     * Sets comment
      *
-     * @param string|null $financial_status Create order with financial status
+     * @param string|null $comment Specifies order comment
      *
      * @return self
      */
-    public function setFinancialStatus($financial_status)
+    public function setComment($comment)
     {
-        if (is_null($financial_status)) {
-            throw new \InvalidArgumentException('non-nullable financial_status cannot be null');
+        if (is_null($comment)) {
+            throw new \InvalidArgumentException('non-nullable comment cannot be null');
         }
-        $this->container['financial_status'] = $financial_status;
+        $this->container['comment'] = $comment;
 
         return $this;
     }
 
     /**
-     * Gets total_paid
+     * Gets admin_comment
      *
-     * @return float|null
+     * @return string|null
      */
-    public function getTotalPaid()
+    public function getAdminComment()
     {
-        return $this->container['total_paid'];
+        return $this->container['admin_comment'];
     }
 
     /**
-     * Sets total_paid
+     * Sets admin_comment
      *
-     * @param float|null $total_paid Defines total paid amount for the order
+     * @param string|null $admin_comment Specifies admin's order comment
      *
      * @return self
      */
-    public function setTotalPaid($total_paid)
+    public function setAdminComment($admin_comment)
     {
-        if (is_null($total_paid)) {
-            throw new \InvalidArgumentException('non-nullable total_paid cannot be null');
+        if (is_null($admin_comment)) {
+            throw new \InvalidArgumentException('non-nullable admin_comment cannot be null');
         }
-        $this->container['total_paid'] = $total_paid;
+        $this->container['admin_comment'] = $admin_comment;
+
+        return $this;
+    }
+
+    /**
+     * Gets admin_private_comment
+     *
+     * @return string|null
+     */
+    public function getAdminPrivateComment()
+    {
+        return $this->container['admin_private_comment'];
+    }
+
+    /**
+     * Sets admin_private_comment
+     *
+     * @param string|null $admin_private_comment Specifies private admin's order comment
+     *
+     * @return self
+     */
+    public function setAdminPrivateComment($admin_private_comment)
+    {
+        if (is_null($admin_private_comment)) {
+            throw new \InvalidArgumentException('non-nullable admin_private_comment cannot be null');
+        }
+        $this->container['admin_private_comment'] = $admin_private_comment;
+
+        return $this;
+    }
+
+    /**
+     * Gets send_notifications
+     *
+     * @return bool|null
+     */
+    public function getSendNotifications()
+    {
+        return $this->container['send_notifications'];
+    }
+
+    /**
+     * Sets send_notifications
+     *
+     * @param bool|null $send_notifications Send notifications to customer after order was created
+     *
+     * @return self
+     */
+    public function setSendNotifications($send_notifications)
+    {
+        if (is_null($send_notifications)) {
+            throw new \InvalidArgumentException('non-nullable send_notifications cannot be null');
+        }
+        $this->container['send_notifications'] = $send_notifications;
+
+        return $this;
+    }
+
+    /**
+     * Gets send_admin_notifications
+     *
+     * @return bool|null
+     */
+    public function getSendAdminNotifications()
+    {
+        return $this->container['send_admin_notifications'];
+    }
+
+    /**
+     * Sets send_admin_notifications
+     *
+     * @param bool|null $send_admin_notifications Notify admin when new order was created.
+     *
+     * @return self
+     */
+    public function setSendAdminNotifications($send_admin_notifications)
+    {
+        if (is_null($send_admin_notifications)) {
+            throw new \InvalidArgumentException('non-nullable send_admin_notifications cannot be null');
+        }
+        $this->container['send_admin_notifications'] = $send_admin_notifications;
 
         return $this;
     }
@@ -2482,33 +2536,6 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable external_source cannot be null');
         }
         $this->container['external_source'] = $external_source;
-
-        return $this;
-    }
-
-    /**
-     * Gets tags
-     *
-     * @return string|null
-     */
-    public function getTags()
-    {
-        return $this->container['tags'];
-    }
-
-    /**
-     * Sets tags
-     *
-     * @param string|null $tags Order tags
-     *
-     * @return self
-     */
-    public function setTags($tags)
-    {
-        if (is_null($tags)) {
-            throw new \InvalidArgumentException('non-nullable tags cannot be null');
-        }
-        $this->container['tags'] = $tags;
 
         return $this;
     }
@@ -2590,33 +2617,6 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable note_attributes cannot be null');
         }
         $this->container['note_attributes'] = $note_attributes;
-
-        return $this;
-    }
-
-    /**
-     * Gets total_weight
-     *
-     * @return int|null
-     */
-    public function getTotalWeight()
-    {
-        return $this->container['total_weight'];
-    }
-
-    /**
-     * Sets total_weight
-     *
-     * @param int|null $total_weight Defines the sum of all line item weights in grams for the order
-     *
-     * @return self
-     */
-    public function setTotalWeight($total_weight)
-    {
-        if (is_null($total_weight)) {
-            throw new \InvalidArgumentException('non-nullable total_weight cannot be null');
-        }
-        $this->container['total_weight'] = $total_weight;
 
         return $this;
     }

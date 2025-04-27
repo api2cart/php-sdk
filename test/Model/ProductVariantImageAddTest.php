@@ -99,6 +99,15 @@ class ProductVariantImageAddTest extends TestCase
     }
 
     /**
+     * Test attribute "store_id"
+     */
+    public function testPropertyStoreId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "image_name"
      */
     public function testPropertyImageName()
@@ -156,15 +165,6 @@ class ProductVariantImageAddTest extends TestCase
      * Test attribute "position"
      */
     public function testPropertyPosition()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "store_id"
-     */
-    public function testPropertyStoreId()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

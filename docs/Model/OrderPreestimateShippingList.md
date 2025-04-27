@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**store_id** | **string** | Store Id | [optional]
 **warehouse_id** | **string** | This parameter is used for selecting a warehouse where you need to set/modify a product quantity. | [optional]
-**customer_email** | **string** | Retrieves orders specified by customer email | [optional]
 **customer_id** | **string** | Retrieves orders specified by customer id | [optional]
+**customer_email** | **string** | Retrieves orders specified by customer email | [optional]
+**store_id** | **string** | Store Id | [optional]
 **shipp_address_1** | **string** | Specifies first shipping address | [optional]
 **shipp_city** | **string** | Specifies shipping city | [optional]
 **shipp_postcode** | **string** | Specifies shipping postcode | [optional]

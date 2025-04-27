@@ -58,14 +58,13 @@ class CartCouponAdd implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'store_id' => 'string',
         'code' => 'string',
-        'name' => 'string',
-        'codes' => 'string[]',
         'action_type' => 'string',
         'action_apply_to' => 'string',
         'action_scope' => 'string',
         'action_amount' => 'float',
+        'codes' => 'string[]',
+        'name' => 'string',
         'date_start' => 'string',
         'date_end' => 'string',
         'usage_limit' => 'int',
@@ -74,7 +73,8 @@ class CartCouponAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'action_condition_key' => 'string',
         'action_condition_operator' => 'string',
         'action_condition_value' => 'string',
-        'include_tax' => 'bool'
+        'include_tax' => 'bool',
+        'store_id' => 'string'
     ];
 
     /**
@@ -85,14 +85,13 @@ class CartCouponAdd implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'store_id' => null,
         'code' => null,
-        'name' => null,
-        'codes' => null,
         'action_type' => null,
         'action_apply_to' => null,
         'action_scope' => null,
         'action_amount' => null,
+        'codes' => null,
+        'name' => null,
         'date_start' => null,
         'date_end' => null,
         'usage_limit' => null,
@@ -101,7 +100,8 @@ class CartCouponAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'action_condition_key' => null,
         'action_condition_operator' => null,
         'action_condition_value' => null,
-        'include_tax' => null
+        'include_tax' => null,
+        'store_id' => null
     ];
 
     /**
@@ -110,14 +110,13 @@ class CartCouponAdd implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'store_id' => false,
         'code' => false,
-        'name' => false,
-        'codes' => false,
         'action_type' => false,
         'action_apply_to' => false,
         'action_scope' => false,
         'action_amount' => false,
+        'codes' => false,
+        'name' => false,
         'date_start' => false,
         'date_end' => false,
         'usage_limit' => false,
@@ -126,7 +125,8 @@ class CartCouponAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'action_condition_key' => false,
         'action_condition_operator' => false,
         'action_condition_value' => false,
-        'include_tax' => false
+        'include_tax' => false,
+        'store_id' => false
     ];
 
     /**
@@ -215,14 +215,13 @@ class CartCouponAdd implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'store_id' => 'store_id',
         'code' => 'code',
-        'name' => 'name',
-        'codes' => 'codes',
         'action_type' => 'action_type',
         'action_apply_to' => 'action_apply_to',
         'action_scope' => 'action_scope',
         'action_amount' => 'action_amount',
+        'codes' => 'codes',
+        'name' => 'name',
         'date_start' => 'date_start',
         'date_end' => 'date_end',
         'usage_limit' => 'usage_limit',
@@ -231,7 +230,8 @@ class CartCouponAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'action_condition_key' => 'action_condition_key',
         'action_condition_operator' => 'action_condition_operator',
         'action_condition_value' => 'action_condition_value',
-        'include_tax' => 'include_tax'
+        'include_tax' => 'include_tax',
+        'store_id' => 'store_id'
     ];
 
     /**
@@ -240,14 +240,13 @@ class CartCouponAdd implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'store_id' => 'setStoreId',
         'code' => 'setCode',
-        'name' => 'setName',
-        'codes' => 'setCodes',
         'action_type' => 'setActionType',
         'action_apply_to' => 'setActionApplyTo',
         'action_scope' => 'setActionScope',
         'action_amount' => 'setActionAmount',
+        'codes' => 'setCodes',
+        'name' => 'setName',
         'date_start' => 'setDateStart',
         'date_end' => 'setDateEnd',
         'usage_limit' => 'setUsageLimit',
@@ -256,7 +255,8 @@ class CartCouponAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'action_condition_key' => 'setActionConditionKey',
         'action_condition_operator' => 'setActionConditionOperator',
         'action_condition_value' => 'setActionConditionValue',
-        'include_tax' => 'setIncludeTax'
+        'include_tax' => 'setIncludeTax',
+        'store_id' => 'setStoreId'
     ];
 
     /**
@@ -265,14 +265,13 @@ class CartCouponAdd implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'store_id' => 'getStoreId',
         'code' => 'getCode',
-        'name' => 'getName',
-        'codes' => 'getCodes',
         'action_type' => 'getActionType',
         'action_apply_to' => 'getActionApplyTo',
         'action_scope' => 'getActionScope',
         'action_amount' => 'getActionAmount',
+        'codes' => 'getCodes',
+        'name' => 'getName',
         'date_start' => 'getDateStart',
         'date_end' => 'getDateEnd',
         'usage_limit' => 'getUsageLimit',
@@ -281,7 +280,8 @@ class CartCouponAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'action_condition_key' => 'getActionConditionKey',
         'action_condition_operator' => 'getActionConditionOperator',
         'action_condition_value' => 'getActionConditionValue',
-        'include_tax' => 'getIncludeTax'
+        'include_tax' => 'getIncludeTax',
+        'store_id' => 'getStoreId'
     ];
 
     /**
@@ -388,14 +388,13 @@ class CartCouponAdd implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('store_id', $data ?? [], null);
         $this->setIfExists('code', $data ?? [], null);
-        $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('codes', $data ?? [], null);
         $this->setIfExists('action_type', $data ?? [], null);
         $this->setIfExists('action_apply_to', $data ?? [], null);
         $this->setIfExists('action_scope', $data ?? [], null);
         $this->setIfExists('action_amount', $data ?? [], null);
+        $this->setIfExists('codes', $data ?? [], null);
+        $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('date_start', $data ?? [], 'now');
         $this->setIfExists('date_end', $data ?? [], null);
         $this->setIfExists('usage_limit', $data ?? [], null);
@@ -405,6 +404,7 @@ class CartCouponAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('action_condition_operator', $data ?? [], null);
         $this->setIfExists('action_condition_value', $data ?? [], null);
         $this->setIfExists('include_tax', $data ?? [], false);
+        $this->setIfExists('store_id', $data ?? [], null);
     }
 
     /**
@@ -492,33 +492,6 @@ class CartCouponAdd implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets store_id
-     *
-     * @return string|null
-     */
-    public function getStoreId()
-    {
-        return $this->container['store_id'];
-    }
-
-    /**
-     * Sets store_id
-     *
-     * @param string|null $store_id Store Id
-     *
-     * @return self
-     */
-    public function setStoreId($store_id)
-    {
-        if (is_null($store_id)) {
-            throw new \InvalidArgumentException('non-nullable store_id cannot be null');
-        }
-        $this->container['store_id'] = $store_id;
-
-        return $this;
-    }
-
-    /**
      * Gets code
      *
      * @return string
@@ -541,60 +514,6 @@ class CartCouponAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable code cannot be null');
         }
         $this->container['code'] = $code;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string|null $name Coupon name
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
-        }
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets codes
-     *
-     * @return string[]|null
-     */
-    public function getCodes()
-    {
-        return $this->container['codes'];
-    }
-
-    /**
-     * Sets codes
-     *
-     * @param string[]|null $codes Entity codes
-     *
-     * @return self
-     */
-    public function setCodes($codes)
-    {
-        if (is_null($codes)) {
-            throw new \InvalidArgumentException('non-nullable codes cannot be null');
-        }
-        $this->container['codes'] = $codes;
 
         return $this;
     }
@@ -733,6 +652,60 @@ class CartCouponAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable action_amount cannot be null');
         }
         $this->container['action_amount'] = $action_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets codes
+     *
+     * @return string[]|null
+     */
+    public function getCodes()
+    {
+        return $this->container['codes'];
+    }
+
+    /**
+     * Sets codes
+     *
+     * @param string[]|null $codes Entity codes
+     *
+     * @return self
+     */
+    public function setCodes($codes)
+    {
+        if (is_null($codes)) {
+            throw new \InvalidArgumentException('non-nullable codes cannot be null');
+        }
+        $this->container['codes'] = $codes;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name Coupon name
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        if (is_null($name)) {
+            throw new \InvalidArgumentException('non-nullable name cannot be null');
+        }
+        $this->container['name'] = $name;
 
         return $this;
     }
@@ -976,6 +949,33 @@ class CartCouponAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable include_tax cannot be null');
         }
         $this->container['include_tax'] = $include_tax;
+
+        return $this;
+    }
+
+    /**
+     * Gets store_id
+     *
+     * @return string|null
+     */
+    public function getStoreId()
+    {
+        return $this->container['store_id'];
+    }
+
+    /**
+     * Sets store_id
+     *
+     * @param string|null $store_id Store Id
+     *
+     * @return self
+     */
+    public function setStoreId($store_id)
+    {
+        if (is_null($store_id)) {
+            throw new \InvalidArgumentException('non-nullable store_id cannot be null');
+        }
+        $this->container['store_id'] = $store_id;
 
         return $this;
     }

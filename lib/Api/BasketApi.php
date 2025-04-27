@@ -142,18 +142,18 @@ class BasketApi
      *
      * @param  string $id Entity id (required)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['basketInfo'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\BasketInfo200Response
      */
-    public function basketInfo($id, $store_id = null, $params = 'force_all', $exclude = null, $response_fields = null, string $contentType = self::contentTypes['basketInfo'][0])
+    public function basketInfo($id, $store_id = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['basketInfo'][0])
     {
-        list($response) = $this->basketInfoWithHttpInfo($id, $store_id, $params, $exclude, $response_fields, $contentType);
+        list($response) = $this->basketInfoWithHttpInfo($id, $store_id, $response_fields, $params, $exclude, $contentType);
         return $response;
     }
 
@@ -164,18 +164,18 @@ class BasketApi
      *
      * @param  string $id Entity id (required)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['basketInfo'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\BasketInfo200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function basketInfoWithHttpInfo($id, $store_id = null, $params = 'force_all', $exclude = null, $response_fields = null, string $contentType = self::contentTypes['basketInfo'][0])
+    public function basketInfoWithHttpInfo($id, $store_id = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['basketInfo'][0])
     {
-        $request = $this->basketInfoRequest($id, $store_id, $params, $exclude, $response_fields, $contentType);
+        $request = $this->basketInfoRequest($id, $store_id, $response_fields, $params, $exclude, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -293,17 +293,17 @@ class BasketApi
      *
      * @param  string $id Entity id (required)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['basketInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function basketInfoAsync($id, $store_id = null, $params = 'force_all', $exclude = null, $response_fields = null, string $contentType = self::contentTypes['basketInfo'][0])
+    public function basketInfoAsync($id, $store_id = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['basketInfo'][0])
     {
-        return $this->basketInfoAsyncWithHttpInfo($id, $store_id, $params, $exclude, $response_fields, $contentType)
+        return $this->basketInfoAsyncWithHttpInfo($id, $store_id, $response_fields, $params, $exclude, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -318,18 +318,18 @@ class BasketApi
      *
      * @param  string $id Entity id (required)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['basketInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function basketInfoAsyncWithHttpInfo($id, $store_id = null, $params = 'force_all', $exclude = null, $response_fields = null, string $contentType = self::contentTypes['basketInfo'][0])
+    public function basketInfoAsyncWithHttpInfo($id, $store_id = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['basketInfo'][0])
     {
         $returnType = '\OpenAPI\Client\Model\BasketInfo200Response';
-        $request = $this->basketInfoRequest($id, $store_id, $params, $exclude, $response_fields, $contentType);
+        $request = $this->basketInfoRequest($id, $store_id, $response_fields, $params, $exclude, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -372,15 +372,15 @@ class BasketApi
      *
      * @param  string $id Entity id (required)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['basketInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function basketInfoRequest($id, $store_id = null, $params = 'force_all', $exclude = null, $response_fields = null, string $contentType = self::contentTypes['basketInfo'][0])
+    public function basketInfoRequest($id, $store_id = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['basketInfo'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -422,6 +422,15 @@ class BasketApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $response_fields,
+            'response_fields', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $params,
             'params', // param base name
             'string', // openApiType
@@ -433,15 +442,6 @@ class BasketApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $exclude,
             'exclude', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $response_fields,
-            'response_fields', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -1162,15 +1162,6 @@ class BasketApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $store_id,
-            'store_id', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $name,
             'name', // param base name
             'string', // openApiType
@@ -1186,6 +1177,15 @@ class BasketApi
             'form', // style
             true, // explode
             true // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $store_id,
+            'store_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
         ) ?? []);
 
 
@@ -1578,18 +1578,18 @@ class BasketApi
      *
      * basket.live_shipping_service.list
      *
-     * @param  string|null $store_id Store Id (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['basketLiveShippingServiceList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\BasketLiveShippingServiceList200Response
      */
-    public function basketLiveShippingServiceList($store_id = null, $start = 0, $count = 10, string $contentType = self::contentTypes['basketLiveShippingServiceList'][0])
+    public function basketLiveShippingServiceList($start = 0, $count = 10, $store_id = null, string $contentType = self::contentTypes['basketLiveShippingServiceList'][0])
     {
-        list($response) = $this->basketLiveShippingServiceListWithHttpInfo($store_id, $start, $count, $contentType);
+        list($response) = $this->basketLiveShippingServiceListWithHttpInfo($start, $count, $store_id, $contentType);
         return $response;
     }
 
@@ -1598,18 +1598,18 @@ class BasketApi
      *
      * basket.live_shipping_service.list
      *
-     * @param  string|null $store_id Store Id (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['basketLiveShippingServiceList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\BasketLiveShippingServiceList200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function basketLiveShippingServiceListWithHttpInfo($store_id = null, $start = 0, $count = 10, string $contentType = self::contentTypes['basketLiveShippingServiceList'][0])
+    public function basketLiveShippingServiceListWithHttpInfo($start = 0, $count = 10, $store_id = null, string $contentType = self::contentTypes['basketLiveShippingServiceList'][0])
     {
-        $request = $this->basketLiveShippingServiceListRequest($store_id, $start, $count, $contentType);
+        $request = $this->basketLiveShippingServiceListRequest($start, $count, $store_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1725,17 +1725,17 @@ class BasketApi
      *
      * basket.live_shipping_service.list
      *
-     * @param  string|null $store_id Store Id (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['basketLiveShippingServiceList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function basketLiveShippingServiceListAsync($store_id = null, $start = 0, $count = 10, string $contentType = self::contentTypes['basketLiveShippingServiceList'][0])
+    public function basketLiveShippingServiceListAsync($start = 0, $count = 10, $store_id = null, string $contentType = self::contentTypes['basketLiveShippingServiceList'][0])
     {
-        return $this->basketLiveShippingServiceListAsyncWithHttpInfo($store_id, $start, $count, $contentType)
+        return $this->basketLiveShippingServiceListAsyncWithHttpInfo($start, $count, $store_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1748,18 +1748,18 @@ class BasketApi
      *
      * basket.live_shipping_service.list
      *
-     * @param  string|null $store_id Store Id (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['basketLiveShippingServiceList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function basketLiveShippingServiceListAsyncWithHttpInfo($store_id = null, $start = 0, $count = 10, string $contentType = self::contentTypes['basketLiveShippingServiceList'][0])
+    public function basketLiveShippingServiceListAsyncWithHttpInfo($start = 0, $count = 10, $store_id = null, string $contentType = self::contentTypes['basketLiveShippingServiceList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\BasketLiveShippingServiceList200Response';
-        $request = $this->basketLiveShippingServiceListRequest($store_id, $start, $count, $contentType);
+        $request = $this->basketLiveShippingServiceListRequest($start, $count, $store_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1800,15 +1800,15 @@ class BasketApi
     /**
      * Create request for operation 'basketLiveShippingServiceList'
      *
-     * @param  string|null $store_id Store Id (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['basketLiveShippingServiceList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function basketLiveShippingServiceListRequest($store_id = null, $start = 0, $count = 10, string $contentType = self::contentTypes['basketLiveShippingServiceList'][0])
+    public function basketLiveShippingServiceListRequest($start = 0, $count = 10, $store_id = null, string $contentType = self::contentTypes['basketLiveShippingServiceList'][0])
     {
 
 
@@ -1824,15 +1824,6 @@ class BasketApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $store_id,
-            'store_id', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $start,
             'start', // param base name
             'integer', // openApiType
@@ -1845,6 +1836,15 @@ class BasketApi
             $count,
             'count', // param base name
             'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $store_id,
+            'store_id', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required

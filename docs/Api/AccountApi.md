@@ -76,7 +76,7 @@ try {
 ## `accountCartList()`
 
 ```php
-accountCartList($params, $exclude, $request_from_date, $request_to_date, $store_url, $store_key): \OpenAPI\Client\Model\AccountCartList200Response
+accountCartList($store_url, $store_key, $request_from_date, $request_to_date, $params, $exclude): \OpenAPI\Client\Model\AccountCartList200Response
 ```
 
 account.cart.list
@@ -102,15 +102,15 @@ $apiInstance = new OpenAPI\Client\Api\AccountApi(
     new GuzzleHttp\Client(),
     $config
 );
-$params = url,store_key; // string | Set this parameter in order to choose which entity fields you want to retrieve
-$exclude = url,store_key; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-$request_from_date = 2010-07-29; // string | Retrieve entities from their creation date
-$request_to_date = 2100-08-29; // string | Retrieve entities to their creation date
 $store_url = http://mystore.com; // string | A web address of a store
 $store_key = ab37fc230bc5df63a5be1b11220949be; // string | Find store by store key
+$request_from_date = 2010-07-29; // string | Retrieve entities from their creation date
+$request_to_date = 2100-08-29; // string | Retrieve entities to their creation date
+$params = url,store_key; // string | Set this parameter in order to choose which entity fields you want to retrieve
+$exclude = url,store_key; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 
 try {
-    $result = $apiInstance->accountCartList($params, $exclude, $request_from_date, $request_to_date, $store_url, $store_key);
+    $result = $apiInstance->accountCartList($store_url, $store_key, $request_from_date, $request_to_date, $params, $exclude);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountApi->accountCartList: ', $e->getMessage(), PHP_EOL;
@@ -121,12 +121,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;force_all&#39;] |
-| **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
-| **request_from_date** | **string**| Retrieve entities from their creation date | [optional] |
-| **request_to_date** | **string**| Retrieve entities to their creation date | [optional] |
 | **store_url** | **string**| A web address of a store | [optional] |
 | **store_key** | **string**| Find store by store key | [optional] |
+| **request_from_date** | **string**| Retrieve entities from their creation date | [optional] |
+| **request_to_date** | **string**| Retrieve entities to their creation date | [optional] |
+| **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;force_all&#39;] |
+| **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 
 ### Return type
 
@@ -148,7 +148,7 @@ try {
 ## `accountConfigUpdate()`
 
 ```php
-accountConfigUpdate($replace_parameters, $new_store_url, $new_store_key, $bridge_url, $store_root, $db_tables_prefix, $user_agent, $_3dcart_private_key, $_3dcart_access_token, $_3dcartapi_api_key, $amazon_sp_client_id, $amazon_sp_client_secret, $amazon_sp_refresh_token, $amazon_sp_aws_region, $amazon_sp_api_environment, $amazon_seller_id, $aspdotnetstorefront_api_user, $aspdotnetstorefront_api_pass, $bigcommerceapi_admin_account, $bigcommerceapi_api_path, $bigcommerceapi_api_key, $bigcommerceapi_client_id, $bigcommerceapi_access_token, $bigcommerceapi_context, $bol_api_key, $bol_api_secret, $bol_retailer_id, $demandware_client_id, $demandware_api_password, $demandware_user_name, $demandware_user_password, $ebay_client_id, $ebay_client_secret, $ebay_runame, $ebay_access_token, $ebay_refresh_token, $ebay_environment, $ebay_site_id, $ecwid_acess_token, $ecwid_store_id, $lazada_app_id, $lazada_app_secret, $lazada_refresh_token, $lazada_region, $etsy_keystring, $etsy_shared_secret, $etsy_access_token, $etsy_token_secret, $etsy_client_id, $etsy_refresh_token, $facebook_app_id, $facebook_app_secret, $facebook_access_token, $facebook_business_id, $neto_api_key, $neto_api_username, $shopline_access_token, $shopline_app_key, $shopline_app_secret, $shopify_access_token, $shopify_api_key, $shopify_api_password, $shopify_shared_secret, $shoplazza_access_token, $shoplazza_shared_secret, $miva_access_token, $miva_signature, $shopware_access_key, $shopware_api_key, $shopware_api_secret, $volusion_login, $volusion_password, $walmart_client_id, $walmart_client_secret, $walmart_environment, $walmart_channel_type, $walmart_region, $square_client_id, $square_client_secret, $square_refresh_token, $squarespace_api_key, $squarespace_client_id, $squarespace_client_secret, $squarespace_access_token, $squarespace_refresh_token, $hybris_client_id, $hybris_client_secret, $hybris_username, $hybris_password, $hybris_websites, $lightspeed_api_key, $lightspeed_api_secret, $commercehq_api_key, $commercehq_api_password, $wc_consumer_key, $wc_consumer_secret, $magento_consumer_key, $magento_consumer_secret, $magento_access_token, $magento_token_secret, $prestashop_webservice_key, $wix_app_id, $wix_app_secret_key, $wix_instance_id, $wix_refresh_token, $mercado_libre_app_id, $mercado_libre_app_secret_key, $mercado_libre_refresh_token, $zid_client_id, $zid_client_secret, $zid_access_token, $zid_authorization, $zid_refresh_token, $flipkart_client_id, $flipkart_client_secret, $allegro_client_id, $allegro_client_secret, $allegro_access_token, $allegro_refresh_token, $allegro_environment, $zoho_client_id, $zoho_client_secret, $zoho_refresh_token, $zoho_region, $tiendanube_user_id, $tiendanube_access_token, $tiendanube_client_secret, $otto_client_id, $otto_client_secret, $otto_app_id, $otto_refresh_token, $otto_environment, $otto_access_token, $tiktokshop_app_key, $tiktokshop_app_secret, $tiktokshop_refresh_token, $tiktokshop_access_token, $salla_client_id, $salla_client_secret, $salla_refresh_token, $salla_access_token): \OpenAPI\Client\Model\AccountConfigUpdate200Response
+accountConfigUpdate($replace_parameters, $new_store_url, $new_store_key, $bridge_url, $store_root, $db_tables_prefix, $user_agent, $_3dcart_private_key, $_3dcart_access_token, $_3dcartapi_api_key, $amazon_sp_client_id, $amazon_sp_client_secret, $amazon_sp_refresh_token, $amazon_sp_aws_region, $amazon_sp_api_environment, $amazon_seller_id, $aspdotnetstorefront_api_user, $aspdotnetstorefront_api_pass, $bigcommerceapi_admin_account, $bigcommerceapi_api_path, $bigcommerceapi_api_key, $bigcommerceapi_client_id, $bigcommerceapi_access_token, $bigcommerceapi_context, $bol_api_key, $bol_api_secret, $bol_retailer_id, $demandware_client_id, $demandware_api_password, $demandware_user_name, $demandware_user_password, $ebay_client_id, $ebay_client_secret, $ebay_runame, $ebay_access_token, $ebay_refresh_token, $ebay_environment, $ebay_site_id, $ecwid_acess_token, $ecwid_store_id, $lazada_app_id, $lazada_app_secret, $lazada_refresh_token, $lazada_region, $etsy_keystring, $etsy_shared_secret, $etsy_access_token, $etsy_token_secret, $etsy_client_id, $etsy_refresh_token, $facebook_app_id, $facebook_app_secret, $facebook_access_token, $facebook_business_id, $neto_api_key, $neto_api_username, $shopline_access_token, $shopline_app_key, $shopline_app_secret, $shopline_shared_secret, $shopify_access_token, $shopify_api_key, $shopify_api_password, $shopify_shared_secret, $shoplazza_access_token, $shoplazza_shared_secret, $miva_access_token, $miva_signature, $shopware_access_key, $shopware_api_key, $shopware_api_secret, $volusion_login, $volusion_password, $walmart_client_id, $walmart_client_secret, $walmart_environment, $walmart_channel_type, $walmart_region, $square_client_id, $square_client_secret, $square_refresh_token, $squarespace_api_key, $squarespace_client_id, $squarespace_client_secret, $squarespace_access_token, $squarespace_refresh_token, $hybris_client_id, $hybris_client_secret, $hybris_username, $hybris_password, $hybris_websites, $lightspeed_api_key, $lightspeed_api_secret, $commercehq_api_key, $commercehq_api_password, $wc_consumer_key, $wc_consumer_secret, $magento_consumer_key, $magento_consumer_secret, $magento_access_token, $magento_token_secret, $prestashop_webservice_key, $wix_app_id, $wix_app_secret_key, $wix_instance_id, $wix_refresh_token, $mercado_libre_app_id, $mercado_libre_app_secret_key, $mercado_libre_refresh_token, $zid_client_id, $zid_client_secret, $zid_access_token, $zid_authorization, $zid_refresh_token, $flipkart_client_id, $flipkart_client_secret, $allegro_client_id, $allegro_client_secret, $allegro_access_token, $allegro_refresh_token, $allegro_environment, $zoho_client_id, $zoho_client_secret, $zoho_refresh_token, $zoho_region, $tiendanube_user_id, $tiendanube_access_token, $tiendanube_client_secret, $otto_client_id, $otto_client_secret, $otto_app_id, $otto_refresh_token, $otto_environment, $otto_access_token, $tiktokshop_app_key, $tiktokshop_app_secret, $tiktokshop_refresh_token, $tiktokshop_access_token, $salla_client_id, $salla_client_secret, $salla_refresh_token, $salla_access_token): \OpenAPI\Client\Model\AccountConfigUpdate200Response
 ```
 
 account.config.update
@@ -238,6 +238,7 @@ $neto_api_username = mylogin; // string | Neto User Name
 $shopline_access_token = igse8e4rdmzkxdi937qe69d59en1imw; // string | Shopline APP Key
 $shopline_app_key = 737cf6bd2879cb6c7e5a8ff9cd63f3d46b0b5b7b; // string | Shopline APP Key
 $shopline_app_secret = 1701d123bb5cc14cd2732dcaed90638316c0a09; // string | Shopline App Secret
+$shopline_shared_secret = 1701d123bb5cc14cd2732dcaed90638316c0a09; // string | Shopline Shared Secret
 $shopify_access_token = igse8e4rdmzkxdi937qe69d59en1imw; // string | Access token authorizing the app to access resources on behalf of a user
 $shopify_api_key = bbca57d8ff3c3677128112c15556d9e3; // string | Shopify API Key
 $shopify_api_password = 860f3a6fc87632301a42cd88e4b5ab3d; // string | Shopify API Password
@@ -327,7 +328,7 @@ $salla_refresh_token = oxy_rt_zxxxxiY2xxZWWxxxxlU-tROxxxxx2JzS2fwzxxxxxkU.p3xxxk
 $salla_access_token = oxy_rt_zxxxxiY2xxZWWxxxxlU-tROxxxxx2JzS2fwzxxxxxkU.p3xxxkCIyFexxxxP50WwZYfhw5_wg1xxxxV5F-8xxXc; // string | Salla Access Token
 
 try {
-    $result = $apiInstance->accountConfigUpdate($replace_parameters, $new_store_url, $new_store_key, $bridge_url, $store_root, $db_tables_prefix, $user_agent, $_3dcart_private_key, $_3dcart_access_token, $_3dcartapi_api_key, $amazon_sp_client_id, $amazon_sp_client_secret, $amazon_sp_refresh_token, $amazon_sp_aws_region, $amazon_sp_api_environment, $amazon_seller_id, $aspdotnetstorefront_api_user, $aspdotnetstorefront_api_pass, $bigcommerceapi_admin_account, $bigcommerceapi_api_path, $bigcommerceapi_api_key, $bigcommerceapi_client_id, $bigcommerceapi_access_token, $bigcommerceapi_context, $bol_api_key, $bol_api_secret, $bol_retailer_id, $demandware_client_id, $demandware_api_password, $demandware_user_name, $demandware_user_password, $ebay_client_id, $ebay_client_secret, $ebay_runame, $ebay_access_token, $ebay_refresh_token, $ebay_environment, $ebay_site_id, $ecwid_acess_token, $ecwid_store_id, $lazada_app_id, $lazada_app_secret, $lazada_refresh_token, $lazada_region, $etsy_keystring, $etsy_shared_secret, $etsy_access_token, $etsy_token_secret, $etsy_client_id, $etsy_refresh_token, $facebook_app_id, $facebook_app_secret, $facebook_access_token, $facebook_business_id, $neto_api_key, $neto_api_username, $shopline_access_token, $shopline_app_key, $shopline_app_secret, $shopify_access_token, $shopify_api_key, $shopify_api_password, $shopify_shared_secret, $shoplazza_access_token, $shoplazza_shared_secret, $miva_access_token, $miva_signature, $shopware_access_key, $shopware_api_key, $shopware_api_secret, $volusion_login, $volusion_password, $walmart_client_id, $walmart_client_secret, $walmart_environment, $walmart_channel_type, $walmart_region, $square_client_id, $square_client_secret, $square_refresh_token, $squarespace_api_key, $squarespace_client_id, $squarespace_client_secret, $squarespace_access_token, $squarespace_refresh_token, $hybris_client_id, $hybris_client_secret, $hybris_username, $hybris_password, $hybris_websites, $lightspeed_api_key, $lightspeed_api_secret, $commercehq_api_key, $commercehq_api_password, $wc_consumer_key, $wc_consumer_secret, $magento_consumer_key, $magento_consumer_secret, $magento_access_token, $magento_token_secret, $prestashop_webservice_key, $wix_app_id, $wix_app_secret_key, $wix_instance_id, $wix_refresh_token, $mercado_libre_app_id, $mercado_libre_app_secret_key, $mercado_libre_refresh_token, $zid_client_id, $zid_client_secret, $zid_access_token, $zid_authorization, $zid_refresh_token, $flipkart_client_id, $flipkart_client_secret, $allegro_client_id, $allegro_client_secret, $allegro_access_token, $allegro_refresh_token, $allegro_environment, $zoho_client_id, $zoho_client_secret, $zoho_refresh_token, $zoho_region, $tiendanube_user_id, $tiendanube_access_token, $tiendanube_client_secret, $otto_client_id, $otto_client_secret, $otto_app_id, $otto_refresh_token, $otto_environment, $otto_access_token, $tiktokshop_app_key, $tiktokshop_app_secret, $tiktokshop_refresh_token, $tiktokshop_access_token, $salla_client_id, $salla_client_secret, $salla_refresh_token, $salla_access_token);
+    $result = $apiInstance->accountConfigUpdate($replace_parameters, $new_store_url, $new_store_key, $bridge_url, $store_root, $db_tables_prefix, $user_agent, $_3dcart_private_key, $_3dcart_access_token, $_3dcartapi_api_key, $amazon_sp_client_id, $amazon_sp_client_secret, $amazon_sp_refresh_token, $amazon_sp_aws_region, $amazon_sp_api_environment, $amazon_seller_id, $aspdotnetstorefront_api_user, $aspdotnetstorefront_api_pass, $bigcommerceapi_admin_account, $bigcommerceapi_api_path, $bigcommerceapi_api_key, $bigcommerceapi_client_id, $bigcommerceapi_access_token, $bigcommerceapi_context, $bol_api_key, $bol_api_secret, $bol_retailer_id, $demandware_client_id, $demandware_api_password, $demandware_user_name, $demandware_user_password, $ebay_client_id, $ebay_client_secret, $ebay_runame, $ebay_access_token, $ebay_refresh_token, $ebay_environment, $ebay_site_id, $ecwid_acess_token, $ecwid_store_id, $lazada_app_id, $lazada_app_secret, $lazada_refresh_token, $lazada_region, $etsy_keystring, $etsy_shared_secret, $etsy_access_token, $etsy_token_secret, $etsy_client_id, $etsy_refresh_token, $facebook_app_id, $facebook_app_secret, $facebook_access_token, $facebook_business_id, $neto_api_key, $neto_api_username, $shopline_access_token, $shopline_app_key, $shopline_app_secret, $shopline_shared_secret, $shopify_access_token, $shopify_api_key, $shopify_api_password, $shopify_shared_secret, $shoplazza_access_token, $shoplazza_shared_secret, $miva_access_token, $miva_signature, $shopware_access_key, $shopware_api_key, $shopware_api_secret, $volusion_login, $volusion_password, $walmart_client_id, $walmart_client_secret, $walmart_environment, $walmart_channel_type, $walmart_region, $square_client_id, $square_client_secret, $square_refresh_token, $squarespace_api_key, $squarespace_client_id, $squarespace_client_secret, $squarespace_access_token, $squarespace_refresh_token, $hybris_client_id, $hybris_client_secret, $hybris_username, $hybris_password, $hybris_websites, $lightspeed_api_key, $lightspeed_api_secret, $commercehq_api_key, $commercehq_api_password, $wc_consumer_key, $wc_consumer_secret, $magento_consumer_key, $magento_consumer_secret, $magento_access_token, $magento_token_secret, $prestashop_webservice_key, $wix_app_id, $wix_app_secret_key, $wix_instance_id, $wix_refresh_token, $mercado_libre_app_id, $mercado_libre_app_secret_key, $mercado_libre_refresh_token, $zid_client_id, $zid_client_secret, $zid_access_token, $zid_authorization, $zid_refresh_token, $flipkart_client_id, $flipkart_client_secret, $allegro_client_id, $allegro_client_secret, $allegro_access_token, $allegro_refresh_token, $allegro_environment, $zoho_client_id, $zoho_client_secret, $zoho_refresh_token, $zoho_region, $tiendanube_user_id, $tiendanube_access_token, $tiendanube_client_secret, $otto_client_id, $otto_client_secret, $otto_app_id, $otto_refresh_token, $otto_environment, $otto_access_token, $tiktokshop_app_key, $tiktokshop_app_secret, $tiktokshop_refresh_token, $tiktokshop_access_token, $salla_client_id, $salla_client_secret, $salla_refresh_token, $salla_access_token);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountApi->accountConfigUpdate: ', $e->getMessage(), PHP_EOL;
@@ -397,6 +398,7 @@ try {
 | **shopline_access_token** | **string**| Shopline APP Key | [optional] |
 | **shopline_app_key** | **string**| Shopline APP Key | [optional] |
 | **shopline_app_secret** | **string**| Shopline App Secret | [optional] |
+| **shopline_shared_secret** | **string**| Shopline Shared Secret | [optional] |
 | **shopify_access_token** | **string**| Access token authorizing the app to access resources on behalf of a user | [optional] |
 | **shopify_api_key** | **string**| Shopify API Key | [optional] |
 | **shopify_api_password** | **string**| Shopify API Password | [optional] |
@@ -500,7 +502,7 @@ try {
 ## `accountFailedWebhooks()`
 
 ```php
-accountFailedWebhooks($count, $start, $ids): \OpenAPI\Client\Model\AccountFailedWebhooks200Response
+accountFailedWebhooks($start, $count, $ids): \OpenAPI\Client\Model\AccountFailedWebhooks200Response
 ```
 
 account.failed_webhooks
@@ -526,12 +528,12 @@ $apiInstance = new OpenAPI\Client\Api\AccountApi(
     new GuzzleHttp\Client(),
     $config
 );
-$count = 20; // int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
 $start = 0; // int | This parameter sets the number from which you want to get entities
+$count = 20; // int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
 $ids = 3,14,25; // string | List of сomma-separated webhook ids
 
 try {
-    $result = $apiInstance->accountFailedWebhooks($count, $start, $ids);
+    $result = $apiInstance->accountFailedWebhooks($start, $count, $ids);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountApi->accountFailedWebhooks: ', $e->getMessage(), PHP_EOL;
@@ -542,8 +544,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **count** | **int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
 | **start** | **int**| This parameter sets the number from which you want to get entities | [optional] [default to 0] |
+| **count** | **int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
 | **ids** | **string**| List of сomma-separated webhook ids | [optional] |
 
 ### Return type

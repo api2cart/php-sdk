@@ -99,9 +99,36 @@ class ProductUpdateTest extends TestCase
     }
 
     /**
-     * Test attribute "old_price"
+     * Test attribute "sku"
      */
-    public function testPropertyOldPrice()
+    public function testPropertySku()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "name"
+     */
+    public function testPropertyName()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "description"
+     */
+    public function testPropertyDescription()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "short_description"
+     */
+    public function testPropertyShortDescription()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -111,6 +138,15 @@ class ProductUpdateTest extends TestCase
      * Test attribute "price"
      */
     public function testPropertyPrice()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "old_price"
+     */
+    public function testPropertyOldPrice()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -171,9 +207,117 @@ class ProductUpdateTest extends TestCase
     }
 
     /**
-     * Test attribute "quantity"
+     * Test attribute "tier_prices"
      */
-    public function testPropertyQuantity()
+    public function testPropertyTierPrices()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "reserve_price"
+     */
+    public function testPropertyReservePrice()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "buyitnow_price"
+     */
+    public function testPropertyBuyitnowPrice()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "taxable"
+     */
+    public function testPropertyTaxable()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tax_class_id"
+     */
+    public function testPropertyTaxClassId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "status"
+     */
+    public function testPropertyStatus()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "condition"
+     */
+    public function testPropertyCondition()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "visible"
+     */
+    public function testPropertyVisible()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "in_stock"
+     */
+    public function testPropertyInStock()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "avail"
+     */
+    public function testPropertyAvail()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "avail_from"
+     */
+    public function testPropertyAvailFrom()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "product_class"
+     */
+    public function testPropertyProductClass()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -189,54 +333,36 @@ class ProductUpdateTest extends TestCase
     }
 
     /**
-     * Test attribute "weight"
+     * Test attribute "stores_ids"
      */
-    public function testPropertyWeight()
+    public function testPropertyStoresIds()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "weight_unit"
+     * Test attribute "store_id"
      */
-    public function testPropertyWeightUnit()
+    public function testPropertyStoreId()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "dimensions_unit"
+     * Test attribute "lang_id"
      */
-    public function testPropertyDimensionsUnit()
+    public function testPropertyLangId()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "increase_quantity"
+     * Test attribute "quantity"
      */
-    public function testPropertyIncreaseQuantity()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "reduce_quantity"
-     */
-    public function testPropertyReduceQuantity()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "warehouse_id"
-     */
-    public function testPropertyWarehouseId()
+    public function testPropertyQuantity()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -270,27 +396,153 @@ class ProductUpdateTest extends TestCase
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "increase_quantity"
      */
-    public function testPropertyName()
+    public function testPropertyIncreaseQuantity()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "sku"
+     * Test attribute "reduce_quantity"
      */
-    public function testPropertySku()
+    public function testPropertyReduceQuantity()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "visible"
+     * Test attribute "warehouse_id"
      */
-    public function testPropertyVisible()
+    public function testPropertyWarehouseId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "weight"
+     */
+    public function testPropertyWeight()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "weight_unit"
+     */
+    public function testPropertyWeightUnit()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "height"
+     */
+    public function testPropertyHeight()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "length"
+     */
+    public function testPropertyLength()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "width"
+     */
+    public function testPropertyWidth()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "dimensions_unit"
+     */
+    public function testPropertyDimensionsUnit()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "is_virtual"
+     */
+    public function testPropertyIsVirtual()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "is_free_shipping"
+     */
+    public function testPropertyIsFreeShipping()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "gtin"
+     */
+    public function testPropertyGtin()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "upc"
+     */
+    public function testPropertyUpc()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "mpn"
+     */
+    public function testPropertyMpn()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "ean"
+     */
+    public function testPropertyEan()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "isbn"
+     */
+    public function testPropertyIsbn()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "barcode"
+     */
+    public function testPropertyBarcode()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -351,24 +603,6 @@ class ProductUpdateTest extends TestCase
     }
 
     /**
-     * Test attribute "description"
-     */
-    public function testPropertyDescription()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "short_description"
-     */
-    public function testPropertyShortDescription()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "meta_title"
      */
     public function testPropertyMetaTitle()
@@ -396,198 +630,9 @@ class ProductUpdateTest extends TestCase
     }
 
     /**
-     * Test attribute "store_id"
-     */
-    public function testPropertyStoreId()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "lang_id"
-     */
-    public function testPropertyLangId()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "in_stock"
-     */
-    public function testPropertyInStock()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "status"
-     */
-    public function testPropertyStatus()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "seo_url"
      */
     public function testPropertySeoUrl()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "report_request_id"
-     */
-    public function testPropertyReportRequestId()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "disable_report_cache"
-     */
-    public function testPropertyDisableReportCache()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "reindex"
-     */
-    public function testPropertyReindex()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "tags"
-     */
-    public function testPropertyTags()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "clear_cache"
-     */
-    public function testPropertyClearCache()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "gtin"
-     */
-    public function testPropertyGtin()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "upc"
-     */
-    public function testPropertyUpc()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "mpn"
-     */
-    public function testPropertyMpn()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "ean"
-     */
-    public function testPropertyEan()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "isbn"
-     */
-    public function testPropertyIsbn()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "taxable"
-     */
-    public function testPropertyTaxable()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "product_class"
-     */
-    public function testPropertyProductClass()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "height"
-     */
-    public function testPropertyHeight()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "length"
-     */
-    public function testPropertyLength()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "width"
-     */
-    public function testPropertyWidth()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "harmonized_system_code"
-     */
-    public function testPropertyHarmonizedSystemCode()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "country_of_origin"
-     */
-    public function testPropertyCountryOfOrigin()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -603,81 +648,9 @@ class ProductUpdateTest extends TestCase
     }
 
     /**
-     * Test attribute "barcode"
+     * Test attribute "tags"
      */
-    public function testPropertyBarcode()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "is_virtual"
-     */
-    public function testPropertyIsVirtual()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "is_free_shipping"
-     */
-    public function testPropertyIsFreeShipping()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "reserve_price"
-     */
-    public function testPropertyReservePrice()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "buyitnow_price"
-     */
-    public function testPropertyBuyitnowPrice()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "avail_from"
-     */
-    public function testPropertyAvailFrom()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "tax_class_id"
-     */
-    public function testPropertyTaxClassId()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "avail"
-     */
-    public function testPropertyAvail()
+    public function testPropertyTags()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -693,15 +666,6 @@ class ProductUpdateTest extends TestCase
     }
 
     /**
-     * Test attribute "check_process_status"
-     */
-    public function testPropertyCheckProcessStatus()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "package_details"
      */
     public function testPropertyPackageDetails()
@@ -711,27 +675,18 @@ class ProductUpdateTest extends TestCase
     }
 
     /**
-     * Test attribute "stores_ids"
+     * Test attribute "country_of_origin"
      */
-    public function testPropertyStoresIds()
+    public function testPropertyCountryOfOrigin()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "manufacturer_info"
+     * Test attribute "harmonized_system_code"
      */
-    public function testPropertyManufacturerInfo()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "production_partner_ids"
-     */
-    public function testPropertyProductionPartnerIds()
+    public function testPropertyHarmonizedSystemCode()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -795,6 +750,69 @@ class ProductUpdateTest extends TestCase
      * Test attribute "on_sale"
      */
     public function testPropertyOnSale()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "production_partner_ids"
+     */
+    public function testPropertyProductionPartnerIds()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "manufacturer_info"
+     */
+    public function testPropertyManufacturerInfo()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "report_request_id"
+     */
+    public function testPropertyReportRequestId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "disable_report_cache"
+     */
+    public function testPropertyDisableReportCache()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "reindex"
+     */
+    public function testPropertyReindex()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "clear_cache"
+     */
+    public function testPropertyClearCache()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "check_process_status"
+     */
+    public function testPropertyCheckProcessStatus()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

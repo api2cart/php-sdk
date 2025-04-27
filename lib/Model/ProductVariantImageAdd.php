@@ -60,6 +60,7 @@ class ProductVariantImageAdd implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $openAPITypes = [
         'product_id' => 'string',
         'product_variant_id' => 'string',
+        'store_id' => 'string',
         'image_name' => 'string',
         'type' => 'string',
         'url' => 'string',
@@ -67,7 +68,6 @@ class ProductVariantImageAdd implements ModelInterface, ArrayAccess, \JsonSerial
         'label' => 'string',
         'mime' => 'string',
         'position' => 'int',
-        'store_id' => 'string',
         'option_id' => 'string'
     ];
 
@@ -81,6 +81,7 @@ class ProductVariantImageAdd implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $openAPIFormats = [
         'product_id' => null,
         'product_variant_id' => null,
+        'store_id' => null,
         'image_name' => null,
         'type' => null,
         'url' => null,
@@ -88,7 +89,6 @@ class ProductVariantImageAdd implements ModelInterface, ArrayAccess, \JsonSerial
         'label' => null,
         'mime' => null,
         'position' => null,
-        'store_id' => null,
         'option_id' => null
     ];
 
@@ -100,6 +100,7 @@ class ProductVariantImageAdd implements ModelInterface, ArrayAccess, \JsonSerial
     protected static array $openAPINullables = [
         'product_id' => false,
         'product_variant_id' => false,
+        'store_id' => false,
         'image_name' => false,
         'type' => false,
         'url' => false,
@@ -107,7 +108,6 @@ class ProductVariantImageAdd implements ModelInterface, ArrayAccess, \JsonSerial
         'label' => false,
         'mime' => false,
         'position' => false,
-        'store_id' => false,
         'option_id' => false
     ];
 
@@ -199,6 +199,7 @@ class ProductVariantImageAdd implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $attributeMap = [
         'product_id' => 'product_id',
         'product_variant_id' => 'product_variant_id',
+        'store_id' => 'store_id',
         'image_name' => 'image_name',
         'type' => 'type',
         'url' => 'url',
@@ -206,7 +207,6 @@ class ProductVariantImageAdd implements ModelInterface, ArrayAccess, \JsonSerial
         'label' => 'label',
         'mime' => 'mime',
         'position' => 'position',
-        'store_id' => 'store_id',
         'option_id' => 'option_id'
     ];
 
@@ -218,6 +218,7 @@ class ProductVariantImageAdd implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $setters = [
         'product_id' => 'setProductId',
         'product_variant_id' => 'setProductVariantId',
+        'store_id' => 'setStoreId',
         'image_name' => 'setImageName',
         'type' => 'setType',
         'url' => 'setUrl',
@@ -225,7 +226,6 @@ class ProductVariantImageAdd implements ModelInterface, ArrayAccess, \JsonSerial
         'label' => 'setLabel',
         'mime' => 'setMime',
         'position' => 'setPosition',
-        'store_id' => 'setStoreId',
         'option_id' => 'setOptionId'
     ];
 
@@ -237,6 +237,7 @@ class ProductVariantImageAdd implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $getters = [
         'product_id' => 'getProductId',
         'product_variant_id' => 'getProductVariantId',
+        'store_id' => 'getStoreId',
         'image_name' => 'getImageName',
         'type' => 'getType',
         'url' => 'getUrl',
@@ -244,7 +245,6 @@ class ProductVariantImageAdd implements ModelInterface, ArrayAccess, \JsonSerial
         'label' => 'getLabel',
         'mime' => 'getMime',
         'position' => 'getPosition',
-        'store_id' => 'getStoreId',
         'option_id' => 'getOptionId'
     ];
 
@@ -326,6 +326,7 @@ class ProductVariantImageAdd implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $this->setIfExists('product_id', $data ?? [], null);
         $this->setIfExists('product_variant_id', $data ?? [], null);
+        $this->setIfExists('store_id', $data ?? [], null);
         $this->setIfExists('image_name', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], 'base');
         $this->setIfExists('url', $data ?? [], null);
@@ -333,7 +334,6 @@ class ProductVariantImageAdd implements ModelInterface, ArrayAccess, \JsonSerial
         $this->setIfExists('label', $data ?? [], null);
         $this->setIfExists('mime', $data ?? [], null);
         $this->setIfExists('position', $data ?? [], 0);
-        $this->setIfExists('store_id', $data ?? [], null);
         $this->setIfExists('option_id', $data ?? [], null);
     }
 
@@ -447,6 +447,33 @@ class ProductVariantImageAdd implements ModelInterface, ArrayAccess, \JsonSerial
             throw new \InvalidArgumentException('non-nullable product_variant_id cannot be null');
         }
         $this->container['product_variant_id'] = $product_variant_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets store_id
+     *
+     * @return string|null
+     */
+    public function getStoreId()
+    {
+        return $this->container['store_id'];
+    }
+
+    /**
+     * Sets store_id
+     *
+     * @param string|null $store_id Store Id
+     *
+     * @return self
+     */
+    public function setStoreId($store_id)
+    {
+        if (is_null($store_id)) {
+            throw new \InvalidArgumentException('non-nullable store_id cannot be null');
+        }
+        $this->container['store_id'] = $store_id;
 
         return $this;
     }
@@ -646,33 +673,6 @@ class ProductVariantImageAdd implements ModelInterface, ArrayAccess, \JsonSerial
             throw new \InvalidArgumentException('non-nullable position cannot be null');
         }
         $this->container['position'] = $position;
-
-        return $this;
-    }
-
-    /**
-     * Gets store_id
-     *
-     * @return string|null
-     */
-    public function getStoreId()
-    {
-        return $this->container['store_id'];
-    }
-
-    /**
-     * Sets store_id
-     *
-     * @param string|null $store_id Store Id
-     *
-     * @return self
-     */
-    public function setStoreId($store_id)
-    {
-        if (is_null($store_id)) {
-            throw new \InvalidArgumentException('non-nullable store_id cannot be null');
-        }
-        $this->container['store_id'] = $store_id;
 
         return $this;
     }

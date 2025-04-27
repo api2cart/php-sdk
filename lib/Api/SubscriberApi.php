@@ -130,26 +130,26 @@ class SubscriberApi
      *
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  bool|null $subscribed Filter by subscription status (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $email Filter subscribers by email (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriberList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseSubscriberList
      */
-    public function subscriberList($start = 0, $count = 10, $subscribed = null, $store_id = null, $email = null, $params = 'force_all', $exclude = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $page_cursor = null, $response_fields = null, string $contentType = self::contentTypes['subscriberList'][0])
+    public function subscriberList($start = 0, $count = 10, $page_cursor = null, $subscribed = null, $store_id = null, $email = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['subscriberList'][0])
     {
-        list($response) = $this->subscriberListWithHttpInfo($start, $count, $subscribed, $store_id, $email, $params, $exclude, $created_from, $created_to, $modified_from, $modified_to, $page_cursor, $response_fields, $contentType);
+        list($response) = $this->subscriberListWithHttpInfo($start, $count, $page_cursor, $subscribed, $store_id, $email, $created_from, $created_to, $modified_from, $modified_to, $response_fields, $params, $exclude, $contentType);
         return $response;
     }
 
@@ -160,26 +160,26 @@ class SubscriberApi
      *
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  bool|null $subscribed Filter by subscription status (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $email Filter subscribers by email (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriberList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseSubscriberList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function subscriberListWithHttpInfo($start = 0, $count = 10, $subscribed = null, $store_id = null, $email = null, $params = 'force_all', $exclude = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $page_cursor = null, $response_fields = null, string $contentType = self::contentTypes['subscriberList'][0])
+    public function subscriberListWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $subscribed = null, $store_id = null, $email = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['subscriberList'][0])
     {
-        $request = $this->subscriberListRequest($start, $count, $subscribed, $store_id, $email, $params, $exclude, $created_from, $created_to, $modified_from, $modified_to, $page_cursor, $response_fields, $contentType);
+        $request = $this->subscriberListRequest($start, $count, $page_cursor, $subscribed, $store_id, $email, $created_from, $created_to, $modified_from, $modified_to, $response_fields, $params, $exclude, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -297,25 +297,25 @@ class SubscriberApi
      *
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  bool|null $subscribed Filter by subscription status (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $email Filter subscribers by email (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriberList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function subscriberListAsync($start = 0, $count = 10, $subscribed = null, $store_id = null, $email = null, $params = 'force_all', $exclude = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $page_cursor = null, $response_fields = null, string $contentType = self::contentTypes['subscriberList'][0])
+    public function subscriberListAsync($start = 0, $count = 10, $page_cursor = null, $subscribed = null, $store_id = null, $email = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['subscriberList'][0])
     {
-        return $this->subscriberListAsyncWithHttpInfo($start, $count, $subscribed, $store_id, $email, $params, $exclude, $created_from, $created_to, $modified_from, $modified_to, $page_cursor, $response_fields, $contentType)
+        return $this->subscriberListAsyncWithHttpInfo($start, $count, $page_cursor, $subscribed, $store_id, $email, $created_from, $created_to, $modified_from, $modified_to, $response_fields, $params, $exclude, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -330,26 +330,26 @@ class SubscriberApi
      *
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  bool|null $subscribed Filter by subscription status (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $email Filter subscribers by email (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriberList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function subscriberListAsyncWithHttpInfo($start = 0, $count = 10, $subscribed = null, $store_id = null, $email = null, $params = 'force_all', $exclude = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $page_cursor = null, $response_fields = null, string $contentType = self::contentTypes['subscriberList'][0])
+    public function subscriberListAsyncWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $subscribed = null, $store_id = null, $email = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['subscriberList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseSubscriberList';
-        $request = $this->subscriberListRequest($start, $count, $subscribed, $store_id, $email, $params, $exclude, $created_from, $created_to, $modified_from, $modified_to, $page_cursor, $response_fields, $contentType);
+        $request = $this->subscriberListRequest($start, $count, $page_cursor, $subscribed, $store_id, $email, $created_from, $created_to, $modified_from, $modified_to, $response_fields, $params, $exclude, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -392,23 +392,23 @@ class SubscriberApi
      *
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  bool|null $subscribed Filter by subscription status (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $email Filter subscribers by email (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['subscriberList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function subscriberListRequest($start = 0, $count = 10, $subscribed = null, $store_id = null, $email = null, $params = 'force_all', $exclude = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $page_cursor = null, $response_fields = null, string $contentType = self::contentTypes['subscriberList'][0])
+    public function subscriberListRequest($start = 0, $count = 10, $page_cursor = null, $subscribed = null, $store_id = null, $email = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['subscriberList'][0])
     {
 
 
@@ -452,6 +452,15 @@ class SubscriberApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_cursor,
+            'page_cursor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $subscribed,
             'subscribed', // param base name
             'boolean', // openApiType
@@ -472,24 +481,6 @@ class SubscriberApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $email,
             'email', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $params,
-            'params', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $exclude,
-            'exclude', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -533,8 +524,8 @@ class SubscriberApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $page_cursor,
-            'page_cursor', // param base name
+            $response_fields,
+            'response_fields', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -542,8 +533,17 @@ class SubscriberApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $response_fields,
-            'response_fields', // param base name
+            $params,
+            'params', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $exclude,
+            'exclude', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

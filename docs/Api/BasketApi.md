@@ -14,7 +14,7 @@ All URIs are relative to https://api.api2cart.com/v1.1, except if the operation 
 ## `basketInfo()`
 
 ```php
-basketInfo($id, $store_id, $params, $exclude, $response_fields): \OpenAPI\Client\Model\BasketInfo200Response
+basketInfo($id, $store_id, $response_fields, $params, $exclude): \OpenAPI\Client\Model\BasketInfo200Response
 ```
 
 basket.info
@@ -47,12 +47,12 @@ $apiInstance = new OpenAPI\Client\Api\BasketApi(
 );
 $id = 10; // string | Entity id
 $store_id = 1; // string | Store Id
+$response_fields = {result}; // string | Set this parameter in order to choose which entity fields you want to retrieve
 $params = id,model,price,images; // string | Set this parameter in order to choose which entity fields you want to retrieve
 $exclude = false; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-$response_fields = {result}; // string | Set this parameter in order to choose which entity fields you want to retrieve
 
 try {
-    $result = $apiInstance->basketInfo($id, $store_id, $params, $exclude, $response_fields);
+    $result = $apiInstance->basketInfo($id, $store_id, $response_fields, $params, $exclude);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BasketApi->basketInfo: ', $e->getMessage(), PHP_EOL;
@@ -65,9 +65,9 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| Entity id | |
 | **store_id** | **string**| Store Id | [optional] |
+| **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 | **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;force_all&#39;] |
 | **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
-| **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 
 ### Return type
 
@@ -302,7 +302,7 @@ try {
 ## `basketLiveShippingServiceList()`
 
 ```php
-basketLiveShippingServiceList($store_id, $start, $count): \OpenAPI\Client\Model\BasketLiveShippingServiceList200Response
+basketLiveShippingServiceList($start, $count, $store_id): \OpenAPI\Client\Model\BasketLiveShippingServiceList200Response
 ```
 
 basket.live_shipping_service.list
@@ -333,12 +333,12 @@ $apiInstance = new OpenAPI\Client\Api\BasketApi(
     new GuzzleHttp\Client(),
     $config
 );
-$store_id = 1; // string | Store Id
 $start = 0; // int | This parameter sets the number from which you want to get entities
 $count = 20; // int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+$store_id = 1; // string | Store Id
 
 try {
-    $result = $apiInstance->basketLiveShippingServiceList($store_id, $start, $count);
+    $result = $apiInstance->basketLiveShippingServiceList($start, $count, $store_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BasketApi->basketLiveShippingServiceList: ', $e->getMessage(), PHP_EOL;
@@ -349,9 +349,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **store_id** | **string**| Store Id | [optional] |
 | **start** | **int**| This parameter sets the number from which you want to get entities | [optional] [default to 0] |
 | **count** | **int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
+| **store_id** | **string**| Store Id | [optional] |
 
 ### Return type
 

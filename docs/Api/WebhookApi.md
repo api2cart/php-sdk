@@ -296,7 +296,7 @@ This endpoint does not need any parameter.
 ## `webhookList()`
 
 ```php
-webhookList($params, $start, $count, $entity, $action, $active, $ids): \OpenAPI\Client\Model\WebhookList200Response
+webhookList($start, $count, $entity, $action, $active, $ids, $params): \OpenAPI\Client\Model\WebhookList200Response
 ```
 
 webhook.list
@@ -327,16 +327,16 @@ $apiInstance = new OpenAPI\Client\Api\WebhookApi(
     new GuzzleHttp\Client(),
     $config
 );
-$params = id,entity,callback,fields; // string | Set this parameter in order to choose which entity fields you want to retrieve
 $start = 0; // int | This parameter sets the number from which you want to get entities
 $count = 20; // int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
 $entity = product; // string | The entity you want to filter webhooks by (e.g. order or product)
 $action = add; // string | The action you want to filter webhooks by (e.g. add, update, or delete)
 $active = true; // bool | The webhook status you want to filter webhooks by
 $ids = 3,14,25; // string | List of сomma-separated webhook ids
+$params = id,entity,callback,fields; // string | Set this parameter in order to choose which entity fields you want to retrieve
 
 try {
-    $result = $apiInstance->webhookList($params, $start, $count, $entity, $action, $active, $ids);
+    $result = $apiInstance->webhookList($start, $count, $entity, $action, $active, $ids, $params);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhookApi->webhookList: ', $e->getMessage(), PHP_EOL;
@@ -347,13 +347,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,entity,action,callback&#39;] |
 | **start** | **int**| This parameter sets the number from which you want to get entities | [optional] [default to 0] |
 | **count** | **int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
 | **entity** | **string**| The entity you want to filter webhooks by (e.g. order or product) | [optional] |
 | **action** | **string**| The action you want to filter webhooks by (e.g. add, update, or delete) | [optional] |
 | **active** | **bool**| The webhook status you want to filter webhooks by | [optional] |
 | **ids** | **string**| List of сomma-separated webhook ids | [optional] |
+| **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,entity,action,callback&#39;] |
 
 ### Return type
 

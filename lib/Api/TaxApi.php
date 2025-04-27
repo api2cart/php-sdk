@@ -134,8 +134,8 @@ class TaxApi
      * @param  string $tax_class_id Retrieves taxes specified by class id (required)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'tax_class_id,name,avail')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'tax_class_id,name,avail')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['taxClassInfo'] to see the possible values for this operation
      *
@@ -143,9 +143,9 @@ class TaxApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseTaxClassInfo
      */
-    public function taxClassInfo($tax_class_id, $store_id = null, $lang_id = null, $params = 'tax_class_id,name,avail', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['taxClassInfo'][0])
+    public function taxClassInfo($tax_class_id, $store_id = null, $lang_id = null, $response_fields = null, $params = 'tax_class_id,name,avail', $exclude = null, string $contentType = self::contentTypes['taxClassInfo'][0])
     {
-        list($response) = $this->taxClassInfoWithHttpInfo($tax_class_id, $store_id, $lang_id, $params, $response_fields, $exclude, $contentType);
+        list($response) = $this->taxClassInfoWithHttpInfo($tax_class_id, $store_id, $lang_id, $response_fields, $params, $exclude, $contentType);
         return $response;
     }
 
@@ -157,8 +157,8 @@ class TaxApi
      * @param  string $tax_class_id Retrieves taxes specified by class id (required)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'tax_class_id,name,avail')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'tax_class_id,name,avail')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['taxClassInfo'] to see the possible values for this operation
      *
@@ -166,9 +166,9 @@ class TaxApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseTaxClassInfo, HTTP status code, HTTP response headers (array of strings)
      */
-    public function taxClassInfoWithHttpInfo($tax_class_id, $store_id = null, $lang_id = null, $params = 'tax_class_id,name,avail', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['taxClassInfo'][0])
+    public function taxClassInfoWithHttpInfo($tax_class_id, $store_id = null, $lang_id = null, $response_fields = null, $params = 'tax_class_id,name,avail', $exclude = null, string $contentType = self::contentTypes['taxClassInfo'][0])
     {
-        $request = $this->taxClassInfoRequest($tax_class_id, $store_id, $lang_id, $params, $response_fields, $exclude, $contentType);
+        $request = $this->taxClassInfoRequest($tax_class_id, $store_id, $lang_id, $response_fields, $params, $exclude, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -287,17 +287,17 @@ class TaxApi
      * @param  string $tax_class_id Retrieves taxes specified by class id (required)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'tax_class_id,name,avail')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'tax_class_id,name,avail')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['taxClassInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function taxClassInfoAsync($tax_class_id, $store_id = null, $lang_id = null, $params = 'tax_class_id,name,avail', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['taxClassInfo'][0])
+    public function taxClassInfoAsync($tax_class_id, $store_id = null, $lang_id = null, $response_fields = null, $params = 'tax_class_id,name,avail', $exclude = null, string $contentType = self::contentTypes['taxClassInfo'][0])
     {
-        return $this->taxClassInfoAsyncWithHttpInfo($tax_class_id, $store_id, $lang_id, $params, $response_fields, $exclude, $contentType)
+        return $this->taxClassInfoAsyncWithHttpInfo($tax_class_id, $store_id, $lang_id, $response_fields, $params, $exclude, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -313,18 +313,18 @@ class TaxApi
      * @param  string $tax_class_id Retrieves taxes specified by class id (required)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'tax_class_id,name,avail')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'tax_class_id,name,avail')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['taxClassInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function taxClassInfoAsyncWithHttpInfo($tax_class_id, $store_id = null, $lang_id = null, $params = 'tax_class_id,name,avail', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['taxClassInfo'][0])
+    public function taxClassInfoAsyncWithHttpInfo($tax_class_id, $store_id = null, $lang_id = null, $response_fields = null, $params = 'tax_class_id,name,avail', $exclude = null, string $contentType = self::contentTypes['taxClassInfo'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseTaxClassInfo';
-        $request = $this->taxClassInfoRequest($tax_class_id, $store_id, $lang_id, $params, $response_fields, $exclude, $contentType);
+        $request = $this->taxClassInfoRequest($tax_class_id, $store_id, $lang_id, $response_fields, $params, $exclude, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -368,15 +368,15 @@ class TaxApi
      * @param  string $tax_class_id Retrieves taxes specified by class id (required)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'tax_class_id,name,avail')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'tax_class_id,name,avail')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['taxClassInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function taxClassInfoRequest($tax_class_id, $store_id = null, $lang_id = null, $params = 'tax_class_id,name,avail', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['taxClassInfo'][0])
+    public function taxClassInfoRequest($tax_class_id, $store_id = null, $lang_id = null, $response_fields = null, $params = 'tax_class_id,name,avail', $exclude = null, string $contentType = self::contentTypes['taxClassInfo'][0])
     {
 
         // verify the required parameter 'tax_class_id' is set
@@ -428,8 +428,8 @@ class TaxApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $params,
-            'params', // param base name
+            $response_fields,
+            'response_fields', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -437,8 +437,8 @@ class TaxApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $response_fields,
-            'response_fields', // param base name
+            $params,
+            'params', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -525,15 +525,15 @@ class TaxApi
      *
      * tax.class.list
      *
+     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $find_value Entity search that is specified by some value (optional)
+     * @param  string|null $find_where Tax class search that is specified by field (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
-     * @param  string|null $find_value Entity search that is specified by some value (optional)
-     * @param  string|null $find_where Tax class search that is specified by field (optional)
-     * @param  string|null $store_id Store Id (optional)
-     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional, default to '{return_code,return_message,pagination,result}')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['taxClassList'] to see the possible values for this operation
      *
@@ -541,9 +541,9 @@ class TaxApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseTaxClassList
      */
-    public function taxClassList($created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $find_value = null, $find_where = null, $store_id = null, $count = 10, $page_cursor = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['taxClassList'][0])
+    public function taxClassList($count = 10, $page_cursor = null, $store_id = null, $find_value = null, $find_where = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['taxClassList'][0])
     {
-        list($response) = $this->taxClassListWithHttpInfo($created_to, $created_from, $modified_to, $modified_from, $find_value, $find_where, $store_id, $count, $page_cursor, $response_fields, $contentType);
+        list($response) = $this->taxClassListWithHttpInfo($count, $page_cursor, $store_id, $find_value, $find_where, $created_to, $created_from, $modified_to, $modified_from, $response_fields, $contentType);
         return $response;
     }
 
@@ -552,15 +552,15 @@ class TaxApi
      *
      * tax.class.list
      *
+     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $find_value Entity search that is specified by some value (optional)
+     * @param  string|null $find_where Tax class search that is specified by field (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
-     * @param  string|null $find_value Entity search that is specified by some value (optional)
-     * @param  string|null $find_where Tax class search that is specified by field (optional)
-     * @param  string|null $store_id Store Id (optional)
-     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional, default to '{return_code,return_message,pagination,result}')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['taxClassList'] to see the possible values for this operation
      *
@@ -568,9 +568,9 @@ class TaxApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseTaxClassList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function taxClassListWithHttpInfo($created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $find_value = null, $find_where = null, $store_id = null, $count = 10, $page_cursor = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['taxClassList'][0])
+    public function taxClassListWithHttpInfo($count = 10, $page_cursor = null, $store_id = null, $find_value = null, $find_where = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['taxClassList'][0])
     {
-        $request = $this->taxClassListRequest($created_to, $created_from, $modified_to, $modified_from, $find_value, $find_where, $store_id, $count, $page_cursor, $response_fields, $contentType);
+        $request = $this->taxClassListRequest($count, $page_cursor, $store_id, $find_value, $find_where, $created_to, $created_from, $modified_to, $modified_from, $response_fields, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -686,24 +686,24 @@ class TaxApi
      *
      * tax.class.list
      *
+     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $find_value Entity search that is specified by some value (optional)
+     * @param  string|null $find_where Tax class search that is specified by field (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
-     * @param  string|null $find_value Entity search that is specified by some value (optional)
-     * @param  string|null $find_where Tax class search that is specified by field (optional)
-     * @param  string|null $store_id Store Id (optional)
-     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional, default to '{return_code,return_message,pagination,result}')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['taxClassList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function taxClassListAsync($created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $find_value = null, $find_where = null, $store_id = null, $count = 10, $page_cursor = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['taxClassList'][0])
+    public function taxClassListAsync($count = 10, $page_cursor = null, $store_id = null, $find_value = null, $find_where = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['taxClassList'][0])
     {
-        return $this->taxClassListAsyncWithHttpInfo($created_to, $created_from, $modified_to, $modified_from, $find_value, $find_where, $store_id, $count, $page_cursor, $response_fields, $contentType)
+        return $this->taxClassListAsyncWithHttpInfo($count, $page_cursor, $store_id, $find_value, $find_where, $created_to, $created_from, $modified_to, $modified_from, $response_fields, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -716,25 +716,25 @@ class TaxApi
      *
      * tax.class.list
      *
+     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $find_value Entity search that is specified by some value (optional)
+     * @param  string|null $find_where Tax class search that is specified by field (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
-     * @param  string|null $find_value Entity search that is specified by some value (optional)
-     * @param  string|null $find_where Tax class search that is specified by field (optional)
-     * @param  string|null $store_id Store Id (optional)
-     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional, default to '{return_code,return_message,pagination,result}')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['taxClassList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function taxClassListAsyncWithHttpInfo($created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $find_value = null, $find_where = null, $store_id = null, $count = 10, $page_cursor = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['taxClassList'][0])
+    public function taxClassListAsyncWithHttpInfo($count = 10, $page_cursor = null, $store_id = null, $find_value = null, $find_where = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['taxClassList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseTaxClassList';
-        $request = $this->taxClassListRequest($created_to, $created_from, $modified_to, $modified_from, $find_value, $find_where, $store_id, $count, $page_cursor, $response_fields, $contentType);
+        $request = $this->taxClassListRequest($count, $page_cursor, $store_id, $find_value, $find_where, $created_to, $created_from, $modified_to, $modified_from, $response_fields, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -775,22 +775,22 @@ class TaxApi
     /**
      * Create request for operation 'taxClassList'
      *
+     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $find_value Entity search that is specified by some value (optional)
+     * @param  string|null $find_where Tax class search that is specified by field (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
-     * @param  string|null $find_value Entity search that is specified by some value (optional)
-     * @param  string|null $find_where Tax class search that is specified by field (optional)
-     * @param  string|null $store_id Store Id (optional)
-     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional, default to '{return_code,return_message,pagination,result}')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['taxClassList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function taxClassListRequest($created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $find_value = null, $find_where = null, $store_id = null, $count = 10, $page_cursor = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['taxClassList'][0])
+    public function taxClassListRequest($count = 10, $page_cursor = null, $store_id = null, $find_value = null, $find_where = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['taxClassList'][0])
     {
 
 
@@ -811,6 +811,51 @@ class TaxApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $count,
+            'count', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_cursor,
+            'page_cursor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $store_id,
+            'store_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $find_value,
+            'find_value', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $find_where,
+            'find_where', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $created_to,
@@ -842,51 +887,6 @@ class TaxApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $modified_from,
             'modified_from', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $find_value,
-            'find_value', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $find_where,
-            'find_where', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $store_id,
-            'store_id', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $count,
-            'count', // param base name
-            'integer', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $page_cursor,
-            'page_cursor', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

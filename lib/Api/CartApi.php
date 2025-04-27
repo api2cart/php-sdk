@@ -811,12 +811,12 @@ class CartApi
      *
      * cart.catalog_price_rules.list
      *
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $ids Retrieves  catalog_price_rules by ids (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartCatalogPriceRulesList'] to see the possible values for this operation
      *
@@ -824,9 +824,9 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseCartCatalogPriceRulesList
      */
-    public function cartCatalogPriceRulesList($page_cursor = null, $start = 0, $count = 10, $ids = null, $params = 'id,name,description', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['cartCatalogPriceRulesList'][0])
+    public function cartCatalogPriceRulesList($start = 0, $count = 10, $page_cursor = null, $ids = null, $response_fields = null, $params = 'id,name,description', $exclude = null, string $contentType = self::contentTypes['cartCatalogPriceRulesList'][0])
     {
-        list($response) = $this->cartCatalogPriceRulesListWithHttpInfo($page_cursor, $start, $count, $ids, $params, $response_fields, $exclude, $contentType);
+        list($response) = $this->cartCatalogPriceRulesListWithHttpInfo($start, $count, $page_cursor, $ids, $response_fields, $params, $exclude, $contentType);
         return $response;
     }
 
@@ -835,12 +835,12 @@ class CartApi
      *
      * cart.catalog_price_rules.list
      *
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $ids Retrieves  catalog_price_rules by ids (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartCatalogPriceRulesList'] to see the possible values for this operation
      *
@@ -848,9 +848,9 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseCartCatalogPriceRulesList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cartCatalogPriceRulesListWithHttpInfo($page_cursor = null, $start = 0, $count = 10, $ids = null, $params = 'id,name,description', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['cartCatalogPriceRulesList'][0])
+    public function cartCatalogPriceRulesListWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $ids = null, $response_fields = null, $params = 'id,name,description', $exclude = null, string $contentType = self::contentTypes['cartCatalogPriceRulesList'][0])
     {
-        $request = $this->cartCatalogPriceRulesListRequest($page_cursor, $start, $count, $ids, $params, $response_fields, $exclude, $contentType);
+        $request = $this->cartCatalogPriceRulesListRequest($start, $count, $page_cursor, $ids, $response_fields, $params, $exclude, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -966,21 +966,21 @@ class CartApi
      *
      * cart.catalog_price_rules.list
      *
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $ids Retrieves  catalog_price_rules by ids (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartCatalogPriceRulesList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartCatalogPriceRulesListAsync($page_cursor = null, $start = 0, $count = 10, $ids = null, $params = 'id,name,description', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['cartCatalogPriceRulesList'][0])
+    public function cartCatalogPriceRulesListAsync($start = 0, $count = 10, $page_cursor = null, $ids = null, $response_fields = null, $params = 'id,name,description', $exclude = null, string $contentType = self::contentTypes['cartCatalogPriceRulesList'][0])
     {
-        return $this->cartCatalogPriceRulesListAsyncWithHttpInfo($page_cursor, $start, $count, $ids, $params, $response_fields, $exclude, $contentType)
+        return $this->cartCatalogPriceRulesListAsyncWithHttpInfo($start, $count, $page_cursor, $ids, $response_fields, $params, $exclude, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -993,22 +993,22 @@ class CartApi
      *
      * cart.catalog_price_rules.list
      *
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $ids Retrieves  catalog_price_rules by ids (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartCatalogPriceRulesList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartCatalogPriceRulesListAsyncWithHttpInfo($page_cursor = null, $start = 0, $count = 10, $ids = null, $params = 'id,name,description', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['cartCatalogPriceRulesList'][0])
+    public function cartCatalogPriceRulesListAsyncWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $ids = null, $response_fields = null, $params = 'id,name,description', $exclude = null, string $contentType = self::contentTypes['cartCatalogPriceRulesList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseCartCatalogPriceRulesList';
-        $request = $this->cartCatalogPriceRulesListRequest($page_cursor, $start, $count, $ids, $params, $response_fields, $exclude, $contentType);
+        $request = $this->cartCatalogPriceRulesListRequest($start, $count, $page_cursor, $ids, $response_fields, $params, $exclude, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1049,19 +1049,19 @@ class CartApi
     /**
      * Create request for operation 'cartCatalogPriceRulesList'
      *
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $ids Retrieves  catalog_price_rules by ids (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartCatalogPriceRulesList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function cartCatalogPriceRulesListRequest($page_cursor = null, $start = 0, $count = 10, $ids = null, $params = 'id,name,description', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['cartCatalogPriceRulesList'][0])
+    public function cartCatalogPriceRulesListRequest($start = 0, $count = 10, $page_cursor = null, $ids = null, $response_fields = null, $params = 'id,name,description', $exclude = null, string $contentType = self::contentTypes['cartCatalogPriceRulesList'][0])
     {
 
 
@@ -1079,15 +1079,6 @@ class CartApi
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $page_cursor,
-            'page_cursor', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $start,
@@ -1108,6 +1099,15 @@ class CartApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_cursor,
+            'page_cursor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $ids,
             'ids', // param base name
             'string', // openApiType
@@ -1117,8 +1117,8 @@ class CartApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $params,
-            'params', // param base name
+            $response_fields,
+            'response_fields', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -1126,8 +1126,8 @@ class CartApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $response_fields,
-            'response_fields', // param base name
+            $params,
+            'params', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -2515,19 +2515,19 @@ class CartApi
      * @param  string $key Defines condition entity attribute key (required)
      * @param  string $operator Defines condition operator (required)
      * @param  string $value Defines condition value, can be comma separated according to the operator. (required)
-     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $target Defines condition operator (optional, default to 'coupon_prerequisite')
      * @param  bool|null $include_tax Indicates whether to apply a discount for taxes. (optional, default to false)
      * @param  bool|null $include_shipping Indicates whether to apply a discount for shipping. (optional, default to false)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartCouponConditionAdd'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\BasketLiveShippingServiceDelete200Response
      */
-    public function cartCouponConditionAdd($coupon_id, $entity, $key, $operator, $value, $store_id = null, $target = 'coupon_prerequisite', $include_tax = false, $include_shipping = false, string $contentType = self::contentTypes['cartCouponConditionAdd'][0])
+    public function cartCouponConditionAdd($coupon_id, $entity, $key, $operator, $value, $target = 'coupon_prerequisite', $include_tax = false, $include_shipping = false, $store_id = null, string $contentType = self::contentTypes['cartCouponConditionAdd'][0])
     {
-        list($response) = $this->cartCouponConditionAddWithHttpInfo($coupon_id, $entity, $key, $operator, $value, $store_id, $target, $include_tax, $include_shipping, $contentType);
+        list($response) = $this->cartCouponConditionAddWithHttpInfo($coupon_id, $entity, $key, $operator, $value, $target, $include_tax, $include_shipping, $store_id, $contentType);
         return $response;
     }
 
@@ -2541,19 +2541,19 @@ class CartApi
      * @param  string $key Defines condition entity attribute key (required)
      * @param  string $operator Defines condition operator (required)
      * @param  string $value Defines condition value, can be comma separated according to the operator. (required)
-     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $target Defines condition operator (optional, default to 'coupon_prerequisite')
      * @param  bool|null $include_tax Indicates whether to apply a discount for taxes. (optional, default to false)
      * @param  bool|null $include_shipping Indicates whether to apply a discount for shipping. (optional, default to false)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartCouponConditionAdd'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\BasketLiveShippingServiceDelete200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cartCouponConditionAddWithHttpInfo($coupon_id, $entity, $key, $operator, $value, $store_id = null, $target = 'coupon_prerequisite', $include_tax = false, $include_shipping = false, string $contentType = self::contentTypes['cartCouponConditionAdd'][0])
+    public function cartCouponConditionAddWithHttpInfo($coupon_id, $entity, $key, $operator, $value, $target = 'coupon_prerequisite', $include_tax = false, $include_shipping = false, $store_id = null, string $contentType = self::contentTypes['cartCouponConditionAdd'][0])
     {
-        $request = $this->cartCouponConditionAddRequest($coupon_id, $entity, $key, $operator, $value, $store_id, $target, $include_tax, $include_shipping, $contentType);
+        $request = $this->cartCouponConditionAddRequest($coupon_id, $entity, $key, $operator, $value, $target, $include_tax, $include_shipping, $store_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2674,18 +2674,18 @@ class CartApi
      * @param  string $key Defines condition entity attribute key (required)
      * @param  string $operator Defines condition operator (required)
      * @param  string $value Defines condition value, can be comma separated according to the operator. (required)
-     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $target Defines condition operator (optional, default to 'coupon_prerequisite')
      * @param  bool|null $include_tax Indicates whether to apply a discount for taxes. (optional, default to false)
      * @param  bool|null $include_shipping Indicates whether to apply a discount for shipping. (optional, default to false)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartCouponConditionAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartCouponConditionAddAsync($coupon_id, $entity, $key, $operator, $value, $store_id = null, $target = 'coupon_prerequisite', $include_tax = false, $include_shipping = false, string $contentType = self::contentTypes['cartCouponConditionAdd'][0])
+    public function cartCouponConditionAddAsync($coupon_id, $entity, $key, $operator, $value, $target = 'coupon_prerequisite', $include_tax = false, $include_shipping = false, $store_id = null, string $contentType = self::contentTypes['cartCouponConditionAdd'][0])
     {
-        return $this->cartCouponConditionAddAsyncWithHttpInfo($coupon_id, $entity, $key, $operator, $value, $store_id, $target, $include_tax, $include_shipping, $contentType)
+        return $this->cartCouponConditionAddAsyncWithHttpInfo($coupon_id, $entity, $key, $operator, $value, $target, $include_tax, $include_shipping, $store_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2703,19 +2703,19 @@ class CartApi
      * @param  string $key Defines condition entity attribute key (required)
      * @param  string $operator Defines condition operator (required)
      * @param  string $value Defines condition value, can be comma separated according to the operator. (required)
-     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $target Defines condition operator (optional, default to 'coupon_prerequisite')
      * @param  bool|null $include_tax Indicates whether to apply a discount for taxes. (optional, default to false)
      * @param  bool|null $include_shipping Indicates whether to apply a discount for shipping. (optional, default to false)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartCouponConditionAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartCouponConditionAddAsyncWithHttpInfo($coupon_id, $entity, $key, $operator, $value, $store_id = null, $target = 'coupon_prerequisite', $include_tax = false, $include_shipping = false, string $contentType = self::contentTypes['cartCouponConditionAdd'][0])
+    public function cartCouponConditionAddAsyncWithHttpInfo($coupon_id, $entity, $key, $operator, $value, $target = 'coupon_prerequisite', $include_tax = false, $include_shipping = false, $store_id = null, string $contentType = self::contentTypes['cartCouponConditionAdd'][0])
     {
         $returnType = '\OpenAPI\Client\Model\BasketLiveShippingServiceDelete200Response';
-        $request = $this->cartCouponConditionAddRequest($coupon_id, $entity, $key, $operator, $value, $store_id, $target, $include_tax, $include_shipping, $contentType);
+        $request = $this->cartCouponConditionAddRequest($coupon_id, $entity, $key, $operator, $value, $target, $include_tax, $include_shipping, $store_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2761,16 +2761,16 @@ class CartApi
      * @param  string $key Defines condition entity attribute key (required)
      * @param  string $operator Defines condition operator (required)
      * @param  string $value Defines condition value, can be comma separated according to the operator. (required)
-     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $target Defines condition operator (optional, default to 'coupon_prerequisite')
      * @param  bool|null $include_tax Indicates whether to apply a discount for taxes. (optional, default to false)
      * @param  bool|null $include_shipping Indicates whether to apply a discount for shipping. (optional, default to false)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartCouponConditionAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function cartCouponConditionAddRequest($coupon_id, $entity, $key, $operator, $value, $store_id = null, $target = 'coupon_prerequisite', $include_tax = false, $include_shipping = false, string $contentType = self::contentTypes['cartCouponConditionAdd'][0])
+    public function cartCouponConditionAddRequest($coupon_id, $entity, $key, $operator, $value, $target = 'coupon_prerequisite', $include_tax = false, $include_shipping = false, $store_id = null, string $contentType = self::contentTypes['cartCouponConditionAdd'][0])
     {
 
         // verify the required parameter 'coupon_id' is set
@@ -2822,30 +2822,12 @@ class CartApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $store_id,
-            'store_id', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $coupon_id,
             'coupon_id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
             true // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $target,
-            'target', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
@@ -2885,6 +2867,15 @@ class CartApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $target,
+            'target', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $include_tax,
             'include_tax', // param base name
             'boolean', // openApiType
@@ -2897,6 +2888,15 @@ class CartApi
             $include_shipping,
             'include_shipping', // param base name
             'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $store_id,
+            'store_id', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -2974,20 +2974,20 @@ class CartApi
      * cart.coupon.count
      *
      * @param  string|null $store_id Store Id (optional)
+     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
      * @param  string|null $date_start_from Filter entity by date_start (greater or equal) (optional)
      * @param  string|null $date_start_to Filter entity by date_start (less or equal) (optional)
      * @param  string|null $date_end_from Filter entity by date_end (greater or equal) (optional)
      * @param  string|null $date_end_to Filter entity by date_end (less or equal) (optional)
-     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartCouponCount'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CartCouponCount200Response
      */
-    public function cartCouponCount($store_id = null, $date_start_from = null, $date_start_to = null, $date_end_from = null, $date_end_to = null, $avail = true, string $contentType = self::contentTypes['cartCouponCount'][0])
+    public function cartCouponCount($store_id = null, $avail = true, $date_start_from = null, $date_start_to = null, $date_end_from = null, $date_end_to = null, string $contentType = self::contentTypes['cartCouponCount'][0])
     {
-        list($response) = $this->cartCouponCountWithHttpInfo($store_id, $date_start_from, $date_start_to, $date_end_from, $date_end_to, $avail, $contentType);
+        list($response) = $this->cartCouponCountWithHttpInfo($store_id, $avail, $date_start_from, $date_start_to, $date_end_from, $date_end_to, $contentType);
         return $response;
     }
 
@@ -2997,20 +2997,20 @@ class CartApi
      * cart.coupon.count
      *
      * @param  string|null $store_id Store Id (optional)
+     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
      * @param  string|null $date_start_from Filter entity by date_start (greater or equal) (optional)
      * @param  string|null $date_start_to Filter entity by date_start (less or equal) (optional)
      * @param  string|null $date_end_from Filter entity by date_end (greater or equal) (optional)
      * @param  string|null $date_end_to Filter entity by date_end (less or equal) (optional)
-     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartCouponCount'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CartCouponCount200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cartCouponCountWithHttpInfo($store_id = null, $date_start_from = null, $date_start_to = null, $date_end_from = null, $date_end_to = null, $avail = true, string $contentType = self::contentTypes['cartCouponCount'][0])
+    public function cartCouponCountWithHttpInfo($store_id = null, $avail = true, $date_start_from = null, $date_start_to = null, $date_end_from = null, $date_end_to = null, string $contentType = self::contentTypes['cartCouponCount'][0])
     {
-        $request = $this->cartCouponCountRequest($store_id, $date_start_from, $date_start_to, $date_end_from, $date_end_to, $avail, $contentType);
+        $request = $this->cartCouponCountRequest($store_id, $avail, $date_start_from, $date_start_to, $date_end_from, $date_end_to, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3127,19 +3127,19 @@ class CartApi
      * cart.coupon.count
      *
      * @param  string|null $store_id Store Id (optional)
+     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
      * @param  string|null $date_start_from Filter entity by date_start (greater or equal) (optional)
      * @param  string|null $date_start_to Filter entity by date_start (less or equal) (optional)
      * @param  string|null $date_end_from Filter entity by date_end (greater or equal) (optional)
      * @param  string|null $date_end_to Filter entity by date_end (less or equal) (optional)
-     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartCouponCount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartCouponCountAsync($store_id = null, $date_start_from = null, $date_start_to = null, $date_end_from = null, $date_end_to = null, $avail = true, string $contentType = self::contentTypes['cartCouponCount'][0])
+    public function cartCouponCountAsync($store_id = null, $avail = true, $date_start_from = null, $date_start_to = null, $date_end_from = null, $date_end_to = null, string $contentType = self::contentTypes['cartCouponCount'][0])
     {
-        return $this->cartCouponCountAsyncWithHttpInfo($store_id, $date_start_from, $date_start_to, $date_end_from, $date_end_to, $avail, $contentType)
+        return $this->cartCouponCountAsyncWithHttpInfo($store_id, $avail, $date_start_from, $date_start_to, $date_end_from, $date_end_to, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3153,20 +3153,20 @@ class CartApi
      * cart.coupon.count
      *
      * @param  string|null $store_id Store Id (optional)
+     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
      * @param  string|null $date_start_from Filter entity by date_start (greater or equal) (optional)
      * @param  string|null $date_start_to Filter entity by date_start (less or equal) (optional)
      * @param  string|null $date_end_from Filter entity by date_end (greater or equal) (optional)
      * @param  string|null $date_end_to Filter entity by date_end (less or equal) (optional)
-     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartCouponCount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartCouponCountAsyncWithHttpInfo($store_id = null, $date_start_from = null, $date_start_to = null, $date_end_from = null, $date_end_to = null, $avail = true, string $contentType = self::contentTypes['cartCouponCount'][0])
+    public function cartCouponCountAsyncWithHttpInfo($store_id = null, $avail = true, $date_start_from = null, $date_start_to = null, $date_end_from = null, $date_end_to = null, string $contentType = self::contentTypes['cartCouponCount'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CartCouponCount200Response';
-        $request = $this->cartCouponCountRequest($store_id, $date_start_from, $date_start_to, $date_end_from, $date_end_to, $avail, $contentType);
+        $request = $this->cartCouponCountRequest($store_id, $avail, $date_start_from, $date_start_to, $date_end_from, $date_end_to, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3208,17 +3208,17 @@ class CartApi
      * Create request for operation 'cartCouponCount'
      *
      * @param  string|null $store_id Store Id (optional)
+     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
      * @param  string|null $date_start_from Filter entity by date_start (greater or equal) (optional)
      * @param  string|null $date_start_to Filter entity by date_start (less or equal) (optional)
      * @param  string|null $date_end_from Filter entity by date_end (greater or equal) (optional)
      * @param  string|null $date_end_to Filter entity by date_end (less or equal) (optional)
-     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartCouponCount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function cartCouponCountRequest($store_id = null, $date_start_from = null, $date_start_to = null, $date_end_from = null, $date_end_to = null, $avail = true, string $contentType = self::contentTypes['cartCouponCount'][0])
+    public function cartCouponCountRequest($store_id = null, $avail = true, $date_start_from = null, $date_start_to = null, $date_end_from = null, $date_end_to = null, string $contentType = self::contentTypes['cartCouponCount'][0])
     {
 
 
@@ -3240,6 +3240,15 @@ class CartApi
             $store_id,
             'store_id', // param base name
             'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $avail,
+            'avail', // param base name
+            'boolean', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3276,15 +3285,6 @@ class CartApi
             $date_end_to,
             'date_end_to', // param base name
             'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $avail,
-            'avail', // param base name
-            'boolean', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3695,19 +3695,19 @@ class CartApi
      *
      * cart.coupon.list
      *
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $coupons_ids Filter coupons by ids (optional)
      * @param  string|null $store_id Filter coupons by store id (optional)
+     * @param  string|null $lang_id Language id (optional)
+     * @param  bool|null $avail Filter coupons by avail status (optional)
      * @param  string|null $date_start_from Filter entity by date_start (greater or equal) (optional)
      * @param  string|null $date_start_to Filter entity by date_start (less or equal) (optional)
      * @param  string|null $date_end_from Filter entity by date_end (greater or equal) (optional)
      * @param  string|null $date_end_to Filter entity by date_end (less or equal) (optional)
-     * @param  bool|null $avail Filter coupons by avail status (optional)
-     * @param  string|null $lang_id Language id (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,code,name,description')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,code,name,description')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartCouponList'] to see the possible values for this operation
      *
@@ -3715,9 +3715,9 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseCartCouponList
      */
-    public function cartCouponList($page_cursor = null, $start = 0, $count = 10, $coupons_ids = null, $store_id = null, $date_start_from = null, $date_start_to = null, $date_end_from = null, $date_end_to = null, $avail = null, $lang_id = null, $params = 'id,code,name,description', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['cartCouponList'][0])
+    public function cartCouponList($start = 0, $count = 10, $page_cursor = null, $coupons_ids = null, $store_id = null, $lang_id = null, $avail = null, $date_start_from = null, $date_start_to = null, $date_end_from = null, $date_end_to = null, $response_fields = null, $params = 'id,code,name,description', $exclude = null, string $contentType = self::contentTypes['cartCouponList'][0])
     {
-        list($response) = $this->cartCouponListWithHttpInfo($page_cursor, $start, $count, $coupons_ids, $store_id, $date_start_from, $date_start_to, $date_end_from, $date_end_to, $avail, $lang_id, $params, $response_fields, $exclude, $contentType);
+        list($response) = $this->cartCouponListWithHttpInfo($start, $count, $page_cursor, $coupons_ids, $store_id, $lang_id, $avail, $date_start_from, $date_start_to, $date_end_from, $date_end_to, $response_fields, $params, $exclude, $contentType);
         return $response;
     }
 
@@ -3726,19 +3726,19 @@ class CartApi
      *
      * cart.coupon.list
      *
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $coupons_ids Filter coupons by ids (optional)
      * @param  string|null $store_id Filter coupons by store id (optional)
+     * @param  string|null $lang_id Language id (optional)
+     * @param  bool|null $avail Filter coupons by avail status (optional)
      * @param  string|null $date_start_from Filter entity by date_start (greater or equal) (optional)
      * @param  string|null $date_start_to Filter entity by date_start (less or equal) (optional)
      * @param  string|null $date_end_from Filter entity by date_end (greater or equal) (optional)
      * @param  string|null $date_end_to Filter entity by date_end (less or equal) (optional)
-     * @param  bool|null $avail Filter coupons by avail status (optional)
-     * @param  string|null $lang_id Language id (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,code,name,description')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,code,name,description')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartCouponList'] to see the possible values for this operation
      *
@@ -3746,9 +3746,9 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseCartCouponList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cartCouponListWithHttpInfo($page_cursor = null, $start = 0, $count = 10, $coupons_ids = null, $store_id = null, $date_start_from = null, $date_start_to = null, $date_end_from = null, $date_end_to = null, $avail = null, $lang_id = null, $params = 'id,code,name,description', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['cartCouponList'][0])
+    public function cartCouponListWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $coupons_ids = null, $store_id = null, $lang_id = null, $avail = null, $date_start_from = null, $date_start_to = null, $date_end_from = null, $date_end_to = null, $response_fields = null, $params = 'id,code,name,description', $exclude = null, string $contentType = self::contentTypes['cartCouponList'][0])
     {
-        $request = $this->cartCouponListRequest($page_cursor, $start, $count, $coupons_ids, $store_id, $date_start_from, $date_start_to, $date_end_from, $date_end_to, $avail, $lang_id, $params, $response_fields, $exclude, $contentType);
+        $request = $this->cartCouponListRequest($start, $count, $page_cursor, $coupons_ids, $store_id, $lang_id, $avail, $date_start_from, $date_start_to, $date_end_from, $date_end_to, $response_fields, $params, $exclude, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3864,28 +3864,28 @@ class CartApi
      *
      * cart.coupon.list
      *
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $coupons_ids Filter coupons by ids (optional)
      * @param  string|null $store_id Filter coupons by store id (optional)
+     * @param  string|null $lang_id Language id (optional)
+     * @param  bool|null $avail Filter coupons by avail status (optional)
      * @param  string|null $date_start_from Filter entity by date_start (greater or equal) (optional)
      * @param  string|null $date_start_to Filter entity by date_start (less or equal) (optional)
      * @param  string|null $date_end_from Filter entity by date_end (greater or equal) (optional)
      * @param  string|null $date_end_to Filter entity by date_end (less or equal) (optional)
-     * @param  bool|null $avail Filter coupons by avail status (optional)
-     * @param  string|null $lang_id Language id (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,code,name,description')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,code,name,description')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartCouponList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartCouponListAsync($page_cursor = null, $start = 0, $count = 10, $coupons_ids = null, $store_id = null, $date_start_from = null, $date_start_to = null, $date_end_from = null, $date_end_to = null, $avail = null, $lang_id = null, $params = 'id,code,name,description', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['cartCouponList'][0])
+    public function cartCouponListAsync($start = 0, $count = 10, $page_cursor = null, $coupons_ids = null, $store_id = null, $lang_id = null, $avail = null, $date_start_from = null, $date_start_to = null, $date_end_from = null, $date_end_to = null, $response_fields = null, $params = 'id,code,name,description', $exclude = null, string $contentType = self::contentTypes['cartCouponList'][0])
     {
-        return $this->cartCouponListAsyncWithHttpInfo($page_cursor, $start, $count, $coupons_ids, $store_id, $date_start_from, $date_start_to, $date_end_from, $date_end_to, $avail, $lang_id, $params, $response_fields, $exclude, $contentType)
+        return $this->cartCouponListAsyncWithHttpInfo($start, $count, $page_cursor, $coupons_ids, $store_id, $lang_id, $avail, $date_start_from, $date_start_to, $date_end_from, $date_end_to, $response_fields, $params, $exclude, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3898,29 +3898,29 @@ class CartApi
      *
      * cart.coupon.list
      *
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $coupons_ids Filter coupons by ids (optional)
      * @param  string|null $store_id Filter coupons by store id (optional)
+     * @param  string|null $lang_id Language id (optional)
+     * @param  bool|null $avail Filter coupons by avail status (optional)
      * @param  string|null $date_start_from Filter entity by date_start (greater or equal) (optional)
      * @param  string|null $date_start_to Filter entity by date_start (less or equal) (optional)
      * @param  string|null $date_end_from Filter entity by date_end (greater or equal) (optional)
      * @param  string|null $date_end_to Filter entity by date_end (less or equal) (optional)
-     * @param  bool|null $avail Filter coupons by avail status (optional)
-     * @param  string|null $lang_id Language id (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,code,name,description')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,code,name,description')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartCouponList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartCouponListAsyncWithHttpInfo($page_cursor = null, $start = 0, $count = 10, $coupons_ids = null, $store_id = null, $date_start_from = null, $date_start_to = null, $date_end_from = null, $date_end_to = null, $avail = null, $lang_id = null, $params = 'id,code,name,description', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['cartCouponList'][0])
+    public function cartCouponListAsyncWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $coupons_ids = null, $store_id = null, $lang_id = null, $avail = null, $date_start_from = null, $date_start_to = null, $date_end_from = null, $date_end_to = null, $response_fields = null, $params = 'id,code,name,description', $exclude = null, string $contentType = self::contentTypes['cartCouponList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseCartCouponList';
-        $request = $this->cartCouponListRequest($page_cursor, $start, $count, $coupons_ids, $store_id, $date_start_from, $date_start_to, $date_end_from, $date_end_to, $avail, $lang_id, $params, $response_fields, $exclude, $contentType);
+        $request = $this->cartCouponListRequest($start, $count, $page_cursor, $coupons_ids, $store_id, $lang_id, $avail, $date_start_from, $date_start_to, $date_end_from, $date_end_to, $response_fields, $params, $exclude, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3961,26 +3961,26 @@ class CartApi
     /**
      * Create request for operation 'cartCouponList'
      *
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $coupons_ids Filter coupons by ids (optional)
      * @param  string|null $store_id Filter coupons by store id (optional)
+     * @param  string|null $lang_id Language id (optional)
+     * @param  bool|null $avail Filter coupons by avail status (optional)
      * @param  string|null $date_start_from Filter entity by date_start (greater or equal) (optional)
      * @param  string|null $date_start_to Filter entity by date_start (less or equal) (optional)
      * @param  string|null $date_end_from Filter entity by date_end (greater or equal) (optional)
      * @param  string|null $date_end_to Filter entity by date_end (less or equal) (optional)
-     * @param  bool|null $avail Filter coupons by avail status (optional)
-     * @param  string|null $lang_id Language id (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,code,name,description')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,code,name,description')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartCouponList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function cartCouponListRequest($page_cursor = null, $start = 0, $count = 10, $coupons_ids = null, $store_id = null, $date_start_from = null, $date_start_to = null, $date_end_from = null, $date_end_to = null, $avail = null, $lang_id = null, $params = 'id,code,name,description', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['cartCouponList'][0])
+    public function cartCouponListRequest($start = 0, $count = 10, $page_cursor = null, $coupons_ids = null, $store_id = null, $lang_id = null, $avail = null, $date_start_from = null, $date_start_to = null, $date_end_from = null, $date_end_to = null, $response_fields = null, $params = 'id,code,name,description', $exclude = null, string $contentType = self::contentTypes['cartCouponList'][0])
     {
 
 
@@ -4007,15 +4007,6 @@ class CartApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $page_cursor,
-            'page_cursor', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $start,
             'start', // param base name
             'integer', // openApiType
@@ -4034,6 +4025,15 @@ class CartApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_cursor,
+            'page_cursor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $coupons_ids,
             'coupons_ids', // param base name
             'string', // openApiType
@@ -4046,6 +4046,24 @@ class CartApi
             $store_id,
             'store_id', // param base name
             'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $lang_id,
+            'lang_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $avail,
+            'avail', // param base name
+            'boolean', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -4088,17 +4106,8 @@ class CartApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $avail,
-            'avail', // param base name
-            'boolean', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $lang_id,
-            'lang_id', // param base name
+            $response_fields,
+            'response_fields', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -4108,15 +4117,6 @@ class CartApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $params,
             'params', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $response_fields,
-            'response_fields', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -6177,12 +6177,12 @@ class CartApi
      *
      * cart.giftcard.list
      *
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $store_id Store Id (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,code,name')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,code,name')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartGiftcardList'] to see the possible values for this operation
      *
@@ -6190,9 +6190,9 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseCartGiftCardList
      */
-    public function cartGiftcardList($page_cursor = null, $start = 0, $count = 10, $store_id = null, $params = 'id,code,name', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['cartGiftcardList'][0])
+    public function cartGiftcardList($start = 0, $count = 10, $page_cursor = null, $store_id = null, $response_fields = null, $params = 'id,code,name', $exclude = null, string $contentType = self::contentTypes['cartGiftcardList'][0])
     {
-        list($response) = $this->cartGiftcardListWithHttpInfo($page_cursor, $start, $count, $store_id, $params, $response_fields, $exclude, $contentType);
+        list($response) = $this->cartGiftcardListWithHttpInfo($start, $count, $page_cursor, $store_id, $response_fields, $params, $exclude, $contentType);
         return $response;
     }
 
@@ -6201,12 +6201,12 @@ class CartApi
      *
      * cart.giftcard.list
      *
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $store_id Store Id (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,code,name')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,code,name')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartGiftcardList'] to see the possible values for this operation
      *
@@ -6214,9 +6214,9 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseCartGiftCardList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cartGiftcardListWithHttpInfo($page_cursor = null, $start = 0, $count = 10, $store_id = null, $params = 'id,code,name', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['cartGiftcardList'][0])
+    public function cartGiftcardListWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $store_id = null, $response_fields = null, $params = 'id,code,name', $exclude = null, string $contentType = self::contentTypes['cartGiftcardList'][0])
     {
-        $request = $this->cartGiftcardListRequest($page_cursor, $start, $count, $store_id, $params, $response_fields, $exclude, $contentType);
+        $request = $this->cartGiftcardListRequest($start, $count, $page_cursor, $store_id, $response_fields, $params, $exclude, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6332,21 +6332,21 @@ class CartApi
      *
      * cart.giftcard.list
      *
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $store_id Store Id (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,code,name')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,code,name')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartGiftcardList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartGiftcardListAsync($page_cursor = null, $start = 0, $count = 10, $store_id = null, $params = 'id,code,name', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['cartGiftcardList'][0])
+    public function cartGiftcardListAsync($start = 0, $count = 10, $page_cursor = null, $store_id = null, $response_fields = null, $params = 'id,code,name', $exclude = null, string $contentType = self::contentTypes['cartGiftcardList'][0])
     {
-        return $this->cartGiftcardListAsyncWithHttpInfo($page_cursor, $start, $count, $store_id, $params, $response_fields, $exclude, $contentType)
+        return $this->cartGiftcardListAsyncWithHttpInfo($start, $count, $page_cursor, $store_id, $response_fields, $params, $exclude, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6359,22 +6359,22 @@ class CartApi
      *
      * cart.giftcard.list
      *
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $store_id Store Id (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,code,name')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,code,name')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartGiftcardList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartGiftcardListAsyncWithHttpInfo($page_cursor = null, $start = 0, $count = 10, $store_id = null, $params = 'id,code,name', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['cartGiftcardList'][0])
+    public function cartGiftcardListAsyncWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $store_id = null, $response_fields = null, $params = 'id,code,name', $exclude = null, string $contentType = self::contentTypes['cartGiftcardList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseCartGiftCardList';
-        $request = $this->cartGiftcardListRequest($page_cursor, $start, $count, $store_id, $params, $response_fields, $exclude, $contentType);
+        $request = $this->cartGiftcardListRequest($start, $count, $page_cursor, $store_id, $response_fields, $params, $exclude, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6415,19 +6415,19 @@ class CartApi
     /**
      * Create request for operation 'cartGiftcardList'
      *
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $store_id Store Id (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,code,name')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,code,name')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartGiftcardList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function cartGiftcardListRequest($page_cursor = null, $start = 0, $count = 10, $store_id = null, $params = 'id,code,name', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['cartGiftcardList'][0])
+    public function cartGiftcardListRequest($start = 0, $count = 10, $page_cursor = null, $store_id = null, $response_fields = null, $params = 'id,code,name', $exclude = null, string $contentType = self::contentTypes['cartGiftcardList'][0])
     {
 
 
@@ -6445,15 +6445,6 @@ class CartApi
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $page_cursor,
-            'page_cursor', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $start,
@@ -6474,6 +6465,15 @@ class CartApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_cursor,
+            'page_cursor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $store_id,
             'store_id', // param base name
             'string', // openApiType
@@ -6483,8 +6483,8 @@ class CartApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $params,
-            'params', // param base name
+            $response_fields,
+            'response_fields', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -6492,8 +6492,8 @@ class CartApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $response_fields,
-            'response_fields', // param base name
+            $params,
+            'params', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -6580,19 +6580,19 @@ class CartApi
      *
      * cart.info
      *
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'store_name,store_url,db_prefix')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'store_name,store_url,db_prefix')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartInfo'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CartInfo200Response
      */
-    public function cartInfo($params = 'store_name,store_url,db_prefix', $response_fields = null, $exclude = null, $store_id = null, string $contentType = self::contentTypes['cartInfo'][0])
+    public function cartInfo($store_id = null, $response_fields = null, $params = 'store_name,store_url,db_prefix', $exclude = null, string $contentType = self::contentTypes['cartInfo'][0])
     {
-        list($response) = $this->cartInfoWithHttpInfo($params, $response_fields, $exclude, $store_id, $contentType);
+        list($response) = $this->cartInfoWithHttpInfo($store_id, $response_fields, $params, $exclude, $contentType);
         return $response;
     }
 
@@ -6601,19 +6601,19 @@ class CartApi
      *
      * cart.info
      *
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'store_name,store_url,db_prefix')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'store_name,store_url,db_prefix')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartInfo'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CartInfo200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cartInfoWithHttpInfo($params = 'store_name,store_url,db_prefix', $response_fields = null, $exclude = null, $store_id = null, string $contentType = self::contentTypes['cartInfo'][0])
+    public function cartInfoWithHttpInfo($store_id = null, $response_fields = null, $params = 'store_name,store_url,db_prefix', $exclude = null, string $contentType = self::contentTypes['cartInfo'][0])
     {
-        $request = $this->cartInfoRequest($params, $response_fields, $exclude, $store_id, $contentType);
+        $request = $this->cartInfoRequest($store_id, $response_fields, $params, $exclude, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6729,18 +6729,18 @@ class CartApi
      *
      * cart.info
      *
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'store_name,store_url,db_prefix')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'store_name,store_url,db_prefix')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartInfoAsync($params = 'store_name,store_url,db_prefix', $response_fields = null, $exclude = null, $store_id = null, string $contentType = self::contentTypes['cartInfo'][0])
+    public function cartInfoAsync($store_id = null, $response_fields = null, $params = 'store_name,store_url,db_prefix', $exclude = null, string $contentType = self::contentTypes['cartInfo'][0])
     {
-        return $this->cartInfoAsyncWithHttpInfo($params, $response_fields, $exclude, $store_id, $contentType)
+        return $this->cartInfoAsyncWithHttpInfo($store_id, $response_fields, $params, $exclude, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6753,19 +6753,19 @@ class CartApi
      *
      * cart.info
      *
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'store_name,store_url,db_prefix')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'store_name,store_url,db_prefix')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartInfoAsyncWithHttpInfo($params = 'store_name,store_url,db_prefix', $response_fields = null, $exclude = null, $store_id = null, string $contentType = self::contentTypes['cartInfo'][0])
+    public function cartInfoAsyncWithHttpInfo($store_id = null, $response_fields = null, $params = 'store_name,store_url,db_prefix', $exclude = null, string $contentType = self::contentTypes['cartInfo'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CartInfo200Response';
-        $request = $this->cartInfoRequest($params, $response_fields, $exclude, $store_id, $contentType);
+        $request = $this->cartInfoRequest($store_id, $response_fields, $params, $exclude, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6806,16 +6806,16 @@ class CartApi
     /**
      * Create request for operation 'cartInfo'
      *
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'store_name,store_url,db_prefix')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'store_name,store_url,db_prefix')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function cartInfoRequest($params = 'store_name,store_url,db_prefix', $response_fields = null, $exclude = null, $store_id = null, string $contentType = self::contentTypes['cartInfo'][0])
+    public function cartInfoRequest($store_id = null, $response_fields = null, $params = 'store_name,store_url,db_prefix', $exclude = null, string $contentType = self::contentTypes['cartInfo'][0])
     {
 
 
@@ -6832,8 +6832,8 @@ class CartApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $params,
-            'params', // param base name
+            $store_id,
+            'store_id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -6850,8 +6850,8 @@ class CartApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $exclude,
-            'exclude', // param base name
+            $params,
+            'params', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -6859,8 +6859,8 @@ class CartApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $store_id,
-            'store_id', // param base name
+            $exclude,
+            'exclude', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -7237,14 +7237,14 @@ class CartApi
      * cart.meta_data.list
      *
      * @param  string $entity_id Entity Id (required)
+     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $entity Entity (optional, default to 'product')
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  string|null $key Key (optional)
-     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'key,value')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'key,value')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartMetaDataList'] to see the possible values for this operation
      *
@@ -7252,9 +7252,9 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseCartMetaDataList
      */
-    public function cartMetaDataList($entity_id, $entity = 'product', $store_id = null, $lang_id = null, $key = null, $count = 10, $page_cursor = null, $params = 'key,value', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['cartMetaDataList'][0])
+    public function cartMetaDataList($entity_id, $count = 10, $page_cursor = null, $entity = 'product', $store_id = null, $lang_id = null, $key = null, $response_fields = null, $params = 'key,value', $exclude = null, string $contentType = self::contentTypes['cartMetaDataList'][0])
     {
-        list($response) = $this->cartMetaDataListWithHttpInfo($entity_id, $entity, $store_id, $lang_id, $key, $count, $page_cursor, $params, $response_fields, $exclude, $contentType);
+        list($response) = $this->cartMetaDataListWithHttpInfo($entity_id, $count, $page_cursor, $entity, $store_id, $lang_id, $key, $response_fields, $params, $exclude, $contentType);
         return $response;
     }
 
@@ -7264,14 +7264,14 @@ class CartApi
      * cart.meta_data.list
      *
      * @param  string $entity_id Entity Id (required)
+     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $entity Entity (optional, default to 'product')
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  string|null $key Key (optional)
-     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'key,value')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'key,value')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartMetaDataList'] to see the possible values for this operation
      *
@@ -7279,9 +7279,9 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseCartMetaDataList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cartMetaDataListWithHttpInfo($entity_id, $entity = 'product', $store_id = null, $lang_id = null, $key = null, $count = 10, $page_cursor = null, $params = 'key,value', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['cartMetaDataList'][0])
+    public function cartMetaDataListWithHttpInfo($entity_id, $count = 10, $page_cursor = null, $entity = 'product', $store_id = null, $lang_id = null, $key = null, $response_fields = null, $params = 'key,value', $exclude = null, string $contentType = self::contentTypes['cartMetaDataList'][0])
     {
-        $request = $this->cartMetaDataListRequest($entity_id, $entity, $store_id, $lang_id, $key, $count, $page_cursor, $params, $response_fields, $exclude, $contentType);
+        $request = $this->cartMetaDataListRequest($entity_id, $count, $page_cursor, $entity, $store_id, $lang_id, $key, $response_fields, $params, $exclude, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7398,23 +7398,23 @@ class CartApi
      * cart.meta_data.list
      *
      * @param  string $entity_id Entity Id (required)
+     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $entity Entity (optional, default to 'product')
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  string|null $key Key (optional)
-     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'key,value')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'key,value')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartMetaDataList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartMetaDataListAsync($entity_id, $entity = 'product', $store_id = null, $lang_id = null, $key = null, $count = 10, $page_cursor = null, $params = 'key,value', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['cartMetaDataList'][0])
+    public function cartMetaDataListAsync($entity_id, $count = 10, $page_cursor = null, $entity = 'product', $store_id = null, $lang_id = null, $key = null, $response_fields = null, $params = 'key,value', $exclude = null, string $contentType = self::contentTypes['cartMetaDataList'][0])
     {
-        return $this->cartMetaDataListAsyncWithHttpInfo($entity_id, $entity, $store_id, $lang_id, $key, $count, $page_cursor, $params, $response_fields, $exclude, $contentType)
+        return $this->cartMetaDataListAsyncWithHttpInfo($entity_id, $count, $page_cursor, $entity, $store_id, $lang_id, $key, $response_fields, $params, $exclude, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7428,24 +7428,24 @@ class CartApi
      * cart.meta_data.list
      *
      * @param  string $entity_id Entity Id (required)
+     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $entity Entity (optional, default to 'product')
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  string|null $key Key (optional)
-     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'key,value')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'key,value')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartMetaDataList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartMetaDataListAsyncWithHttpInfo($entity_id, $entity = 'product', $store_id = null, $lang_id = null, $key = null, $count = 10, $page_cursor = null, $params = 'key,value', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['cartMetaDataList'][0])
+    public function cartMetaDataListAsyncWithHttpInfo($entity_id, $count = 10, $page_cursor = null, $entity = 'product', $store_id = null, $lang_id = null, $key = null, $response_fields = null, $params = 'key,value', $exclude = null, string $contentType = self::contentTypes['cartMetaDataList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseCartMetaDataList';
-        $request = $this->cartMetaDataListRequest($entity_id, $entity, $store_id, $lang_id, $key, $count, $page_cursor, $params, $response_fields, $exclude, $contentType);
+        $request = $this->cartMetaDataListRequest($entity_id, $count, $page_cursor, $entity, $store_id, $lang_id, $key, $response_fields, $params, $exclude, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7487,21 +7487,21 @@ class CartApi
      * Create request for operation 'cartMetaDataList'
      *
      * @param  string $entity_id Entity Id (required)
+     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $entity Entity (optional, default to 'product')
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  string|null $key Key (optional)
-     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'key,value')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'key,value')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartMetaDataList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function cartMetaDataListRequest($entity_id, $entity = 'product', $store_id = null, $lang_id = null, $key = null, $count = 10, $page_cursor = null, $params = 'key,value', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['cartMetaDataList'][0])
+    public function cartMetaDataListRequest($entity_id, $count = 10, $page_cursor = null, $entity = 'product', $store_id = null, $lang_id = null, $key = null, $response_fields = null, $params = 'key,value', $exclude = null, string $contentType = self::contentTypes['cartMetaDataList'][0])
     {
 
         // verify the required parameter 'entity_id' is set
@@ -7528,6 +7528,24 @@ class CartApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $count,
+            'count', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_cursor,
+            'page_cursor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $entity_id,
@@ -7575,17 +7593,8 @@ class CartApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $count,
-            'count', // param base name
-            'integer', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $page_cursor,
-            'page_cursor', // param base name
+            $response_fields,
+            'response_fields', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -7595,15 +7604,6 @@ class CartApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $params,
             'params', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $response_fields,
-            'response_fields', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -7993,33 +7993,6 @@ class CartApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $entity,
-            'entity', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $store_id,
-            'store_id', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $lang_id,
-            'lang_id', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $key,
             'key', // param base name
             'string', // openApiType
@@ -8044,6 +8017,33 @@ class CartApi
             'form', // style
             true, // explode
             true // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $entity,
+            'entity', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $store_id,
+            'store_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $lang_id,
+            'lang_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
         ) ?? []);
 
 
@@ -8402,24 +8402,6 @@ class CartApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $entity,
-            'entity', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $store_id,
-            'store_id', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $key,
             'key', // param base name
             'string', // openApiType
@@ -8435,6 +8417,24 @@ class CartApi
             'form', // style
             true, // explode
             true // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $entity,
+            'entity', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $store_id,
+            'store_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
         ) ?? []);
 
 
@@ -8806,18 +8806,18 @@ class CartApi
      *
      * cart.plugin.list
      *
-     * @param  string|null $store_id Store Id (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartPluginList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CartPluginList200Response
      */
-    public function cartPluginList($store_id = null, $start = 0, $count = 10, string $contentType = self::contentTypes['cartPluginList'][0])
+    public function cartPluginList($start = 0, $count = 10, $store_id = null, string $contentType = self::contentTypes['cartPluginList'][0])
     {
-        list($response) = $this->cartPluginListWithHttpInfo($store_id, $start, $count, $contentType);
+        list($response) = $this->cartPluginListWithHttpInfo($start, $count, $store_id, $contentType);
         return $response;
     }
 
@@ -8826,18 +8826,18 @@ class CartApi
      *
      * cart.plugin.list
      *
-     * @param  string|null $store_id Store Id (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartPluginList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CartPluginList200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cartPluginListWithHttpInfo($store_id = null, $start = 0, $count = 10, string $contentType = self::contentTypes['cartPluginList'][0])
+    public function cartPluginListWithHttpInfo($start = 0, $count = 10, $store_id = null, string $contentType = self::contentTypes['cartPluginList'][0])
     {
-        $request = $this->cartPluginListRequest($store_id, $start, $count, $contentType);
+        $request = $this->cartPluginListRequest($start, $count, $store_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -8953,17 +8953,17 @@ class CartApi
      *
      * cart.plugin.list
      *
-     * @param  string|null $store_id Store Id (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartPluginList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartPluginListAsync($store_id = null, $start = 0, $count = 10, string $contentType = self::contentTypes['cartPluginList'][0])
+    public function cartPluginListAsync($start = 0, $count = 10, $store_id = null, string $contentType = self::contentTypes['cartPluginList'][0])
     {
-        return $this->cartPluginListAsyncWithHttpInfo($store_id, $start, $count, $contentType)
+        return $this->cartPluginListAsyncWithHttpInfo($start, $count, $store_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -8976,18 +8976,18 @@ class CartApi
      *
      * cart.plugin.list
      *
-     * @param  string|null $store_id Store Id (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartPluginList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartPluginListAsyncWithHttpInfo($store_id = null, $start = 0, $count = 10, string $contentType = self::contentTypes['cartPluginList'][0])
+    public function cartPluginListAsyncWithHttpInfo($start = 0, $count = 10, $store_id = null, string $contentType = self::contentTypes['cartPluginList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CartPluginList200Response';
-        $request = $this->cartPluginListRequest($store_id, $start, $count, $contentType);
+        $request = $this->cartPluginListRequest($start, $count, $store_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -9028,15 +9028,15 @@ class CartApi
     /**
      * Create request for operation 'cartPluginList'
      *
-     * @param  string|null $store_id Store Id (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartPluginList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function cartPluginListRequest($store_id = null, $start = 0, $count = 10, string $contentType = self::contentTypes['cartPluginList'][0])
+    public function cartPluginListRequest($start = 0, $count = 10, $store_id = null, string $contentType = self::contentTypes['cartPluginList'][0])
     {
 
 
@@ -9052,15 +9052,6 @@ class CartApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $store_id,
-            'store_id', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $start,
             'start', // param base name
             'integer', // openApiType
@@ -9073,6 +9064,15 @@ class CartApi
             $count,
             'count', // param base name
             'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $store_id,
+            'store_id', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -9901,17 +9901,17 @@ class CartApi
      *
      * cart.script.list
      *
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $script_ids Retrieves only scripts with specific ids (optional)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $script_ids Retrieves only scripts with specific ids (optional)
-     * @param  string|null $store_id Store Id (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartScriptList'] to see the possible values for this operation
      *
@@ -9919,9 +9919,9 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseCartScriptList
      */
-    public function cartScriptList($page_cursor = null, $start = 0, $count = 10, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $script_ids = null, $store_id = null, $params = 'id,name,description', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['cartScriptList'][0])
+    public function cartScriptList($start = 0, $count = 10, $page_cursor = null, $script_ids = null, $store_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $response_fields = null, $params = 'id,name,description', $exclude = null, string $contentType = self::contentTypes['cartScriptList'][0])
     {
-        list($response) = $this->cartScriptListWithHttpInfo($page_cursor, $start, $count, $created_from, $created_to, $modified_from, $modified_to, $script_ids, $store_id, $params, $response_fields, $exclude, $contentType);
+        list($response) = $this->cartScriptListWithHttpInfo($start, $count, $page_cursor, $script_ids, $store_id, $created_from, $created_to, $modified_from, $modified_to, $response_fields, $params, $exclude, $contentType);
         return $response;
     }
 
@@ -9930,17 +9930,17 @@ class CartApi
      *
      * cart.script.list
      *
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $script_ids Retrieves only scripts with specific ids (optional)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $script_ids Retrieves only scripts with specific ids (optional)
-     * @param  string|null $store_id Store Id (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartScriptList'] to see the possible values for this operation
      *
@@ -9948,9 +9948,9 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseCartScriptList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cartScriptListWithHttpInfo($page_cursor = null, $start = 0, $count = 10, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $script_ids = null, $store_id = null, $params = 'id,name,description', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['cartScriptList'][0])
+    public function cartScriptListWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $script_ids = null, $store_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $response_fields = null, $params = 'id,name,description', $exclude = null, string $contentType = self::contentTypes['cartScriptList'][0])
     {
-        $request = $this->cartScriptListRequest($page_cursor, $start, $count, $created_from, $created_to, $modified_from, $modified_to, $script_ids, $store_id, $params, $response_fields, $exclude, $contentType);
+        $request = $this->cartScriptListRequest($start, $count, $page_cursor, $script_ids, $store_id, $created_from, $created_to, $modified_from, $modified_to, $response_fields, $params, $exclude, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -10066,26 +10066,26 @@ class CartApi
      *
      * cart.script.list
      *
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $script_ids Retrieves only scripts with specific ids (optional)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $script_ids Retrieves only scripts with specific ids (optional)
-     * @param  string|null $store_id Store Id (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartScriptList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartScriptListAsync($page_cursor = null, $start = 0, $count = 10, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $script_ids = null, $store_id = null, $params = 'id,name,description', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['cartScriptList'][0])
+    public function cartScriptListAsync($start = 0, $count = 10, $page_cursor = null, $script_ids = null, $store_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $response_fields = null, $params = 'id,name,description', $exclude = null, string $contentType = self::contentTypes['cartScriptList'][0])
     {
-        return $this->cartScriptListAsyncWithHttpInfo($page_cursor, $start, $count, $created_from, $created_to, $modified_from, $modified_to, $script_ids, $store_id, $params, $response_fields, $exclude, $contentType)
+        return $this->cartScriptListAsyncWithHttpInfo($start, $count, $page_cursor, $script_ids, $store_id, $created_from, $created_to, $modified_from, $modified_to, $response_fields, $params, $exclude, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -10098,27 +10098,27 @@ class CartApi
      *
      * cart.script.list
      *
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $script_ids Retrieves only scripts with specific ids (optional)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $script_ids Retrieves only scripts with specific ids (optional)
-     * @param  string|null $store_id Store Id (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartScriptList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartScriptListAsyncWithHttpInfo($page_cursor = null, $start = 0, $count = 10, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $script_ids = null, $store_id = null, $params = 'id,name,description', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['cartScriptList'][0])
+    public function cartScriptListAsyncWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $script_ids = null, $store_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $response_fields = null, $params = 'id,name,description', $exclude = null, string $contentType = self::contentTypes['cartScriptList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseCartScriptList';
-        $request = $this->cartScriptListRequest($page_cursor, $start, $count, $created_from, $created_to, $modified_from, $modified_to, $script_ids, $store_id, $params, $response_fields, $exclude, $contentType);
+        $request = $this->cartScriptListRequest($start, $count, $page_cursor, $script_ids, $store_id, $created_from, $created_to, $modified_from, $modified_to, $response_fields, $params, $exclude, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -10159,24 +10159,24 @@ class CartApi
     /**
      * Create request for operation 'cartScriptList'
      *
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $script_ids Retrieves only scripts with specific ids (optional)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $script_ids Retrieves only scripts with specific ids (optional)
-     * @param  string|null $store_id Store Id (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartScriptList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function cartScriptListRequest($page_cursor = null, $start = 0, $count = 10, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $script_ids = null, $store_id = null, $params = 'id,name,description', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['cartScriptList'][0])
+    public function cartScriptListRequest($start = 0, $count = 10, $page_cursor = null, $script_ids = null, $store_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $response_fields = null, $params = 'id,name,description', $exclude = null, string $contentType = self::contentTypes['cartScriptList'][0])
     {
 
 
@@ -10201,15 +10201,6 @@ class CartApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $page_cursor,
-            'page_cursor', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $start,
             'start', // param base name
             'integer', // openApiType
@@ -10222,6 +10213,33 @@ class CartApi
             $count,
             'count', // param base name
             'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_cursor,
+            'page_cursor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $script_ids,
+            'script_ids', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $store_id,
+            'store_id', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -10264,17 +10282,8 @@ class CartApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $script_ids,
-            'script_ids', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $store_id,
-            'store_id', // param base name
+            $response_fields,
+            'response_fields', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -10284,15 +10293,6 @@ class CartApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $params,
             'params', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $response_fields,
-            'response_fields', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -10379,11 +10379,11 @@ class CartApi
      *
      * cart.shipping_zones.list
      *
-     * @param  string|null $store_id Store Id (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,enabled')
+     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,enabled')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartShippingZonesList'] to see the possible values for this operation
      *
@@ -10391,9 +10391,9 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseCartShippingZonesList
      */
-    public function cartShippingZonesList($store_id = null, $start = 0, $count = 10, $params = 'id,name,enabled', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['cartShippingZonesList'][0])
+    public function cartShippingZonesList($start = 0, $count = 10, $store_id = null, $response_fields = null, $params = 'id,name,enabled', $exclude = null, string $contentType = self::contentTypes['cartShippingZonesList'][0])
     {
-        list($response) = $this->cartShippingZonesListWithHttpInfo($store_id, $start, $count, $params, $response_fields, $exclude, $contentType);
+        list($response) = $this->cartShippingZonesListWithHttpInfo($start, $count, $store_id, $response_fields, $params, $exclude, $contentType);
         return $response;
     }
 
@@ -10402,11 +10402,11 @@ class CartApi
      *
      * cart.shipping_zones.list
      *
-     * @param  string|null $store_id Store Id (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,enabled')
+     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,enabled')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartShippingZonesList'] to see the possible values for this operation
      *
@@ -10414,9 +10414,9 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseCartShippingZonesList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cartShippingZonesListWithHttpInfo($store_id = null, $start = 0, $count = 10, $params = 'id,name,enabled', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['cartShippingZonesList'][0])
+    public function cartShippingZonesListWithHttpInfo($start = 0, $count = 10, $store_id = null, $response_fields = null, $params = 'id,name,enabled', $exclude = null, string $contentType = self::contentTypes['cartShippingZonesList'][0])
     {
-        $request = $this->cartShippingZonesListRequest($store_id, $start, $count, $params, $response_fields, $exclude, $contentType);
+        $request = $this->cartShippingZonesListRequest($start, $count, $store_id, $response_fields, $params, $exclude, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -10532,20 +10532,20 @@ class CartApi
      *
      * cart.shipping_zones.list
      *
-     * @param  string|null $store_id Store Id (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,enabled')
+     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,enabled')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartShippingZonesList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartShippingZonesListAsync($store_id = null, $start = 0, $count = 10, $params = 'id,name,enabled', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['cartShippingZonesList'][0])
+    public function cartShippingZonesListAsync($start = 0, $count = 10, $store_id = null, $response_fields = null, $params = 'id,name,enabled', $exclude = null, string $contentType = self::contentTypes['cartShippingZonesList'][0])
     {
-        return $this->cartShippingZonesListAsyncWithHttpInfo($store_id, $start, $count, $params, $response_fields, $exclude, $contentType)
+        return $this->cartShippingZonesListAsyncWithHttpInfo($start, $count, $store_id, $response_fields, $params, $exclude, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -10558,21 +10558,21 @@ class CartApi
      *
      * cart.shipping_zones.list
      *
-     * @param  string|null $store_id Store Id (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,enabled')
+     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,enabled')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartShippingZonesList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartShippingZonesListAsyncWithHttpInfo($store_id = null, $start = 0, $count = 10, $params = 'id,name,enabled', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['cartShippingZonesList'][0])
+    public function cartShippingZonesListAsyncWithHttpInfo($start = 0, $count = 10, $store_id = null, $response_fields = null, $params = 'id,name,enabled', $exclude = null, string $contentType = self::contentTypes['cartShippingZonesList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseCartShippingZonesList';
-        $request = $this->cartShippingZonesListRequest($store_id, $start, $count, $params, $response_fields, $exclude, $contentType);
+        $request = $this->cartShippingZonesListRequest($start, $count, $store_id, $response_fields, $params, $exclude, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -10613,18 +10613,18 @@ class CartApi
     /**
      * Create request for operation 'cartShippingZonesList'
      *
-     * @param  string|null $store_id Store Id (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,enabled')
+     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,enabled')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartShippingZonesList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function cartShippingZonesListRequest($store_id = null, $start = 0, $count = 10, $params = 'id,name,enabled', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['cartShippingZonesList'][0])
+    public function cartShippingZonesListRequest($start = 0, $count = 10, $store_id = null, $response_fields = null, $params = 'id,name,enabled', $exclude = null, string $contentType = self::contentTypes['cartShippingZonesList'][0])
     {
 
 
@@ -10641,15 +10641,6 @@ class CartApi
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $store_id,
-            'store_id', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $start,
@@ -10670,8 +10661,8 @@ class CartApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $params,
-            'params', // param base name
+            $store_id,
+            'store_id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -10681,6 +10672,15 @@ class CartApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $response_fields,
             'response_fields', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $params,
+            'params', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

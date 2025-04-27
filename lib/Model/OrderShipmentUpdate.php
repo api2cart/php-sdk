@@ -58,15 +58,15 @@ class OrderShipmentUpdate implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'store_id' => 'string',
         'shipment_id' => 'string',
         'order_id' => 'string',
+        'store_id' => 'string',
+        'shipment_provider' => 'string',
         'tracking_numbers' => '\OpenAPI\Client\Model\OrderShipmentAddTrackingNumbersInner[]',
-        'replace' => 'bool',
-        'is_shipped' => 'bool',
         'tracking_link' => 'string',
+        'is_shipped' => 'bool',
         'delivered_at' => 'string',
-        'shipment_provider' => 'string'
+        'replace' => 'bool'
     ];
 
     /**
@@ -77,15 +77,15 @@ class OrderShipmentUpdate implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'store_id' => null,
         'shipment_id' => null,
         'order_id' => null,
+        'store_id' => null,
+        'shipment_provider' => null,
         'tracking_numbers' => null,
-        'replace' => null,
-        'is_shipped' => null,
         'tracking_link' => null,
+        'is_shipped' => null,
         'delivered_at' => null,
-        'shipment_provider' => null
+        'replace' => null
     ];
 
     /**
@@ -94,15 +94,15 @@ class OrderShipmentUpdate implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'store_id' => false,
         'shipment_id' => false,
         'order_id' => false,
+        'store_id' => false,
+        'shipment_provider' => false,
         'tracking_numbers' => false,
-        'replace' => false,
-        'is_shipped' => false,
         'tracking_link' => false,
+        'is_shipped' => false,
         'delivered_at' => false,
-        'shipment_provider' => false
+        'replace' => false
     ];
 
     /**
@@ -191,15 +191,15 @@ class OrderShipmentUpdate implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'store_id' => 'store_id',
         'shipment_id' => 'shipment_id',
         'order_id' => 'order_id',
+        'store_id' => 'store_id',
+        'shipment_provider' => 'shipment_provider',
         'tracking_numbers' => 'tracking_numbers',
-        'replace' => 'replace',
-        'is_shipped' => 'is_shipped',
         'tracking_link' => 'tracking_link',
+        'is_shipped' => 'is_shipped',
         'delivered_at' => 'delivered_at',
-        'shipment_provider' => 'shipment_provider'
+        'replace' => 'replace'
     ];
 
     /**
@@ -208,15 +208,15 @@ class OrderShipmentUpdate implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'store_id' => 'setStoreId',
         'shipment_id' => 'setShipmentId',
         'order_id' => 'setOrderId',
+        'store_id' => 'setStoreId',
+        'shipment_provider' => 'setShipmentProvider',
         'tracking_numbers' => 'setTrackingNumbers',
-        'replace' => 'setReplace',
-        'is_shipped' => 'setIsShipped',
         'tracking_link' => 'setTrackingLink',
+        'is_shipped' => 'setIsShipped',
         'delivered_at' => 'setDeliveredAt',
-        'shipment_provider' => 'setShipmentProvider'
+        'replace' => 'setReplace'
     ];
 
     /**
@@ -225,15 +225,15 @@ class OrderShipmentUpdate implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'store_id' => 'getStoreId',
         'shipment_id' => 'getShipmentId',
         'order_id' => 'getOrderId',
+        'store_id' => 'getStoreId',
+        'shipment_provider' => 'getShipmentProvider',
         'tracking_numbers' => 'getTrackingNumbers',
-        'replace' => 'getReplace',
-        'is_shipped' => 'getIsShipped',
         'tracking_link' => 'getTrackingLink',
+        'is_shipped' => 'getIsShipped',
         'delivered_at' => 'getDeliveredAt',
-        'shipment_provider' => 'getShipmentProvider'
+        'replace' => 'getReplace'
     ];
 
     /**
@@ -293,15 +293,15 @@ class OrderShipmentUpdate implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('store_id', $data ?? [], null);
         $this->setIfExists('shipment_id', $data ?? [], null);
         $this->setIfExists('order_id', $data ?? [], null);
-        $this->setIfExists('tracking_numbers', $data ?? [], null);
-        $this->setIfExists('replace', $data ?? [], true);
-        $this->setIfExists('is_shipped', $data ?? [], true);
-        $this->setIfExists('tracking_link', $data ?? [], null);
-        $this->setIfExists('delivered_at', $data ?? [], null);
+        $this->setIfExists('store_id', $data ?? [], null);
         $this->setIfExists('shipment_provider', $data ?? [], null);
+        $this->setIfExists('tracking_numbers', $data ?? [], null);
+        $this->setIfExists('tracking_link', $data ?? [], null);
+        $this->setIfExists('is_shipped', $data ?? [], true);
+        $this->setIfExists('delivered_at', $data ?? [], null);
+        $this->setIfExists('replace', $data ?? [], true);
     }
 
     /**
@@ -348,33 +348,6 @@ class OrderShipmentUpdate implements ModelInterface, ArrayAccess, \JsonSerializa
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets store_id
-     *
-     * @return string|null
-     */
-    public function getStoreId()
-    {
-        return $this->container['store_id'];
-    }
-
-    /**
-     * Sets store_id
-     *
-     * @param string|null $store_id Store Id
-     *
-     * @return self
-     */
-    public function setStoreId($store_id)
-    {
-        if (is_null($store_id)) {
-            throw new \InvalidArgumentException('non-nullable store_id cannot be null');
-        }
-        $this->container['store_id'] = $store_id;
-
-        return $this;
-    }
 
     /**
      * Gets shipment_id
@@ -431,6 +404,60 @@ class OrderShipmentUpdate implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
+     * Gets store_id
+     *
+     * @return string|null
+     */
+    public function getStoreId()
+    {
+        return $this->container['store_id'];
+    }
+
+    /**
+     * Sets store_id
+     *
+     * @param string|null $store_id Store Id
+     *
+     * @return self
+     */
+    public function setStoreId($store_id)
+    {
+        if (is_null($store_id)) {
+            throw new \InvalidArgumentException('non-nullable store_id cannot be null');
+        }
+        $this->container['store_id'] = $store_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets shipment_provider
+     *
+     * @return string|null
+     */
+    public function getShipmentProvider()
+    {
+        return $this->container['shipment_provider'];
+    }
+
+    /**
+     * Sets shipment_provider
+     *
+     * @param string|null $shipment_provider Defines company name that provide tracking of shipment
+     *
+     * @return self
+     */
+    public function setShipmentProvider($shipment_provider)
+    {
+        if (is_null($shipment_provider)) {
+            throw new \InvalidArgumentException('non-nullable shipment_provider cannot be null');
+        }
+        $this->container['shipment_provider'] = $shipment_provider;
+
+        return $this;
+    }
+
+    /**
      * Gets tracking_numbers
      *
      * @return \OpenAPI\Client\Model\OrderShipmentAddTrackingNumbersInner[]|null
@@ -453,60 +480,6 @@ class OrderShipmentUpdate implements ModelInterface, ArrayAccess, \JsonSerializa
             throw new \InvalidArgumentException('non-nullable tracking_numbers cannot be null');
         }
         $this->container['tracking_numbers'] = $tracking_numbers;
-
-        return $this;
-    }
-
-    /**
-     * Gets replace
-     *
-     * @return bool|null
-     */
-    public function getReplace()
-    {
-        return $this->container['replace'];
-    }
-
-    /**
-     * Sets replace
-     *
-     * @param bool|null $replace Allows rewrite tracking numbers
-     *
-     * @return self
-     */
-    public function setReplace($replace)
-    {
-        if (is_null($replace)) {
-            throw new \InvalidArgumentException('non-nullable replace cannot be null');
-        }
-        $this->container['replace'] = $replace;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_shipped
-     *
-     * @return bool|null
-     */
-    public function getIsShipped()
-    {
-        return $this->container['is_shipped'];
-    }
-
-    /**
-     * Sets is_shipped
-     *
-     * @param bool|null $is_shipped Defines shipment's status
-     *
-     * @return self
-     */
-    public function setIsShipped($is_shipped)
-    {
-        if (is_null($is_shipped)) {
-            throw new \InvalidArgumentException('non-nullable is_shipped cannot be null');
-        }
-        $this->container['is_shipped'] = $is_shipped;
 
         return $this;
     }
@@ -539,6 +512,33 @@ class OrderShipmentUpdate implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
+     * Gets is_shipped
+     *
+     * @return bool|null
+     */
+    public function getIsShipped()
+    {
+        return $this->container['is_shipped'];
+    }
+
+    /**
+     * Sets is_shipped
+     *
+     * @param bool|null $is_shipped Defines shipment's status
+     *
+     * @return self
+     */
+    public function setIsShipped($is_shipped)
+    {
+        if (is_null($is_shipped)) {
+            throw new \InvalidArgumentException('non-nullable is_shipped cannot be null');
+        }
+        $this->container['is_shipped'] = $is_shipped;
+
+        return $this;
+    }
+
+    /**
      * Gets delivered_at
      *
      * @return string|null
@@ -566,28 +566,28 @@ class OrderShipmentUpdate implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
-     * Gets shipment_provider
+     * Gets replace
      *
-     * @return string|null
+     * @return bool|null
      */
-    public function getShipmentProvider()
+    public function getReplace()
     {
-        return $this->container['shipment_provider'];
+        return $this->container['replace'];
     }
 
     /**
-     * Sets shipment_provider
+     * Sets replace
      *
-     * @param string|null $shipment_provider Defines company name that provide tracking of shipment
+     * @param bool|null $replace Allows rewrite tracking numbers
      *
      * @return self
      */
-    public function setShipmentProvider($shipment_provider)
+    public function setReplace($replace)
     {
-        if (is_null($shipment_provider)) {
-            throw new \InvalidArgumentException('non-nullable shipment_provider cannot be null');
+        if (is_null($replace)) {
+            throw new \InvalidArgumentException('non-nullable replace cannot be null');
         }
-        $this->container['shipment_provider'] = $shipment_provider;
+        $this->container['replace'] = $replace;
 
         return $this;
     }

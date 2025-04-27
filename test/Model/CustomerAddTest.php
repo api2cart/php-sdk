@@ -135,6 +135,15 @@ class CustomerAddTest extends TestCase
     }
 
     /**
+     * Test attribute "status"
+     */
+    public function testPropertyStatus()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "created_time"
      */
     public function testPropertyCreatedTime()
@@ -180,15 +189,6 @@ class CustomerAddTest extends TestCase
     }
 
     /**
-     * Test attribute "status"
-     */
-    public function testPropertyStatus()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "news_letter_subscription"
      */
     public function testPropertyNewsLetterSubscription()
@@ -219,15 +219,6 @@ class CustomerAddTest extends TestCase
      * Test attribute "website"
      */
     public function testPropertyWebsite()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "store_id"
-     */
-    public function testPropertyStoreId()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -273,6 +264,15 @@ class CustomerAddTest extends TestCase
      * Test attribute "country"
      */
     public function testPropertyCountry()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "store_id"
+     */
+    public function testPropertyStoreId()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

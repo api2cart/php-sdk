@@ -11,7 +11,7 @@ All URIs are relative to https://api.api2cart.com/v1.1, except if the operation 
 ## `batchJobList()`
 
 ```php
-batchJobList($count, $page_cursor, $created_from, $created_to, $processed_from, $processed_to, $ids, $response_fields): \OpenAPI\Client\Model\ModelResponseBatchJobList
+batchJobList($count, $page_cursor, $ids, $created_from, $created_to, $processed_from, $processed_to, $response_fields): \OpenAPI\Client\Model\ModelResponseBatchJobList
 ```
 
 batch.job.list
@@ -44,15 +44,15 @@ $apiInstance = new OpenAPI\Client\Api\BatchApi(
 );
 $count = 20; // int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
 $page_cursor = ; // string | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
+$ids = 24,25; // string | Filter batch jobs by ids
 $created_from = 2010-07-29 13:45:52; // string | Retrieve entities from their creation date
 $created_to = 2100-08-29 13:45:52; // string | Retrieve entities to their creation date
 $processed_from = 2100-08-29 13:45:52; // string | Retrieve entities according to their processing datetime
 $processed_to = 2100-08-29 13:45:52; // string | Retrieve entities according to their processing datetime
-$ids = 24,25; // string | Filter batch jobs by ids
 $response_fields = {result}; // string | Set this parameter in order to choose which entity fields you want to retrieve
 
 try {
-    $result = $apiInstance->batchJobList($count, $page_cursor, $created_from, $created_to, $processed_from, $processed_to, $ids, $response_fields);
+    $result = $apiInstance->batchJobList($count, $page_cursor, $ids, $created_from, $created_to, $processed_from, $processed_to, $response_fields);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BatchApi->batchJobList: ', $e->getMessage(), PHP_EOL;
@@ -65,11 +65,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **count** | **int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
 | **page_cursor** | **string**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
+| **ids** | **string**| Filter batch jobs by ids | [optional] |
 | **created_from** | **string**| Retrieve entities from their creation date | [optional] |
 | **created_to** | **string**| Retrieve entities to their creation date | [optional] |
 | **processed_from** | **string**| Retrieve entities according to their processing datetime | [optional] |
 | **processed_to** | **string**| Retrieve entities according to their processing datetime | [optional] |
-| **ids** | **string**| Filter batch jobs by ids | [optional] |
 | **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;{return_code,return_message,pagination,result}&#39;] |
 
 ### Return type

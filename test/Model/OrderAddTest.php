@@ -126,18 +126,18 @@ class OrderAddTest extends TestCase
     }
 
     /**
-     * Test attribute "send_notifications"
+     * Test attribute "fulfillment_status"
      */
-    public function testPropertySendNotifications()
+    public function testPropertyFulfillmentStatus()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "send_admin_notifications"
+     * Test attribute "financial_status"
      */
-    public function testPropertySendAdminNotifications()
+    public function testPropertyFinancialStatus()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -147,249 +147,6 @@ class OrderAddTest extends TestCase
      * Test attribute "customer_email"
      */
     public function testPropertyCustomerEmail()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "bill_first_name"
-     */
-    public function testPropertyBillFirstName()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "bill_last_name"
-     */
-    public function testPropertyBillLastName()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "bill_address_1"
-     */
-    public function testPropertyBillAddress1()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "bill_city"
-     */
-    public function testPropertyBillCity()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "bill_postcode"
-     */
-    public function testPropertyBillPostcode()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "bill_state"
-     */
-    public function testPropertyBillState()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "bill_country"
-     */
-    public function testPropertyBillCountry()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "shipp_first_name"
-     */
-    public function testPropertyShippFirstName()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "shipp_last_name"
-     */
-    public function testPropertyShippLastName()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "shipp_address_1"
-     */
-    public function testPropertyShippAddress1()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "shipp_city"
-     */
-    public function testPropertyShippCity()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "shipp_postcode"
-     */
-    public function testPropertyShippPostcode()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "shipp_state"
-     */
-    public function testPropertyShippState()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "shipp_country"
-     */
-    public function testPropertyShippCountry()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "total_price"
-     */
-    public function testPropertyTotalPrice()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "date"
-     */
-    public function testPropertyDate()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "order_payment_method"
-     */
-    public function testPropertyOrderPaymentMethod()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "transaction_id"
-     */
-    public function testPropertyTransactionId()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "order_shipping_method"
-     */
-    public function testPropertyOrderShippingMethod()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "currency"
-     */
-    public function testPropertyCurrency()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "bill_address_2"
-     */
-    public function testPropertyBillAddress2()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "bill_company"
-     */
-    public function testPropertyBillCompany()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "bill_phone"
-     */
-    public function testPropertyBillPhone()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "bill_fax"
-     */
-    public function testPropertyBillFax()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "comment"
-     */
-    public function testPropertyComment()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "admin_comment"
-     */
-    public function testPropertyAdminComment()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "admin_private_comment"
-     */
-    public function testPropertyAdminPrivateComment()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -450,9 +207,225 @@ class OrderAddTest extends TestCase
     }
 
     /**
+     * Test attribute "order_payment_method"
+     */
+    public function testPropertyOrderPaymentMethod()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "transaction_id"
+     */
+    public function testPropertyTransactionId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "currency"
+     */
+    public function testPropertyCurrency()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "date"
+     */
+    public function testPropertyDate()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "date_modified"
+     */
+    public function testPropertyDateModified()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "date_finished"
+     */
+    public function testPropertyDateFinished()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bill_first_name"
+     */
+    public function testPropertyBillFirstName()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bill_last_name"
+     */
+    public function testPropertyBillLastName()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bill_address_1"
+     */
+    public function testPropertyBillAddress1()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bill_address_2"
+     */
+    public function testPropertyBillAddress2()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bill_city"
+     */
+    public function testPropertyBillCity()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bill_postcode"
+     */
+    public function testPropertyBillPostcode()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bill_state"
+     */
+    public function testPropertyBillState()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bill_country"
+     */
+    public function testPropertyBillCountry()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bill_company"
+     */
+    public function testPropertyBillCompany()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bill_phone"
+     */
+    public function testPropertyBillPhone()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bill_fax"
+     */
+    public function testPropertyBillFax()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "shipp_first_name"
+     */
+    public function testPropertyShippFirstName()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "shipp_last_name"
+     */
+    public function testPropertyShippLastName()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "shipp_address_1"
+     */
+    public function testPropertyShippAddress1()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "shipp_address_2"
      */
     public function testPropertyShippAddress2()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "shipp_city"
+     */
+    public function testPropertyShippCity()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "shipp_postcode"
+     */
+    public function testPropertyShippPostcode()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "shipp_state"
+     */
+    public function testPropertyShippState()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "shipp_country"
+     */
+    public function testPropertyShippCountry()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -486,24 +459,6 @@ class OrderAddTest extends TestCase
     }
 
     /**
-     * Test attribute "date_modified"
-     */
-    public function testPropertyDateModified()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "date_finished"
-     */
-    public function testPropertyDateFinished()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "subtotal_price"
      */
     public function testPropertySubtotalPrice()
@@ -516,6 +471,33 @@ class OrderAddTest extends TestCase
      * Test attribute "tax_price"
      */
     public function testPropertyTaxPrice()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "total_price"
+     */
+    public function testPropertyTotalPrice()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "total_paid"
+     */
+    public function testPropertyTotalPaid()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "total_weight"
+     */
+    public function testPropertyTotalWeight()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -549,24 +531,6 @@ class OrderAddTest extends TestCase
     }
 
     /**
-     * Test attribute "carrier_id"
-     */
-    public function testPropertyCarrierId()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "warehouse_id"
-     */
-    public function testPropertyWarehouseId()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "discount"
      */
     public function testPropertyDiscount()
@@ -585,15 +549,6 @@ class OrderAddTest extends TestCase
     }
 
     /**
-     * Test attribute "coupons"
-     */
-    public function testPropertyCoupons()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "gift_certificate_discount"
      */
     public function testPropertyGiftCertificateDiscount()
@@ -603,36 +558,36 @@ class OrderAddTest extends TestCase
     }
 
     /**
-     * Test attribute "fulfillment_status"
+     * Test attribute "order_shipping_method"
      */
-    public function testPropertyFulfillmentStatus()
+    public function testPropertyOrderShippingMethod()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "financial_status"
+     * Test attribute "carrier_id"
      */
-    public function testPropertyFinancialStatus()
+    public function testPropertyCarrierId()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "total_paid"
+     * Test attribute "warehouse_id"
      */
-    public function testPropertyTotalPaid()
+    public function testPropertyWarehouseId()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "external_source"
+     * Test attribute "coupons"
      */
-    public function testPropertyExternalSource()
+    public function testPropertyCoupons()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -642,6 +597,60 @@ class OrderAddTest extends TestCase
      * Test attribute "tags"
      */
     public function testPropertyTags()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "comment"
+     */
+    public function testPropertyComment()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "admin_comment"
+     */
+    public function testPropertyAdminComment()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "admin_private_comment"
+     */
+    public function testPropertyAdminPrivateComment()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "send_notifications"
+     */
+    public function testPropertySendNotifications()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "send_admin_notifications"
+     */
+    public function testPropertySendAdminNotifications()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "external_source"
+     */
+    public function testPropertyExternalSource()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -669,15 +678,6 @@ class OrderAddTest extends TestCase
      * Test attribute "note_attributes"
      */
     public function testPropertyNoteAttributes()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "total_weight"
-     */
-    public function testPropertyTotalWeight()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

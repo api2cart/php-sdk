@@ -71,9 +71,9 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'consents' => '\OpenAPI\Client\Model\CustomerAddConsentsInner[]',
         'tags' => 'string',
         'gender' => 'string',
-        'store_id' => 'string',
         'note' => 'string',
         'status' => 'string',
+        'store_id' => 'string',
         'address' => '\OpenAPI\Client\Model\CustomerUpdateAddressInner[]'
     ];
 
@@ -98,9 +98,9 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'consents' => null,
         'tags' => null,
         'gender' => null,
-        'store_id' => null,
         'note' => null,
         'status' => null,
+        'store_id' => null,
         'address' => null
     ];
 
@@ -123,9 +123,9 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'consents' => false,
         'tags' => false,
         'gender' => false,
-        'store_id' => false,
         'note' => false,
         'status' => false,
+        'store_id' => false,
         'address' => false
     ];
 
@@ -228,9 +228,9 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'consents' => 'consents',
         'tags' => 'tags',
         'gender' => 'gender',
-        'store_id' => 'store_id',
         'note' => 'note',
         'status' => 'status',
+        'store_id' => 'store_id',
         'address' => 'address'
     ];
 
@@ -253,9 +253,9 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'consents' => 'setConsents',
         'tags' => 'setTags',
         'gender' => 'setGender',
-        'store_id' => 'setStoreId',
         'note' => 'setNote',
         'status' => 'setStatus',
+        'store_id' => 'setStoreId',
         'address' => 'setAddress'
     ];
 
@@ -278,9 +278,9 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'consents' => 'getConsents',
         'tags' => 'getTags',
         'gender' => 'getGender',
-        'store_id' => 'getStoreId',
         'note' => 'getNote',
         'status' => 'getStatus',
+        'store_id' => 'getStoreId',
         'address' => 'getAddress'
     ];
 
@@ -354,9 +354,9 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('consents', $data ?? [], null);
         $this->setIfExists('tags', $data ?? [], null);
         $this->setIfExists('gender', $data ?? [], null);
-        $this->setIfExists('store_id', $data ?? [], null);
         $this->setIfExists('note', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
+        $this->setIfExists('store_id', $data ?? [], null);
         $this->setIfExists('address', $data ?? [], null);
     }
 
@@ -763,33 +763,6 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets store_id
-     *
-     * @return string|null
-     */
-    public function getStoreId()
-    {
-        return $this->container['store_id'];
-    }
-
-    /**
-     * Sets store_id
-     *
-     * @param string|null $store_id Store Id
-     *
-     * @return self
-     */
-    public function setStoreId($store_id)
-    {
-        if (is_null($store_id)) {
-            throw new \InvalidArgumentException('non-nullable store_id cannot be null');
-        }
-        $this->container['store_id'] = $store_id;
-
-        return $this;
-    }
-
-    /**
      * Gets note
      *
      * @return string|null
@@ -839,6 +812,33 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable status cannot be null');
         }
         $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets store_id
+     *
+     * @return string|null
+     */
+    public function getStoreId()
+    {
+        return $this->container['store_id'];
+    }
+
+    /**
+     * Sets store_id
+     *
+     * @param string|null $store_id Store Id
+     *
+     * @return self
+     */
+    public function setStoreId($store_id)
+    {
+        if (is_null($store_id)) {
+            throw new \InvalidArgumentException('non-nullable store_id cannot be null');
+        }
+        $this->container['store_id'] = $store_id;
 
         return $this;
     }

@@ -21,7 +21,7 @@ All URIs are relative to https://api.api2cart.com/v1.1, except if the operation 
 ## `categoryAdd()`
 
 ```php
-categoryAdd($name, $parent_id, $stores_ids, $store_id, $lang_id, $avail, $sort_order, $created_time, $modified_time, $description, $short_description, $meta_title, $meta_description, $meta_keywords, $seo_url): \OpenAPI\Client\Model\CategoryAdd200Response
+categoryAdd($name, $description, $short_description, $parent_id, $avail, $created_time, $modified_time, $sort_order, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id): \OpenAPI\Client\Model\CategoryAdd200Response
 ```
 
 category.add
@@ -53,23 +53,23 @@ $apiInstance = new OpenAPI\Client\Api\CategoryApi(
     $config
 );
 $name = Shoes; // string | Defines category's name that has to be added
-$parent_id = 6; // string | Adds categories specified by parent id
-$stores_ids = 1,2; // string | Create category in the stores that is specified by comma-separated stores' id
-$store_id = 1; // string | Store Id
-$lang_id = 3; // string | Language id
-$avail = false; // bool | Defines category's visibility status
-$sort_order = 2; // int | Sort number in the list
-$created_time = 2014-01-30 15:58:41; // string | Entity's date creation
-$modified_time = 2014-07-30 15:58:41; // string | Entity's date modification
 $description = Test category; // string | Defines category's description
 $short_description = Short description. This is very short description; // string | Defines short description
+$parent_id = 6; // string | Adds categories specified by parent id
+$avail = false; // bool | Defines category's visibility status
+$created_time = 2014-01-30 15:58:41; // string | Entity's date creation
+$modified_time = 2014-07-30 15:58:41; // string | Entity's date modification
+$sort_order = 2; // int | Sort number in the list
 $meta_title = category,test; // string | Defines unique meta title for each entity
 $meta_description = category,test; // string | Defines unique meta description of a entity
 $meta_keywords = category,test; // string | Defines unique meta keywords for each entity
 $seo_url = category,test; // string | Defines unique category's URL for SEO
+$store_id = 1; // string | Store Id
+$stores_ids = 1,2; // string | Create category in the stores that is specified by comma-separated stores' id
+$lang_id = 3; // string | Language id
 
 try {
-    $result = $apiInstance->categoryAdd($name, $parent_id, $stores_ids, $store_id, $lang_id, $avail, $sort_order, $created_time, $modified_time, $description, $short_description, $meta_title, $meta_description, $meta_keywords, $seo_url);
+    $result = $apiInstance->categoryAdd($name, $description, $short_description, $parent_id, $avail, $created_time, $modified_time, $sort_order, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CategoryApi->categoryAdd: ', $e->getMessage(), PHP_EOL;
@@ -81,20 +81,20 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **name** | **string**| Defines category&#39;s name that has to be added | |
-| **parent_id** | **string**| Adds categories specified by parent id | [optional] |
-| **stores_ids** | **string**| Create category in the stores that is specified by comma-separated stores&#39; id | [optional] |
-| **store_id** | **string**| Store Id | [optional] |
-| **lang_id** | **string**| Language id | [optional] |
-| **avail** | **bool**| Defines category&#39;s visibility status | [optional] [default to true] |
-| **sort_order** | **int**| Sort number in the list | [optional] [default to 0] |
-| **created_time** | **string**| Entity&#39;s date creation | [optional] |
-| **modified_time** | **string**| Entity&#39;s date modification | [optional] |
 | **description** | **string**| Defines category&#39;s description | [optional] |
 | **short_description** | **string**| Defines short description | [optional] |
+| **parent_id** | **string**| Adds categories specified by parent id | [optional] |
+| **avail** | **bool**| Defines category&#39;s visibility status | [optional] [default to true] |
+| **created_time** | **string**| Entity&#39;s date creation | [optional] |
+| **modified_time** | **string**| Entity&#39;s date modification | [optional] |
+| **sort_order** | **int**| Sort number in the list | [optional] [default to 0] |
 | **meta_title** | **string**| Defines unique meta title for each entity | [optional] |
 | **meta_description** | **string**| Defines unique meta description of a entity | [optional] |
 | **meta_keywords** | **string**| Defines unique meta keywords for each entity | [optional] |
 | **seo_url** | **string**| Defines unique category&#39;s URL for SEO | [optional] |
+| **store_id** | **string**| Store Id | [optional] |
+| **stores_ids** | **string**| Create category in the stores that is specified by comma-separated stores&#39; id | [optional] |
+| **lang_id** | **string**| Language id | [optional] |
 
 ### Return type
 
@@ -183,7 +183,7 @@ try {
 ## `categoryAssign()`
 
 ```php
-categoryAssign($product_id, $category_id, $store_id): \OpenAPI\Client\Model\CartConfigUpdate200Response
+categoryAssign($category_id, $product_id, $store_id): \OpenAPI\Client\Model\CartConfigUpdate200Response
 ```
 
 category.assign
@@ -214,12 +214,12 @@ $apiInstance = new OpenAPI\Client\Api\CategoryApi(
     new GuzzleHttp\Client(),
     $config
 );
-$product_id = 10; // string | Defines category assign to the product, specified by product id
 $category_id = 6; // string | Defines category assign, specified by category id
+$product_id = 10; // string | Defines category assign to the product, specified by product id
 $store_id = 1; // string | Store Id
 
 try {
-    $result = $apiInstance->categoryAssign($product_id, $category_id, $store_id);
+    $result = $apiInstance->categoryAssign($category_id, $product_id, $store_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CategoryApi->categoryAssign: ', $e->getMessage(), PHP_EOL;
@@ -230,8 +230,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **product_id** | **string**| Defines category assign to the product, specified by product id | |
 | **category_id** | **string**| Defines category assign, specified by category id | |
+| **product_id** | **string**| Defines category assign to the product, specified by product id | |
 | **store_id** | **string**| Store Id | [optional] |
 
 ### Return type
@@ -254,7 +254,7 @@ try {
 ## `categoryCount()`
 
 ```php
-categoryCount($parent_id, $store_id, $lang_id, $created_from, $created_to, $modified_from, $modified_to, $avail, $product_type, $find_value, $find_where, $report_request_id, $disable_report_cache): \OpenAPI\Client\Model\CategoryCount200Response
+categoryCount($parent_id, $store_id, $lang_id, $avail, $created_from, $created_to, $modified_from, $modified_to, $product_type, $find_value, $find_where, $report_request_id, $disable_report_cache): \OpenAPI\Client\Model\CategoryCount200Response
 ```
 
 category.count
@@ -288,11 +288,11 @@ $apiInstance = new OpenAPI\Client\Api\CategoryApi(
 $parent_id = 6; // string | Counts categories specified by parent id
 $store_id = 1; // string | Counts category specified by store id
 $lang_id = 3; // string | Counts category specified by language id
+$avail = false; // bool | Defines category's visibility status
 $created_from = 2010-07-29 13:45:52; // string | Retrieve entities from their creation date
 $created_to = 2100-08-29 13:45:52; // string | Retrieve entities to their creation date
 $modified_from = 2010-07-29 13:45:52; // string | Retrieve entities from their modification date
 $modified_to = 2100-08-29 13:45:52; // string | Retrieve entities to their modification date
-$avail = false; // bool | Defines category's visibility status
 $product_type = BICYCLE; // string | A categorization for the product
 $find_value = Demo category 1; // string | Entity search that is specified by some value
 $find_where = email; // string | Counts categories that are searched specified by field
@@ -300,7 +300,7 @@ $report_request_id = 105245017661; // string | Report request id
 $disable_report_cache = false; // bool | Disable report cache for current request
 
 try {
-    $result = $apiInstance->categoryCount($parent_id, $store_id, $lang_id, $created_from, $created_to, $modified_from, $modified_to, $avail, $product_type, $find_value, $find_where, $report_request_id, $disable_report_cache);
+    $result = $apiInstance->categoryCount($parent_id, $store_id, $lang_id, $avail, $created_from, $created_to, $modified_from, $modified_to, $product_type, $find_value, $find_where, $report_request_id, $disable_report_cache);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CategoryApi->categoryCount: ', $e->getMessage(), PHP_EOL;
@@ -314,11 +314,11 @@ try {
 | **parent_id** | **string**| Counts categories specified by parent id | [optional] |
 | **store_id** | **string**| Counts category specified by store id | [optional] |
 | **lang_id** | **string**| Counts category specified by language id | [optional] |
+| **avail** | **bool**| Defines category&#39;s visibility status | [optional] [default to true] |
 | **created_from** | **string**| Retrieve entities from their creation date | [optional] |
 | **created_to** | **string**| Retrieve entities to their creation date | [optional] |
 | **modified_from** | **string**| Retrieve entities from their modification date | [optional] |
 | **modified_to** | **string**| Retrieve entities to their modification date | [optional] |
-| **avail** | **bool**| Defines category&#39;s visibility status | [optional] [default to true] |
 | **product_type** | **string**| A categorization for the product | [optional] |
 | **find_value** | **string**| Entity search that is specified by some value | [optional] |
 | **find_where** | **string**| Counts categories that are searched specified by field | [optional] |
@@ -489,7 +489,7 @@ try {
 ## `categoryImageAdd()`
 
 ```php
-categoryImageAdd($category_id, $image_name, $url, $type, $label, $mime, $position, $store_id): \OpenAPI\Client\Model\CategoryImageAdd200Response
+categoryImageAdd($category_id, $image_name, $url, $type, $store_id, $label, $mime, $position): \OpenAPI\Client\Model\CategoryImageAdd200Response
 ```
 
 category.image.add
@@ -524,13 +524,13 @@ $category_id = 6; // string | Defines category id where the image should be adde
 $image_name = bag-gray.png; // string | Defines image's name
 $url = http://docs.api2cart.com/img/logo.png; // string | Defines URL of the image that has to be added
 $type = base; // string | Defines image's types that are specified by comma-separated list
+$store_id = 1; // string | Store Id
 $label = This cool image; // string | Defines alternative text that has to be attached to the picture
 $mime = image/jpeg; // string | Mime type of image http://en.wikipedia.org/wiki/Internet_media_type.
 $position = 5; // int | Defines image’s position in the list
-$store_id = 1; // string | Store Id
 
 try {
-    $result = $apiInstance->categoryImageAdd($category_id, $image_name, $url, $type, $label, $mime, $position, $store_id);
+    $result = $apiInstance->categoryImageAdd($category_id, $image_name, $url, $type, $store_id, $label, $mime, $position);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CategoryApi->categoryImageAdd: ', $e->getMessage(), PHP_EOL;
@@ -545,10 +545,10 @@ try {
 | **image_name** | **string**| Defines image&#39;s name | |
 | **url** | **string**| Defines URL of the image that has to be added | |
 | **type** | **string**| Defines image&#39;s types that are specified by comma-separated list | |
+| **store_id** | **string**| Store Id | [optional] |
 | **label** | **string**| Defines alternative text that has to be attached to the picture | [optional] |
 | **mime** | **string**| Mime type of image http://en.wikipedia.org/wiki/Internet_media_type. | [optional] |
 | **position** | **int**| Defines image’s position in the list | [optional] [default to 0] |
-| **store_id** | **string**| Store Id | [optional] |
 
 ### Return type
 
@@ -641,7 +641,7 @@ try {
 ## `categoryInfo()`
 
 ```php
-categoryInfo($id, $params, $response_fields, $exclude, $store_id, $lang_id, $schema_type, $report_request_id, $disable_report_cache): \OpenAPI\Client\Model\CategoryInfo200Response
+categoryInfo($id, $store_id, $lang_id, $schema_type, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache): \OpenAPI\Client\Model\CategoryInfo200Response
 ```
 
 category.info
@@ -673,17 +673,17 @@ $apiInstance = new OpenAPI\Client\Api\CategoryApi(
     $config
 );
 $id = 10; // string | Retrieves category's info specified by category id
-$params = id,parent_id,name; // string | Set this parameter in order to choose which entity fields you want to retrieve
-$response_fields = {result{id,name,parent_id,modified_at{value},images}}; // string | Set this parameter in order to choose which entity fields you want to retrieve
-$exclude = id,parent_id,name; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 $store_id = 1; // string | Retrieves category info  specified by store id
 $lang_id = 3; // string | Retrieves category info  specified by language id
 $schema_type = LISTING; // string | The name of the requirements set for the provided schema.
+$response_fields = {result{id,name,parent_id,modified_at{value},images}}; // string | Set this parameter in order to choose which entity fields you want to retrieve
+$params = id,parent_id,name; // string | Set this parameter in order to choose which entity fields you want to retrieve
+$exclude = id,parent_id,name; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 $report_request_id = 105245017661; // string | Report request id
 $disable_report_cache = false; // bool | Disable report cache for current request
 
 try {
-    $result = $apiInstance->categoryInfo($id, $params, $response_fields, $exclude, $store_id, $lang_id, $schema_type, $report_request_id, $disable_report_cache);
+    $result = $apiInstance->categoryInfo($id, $store_id, $lang_id, $schema_type, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CategoryApi->categoryInfo: ', $e->getMessage(), PHP_EOL;
@@ -695,12 +695,12 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| Retrieves category&#39;s info specified by category id | |
-| **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,parent_id,name,description&#39;] |
-| **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
-| **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 | **store_id** | **string**| Retrieves category info  specified by store id | [optional] |
 | **lang_id** | **string**| Retrieves category info  specified by language id | [optional] |
 | **schema_type** | **string**| The name of the requirements set for the provided schema. | [optional] |
+| **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,parent_id,name,description&#39;] |
+| **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 | **report_request_id** | **string**| Report request id | [optional] |
 | **disable_report_cache** | **bool**| Disable report cache for current request | [optional] [default to false] |
 
@@ -724,7 +724,7 @@ try {
 ## `categoryList()`
 
 ```php
-categoryList($start, $count, $page_cursor, $parent_id, $params, $response_fields, $exclude, $store_id, $lang_id, $created_from, $created_to, $modified_from, $modified_to, $avail, $product_type, $find_value, $find_where, $report_request_id, $disable_report_cache, $disable_cache): \OpenAPI\Client\Model\ModelResponseCategoryList
+categoryList($start, $count, $page_cursor, $store_id, $lang_id, $parent_id, $avail, $product_type, $created_from, $created_to, $modified_from, $modified_to, $find_value, $find_where, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $disable_cache): \OpenAPI\Client\Model\ModelResponseCategoryList
 ```
 
 category.list
@@ -758,26 +758,26 @@ $apiInstance = new OpenAPI\Client\Api\CategoryApi(
 $start = 0; // int | This parameter sets the number from which you want to get entities
 $count = 20; // int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
 $page_cursor = ; // string | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
-$parent_id = 6; // string | Retrieves categories specified by parent id
-$params = id,parent_id,name; // string | Set this parameter in order to choose which entity fields you want to retrieve
-$response_fields = {result{categories_count,category{id,parent_id,modified_at{value},images}}}; // string | Set this parameter in order to choose which entity fields you want to retrieve
-$exclude = id,parent_id,name; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 $store_id = 1; // string | Retrieves categories specified by store id
 $lang_id = 3; // string | Retrieves categorys specified by language id
+$parent_id = 6; // string | Retrieves categories specified by parent id
+$avail = false; // bool | Defines category's visibility status
+$product_type = BICYCLE; // string | A categorization for the product
 $created_from = 2010-07-29 13:45:52; // string | Retrieve entities from their creation date
 $created_to = 2100-08-29 13:45:52; // string | Retrieve entities to their creation date
 $modified_from = 2010-07-29 13:45:52; // string | Retrieve entities from their modification date
 $modified_to = 2100-08-29 13:45:52; // string | Retrieve entities to their modification date
-$avail = false; // bool | Defines category's visibility status
-$product_type = BICYCLE; // string | A categorization for the product
 $find_value = Demo category 1; // string | Entity search that is specified by some value
 $find_where = name; // string | Category search that is specified by field
+$response_fields = {result{categories_count,category{id,parent_id,modified_at{value},images}}}; // string | Set this parameter in order to choose which entity fields you want to retrieve
+$params = id,parent_id,name; // string | Set this parameter in order to choose which entity fields you want to retrieve
+$exclude = id,parent_id,name; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 $report_request_id = 105245017661; // string | Report request id
 $disable_report_cache = false; // bool | Disable report cache for current request
 $disable_cache = false; // bool | Disable cache for current request
 
 try {
-    $result = $apiInstance->categoryList($start, $count, $page_cursor, $parent_id, $params, $response_fields, $exclude, $store_id, $lang_id, $created_from, $created_to, $modified_from, $modified_to, $avail, $product_type, $find_value, $find_where, $report_request_id, $disable_report_cache, $disable_cache);
+    $result = $apiInstance->categoryList($start, $count, $page_cursor, $store_id, $lang_id, $parent_id, $avail, $product_type, $created_from, $created_to, $modified_from, $modified_to, $find_value, $find_where, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $disable_cache);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CategoryApi->categoryList: ', $e->getMessage(), PHP_EOL;
@@ -791,20 +791,20 @@ try {
 | **start** | **int**| This parameter sets the number from which you want to get entities | [optional] [default to 0] |
 | **count** | **int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
 | **page_cursor** | **string**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
-| **parent_id** | **string**| Retrieves categories specified by parent id | [optional] |
-| **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,parent_id,name,description&#39;] |
-| **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
-| **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 | **store_id** | **string**| Retrieves categories specified by store id | [optional] |
 | **lang_id** | **string**| Retrieves categorys specified by language id | [optional] |
+| **parent_id** | **string**| Retrieves categories specified by parent id | [optional] |
+| **avail** | **bool**| Defines category&#39;s visibility status | [optional] [default to true] |
+| **product_type** | **string**| A categorization for the product | [optional] |
 | **created_from** | **string**| Retrieve entities from their creation date | [optional] |
 | **created_to** | **string**| Retrieve entities to their creation date | [optional] |
 | **modified_from** | **string**| Retrieve entities from their modification date | [optional] |
 | **modified_to** | **string**| Retrieve entities to their modification date | [optional] |
-| **avail** | **bool**| Defines category&#39;s visibility status | [optional] [default to true] |
-| **product_type** | **string**| A categorization for the product | [optional] |
 | **find_value** | **string**| Entity search that is specified by some value | [optional] |
 | **find_where** | **string**| Category search that is specified by field | [optional] |
+| **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,parent_id,name,description&#39;] |
+| **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 | **report_request_id** | **string**| Report request id | [optional] |
 | **disable_report_cache** | **bool**| Disable report cache for current request | [optional] [default to false] |
 | **disable_cache** | **bool**| Disable cache for current request | [optional] [default to false] |
@@ -900,7 +900,7 @@ try {
 ## `categoryUpdate()`
 
 ```php
-categoryUpdate($id, $name, $parent_id, $stores_ids, $avail, $sort_order, $modified_time, $description, $short_description, $meta_title, $meta_description, $meta_keywords, $seo_url, $lang_id, $store_id): \OpenAPI\Client\Model\AccountConfigUpdate200Response
+categoryUpdate($id, $name, $description, $short_description, $parent_id, $avail, $sort_order, $modified_time, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id): \OpenAPI\Client\Model\AccountConfigUpdate200Response
 ```
 
 category.update
@@ -933,22 +933,22 @@ $apiInstance = new OpenAPI\Client\Api\CategoryApi(
 );
 $id = 10; // string | Defines category update specified by category id
 $name = NEW Shoes; // string | Defines new category’s name
+$description = New test category; // string | Defines new category's description
+$short_description = Short description. This is very short description; // string | Defines short description
 $parent_id = 6; // string | Defines new parent category id
-$stores_ids = 1,2; // string | Update category in the stores that is specified by comma-separated stores' id
 $avail = false; // bool | Defines category's visibility status
 $sort_order = 2; // int | Sort number in the list
 $modified_time = 2014-07-30 15:58:41; // string | Entity's date modification
-$description = New test category; // string | Defines new category's description
-$short_description = Short description. This is very short description; // string | Defines short description
 $meta_title = category,test; // string | Defines unique meta title for each entity
 $meta_description = category,test; // string | Defines unique meta description of a entity
 $meta_keywords = category,test; // string | Defines unique meta keywords for each entity
 $seo_url = category,test; // string | Defines unique category's URL for SEO
-$lang_id = 3; // string | Language id
 $store_id = 1; // string | Store Id
+$stores_ids = 1,2; // string | Update category in the stores that is specified by comma-separated stores' id
+$lang_id = 3; // string | Language id
 
 try {
-    $result = $apiInstance->categoryUpdate($id, $name, $parent_id, $stores_ids, $avail, $sort_order, $modified_time, $description, $short_description, $meta_title, $meta_description, $meta_keywords, $seo_url, $lang_id, $store_id);
+    $result = $apiInstance->categoryUpdate($id, $name, $description, $short_description, $parent_id, $avail, $sort_order, $modified_time, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CategoryApi->categoryUpdate: ', $e->getMessage(), PHP_EOL;
@@ -961,19 +961,19 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| Defines category update specified by category id | |
 | **name** | **string**| Defines new category’s name | [optional] |
+| **description** | **string**| Defines new category&#39;s description | [optional] |
+| **short_description** | **string**| Defines short description | [optional] |
 | **parent_id** | **string**| Defines new parent category id | [optional] |
-| **stores_ids** | **string**| Update category in the stores that is specified by comma-separated stores&#39; id | [optional] |
 | **avail** | **bool**| Defines category&#39;s visibility status | [optional] |
 | **sort_order** | **int**| Sort number in the list | [optional] |
 | **modified_time** | **string**| Entity&#39;s date modification | [optional] |
-| **description** | **string**| Defines new category&#39;s description | [optional] |
-| **short_description** | **string**| Defines short description | [optional] |
 | **meta_title** | **string**| Defines unique meta title for each entity | [optional] |
 | **meta_description** | **string**| Defines unique meta description of a entity | [optional] |
 | **meta_keywords** | **string**| Defines unique meta keywords for each entity | [optional] |
 | **seo_url** | **string**| Defines unique category&#39;s URL for SEO | [optional] |
-| **lang_id** | **string**| Language id | [optional] |
 | **store_id** | **string**| Store Id | [optional] |
+| **stores_ids** | **string**| Update category in the stores that is specified by comma-separated stores&#39; id | [optional] |
+| **lang_id** | **string**| Language id | [optional] |
 
 ### Return type
 

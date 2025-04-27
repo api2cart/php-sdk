@@ -131,6 +131,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shopline_access_token' => 'string',
         'shopline_app_key' => 'string',
         'shopline_app_secret' => 'string',
+        'shopline_shared_secret' => 'string',
         'shopify_access_token' => 'string',
         'shopify_api_key' => 'string',
         'shopify_api_password' => 'string',
@@ -289,6 +290,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shopline_access_token' => null,
         'shopline_app_key' => null,
         'shopline_app_secret' => null,
+        'shopline_shared_secret' => null,
         'shopify_access_token' => null,
         'shopify_api_key' => null,
         'shopify_api_password' => null,
@@ -445,6 +447,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shopline_access_token' => false,
         'shopline_app_key' => false,
         'shopline_app_secret' => false,
+        'shopline_shared_secret' => false,
         'shopify_access_token' => false,
         'shopify_api_key' => false,
         'shopify_api_password' => false,
@@ -681,6 +684,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shopline_access_token' => 'shopline_access_token',
         'shopline_app_key' => 'shopline_app_key',
         'shopline_app_secret' => 'shopline_app_secret',
+        'shopline_shared_secret' => 'shopline_shared_secret',
         'shopify_access_token' => 'shopify_access_token',
         'shopify_api_key' => 'shopify_api_key',
         'shopify_api_password' => 'shopify_api_password',
@@ -837,6 +841,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shopline_access_token' => 'setShoplineAccessToken',
         'shopline_app_key' => 'setShoplineAppKey',
         'shopline_app_secret' => 'setShoplineAppSecret',
+        'shopline_shared_secret' => 'setShoplineSharedSecret',
         'shopify_access_token' => 'setShopifyAccessToken',
         'shopify_api_key' => 'setShopifyApiKey',
         'shopify_api_password' => 'setShopifyApiPassword',
@@ -993,6 +998,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shopline_access_token' => 'getShoplineAccessToken',
         'shopline_app_key' => 'getShoplineAppKey',
         'shopline_app_secret' => 'getShoplineAppSecret',
+        'shopline_shared_secret' => 'getShoplineSharedSecret',
         'shopify_access_token' => 'getShopifyAccessToken',
         'shopify_api_key' => 'getShopifyApiKey',
         'shopify_api_password' => 'getShopifyApiPassword',
@@ -1337,6 +1343,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('shopline_access_token', $data ?? [], null);
         $this->setIfExists('shopline_app_key', $data ?? [], null);
         $this->setIfExists('shopline_app_secret', $data ?? [], null);
+        $this->setIfExists('shopline_shared_secret', $data ?? [], null);
         $this->setIfExists('shopify_access_token', $data ?? [], null);
         $this->setIfExists('shopify_api_key', $data ?? [], null);
         $this->setIfExists('shopify_api_password', $data ?? [], null);
@@ -3455,6 +3462,33 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable shopline_app_secret cannot be null');
         }
         $this->container['shopline_app_secret'] = $shopline_app_secret;
+
+        return $this;
+    }
+
+    /**
+     * Gets shopline_shared_secret
+     *
+     * @return string|null
+     */
+    public function getShoplineSharedSecret()
+    {
+        return $this->container['shopline_shared_secret'];
+    }
+
+    /**
+     * Sets shopline_shared_secret
+     *
+     * @param string|null $shopline_shared_secret Shopline Shared Secret
+     *
+     * @return self
+     */
+    public function setShoplineSharedSecret($shopline_shared_secret)
+    {
+        if (is_null($shopline_shared_secret)) {
+            throw new \InvalidArgumentException('non-nullable shopline_shared_secret cannot be null');
+        }
+        $this->container['shopline_shared_secret'] = $shopline_shared_secret;
 
         return $this;
     }

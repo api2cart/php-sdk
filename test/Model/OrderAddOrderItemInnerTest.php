@@ -153,6 +153,15 @@ class OrderAddOrderItemInnerTest extends TestCase
     }
 
     /**
+     * Test attribute "order_item_price_includes_tax"
+     */
+    public function testPropertyOrderItemPriceIncludesTax()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "order_item_parent"
      */
     public function testPropertyOrderItemParent()
@@ -183,15 +192,6 @@ class OrderAddOrderItemInnerTest extends TestCase
      * Test attribute "order_item_allow_ship_items_separately"
      */
     public function testPropertyOrderItemAllowShipItemsSeparately()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "order_item_price_includes_tax"
-     */
-    public function testPropertyOrderItemPriceIncludesTax()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

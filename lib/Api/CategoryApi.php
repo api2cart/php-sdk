@@ -162,29 +162,29 @@ class CategoryApi
      * category.add
      *
      * @param  string $name Defines category&#39;s name that has to be added (required)
-     * @param  string|null $parent_id Adds categories specified by parent id (optional)
-     * @param  string|null $stores_ids Create category in the stores that is specified by comma-separated stores&#39; id (optional)
-     * @param  string|null $store_id Store Id (optional)
-     * @param  string|null $lang_id Language id (optional)
-     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
-     * @param  int|null $sort_order Sort number in the list (optional, default to 0)
-     * @param  string|null $created_time Entity&#39;s date creation (optional)
-     * @param  string|null $modified_time Entity&#39;s date modification (optional)
      * @param  string|null $description Defines category&#39;s description (optional)
      * @param  string|null $short_description Defines short description (optional)
+     * @param  string|null $parent_id Adds categories specified by parent id (optional)
+     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
+     * @param  string|null $created_time Entity&#39;s date creation (optional)
+     * @param  string|null $modified_time Entity&#39;s date modification (optional)
+     * @param  int|null $sort_order Sort number in the list (optional, default to 0)
      * @param  string|null $meta_title Defines unique meta title for each entity (optional)
      * @param  string|null $meta_description Defines unique meta description of a entity (optional)
      * @param  string|null $meta_keywords Defines unique meta keywords for each entity (optional)
      * @param  string|null $seo_url Defines unique category&#39;s URL for SEO (optional)
+     * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $stores_ids Create category in the stores that is specified by comma-separated stores&#39; id (optional)
+     * @param  string|null $lang_id Language id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryAdd'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CategoryAdd200Response
      */
-    public function categoryAdd($name, $parent_id = null, $stores_ids = null, $store_id = null, $lang_id = null, $avail = true, $sort_order = 0, $created_time = null, $modified_time = null, $description = null, $short_description = null, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, string $contentType = self::contentTypes['categoryAdd'][0])
+    public function categoryAdd($name, $description = null, $short_description = null, $parent_id = null, $avail = true, $created_time = null, $modified_time = null, $sort_order = 0, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, $store_id = null, $stores_ids = null, $lang_id = null, string $contentType = self::contentTypes['categoryAdd'][0])
     {
-        list($response) = $this->categoryAddWithHttpInfo($name, $parent_id, $stores_ids, $store_id, $lang_id, $avail, $sort_order, $created_time, $modified_time, $description, $short_description, $meta_title, $meta_description, $meta_keywords, $seo_url, $contentType);
+        list($response) = $this->categoryAddWithHttpInfo($name, $description, $short_description, $parent_id, $avail, $created_time, $modified_time, $sort_order, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id, $contentType);
         return $response;
     }
 
@@ -194,29 +194,29 @@ class CategoryApi
      * category.add
      *
      * @param  string $name Defines category&#39;s name that has to be added (required)
-     * @param  string|null $parent_id Adds categories specified by parent id (optional)
-     * @param  string|null $stores_ids Create category in the stores that is specified by comma-separated stores&#39; id (optional)
-     * @param  string|null $store_id Store Id (optional)
-     * @param  string|null $lang_id Language id (optional)
-     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
-     * @param  int|null $sort_order Sort number in the list (optional, default to 0)
-     * @param  string|null $created_time Entity&#39;s date creation (optional)
-     * @param  string|null $modified_time Entity&#39;s date modification (optional)
      * @param  string|null $description Defines category&#39;s description (optional)
      * @param  string|null $short_description Defines short description (optional)
+     * @param  string|null $parent_id Adds categories specified by parent id (optional)
+     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
+     * @param  string|null $created_time Entity&#39;s date creation (optional)
+     * @param  string|null $modified_time Entity&#39;s date modification (optional)
+     * @param  int|null $sort_order Sort number in the list (optional, default to 0)
      * @param  string|null $meta_title Defines unique meta title for each entity (optional)
      * @param  string|null $meta_description Defines unique meta description of a entity (optional)
      * @param  string|null $meta_keywords Defines unique meta keywords for each entity (optional)
      * @param  string|null $seo_url Defines unique category&#39;s URL for SEO (optional)
+     * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $stores_ids Create category in the stores that is specified by comma-separated stores&#39; id (optional)
+     * @param  string|null $lang_id Language id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryAdd'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CategoryAdd200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function categoryAddWithHttpInfo($name, $parent_id = null, $stores_ids = null, $store_id = null, $lang_id = null, $avail = true, $sort_order = 0, $created_time = null, $modified_time = null, $description = null, $short_description = null, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, string $contentType = self::contentTypes['categoryAdd'][0])
+    public function categoryAddWithHttpInfo($name, $description = null, $short_description = null, $parent_id = null, $avail = true, $created_time = null, $modified_time = null, $sort_order = 0, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, $store_id = null, $stores_ids = null, $lang_id = null, string $contentType = self::contentTypes['categoryAdd'][0])
     {
-        $request = $this->categoryAddRequest($name, $parent_id, $stores_ids, $store_id, $lang_id, $avail, $sort_order, $created_time, $modified_time, $description, $short_description, $meta_title, $meta_description, $meta_keywords, $seo_url, $contentType);
+        $request = $this->categoryAddRequest($name, $description, $short_description, $parent_id, $avail, $created_time, $modified_time, $sort_order, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -333,28 +333,28 @@ class CategoryApi
      * category.add
      *
      * @param  string $name Defines category&#39;s name that has to be added (required)
-     * @param  string|null $parent_id Adds categories specified by parent id (optional)
-     * @param  string|null $stores_ids Create category in the stores that is specified by comma-separated stores&#39; id (optional)
-     * @param  string|null $store_id Store Id (optional)
-     * @param  string|null $lang_id Language id (optional)
-     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
-     * @param  int|null $sort_order Sort number in the list (optional, default to 0)
-     * @param  string|null $created_time Entity&#39;s date creation (optional)
-     * @param  string|null $modified_time Entity&#39;s date modification (optional)
      * @param  string|null $description Defines category&#39;s description (optional)
      * @param  string|null $short_description Defines short description (optional)
+     * @param  string|null $parent_id Adds categories specified by parent id (optional)
+     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
+     * @param  string|null $created_time Entity&#39;s date creation (optional)
+     * @param  string|null $modified_time Entity&#39;s date modification (optional)
+     * @param  int|null $sort_order Sort number in the list (optional, default to 0)
      * @param  string|null $meta_title Defines unique meta title for each entity (optional)
      * @param  string|null $meta_description Defines unique meta description of a entity (optional)
      * @param  string|null $meta_keywords Defines unique meta keywords for each entity (optional)
      * @param  string|null $seo_url Defines unique category&#39;s URL for SEO (optional)
+     * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $stores_ids Create category in the stores that is specified by comma-separated stores&#39; id (optional)
+     * @param  string|null $lang_id Language id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryAddAsync($name, $parent_id = null, $stores_ids = null, $store_id = null, $lang_id = null, $avail = true, $sort_order = 0, $created_time = null, $modified_time = null, $description = null, $short_description = null, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, string $contentType = self::contentTypes['categoryAdd'][0])
+    public function categoryAddAsync($name, $description = null, $short_description = null, $parent_id = null, $avail = true, $created_time = null, $modified_time = null, $sort_order = 0, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, $store_id = null, $stores_ids = null, $lang_id = null, string $contentType = self::contentTypes['categoryAdd'][0])
     {
-        return $this->categoryAddAsyncWithHttpInfo($name, $parent_id, $stores_ids, $store_id, $lang_id, $avail, $sort_order, $created_time, $modified_time, $description, $short_description, $meta_title, $meta_description, $meta_keywords, $seo_url, $contentType)
+        return $this->categoryAddAsyncWithHttpInfo($name, $description, $short_description, $parent_id, $avail, $created_time, $modified_time, $sort_order, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -368,29 +368,29 @@ class CategoryApi
      * category.add
      *
      * @param  string $name Defines category&#39;s name that has to be added (required)
-     * @param  string|null $parent_id Adds categories specified by parent id (optional)
-     * @param  string|null $stores_ids Create category in the stores that is specified by comma-separated stores&#39; id (optional)
-     * @param  string|null $store_id Store Id (optional)
-     * @param  string|null $lang_id Language id (optional)
-     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
-     * @param  int|null $sort_order Sort number in the list (optional, default to 0)
-     * @param  string|null $created_time Entity&#39;s date creation (optional)
-     * @param  string|null $modified_time Entity&#39;s date modification (optional)
      * @param  string|null $description Defines category&#39;s description (optional)
      * @param  string|null $short_description Defines short description (optional)
+     * @param  string|null $parent_id Adds categories specified by parent id (optional)
+     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
+     * @param  string|null $created_time Entity&#39;s date creation (optional)
+     * @param  string|null $modified_time Entity&#39;s date modification (optional)
+     * @param  int|null $sort_order Sort number in the list (optional, default to 0)
      * @param  string|null $meta_title Defines unique meta title for each entity (optional)
      * @param  string|null $meta_description Defines unique meta description of a entity (optional)
      * @param  string|null $meta_keywords Defines unique meta keywords for each entity (optional)
      * @param  string|null $seo_url Defines unique category&#39;s URL for SEO (optional)
+     * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $stores_ids Create category in the stores that is specified by comma-separated stores&#39; id (optional)
+     * @param  string|null $lang_id Language id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryAddAsyncWithHttpInfo($name, $parent_id = null, $stores_ids = null, $store_id = null, $lang_id = null, $avail = true, $sort_order = 0, $created_time = null, $modified_time = null, $description = null, $short_description = null, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, string $contentType = self::contentTypes['categoryAdd'][0])
+    public function categoryAddAsyncWithHttpInfo($name, $description = null, $short_description = null, $parent_id = null, $avail = true, $created_time = null, $modified_time = null, $sort_order = 0, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, $store_id = null, $stores_ids = null, $lang_id = null, string $contentType = self::contentTypes['categoryAdd'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CategoryAdd200Response';
-        $request = $this->categoryAddRequest($name, $parent_id, $stores_ids, $store_id, $lang_id, $avail, $sort_order, $created_time, $modified_time, $description, $short_description, $meta_title, $meta_description, $meta_keywords, $seo_url, $contentType);
+        $request = $this->categoryAddRequest($name, $description, $short_description, $parent_id, $avail, $created_time, $modified_time, $sort_order, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -432,26 +432,26 @@ class CategoryApi
      * Create request for operation 'categoryAdd'
      *
      * @param  string $name Defines category&#39;s name that has to be added (required)
-     * @param  string|null $parent_id Adds categories specified by parent id (optional)
-     * @param  string|null $stores_ids Create category in the stores that is specified by comma-separated stores&#39; id (optional)
-     * @param  string|null $store_id Store Id (optional)
-     * @param  string|null $lang_id Language id (optional)
-     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
-     * @param  int|null $sort_order Sort number in the list (optional, default to 0)
-     * @param  string|null $created_time Entity&#39;s date creation (optional)
-     * @param  string|null $modified_time Entity&#39;s date modification (optional)
      * @param  string|null $description Defines category&#39;s description (optional)
      * @param  string|null $short_description Defines short description (optional)
+     * @param  string|null $parent_id Adds categories specified by parent id (optional)
+     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
+     * @param  string|null $created_time Entity&#39;s date creation (optional)
+     * @param  string|null $modified_time Entity&#39;s date modification (optional)
+     * @param  int|null $sort_order Sort number in the list (optional, default to 0)
      * @param  string|null $meta_title Defines unique meta title for each entity (optional)
      * @param  string|null $meta_description Defines unique meta description of a entity (optional)
      * @param  string|null $meta_keywords Defines unique meta keywords for each entity (optional)
      * @param  string|null $seo_url Defines unique category&#39;s URL for SEO (optional)
+     * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $stores_ids Create category in the stores that is specified by comma-separated stores&#39; id (optional)
+     * @param  string|null $lang_id Language id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function categoryAddRequest($name, $parent_id = null, $stores_ids = null, $store_id = null, $lang_id = null, $avail = true, $sort_order = 0, $created_time = null, $modified_time = null, $description = null, $short_description = null, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, string $contentType = self::contentTypes['categoryAdd'][0])
+    public function categoryAddRequest($name, $description = null, $short_description = null, $parent_id = null, $avail = true, $created_time = null, $modified_time = null, $sort_order = 0, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, $store_id = null, $stores_ids = null, $lang_id = null, string $contentType = self::contentTypes['categoryAdd'][0])
     {
 
         // verify the required parameter 'name' is set
@@ -494,35 +494,26 @@ class CategoryApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $description,
+            'description', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $short_description,
+            'short_description', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $parent_id,
             'parent_id', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $stores_ids,
-            'stores_ids', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $store_id,
-            'store_id', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $lang_id,
-            'lang_id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -533,15 +524,6 @@ class CategoryApi
             $avail,
             'avail', // param base name
             'boolean', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $sort_order,
-            'sort_order', // param base name
-            'integer', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -566,18 +548,9 @@ class CategoryApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $description,
-            'description', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $short_description,
-            'short_description', // param base name
-            'string', // openApiType
+            $sort_order,
+            'sort_order', // param base name
+            'integer', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -613,6 +586,33 @@ class CategoryApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $seo_url,
             'seo_url', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $store_id,
+            'store_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $stores_ids,
+            'stores_ids', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $lang_id,
+            'lang_id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -1007,8 +1007,8 @@ class CategoryApi
      *
      * category.assign
      *
-     * @param  string $product_id Defines category assign to the product, specified by product id (required)
      * @param  string $category_id Defines category assign, specified by category id (required)
+     * @param  string $product_id Defines category assign to the product, specified by product id (required)
      * @param  string|null $store_id Store Id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryAssign'] to see the possible values for this operation
      *
@@ -1016,9 +1016,9 @@ class CategoryApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CartConfigUpdate200Response
      */
-    public function categoryAssign($product_id, $category_id, $store_id = null, string $contentType = self::contentTypes['categoryAssign'][0])
+    public function categoryAssign($category_id, $product_id, $store_id = null, string $contentType = self::contentTypes['categoryAssign'][0])
     {
-        list($response) = $this->categoryAssignWithHttpInfo($product_id, $category_id, $store_id, $contentType);
+        list($response) = $this->categoryAssignWithHttpInfo($category_id, $product_id, $store_id, $contentType);
         return $response;
     }
 
@@ -1027,8 +1027,8 @@ class CategoryApi
      *
      * category.assign
      *
-     * @param  string $product_id Defines category assign to the product, specified by product id (required)
      * @param  string $category_id Defines category assign, specified by category id (required)
+     * @param  string $product_id Defines category assign to the product, specified by product id (required)
      * @param  string|null $store_id Store Id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryAssign'] to see the possible values for this operation
      *
@@ -1036,9 +1036,9 @@ class CategoryApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CartConfigUpdate200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function categoryAssignWithHttpInfo($product_id, $category_id, $store_id = null, string $contentType = self::contentTypes['categoryAssign'][0])
+    public function categoryAssignWithHttpInfo($category_id, $product_id, $store_id = null, string $contentType = self::contentTypes['categoryAssign'][0])
     {
-        $request = $this->categoryAssignRequest($product_id, $category_id, $store_id, $contentType);
+        $request = $this->categoryAssignRequest($category_id, $product_id, $store_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1154,17 +1154,17 @@ class CategoryApi
      *
      * category.assign
      *
-     * @param  string $product_id Defines category assign to the product, specified by product id (required)
      * @param  string $category_id Defines category assign, specified by category id (required)
+     * @param  string $product_id Defines category assign to the product, specified by product id (required)
      * @param  string|null $store_id Store Id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryAssign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryAssignAsync($product_id, $category_id, $store_id = null, string $contentType = self::contentTypes['categoryAssign'][0])
+    public function categoryAssignAsync($category_id, $product_id, $store_id = null, string $contentType = self::contentTypes['categoryAssign'][0])
     {
-        return $this->categoryAssignAsyncWithHttpInfo($product_id, $category_id, $store_id, $contentType)
+        return $this->categoryAssignAsyncWithHttpInfo($category_id, $product_id, $store_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1177,18 +1177,18 @@ class CategoryApi
      *
      * category.assign
      *
-     * @param  string $product_id Defines category assign to the product, specified by product id (required)
      * @param  string $category_id Defines category assign, specified by category id (required)
+     * @param  string $product_id Defines category assign to the product, specified by product id (required)
      * @param  string|null $store_id Store Id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryAssign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryAssignAsyncWithHttpInfo($product_id, $category_id, $store_id = null, string $contentType = self::contentTypes['categoryAssign'][0])
+    public function categoryAssignAsyncWithHttpInfo($category_id, $product_id, $store_id = null, string $contentType = self::contentTypes['categoryAssign'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CartConfigUpdate200Response';
-        $request = $this->categoryAssignRequest($product_id, $category_id, $store_id, $contentType);
+        $request = $this->categoryAssignRequest($category_id, $product_id, $store_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1229,28 +1229,28 @@ class CategoryApi
     /**
      * Create request for operation 'categoryAssign'
      *
-     * @param  string $product_id Defines category assign to the product, specified by product id (required)
      * @param  string $category_id Defines category assign, specified by category id (required)
+     * @param  string $product_id Defines category assign to the product, specified by product id (required)
      * @param  string|null $store_id Store Id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryAssign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function categoryAssignRequest($product_id, $category_id, $store_id = null, string $contentType = self::contentTypes['categoryAssign'][0])
+    public function categoryAssignRequest($category_id, $product_id, $store_id = null, string $contentType = self::contentTypes['categoryAssign'][0])
     {
-
-        // verify the required parameter 'product_id' is set
-        if ($product_id === null || (is_array($product_id) && count($product_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $product_id when calling categoryAssign'
-            );
-        }
 
         // verify the required parameter 'category_id' is set
         if ($category_id === null || (is_array($category_id) && count($category_id) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $category_id when calling categoryAssign'
+            );
+        }
+
+        // verify the required parameter 'product_id' is set
+        if ($product_id === null || (is_array($product_id) && count($product_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $product_id when calling categoryAssign'
             );
         }
 
@@ -1265,8 +1265,8 @@ class CategoryApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $product_id,
-            'product_id', // param base name
+            $category_id,
+            'category_id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -1274,8 +1274,8 @@ class CategoryApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $category_id,
-            'category_id', // param base name
+            $product_id,
+            'product_id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -1365,11 +1365,11 @@ class CategoryApi
      * @param  string|null $parent_id Counts categories specified by parent id (optional)
      * @param  string|null $store_id Counts category specified by store id (optional)
      * @param  string|null $lang_id Counts category specified by language id (optional)
+     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
      * @param  string|null $product_type A categorization for the product (optional)
      * @param  string|null $find_value Entity search that is specified by some value (optional)
      * @param  string|null $find_where Counts categories that are searched specified by field (optional)
@@ -1381,9 +1381,9 @@ class CategoryApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CategoryCount200Response
      */
-    public function categoryCount($parent_id = null, $store_id = null, $lang_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $avail = true, $product_type = null, $find_value = null, $find_where = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['categoryCount'][0])
+    public function categoryCount($parent_id = null, $store_id = null, $lang_id = null, $avail = true, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $product_type = null, $find_value = null, $find_where = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['categoryCount'][0])
     {
-        list($response) = $this->categoryCountWithHttpInfo($parent_id, $store_id, $lang_id, $created_from, $created_to, $modified_from, $modified_to, $avail, $product_type, $find_value, $find_where, $report_request_id, $disable_report_cache, $contentType);
+        list($response) = $this->categoryCountWithHttpInfo($parent_id, $store_id, $lang_id, $avail, $created_from, $created_to, $modified_from, $modified_to, $product_type, $find_value, $find_where, $report_request_id, $disable_report_cache, $contentType);
         return $response;
     }
 
@@ -1395,11 +1395,11 @@ class CategoryApi
      * @param  string|null $parent_id Counts categories specified by parent id (optional)
      * @param  string|null $store_id Counts category specified by store id (optional)
      * @param  string|null $lang_id Counts category specified by language id (optional)
+     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
      * @param  string|null $product_type A categorization for the product (optional)
      * @param  string|null $find_value Entity search that is specified by some value (optional)
      * @param  string|null $find_where Counts categories that are searched specified by field (optional)
@@ -1411,9 +1411,9 @@ class CategoryApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CategoryCount200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function categoryCountWithHttpInfo($parent_id = null, $store_id = null, $lang_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $avail = true, $product_type = null, $find_value = null, $find_where = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['categoryCount'][0])
+    public function categoryCountWithHttpInfo($parent_id = null, $store_id = null, $lang_id = null, $avail = true, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $product_type = null, $find_value = null, $find_where = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['categoryCount'][0])
     {
-        $request = $this->categoryCountRequest($parent_id, $store_id, $lang_id, $created_from, $created_to, $modified_from, $modified_to, $avail, $product_type, $find_value, $find_where, $report_request_id, $disable_report_cache, $contentType);
+        $request = $this->categoryCountRequest($parent_id, $store_id, $lang_id, $avail, $created_from, $created_to, $modified_from, $modified_to, $product_type, $find_value, $find_where, $report_request_id, $disable_report_cache, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1532,11 +1532,11 @@ class CategoryApi
      * @param  string|null $parent_id Counts categories specified by parent id (optional)
      * @param  string|null $store_id Counts category specified by store id (optional)
      * @param  string|null $lang_id Counts category specified by language id (optional)
+     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
      * @param  string|null $product_type A categorization for the product (optional)
      * @param  string|null $find_value Entity search that is specified by some value (optional)
      * @param  string|null $find_where Counts categories that are searched specified by field (optional)
@@ -1547,9 +1547,9 @@ class CategoryApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryCountAsync($parent_id = null, $store_id = null, $lang_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $avail = true, $product_type = null, $find_value = null, $find_where = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['categoryCount'][0])
+    public function categoryCountAsync($parent_id = null, $store_id = null, $lang_id = null, $avail = true, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $product_type = null, $find_value = null, $find_where = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['categoryCount'][0])
     {
-        return $this->categoryCountAsyncWithHttpInfo($parent_id, $store_id, $lang_id, $created_from, $created_to, $modified_from, $modified_to, $avail, $product_type, $find_value, $find_where, $report_request_id, $disable_report_cache, $contentType)
+        return $this->categoryCountAsyncWithHttpInfo($parent_id, $store_id, $lang_id, $avail, $created_from, $created_to, $modified_from, $modified_to, $product_type, $find_value, $find_where, $report_request_id, $disable_report_cache, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1565,11 +1565,11 @@ class CategoryApi
      * @param  string|null $parent_id Counts categories specified by parent id (optional)
      * @param  string|null $store_id Counts category specified by store id (optional)
      * @param  string|null $lang_id Counts category specified by language id (optional)
+     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
      * @param  string|null $product_type A categorization for the product (optional)
      * @param  string|null $find_value Entity search that is specified by some value (optional)
      * @param  string|null $find_where Counts categories that are searched specified by field (optional)
@@ -1580,10 +1580,10 @@ class CategoryApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryCountAsyncWithHttpInfo($parent_id = null, $store_id = null, $lang_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $avail = true, $product_type = null, $find_value = null, $find_where = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['categoryCount'][0])
+    public function categoryCountAsyncWithHttpInfo($parent_id = null, $store_id = null, $lang_id = null, $avail = true, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $product_type = null, $find_value = null, $find_where = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['categoryCount'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CategoryCount200Response';
-        $request = $this->categoryCountRequest($parent_id, $store_id, $lang_id, $created_from, $created_to, $modified_from, $modified_to, $avail, $product_type, $find_value, $find_where, $report_request_id, $disable_report_cache, $contentType);
+        $request = $this->categoryCountRequest($parent_id, $store_id, $lang_id, $avail, $created_from, $created_to, $modified_from, $modified_to, $product_type, $find_value, $find_where, $report_request_id, $disable_report_cache, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1627,11 +1627,11 @@ class CategoryApi
      * @param  string|null $parent_id Counts categories specified by parent id (optional)
      * @param  string|null $store_id Counts category specified by store id (optional)
      * @param  string|null $lang_id Counts category specified by language id (optional)
+     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
      * @param  string|null $product_type A categorization for the product (optional)
      * @param  string|null $find_value Entity search that is specified by some value (optional)
      * @param  string|null $find_where Counts categories that are searched specified by field (optional)
@@ -1642,7 +1642,7 @@ class CategoryApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function categoryCountRequest($parent_id = null, $store_id = null, $lang_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $avail = true, $product_type = null, $find_value = null, $find_where = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['categoryCount'][0])
+    public function categoryCountRequest($parent_id = null, $store_id = null, $lang_id = null, $avail = true, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $product_type = null, $find_value = null, $find_where = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['categoryCount'][0])
     {
 
 
@@ -1695,6 +1695,15 @@ class CategoryApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $avail,
+            'avail', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $created_from,
             'created_from', // param base name
             'string', // openApiType
@@ -1725,15 +1734,6 @@ class CategoryApi
             $modified_to,
             'modified_to', // param base name
             'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $avail,
-            'avail', // param base name
-            'boolean', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -2572,19 +2572,19 @@ class CategoryApi
      * @param  string $image_name Defines image&#39;s name (required)
      * @param  string $url Defines URL of the image that has to be added (required)
      * @param  string $type Defines image&#39;s types that are specified by comma-separated list (required)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $label Defines alternative text that has to be attached to the picture (optional)
      * @param  string|null $mime Mime type of image http://en.wikipedia.org/wiki/Internet_media_type. (optional)
      * @param  int|null $position Defines image’s position in the list (optional, default to 0)
-     * @param  string|null $store_id Store Id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryImageAdd'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CategoryImageAdd200Response
      */
-    public function categoryImageAdd($category_id, $image_name, $url, $type, $label = null, $mime = null, $position = 0, $store_id = null, string $contentType = self::contentTypes['categoryImageAdd'][0])
+    public function categoryImageAdd($category_id, $image_name, $url, $type, $store_id = null, $label = null, $mime = null, $position = 0, string $contentType = self::contentTypes['categoryImageAdd'][0])
     {
-        list($response) = $this->categoryImageAddWithHttpInfo($category_id, $image_name, $url, $type, $label, $mime, $position, $store_id, $contentType);
+        list($response) = $this->categoryImageAddWithHttpInfo($category_id, $image_name, $url, $type, $store_id, $label, $mime, $position, $contentType);
         return $response;
     }
 
@@ -2597,19 +2597,19 @@ class CategoryApi
      * @param  string $image_name Defines image&#39;s name (required)
      * @param  string $url Defines URL of the image that has to be added (required)
      * @param  string $type Defines image&#39;s types that are specified by comma-separated list (required)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $label Defines alternative text that has to be attached to the picture (optional)
      * @param  string|null $mime Mime type of image http://en.wikipedia.org/wiki/Internet_media_type. (optional)
      * @param  int|null $position Defines image’s position in the list (optional, default to 0)
-     * @param  string|null $store_id Store Id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryImageAdd'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CategoryImageAdd200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function categoryImageAddWithHttpInfo($category_id, $image_name, $url, $type, $label = null, $mime = null, $position = 0, $store_id = null, string $contentType = self::contentTypes['categoryImageAdd'][0])
+    public function categoryImageAddWithHttpInfo($category_id, $image_name, $url, $type, $store_id = null, $label = null, $mime = null, $position = 0, string $contentType = self::contentTypes['categoryImageAdd'][0])
     {
-        $request = $this->categoryImageAddRequest($category_id, $image_name, $url, $type, $label, $mime, $position, $store_id, $contentType);
+        $request = $this->categoryImageAddRequest($category_id, $image_name, $url, $type, $store_id, $label, $mime, $position, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2729,18 +2729,18 @@ class CategoryApi
      * @param  string $image_name Defines image&#39;s name (required)
      * @param  string $url Defines URL of the image that has to be added (required)
      * @param  string $type Defines image&#39;s types that are specified by comma-separated list (required)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $label Defines alternative text that has to be attached to the picture (optional)
      * @param  string|null $mime Mime type of image http://en.wikipedia.org/wiki/Internet_media_type. (optional)
      * @param  int|null $position Defines image’s position in the list (optional, default to 0)
-     * @param  string|null $store_id Store Id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryImageAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryImageAddAsync($category_id, $image_name, $url, $type, $label = null, $mime = null, $position = 0, $store_id = null, string $contentType = self::contentTypes['categoryImageAdd'][0])
+    public function categoryImageAddAsync($category_id, $image_name, $url, $type, $store_id = null, $label = null, $mime = null, $position = 0, string $contentType = self::contentTypes['categoryImageAdd'][0])
     {
-        return $this->categoryImageAddAsyncWithHttpInfo($category_id, $image_name, $url, $type, $label, $mime, $position, $store_id, $contentType)
+        return $this->categoryImageAddAsyncWithHttpInfo($category_id, $image_name, $url, $type, $store_id, $label, $mime, $position, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2757,19 +2757,19 @@ class CategoryApi
      * @param  string $image_name Defines image&#39;s name (required)
      * @param  string $url Defines URL of the image that has to be added (required)
      * @param  string $type Defines image&#39;s types that are specified by comma-separated list (required)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $label Defines alternative text that has to be attached to the picture (optional)
      * @param  string|null $mime Mime type of image http://en.wikipedia.org/wiki/Internet_media_type. (optional)
      * @param  int|null $position Defines image’s position in the list (optional, default to 0)
-     * @param  string|null $store_id Store Id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryImageAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryImageAddAsyncWithHttpInfo($category_id, $image_name, $url, $type, $label = null, $mime = null, $position = 0, $store_id = null, string $contentType = self::contentTypes['categoryImageAdd'][0])
+    public function categoryImageAddAsyncWithHttpInfo($category_id, $image_name, $url, $type, $store_id = null, $label = null, $mime = null, $position = 0, string $contentType = self::contentTypes['categoryImageAdd'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CategoryImageAdd200Response';
-        $request = $this->categoryImageAddRequest($category_id, $image_name, $url, $type, $label, $mime, $position, $store_id, $contentType);
+        $request = $this->categoryImageAddRequest($category_id, $image_name, $url, $type, $store_id, $label, $mime, $position, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2814,16 +2814,16 @@ class CategoryApi
      * @param  string $image_name Defines image&#39;s name (required)
      * @param  string $url Defines URL of the image that has to be added (required)
      * @param  string $type Defines image&#39;s types that are specified by comma-separated list (required)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $label Defines alternative text that has to be attached to the picture (optional)
      * @param  string|null $mime Mime type of image http://en.wikipedia.org/wiki/Internet_media_type. (optional)
      * @param  int|null $position Defines image’s position in the list (optional, default to 0)
-     * @param  string|null $store_id Store Id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryImageAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function categoryImageAddRequest($category_id, $image_name, $url, $type, $label = null, $mime = null, $position = 0, $store_id = null, string $contentType = self::contentTypes['categoryImageAdd'][0])
+    public function categoryImageAddRequest($category_id, $image_name, $url, $type, $store_id = null, $label = null, $mime = null, $position = 0, string $contentType = self::contentTypes['categoryImageAdd'][0])
     {
 
         // verify the required parameter 'category_id' is set
@@ -2895,6 +2895,24 @@ class CategoryApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $type,
+            'type', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            true // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $store_id,
+            'store_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $label,
             'label', // param base name
             'string', // openApiType
@@ -2913,27 +2931,9 @@ class CategoryApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $type,
-            'type', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            true // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $position,
             'position', // param base name
             'integer', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $store_id,
-            'store_id', // param base name
-            'string', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3366,12 +3366,12 @@ class CategoryApi
      * category.info
      *
      * @param  string $id Retrieves category&#39;s info specified by category id (required)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,parent_id,name,description')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $store_id Retrieves category info  specified by store id (optional)
      * @param  string|null $lang_id Retrieves category info  specified by language id (optional)
      * @param  string|null $schema_type The name of the requirements set for the provided schema. (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,parent_id,name,description')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $report_request_id Report request id (optional)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryInfo'] to see the possible values for this operation
@@ -3380,9 +3380,9 @@ class CategoryApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CategoryInfo200Response
      */
-    public function categoryInfo($id, $params = 'id,parent_id,name,description', $response_fields = null, $exclude = null, $store_id = null, $lang_id = null, $schema_type = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['categoryInfo'][0])
+    public function categoryInfo($id, $store_id = null, $lang_id = null, $schema_type = null, $response_fields = null, $params = 'id,parent_id,name,description', $exclude = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['categoryInfo'][0])
     {
-        list($response) = $this->categoryInfoWithHttpInfo($id, $params, $response_fields, $exclude, $store_id, $lang_id, $schema_type, $report_request_id, $disable_report_cache, $contentType);
+        list($response) = $this->categoryInfoWithHttpInfo($id, $store_id, $lang_id, $schema_type, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $contentType);
         return $response;
     }
 
@@ -3392,12 +3392,12 @@ class CategoryApi
      * category.info
      *
      * @param  string $id Retrieves category&#39;s info specified by category id (required)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,parent_id,name,description')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $store_id Retrieves category info  specified by store id (optional)
      * @param  string|null $lang_id Retrieves category info  specified by language id (optional)
      * @param  string|null $schema_type The name of the requirements set for the provided schema. (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,parent_id,name,description')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $report_request_id Report request id (optional)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryInfo'] to see the possible values for this operation
@@ -3406,9 +3406,9 @@ class CategoryApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CategoryInfo200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function categoryInfoWithHttpInfo($id, $params = 'id,parent_id,name,description', $response_fields = null, $exclude = null, $store_id = null, $lang_id = null, $schema_type = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['categoryInfo'][0])
+    public function categoryInfoWithHttpInfo($id, $store_id = null, $lang_id = null, $schema_type = null, $response_fields = null, $params = 'id,parent_id,name,description', $exclude = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['categoryInfo'][0])
     {
-        $request = $this->categoryInfoRequest($id, $params, $response_fields, $exclude, $store_id, $lang_id, $schema_type, $report_request_id, $disable_report_cache, $contentType);
+        $request = $this->categoryInfoRequest($id, $store_id, $lang_id, $schema_type, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3525,12 +3525,12 @@ class CategoryApi
      * category.info
      *
      * @param  string $id Retrieves category&#39;s info specified by category id (required)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,parent_id,name,description')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $store_id Retrieves category info  specified by store id (optional)
      * @param  string|null $lang_id Retrieves category info  specified by language id (optional)
      * @param  string|null $schema_type The name of the requirements set for the provided schema. (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,parent_id,name,description')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $report_request_id Report request id (optional)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryInfo'] to see the possible values for this operation
@@ -3538,9 +3538,9 @@ class CategoryApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryInfoAsync($id, $params = 'id,parent_id,name,description', $response_fields = null, $exclude = null, $store_id = null, $lang_id = null, $schema_type = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['categoryInfo'][0])
+    public function categoryInfoAsync($id, $store_id = null, $lang_id = null, $schema_type = null, $response_fields = null, $params = 'id,parent_id,name,description', $exclude = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['categoryInfo'][0])
     {
-        return $this->categoryInfoAsyncWithHttpInfo($id, $params, $response_fields, $exclude, $store_id, $lang_id, $schema_type, $report_request_id, $disable_report_cache, $contentType)
+        return $this->categoryInfoAsyncWithHttpInfo($id, $store_id, $lang_id, $schema_type, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3554,12 +3554,12 @@ class CategoryApi
      * category.info
      *
      * @param  string $id Retrieves category&#39;s info specified by category id (required)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,parent_id,name,description')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $store_id Retrieves category info  specified by store id (optional)
      * @param  string|null $lang_id Retrieves category info  specified by language id (optional)
      * @param  string|null $schema_type The name of the requirements set for the provided schema. (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,parent_id,name,description')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $report_request_id Report request id (optional)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryInfo'] to see the possible values for this operation
@@ -3567,10 +3567,10 @@ class CategoryApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryInfoAsyncWithHttpInfo($id, $params = 'id,parent_id,name,description', $response_fields = null, $exclude = null, $store_id = null, $lang_id = null, $schema_type = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['categoryInfo'][0])
+    public function categoryInfoAsyncWithHttpInfo($id, $store_id = null, $lang_id = null, $schema_type = null, $response_fields = null, $params = 'id,parent_id,name,description', $exclude = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['categoryInfo'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CategoryInfo200Response';
-        $request = $this->categoryInfoRequest($id, $params, $response_fields, $exclude, $store_id, $lang_id, $schema_type, $report_request_id, $disable_report_cache, $contentType);
+        $request = $this->categoryInfoRequest($id, $store_id, $lang_id, $schema_type, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3612,12 +3612,12 @@ class CategoryApi
      * Create request for operation 'categoryInfo'
      *
      * @param  string $id Retrieves category&#39;s info specified by category id (required)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,parent_id,name,description')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $store_id Retrieves category info  specified by store id (optional)
      * @param  string|null $lang_id Retrieves category info  specified by language id (optional)
      * @param  string|null $schema_type The name of the requirements set for the provided schema. (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,parent_id,name,description')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $report_request_id Report request id (optional)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryInfo'] to see the possible values for this operation
@@ -3625,7 +3625,7 @@ class CategoryApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function categoryInfoRequest($id, $params = 'id,parent_id,name,description', $response_fields = null, $exclude = null, $store_id = null, $lang_id = null, $schema_type = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['categoryInfo'][0])
+    public function categoryInfoRequest($id, $store_id = null, $lang_id = null, $schema_type = null, $response_fields = null, $params = 'id,parent_id,name,description', $exclude = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['categoryInfo'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -3662,33 +3662,6 @@ class CategoryApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $params,
-            'params', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $response_fields,
-            'response_fields', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $exclude,
-            'exclude', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $store_id,
             'store_id', // param base name
             'string', // openApiType
@@ -3709,6 +3682,33 @@ class CategoryApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $schema_type,
             'schema_type', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $response_fields,
+            'response_fields', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $params,
+            'params', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $exclude,
+            'exclude', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -3807,20 +3807,20 @@ class CategoryApi
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param  string|null $parent_id Retrieves categories specified by parent id (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,parent_id,name,description')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $store_id Retrieves categories specified by store id (optional)
      * @param  string|null $lang_id Retrieves categorys specified by language id (optional)
+     * @param  string|null $parent_id Retrieves categories specified by parent id (optional)
+     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
+     * @param  string|null $product_type A categorization for the product (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
-     * @param  string|null $product_type A categorization for the product (optional)
      * @param  string|null $find_value Entity search that is specified by some value (optional)
      * @param  string|null $find_where Category search that is specified by field (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,parent_id,name,description')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $report_request_id Report request id (optional)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
      * @param  bool|null $disable_cache Disable cache for current request (optional, default to false)
@@ -3830,9 +3830,9 @@ class CategoryApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseCategoryList
      */
-    public function categoryList($start = 0, $count = 10, $page_cursor = null, $parent_id = null, $params = 'id,parent_id,name,description', $response_fields = null, $exclude = null, $store_id = null, $lang_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $avail = true, $product_type = null, $find_value = null, $find_where = null, $report_request_id = null, $disable_report_cache = false, $disable_cache = false, string $contentType = self::contentTypes['categoryList'][0])
+    public function categoryList($start = 0, $count = 10, $page_cursor = null, $store_id = null, $lang_id = null, $parent_id = null, $avail = true, $product_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $find_value = null, $find_where = null, $response_fields = null, $params = 'id,parent_id,name,description', $exclude = null, $report_request_id = null, $disable_report_cache = false, $disable_cache = false, string $contentType = self::contentTypes['categoryList'][0])
     {
-        list($response) = $this->categoryListWithHttpInfo($start, $count, $page_cursor, $parent_id, $params, $response_fields, $exclude, $store_id, $lang_id, $created_from, $created_to, $modified_from, $modified_to, $avail, $product_type, $find_value, $find_where, $report_request_id, $disable_report_cache, $disable_cache, $contentType);
+        list($response) = $this->categoryListWithHttpInfo($start, $count, $page_cursor, $store_id, $lang_id, $parent_id, $avail, $product_type, $created_from, $created_to, $modified_from, $modified_to, $find_value, $find_where, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $disable_cache, $contentType);
         return $response;
     }
 
@@ -3844,20 +3844,20 @@ class CategoryApi
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param  string|null $parent_id Retrieves categories specified by parent id (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,parent_id,name,description')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $store_id Retrieves categories specified by store id (optional)
      * @param  string|null $lang_id Retrieves categorys specified by language id (optional)
+     * @param  string|null $parent_id Retrieves categories specified by parent id (optional)
+     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
+     * @param  string|null $product_type A categorization for the product (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
-     * @param  string|null $product_type A categorization for the product (optional)
      * @param  string|null $find_value Entity search that is specified by some value (optional)
      * @param  string|null $find_where Category search that is specified by field (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,parent_id,name,description')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $report_request_id Report request id (optional)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
      * @param  bool|null $disable_cache Disable cache for current request (optional, default to false)
@@ -3867,9 +3867,9 @@ class CategoryApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseCategoryList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function categoryListWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $parent_id = null, $params = 'id,parent_id,name,description', $response_fields = null, $exclude = null, $store_id = null, $lang_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $avail = true, $product_type = null, $find_value = null, $find_where = null, $report_request_id = null, $disable_report_cache = false, $disable_cache = false, string $contentType = self::contentTypes['categoryList'][0])
+    public function categoryListWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $store_id = null, $lang_id = null, $parent_id = null, $avail = true, $product_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $find_value = null, $find_where = null, $response_fields = null, $params = 'id,parent_id,name,description', $exclude = null, $report_request_id = null, $disable_report_cache = false, $disable_cache = false, string $contentType = self::contentTypes['categoryList'][0])
     {
-        $request = $this->categoryListRequest($start, $count, $page_cursor, $parent_id, $params, $response_fields, $exclude, $store_id, $lang_id, $created_from, $created_to, $modified_from, $modified_to, $avail, $product_type, $find_value, $find_where, $report_request_id, $disable_report_cache, $disable_cache, $contentType);
+        $request = $this->categoryListRequest($start, $count, $page_cursor, $store_id, $lang_id, $parent_id, $avail, $product_type, $created_from, $created_to, $modified_from, $modified_to, $find_value, $find_where, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $disable_cache, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3988,20 +3988,20 @@ class CategoryApi
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param  string|null $parent_id Retrieves categories specified by parent id (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,parent_id,name,description')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $store_id Retrieves categories specified by store id (optional)
      * @param  string|null $lang_id Retrieves categorys specified by language id (optional)
+     * @param  string|null $parent_id Retrieves categories specified by parent id (optional)
+     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
+     * @param  string|null $product_type A categorization for the product (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
-     * @param  string|null $product_type A categorization for the product (optional)
      * @param  string|null $find_value Entity search that is specified by some value (optional)
      * @param  string|null $find_where Category search that is specified by field (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,parent_id,name,description')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $report_request_id Report request id (optional)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
      * @param  bool|null $disable_cache Disable cache for current request (optional, default to false)
@@ -4010,9 +4010,9 @@ class CategoryApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryListAsync($start = 0, $count = 10, $page_cursor = null, $parent_id = null, $params = 'id,parent_id,name,description', $response_fields = null, $exclude = null, $store_id = null, $lang_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $avail = true, $product_type = null, $find_value = null, $find_where = null, $report_request_id = null, $disable_report_cache = false, $disable_cache = false, string $contentType = self::contentTypes['categoryList'][0])
+    public function categoryListAsync($start = 0, $count = 10, $page_cursor = null, $store_id = null, $lang_id = null, $parent_id = null, $avail = true, $product_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $find_value = null, $find_where = null, $response_fields = null, $params = 'id,parent_id,name,description', $exclude = null, $report_request_id = null, $disable_report_cache = false, $disable_cache = false, string $contentType = self::contentTypes['categoryList'][0])
     {
-        return $this->categoryListAsyncWithHttpInfo($start, $count, $page_cursor, $parent_id, $params, $response_fields, $exclude, $store_id, $lang_id, $created_from, $created_to, $modified_from, $modified_to, $avail, $product_type, $find_value, $find_where, $report_request_id, $disable_report_cache, $disable_cache, $contentType)
+        return $this->categoryListAsyncWithHttpInfo($start, $count, $page_cursor, $store_id, $lang_id, $parent_id, $avail, $product_type, $created_from, $created_to, $modified_from, $modified_to, $find_value, $find_where, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $disable_cache, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4028,20 +4028,20 @@ class CategoryApi
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param  string|null $parent_id Retrieves categories specified by parent id (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,parent_id,name,description')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $store_id Retrieves categories specified by store id (optional)
      * @param  string|null $lang_id Retrieves categorys specified by language id (optional)
+     * @param  string|null $parent_id Retrieves categories specified by parent id (optional)
+     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
+     * @param  string|null $product_type A categorization for the product (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
-     * @param  string|null $product_type A categorization for the product (optional)
      * @param  string|null $find_value Entity search that is specified by some value (optional)
      * @param  string|null $find_where Category search that is specified by field (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,parent_id,name,description')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $report_request_id Report request id (optional)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
      * @param  bool|null $disable_cache Disable cache for current request (optional, default to false)
@@ -4050,10 +4050,10 @@ class CategoryApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryListAsyncWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $parent_id = null, $params = 'id,parent_id,name,description', $response_fields = null, $exclude = null, $store_id = null, $lang_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $avail = true, $product_type = null, $find_value = null, $find_where = null, $report_request_id = null, $disable_report_cache = false, $disable_cache = false, string $contentType = self::contentTypes['categoryList'][0])
+    public function categoryListAsyncWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $store_id = null, $lang_id = null, $parent_id = null, $avail = true, $product_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $find_value = null, $find_where = null, $response_fields = null, $params = 'id,parent_id,name,description', $exclude = null, $report_request_id = null, $disable_report_cache = false, $disable_cache = false, string $contentType = self::contentTypes['categoryList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseCategoryList';
-        $request = $this->categoryListRequest($start, $count, $page_cursor, $parent_id, $params, $response_fields, $exclude, $store_id, $lang_id, $created_from, $created_to, $modified_from, $modified_to, $avail, $product_type, $find_value, $find_where, $report_request_id, $disable_report_cache, $disable_cache, $contentType);
+        $request = $this->categoryListRequest($start, $count, $page_cursor, $store_id, $lang_id, $parent_id, $avail, $product_type, $created_from, $created_to, $modified_from, $modified_to, $find_value, $find_where, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $disable_cache, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4097,20 +4097,20 @@ class CategoryApi
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param  string|null $parent_id Retrieves categories specified by parent id (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,parent_id,name,description')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $store_id Retrieves categories specified by store id (optional)
      * @param  string|null $lang_id Retrieves categorys specified by language id (optional)
+     * @param  string|null $parent_id Retrieves categories specified by parent id (optional)
+     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
+     * @param  string|null $product_type A categorization for the product (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
-     * @param  string|null $product_type A categorization for the product (optional)
      * @param  string|null $find_value Entity search that is specified by some value (optional)
      * @param  string|null $find_where Category search that is specified by field (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,parent_id,name,description')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $report_request_id Report request id (optional)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
      * @param  bool|null $disable_cache Disable cache for current request (optional, default to false)
@@ -4119,7 +4119,7 @@ class CategoryApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function categoryListRequest($start = 0, $count = 10, $page_cursor = null, $parent_id = null, $params = 'id,parent_id,name,description', $response_fields = null, $exclude = null, $store_id = null, $lang_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $avail = true, $product_type = null, $find_value = null, $find_where = null, $report_request_id = null, $disable_report_cache = false, $disable_cache = false, string $contentType = self::contentTypes['categoryList'][0])
+    public function categoryListRequest($start = 0, $count = 10, $page_cursor = null, $store_id = null, $lang_id = null, $parent_id = null, $avail = true, $product_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $find_value = null, $find_where = null, $response_fields = null, $params = 'id,parent_id,name,description', $exclude = null, $report_request_id = null, $disable_report_cache = false, $disable_cache = false, string $contentType = self::contentTypes['categoryList'][0])
     {
 
 
@@ -4179,42 +4179,6 @@ class CategoryApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $parent_id,
-            'parent_id', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $params,
-            'params', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $response_fields,
-            'response_fields', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $exclude,
-            'exclude', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $store_id,
             'store_id', // param base name
             'string', // openApiType
@@ -4226,6 +4190,33 @@ class CategoryApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $lang_id,
             'lang_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $parent_id,
+            'parent_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $avail,
+            'avail', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $product_type,
+            'product_type', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -4269,24 +4260,6 @@ class CategoryApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $avail,
-            'avail', // param base name
-            'boolean', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $product_type,
-            'product_type', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $find_value,
             'find_value', // param base name
             'string', // openApiType
@@ -4298,6 +4271,33 @@ class CategoryApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $find_where,
             'find_where', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $response_fields,
+            'response_fields', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $params,
+            'params', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $exclude,
+            'exclude', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -4759,28 +4759,28 @@ class CategoryApi
      *
      * @param  string $id Defines category update specified by category id (required)
      * @param  string|null $name Defines new category’s name (optional)
+     * @param  string|null $description Defines new category&#39;s description (optional)
+     * @param  string|null $short_description Defines short description (optional)
      * @param  string|null $parent_id Defines new parent category id (optional)
-     * @param  string|null $stores_ids Update category in the stores that is specified by comma-separated stores&#39; id (optional)
      * @param  bool|null $avail Defines category&#39;s visibility status (optional)
      * @param  int|null $sort_order Sort number in the list (optional)
      * @param  string|null $modified_time Entity&#39;s date modification (optional)
-     * @param  string|null $description Defines new category&#39;s description (optional)
-     * @param  string|null $short_description Defines short description (optional)
      * @param  string|null $meta_title Defines unique meta title for each entity (optional)
      * @param  string|null $meta_description Defines unique meta description of a entity (optional)
      * @param  string|null $meta_keywords Defines unique meta keywords for each entity (optional)
      * @param  string|null $seo_url Defines unique category&#39;s URL for SEO (optional)
-     * @param  string|null $lang_id Language id (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $stores_ids Update category in the stores that is specified by comma-separated stores&#39; id (optional)
+     * @param  string|null $lang_id Language id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryUpdate'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\AccountConfigUpdate200Response
      */
-    public function categoryUpdate($id, $name = null, $parent_id = null, $stores_ids = null, $avail = null, $sort_order = null, $modified_time = null, $description = null, $short_description = null, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, $lang_id = null, $store_id = null, string $contentType = self::contentTypes['categoryUpdate'][0])
+    public function categoryUpdate($id, $name = null, $description = null, $short_description = null, $parent_id = null, $avail = null, $sort_order = null, $modified_time = null, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, $store_id = null, $stores_ids = null, $lang_id = null, string $contentType = self::contentTypes['categoryUpdate'][0])
     {
-        list($response) = $this->categoryUpdateWithHttpInfo($id, $name, $parent_id, $stores_ids, $avail, $sort_order, $modified_time, $description, $short_description, $meta_title, $meta_description, $meta_keywords, $seo_url, $lang_id, $store_id, $contentType);
+        list($response) = $this->categoryUpdateWithHttpInfo($id, $name, $description, $short_description, $parent_id, $avail, $sort_order, $modified_time, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id, $contentType);
         return $response;
     }
 
@@ -4791,28 +4791,28 @@ class CategoryApi
      *
      * @param  string $id Defines category update specified by category id (required)
      * @param  string|null $name Defines new category’s name (optional)
+     * @param  string|null $description Defines new category&#39;s description (optional)
+     * @param  string|null $short_description Defines short description (optional)
      * @param  string|null $parent_id Defines new parent category id (optional)
-     * @param  string|null $stores_ids Update category in the stores that is specified by comma-separated stores&#39; id (optional)
      * @param  bool|null $avail Defines category&#39;s visibility status (optional)
      * @param  int|null $sort_order Sort number in the list (optional)
      * @param  string|null $modified_time Entity&#39;s date modification (optional)
-     * @param  string|null $description Defines new category&#39;s description (optional)
-     * @param  string|null $short_description Defines short description (optional)
      * @param  string|null $meta_title Defines unique meta title for each entity (optional)
      * @param  string|null $meta_description Defines unique meta description of a entity (optional)
      * @param  string|null $meta_keywords Defines unique meta keywords for each entity (optional)
      * @param  string|null $seo_url Defines unique category&#39;s URL for SEO (optional)
-     * @param  string|null $lang_id Language id (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $stores_ids Update category in the stores that is specified by comma-separated stores&#39; id (optional)
+     * @param  string|null $lang_id Language id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryUpdate'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\AccountConfigUpdate200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function categoryUpdateWithHttpInfo($id, $name = null, $parent_id = null, $stores_ids = null, $avail = null, $sort_order = null, $modified_time = null, $description = null, $short_description = null, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, $lang_id = null, $store_id = null, string $contentType = self::contentTypes['categoryUpdate'][0])
+    public function categoryUpdateWithHttpInfo($id, $name = null, $description = null, $short_description = null, $parent_id = null, $avail = null, $sort_order = null, $modified_time = null, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, $store_id = null, $stores_ids = null, $lang_id = null, string $contentType = self::contentTypes['categoryUpdate'][0])
     {
-        $request = $this->categoryUpdateRequest($id, $name, $parent_id, $stores_ids, $avail, $sort_order, $modified_time, $description, $short_description, $meta_title, $meta_description, $meta_keywords, $seo_url, $lang_id, $store_id, $contentType);
+        $request = $this->categoryUpdateRequest($id, $name, $description, $short_description, $parent_id, $avail, $sort_order, $modified_time, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4930,27 +4930,27 @@ class CategoryApi
      *
      * @param  string $id Defines category update specified by category id (required)
      * @param  string|null $name Defines new category’s name (optional)
+     * @param  string|null $description Defines new category&#39;s description (optional)
+     * @param  string|null $short_description Defines short description (optional)
      * @param  string|null $parent_id Defines new parent category id (optional)
-     * @param  string|null $stores_ids Update category in the stores that is specified by comma-separated stores&#39; id (optional)
      * @param  bool|null $avail Defines category&#39;s visibility status (optional)
      * @param  int|null $sort_order Sort number in the list (optional)
      * @param  string|null $modified_time Entity&#39;s date modification (optional)
-     * @param  string|null $description Defines new category&#39;s description (optional)
-     * @param  string|null $short_description Defines short description (optional)
      * @param  string|null $meta_title Defines unique meta title for each entity (optional)
      * @param  string|null $meta_description Defines unique meta description of a entity (optional)
      * @param  string|null $meta_keywords Defines unique meta keywords for each entity (optional)
      * @param  string|null $seo_url Defines unique category&#39;s URL for SEO (optional)
-     * @param  string|null $lang_id Language id (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $stores_ids Update category in the stores that is specified by comma-separated stores&#39; id (optional)
+     * @param  string|null $lang_id Language id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryUpdateAsync($id, $name = null, $parent_id = null, $stores_ids = null, $avail = null, $sort_order = null, $modified_time = null, $description = null, $short_description = null, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, $lang_id = null, $store_id = null, string $contentType = self::contentTypes['categoryUpdate'][0])
+    public function categoryUpdateAsync($id, $name = null, $description = null, $short_description = null, $parent_id = null, $avail = null, $sort_order = null, $modified_time = null, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, $store_id = null, $stores_ids = null, $lang_id = null, string $contentType = self::contentTypes['categoryUpdate'][0])
     {
-        return $this->categoryUpdateAsyncWithHttpInfo($id, $name, $parent_id, $stores_ids, $avail, $sort_order, $modified_time, $description, $short_description, $meta_title, $meta_description, $meta_keywords, $seo_url, $lang_id, $store_id, $contentType)
+        return $this->categoryUpdateAsyncWithHttpInfo($id, $name, $description, $short_description, $parent_id, $avail, $sort_order, $modified_time, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4965,28 +4965,28 @@ class CategoryApi
      *
      * @param  string $id Defines category update specified by category id (required)
      * @param  string|null $name Defines new category’s name (optional)
+     * @param  string|null $description Defines new category&#39;s description (optional)
+     * @param  string|null $short_description Defines short description (optional)
      * @param  string|null $parent_id Defines new parent category id (optional)
-     * @param  string|null $stores_ids Update category in the stores that is specified by comma-separated stores&#39; id (optional)
      * @param  bool|null $avail Defines category&#39;s visibility status (optional)
      * @param  int|null $sort_order Sort number in the list (optional)
      * @param  string|null $modified_time Entity&#39;s date modification (optional)
-     * @param  string|null $description Defines new category&#39;s description (optional)
-     * @param  string|null $short_description Defines short description (optional)
      * @param  string|null $meta_title Defines unique meta title for each entity (optional)
      * @param  string|null $meta_description Defines unique meta description of a entity (optional)
      * @param  string|null $meta_keywords Defines unique meta keywords for each entity (optional)
      * @param  string|null $seo_url Defines unique category&#39;s URL for SEO (optional)
-     * @param  string|null $lang_id Language id (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $stores_ids Update category in the stores that is specified by comma-separated stores&#39; id (optional)
+     * @param  string|null $lang_id Language id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryUpdateAsyncWithHttpInfo($id, $name = null, $parent_id = null, $stores_ids = null, $avail = null, $sort_order = null, $modified_time = null, $description = null, $short_description = null, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, $lang_id = null, $store_id = null, string $contentType = self::contentTypes['categoryUpdate'][0])
+    public function categoryUpdateAsyncWithHttpInfo($id, $name = null, $description = null, $short_description = null, $parent_id = null, $avail = null, $sort_order = null, $modified_time = null, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, $store_id = null, $stores_ids = null, $lang_id = null, string $contentType = self::contentTypes['categoryUpdate'][0])
     {
         $returnType = '\OpenAPI\Client\Model\AccountConfigUpdate200Response';
-        $request = $this->categoryUpdateRequest($id, $name, $parent_id, $stores_ids, $avail, $sort_order, $modified_time, $description, $short_description, $meta_title, $meta_description, $meta_keywords, $seo_url, $lang_id, $store_id, $contentType);
+        $request = $this->categoryUpdateRequest($id, $name, $description, $short_description, $parent_id, $avail, $sort_order, $modified_time, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5029,25 +5029,25 @@ class CategoryApi
      *
      * @param  string $id Defines category update specified by category id (required)
      * @param  string|null $name Defines new category’s name (optional)
+     * @param  string|null $description Defines new category&#39;s description (optional)
+     * @param  string|null $short_description Defines short description (optional)
      * @param  string|null $parent_id Defines new parent category id (optional)
-     * @param  string|null $stores_ids Update category in the stores that is specified by comma-separated stores&#39; id (optional)
      * @param  bool|null $avail Defines category&#39;s visibility status (optional)
      * @param  int|null $sort_order Sort number in the list (optional)
      * @param  string|null $modified_time Entity&#39;s date modification (optional)
-     * @param  string|null $description Defines new category&#39;s description (optional)
-     * @param  string|null $short_description Defines short description (optional)
      * @param  string|null $meta_title Defines unique meta title for each entity (optional)
      * @param  string|null $meta_description Defines unique meta description of a entity (optional)
      * @param  string|null $meta_keywords Defines unique meta keywords for each entity (optional)
      * @param  string|null $seo_url Defines unique category&#39;s URL for SEO (optional)
-     * @param  string|null $lang_id Language id (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $stores_ids Update category in the stores that is specified by comma-separated stores&#39; id (optional)
+     * @param  string|null $lang_id Language id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function categoryUpdateRequest($id, $name = null, $parent_id = null, $stores_ids = null, $avail = null, $sort_order = null, $modified_time = null, $description = null, $short_description = null, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, $lang_id = null, $store_id = null, string $contentType = self::contentTypes['categoryUpdate'][0])
+    public function categoryUpdateRequest($id, $name = null, $description = null, $short_description = null, $parent_id = null, $avail = null, $sort_order = null, $modified_time = null, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, $store_id = null, $stores_ids = null, $lang_id = null, string $contentType = self::contentTypes['categoryUpdate'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -5099,8 +5099,8 @@ class CategoryApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $parent_id,
-            'parent_id', // param base name
+            $description,
+            'description', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -5108,8 +5108,17 @@ class CategoryApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $stores_ids,
-            'stores_ids', // param base name
+            $short_description,
+            'short_description', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $parent_id,
+            'parent_id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -5137,24 +5146,6 @@ class CategoryApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $modified_time,
             'modified_time', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $description,
-            'description', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $short_description,
-            'short_description', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -5198,8 +5189,8 @@ class CategoryApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $lang_id,
-            'lang_id', // param base name
+            $store_id,
+            'store_id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -5207,8 +5198,17 @@ class CategoryApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $store_id,
-            'store_id', // param base name
+            $stores_ids,
+            'stores_ids', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $lang_id,
+            'lang_id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

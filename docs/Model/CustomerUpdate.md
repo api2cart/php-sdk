@@ -17,9 +17,9 @@ Name | Type | Description | Notes
 **consents** | [**\OpenAPI\Client\Model\CustomerAddConsentsInner[]**](CustomerAddConsentsInner.md) | Defines consents to notifications | [optional]
 **tags** | **string** | Customer tags | [optional]
 **gender** | **string** | Defines customer&#39;s gender | [optional]
-**store_id** | **string** | Store Id | [optional]
 **note** | **string** | The customer note. | [optional]
 **status** | **string** | Defines customer&#39;s status | [optional]
+**store_id** | **string** | Store Id | [optional]
 **address** | [**\OpenAPI\Client\Model\CustomerUpdateAddressInner[]**](CustomerUpdateAddressInner.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

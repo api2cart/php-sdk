@@ -32,7 +32,7 @@ All URIs are relative to https://api.api2cart.com/v1.1, except if the operation 
 ## `orderAbandonedList()`
 
 ```php
-orderAbandonedList($customer_id, $customer_email, $created_to, $created_from, $modified_to, $modified_from, $skip_empty_email, $store_id, $page_cursor, $count, $start, $params, $response_fields, $exclude): \OpenAPI\Client\Model\ModelResponseOrderAbandonedList
+orderAbandonedList($start, $count, $page_cursor, $customer_id, $customer_email, $store_id, $created_from, $created_to, $modified_from, $modified_to, $skip_empty_email, $response_fields, $params, $exclude): \OpenAPI\Client\Model\ModelResponseOrderAbandonedList
 ```
 
 order.abandoned.list
@@ -63,23 +63,23 @@ $apiInstance = new OpenAPI\Client\Api\OrderApi(
     new GuzzleHttp\Client(),
     $config
 );
+$start = 0; // int | This parameter sets the number from which you want to get entities
+$count = 20; // int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+$page_cursor = ; // string | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
 $customer_id = 5; // string | Retrieves orders specified by customer id
 $customer_email = jubari@hannsgroup.com; // string | Retrieves orders specified by customer email
-$created_to = 2100-08-29 13:45:52; // string | Retrieve entities to their creation date
-$created_from = 2010-07-29 13:45:52; // string | Retrieve entities from their creation date
-$modified_to = 2100-08-29 13:45:52; // string | Retrieve entities to their modification date
-$modified_from = 2010-07-29 13:45:52; // string | Retrieve entities from their modification date
-$skip_empty_email = true; // bool | Filter empty emails
 $store_id = 1; // string | Store Id
-$page_cursor = ; // string | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
-$count = 20; // int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-$start = 0; // int | This parameter sets the number from which you want to get entities
-$params = force_all; // string | Set this parameter in order to choose which entity fields you want to retrieve
+$created_from = 2010-07-29 13:45:52; // string | Retrieve entities from their creation date
+$created_to = 2100-08-29 13:45:52; // string | Retrieve entities to their creation date
+$modified_from = 2010-07-29 13:45:52; // string | Retrieve entities from their modification date
+$modified_to = 2100-08-29 13:45:52; // string | Retrieve entities to their modification date
+$skip_empty_email = true; // bool | Filter empty emails
 $response_fields = {return_code,pagination,result{order{id,customer{email},created_at,totals{total},order_products}}}; // string | Set this parameter in order to choose which entity fields you want to retrieve
+$params = force_all; // string | Set this parameter in order to choose which entity fields you want to retrieve
 $exclude = customer; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 
 try {
-    $result = $apiInstance->orderAbandonedList($customer_id, $customer_email, $created_to, $created_from, $modified_to, $modified_from, $skip_empty_email, $store_id, $page_cursor, $count, $start, $params, $response_fields, $exclude);
+    $result = $apiInstance->orderAbandonedList($start, $count, $page_cursor, $customer_id, $customer_email, $store_id, $created_from, $created_to, $modified_from, $modified_to, $skip_empty_email, $response_fields, $params, $exclude);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderAbandonedList: ', $e->getMessage(), PHP_EOL;
@@ -90,19 +90,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **start** | **int**| This parameter sets the number from which you want to get entities | [optional] [default to 0] |
+| **count** | **int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
+| **page_cursor** | **string**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
 | **customer_id** | **string**| Retrieves orders specified by customer id | [optional] |
 | **customer_email** | **string**| Retrieves orders specified by customer email | [optional] |
-| **created_to** | **string**| Retrieve entities to their creation date | [optional] |
-| **created_from** | **string**| Retrieve entities from their creation date | [optional] |
-| **modified_to** | **string**| Retrieve entities to their modification date | [optional] |
-| **modified_from** | **string**| Retrieve entities from their modification date | [optional] |
-| **skip_empty_email** | **bool**| Filter empty emails | [optional] [default to false] |
 | **store_id** | **string**| Store Id | [optional] |
-| **page_cursor** | **string**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
-| **count** | **int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
-| **start** | **int**| This parameter sets the number from which you want to get entities | [optional] [default to 0] |
-| **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;customer,totals,items&#39;] |
+| **created_from** | **string**| Retrieve entities from their creation date | [optional] |
+| **created_to** | **string**| Retrieve entities to their creation date | [optional] |
+| **modified_from** | **string**| Retrieve entities from their modification date | [optional] |
+| **modified_to** | **string**| Retrieve entities to their modification date | [optional] |
+| **skip_empty_email** | **bool**| Filter empty emails | [optional] [default to false] |
 | **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;customer,totals,items&#39;] |
 | **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 
 ### Return type
@@ -192,7 +192,7 @@ try {
 ## `orderCount()`
 
 ```php
-orderCount($customer_id, $customer_email, $order_status, $order_status_ids, $created_to, $created_from, $modified_to, $modified_from, $store_id, $ids, $order_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type): \OpenAPI\Client\Model\OrderCount200Response
+orderCount($order_ids, $ids, $customer_id, $store_id, $customer_email, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $created_from, $created_to, $modified_from, $modified_to): \OpenAPI\Client\Model\OrderCount200Response
 ```
 
 order.count
@@ -223,17 +223,13 @@ $apiInstance = new OpenAPI\Client\Api\OrderApi(
     new GuzzleHttp\Client(),
     $config
 );
+$order_ids = 24,25; // string | Counts orders specified by order ids
+$ids = 24,25; // string | Counts orders specified by ids
 $customer_id = 5; // string | Counts orders quantity specified by customer id
+$store_id = 1; // string | Counts orders quantity specified by store id
 $customer_email = jubari@hannsgroup.com; // string | Counts orders quantity specified by customer email
 $order_status = Completed; // string | Counts orders quantity specified by order status
 $order_status_ids = array('order_status_ids_example'); // string[] | Retrieves orders specified by order statuses
-$created_to = 2100-08-29 13:45:52; // string | Retrieve entities to their creation date
-$created_from = 2010-07-29 13:45:52; // string | Retrieve entities from their creation date
-$modified_to = 2100-08-29 13:45:52; // string | Retrieve entities to their modification date
-$modified_from = 2010-07-29 13:45:52; // string | Retrieve entities from their modification date
-$store_id = 1; // string | Counts orders quantity specified by store id
-$ids = 24,25; // string | Counts orders specified by ids
-$order_ids = 24,25; // string | Counts orders specified by order ids
 $ebay_order_status = Active; // string | Counts orders quantity specified by order status
 $financial_status = paid; // string | Counts orders quantity specified by financial status
 $financial_status_ids = array('financial_status_ids_example'); // string[] | Retrieves orders count specified by financial status ids
@@ -243,9 +239,13 @@ $shipping_method = flatrate_flatrate; // string | Retrieve entities according to
 $delivery_method = local; // string | Retrieves order with delivery method
 $tags = tag1,tag2; // string | Order tags
 $ship_node_type = SellerFulfilled; // string | Retrieves order with ship node type
+$created_from = 2010-07-29 13:45:52; // string | Retrieve entities from their creation date
+$created_to = 2100-08-29 13:45:52; // string | Retrieve entities to their creation date
+$modified_from = 2010-07-29 13:45:52; // string | Retrieve entities from their modification date
+$modified_to = 2100-08-29 13:45:52; // string | Retrieve entities to their modification date
 
 try {
-    $result = $apiInstance->orderCount($customer_id, $customer_email, $order_status, $order_status_ids, $created_to, $created_from, $modified_to, $modified_from, $store_id, $ids, $order_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type);
+    $result = $apiInstance->orderCount($order_ids, $ids, $customer_id, $store_id, $customer_email, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $created_from, $created_to, $modified_from, $modified_to);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderCount: ', $e->getMessage(), PHP_EOL;
@@ -256,17 +256,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **order_ids** | **string**| Counts orders specified by order ids | [optional] |
+| **ids** | **string**| Counts orders specified by ids | [optional] |
 | **customer_id** | **string**| Counts orders quantity specified by customer id | [optional] |
+| **store_id** | **string**| Counts orders quantity specified by store id | [optional] |
 | **customer_email** | **string**| Counts orders quantity specified by customer email | [optional] |
 | **order_status** | **string**| Counts orders quantity specified by order status | [optional] |
 | **order_status_ids** | [**string[]**](../Model/string.md)| Retrieves orders specified by order statuses | [optional] |
-| **created_to** | **string**| Retrieve entities to their creation date | [optional] |
-| **created_from** | **string**| Retrieve entities from their creation date | [optional] |
-| **modified_to** | **string**| Retrieve entities to their modification date | [optional] |
-| **modified_from** | **string**| Retrieve entities from their modification date | [optional] |
-| **store_id** | **string**| Counts orders quantity specified by store id | [optional] |
-| **ids** | **string**| Counts orders specified by ids | [optional] |
-| **order_ids** | **string**| Counts orders specified by order ids | [optional] |
 | **ebay_order_status** | **string**| Counts orders quantity specified by order status | [optional] |
 | **financial_status** | **string**| Counts orders quantity specified by financial status | [optional] |
 | **financial_status_ids** | [**string[]**](../Model/string.md)| Retrieves orders count specified by financial status ids | [optional] |
@@ -276,6 +272,10 @@ try {
 | **delivery_method** | **string**| Retrieves order with delivery method | [optional] |
 | **tags** | **string**| Order tags | [optional] |
 | **ship_node_type** | **string**| Retrieves order with ship node type | [optional] |
+| **created_from** | **string**| Retrieve entities from their creation date | [optional] |
+| **created_to** | **string**| Retrieve entities to their creation date | [optional] |
+| **modified_from** | **string**| Retrieve entities from their modification date | [optional] |
+| **modified_to** | **string**| Retrieve entities to their modification date | [optional] |
 
 ### Return type
 
@@ -361,7 +361,7 @@ This endpoint does not need any parameter.
 ## `orderFind()`
 
 ```php
-orderFind($customer_id, $customer_email, $order_status, $start, $count, $params, $exclude, $created_to, $created_from, $modified_to, $modified_from, $financial_status): \OpenAPI\Client\Model\OrderFind200Response
+orderFind($start, $count, $customer_id, $customer_email, $order_status, $financial_status, $created_to, $created_from, $modified_to, $modified_from, $params, $exclude): \OpenAPI\Client\Model\OrderFind200Response
 ```
 
 order.find
@@ -392,21 +392,21 @@ $apiInstance = new OpenAPI\Client\Api\OrderApi(
     new GuzzleHttp\Client(),
     $config
 );
+$start = 0; // int | This parameter sets the number from which you want to get entities
+$count = 20; // int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
 $customer_id = 5; // string | Retrieves orders specified by customer id
 $customer_email = jubari@hannsgroup.com; // string | Retrieves orders specified by customer email
 $order_status = Completed; // string | Retrieves orders specified by order status
-$start = 0; // int | This parameter sets the number from which you want to get entities
-$count = 20; // int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-$params = order_id,totals,status; // string | Set this parameter in order to choose which entity fields you want to retrieve
-$exclude = order_id,totals,status; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+$financial_status = paid; // string | Retrieves orders specified by financial status
 $created_to = 2100-08-29 13:45:52; // string | Retrieve entities to their creation date
 $created_from = 2010-07-29 13:45:52; // string | Retrieve entities from their creation date
 $modified_to = 2100-08-29 13:45:52; // string | Retrieve entities to their modification date
 $modified_from = 2010-07-29 13:45:52; // string | Retrieve entities from their modification date
-$financial_status = paid; // string | Retrieves orders specified by financial status
+$params = order_id,totals,status; // string | Set this parameter in order to choose which entity fields you want to retrieve
+$exclude = order_id,totals,status; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 
 try {
-    $result = $apiInstance->orderFind($customer_id, $customer_email, $order_status, $start, $count, $params, $exclude, $created_to, $created_from, $modified_to, $modified_from, $financial_status);
+    $result = $apiInstance->orderFind($start, $count, $customer_id, $customer_email, $order_status, $financial_status, $created_to, $created_from, $modified_to, $modified_from, $params, $exclude);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderFind: ', $e->getMessage(), PHP_EOL;
@@ -417,18 +417,18 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **start** | **int**| This parameter sets the number from which you want to get entities | [optional] [default to 0] |
+| **count** | **int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
 | **customer_id** | **string**| Retrieves orders specified by customer id | [optional] |
 | **customer_email** | **string**| Retrieves orders specified by customer email | [optional] |
 | **order_status** | **string**| Retrieves orders specified by order status | [optional] |
-| **start** | **int**| This parameter sets the number from which you want to get entities | [optional] [default to 0] |
-| **count** | **int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
-| **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;order_id,customer,totals,address,items,bundles,status&#39;] |
-| **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
+| **financial_status** | **string**| Retrieves orders specified by financial status | [optional] |
 | **created_to** | **string**| Retrieve entities to their creation date | [optional] |
 | **created_from** | **string**| Retrieve entities from their creation date | [optional] |
 | **modified_to** | **string**| Retrieve entities to their modification date | [optional] |
 | **modified_from** | **string**| Retrieve entities from their modification date | [optional] |
-| **financial_status** | **string**| Retrieves orders specified by financial status | [optional] |
+| **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;order_id,customer,totals,address,items,bundles,status&#39;] |
+| **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 
 ### Return type
 
@@ -517,7 +517,7 @@ try {
 ## `orderInfo()`
 
 ```php
-orderInfo($order_id, $id, $params, $response_fields, $exclude, $store_id, $enable_cache, $use_latest_api_version): \OpenAPI\Client\Model\OrderInfo200Response
+orderInfo($id, $order_id, $store_id, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version): \OpenAPI\Client\Model\OrderInfo200Response
 ```
 
 order.info
@@ -548,17 +548,17 @@ $apiInstance = new OpenAPI\Client\Api\OrderApi(
     new GuzzleHttp\Client(),
     $config
 );
-$order_id = 25; // string | Retrieves order’s info specified by order id
 $id = 10; // string | Retrieves order info specified by id
+$order_id = 25; // string | Retrieves order’s info specified by order id
+$store_id = 1; // string | Defines store id where the order should be found
 $params = order_id,totals,status; // string | Set this parameter in order to choose which entity fields you want to retrieve
 $response_fields = {result{order_id,customer,totals,address,items,bundles,status}}; // string | Set this parameter in order to choose which entity fields you want to retrieve
 $exclude = order_id,totals,status; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-$store_id = 1; // string | Defines store id where the order should be found
 $enable_cache = true; // bool | If the value is 'true' and order exist in our cache, we will return order.info response from cache
 $use_latest_api_version = true; // bool | Use the latest platform API version
 
 try {
-    $result = $apiInstance->orderInfo($order_id, $id, $params, $response_fields, $exclude, $store_id, $enable_cache, $use_latest_api_version);
+    $result = $apiInstance->orderInfo($id, $order_id, $store_id, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderInfo: ', $e->getMessage(), PHP_EOL;
@@ -569,12 +569,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **order_id** | **string**| Retrieves order’s info specified by order id | [optional] |
 | **id** | **string**| Retrieves order info specified by id | [optional] |
+| **order_id** | **string**| Retrieves order’s info specified by order id | [optional] |
+| **store_id** | **string**| Defines store id where the order should be found | [optional] |
 | **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;order_id,customer,totals,address,items,bundles,status&#39;] |
 | **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 | **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
-| **store_id** | **string**| Defines store id where the order should be found | [optional] |
 | **enable_cache** | **bool**| If the value is &#39;true&#39; and order exist in our cache, we will return order.info response from cache | [optional] [default to false] |
 | **use_latest_api_version** | **bool**| Use the latest platform API version | [optional] [default to false] |
 
@@ -598,7 +598,7 @@ try {
 ## `orderList()`
 
 ```php
-orderList($customer_id, $customer_email, $phone, $order_status, $order_status_ids, $start, $count, $page_cursor, $sort_by, $sort_direction, $params, $response_fields, $exclude, $created_to, $created_from, $modified_to, $modified_from, $store_id, $ids, $order_ids, $ebay_order_status, $basket_id, $financial_status, $financial_status_ids, $fulfillment_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $since_id, $is_deleted, $shipping_country_iso3, $enable_cache, $delivery_method, $tags, $ship_node_type, $currency_id, $return_status, $use_latest_api_version): \OpenAPI\Client\Model\ModelResponseOrderList
+orderList($start, $count, $page_cursor, $ids, $order_ids, $since_id, $store_id, $customer_id, $customer_email, $basket_id, $currency_id, $phone, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_status, $return_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $is_deleted, $shipping_country_iso3, $delivery_method, $ship_node_type, $created_to, $created_from, $modified_to, $modified_from, $tags, $sort_by, $sort_direction, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version): \OpenAPI\Client\Model\ModelResponseOrderList
 ```
 
 order.list
@@ -629,47 +629,47 @@ $apiInstance = new OpenAPI\Client\Api\OrderApi(
     new GuzzleHttp\Client(),
     $config
 );
-$customer_id = 5; // string | Retrieves orders specified by customer id
-$customer_email = jubari@hannsgroup.com; // string | Retrieves orders specified by customer email
-$phone = 56686868654; // string | Filter orders by customer's phone number
-$order_status = Completed; // string | Retrieves orders specified by order status
-$order_status_ids = array('order_status_ids_example'); // string[] | Retrieves orders specified by order statuses
 $start = 0; // int | This parameter sets the number from which you want to get entities
 $count = 20; // int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
 $page_cursor = ; // string | Used to retrieve orders via cursor-based pagination (it can't be used with any other filtering parameter)
+$ids = 24,25; // string | Retrieves orders specified by ids
+$order_ids = 24,25; // string | Retrieves orders specified by order ids
+$since_id = 56; // string | Retrieve entities starting from the specified id.
+$store_id = 1; // string | Store Id
+$customer_id = 5; // string | Retrieves orders specified by customer id
+$customer_email = jubari@hannsgroup.com; // string | Retrieves orders specified by customer email
+$basket_id = 1; // string | Retrieves order’s info specified by basket id.
+$currency_id = usd; // string | Currency Id
+$phone = 56686868654; // string | Filter orders by customer's phone number
+$order_status = Completed; // string | Retrieves orders specified by order status
+$order_status_ids = array('order_status_ids_example'); // string[] | Retrieves orders specified by order statuses
+$ebay_order_status = Active; // string | Retrieves orders specified by order status
+$financial_status = paid; // string | Retrieves orders specified by financial status
+$financial_status_ids = array('financial_status_ids_example'); // string[] | Retrieves orders specified by financial status ids
+$fulfillment_status = fulfilled; // string | Create order with fulfillment status
+$return_status = RETURNED; // string | Retrieves orders specified by return status
+$fulfillment_channel = local; // string | Retrieves order with a fulfillment channel
+$shipping_method = flatrate_flatrate; // string | Retrieve entities according to shipping method
+$skip_order_ids = 24,25; // string | Skipped orders by ids
+$is_deleted = true; // bool | Filter deleted orders
+$shipping_country_iso3 = DEU; // string | Retrieve entities according to shipping country
+$delivery_method = local; // string | Retrieves order with delivery method
+$ship_node_type = SellerFulfilled; // string | Retrieves order with ship node type
+$created_to = 2100-08-29 13:45:52; // string | Retrieve entities to their creation date
+$created_from = 2010-07-29 13:45:52; // string | Retrieve entities from their creation date
+$modified_to = 2100-08-29 13:45:52; // string | Retrieve entities to their modification date
+$modified_from = 2010-07-29 13:45:52; // string | Retrieve entities from their modification date
+$tags = tag1,tag2; // string | Order tags
 $sort_by = modified_at; // string | Set field to sort by
 $sort_direction = asc; // string | Set sorting direction
 $params = order_id,totals,status; // string | Set this parameter in order to choose which entity fields you want to retrieve
 $response_fields = {return_code,pagination,result{order{order_id,customer,totals,address,items,bundles,status}}}; // string | Set this parameter in order to choose which entity fields you want to retrieve
 $exclude = order_id,totals,status; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-$created_to = 2100-08-29 13:45:52; // string | Retrieve entities to their creation date
-$created_from = 2010-07-29 13:45:52; // string | Retrieve entities from their creation date
-$modified_to = 2100-08-29 13:45:52; // string | Retrieve entities to their modification date
-$modified_from = 2010-07-29 13:45:52; // string | Retrieve entities from their modification date
-$store_id = 1; // string | Store Id
-$ids = 24,25; // string | Retrieves orders specified by ids
-$order_ids = 24,25; // string | Retrieves orders specified by order ids
-$ebay_order_status = Active; // string | Retrieves orders specified by order status
-$basket_id = 1; // string | Retrieves order’s info specified by basket id.
-$financial_status = paid; // string | Retrieves orders specified by financial status
-$financial_status_ids = array('financial_status_ids_example'); // string[] | Retrieves orders specified by financial status ids
-$fulfillment_status = fulfilled; // string | Create order with fulfillment status
-$fulfillment_channel = local; // string | Retrieves order with a fulfillment channel
-$shipping_method = flatrate_flatrate; // string | Retrieve entities according to shipping method
-$skip_order_ids = 24,25; // string | Skipped orders by ids
-$since_id = 56; // string | Retrieve entities starting from the specified id.
-$is_deleted = true; // bool | Filter deleted orders
-$shipping_country_iso3 = DEU; // string | Retrieve entities according to shipping country
 $enable_cache = true; // bool | If the value is 'true', we will cache orders for a 15 minutes in order to increase speed and reduce requests throttling for some methods and shoping platforms (for example order.shipment.add)
-$delivery_method = local; // string | Retrieves order with delivery method
-$tags = tag1,tag2; // string | Order tags
-$ship_node_type = SellerFulfilled; // string | Retrieves order with ship node type
-$currency_id = usd; // string | Currency Id
-$return_status = RETURNED; // string | Retrieves orders specified by return status
 $use_latest_api_version = true; // bool | Use the latest platform API version
 
 try {
-    $result = $apiInstance->orderList($customer_id, $customer_email, $phone, $order_status, $order_status_ids, $start, $count, $page_cursor, $sort_by, $sort_direction, $params, $response_fields, $exclude, $created_to, $created_from, $modified_to, $modified_from, $store_id, $ids, $order_ids, $ebay_order_status, $basket_id, $financial_status, $financial_status_ids, $fulfillment_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $since_id, $is_deleted, $shipping_country_iso3, $enable_cache, $delivery_method, $tags, $ship_node_type, $currency_id, $return_status, $use_latest_api_version);
+    $result = $apiInstance->orderList($start, $count, $page_cursor, $ids, $order_ids, $since_id, $store_id, $customer_id, $customer_email, $basket_id, $currency_id, $phone, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_status, $return_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $is_deleted, $shipping_country_iso3, $delivery_method, $ship_node_type, $created_to, $created_from, $modified_to, $modified_from, $tags, $sort_by, $sort_direction, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderList: ', $e->getMessage(), PHP_EOL;
@@ -680,43 +680,43 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **customer_id** | **string**| Retrieves orders specified by customer id | [optional] |
-| **customer_email** | **string**| Retrieves orders specified by customer email | [optional] |
-| **phone** | **string**| Filter orders by customer&#39;s phone number | [optional] |
-| **order_status** | **string**| Retrieves orders specified by order status | [optional] |
-| **order_status_ids** | [**string[]**](../Model/string.md)| Retrieves orders specified by order statuses | [optional] |
 | **start** | **int**| This parameter sets the number from which you want to get entities | [optional] [default to 0] |
 | **count** | **int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
 | **page_cursor** | **string**| Used to retrieve orders via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
+| **ids** | **string**| Retrieves orders specified by ids | [optional] |
+| **order_ids** | **string**| Retrieves orders specified by order ids | [optional] |
+| **since_id** | **string**| Retrieve entities starting from the specified id. | [optional] |
+| **store_id** | **string**| Store Id | [optional] |
+| **customer_id** | **string**| Retrieves orders specified by customer id | [optional] |
+| **customer_email** | **string**| Retrieves orders specified by customer email | [optional] |
+| **basket_id** | **string**| Retrieves order’s info specified by basket id. | [optional] |
+| **currency_id** | **string**| Currency Id | [optional] |
+| **phone** | **string**| Filter orders by customer&#39;s phone number | [optional] |
+| **order_status** | **string**| Retrieves orders specified by order status | [optional] |
+| **order_status_ids** | [**string[]**](../Model/string.md)| Retrieves orders specified by order statuses | [optional] |
+| **ebay_order_status** | **string**| Retrieves orders specified by order status | [optional] |
+| **financial_status** | **string**| Retrieves orders specified by financial status | [optional] |
+| **financial_status_ids** | [**string[]**](../Model/string.md)| Retrieves orders specified by financial status ids | [optional] |
+| **fulfillment_status** | **string**| Create order with fulfillment status | [optional] |
+| **return_status** | **string**| Retrieves orders specified by return status | [optional] |
+| **fulfillment_channel** | **string**| Retrieves order with a fulfillment channel | [optional] |
+| **shipping_method** | **string**| Retrieve entities according to shipping method | [optional] |
+| **skip_order_ids** | **string**| Skipped orders by ids | [optional] |
+| **is_deleted** | **bool**| Filter deleted orders | [optional] |
+| **shipping_country_iso3** | **string**| Retrieve entities according to shipping country | [optional] |
+| **delivery_method** | **string**| Retrieves order with delivery method | [optional] |
+| **ship_node_type** | **string**| Retrieves order with ship node type | [optional] |
+| **created_to** | **string**| Retrieve entities to their creation date | [optional] |
+| **created_from** | **string**| Retrieve entities from their creation date | [optional] |
+| **modified_to** | **string**| Retrieve entities to their modification date | [optional] |
+| **modified_from** | **string**| Retrieve entities from their modification date | [optional] |
+| **tags** | **string**| Order tags | [optional] |
 | **sort_by** | **string**| Set field to sort by | [optional] [default to &#39;order_id&#39;] |
 | **sort_direction** | **string**| Set sorting direction | [optional] [default to &#39;asc&#39;] |
 | **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;order_id,customer,totals,address,items,bundles,status&#39;] |
 | **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 | **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
-| **created_to** | **string**| Retrieve entities to their creation date | [optional] |
-| **created_from** | **string**| Retrieve entities from their creation date | [optional] |
-| **modified_to** | **string**| Retrieve entities to their modification date | [optional] |
-| **modified_from** | **string**| Retrieve entities from their modification date | [optional] |
-| **store_id** | **string**| Store Id | [optional] |
-| **ids** | **string**| Retrieves orders specified by ids | [optional] |
-| **order_ids** | **string**| Retrieves orders specified by order ids | [optional] |
-| **ebay_order_status** | **string**| Retrieves orders specified by order status | [optional] |
-| **basket_id** | **string**| Retrieves order’s info specified by basket id. | [optional] |
-| **financial_status** | **string**| Retrieves orders specified by financial status | [optional] |
-| **financial_status_ids** | [**string[]**](../Model/string.md)| Retrieves orders specified by financial status ids | [optional] |
-| **fulfillment_status** | **string**| Create order with fulfillment status | [optional] |
-| **fulfillment_channel** | **string**| Retrieves order with a fulfillment channel | [optional] |
-| **shipping_method** | **string**| Retrieve entities according to shipping method | [optional] |
-| **skip_order_ids** | **string**| Skipped orders by ids | [optional] |
-| **since_id** | **string**| Retrieve entities starting from the specified id. | [optional] |
-| **is_deleted** | **bool**| Filter deleted orders | [optional] |
-| **shipping_country_iso3** | **string**| Retrieve entities according to shipping country | [optional] |
 | **enable_cache** | **bool**| If the value is &#39;true&#39;, we will cache orders for a 15 minutes in order to increase speed and reduce requests throttling for some methods and shoping platforms (for example order.shipment.add) | [optional] [default to false] |
-| **delivery_method** | **string**| Retrieves order with delivery method | [optional] |
-| **tags** | **string**| Order tags | [optional] |
-| **ship_node_type** | **string**| Retrieves order with ship node type | [optional] |
-| **currency_id** | **string**| Currency Id | [optional] |
-| **return_status** | **string**| Retrieves orders specified by return status | [optional] |
 | **use_latest_api_version** | **bool**| Use the latest platform API version | [optional] [default to false] |
 
 ### Return type
@@ -1283,7 +1283,7 @@ try {
 ## `orderShipmentInfo()`
 
 ```php
-orderShipmentInfo($id, $order_id, $start, $params, $response_fields, $exclude, $store_id): \OpenAPI\Client\Model\OrderShipmentInfo200Response
+orderShipmentInfo($id, $order_id, $start, $store_id, $response_fields, $params, $exclude): \OpenAPI\Client\Model\OrderShipmentInfo200Response
 ```
 
 order.shipment.info
@@ -1317,13 +1317,13 @@ $apiInstance = new OpenAPI\Client\Api\OrderApi(
 $id = 10; // string | Entity id
 $order_id = 25; // string | Defines the order id
 $start = 0; // int | This parameter sets the number from which you want to get entities
-$params = id,model,price,images; // string | Set this parameter in order to choose which entity fields you want to retrieve
-$response_fields = {result{id,order_id,shipment_provider,tracking_numbers{tracking_number},items{product_id,quantity}}}; // string | Set this parameter in order to choose which entity fields you want to retrieve
-$exclude = false; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 $store_id = 1; // string | Store Id
+$response_fields = {result{id,order_id,shipment_provider,tracking_numbers{tracking_number},items{product_id,quantity}}}; // string | Set this parameter in order to choose which entity fields you want to retrieve
+$params = id,model,price,images; // string | Set this parameter in order to choose which entity fields you want to retrieve
+$exclude = false; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 
 try {
-    $result = $apiInstance->orderShipmentInfo($id, $order_id, $start, $params, $response_fields, $exclude, $store_id);
+    $result = $apiInstance->orderShipmentInfo($id, $order_id, $start, $store_id, $response_fields, $params, $exclude);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderShipmentInfo: ', $e->getMessage(), PHP_EOL;
@@ -1337,10 +1337,10 @@ try {
 | **id** | **string**| Entity id | |
 | **order_id** | **string**| Defines the order id | |
 | **start** | **int**| This parameter sets the number from which you want to get entities | [optional] [default to 0] |
-| **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,order_id,items,tracking_numbers&#39;] |
-| **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
-| **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 | **store_id** | **string**| Store Id | [optional] |
+| **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,order_id,items,tracking_numbers&#39;] |
+| **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 
 ### Return type
 
@@ -1362,7 +1362,7 @@ try {
 ## `orderShipmentList()`
 
 ```php
-orderShipmentList($order_id, $page_cursor, $start, $count, $params, $response_fields, $exclude, $created_from, $created_to, $modified_from, $modified_to, $store_id): \OpenAPI\Client\Model\ModelResponseOrderShipmentList
+orderShipmentList($order_id, $start, $count, $page_cursor, $store_id, $created_from, $created_to, $modified_from, $modified_to, $response_fields, $params, $exclude): \OpenAPI\Client\Model\ModelResponseOrderShipmentList
 ```
 
 order.shipment.list
@@ -1394,20 +1394,20 @@ $apiInstance = new OpenAPI\Client\Api\OrderApi(
     $config
 );
 $order_id = 25; // string | Retrieves shipments specified by order id
-$page_cursor = ; // string | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
 $start = 0; // int | This parameter sets the number from which you want to get entities
 $count = 20; // int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-$params = id,model,price,images; // string | Set this parameter in order to choose which entity fields you want to retrieve
-$response_fields = {status_code,pagination,result{shipment{id,order_id,shipment_provider,tracking_numbers{tracking_number},items{product_id,quantity}}}}; // string | Set this parameter in order to choose which entity fields you want to retrieve
-$exclude = false; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+$page_cursor = ; // string | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
+$store_id = 1; // string | Store Id
 $created_from = 2010-07-29 13:45:52; // string | Retrieve entities from their creation date
 $created_to = 2100-08-29 13:45:52; // string | Retrieve entities to their creation date
 $modified_from = 2010-07-29 13:45:52; // string | Retrieve entities from their modification date
 $modified_to = 2100-08-29 13:45:52; // string | Retrieve entities to their modification date
-$store_id = 1; // string | Store Id
+$response_fields = {status_code,pagination,result{shipment{id,order_id,shipment_provider,tracking_numbers{tracking_number},items{product_id,quantity}}}}; // string | Set this parameter in order to choose which entity fields you want to retrieve
+$params = id,model,price,images; // string | Set this parameter in order to choose which entity fields you want to retrieve
+$exclude = false; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 
 try {
-    $result = $apiInstance->orderShipmentList($order_id, $page_cursor, $start, $count, $params, $response_fields, $exclude, $created_from, $created_to, $modified_from, $modified_to, $store_id);
+    $result = $apiInstance->orderShipmentList($order_id, $start, $count, $page_cursor, $store_id, $created_from, $created_to, $modified_from, $modified_to, $response_fields, $params, $exclude);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderShipmentList: ', $e->getMessage(), PHP_EOL;
@@ -1419,17 +1419,17 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **order_id** | **string**| Retrieves shipments specified by order id | |
-| **page_cursor** | **string**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
 | **start** | **int**| This parameter sets the number from which you want to get entities | [optional] [default to 0] |
 | **count** | **int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
-| **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,order_id,items,tracking_numbers&#39;] |
-| **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
-| **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
+| **page_cursor** | **string**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
+| **store_id** | **string**| Store Id | [optional] |
 | **created_from** | **string**| Retrieve entities from their creation date | [optional] |
 | **created_to** | **string**| Retrieve entities to their creation date | [optional] |
 | **modified_from** | **string**| Retrieve entities from their modification date | [optional] |
 | **modified_to** | **string**| Retrieve entities to their modification date | [optional] |
-| **store_id** | **string**| Store Id | [optional] |
+| **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,order_id,items,tracking_numbers&#39;] |
+| **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 
 ### Return type
 
@@ -1656,7 +1656,7 @@ try {
 ## `orderTransactionList()`
 
 ```php
-orderTransactionList($order_ids, $count, $store_id, $params, $response_fields, $exclude, $page_cursor): \OpenAPI\Client\Model\ModelResponseOrderTransactionList
+orderTransactionList($order_ids, $count, $page_cursor, $store_id, $params, $response_fields, $exclude): \OpenAPI\Client\Model\ModelResponseOrderTransactionList
 ```
 
 order.transaction.list
@@ -1689,14 +1689,14 @@ $apiInstance = new OpenAPI\Client\Api\OrderApi(
 );
 $order_ids = 24,25; // string | Retrieves order transactions specified by order ids
 $count = 20; // int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+$page_cursor = ; // string | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
 $store_id = 1; // string | Store Id
 $params = id,model,price,images; // string | Set this parameter in order to choose which entity fields you want to retrieve
 $response_fields = {return_code,pagination,result{transactions_count,transactions{id,transaction_id,status,description,settlement_amount,gateway,card_brand,card_last_four}}}; // string | Set this parameter in order to choose which entity fields you want to retrieve
 $exclude = false; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-$page_cursor = ; // string | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
 
 try {
-    $result = $apiInstance->orderTransactionList($order_ids, $count, $store_id, $params, $response_fields, $exclude, $page_cursor);
+    $result = $apiInstance->orderTransactionList($order_ids, $count, $page_cursor, $store_id, $params, $response_fields, $exclude);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderTransactionList: ', $e->getMessage(), PHP_EOL;
@@ -1709,11 +1709,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **order_ids** | **string**| Retrieves order transactions specified by order ids | |
 | **count** | **int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
+| **page_cursor** | **string**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
 | **store_id** | **string**| Store Id | [optional] |
 | **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,order_id,amount,description&#39;] |
 | **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 | **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
-| **page_cursor** | **string**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
 
 ### Return type
 
@@ -1735,7 +1735,7 @@ try {
 ## `orderUpdate()`
 
 ```php
-orderUpdate($order_id, $store_id, $order_status, $cancellation_reason, $comment, $admin_comment, $admin_private_comment, $date_modified, $date_finished, $financial_status, $fulfillment_status, $order_payment_method, $send_notifications, $origin, $create_invoice, $invoice_admin_comment): \OpenAPI\Client\Model\AccountConfigUpdate200Response
+orderUpdate($order_id, $store_id, $order_status, $financial_status, $fulfillment_status, $cancellation_reason, $order_payment_method, $comment, $admin_comment, $admin_private_comment, $invoice_admin_comment, $date_modified, $date_finished, $send_notifications, $create_invoice, $origin): \OpenAPI\Client\Model\AccountConfigUpdate200Response
 ```
 
 order.update
@@ -1769,22 +1769,22 @@ $apiInstance = new OpenAPI\Client\Api\OrderApi(
 $order_id = 25; // string | Defines the orders specified by order id
 $store_id = 1; // string | Defines store id where the order should be found
 $order_status = Completed; // string | Defines new order's status
+$financial_status = paid; // string | Update order financial status to specified
+$fulfillment_status = fulfilled; // string | Create order with fulfillment status
 $cancellation_reason = ORDER_UNPAID; // string | Defines the cancellation reason when the order will be canceled
+$order_payment_method = PayPal; // string | Defines order payment method.<br/>Setting order_payment_method on Shopify will also change financial_status field value to 'paid'
 $comment = This coole order; // string | Specifies order comment
 $admin_comment = Test admin comment; // string | Specifies admin's order comment
 $admin_private_comment = Test admin private comment; // string | Specifies private admin's order comment
+$invoice_admin_comment = Test admin comment; // string | Specifies admin's order invoice comment
 $date_modified = 2014-05-05 05:05:00; // string | Specifies order's  modification date
 $date_finished = 2014-06-05 05:05:00; // string | Specifies order's  finished date
-$financial_status = paid; // string | Update order financial status to specified
-$fulfillment_status = fulfilled; // string | Create order with fulfillment status
-$order_payment_method = PayPal; // string | Defines order payment method.<br/>Setting order_payment_method on Shopify will also change financial_status field value to 'paid'
 $send_notifications = true; // bool | Send notifications to customer after order was created
-$origin = newsletter; // string | The source of the order
 $create_invoice = true; // bool | Determines whether an invoice should be created if it has not already been created
-$invoice_admin_comment = Test admin comment; // string | Specifies admin's order invoice comment
+$origin = newsletter; // string | The source of the order
 
 try {
-    $result = $apiInstance->orderUpdate($order_id, $store_id, $order_status, $cancellation_reason, $comment, $admin_comment, $admin_private_comment, $date_modified, $date_finished, $financial_status, $fulfillment_status, $order_payment_method, $send_notifications, $origin, $create_invoice, $invoice_admin_comment);
+    $result = $apiInstance->orderUpdate($order_id, $store_id, $order_status, $financial_status, $fulfillment_status, $cancellation_reason, $order_payment_method, $comment, $admin_comment, $admin_private_comment, $invoice_admin_comment, $date_modified, $date_finished, $send_notifications, $create_invoice, $origin);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderUpdate: ', $e->getMessage(), PHP_EOL;
@@ -1798,19 +1798,19 @@ try {
 | **order_id** | **string**| Defines the orders specified by order id | |
 | **store_id** | **string**| Defines store id where the order should be found | [optional] |
 | **order_status** | **string**| Defines new order&#39;s status | [optional] |
+| **financial_status** | **string**| Update order financial status to specified | [optional] |
+| **fulfillment_status** | **string**| Create order with fulfillment status | [optional] |
 | **cancellation_reason** | **string**| Defines the cancellation reason when the order will be canceled | [optional] |
+| **order_payment_method** | **string**| Defines order payment method.&lt;br/&gt;Setting order_payment_method on Shopify will also change financial_status field value to &#39;paid&#39; | [optional] |
 | **comment** | **string**| Specifies order comment | [optional] |
 | **admin_comment** | **string**| Specifies admin&#39;s order comment | [optional] |
 | **admin_private_comment** | **string**| Specifies private admin&#39;s order comment | [optional] |
+| **invoice_admin_comment** | **string**| Specifies admin&#39;s order invoice comment | [optional] |
 | **date_modified** | **string**| Specifies order&#39;s  modification date | [optional] |
 | **date_finished** | **string**| Specifies order&#39;s  finished date | [optional] |
-| **financial_status** | **string**| Update order financial status to specified | [optional] |
-| **fulfillment_status** | **string**| Create order with fulfillment status | [optional] |
-| **order_payment_method** | **string**| Defines order payment method.&lt;br/&gt;Setting order_payment_method on Shopify will also change financial_status field value to &#39;paid&#39; | [optional] |
 | **send_notifications** | **bool**| Send notifications to customer after order was created | [optional] [default to false] |
-| **origin** | **string**| The source of the order | [optional] |
 | **create_invoice** | **bool**| Determines whether an invoice should be created if it has not already been created | [optional] |
-| **invoice_admin_comment** | **string**| Specifies admin&#39;s order invoice comment | [optional] |
+| **origin** | **string**| The source of the order | [optional] |
 
 ### Return type
 

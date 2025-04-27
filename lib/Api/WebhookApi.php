@@ -1518,22 +1518,22 @@ class WebhookApi
      *
      * webhook.list
      *
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,entity,action,callback')
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $entity The entity you want to filter webhooks by (e.g. order or product) (optional)
      * @param  string|null $action The action you want to filter webhooks by (e.g. add, update, or delete) (optional)
      * @param  bool|null $active The webhook status you want to filter webhooks by (optional)
      * @param  string|null $ids List of сomma-separated webhook ids (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,entity,action,callback')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\WebhookList200Response
      */
-    public function webhookList($params = 'id,entity,action,callback', $start = 0, $count = 10, $entity = null, $action = null, $active = null, $ids = null, string $contentType = self::contentTypes['webhookList'][0])
+    public function webhookList($start = 0, $count = 10, $entity = null, $action = null, $active = null, $ids = null, $params = 'id,entity,action,callback', string $contentType = self::contentTypes['webhookList'][0])
     {
-        list($response) = $this->webhookListWithHttpInfo($params, $start, $count, $entity, $action, $active, $ids, $contentType);
+        list($response) = $this->webhookListWithHttpInfo($start, $count, $entity, $action, $active, $ids, $params, $contentType);
         return $response;
     }
 
@@ -1542,22 +1542,22 @@ class WebhookApi
      *
      * webhook.list
      *
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,entity,action,callback')
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $entity The entity you want to filter webhooks by (e.g. order or product) (optional)
      * @param  string|null $action The action you want to filter webhooks by (e.g. add, update, or delete) (optional)
      * @param  bool|null $active The webhook status you want to filter webhooks by (optional)
      * @param  string|null $ids List of сomma-separated webhook ids (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,entity,action,callback')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\WebhookList200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function webhookListWithHttpInfo($params = 'id,entity,action,callback', $start = 0, $count = 10, $entity = null, $action = null, $active = null, $ids = null, string $contentType = self::contentTypes['webhookList'][0])
+    public function webhookListWithHttpInfo($start = 0, $count = 10, $entity = null, $action = null, $active = null, $ids = null, $params = 'id,entity,action,callback', string $contentType = self::contentTypes['webhookList'][0])
     {
-        $request = $this->webhookListRequest($params, $start, $count, $entity, $action, $active, $ids, $contentType);
+        $request = $this->webhookListRequest($start, $count, $entity, $action, $active, $ids, $params, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1673,21 +1673,21 @@ class WebhookApi
      *
      * webhook.list
      *
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,entity,action,callback')
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $entity The entity you want to filter webhooks by (e.g. order or product) (optional)
      * @param  string|null $action The action you want to filter webhooks by (e.g. add, update, or delete) (optional)
      * @param  bool|null $active The webhook status you want to filter webhooks by (optional)
      * @param  string|null $ids List of сomma-separated webhook ids (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,entity,action,callback')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function webhookListAsync($params = 'id,entity,action,callback', $start = 0, $count = 10, $entity = null, $action = null, $active = null, $ids = null, string $contentType = self::contentTypes['webhookList'][0])
+    public function webhookListAsync($start = 0, $count = 10, $entity = null, $action = null, $active = null, $ids = null, $params = 'id,entity,action,callback', string $contentType = self::contentTypes['webhookList'][0])
     {
-        return $this->webhookListAsyncWithHttpInfo($params, $start, $count, $entity, $action, $active, $ids, $contentType)
+        return $this->webhookListAsyncWithHttpInfo($start, $count, $entity, $action, $active, $ids, $params, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1700,22 +1700,22 @@ class WebhookApi
      *
      * webhook.list
      *
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,entity,action,callback')
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $entity The entity you want to filter webhooks by (e.g. order or product) (optional)
      * @param  string|null $action The action you want to filter webhooks by (e.g. add, update, or delete) (optional)
      * @param  bool|null $active The webhook status you want to filter webhooks by (optional)
      * @param  string|null $ids List of сomma-separated webhook ids (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,entity,action,callback')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function webhookListAsyncWithHttpInfo($params = 'id,entity,action,callback', $start = 0, $count = 10, $entity = null, $action = null, $active = null, $ids = null, string $contentType = self::contentTypes['webhookList'][0])
+    public function webhookListAsyncWithHttpInfo($start = 0, $count = 10, $entity = null, $action = null, $active = null, $ids = null, $params = 'id,entity,action,callback', string $contentType = self::contentTypes['webhookList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\WebhookList200Response';
-        $request = $this->webhookListRequest($params, $start, $count, $entity, $action, $active, $ids, $contentType);
+        $request = $this->webhookListRequest($start, $count, $entity, $action, $active, $ids, $params, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1756,19 +1756,19 @@ class WebhookApi
     /**
      * Create request for operation 'webhookList'
      *
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,entity,action,callback')
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $entity The entity you want to filter webhooks by (e.g. order or product) (optional)
      * @param  string|null $action The action you want to filter webhooks by (e.g. add, update, or delete) (optional)
      * @param  bool|null $active The webhook status you want to filter webhooks by (optional)
      * @param  string|null $ids List of сomma-separated webhook ids (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,entity,action,callback')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function webhookListRequest($params = 'id,entity,action,callback', $start = 0, $count = 10, $entity = null, $action = null, $active = null, $ids = null, string $contentType = self::contentTypes['webhookList'][0])
+    public function webhookListRequest($start = 0, $count = 10, $entity = null, $action = null, $active = null, $ids = null, $params = 'id,entity,action,callback', string $contentType = self::contentTypes['webhookList'][0])
     {
 
 
@@ -1786,15 +1786,6 @@ class WebhookApi
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $params,
-            'params', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $start,
@@ -1844,6 +1835,15 @@ class WebhookApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $ids,
             'ids', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $params,
+            'params', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

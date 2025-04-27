@@ -11,7 +11,7 @@ All URIs are relative to https://api.api2cart.com/v1.1, except if the operation 
 ## `taxClassInfo()`
 
 ```php
-taxClassInfo($tax_class_id, $store_id, $lang_id, $params, $response_fields, $exclude): \OpenAPI\Client\Model\ModelResponseTaxClassInfo
+taxClassInfo($tax_class_id, $store_id, $lang_id, $response_fields, $params, $exclude): \OpenAPI\Client\Model\ModelResponseTaxClassInfo
 ```
 
 tax.class.info
@@ -45,12 +45,12 @@ $apiInstance = new OpenAPI\Client\Api\TaxApi(
 $tax_class_id = 9; // string | Retrieves taxes specified by class id
 $store_id = 1; // string | Store Id
 $lang_id = 3; // string | Language id
-$params = tax_class_id,tax; // string | Set this parameter in order to choose which entity fields you want to retrieve
 $response_fields = {result{id,name,tax,tax_rates{id,countries{id,name,states},cities,address,zip_codes{is_range,range,fields}}}}; // string | Set this parameter in order to choose which entity fields you want to retrieve
+$params = tax_class_id,tax; // string | Set this parameter in order to choose which entity fields you want to retrieve
 $exclude = tax_class_id,tax; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 
 try {
-    $result = $apiInstance->taxClassInfo($tax_class_id, $store_id, $lang_id, $params, $response_fields, $exclude);
+    $result = $apiInstance->taxClassInfo($tax_class_id, $store_id, $lang_id, $response_fields, $params, $exclude);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TaxApi->taxClassInfo: ', $e->getMessage(), PHP_EOL;
@@ -64,8 +64,8 @@ try {
 | **tax_class_id** | **string**| Retrieves taxes specified by class id | |
 | **store_id** | **string**| Store Id | [optional] |
 | **lang_id** | **string**| Language id | [optional] |
-| **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;tax_class_id,name,avail&#39;] |
 | **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;tax_class_id,name,avail&#39;] |
 | **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 
 ### Return type
@@ -88,7 +88,7 @@ try {
 ## `taxClassList()`
 
 ```php
-taxClassList($created_to, $created_from, $modified_to, $modified_from, $find_value, $find_where, $store_id, $count, $page_cursor, $response_fields): \OpenAPI\Client\Model\ModelResponseTaxClassList
+taxClassList($count, $page_cursor, $store_id, $find_value, $find_where, $created_to, $created_from, $modified_to, $modified_from, $response_fields): \OpenAPI\Client\Model\ModelResponseTaxClassList
 ```
 
 tax.class.list
@@ -119,19 +119,19 @@ $apiInstance = new OpenAPI\Client\Api\TaxApi(
     new GuzzleHttp\Client(),
     $config
 );
+$count = 20; // int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+$page_cursor = ; // string | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
+$store_id = 1; // string | Store Id
+$find_value = tax; // string | Entity search that is specified by some value
+$find_where = name; // string | Tax class search that is specified by field
 $created_to = 2100-08-29 13:45:52; // string | Retrieve entities to their creation date
 $created_from = 2010-07-29 13:45:52; // string | Retrieve entities from their creation date
 $modified_to = 2100-08-29 13:45:52; // string | Retrieve entities to their modification date
 $modified_from = 2010-07-29 13:45:52; // string | Retrieve entities from their modification date
-$find_value = tax; // string | Entity search that is specified by some value
-$find_where = name; // string | Tax class search that is specified by field
-$store_id = 1; // string | Store Id
-$count = 20; // int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-$page_cursor = ; // string | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
 $response_fields = {result}; // string | Set this parameter in order to choose which entity fields you want to retrieve
 
 try {
-    $result = $apiInstance->taxClassList($created_to, $created_from, $modified_to, $modified_from, $find_value, $find_where, $store_id, $count, $page_cursor, $response_fields);
+    $result = $apiInstance->taxClassList($count, $page_cursor, $store_id, $find_value, $find_where, $created_to, $created_from, $modified_to, $modified_from, $response_fields);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TaxApi->taxClassList: ', $e->getMessage(), PHP_EOL;
@@ -142,15 +142,15 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **count** | **int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
+| **page_cursor** | **string**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
+| **store_id** | **string**| Store Id | [optional] |
+| **find_value** | **string**| Entity search that is specified by some value | [optional] |
+| **find_where** | **string**| Tax class search that is specified by field | [optional] |
 | **created_to** | **string**| Retrieve entities to their creation date | [optional] |
 | **created_from** | **string**| Retrieve entities from their creation date | [optional] |
 | **modified_to** | **string**| Retrieve entities to their modification date | [optional] |
 | **modified_from** | **string**| Retrieve entities from their modification date | [optional] |
-| **find_value** | **string**| Entity search that is specified by some value | [optional] |
-| **find_where** | **string**| Tax class search that is specified by field | [optional] |
-| **store_id** | **string**| Store Id | [optional] |
-| **count** | **int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
-| **page_cursor** | **string**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
 | **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;{return_code,return_message,pagination,result}&#39;] |
 
 ### Return type

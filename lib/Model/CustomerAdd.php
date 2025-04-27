@@ -64,22 +64,22 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'password' => 'string',
         'group' => 'string',
         'group_ids' => 'string',
+        'status' => 'string',
         'created_time' => 'string',
         'modified_time' => 'string',
         'login' => 'string',
         'last_login' => 'string',
         'birth_day' => 'string',
-        'status' => 'string',
         'news_letter_subscription' => 'bool',
         'consents' => '\OpenAPI\Client\Model\CustomerAddConsentsInner[]',
         'gender' => 'string',
         'website' => 'string',
-        'store_id' => 'string',
         'fax' => 'string',
         'company' => 'string',
         'phone' => 'string',
         'note' => 'string',
         'country' => 'string',
+        'store_id' => 'string',
         'address' => '\OpenAPI\Client\Model\CustomerAddAddressInner[]'
     ];
 
@@ -97,22 +97,22 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'password' => null,
         'group' => null,
         'group_ids' => null,
+        'status' => null,
         'created_time' => null,
         'modified_time' => null,
         'login' => null,
         'last_login' => null,
         'birth_day' => null,
-        'status' => null,
         'news_letter_subscription' => null,
         'consents' => null,
         'gender' => null,
         'website' => null,
-        'store_id' => null,
         'fax' => null,
         'company' => null,
         'phone' => null,
         'note' => null,
         'country' => null,
+        'store_id' => null,
         'address' => null
     ];
 
@@ -128,22 +128,22 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'password' => false,
         'group' => false,
         'group_ids' => false,
+        'status' => false,
         'created_time' => false,
         'modified_time' => false,
         'login' => false,
         'last_login' => false,
         'birth_day' => false,
-        'status' => false,
         'news_letter_subscription' => false,
         'consents' => false,
         'gender' => false,
         'website' => false,
-        'store_id' => false,
         'fax' => false,
         'company' => false,
         'phone' => false,
         'note' => false,
         'country' => false,
+        'store_id' => false,
         'address' => false
     ];
 
@@ -239,22 +239,22 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'password' => 'password',
         'group' => 'group',
         'group_ids' => 'group_ids',
+        'status' => 'status',
         'created_time' => 'created_time',
         'modified_time' => 'modified_time',
         'login' => 'login',
         'last_login' => 'last_login',
         'birth_day' => 'birth_day',
-        'status' => 'status',
         'news_letter_subscription' => 'news_letter_subscription',
         'consents' => 'consents',
         'gender' => 'gender',
         'website' => 'website',
-        'store_id' => 'store_id',
         'fax' => 'fax',
         'company' => 'company',
         'phone' => 'phone',
         'note' => 'note',
         'country' => 'country',
+        'store_id' => 'store_id',
         'address' => 'address'
     ];
 
@@ -270,22 +270,22 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'password' => 'setPassword',
         'group' => 'setGroup',
         'group_ids' => 'setGroupIds',
+        'status' => 'setStatus',
         'created_time' => 'setCreatedTime',
         'modified_time' => 'setModifiedTime',
         'login' => 'setLogin',
         'last_login' => 'setLastLogin',
         'birth_day' => 'setBirthDay',
-        'status' => 'setStatus',
         'news_letter_subscription' => 'setNewsLetterSubscription',
         'consents' => 'setConsents',
         'gender' => 'setGender',
         'website' => 'setWebsite',
-        'store_id' => 'setStoreId',
         'fax' => 'setFax',
         'company' => 'setCompany',
         'phone' => 'setPhone',
         'note' => 'setNote',
         'country' => 'setCountry',
+        'store_id' => 'setStoreId',
         'address' => 'setAddress'
     ];
 
@@ -301,22 +301,22 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'password' => 'getPassword',
         'group' => 'getGroup',
         'group_ids' => 'getGroupIds',
+        'status' => 'getStatus',
         'created_time' => 'getCreatedTime',
         'modified_time' => 'getModifiedTime',
         'login' => 'getLogin',
         'last_login' => 'getLastLogin',
         'birth_day' => 'getBirthDay',
-        'status' => 'getStatus',
         'news_letter_subscription' => 'getNewsLetterSubscription',
         'consents' => 'getConsents',
         'gender' => 'getGender',
         'website' => 'getWebsite',
-        'store_id' => 'getStoreId',
         'fax' => 'getFax',
         'company' => 'getCompany',
         'phone' => 'getPhone',
         'note' => 'getNote',
         'country' => 'getCountry',
+        'store_id' => 'getStoreId',
         'address' => 'getAddress'
     ];
 
@@ -383,22 +383,22 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('password', $data ?? [], null);
         $this->setIfExists('group', $data ?? [], null);
         $this->setIfExists('group_ids', $data ?? [], null);
+        $this->setIfExists('status', $data ?? [], 'enabled');
         $this->setIfExists('created_time', $data ?? [], null);
         $this->setIfExists('modified_time', $data ?? [], null);
         $this->setIfExists('login', $data ?? [], null);
         $this->setIfExists('last_login', $data ?? [], null);
         $this->setIfExists('birth_day', $data ?? [], null);
-        $this->setIfExists('status', $data ?? [], 'enabled');
-        $this->setIfExists('news_letter_subscription', $data ?? [], false);
+        $this->setIfExists('news_letter_subscription', $data ?? [], null);
         $this->setIfExists('consents', $data ?? [], null);
         $this->setIfExists('gender', $data ?? [], null);
         $this->setIfExists('website', $data ?? [], null);
-        $this->setIfExists('store_id', $data ?? [], null);
         $this->setIfExists('fax', $data ?? [], null);
         $this->setIfExists('company', $data ?? [], null);
         $this->setIfExists('phone', $data ?? [], null);
         $this->setIfExists('note', $data ?? [], null);
         $this->setIfExists('country', $data ?? [], null);
+        $this->setIfExists('store_id', $data ?? [], null);
         $this->setIfExists('address', $data ?? [], null);
     }
 
@@ -431,12 +431,6 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
 
         if ($this->container['email'] === null) {
             $invalidProperties[] = "'email' can't be null";
-        }
-        if ($this->container['first_name'] === null) {
-            $invalidProperties[] = "'first_name' can't be null";
-        }
-        if ($this->container['last_name'] === null) {
-            $invalidProperties[] = "'last_name' can't be null";
         }
         if (!is_null($this->container['consents']) && (count($this->container['consents']) < 1)) {
             $invalidProperties[] = "invalid value for 'consents', number of items must be greater than or equal to 1.";
@@ -487,7 +481,7 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets first_name
      *
-     * @return string
+     * @return string|null
      */
     public function getFirstName()
     {
@@ -497,7 +491,7 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets first_name
      *
-     * @param string $first_name Defines customer's first name
+     * @param string|null $first_name Defines customer's first name
      *
      * @return self
      */
@@ -514,7 +508,7 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets last_name
      *
-     * @return string
+     * @return string|null
      */
     public function getLastName()
     {
@@ -524,7 +518,7 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets last_name
      *
-     * @param string $last_name Defines customer's last name
+     * @param string|null $last_name Defines customer's last name
      *
      * @return self
      */
@@ -615,6 +609,33 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable group_ids cannot be null');
         }
         $this->container['group_ids'] = $group_ids;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     *
+     * @return string|null
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param string|null $status Defines customer's status
+     *
+     * @return self
+     */
+    public function setStatus($status)
+    {
+        if (is_null($status)) {
+            throw new \InvalidArgumentException('non-nullable status cannot be null');
+        }
+        $this->container['status'] = $status;
 
         return $this;
     }
@@ -755,33 +776,6 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets status
-     *
-     * @return string|null
-     */
-    public function getStatus()
-    {
-        return $this->container['status'];
-    }
-
-    /**
-     * Sets status
-     *
-     * @param string|null $status Defines customer's status
-     *
-     * @return self
-     */
-    public function setStatus($status)
-    {
-        if (is_null($status)) {
-            throw new \InvalidArgumentException('non-nullable status cannot be null');
-        }
-        $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
      * Gets news_letter_subscription
      *
      * @return bool|null
@@ -890,33 +884,6 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable website cannot be null');
         }
         $this->container['website'] = $website;
-
-        return $this;
-    }
-
-    /**
-     * Gets store_id
-     *
-     * @return string|null
-     */
-    public function getStoreId()
-    {
-        return $this->container['store_id'];
-    }
-
-    /**
-     * Sets store_id
-     *
-     * @param string|null $store_id Store Id
-     *
-     * @return self
-     */
-    public function setStoreId($store_id)
-    {
-        if (is_null($store_id)) {
-            throw new \InvalidArgumentException('non-nullable store_id cannot be null');
-        }
-        $this->container['store_id'] = $store_id;
 
         return $this;
     }
@@ -1052,6 +1019,33 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable country cannot be null');
         }
         $this->container['country'] = $country;
+
+        return $this;
+    }
+
+    /**
+     * Gets store_id
+     *
+     * @return string|null
+     */
+    public function getStoreId()
+    {
+        return $this->container['store_id'];
+    }
+
+    /**
+     * Sets store_id
+     *
+     * @param string|null $store_id Store Id
+     *
+     * @return self
+     */
+    public function setStoreId($store_id)
+    {
+        if (is_null($store_id)) {
+            throw new \InvalidArgumentException('non-nullable store_id cannot be null');
+        }
+        $this->container['store_id'] = $store_id;
 
         return $this;
     }

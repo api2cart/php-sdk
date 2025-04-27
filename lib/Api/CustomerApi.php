@@ -800,18 +800,18 @@ class CustomerApi
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerAttributeList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseCustomerAttributeList
      */
-    public function customerAttributeList($customer_id, $count = 10, $page_cursor = null, $store_id = null, $lang_id = null, $params = 'force_all', $exclude = null, $response_fields = null, string $contentType = self::contentTypes['customerAttributeList'][0])
+    public function customerAttributeList($customer_id, $count = 10, $page_cursor = null, $store_id = null, $lang_id = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['customerAttributeList'][0])
     {
-        list($response) = $this->customerAttributeListWithHttpInfo($customer_id, $count, $page_cursor, $store_id, $lang_id, $params, $exclude, $response_fields, $contentType);
+        list($response) = $this->customerAttributeListWithHttpInfo($customer_id, $count, $page_cursor, $store_id, $lang_id, $response_fields, $params, $exclude, $contentType);
         return $response;
     }
 
@@ -825,18 +825,18 @@ class CustomerApi
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerAttributeList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseCustomerAttributeList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function customerAttributeListWithHttpInfo($customer_id, $count = 10, $page_cursor = null, $store_id = null, $lang_id = null, $params = 'force_all', $exclude = null, $response_fields = null, string $contentType = self::contentTypes['customerAttributeList'][0])
+    public function customerAttributeListWithHttpInfo($customer_id, $count = 10, $page_cursor = null, $store_id = null, $lang_id = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['customerAttributeList'][0])
     {
-        $request = $this->customerAttributeListRequest($customer_id, $count, $page_cursor, $store_id, $lang_id, $params, $exclude, $response_fields, $contentType);
+        $request = $this->customerAttributeListRequest($customer_id, $count, $page_cursor, $store_id, $lang_id, $response_fields, $params, $exclude, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -957,17 +957,17 @@ class CustomerApi
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerAttributeList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerAttributeListAsync($customer_id, $count = 10, $page_cursor = null, $store_id = null, $lang_id = null, $params = 'force_all', $exclude = null, $response_fields = null, string $contentType = self::contentTypes['customerAttributeList'][0])
+    public function customerAttributeListAsync($customer_id, $count = 10, $page_cursor = null, $store_id = null, $lang_id = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['customerAttributeList'][0])
     {
-        return $this->customerAttributeListAsyncWithHttpInfo($customer_id, $count, $page_cursor, $store_id, $lang_id, $params, $exclude, $response_fields, $contentType)
+        return $this->customerAttributeListAsyncWithHttpInfo($customer_id, $count, $page_cursor, $store_id, $lang_id, $response_fields, $params, $exclude, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -985,18 +985,18 @@ class CustomerApi
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerAttributeList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerAttributeListAsyncWithHttpInfo($customer_id, $count = 10, $page_cursor = null, $store_id = null, $lang_id = null, $params = 'force_all', $exclude = null, $response_fields = null, string $contentType = self::contentTypes['customerAttributeList'][0])
+    public function customerAttributeListAsyncWithHttpInfo($customer_id, $count = 10, $page_cursor = null, $store_id = null, $lang_id = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['customerAttributeList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseCustomerAttributeList';
-        $request = $this->customerAttributeListRequest($customer_id, $count, $page_cursor, $store_id, $lang_id, $params, $exclude, $response_fields, $contentType);
+        $request = $this->customerAttributeListRequest($customer_id, $count, $page_cursor, $store_id, $lang_id, $response_fields, $params, $exclude, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1042,15 +1042,15 @@ class CustomerApi
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerAttributeList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function customerAttributeListRequest($customer_id, $count = 10, $page_cursor = null, $store_id = null, $lang_id = null, $params = 'force_all', $exclude = null, $response_fields = null, string $contentType = self::contentTypes['customerAttributeList'][0])
+    public function customerAttributeListRequest($customer_id, $count = 10, $page_cursor = null, $store_id = null, $lang_id = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['customerAttributeList'][0])
     {
 
         // verify the required parameter 'customer_id' is set
@@ -1122,6 +1122,15 @@ class CustomerApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $response_fields,
+            'response_fields', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $params,
             'params', // param base name
             'string', // openApiType
@@ -1133,15 +1142,6 @@ class CustomerApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $exclude,
             'exclude', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $response_fields,
-            'response_fields', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -1219,27 +1219,27 @@ class CustomerApi
      *
      * customer.count
      *
+     * @param  string|null $ids Counts customers specified by ids (optional)
+     * @param  string|null $since_id Retrieve entities starting from the specified id. (optional)
+     * @param  string|null $customer_list_id The numeric ID of the customer list in Demandware. (optional)
      * @param  string|null $group_id Customer group_id (optional)
+     * @param  string|null $store_id Counts customer specified by store id (optional)
+     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
+     * @param  string|null $find_value Entity search that is specified by some value (optional)
+     * @param  string|null $find_where Counts customers that are searched specified by field (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $store_id Counts customer specified by store id (optional)
-     * @param  string|null $customer_list_id The numeric ID of the customer list in Demandware. (optional)
-     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
-     * @param  string|null $find_value Entity search that is specified by some value (optional)
-     * @param  string|null $find_where Counts customers that are searched specified by field (optional)
-     * @param  string|null $ids Counts customers specified by ids (optional)
-     * @param  string|null $since_id Retrieve entities starting from the specified id. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerCount'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CustomerCount200Response
      */
-    public function customerCount($group_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $store_id = null, $customer_list_id = null, $avail = true, $find_value = null, $find_where = null, $ids = null, $since_id = null, string $contentType = self::contentTypes['customerCount'][0])
+    public function customerCount($ids = null, $since_id = null, $customer_list_id = null, $group_id = null, $store_id = null, $avail = true, $find_value = null, $find_where = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, string $contentType = self::contentTypes['customerCount'][0])
     {
-        list($response) = $this->customerCountWithHttpInfo($group_id, $created_from, $created_to, $modified_from, $modified_to, $store_id, $customer_list_id, $avail, $find_value, $find_where, $ids, $since_id, $contentType);
+        list($response) = $this->customerCountWithHttpInfo($ids, $since_id, $customer_list_id, $group_id, $store_id, $avail, $find_value, $find_where, $created_from, $created_to, $modified_from, $modified_to, $contentType);
         return $response;
     }
 
@@ -1248,27 +1248,27 @@ class CustomerApi
      *
      * customer.count
      *
+     * @param  string|null $ids Counts customers specified by ids (optional)
+     * @param  string|null $since_id Retrieve entities starting from the specified id. (optional)
+     * @param  string|null $customer_list_id The numeric ID of the customer list in Demandware. (optional)
      * @param  string|null $group_id Customer group_id (optional)
+     * @param  string|null $store_id Counts customer specified by store id (optional)
+     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
+     * @param  string|null $find_value Entity search that is specified by some value (optional)
+     * @param  string|null $find_where Counts customers that are searched specified by field (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $store_id Counts customer specified by store id (optional)
-     * @param  string|null $customer_list_id The numeric ID of the customer list in Demandware. (optional)
-     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
-     * @param  string|null $find_value Entity search that is specified by some value (optional)
-     * @param  string|null $find_where Counts customers that are searched specified by field (optional)
-     * @param  string|null $ids Counts customers specified by ids (optional)
-     * @param  string|null $since_id Retrieve entities starting from the specified id. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerCount'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CustomerCount200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function customerCountWithHttpInfo($group_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $store_id = null, $customer_list_id = null, $avail = true, $find_value = null, $find_where = null, $ids = null, $since_id = null, string $contentType = self::contentTypes['customerCount'][0])
+    public function customerCountWithHttpInfo($ids = null, $since_id = null, $customer_list_id = null, $group_id = null, $store_id = null, $avail = true, $find_value = null, $find_where = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, string $contentType = self::contentTypes['customerCount'][0])
     {
-        $request = $this->customerCountRequest($group_id, $created_from, $created_to, $modified_from, $modified_to, $store_id, $customer_list_id, $avail, $find_value, $find_where, $ids, $since_id, $contentType);
+        $request = $this->customerCountRequest($ids, $since_id, $customer_list_id, $group_id, $store_id, $avail, $find_value, $find_where, $created_from, $created_to, $modified_from, $modified_to, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1384,26 +1384,26 @@ class CustomerApi
      *
      * customer.count
      *
+     * @param  string|null $ids Counts customers specified by ids (optional)
+     * @param  string|null $since_id Retrieve entities starting from the specified id. (optional)
+     * @param  string|null $customer_list_id The numeric ID of the customer list in Demandware. (optional)
      * @param  string|null $group_id Customer group_id (optional)
+     * @param  string|null $store_id Counts customer specified by store id (optional)
+     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
+     * @param  string|null $find_value Entity search that is specified by some value (optional)
+     * @param  string|null $find_where Counts customers that are searched specified by field (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $store_id Counts customer specified by store id (optional)
-     * @param  string|null $customer_list_id The numeric ID of the customer list in Demandware. (optional)
-     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
-     * @param  string|null $find_value Entity search that is specified by some value (optional)
-     * @param  string|null $find_where Counts customers that are searched specified by field (optional)
-     * @param  string|null $ids Counts customers specified by ids (optional)
-     * @param  string|null $since_id Retrieve entities starting from the specified id. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerCount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerCountAsync($group_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $store_id = null, $customer_list_id = null, $avail = true, $find_value = null, $find_where = null, $ids = null, $since_id = null, string $contentType = self::contentTypes['customerCount'][0])
+    public function customerCountAsync($ids = null, $since_id = null, $customer_list_id = null, $group_id = null, $store_id = null, $avail = true, $find_value = null, $find_where = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, string $contentType = self::contentTypes['customerCount'][0])
     {
-        return $this->customerCountAsyncWithHttpInfo($group_id, $created_from, $created_to, $modified_from, $modified_to, $store_id, $customer_list_id, $avail, $find_value, $find_where, $ids, $since_id, $contentType)
+        return $this->customerCountAsyncWithHttpInfo($ids, $since_id, $customer_list_id, $group_id, $store_id, $avail, $find_value, $find_where, $created_from, $created_to, $modified_from, $modified_to, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1416,27 +1416,27 @@ class CustomerApi
      *
      * customer.count
      *
+     * @param  string|null $ids Counts customers specified by ids (optional)
+     * @param  string|null $since_id Retrieve entities starting from the specified id. (optional)
+     * @param  string|null $customer_list_id The numeric ID of the customer list in Demandware. (optional)
      * @param  string|null $group_id Customer group_id (optional)
+     * @param  string|null $store_id Counts customer specified by store id (optional)
+     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
+     * @param  string|null $find_value Entity search that is specified by some value (optional)
+     * @param  string|null $find_where Counts customers that are searched specified by field (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $store_id Counts customer specified by store id (optional)
-     * @param  string|null $customer_list_id The numeric ID of the customer list in Demandware. (optional)
-     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
-     * @param  string|null $find_value Entity search that is specified by some value (optional)
-     * @param  string|null $find_where Counts customers that are searched specified by field (optional)
-     * @param  string|null $ids Counts customers specified by ids (optional)
-     * @param  string|null $since_id Retrieve entities starting from the specified id. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerCount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerCountAsyncWithHttpInfo($group_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $store_id = null, $customer_list_id = null, $avail = true, $find_value = null, $find_where = null, $ids = null, $since_id = null, string $contentType = self::contentTypes['customerCount'][0])
+    public function customerCountAsyncWithHttpInfo($ids = null, $since_id = null, $customer_list_id = null, $group_id = null, $store_id = null, $avail = true, $find_value = null, $find_where = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, string $contentType = self::contentTypes['customerCount'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CustomerCount200Response';
-        $request = $this->customerCountRequest($group_id, $created_from, $created_to, $modified_from, $modified_to, $store_id, $customer_list_id, $avail, $find_value, $find_where, $ids, $since_id, $contentType);
+        $request = $this->customerCountRequest($ids, $since_id, $customer_list_id, $group_id, $store_id, $avail, $find_value, $find_where, $created_from, $created_to, $modified_from, $modified_to, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1477,24 +1477,24 @@ class CustomerApi
     /**
      * Create request for operation 'customerCount'
      *
+     * @param  string|null $ids Counts customers specified by ids (optional)
+     * @param  string|null $since_id Retrieve entities starting from the specified id. (optional)
+     * @param  string|null $customer_list_id The numeric ID of the customer list in Demandware. (optional)
      * @param  string|null $group_id Customer group_id (optional)
+     * @param  string|null $store_id Counts customer specified by store id (optional)
+     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
+     * @param  string|null $find_value Entity search that is specified by some value (optional)
+     * @param  string|null $find_where Counts customers that are searched specified by field (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $store_id Counts customer specified by store id (optional)
-     * @param  string|null $customer_list_id The numeric ID of the customer list in Demandware. (optional)
-     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
-     * @param  string|null $find_value Entity search that is specified by some value (optional)
-     * @param  string|null $find_where Counts customers that are searched specified by field (optional)
-     * @param  string|null $ids Counts customers specified by ids (optional)
-     * @param  string|null $since_id Retrieve entities starting from the specified id. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerCount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function customerCountRequest($group_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $store_id = null, $customer_list_id = null, $avail = true, $find_value = null, $find_where = null, $ids = null, $since_id = null, string $contentType = self::contentTypes['customerCount'][0])
+    public function customerCountRequest($ids = null, $since_id = null, $customer_list_id = null, $group_id = null, $store_id = null, $avail = true, $find_value = null, $find_where = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, string $contentType = self::contentTypes['customerCount'][0])
     {
 
 
@@ -1519,8 +1519,71 @@ class CustomerApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $ids,
+            'ids', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $since_id,
+            'since_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $customer_list_id,
+            'customer_list_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $group_id,
             'group_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $store_id,
+            'store_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $avail,
+            'avail', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $find_value,
+            'find_value', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $find_where,
+            'find_where', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -1557,69 +1620,6 @@ class CustomerApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $modified_to,
             'modified_to', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $store_id,
-            'store_id', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $customer_list_id,
-            'customer_list_id', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $avail,
-            'avail', // param base name
-            'boolean', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $find_value,
-            'find_value', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $find_where,
-            'find_where', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $ids,
-            'ids', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $since_id,
-            'since_id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -2729,25 +2729,25 @@ class CustomerApi
      *
      * customer.group.list
      *
-     * @param  bool|null $disable_cache Disable cache for current request (optional, default to false)
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $group_ids Groups that will be assigned to a customer (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
-     * @param  string|null $group_ids Groups that will be assigned to a customer (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,additional_fields')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  bool|null $disable_cache Disable cache for current request (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerGroupList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseCustomerGroupList
      */
-    public function customerGroupList($disable_cache = false, $page_cursor = null, $start = 0, $count = 10, $store_id = null, $lang_id = null, $group_ids = null, $params = 'id,name,additional_fields', $exclude = null, $response_fields = null, string $contentType = self::contentTypes['customerGroupList'][0])
+    public function customerGroupList($start = 0, $count = 10, $page_cursor = null, $group_ids = null, $store_id = null, $lang_id = null, $response_fields = null, $params = 'id,name,additional_fields', $exclude = null, $disable_cache = false, string $contentType = self::contentTypes['customerGroupList'][0])
     {
-        list($response) = $this->customerGroupListWithHttpInfo($disable_cache, $page_cursor, $start, $count, $store_id, $lang_id, $group_ids, $params, $exclude, $response_fields, $contentType);
+        list($response) = $this->customerGroupListWithHttpInfo($start, $count, $page_cursor, $group_ids, $store_id, $lang_id, $response_fields, $params, $exclude, $disable_cache, $contentType);
         return $response;
     }
 
@@ -2756,25 +2756,25 @@ class CustomerApi
      *
      * customer.group.list
      *
-     * @param  bool|null $disable_cache Disable cache for current request (optional, default to false)
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $group_ids Groups that will be assigned to a customer (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
-     * @param  string|null $group_ids Groups that will be assigned to a customer (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,additional_fields')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  bool|null $disable_cache Disable cache for current request (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerGroupList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseCustomerGroupList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function customerGroupListWithHttpInfo($disable_cache = false, $page_cursor = null, $start = 0, $count = 10, $store_id = null, $lang_id = null, $group_ids = null, $params = 'id,name,additional_fields', $exclude = null, $response_fields = null, string $contentType = self::contentTypes['customerGroupList'][0])
+    public function customerGroupListWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $group_ids = null, $store_id = null, $lang_id = null, $response_fields = null, $params = 'id,name,additional_fields', $exclude = null, $disable_cache = false, string $contentType = self::contentTypes['customerGroupList'][0])
     {
-        $request = $this->customerGroupListRequest($disable_cache, $page_cursor, $start, $count, $store_id, $lang_id, $group_ids, $params, $exclude, $response_fields, $contentType);
+        $request = $this->customerGroupListRequest($start, $count, $page_cursor, $group_ids, $store_id, $lang_id, $response_fields, $params, $exclude, $disable_cache, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2890,24 +2890,24 @@ class CustomerApi
      *
      * customer.group.list
      *
-     * @param  bool|null $disable_cache Disable cache for current request (optional, default to false)
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $group_ids Groups that will be assigned to a customer (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
-     * @param  string|null $group_ids Groups that will be assigned to a customer (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,additional_fields')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  bool|null $disable_cache Disable cache for current request (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerGroupList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerGroupListAsync($disable_cache = false, $page_cursor = null, $start = 0, $count = 10, $store_id = null, $lang_id = null, $group_ids = null, $params = 'id,name,additional_fields', $exclude = null, $response_fields = null, string $contentType = self::contentTypes['customerGroupList'][0])
+    public function customerGroupListAsync($start = 0, $count = 10, $page_cursor = null, $group_ids = null, $store_id = null, $lang_id = null, $response_fields = null, $params = 'id,name,additional_fields', $exclude = null, $disable_cache = false, string $contentType = self::contentTypes['customerGroupList'][0])
     {
-        return $this->customerGroupListAsyncWithHttpInfo($disable_cache, $page_cursor, $start, $count, $store_id, $lang_id, $group_ids, $params, $exclude, $response_fields, $contentType)
+        return $this->customerGroupListAsyncWithHttpInfo($start, $count, $page_cursor, $group_ids, $store_id, $lang_id, $response_fields, $params, $exclude, $disable_cache, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2920,25 +2920,25 @@ class CustomerApi
      *
      * customer.group.list
      *
-     * @param  bool|null $disable_cache Disable cache for current request (optional, default to false)
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $group_ids Groups that will be assigned to a customer (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
-     * @param  string|null $group_ids Groups that will be assigned to a customer (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,additional_fields')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  bool|null $disable_cache Disable cache for current request (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerGroupList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerGroupListAsyncWithHttpInfo($disable_cache = false, $page_cursor = null, $start = 0, $count = 10, $store_id = null, $lang_id = null, $group_ids = null, $params = 'id,name,additional_fields', $exclude = null, $response_fields = null, string $contentType = self::contentTypes['customerGroupList'][0])
+    public function customerGroupListAsyncWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $group_ids = null, $store_id = null, $lang_id = null, $response_fields = null, $params = 'id,name,additional_fields', $exclude = null, $disable_cache = false, string $contentType = self::contentTypes['customerGroupList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseCustomerGroupList';
-        $request = $this->customerGroupListRequest($disable_cache, $page_cursor, $start, $count, $store_id, $lang_id, $group_ids, $params, $exclude, $response_fields, $contentType);
+        $request = $this->customerGroupListRequest($start, $count, $page_cursor, $group_ids, $store_id, $lang_id, $response_fields, $params, $exclude, $disable_cache, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2979,22 +2979,22 @@ class CustomerApi
     /**
      * Create request for operation 'customerGroupList'
      *
-     * @param  bool|null $disable_cache Disable cache for current request (optional, default to false)
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $group_ids Groups that will be assigned to a customer (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
-     * @param  string|null $group_ids Groups that will be assigned to a customer (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,additional_fields')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  bool|null $disable_cache Disable cache for current request (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerGroupList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function customerGroupListRequest($disable_cache = false, $page_cursor = null, $start = 0, $count = 10, $store_id = null, $lang_id = null, $group_ids = null, $params = 'id,name,additional_fields', $exclude = null, $response_fields = null, string $contentType = self::contentTypes['customerGroupList'][0])
+    public function customerGroupListRequest($start = 0, $count = 10, $page_cursor = null, $group_ids = null, $store_id = null, $lang_id = null, $response_fields = null, $params = 'id,name,additional_fields', $exclude = null, $disable_cache = false, string $contentType = self::contentTypes['customerGroupList'][0])
     {
 
 
@@ -3017,9 +3017,18 @@ class CustomerApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $disable_cache,
-            'disable_cache', // param base name
-            'boolean', // openApiType
+            $start,
+            'start', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $count,
+            'count', // param base name
+            'integer', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3035,18 +3044,9 @@ class CustomerApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $start,
-            'start', // param base name
-            'integer', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $count,
-            'count', // param base name
-            'integer', // openApiType
+            $group_ids,
+            'group_ids', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3071,8 +3071,8 @@ class CustomerApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $group_ids,
-            'group_ids', // param base name
+            $response_fields,
+            'response_fields', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -3098,9 +3098,9 @@ class CustomerApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $response_fields,
-            'response_fields', // param base name
-            'string', // openApiType
+            $disable_cache,
+            'disable_cache', // param base name
+            'boolean', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3178,19 +3178,19 @@ class CustomerApi
      * customer.info
      *
      * @param  string $id Retrieves customer&#39;s info specified by customer id (required)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,email,first_name,last_name')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $store_id Retrieves customer info specified by store id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,email,first_name,last_name')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerInfo'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CustomerInfo200Response
      */
-    public function customerInfo($id, $params = 'id,email,first_name,last_name', $response_fields = null, $exclude = null, $store_id = null, string $contentType = self::contentTypes['customerInfo'][0])
+    public function customerInfo($id, $store_id = null, $response_fields = null, $params = 'id,email,first_name,last_name', $exclude = null, string $contentType = self::contentTypes['customerInfo'][0])
     {
-        list($response) = $this->customerInfoWithHttpInfo($id, $params, $response_fields, $exclude, $store_id, $contentType);
+        list($response) = $this->customerInfoWithHttpInfo($id, $store_id, $response_fields, $params, $exclude, $contentType);
         return $response;
     }
 
@@ -3200,19 +3200,19 @@ class CustomerApi
      * customer.info
      *
      * @param  string $id Retrieves customer&#39;s info specified by customer id (required)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,email,first_name,last_name')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $store_id Retrieves customer info specified by store id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,email,first_name,last_name')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerInfo'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CustomerInfo200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function customerInfoWithHttpInfo($id, $params = 'id,email,first_name,last_name', $response_fields = null, $exclude = null, $store_id = null, string $contentType = self::contentTypes['customerInfo'][0])
+    public function customerInfoWithHttpInfo($id, $store_id = null, $response_fields = null, $params = 'id,email,first_name,last_name', $exclude = null, string $contentType = self::contentTypes['customerInfo'][0])
     {
-        $request = $this->customerInfoRequest($id, $params, $response_fields, $exclude, $store_id, $contentType);
+        $request = $this->customerInfoRequest($id, $store_id, $response_fields, $params, $exclude, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3329,18 +3329,18 @@ class CustomerApi
      * customer.info
      *
      * @param  string $id Retrieves customer&#39;s info specified by customer id (required)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,email,first_name,last_name')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $store_id Retrieves customer info specified by store id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,email,first_name,last_name')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerInfoAsync($id, $params = 'id,email,first_name,last_name', $response_fields = null, $exclude = null, $store_id = null, string $contentType = self::contentTypes['customerInfo'][0])
+    public function customerInfoAsync($id, $store_id = null, $response_fields = null, $params = 'id,email,first_name,last_name', $exclude = null, string $contentType = self::contentTypes['customerInfo'][0])
     {
-        return $this->customerInfoAsyncWithHttpInfo($id, $params, $response_fields, $exclude, $store_id, $contentType)
+        return $this->customerInfoAsyncWithHttpInfo($id, $store_id, $response_fields, $params, $exclude, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3354,19 +3354,19 @@ class CustomerApi
      * customer.info
      *
      * @param  string $id Retrieves customer&#39;s info specified by customer id (required)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,email,first_name,last_name')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $store_id Retrieves customer info specified by store id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,email,first_name,last_name')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerInfoAsyncWithHttpInfo($id, $params = 'id,email,first_name,last_name', $response_fields = null, $exclude = null, $store_id = null, string $contentType = self::contentTypes['customerInfo'][0])
+    public function customerInfoAsyncWithHttpInfo($id, $store_id = null, $response_fields = null, $params = 'id,email,first_name,last_name', $exclude = null, string $contentType = self::contentTypes['customerInfo'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CustomerInfo200Response';
-        $request = $this->customerInfoRequest($id, $params, $response_fields, $exclude, $store_id, $contentType);
+        $request = $this->customerInfoRequest($id, $store_id, $response_fields, $params, $exclude, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3408,16 +3408,16 @@ class CustomerApi
      * Create request for operation 'customerInfo'
      *
      * @param  string $id Retrieves customer&#39;s info specified by customer id (required)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,email,first_name,last_name')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $store_id Retrieves customer info specified by store id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,email,first_name,last_name')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function customerInfoRequest($id, $params = 'id,email,first_name,last_name', $response_fields = null, $exclude = null, $store_id = null, string $contentType = self::contentTypes['customerInfo'][0])
+    public function customerInfoRequest($id, $store_id = null, $response_fields = null, $params = 'id,email,first_name,last_name', $exclude = null, string $contentType = self::contentTypes['customerInfo'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -3450,8 +3450,8 @@ class CustomerApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $params,
-            'params', // param base name
+            $store_id,
+            'store_id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -3468,8 +3468,8 @@ class CustomerApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $exclude,
-            'exclude', // param base name
+            $params,
+            'params', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -3477,8 +3477,8 @@ class CustomerApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $store_id,
-            'store_id', // param base name
+            $exclude,
+            'exclude', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -3556,35 +3556,35 @@ class CustomerApi
      *
      * customer.list
      *
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $ids Retrieves customers specified by ids (optional)
+     * @param  string|null $since_id Retrieve entities starting from the specified id. (optional)
+     * @param  string|null $customer_list_id The numeric ID of the customer list in Demandware. (optional)
+     * @param  string|null $group_id Customer group_id (optional)
+     * @param  string|null $store_id Retrieves customers specified by store id (optional)
+     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
+     * @param  string|null $find_value Entity search that is specified by some value (optional)
+     * @param  string|null $find_where Customer search that is specified by field (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,email,first_name,last_name')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $group_id Customer group_id (optional)
-     * @param  string|null $store_id Retrieves customers specified by store id (optional)
-     * @param  string|null $customer_list_id The numeric ID of the customer list in Demandware. (optional)
-     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
-     * @param  string|null $find_value Entity search that is specified by some value (optional)
-     * @param  string|null $find_where Customer search that is specified by field (optional)
      * @param  string|null $sort_by Set field to sort by (optional, default to 'created_time')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'asc')
-     * @param  string|null $ids Retrieves customers specified by ids (optional)
-     * @param  string|null $since_id Retrieve entities starting from the specified id. (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,email,first_name,last_name')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseCustomerList
      */
-    public function customerList($page_cursor = null, $start = 0, $count = 10, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $params = 'id,email,first_name,last_name', $response_fields = null, $exclude = null, $group_id = null, $store_id = null, $customer_list_id = null, $avail = true, $find_value = null, $find_where = null, $sort_by = 'created_time', $sort_direction = 'asc', $ids = null, $since_id = null, string $contentType = self::contentTypes['customerList'][0])
+    public function customerList($start = 0, $count = 10, $page_cursor = null, $ids = null, $since_id = null, $customer_list_id = null, $group_id = null, $store_id = null, $avail = true, $find_value = null, $find_where = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $sort_by = 'created_time', $sort_direction = 'asc', $response_fields = null, $params = 'id,email,first_name,last_name', $exclude = null, string $contentType = self::contentTypes['customerList'][0])
     {
-        list($response) = $this->customerListWithHttpInfo($page_cursor, $start, $count, $created_from, $created_to, $modified_from, $modified_to, $params, $response_fields, $exclude, $group_id, $store_id, $customer_list_id, $avail, $find_value, $find_where, $sort_by, $sort_direction, $ids, $since_id, $contentType);
+        list($response) = $this->customerListWithHttpInfo($start, $count, $page_cursor, $ids, $since_id, $customer_list_id, $group_id, $store_id, $avail, $find_value, $find_where, $created_from, $created_to, $modified_from, $modified_to, $sort_by, $sort_direction, $response_fields, $params, $exclude, $contentType);
         return $response;
     }
 
@@ -3593,35 +3593,35 @@ class CustomerApi
      *
      * customer.list
      *
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $ids Retrieves customers specified by ids (optional)
+     * @param  string|null $since_id Retrieve entities starting from the specified id. (optional)
+     * @param  string|null $customer_list_id The numeric ID of the customer list in Demandware. (optional)
+     * @param  string|null $group_id Customer group_id (optional)
+     * @param  string|null $store_id Retrieves customers specified by store id (optional)
+     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
+     * @param  string|null $find_value Entity search that is specified by some value (optional)
+     * @param  string|null $find_where Customer search that is specified by field (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,email,first_name,last_name')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $group_id Customer group_id (optional)
-     * @param  string|null $store_id Retrieves customers specified by store id (optional)
-     * @param  string|null $customer_list_id The numeric ID of the customer list in Demandware. (optional)
-     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
-     * @param  string|null $find_value Entity search that is specified by some value (optional)
-     * @param  string|null $find_where Customer search that is specified by field (optional)
      * @param  string|null $sort_by Set field to sort by (optional, default to 'created_time')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'asc')
-     * @param  string|null $ids Retrieves customers specified by ids (optional)
-     * @param  string|null $since_id Retrieve entities starting from the specified id. (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,email,first_name,last_name')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseCustomerList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function customerListWithHttpInfo($page_cursor = null, $start = 0, $count = 10, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $params = 'id,email,first_name,last_name', $response_fields = null, $exclude = null, $group_id = null, $store_id = null, $customer_list_id = null, $avail = true, $find_value = null, $find_where = null, $sort_by = 'created_time', $sort_direction = 'asc', $ids = null, $since_id = null, string $contentType = self::contentTypes['customerList'][0])
+    public function customerListWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $ids = null, $since_id = null, $customer_list_id = null, $group_id = null, $store_id = null, $avail = true, $find_value = null, $find_where = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $sort_by = 'created_time', $sort_direction = 'asc', $response_fields = null, $params = 'id,email,first_name,last_name', $exclude = null, string $contentType = self::contentTypes['customerList'][0])
     {
-        $request = $this->customerListRequest($page_cursor, $start, $count, $created_from, $created_to, $modified_from, $modified_to, $params, $response_fields, $exclude, $group_id, $store_id, $customer_list_id, $avail, $find_value, $find_where, $sort_by, $sort_direction, $ids, $since_id, $contentType);
+        $request = $this->customerListRequest($start, $count, $page_cursor, $ids, $since_id, $customer_list_id, $group_id, $store_id, $avail, $find_value, $find_where, $created_from, $created_to, $modified_from, $modified_to, $sort_by, $sort_direction, $response_fields, $params, $exclude, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3737,34 +3737,34 @@ class CustomerApi
      *
      * customer.list
      *
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $ids Retrieves customers specified by ids (optional)
+     * @param  string|null $since_id Retrieve entities starting from the specified id. (optional)
+     * @param  string|null $customer_list_id The numeric ID of the customer list in Demandware. (optional)
+     * @param  string|null $group_id Customer group_id (optional)
+     * @param  string|null $store_id Retrieves customers specified by store id (optional)
+     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
+     * @param  string|null $find_value Entity search that is specified by some value (optional)
+     * @param  string|null $find_where Customer search that is specified by field (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,email,first_name,last_name')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $group_id Customer group_id (optional)
-     * @param  string|null $store_id Retrieves customers specified by store id (optional)
-     * @param  string|null $customer_list_id The numeric ID of the customer list in Demandware. (optional)
-     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
-     * @param  string|null $find_value Entity search that is specified by some value (optional)
-     * @param  string|null $find_where Customer search that is specified by field (optional)
      * @param  string|null $sort_by Set field to sort by (optional, default to 'created_time')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'asc')
-     * @param  string|null $ids Retrieves customers specified by ids (optional)
-     * @param  string|null $since_id Retrieve entities starting from the specified id. (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,email,first_name,last_name')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerListAsync($page_cursor = null, $start = 0, $count = 10, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $params = 'id,email,first_name,last_name', $response_fields = null, $exclude = null, $group_id = null, $store_id = null, $customer_list_id = null, $avail = true, $find_value = null, $find_where = null, $sort_by = 'created_time', $sort_direction = 'asc', $ids = null, $since_id = null, string $contentType = self::contentTypes['customerList'][0])
+    public function customerListAsync($start = 0, $count = 10, $page_cursor = null, $ids = null, $since_id = null, $customer_list_id = null, $group_id = null, $store_id = null, $avail = true, $find_value = null, $find_where = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $sort_by = 'created_time', $sort_direction = 'asc', $response_fields = null, $params = 'id,email,first_name,last_name', $exclude = null, string $contentType = self::contentTypes['customerList'][0])
     {
-        return $this->customerListAsyncWithHttpInfo($page_cursor, $start, $count, $created_from, $created_to, $modified_from, $modified_to, $params, $response_fields, $exclude, $group_id, $store_id, $customer_list_id, $avail, $find_value, $find_where, $sort_by, $sort_direction, $ids, $since_id, $contentType)
+        return $this->customerListAsyncWithHttpInfo($start, $count, $page_cursor, $ids, $since_id, $customer_list_id, $group_id, $store_id, $avail, $find_value, $find_where, $created_from, $created_to, $modified_from, $modified_to, $sort_by, $sort_direction, $response_fields, $params, $exclude, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3777,35 +3777,35 @@ class CustomerApi
      *
      * customer.list
      *
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $ids Retrieves customers specified by ids (optional)
+     * @param  string|null $since_id Retrieve entities starting from the specified id. (optional)
+     * @param  string|null $customer_list_id The numeric ID of the customer list in Demandware. (optional)
+     * @param  string|null $group_id Customer group_id (optional)
+     * @param  string|null $store_id Retrieves customers specified by store id (optional)
+     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
+     * @param  string|null $find_value Entity search that is specified by some value (optional)
+     * @param  string|null $find_where Customer search that is specified by field (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,email,first_name,last_name')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $group_id Customer group_id (optional)
-     * @param  string|null $store_id Retrieves customers specified by store id (optional)
-     * @param  string|null $customer_list_id The numeric ID of the customer list in Demandware. (optional)
-     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
-     * @param  string|null $find_value Entity search that is specified by some value (optional)
-     * @param  string|null $find_where Customer search that is specified by field (optional)
      * @param  string|null $sort_by Set field to sort by (optional, default to 'created_time')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'asc')
-     * @param  string|null $ids Retrieves customers specified by ids (optional)
-     * @param  string|null $since_id Retrieve entities starting from the specified id. (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,email,first_name,last_name')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerListAsyncWithHttpInfo($page_cursor = null, $start = 0, $count = 10, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $params = 'id,email,first_name,last_name', $response_fields = null, $exclude = null, $group_id = null, $store_id = null, $customer_list_id = null, $avail = true, $find_value = null, $find_where = null, $sort_by = 'created_time', $sort_direction = 'asc', $ids = null, $since_id = null, string $contentType = self::contentTypes['customerList'][0])
+    public function customerListAsyncWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $ids = null, $since_id = null, $customer_list_id = null, $group_id = null, $store_id = null, $avail = true, $find_value = null, $find_where = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $sort_by = 'created_time', $sort_direction = 'asc', $response_fields = null, $params = 'id,email,first_name,last_name', $exclude = null, string $contentType = self::contentTypes['customerList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseCustomerList';
-        $request = $this->customerListRequest($page_cursor, $start, $count, $created_from, $created_to, $modified_from, $modified_to, $params, $response_fields, $exclude, $group_id, $store_id, $customer_list_id, $avail, $find_value, $find_where, $sort_by, $sort_direction, $ids, $since_id, $contentType);
+        $request = $this->customerListRequest($start, $count, $page_cursor, $ids, $since_id, $customer_list_id, $group_id, $store_id, $avail, $find_value, $find_where, $created_from, $created_to, $modified_from, $modified_to, $sort_by, $sort_direction, $response_fields, $params, $exclude, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3846,32 +3846,32 @@ class CustomerApi
     /**
      * Create request for operation 'customerList'
      *
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $ids Retrieves customers specified by ids (optional)
+     * @param  string|null $since_id Retrieve entities starting from the specified id. (optional)
+     * @param  string|null $customer_list_id The numeric ID of the customer list in Demandware. (optional)
+     * @param  string|null $group_id Customer group_id (optional)
+     * @param  string|null $store_id Retrieves customers specified by store id (optional)
+     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
+     * @param  string|null $find_value Entity search that is specified by some value (optional)
+     * @param  string|null $find_where Customer search that is specified by field (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,email,first_name,last_name')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $group_id Customer group_id (optional)
-     * @param  string|null $store_id Retrieves customers specified by store id (optional)
-     * @param  string|null $customer_list_id The numeric ID of the customer list in Demandware. (optional)
-     * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
-     * @param  string|null $find_value Entity search that is specified by some value (optional)
-     * @param  string|null $find_where Customer search that is specified by field (optional)
      * @param  string|null $sort_by Set field to sort by (optional, default to 'created_time')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'asc')
-     * @param  string|null $ids Retrieves customers specified by ids (optional)
-     * @param  string|null $since_id Retrieve entities starting from the specified id. (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,email,first_name,last_name')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function customerListRequest($page_cursor = null, $start = 0, $count = 10, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $params = 'id,email,first_name,last_name', $response_fields = null, $exclude = null, $group_id = null, $store_id = null, $customer_list_id = null, $avail = true, $find_value = null, $find_where = null, $sort_by = 'created_time', $sort_direction = 'asc', $ids = null, $since_id = null, string $contentType = self::contentTypes['customerList'][0])
+    public function customerListRequest($start = 0, $count = 10, $page_cursor = null, $ids = null, $since_id = null, $customer_list_id = null, $group_id = null, $store_id = null, $avail = true, $find_value = null, $find_where = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $sort_by = 'created_time', $sort_direction = 'asc', $response_fields = null, $params = 'id,email,first_name,last_name', $exclude = null, string $contentType = self::contentTypes['customerList'][0])
     {
 
 
@@ -3904,15 +3904,6 @@ class CustomerApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $page_cursor,
-            'page_cursor', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $start,
             'start', // param base name
             'integer', // openApiType
@@ -3925,6 +3916,87 @@ class CustomerApi
             $count,
             'count', // param base name
             'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_cursor,
+            'page_cursor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $ids,
+            'ids', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $since_id,
+            'since_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $customer_list_id,
+            'customer_list_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $group_id,
+            'group_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $store_id,
+            'store_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $avail,
+            'avail', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $find_value,
+            'find_value', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $find_where,
+            'find_where', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3967,87 +4039,6 @@ class CustomerApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $params,
-            'params', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $response_fields,
-            'response_fields', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $exclude,
-            'exclude', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $group_id,
-            'group_id', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $store_id,
-            'store_id', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $customer_list_id,
-            'customer_list_id', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $avail,
-            'avail', // param base name
-            'boolean', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $find_value,
-            'find_value', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $find_where,
-            'find_where', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $sort_by,
             'sort_by', // param base name
             'string', // openApiType
@@ -4066,8 +4057,8 @@ class CustomerApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $ids,
-            'ids', // param base name
+            $response_fields,
+            'response_fields', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -4075,8 +4066,17 @@ class CustomerApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $since_id,
-            'since_id', // param base name
+            $params,
+            'params', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $exclude,
+            'exclude', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -4472,11 +4472,11 @@ class CustomerApi
      * customer.wishlist.list
      *
      * @param  string $customer_id Retrieves orders specified by customer id (required)
-     * @param  string|null $id Entity id (optional)
-     * @param  string|null $store_id Store Id (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $id Entity id (optional)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional, default to '{return_code,return_message,pagination,result}')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerWishlistList'] to see the possible values for this operation
      *
@@ -4484,9 +4484,9 @@ class CustomerApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseCustomerWishlistList
      */
-    public function customerWishlistList($customer_id, $id = null, $store_id = null, $start = 0, $count = 10, $page_cursor = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['customerWishlistList'][0])
+    public function customerWishlistList($customer_id, $start = 0, $count = 10, $page_cursor = null, $id = null, $store_id = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['customerWishlistList'][0])
     {
-        list($response) = $this->customerWishlistListWithHttpInfo($customer_id, $id, $store_id, $start, $count, $page_cursor, $response_fields, $contentType);
+        list($response) = $this->customerWishlistListWithHttpInfo($customer_id, $start, $count, $page_cursor, $id, $store_id, $response_fields, $contentType);
         return $response;
     }
 
@@ -4496,11 +4496,11 @@ class CustomerApi
      * customer.wishlist.list
      *
      * @param  string $customer_id Retrieves orders specified by customer id (required)
-     * @param  string|null $id Entity id (optional)
-     * @param  string|null $store_id Store Id (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $id Entity id (optional)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional, default to '{return_code,return_message,pagination,result}')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerWishlistList'] to see the possible values for this operation
      *
@@ -4508,9 +4508,9 @@ class CustomerApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseCustomerWishlistList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function customerWishlistListWithHttpInfo($customer_id, $id = null, $store_id = null, $start = 0, $count = 10, $page_cursor = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['customerWishlistList'][0])
+    public function customerWishlistListWithHttpInfo($customer_id, $start = 0, $count = 10, $page_cursor = null, $id = null, $store_id = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['customerWishlistList'][0])
     {
-        $request = $this->customerWishlistListRequest($customer_id, $id, $store_id, $start, $count, $page_cursor, $response_fields, $contentType);
+        $request = $this->customerWishlistListRequest($customer_id, $start, $count, $page_cursor, $id, $store_id, $response_fields, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4627,20 +4627,20 @@ class CustomerApi
      * customer.wishlist.list
      *
      * @param  string $customer_id Retrieves orders specified by customer id (required)
-     * @param  string|null $id Entity id (optional)
-     * @param  string|null $store_id Store Id (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $id Entity id (optional)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional, default to '{return_code,return_message,pagination,result}')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerWishlistList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerWishlistListAsync($customer_id, $id = null, $store_id = null, $start = 0, $count = 10, $page_cursor = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['customerWishlistList'][0])
+    public function customerWishlistListAsync($customer_id, $start = 0, $count = 10, $page_cursor = null, $id = null, $store_id = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['customerWishlistList'][0])
     {
-        return $this->customerWishlistListAsyncWithHttpInfo($customer_id, $id, $store_id, $start, $count, $page_cursor, $response_fields, $contentType)
+        return $this->customerWishlistListAsyncWithHttpInfo($customer_id, $start, $count, $page_cursor, $id, $store_id, $response_fields, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4654,21 +4654,21 @@ class CustomerApi
      * customer.wishlist.list
      *
      * @param  string $customer_id Retrieves orders specified by customer id (required)
-     * @param  string|null $id Entity id (optional)
-     * @param  string|null $store_id Store Id (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $id Entity id (optional)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional, default to '{return_code,return_message,pagination,result}')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerWishlistList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerWishlistListAsyncWithHttpInfo($customer_id, $id = null, $store_id = null, $start = 0, $count = 10, $page_cursor = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['customerWishlistList'][0])
+    public function customerWishlistListAsyncWithHttpInfo($customer_id, $start = 0, $count = 10, $page_cursor = null, $id = null, $store_id = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['customerWishlistList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseCustomerWishlistList';
-        $request = $this->customerWishlistListRequest($customer_id, $id, $store_id, $start, $count, $page_cursor, $response_fields, $contentType);
+        $request = $this->customerWishlistListRequest($customer_id, $start, $count, $page_cursor, $id, $store_id, $response_fields, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4710,18 +4710,18 @@ class CustomerApi
      * Create request for operation 'customerWishlistList'
      *
      * @param  string $customer_id Retrieves orders specified by customer id (required)
-     * @param  string|null $id Entity id (optional)
-     * @param  string|null $store_id Store Id (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $id Entity id (optional)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional, default to '{return_code,return_message,pagination,result}')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerWishlistList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function customerWishlistListRequest($customer_id, $id = null, $store_id = null, $start = 0, $count = 10, $page_cursor = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['customerWishlistList'][0])
+    public function customerWishlistListRequest($customer_id, $start = 0, $count = 10, $page_cursor = null, $id = null, $store_id = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['customerWishlistList'][0])
     {
 
         // verify the required parameter 'customer_id' is set
@@ -4747,33 +4747,6 @@ class CustomerApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $customer_id,
-            'customer_id', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            true // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $id,
-            'id', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $store_id,
-            'store_id', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $start,
             'start', // param base name
             'integer', // openApiType
@@ -4794,6 +4767,33 @@ class CustomerApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $page_cursor,
             'page_cursor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $customer_id,
+            'customer_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            true // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $store_id,
+            'store_id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

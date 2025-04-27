@@ -194,19 +194,19 @@ class OrderApi
      *
      * order.abandoned.list
      *
+     * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
+     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $customer_id Retrieves orders specified by customer id (optional)
      * @param  string|null $customer_email Retrieves orders specified by customer email (optional)
-     * @param  string|null $created_to Retrieve entities to their creation date (optional)
-     * @param  string|null $created_from Retrieve entities from their creation date (optional)
-     * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $modified_from Retrieve entities from their modification date (optional)
-     * @param  bool|null $skip_empty_email Filter empty emails (optional, default to false)
      * @param  string|null $store_id Store Id (optional)
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'customer,totals,items')
+     * @param  string|null $created_from Retrieve entities from their creation date (optional)
+     * @param  string|null $created_to Retrieve entities to their creation date (optional)
+     * @param  string|null $modified_from Retrieve entities from their modification date (optional)
+     * @param  string|null $modified_to Retrieve entities to their modification date (optional)
+     * @param  bool|null $skip_empty_email Filter empty emails (optional, default to false)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'customer,totals,items')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderAbandonedList'] to see the possible values for this operation
      *
@@ -214,9 +214,9 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseOrderAbandonedList
      */
-    public function orderAbandonedList($customer_id = null, $customer_email = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $skip_empty_email = false, $store_id = null, $page_cursor = null, $count = 10, $start = 0, $params = 'customer,totals,items', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['orderAbandonedList'][0])
+    public function orderAbandonedList($start = 0, $count = 10, $page_cursor = null, $customer_id = null, $customer_email = null, $store_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $skip_empty_email = false, $response_fields = null, $params = 'customer,totals,items', $exclude = null, string $contentType = self::contentTypes['orderAbandonedList'][0])
     {
-        list($response) = $this->orderAbandonedListWithHttpInfo($customer_id, $customer_email, $created_to, $created_from, $modified_to, $modified_from, $skip_empty_email, $store_id, $page_cursor, $count, $start, $params, $response_fields, $exclude, $contentType);
+        list($response) = $this->orderAbandonedListWithHttpInfo($start, $count, $page_cursor, $customer_id, $customer_email, $store_id, $created_from, $created_to, $modified_from, $modified_to, $skip_empty_email, $response_fields, $params, $exclude, $contentType);
         return $response;
     }
 
@@ -225,19 +225,19 @@ class OrderApi
      *
      * order.abandoned.list
      *
+     * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
+     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $customer_id Retrieves orders specified by customer id (optional)
      * @param  string|null $customer_email Retrieves orders specified by customer email (optional)
-     * @param  string|null $created_to Retrieve entities to their creation date (optional)
-     * @param  string|null $created_from Retrieve entities from their creation date (optional)
-     * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $modified_from Retrieve entities from their modification date (optional)
-     * @param  bool|null $skip_empty_email Filter empty emails (optional, default to false)
      * @param  string|null $store_id Store Id (optional)
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'customer,totals,items')
+     * @param  string|null $created_from Retrieve entities from their creation date (optional)
+     * @param  string|null $created_to Retrieve entities to their creation date (optional)
+     * @param  string|null $modified_from Retrieve entities from their modification date (optional)
+     * @param  string|null $modified_to Retrieve entities to their modification date (optional)
+     * @param  bool|null $skip_empty_email Filter empty emails (optional, default to false)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'customer,totals,items')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderAbandonedList'] to see the possible values for this operation
      *
@@ -245,9 +245,9 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseOrderAbandonedList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderAbandonedListWithHttpInfo($customer_id = null, $customer_email = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $skip_empty_email = false, $store_id = null, $page_cursor = null, $count = 10, $start = 0, $params = 'customer,totals,items', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['orderAbandonedList'][0])
+    public function orderAbandonedListWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $customer_id = null, $customer_email = null, $store_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $skip_empty_email = false, $response_fields = null, $params = 'customer,totals,items', $exclude = null, string $contentType = self::contentTypes['orderAbandonedList'][0])
     {
-        $request = $this->orderAbandonedListRequest($customer_id, $customer_email, $created_to, $created_from, $modified_to, $modified_from, $skip_empty_email, $store_id, $page_cursor, $count, $start, $params, $response_fields, $exclude, $contentType);
+        $request = $this->orderAbandonedListRequest($start, $count, $page_cursor, $customer_id, $customer_email, $store_id, $created_from, $created_to, $modified_from, $modified_to, $skip_empty_email, $response_fields, $params, $exclude, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -363,28 +363,28 @@ class OrderApi
      *
      * order.abandoned.list
      *
+     * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
+     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $customer_id Retrieves orders specified by customer id (optional)
      * @param  string|null $customer_email Retrieves orders specified by customer email (optional)
-     * @param  string|null $created_to Retrieve entities to their creation date (optional)
-     * @param  string|null $created_from Retrieve entities from their creation date (optional)
-     * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $modified_from Retrieve entities from their modification date (optional)
-     * @param  bool|null $skip_empty_email Filter empty emails (optional, default to false)
      * @param  string|null $store_id Store Id (optional)
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'customer,totals,items')
+     * @param  string|null $created_from Retrieve entities from their creation date (optional)
+     * @param  string|null $created_to Retrieve entities to their creation date (optional)
+     * @param  string|null $modified_from Retrieve entities from their modification date (optional)
+     * @param  string|null $modified_to Retrieve entities to their modification date (optional)
+     * @param  bool|null $skip_empty_email Filter empty emails (optional, default to false)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'customer,totals,items')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderAbandonedList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderAbandonedListAsync($customer_id = null, $customer_email = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $skip_empty_email = false, $store_id = null, $page_cursor = null, $count = 10, $start = 0, $params = 'customer,totals,items', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['orderAbandonedList'][0])
+    public function orderAbandonedListAsync($start = 0, $count = 10, $page_cursor = null, $customer_id = null, $customer_email = null, $store_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $skip_empty_email = false, $response_fields = null, $params = 'customer,totals,items', $exclude = null, string $contentType = self::contentTypes['orderAbandonedList'][0])
     {
-        return $this->orderAbandonedListAsyncWithHttpInfo($customer_id, $customer_email, $created_to, $created_from, $modified_to, $modified_from, $skip_empty_email, $store_id, $page_cursor, $count, $start, $params, $response_fields, $exclude, $contentType)
+        return $this->orderAbandonedListAsyncWithHttpInfo($start, $count, $page_cursor, $customer_id, $customer_email, $store_id, $created_from, $created_to, $modified_from, $modified_to, $skip_empty_email, $response_fields, $params, $exclude, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -397,29 +397,29 @@ class OrderApi
      *
      * order.abandoned.list
      *
+     * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
+     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $customer_id Retrieves orders specified by customer id (optional)
      * @param  string|null $customer_email Retrieves orders specified by customer email (optional)
-     * @param  string|null $created_to Retrieve entities to their creation date (optional)
-     * @param  string|null $created_from Retrieve entities from their creation date (optional)
-     * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $modified_from Retrieve entities from their modification date (optional)
-     * @param  bool|null $skip_empty_email Filter empty emails (optional, default to false)
      * @param  string|null $store_id Store Id (optional)
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'customer,totals,items')
+     * @param  string|null $created_from Retrieve entities from their creation date (optional)
+     * @param  string|null $created_to Retrieve entities to their creation date (optional)
+     * @param  string|null $modified_from Retrieve entities from their modification date (optional)
+     * @param  string|null $modified_to Retrieve entities to their modification date (optional)
+     * @param  bool|null $skip_empty_email Filter empty emails (optional, default to false)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'customer,totals,items')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderAbandonedList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderAbandonedListAsyncWithHttpInfo($customer_id = null, $customer_email = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $skip_empty_email = false, $store_id = null, $page_cursor = null, $count = 10, $start = 0, $params = 'customer,totals,items', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['orderAbandonedList'][0])
+    public function orderAbandonedListAsyncWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $customer_id = null, $customer_email = null, $store_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $skip_empty_email = false, $response_fields = null, $params = 'customer,totals,items', $exclude = null, string $contentType = self::contentTypes['orderAbandonedList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseOrderAbandonedList';
-        $request = $this->orderAbandonedListRequest($customer_id, $customer_email, $created_to, $created_from, $modified_to, $modified_from, $skip_empty_email, $store_id, $page_cursor, $count, $start, $params, $response_fields, $exclude, $contentType);
+        $request = $this->orderAbandonedListRequest($start, $count, $page_cursor, $customer_id, $customer_email, $store_id, $created_from, $created_to, $modified_from, $modified_to, $skip_empty_email, $response_fields, $params, $exclude, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -460,26 +460,26 @@ class OrderApi
     /**
      * Create request for operation 'orderAbandonedList'
      *
+     * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
+     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $customer_id Retrieves orders specified by customer id (optional)
      * @param  string|null $customer_email Retrieves orders specified by customer email (optional)
-     * @param  string|null $created_to Retrieve entities to their creation date (optional)
-     * @param  string|null $created_from Retrieve entities from their creation date (optional)
-     * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $modified_from Retrieve entities from their modification date (optional)
-     * @param  bool|null $skip_empty_email Filter empty emails (optional, default to false)
      * @param  string|null $store_id Store Id (optional)
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'customer,totals,items')
+     * @param  string|null $created_from Retrieve entities from their creation date (optional)
+     * @param  string|null $created_to Retrieve entities to their creation date (optional)
+     * @param  string|null $modified_from Retrieve entities from their modification date (optional)
+     * @param  string|null $modified_to Retrieve entities to their modification date (optional)
+     * @param  bool|null $skip_empty_email Filter empty emails (optional, default to false)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'customer,totals,items')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderAbandonedList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function orderAbandonedListRequest($customer_id = null, $customer_email = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $skip_empty_email = false, $store_id = null, $page_cursor = null, $count = 10, $start = 0, $params = 'customer,totals,items', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['orderAbandonedList'][0])
+    public function orderAbandonedListRequest($start = 0, $count = 10, $page_cursor = null, $customer_id = null, $customer_email = null, $store_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $skip_empty_email = false, $response_fields = null, $params = 'customer,totals,items', $exclude = null, string $contentType = self::contentTypes['orderAbandonedList'][0])
     {
 
 
@@ -506,6 +506,33 @@ class OrderApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $start,
+            'start', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $count,
+            'count', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_cursor,
+            'page_cursor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $customer_id,
             'customer_id', // param base name
             'string', // openApiType
@@ -524,8 +551,8 @@ class OrderApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $created_to,
-            'created_to', // param base name
+            $store_id,
+            'store_id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -542,8 +569,8 @@ class OrderApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $modified_to,
-            'modified_to', // param base name
+            $created_to,
+            'created_to', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -560,6 +587,15 @@ class OrderApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $modified_to,
+            'modified_to', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $skip_empty_email,
             'skip_empty_email', // param base name
             'boolean', // openApiType
@@ -569,36 +605,9 @@ class OrderApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $store_id,
-            'store_id', // param base name
+            $response_fields,
+            'response_fields', // param base name
             'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $page_cursor,
-            'page_cursor', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $count,
-            'count', // param base name
-            'integer', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $start,
-            'start', // param base name
-            'integer', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -607,15 +616,6 @@ class OrderApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $params,
             'params', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $response_fields,
-            'response_fields', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -1019,17 +1019,13 @@ class OrderApi
      *
      * order.count
      *
+     * @param  string|null $order_ids Counts orders specified by order ids (optional)
+     * @param  string|null $ids Counts orders specified by ids (optional)
      * @param  string|null $customer_id Counts orders quantity specified by customer id (optional)
+     * @param  string|null $store_id Counts orders quantity specified by store id (optional)
      * @param  string|null $customer_email Counts orders quantity specified by customer email (optional)
      * @param  string|null $order_status Counts orders quantity specified by order status (optional)
      * @param  string[]|null $order_status_ids Retrieves orders specified by order statuses (optional)
-     * @param  string|null $created_to Retrieve entities to their creation date (optional)
-     * @param  string|null $created_from Retrieve entities from their creation date (optional)
-     * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $modified_from Retrieve entities from their modification date (optional)
-     * @param  string|null $store_id Counts orders quantity specified by store id (optional)
-     * @param  string|null $ids Counts orders specified by ids (optional)
-     * @param  string|null $order_ids Counts orders specified by order ids (optional)
      * @param  string|null $ebay_order_status Counts orders quantity specified by order status (optional)
      * @param  string|null $financial_status Counts orders quantity specified by financial status (optional)
      * @param  string[]|null $financial_status_ids Retrieves orders count specified by financial status ids (optional)
@@ -1039,15 +1035,19 @@ class OrderApi
      * @param  string|null $delivery_method Retrieves order with delivery method (optional)
      * @param  string|null $tags Order tags (optional)
      * @param  string|null $ship_node_type Retrieves order with ship node type (optional)
+     * @param  string|null $created_from Retrieve entities from their creation date (optional)
+     * @param  string|null $created_to Retrieve entities to their creation date (optional)
+     * @param  string|null $modified_from Retrieve entities from their modification date (optional)
+     * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderCount'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\OrderCount200Response
      */
-    public function orderCount($customer_id = null, $customer_email = null, $order_status = null, $order_status_ids = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $store_id = null, $ids = null, $order_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_channel = null, $fulfillment_status = null, $shipping_method = null, $delivery_method = null, $tags = null, $ship_node_type = null, string $contentType = self::contentTypes['orderCount'][0])
+    public function orderCount($order_ids = null, $ids = null, $customer_id = null, $store_id = null, $customer_email = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_channel = null, $fulfillment_status = null, $shipping_method = null, $delivery_method = null, $tags = null, $ship_node_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, string $contentType = self::contentTypes['orderCount'][0])
     {
-        list($response) = $this->orderCountWithHttpInfo($customer_id, $customer_email, $order_status, $order_status_ids, $created_to, $created_from, $modified_to, $modified_from, $store_id, $ids, $order_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $contentType);
+        list($response) = $this->orderCountWithHttpInfo($order_ids, $ids, $customer_id, $store_id, $customer_email, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $created_from, $created_to, $modified_from, $modified_to, $contentType);
         return $response;
     }
 
@@ -1056,17 +1056,13 @@ class OrderApi
      *
      * order.count
      *
+     * @param  string|null $order_ids Counts orders specified by order ids (optional)
+     * @param  string|null $ids Counts orders specified by ids (optional)
      * @param  string|null $customer_id Counts orders quantity specified by customer id (optional)
+     * @param  string|null $store_id Counts orders quantity specified by store id (optional)
      * @param  string|null $customer_email Counts orders quantity specified by customer email (optional)
      * @param  string|null $order_status Counts orders quantity specified by order status (optional)
      * @param  string[]|null $order_status_ids Retrieves orders specified by order statuses (optional)
-     * @param  string|null $created_to Retrieve entities to their creation date (optional)
-     * @param  string|null $created_from Retrieve entities from their creation date (optional)
-     * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $modified_from Retrieve entities from their modification date (optional)
-     * @param  string|null $store_id Counts orders quantity specified by store id (optional)
-     * @param  string|null $ids Counts orders specified by ids (optional)
-     * @param  string|null $order_ids Counts orders specified by order ids (optional)
      * @param  string|null $ebay_order_status Counts orders quantity specified by order status (optional)
      * @param  string|null $financial_status Counts orders quantity specified by financial status (optional)
      * @param  string[]|null $financial_status_ids Retrieves orders count specified by financial status ids (optional)
@@ -1076,15 +1072,19 @@ class OrderApi
      * @param  string|null $delivery_method Retrieves order with delivery method (optional)
      * @param  string|null $tags Order tags (optional)
      * @param  string|null $ship_node_type Retrieves order with ship node type (optional)
+     * @param  string|null $created_from Retrieve entities from their creation date (optional)
+     * @param  string|null $created_to Retrieve entities to their creation date (optional)
+     * @param  string|null $modified_from Retrieve entities from their modification date (optional)
+     * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderCount'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\OrderCount200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderCountWithHttpInfo($customer_id = null, $customer_email = null, $order_status = null, $order_status_ids = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $store_id = null, $ids = null, $order_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_channel = null, $fulfillment_status = null, $shipping_method = null, $delivery_method = null, $tags = null, $ship_node_type = null, string $contentType = self::contentTypes['orderCount'][0])
+    public function orderCountWithHttpInfo($order_ids = null, $ids = null, $customer_id = null, $store_id = null, $customer_email = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_channel = null, $fulfillment_status = null, $shipping_method = null, $delivery_method = null, $tags = null, $ship_node_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, string $contentType = self::contentTypes['orderCount'][0])
     {
-        $request = $this->orderCountRequest($customer_id, $customer_email, $order_status, $order_status_ids, $created_to, $created_from, $modified_to, $modified_from, $store_id, $ids, $order_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $contentType);
+        $request = $this->orderCountRequest($order_ids, $ids, $customer_id, $store_id, $customer_email, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $created_from, $created_to, $modified_from, $modified_to, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1200,17 +1200,13 @@ class OrderApi
      *
      * order.count
      *
+     * @param  string|null $order_ids Counts orders specified by order ids (optional)
+     * @param  string|null $ids Counts orders specified by ids (optional)
      * @param  string|null $customer_id Counts orders quantity specified by customer id (optional)
+     * @param  string|null $store_id Counts orders quantity specified by store id (optional)
      * @param  string|null $customer_email Counts orders quantity specified by customer email (optional)
      * @param  string|null $order_status Counts orders quantity specified by order status (optional)
      * @param  string[]|null $order_status_ids Retrieves orders specified by order statuses (optional)
-     * @param  string|null $created_to Retrieve entities to their creation date (optional)
-     * @param  string|null $created_from Retrieve entities from their creation date (optional)
-     * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $modified_from Retrieve entities from their modification date (optional)
-     * @param  string|null $store_id Counts orders quantity specified by store id (optional)
-     * @param  string|null $ids Counts orders specified by ids (optional)
-     * @param  string|null $order_ids Counts orders specified by order ids (optional)
      * @param  string|null $ebay_order_status Counts orders quantity specified by order status (optional)
      * @param  string|null $financial_status Counts orders quantity specified by financial status (optional)
      * @param  string[]|null $financial_status_ids Retrieves orders count specified by financial status ids (optional)
@@ -1220,14 +1216,18 @@ class OrderApi
      * @param  string|null $delivery_method Retrieves order with delivery method (optional)
      * @param  string|null $tags Order tags (optional)
      * @param  string|null $ship_node_type Retrieves order with ship node type (optional)
+     * @param  string|null $created_from Retrieve entities from their creation date (optional)
+     * @param  string|null $created_to Retrieve entities to their creation date (optional)
+     * @param  string|null $modified_from Retrieve entities from their modification date (optional)
+     * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderCount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderCountAsync($customer_id = null, $customer_email = null, $order_status = null, $order_status_ids = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $store_id = null, $ids = null, $order_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_channel = null, $fulfillment_status = null, $shipping_method = null, $delivery_method = null, $tags = null, $ship_node_type = null, string $contentType = self::contentTypes['orderCount'][0])
+    public function orderCountAsync($order_ids = null, $ids = null, $customer_id = null, $store_id = null, $customer_email = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_channel = null, $fulfillment_status = null, $shipping_method = null, $delivery_method = null, $tags = null, $ship_node_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, string $contentType = self::contentTypes['orderCount'][0])
     {
-        return $this->orderCountAsyncWithHttpInfo($customer_id, $customer_email, $order_status, $order_status_ids, $created_to, $created_from, $modified_to, $modified_from, $store_id, $ids, $order_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $contentType)
+        return $this->orderCountAsyncWithHttpInfo($order_ids, $ids, $customer_id, $store_id, $customer_email, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $created_from, $created_to, $modified_from, $modified_to, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1240,17 +1240,13 @@ class OrderApi
      *
      * order.count
      *
+     * @param  string|null $order_ids Counts orders specified by order ids (optional)
+     * @param  string|null $ids Counts orders specified by ids (optional)
      * @param  string|null $customer_id Counts orders quantity specified by customer id (optional)
+     * @param  string|null $store_id Counts orders quantity specified by store id (optional)
      * @param  string|null $customer_email Counts orders quantity specified by customer email (optional)
      * @param  string|null $order_status Counts orders quantity specified by order status (optional)
      * @param  string[]|null $order_status_ids Retrieves orders specified by order statuses (optional)
-     * @param  string|null $created_to Retrieve entities to their creation date (optional)
-     * @param  string|null $created_from Retrieve entities from their creation date (optional)
-     * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $modified_from Retrieve entities from their modification date (optional)
-     * @param  string|null $store_id Counts orders quantity specified by store id (optional)
-     * @param  string|null $ids Counts orders specified by ids (optional)
-     * @param  string|null $order_ids Counts orders specified by order ids (optional)
      * @param  string|null $ebay_order_status Counts orders quantity specified by order status (optional)
      * @param  string|null $financial_status Counts orders quantity specified by financial status (optional)
      * @param  string[]|null $financial_status_ids Retrieves orders count specified by financial status ids (optional)
@@ -1260,15 +1256,19 @@ class OrderApi
      * @param  string|null $delivery_method Retrieves order with delivery method (optional)
      * @param  string|null $tags Order tags (optional)
      * @param  string|null $ship_node_type Retrieves order with ship node type (optional)
+     * @param  string|null $created_from Retrieve entities from their creation date (optional)
+     * @param  string|null $created_to Retrieve entities to their creation date (optional)
+     * @param  string|null $modified_from Retrieve entities from their modification date (optional)
+     * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderCount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderCountAsyncWithHttpInfo($customer_id = null, $customer_email = null, $order_status = null, $order_status_ids = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $store_id = null, $ids = null, $order_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_channel = null, $fulfillment_status = null, $shipping_method = null, $delivery_method = null, $tags = null, $ship_node_type = null, string $contentType = self::contentTypes['orderCount'][0])
+    public function orderCountAsyncWithHttpInfo($order_ids = null, $ids = null, $customer_id = null, $store_id = null, $customer_email = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_channel = null, $fulfillment_status = null, $shipping_method = null, $delivery_method = null, $tags = null, $ship_node_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, string $contentType = self::contentTypes['orderCount'][0])
     {
         $returnType = '\OpenAPI\Client\Model\OrderCount200Response';
-        $request = $this->orderCountRequest($customer_id, $customer_email, $order_status, $order_status_ids, $created_to, $created_from, $modified_to, $modified_from, $store_id, $ids, $order_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $contentType);
+        $request = $this->orderCountRequest($order_ids, $ids, $customer_id, $store_id, $customer_email, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $created_from, $created_to, $modified_from, $modified_to, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1309,17 +1309,13 @@ class OrderApi
     /**
      * Create request for operation 'orderCount'
      *
+     * @param  string|null $order_ids Counts orders specified by order ids (optional)
+     * @param  string|null $ids Counts orders specified by ids (optional)
      * @param  string|null $customer_id Counts orders quantity specified by customer id (optional)
+     * @param  string|null $store_id Counts orders quantity specified by store id (optional)
      * @param  string|null $customer_email Counts orders quantity specified by customer email (optional)
      * @param  string|null $order_status Counts orders quantity specified by order status (optional)
      * @param  string[]|null $order_status_ids Retrieves orders specified by order statuses (optional)
-     * @param  string|null $created_to Retrieve entities to their creation date (optional)
-     * @param  string|null $created_from Retrieve entities from their creation date (optional)
-     * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $modified_from Retrieve entities from their modification date (optional)
-     * @param  string|null $store_id Counts orders quantity specified by store id (optional)
-     * @param  string|null $ids Counts orders specified by ids (optional)
-     * @param  string|null $order_ids Counts orders specified by order ids (optional)
      * @param  string|null $ebay_order_status Counts orders quantity specified by order status (optional)
      * @param  string|null $financial_status Counts orders quantity specified by financial status (optional)
      * @param  string[]|null $financial_status_ids Retrieves orders count specified by financial status ids (optional)
@@ -1329,12 +1325,16 @@ class OrderApi
      * @param  string|null $delivery_method Retrieves order with delivery method (optional)
      * @param  string|null $tags Order tags (optional)
      * @param  string|null $ship_node_type Retrieves order with ship node type (optional)
+     * @param  string|null $created_from Retrieve entities from their creation date (optional)
+     * @param  string|null $created_to Retrieve entities to their creation date (optional)
+     * @param  string|null $modified_from Retrieve entities from their modification date (optional)
+     * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderCount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function orderCountRequest($customer_id = null, $customer_email = null, $order_status = null, $order_status_ids = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $store_id = null, $ids = null, $order_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_channel = null, $fulfillment_status = null, $shipping_method = null, $delivery_method = null, $tags = null, $ship_node_type = null, string $contentType = self::contentTypes['orderCount'][0])
+    public function orderCountRequest($order_ids = null, $ids = null, $customer_id = null, $store_id = null, $customer_email = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_channel = null, $fulfillment_status = null, $shipping_method = null, $delivery_method = null, $tags = null, $ship_node_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, string $contentType = self::contentTypes['orderCount'][0])
     {
 
 
@@ -1367,8 +1367,35 @@ class OrderApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $order_ids,
+            'order_ids', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $ids,
+            'ids', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $customer_id,
             'customer_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $store_id,
+            'store_id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -1397,69 +1424,6 @@ class OrderApi
             $order_status_ids,
             'order_status_ids', // param base name
             'array', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $created_to,
-            'created_to', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $created_from,
-            'created_from', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $modified_to,
-            'modified_to', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $modified_from,
-            'modified_from', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $store_id,
-            'store_id', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $ids,
-            'ids', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $order_ids,
-            'order_ids', // param base name
-            'string', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -1540,6 +1504,42 @@ class OrderApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $ship_node_type,
             'ship_node_type', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $created_from,
+            'created_from', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $created_to,
+            'created_to', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $modified_from,
+            'modified_from', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $modified_to,
+            'modified_to', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -1915,18 +1915,18 @@ class OrderApi
      *
      * order.find
      *
+     * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
+     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $customer_id Retrieves orders specified by customer id (optional)
      * @param  string|null $customer_email Retrieves orders specified by customer email (optional)
      * @param  string|null $order_status Retrieves orders specified by order status (optional)
-     * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
-     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'order_id,customer,totals,address,items,bundles,status')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $financial_status Retrieves orders specified by financial status (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
-     * @param  string|null $financial_status Retrieves orders specified by financial status (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'order_id,customer,totals,address,items,bundles,status')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderFind'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1934,9 +1934,9 @@ class OrderApi
      * @return \OpenAPI\Client\Model\OrderFind200Response
      * @deprecated
      */
-    public function orderFind($customer_id = null, $customer_email = null, $order_status = null, $start = 0, $count = 10, $params = 'order_id,customer,totals,address,items,bundles,status', $exclude = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $financial_status = null, string $contentType = self::contentTypes['orderFind'][0])
+    public function orderFind($start = 0, $count = 10, $customer_id = null, $customer_email = null, $order_status = null, $financial_status = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $params = 'order_id,customer,totals,address,items,bundles,status', $exclude = null, string $contentType = self::contentTypes['orderFind'][0])
     {
-        list($response) = $this->orderFindWithHttpInfo($customer_id, $customer_email, $order_status, $start, $count, $params, $exclude, $created_to, $created_from, $modified_to, $modified_from, $financial_status, $contentType);
+        list($response) = $this->orderFindWithHttpInfo($start, $count, $customer_id, $customer_email, $order_status, $financial_status, $created_to, $created_from, $modified_to, $modified_from, $params, $exclude, $contentType);
         return $response;
     }
 
@@ -1945,18 +1945,18 @@ class OrderApi
      *
      * order.find
      *
+     * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
+     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $customer_id Retrieves orders specified by customer id (optional)
      * @param  string|null $customer_email Retrieves orders specified by customer email (optional)
      * @param  string|null $order_status Retrieves orders specified by order status (optional)
-     * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
-     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'order_id,customer,totals,address,items,bundles,status')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $financial_status Retrieves orders specified by financial status (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
-     * @param  string|null $financial_status Retrieves orders specified by financial status (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'order_id,customer,totals,address,items,bundles,status')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderFind'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1964,9 +1964,9 @@ class OrderApi
      * @return array of \OpenAPI\Client\Model\OrderFind200Response, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
-    public function orderFindWithHttpInfo($customer_id = null, $customer_email = null, $order_status = null, $start = 0, $count = 10, $params = 'order_id,customer,totals,address,items,bundles,status', $exclude = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $financial_status = null, string $contentType = self::contentTypes['orderFind'][0])
+    public function orderFindWithHttpInfo($start = 0, $count = 10, $customer_id = null, $customer_email = null, $order_status = null, $financial_status = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $params = 'order_id,customer,totals,address,items,bundles,status', $exclude = null, string $contentType = self::contentTypes['orderFind'][0])
     {
-        $request = $this->orderFindRequest($customer_id, $customer_email, $order_status, $start, $count, $params, $exclude, $created_to, $created_from, $modified_to, $modified_from, $financial_status, $contentType);
+        $request = $this->orderFindRequest($start, $count, $customer_id, $customer_email, $order_status, $financial_status, $created_to, $created_from, $modified_to, $modified_from, $params, $exclude, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2082,27 +2082,27 @@ class OrderApi
      *
      * order.find
      *
+     * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
+     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $customer_id Retrieves orders specified by customer id (optional)
      * @param  string|null $customer_email Retrieves orders specified by customer email (optional)
      * @param  string|null $order_status Retrieves orders specified by order status (optional)
-     * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
-     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'order_id,customer,totals,address,items,bundles,status')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $financial_status Retrieves orders specified by financial status (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
-     * @param  string|null $financial_status Retrieves orders specified by financial status (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'order_id,customer,totals,address,items,bundles,status')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderFind'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function orderFindAsync($customer_id = null, $customer_email = null, $order_status = null, $start = 0, $count = 10, $params = 'order_id,customer,totals,address,items,bundles,status', $exclude = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $financial_status = null, string $contentType = self::contentTypes['orderFind'][0])
+    public function orderFindAsync($start = 0, $count = 10, $customer_id = null, $customer_email = null, $order_status = null, $financial_status = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $params = 'order_id,customer,totals,address,items,bundles,status', $exclude = null, string $contentType = self::contentTypes['orderFind'][0])
     {
-        return $this->orderFindAsyncWithHttpInfo($customer_id, $customer_email, $order_status, $start, $count, $params, $exclude, $created_to, $created_from, $modified_to, $modified_from, $financial_status, $contentType)
+        return $this->orderFindAsyncWithHttpInfo($start, $count, $customer_id, $customer_email, $order_status, $financial_status, $created_to, $created_from, $modified_to, $modified_from, $params, $exclude, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2115,28 +2115,28 @@ class OrderApi
      *
      * order.find
      *
+     * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
+     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $customer_id Retrieves orders specified by customer id (optional)
      * @param  string|null $customer_email Retrieves orders specified by customer email (optional)
      * @param  string|null $order_status Retrieves orders specified by order status (optional)
-     * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
-     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'order_id,customer,totals,address,items,bundles,status')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $financial_status Retrieves orders specified by financial status (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
-     * @param  string|null $financial_status Retrieves orders specified by financial status (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'order_id,customer,totals,address,items,bundles,status')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderFind'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function orderFindAsyncWithHttpInfo($customer_id = null, $customer_email = null, $order_status = null, $start = 0, $count = 10, $params = 'order_id,customer,totals,address,items,bundles,status', $exclude = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $financial_status = null, string $contentType = self::contentTypes['orderFind'][0])
+    public function orderFindAsyncWithHttpInfo($start = 0, $count = 10, $customer_id = null, $customer_email = null, $order_status = null, $financial_status = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $params = 'order_id,customer,totals,address,items,bundles,status', $exclude = null, string $contentType = self::contentTypes['orderFind'][0])
     {
         $returnType = '\OpenAPI\Client\Model\OrderFind200Response';
-        $request = $this->orderFindRequest($customer_id, $customer_email, $order_status, $start, $count, $params, $exclude, $created_to, $created_from, $modified_to, $modified_from, $financial_status, $contentType);
+        $request = $this->orderFindRequest($start, $count, $customer_id, $customer_email, $order_status, $financial_status, $created_to, $created_from, $modified_to, $modified_from, $params, $exclude, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2177,25 +2177,25 @@ class OrderApi
     /**
      * Create request for operation 'orderFind'
      *
+     * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
+     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $customer_id Retrieves orders specified by customer id (optional)
      * @param  string|null $customer_email Retrieves orders specified by customer email (optional)
      * @param  string|null $order_status Retrieves orders specified by order status (optional)
-     * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
-     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'order_id,customer,totals,address,items,bundles,status')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $financial_status Retrieves orders specified by financial status (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
-     * @param  string|null $financial_status Retrieves orders specified by financial status (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'order_id,customer,totals,address,items,bundles,status')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderFind'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      * @deprecated
      */
-    public function orderFindRequest($customer_id = null, $customer_email = null, $order_status = null, $start = 0, $count = 10, $params = 'order_id,customer,totals,address,items,bundles,status', $exclude = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $financial_status = null, string $contentType = self::contentTypes['orderFind'][0])
+    public function orderFindRequest($start = 0, $count = 10, $customer_id = null, $customer_email = null, $order_status = null, $financial_status = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $params = 'order_id,customer,totals,address,items,bundles,status', $exclude = null, string $contentType = self::contentTypes['orderFind'][0])
     {
 
 
@@ -2218,6 +2218,24 @@ class OrderApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $start,
+            'start', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $count,
+            'count', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $customer_id,
@@ -2247,35 +2265,8 @@ class OrderApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $start,
-            'start', // param base name
-            'integer', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $count,
-            'count', // param base name
-            'integer', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $params,
-            'params', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $exclude,
-            'exclude', // param base name
+            $financial_status,
+            'financial_status', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -2319,8 +2310,17 @@ class OrderApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $financial_status,
-            'financial_status', // param base name
+            $params,
+            'params', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $exclude,
+            'exclude', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -2711,12 +2711,12 @@ class OrderApi
      *
      * order.info
      *
-     * @param  string|null $order_id Retrieves order’s info specified by order id (optional)
      * @param  string|null $id Retrieves order info specified by id (optional)
+     * @param  string|null $order_id Retrieves order’s info specified by order id (optional)
+     * @param  string|null $store_id Defines store id where the order should be found (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'order_id,customer,totals,address,items,bundles,status')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $store_id Defines store id where the order should be found (optional)
      * @param  bool|null $enable_cache If the value is &#39;true&#39; and order exist in our cache, we will return order.info response from cache (optional, default to false)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderInfo'] to see the possible values for this operation
@@ -2725,9 +2725,9 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\OrderInfo200Response
      */
-    public function orderInfo($order_id = null, $id = null, $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $store_id = null, $enable_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['orderInfo'][0])
+    public function orderInfo($id = null, $order_id = null, $store_id = null, $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['orderInfo'][0])
     {
-        list($response) = $this->orderInfoWithHttpInfo($order_id, $id, $params, $response_fields, $exclude, $store_id, $enable_cache, $use_latest_api_version, $contentType);
+        list($response) = $this->orderInfoWithHttpInfo($id, $order_id, $store_id, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $contentType);
         return $response;
     }
 
@@ -2736,12 +2736,12 @@ class OrderApi
      *
      * order.info
      *
-     * @param  string|null $order_id Retrieves order’s info specified by order id (optional)
      * @param  string|null $id Retrieves order info specified by id (optional)
+     * @param  string|null $order_id Retrieves order’s info specified by order id (optional)
+     * @param  string|null $store_id Defines store id where the order should be found (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'order_id,customer,totals,address,items,bundles,status')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $store_id Defines store id where the order should be found (optional)
      * @param  bool|null $enable_cache If the value is &#39;true&#39; and order exist in our cache, we will return order.info response from cache (optional, default to false)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderInfo'] to see the possible values for this operation
@@ -2750,9 +2750,9 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\OrderInfo200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderInfoWithHttpInfo($order_id = null, $id = null, $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $store_id = null, $enable_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['orderInfo'][0])
+    public function orderInfoWithHttpInfo($id = null, $order_id = null, $store_id = null, $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['orderInfo'][0])
     {
-        $request = $this->orderInfoRequest($order_id, $id, $params, $response_fields, $exclude, $store_id, $enable_cache, $use_latest_api_version, $contentType);
+        $request = $this->orderInfoRequest($id, $order_id, $store_id, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2868,12 +2868,12 @@ class OrderApi
      *
      * order.info
      *
-     * @param  string|null $order_id Retrieves order’s info specified by order id (optional)
      * @param  string|null $id Retrieves order info specified by id (optional)
+     * @param  string|null $order_id Retrieves order’s info specified by order id (optional)
+     * @param  string|null $store_id Defines store id where the order should be found (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'order_id,customer,totals,address,items,bundles,status')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $store_id Defines store id where the order should be found (optional)
      * @param  bool|null $enable_cache If the value is &#39;true&#39; and order exist in our cache, we will return order.info response from cache (optional, default to false)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderInfo'] to see the possible values for this operation
@@ -2881,9 +2881,9 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderInfoAsync($order_id = null, $id = null, $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $store_id = null, $enable_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['orderInfo'][0])
+    public function orderInfoAsync($id = null, $order_id = null, $store_id = null, $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['orderInfo'][0])
     {
-        return $this->orderInfoAsyncWithHttpInfo($order_id, $id, $params, $response_fields, $exclude, $store_id, $enable_cache, $use_latest_api_version, $contentType)
+        return $this->orderInfoAsyncWithHttpInfo($id, $order_id, $store_id, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2896,12 +2896,12 @@ class OrderApi
      *
      * order.info
      *
-     * @param  string|null $order_id Retrieves order’s info specified by order id (optional)
      * @param  string|null $id Retrieves order info specified by id (optional)
+     * @param  string|null $order_id Retrieves order’s info specified by order id (optional)
+     * @param  string|null $store_id Defines store id where the order should be found (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'order_id,customer,totals,address,items,bundles,status')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $store_id Defines store id where the order should be found (optional)
      * @param  bool|null $enable_cache If the value is &#39;true&#39; and order exist in our cache, we will return order.info response from cache (optional, default to false)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderInfo'] to see the possible values for this operation
@@ -2909,10 +2909,10 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderInfoAsyncWithHttpInfo($order_id = null, $id = null, $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $store_id = null, $enable_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['orderInfo'][0])
+    public function orderInfoAsyncWithHttpInfo($id = null, $order_id = null, $store_id = null, $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['orderInfo'][0])
     {
         $returnType = '\OpenAPI\Client\Model\OrderInfo200Response';
-        $request = $this->orderInfoRequest($order_id, $id, $params, $response_fields, $exclude, $store_id, $enable_cache, $use_latest_api_version, $contentType);
+        $request = $this->orderInfoRequest($id, $order_id, $store_id, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2953,12 +2953,12 @@ class OrderApi
     /**
      * Create request for operation 'orderInfo'
      *
-     * @param  string|null $order_id Retrieves order’s info specified by order id (optional)
      * @param  string|null $id Retrieves order info specified by id (optional)
+     * @param  string|null $order_id Retrieves order’s info specified by order id (optional)
+     * @param  string|null $store_id Defines store id where the order should be found (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'order_id,customer,totals,address,items,bundles,status')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $store_id Defines store id where the order should be found (optional)
      * @param  bool|null $enable_cache If the value is &#39;true&#39; and order exist in our cache, we will return order.info response from cache (optional, default to false)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderInfo'] to see the possible values for this operation
@@ -2966,7 +2966,7 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function orderInfoRequest($order_id = null, $id = null, $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $store_id = null, $enable_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['orderInfo'][0])
+    public function orderInfoRequest($id = null, $order_id = null, $store_id = null, $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['orderInfo'][0])
     {
 
 
@@ -2987,6 +2987,15 @@ class OrderApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $id,
+            'id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $order_id,
             'order_id', // param base name
             'string', // openApiType
@@ -2996,8 +3005,8 @@ class OrderApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $id,
-            'id', // param base name
+            $store_id,
+            'store_id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -3025,15 +3034,6 @@ class OrderApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $exclude,
             'exclude', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $store_id,
-            'store_id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -3129,43 +3129,43 @@ class OrderApi
      *
      * order.list
      *
-     * @param  string|null $customer_id Retrieves orders specified by customer id (optional)
-     * @param  string|null $customer_email Retrieves orders specified by customer email (optional)
-     * @param  string|null $phone Filter orders by customer&#39;s phone number (optional)
-     * @param  string|null $order_status Retrieves orders specified by order status (optional)
-     * @param  string[]|null $order_status_ids Retrieves orders specified by order statuses (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve orders via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $ids Retrieves orders specified by ids (optional)
+     * @param  string|null $order_ids Retrieves orders specified by order ids (optional)
+     * @param  string|null $since_id Retrieve entities starting from the specified id. (optional)
+     * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $customer_id Retrieves orders specified by customer id (optional)
+     * @param  string|null $customer_email Retrieves orders specified by customer email (optional)
+     * @param  string|null $basket_id Retrieves order’s info specified by basket id. (optional)
+     * @param  string|null $currency_id Currency Id (optional)
+     * @param  string|null $phone Filter orders by customer&#39;s phone number (optional)
+     * @param  string|null $order_status Retrieves orders specified by order status (optional)
+     * @param  string[]|null $order_status_ids Retrieves orders specified by order statuses (optional)
+     * @param  string|null $ebay_order_status Retrieves orders specified by order status (optional)
+     * @param  string|null $financial_status Retrieves orders specified by financial status (optional)
+     * @param  string[]|null $financial_status_ids Retrieves orders specified by financial status ids (optional)
+     * @param  string|null $fulfillment_status Create order with fulfillment status (optional)
+     * @param  string|null $return_status Retrieves orders specified by return status (optional)
+     * @param  string|null $fulfillment_channel Retrieves order with a fulfillment channel (optional)
+     * @param  string|null $shipping_method Retrieve entities according to shipping method (optional)
+     * @param  string|null $skip_order_ids Skipped orders by ids (optional)
+     * @param  bool|null $is_deleted Filter deleted orders (optional)
+     * @param  string|null $shipping_country_iso3 Retrieve entities according to shipping country (optional)
+     * @param  string|null $delivery_method Retrieves order with delivery method (optional)
+     * @param  string|null $ship_node_type Retrieves order with ship node type (optional)
+     * @param  string|null $created_to Retrieve entities to their creation date (optional)
+     * @param  string|null $created_from Retrieve entities from their creation date (optional)
+     * @param  string|null $modified_to Retrieve entities to their modification date (optional)
+     * @param  string|null $modified_from Retrieve entities from their modification date (optional)
+     * @param  string|null $tags Order tags (optional)
      * @param  string|null $sort_by Set field to sort by (optional, default to 'order_id')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'asc')
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'order_id,customer,totals,address,items,bundles,status')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $created_to Retrieve entities to their creation date (optional)
-     * @param  string|null $created_from Retrieve entities from their creation date (optional)
-     * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $modified_from Retrieve entities from their modification date (optional)
-     * @param  string|null $store_id Store Id (optional)
-     * @param  string|null $ids Retrieves orders specified by ids (optional)
-     * @param  string|null $order_ids Retrieves orders specified by order ids (optional)
-     * @param  string|null $ebay_order_status Retrieves orders specified by order status (optional)
-     * @param  string|null $basket_id Retrieves order’s info specified by basket id. (optional)
-     * @param  string|null $financial_status Retrieves orders specified by financial status (optional)
-     * @param  string[]|null $financial_status_ids Retrieves orders specified by financial status ids (optional)
-     * @param  string|null $fulfillment_status Create order with fulfillment status (optional)
-     * @param  string|null $fulfillment_channel Retrieves order with a fulfillment channel (optional)
-     * @param  string|null $shipping_method Retrieve entities according to shipping method (optional)
-     * @param  string|null $skip_order_ids Skipped orders by ids (optional)
-     * @param  string|null $since_id Retrieve entities starting from the specified id. (optional)
-     * @param  bool|null $is_deleted Filter deleted orders (optional)
-     * @param  string|null $shipping_country_iso3 Retrieve entities according to shipping country (optional)
      * @param  bool|null $enable_cache If the value is &#39;true&#39;, we will cache orders for a 15 minutes in order to increase speed and reduce requests throttling for some methods and shoping platforms (for example order.shipment.add) (optional, default to false)
-     * @param  string|null $delivery_method Retrieves order with delivery method (optional)
-     * @param  string|null $tags Order tags (optional)
-     * @param  string|null $ship_node_type Retrieves order with ship node type (optional)
-     * @param  string|null $currency_id Currency Id (optional)
-     * @param  string|null $return_status Retrieves orders specified by return status (optional)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderList'] to see the possible values for this operation
      *
@@ -3173,9 +3173,9 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseOrderList
      */
-    public function orderList($customer_id = null, $customer_email = null, $phone = null, $order_status = null, $order_status_ids = null, $start = 0, $count = 10, $page_cursor = null, $sort_by = 'order_id', $sort_direction = 'asc', $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $store_id = null, $ids = null, $order_ids = null, $ebay_order_status = null, $basket_id = null, $financial_status = null, $financial_status_ids = null, $fulfillment_status = null, $fulfillment_channel = null, $shipping_method = null, $skip_order_ids = null, $since_id = null, $is_deleted = null, $shipping_country_iso3 = null, $enable_cache = false, $delivery_method = null, $tags = null, $ship_node_type = null, $currency_id = null, $return_status = null, $use_latest_api_version = false, string $contentType = self::contentTypes['orderList'][0])
+    public function orderList($start = 0, $count = 10, $page_cursor = null, $ids = null, $order_ids = null, $since_id = null, $store_id = null, $customer_id = null, $customer_email = null, $basket_id = null, $currency_id = null, $phone = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_status = null, $return_status = null, $fulfillment_channel = null, $shipping_method = null, $skip_order_ids = null, $is_deleted = null, $shipping_country_iso3 = null, $delivery_method = null, $ship_node_type = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $tags = null, $sort_by = 'order_id', $sort_direction = 'asc', $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['orderList'][0])
     {
-        list($response) = $this->orderListWithHttpInfo($customer_id, $customer_email, $phone, $order_status, $order_status_ids, $start, $count, $page_cursor, $sort_by, $sort_direction, $params, $response_fields, $exclude, $created_to, $created_from, $modified_to, $modified_from, $store_id, $ids, $order_ids, $ebay_order_status, $basket_id, $financial_status, $financial_status_ids, $fulfillment_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $since_id, $is_deleted, $shipping_country_iso3, $enable_cache, $delivery_method, $tags, $ship_node_type, $currency_id, $return_status, $use_latest_api_version, $contentType);
+        list($response) = $this->orderListWithHttpInfo($start, $count, $page_cursor, $ids, $order_ids, $since_id, $store_id, $customer_id, $customer_email, $basket_id, $currency_id, $phone, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_status, $return_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $is_deleted, $shipping_country_iso3, $delivery_method, $ship_node_type, $created_to, $created_from, $modified_to, $modified_from, $tags, $sort_by, $sort_direction, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $contentType);
         return $response;
     }
 
@@ -3184,43 +3184,43 @@ class OrderApi
      *
      * order.list
      *
-     * @param  string|null $customer_id Retrieves orders specified by customer id (optional)
-     * @param  string|null $customer_email Retrieves orders specified by customer email (optional)
-     * @param  string|null $phone Filter orders by customer&#39;s phone number (optional)
-     * @param  string|null $order_status Retrieves orders specified by order status (optional)
-     * @param  string[]|null $order_status_ids Retrieves orders specified by order statuses (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve orders via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $ids Retrieves orders specified by ids (optional)
+     * @param  string|null $order_ids Retrieves orders specified by order ids (optional)
+     * @param  string|null $since_id Retrieve entities starting from the specified id. (optional)
+     * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $customer_id Retrieves orders specified by customer id (optional)
+     * @param  string|null $customer_email Retrieves orders specified by customer email (optional)
+     * @param  string|null $basket_id Retrieves order’s info specified by basket id. (optional)
+     * @param  string|null $currency_id Currency Id (optional)
+     * @param  string|null $phone Filter orders by customer&#39;s phone number (optional)
+     * @param  string|null $order_status Retrieves orders specified by order status (optional)
+     * @param  string[]|null $order_status_ids Retrieves orders specified by order statuses (optional)
+     * @param  string|null $ebay_order_status Retrieves orders specified by order status (optional)
+     * @param  string|null $financial_status Retrieves orders specified by financial status (optional)
+     * @param  string[]|null $financial_status_ids Retrieves orders specified by financial status ids (optional)
+     * @param  string|null $fulfillment_status Create order with fulfillment status (optional)
+     * @param  string|null $return_status Retrieves orders specified by return status (optional)
+     * @param  string|null $fulfillment_channel Retrieves order with a fulfillment channel (optional)
+     * @param  string|null $shipping_method Retrieve entities according to shipping method (optional)
+     * @param  string|null $skip_order_ids Skipped orders by ids (optional)
+     * @param  bool|null $is_deleted Filter deleted orders (optional)
+     * @param  string|null $shipping_country_iso3 Retrieve entities according to shipping country (optional)
+     * @param  string|null $delivery_method Retrieves order with delivery method (optional)
+     * @param  string|null $ship_node_type Retrieves order with ship node type (optional)
+     * @param  string|null $created_to Retrieve entities to their creation date (optional)
+     * @param  string|null $created_from Retrieve entities from their creation date (optional)
+     * @param  string|null $modified_to Retrieve entities to their modification date (optional)
+     * @param  string|null $modified_from Retrieve entities from their modification date (optional)
+     * @param  string|null $tags Order tags (optional)
      * @param  string|null $sort_by Set field to sort by (optional, default to 'order_id')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'asc')
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'order_id,customer,totals,address,items,bundles,status')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $created_to Retrieve entities to their creation date (optional)
-     * @param  string|null $created_from Retrieve entities from their creation date (optional)
-     * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $modified_from Retrieve entities from their modification date (optional)
-     * @param  string|null $store_id Store Id (optional)
-     * @param  string|null $ids Retrieves orders specified by ids (optional)
-     * @param  string|null $order_ids Retrieves orders specified by order ids (optional)
-     * @param  string|null $ebay_order_status Retrieves orders specified by order status (optional)
-     * @param  string|null $basket_id Retrieves order’s info specified by basket id. (optional)
-     * @param  string|null $financial_status Retrieves orders specified by financial status (optional)
-     * @param  string[]|null $financial_status_ids Retrieves orders specified by financial status ids (optional)
-     * @param  string|null $fulfillment_status Create order with fulfillment status (optional)
-     * @param  string|null $fulfillment_channel Retrieves order with a fulfillment channel (optional)
-     * @param  string|null $shipping_method Retrieve entities according to shipping method (optional)
-     * @param  string|null $skip_order_ids Skipped orders by ids (optional)
-     * @param  string|null $since_id Retrieve entities starting from the specified id. (optional)
-     * @param  bool|null $is_deleted Filter deleted orders (optional)
-     * @param  string|null $shipping_country_iso3 Retrieve entities according to shipping country (optional)
      * @param  bool|null $enable_cache If the value is &#39;true&#39;, we will cache orders for a 15 minutes in order to increase speed and reduce requests throttling for some methods and shoping platforms (for example order.shipment.add) (optional, default to false)
-     * @param  string|null $delivery_method Retrieves order with delivery method (optional)
-     * @param  string|null $tags Order tags (optional)
-     * @param  string|null $ship_node_type Retrieves order with ship node type (optional)
-     * @param  string|null $currency_id Currency Id (optional)
-     * @param  string|null $return_status Retrieves orders specified by return status (optional)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderList'] to see the possible values for this operation
      *
@@ -3228,9 +3228,9 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseOrderList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderListWithHttpInfo($customer_id = null, $customer_email = null, $phone = null, $order_status = null, $order_status_ids = null, $start = 0, $count = 10, $page_cursor = null, $sort_by = 'order_id', $sort_direction = 'asc', $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $store_id = null, $ids = null, $order_ids = null, $ebay_order_status = null, $basket_id = null, $financial_status = null, $financial_status_ids = null, $fulfillment_status = null, $fulfillment_channel = null, $shipping_method = null, $skip_order_ids = null, $since_id = null, $is_deleted = null, $shipping_country_iso3 = null, $enable_cache = false, $delivery_method = null, $tags = null, $ship_node_type = null, $currency_id = null, $return_status = null, $use_latest_api_version = false, string $contentType = self::contentTypes['orderList'][0])
+    public function orderListWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $ids = null, $order_ids = null, $since_id = null, $store_id = null, $customer_id = null, $customer_email = null, $basket_id = null, $currency_id = null, $phone = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_status = null, $return_status = null, $fulfillment_channel = null, $shipping_method = null, $skip_order_ids = null, $is_deleted = null, $shipping_country_iso3 = null, $delivery_method = null, $ship_node_type = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $tags = null, $sort_by = 'order_id', $sort_direction = 'asc', $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['orderList'][0])
     {
-        $request = $this->orderListRequest($customer_id, $customer_email, $phone, $order_status, $order_status_ids, $start, $count, $page_cursor, $sort_by, $sort_direction, $params, $response_fields, $exclude, $created_to, $created_from, $modified_to, $modified_from, $store_id, $ids, $order_ids, $ebay_order_status, $basket_id, $financial_status, $financial_status_ids, $fulfillment_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $since_id, $is_deleted, $shipping_country_iso3, $enable_cache, $delivery_method, $tags, $ship_node_type, $currency_id, $return_status, $use_latest_api_version, $contentType);
+        $request = $this->orderListRequest($start, $count, $page_cursor, $ids, $order_ids, $since_id, $store_id, $customer_id, $customer_email, $basket_id, $currency_id, $phone, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_status, $return_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $is_deleted, $shipping_country_iso3, $delivery_method, $ship_node_type, $created_to, $created_from, $modified_to, $modified_from, $tags, $sort_by, $sort_direction, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3346,52 +3346,52 @@ class OrderApi
      *
      * order.list
      *
-     * @param  string|null $customer_id Retrieves orders specified by customer id (optional)
-     * @param  string|null $customer_email Retrieves orders specified by customer email (optional)
-     * @param  string|null $phone Filter orders by customer&#39;s phone number (optional)
-     * @param  string|null $order_status Retrieves orders specified by order status (optional)
-     * @param  string[]|null $order_status_ids Retrieves orders specified by order statuses (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve orders via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $ids Retrieves orders specified by ids (optional)
+     * @param  string|null $order_ids Retrieves orders specified by order ids (optional)
+     * @param  string|null $since_id Retrieve entities starting from the specified id. (optional)
+     * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $customer_id Retrieves orders specified by customer id (optional)
+     * @param  string|null $customer_email Retrieves orders specified by customer email (optional)
+     * @param  string|null $basket_id Retrieves order’s info specified by basket id. (optional)
+     * @param  string|null $currency_id Currency Id (optional)
+     * @param  string|null $phone Filter orders by customer&#39;s phone number (optional)
+     * @param  string|null $order_status Retrieves orders specified by order status (optional)
+     * @param  string[]|null $order_status_ids Retrieves orders specified by order statuses (optional)
+     * @param  string|null $ebay_order_status Retrieves orders specified by order status (optional)
+     * @param  string|null $financial_status Retrieves orders specified by financial status (optional)
+     * @param  string[]|null $financial_status_ids Retrieves orders specified by financial status ids (optional)
+     * @param  string|null $fulfillment_status Create order with fulfillment status (optional)
+     * @param  string|null $return_status Retrieves orders specified by return status (optional)
+     * @param  string|null $fulfillment_channel Retrieves order with a fulfillment channel (optional)
+     * @param  string|null $shipping_method Retrieve entities according to shipping method (optional)
+     * @param  string|null $skip_order_ids Skipped orders by ids (optional)
+     * @param  bool|null $is_deleted Filter deleted orders (optional)
+     * @param  string|null $shipping_country_iso3 Retrieve entities according to shipping country (optional)
+     * @param  string|null $delivery_method Retrieves order with delivery method (optional)
+     * @param  string|null $ship_node_type Retrieves order with ship node type (optional)
+     * @param  string|null $created_to Retrieve entities to their creation date (optional)
+     * @param  string|null $created_from Retrieve entities from their creation date (optional)
+     * @param  string|null $modified_to Retrieve entities to their modification date (optional)
+     * @param  string|null $modified_from Retrieve entities from their modification date (optional)
+     * @param  string|null $tags Order tags (optional)
      * @param  string|null $sort_by Set field to sort by (optional, default to 'order_id')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'asc')
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'order_id,customer,totals,address,items,bundles,status')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $created_to Retrieve entities to their creation date (optional)
-     * @param  string|null $created_from Retrieve entities from their creation date (optional)
-     * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $modified_from Retrieve entities from their modification date (optional)
-     * @param  string|null $store_id Store Id (optional)
-     * @param  string|null $ids Retrieves orders specified by ids (optional)
-     * @param  string|null $order_ids Retrieves orders specified by order ids (optional)
-     * @param  string|null $ebay_order_status Retrieves orders specified by order status (optional)
-     * @param  string|null $basket_id Retrieves order’s info specified by basket id. (optional)
-     * @param  string|null $financial_status Retrieves orders specified by financial status (optional)
-     * @param  string[]|null $financial_status_ids Retrieves orders specified by financial status ids (optional)
-     * @param  string|null $fulfillment_status Create order with fulfillment status (optional)
-     * @param  string|null $fulfillment_channel Retrieves order with a fulfillment channel (optional)
-     * @param  string|null $shipping_method Retrieve entities according to shipping method (optional)
-     * @param  string|null $skip_order_ids Skipped orders by ids (optional)
-     * @param  string|null $since_id Retrieve entities starting from the specified id. (optional)
-     * @param  bool|null $is_deleted Filter deleted orders (optional)
-     * @param  string|null $shipping_country_iso3 Retrieve entities according to shipping country (optional)
      * @param  bool|null $enable_cache If the value is &#39;true&#39;, we will cache orders for a 15 minutes in order to increase speed and reduce requests throttling for some methods and shoping platforms (for example order.shipment.add) (optional, default to false)
-     * @param  string|null $delivery_method Retrieves order with delivery method (optional)
-     * @param  string|null $tags Order tags (optional)
-     * @param  string|null $ship_node_type Retrieves order with ship node type (optional)
-     * @param  string|null $currency_id Currency Id (optional)
-     * @param  string|null $return_status Retrieves orders specified by return status (optional)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderListAsync($customer_id = null, $customer_email = null, $phone = null, $order_status = null, $order_status_ids = null, $start = 0, $count = 10, $page_cursor = null, $sort_by = 'order_id', $sort_direction = 'asc', $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $store_id = null, $ids = null, $order_ids = null, $ebay_order_status = null, $basket_id = null, $financial_status = null, $financial_status_ids = null, $fulfillment_status = null, $fulfillment_channel = null, $shipping_method = null, $skip_order_ids = null, $since_id = null, $is_deleted = null, $shipping_country_iso3 = null, $enable_cache = false, $delivery_method = null, $tags = null, $ship_node_type = null, $currency_id = null, $return_status = null, $use_latest_api_version = false, string $contentType = self::contentTypes['orderList'][0])
+    public function orderListAsync($start = 0, $count = 10, $page_cursor = null, $ids = null, $order_ids = null, $since_id = null, $store_id = null, $customer_id = null, $customer_email = null, $basket_id = null, $currency_id = null, $phone = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_status = null, $return_status = null, $fulfillment_channel = null, $shipping_method = null, $skip_order_ids = null, $is_deleted = null, $shipping_country_iso3 = null, $delivery_method = null, $ship_node_type = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $tags = null, $sort_by = 'order_id', $sort_direction = 'asc', $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['orderList'][0])
     {
-        return $this->orderListAsyncWithHttpInfo($customer_id, $customer_email, $phone, $order_status, $order_status_ids, $start, $count, $page_cursor, $sort_by, $sort_direction, $params, $response_fields, $exclude, $created_to, $created_from, $modified_to, $modified_from, $store_id, $ids, $order_ids, $ebay_order_status, $basket_id, $financial_status, $financial_status_ids, $fulfillment_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $since_id, $is_deleted, $shipping_country_iso3, $enable_cache, $delivery_method, $tags, $ship_node_type, $currency_id, $return_status, $use_latest_api_version, $contentType)
+        return $this->orderListAsyncWithHttpInfo($start, $count, $page_cursor, $ids, $order_ids, $since_id, $store_id, $customer_id, $customer_email, $basket_id, $currency_id, $phone, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_status, $return_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $is_deleted, $shipping_country_iso3, $delivery_method, $ship_node_type, $created_to, $created_from, $modified_to, $modified_from, $tags, $sort_by, $sort_direction, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3404,53 +3404,53 @@ class OrderApi
      *
      * order.list
      *
-     * @param  string|null $customer_id Retrieves orders specified by customer id (optional)
-     * @param  string|null $customer_email Retrieves orders specified by customer email (optional)
-     * @param  string|null $phone Filter orders by customer&#39;s phone number (optional)
-     * @param  string|null $order_status Retrieves orders specified by order status (optional)
-     * @param  string[]|null $order_status_ids Retrieves orders specified by order statuses (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve orders via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $ids Retrieves orders specified by ids (optional)
+     * @param  string|null $order_ids Retrieves orders specified by order ids (optional)
+     * @param  string|null $since_id Retrieve entities starting from the specified id. (optional)
+     * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $customer_id Retrieves orders specified by customer id (optional)
+     * @param  string|null $customer_email Retrieves orders specified by customer email (optional)
+     * @param  string|null $basket_id Retrieves order’s info specified by basket id. (optional)
+     * @param  string|null $currency_id Currency Id (optional)
+     * @param  string|null $phone Filter orders by customer&#39;s phone number (optional)
+     * @param  string|null $order_status Retrieves orders specified by order status (optional)
+     * @param  string[]|null $order_status_ids Retrieves orders specified by order statuses (optional)
+     * @param  string|null $ebay_order_status Retrieves orders specified by order status (optional)
+     * @param  string|null $financial_status Retrieves orders specified by financial status (optional)
+     * @param  string[]|null $financial_status_ids Retrieves orders specified by financial status ids (optional)
+     * @param  string|null $fulfillment_status Create order with fulfillment status (optional)
+     * @param  string|null $return_status Retrieves orders specified by return status (optional)
+     * @param  string|null $fulfillment_channel Retrieves order with a fulfillment channel (optional)
+     * @param  string|null $shipping_method Retrieve entities according to shipping method (optional)
+     * @param  string|null $skip_order_ids Skipped orders by ids (optional)
+     * @param  bool|null $is_deleted Filter deleted orders (optional)
+     * @param  string|null $shipping_country_iso3 Retrieve entities according to shipping country (optional)
+     * @param  string|null $delivery_method Retrieves order with delivery method (optional)
+     * @param  string|null $ship_node_type Retrieves order with ship node type (optional)
+     * @param  string|null $created_to Retrieve entities to their creation date (optional)
+     * @param  string|null $created_from Retrieve entities from their creation date (optional)
+     * @param  string|null $modified_to Retrieve entities to their modification date (optional)
+     * @param  string|null $modified_from Retrieve entities from their modification date (optional)
+     * @param  string|null $tags Order tags (optional)
      * @param  string|null $sort_by Set field to sort by (optional, default to 'order_id')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'asc')
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'order_id,customer,totals,address,items,bundles,status')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $created_to Retrieve entities to their creation date (optional)
-     * @param  string|null $created_from Retrieve entities from their creation date (optional)
-     * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $modified_from Retrieve entities from their modification date (optional)
-     * @param  string|null $store_id Store Id (optional)
-     * @param  string|null $ids Retrieves orders specified by ids (optional)
-     * @param  string|null $order_ids Retrieves orders specified by order ids (optional)
-     * @param  string|null $ebay_order_status Retrieves orders specified by order status (optional)
-     * @param  string|null $basket_id Retrieves order’s info specified by basket id. (optional)
-     * @param  string|null $financial_status Retrieves orders specified by financial status (optional)
-     * @param  string[]|null $financial_status_ids Retrieves orders specified by financial status ids (optional)
-     * @param  string|null $fulfillment_status Create order with fulfillment status (optional)
-     * @param  string|null $fulfillment_channel Retrieves order with a fulfillment channel (optional)
-     * @param  string|null $shipping_method Retrieve entities according to shipping method (optional)
-     * @param  string|null $skip_order_ids Skipped orders by ids (optional)
-     * @param  string|null $since_id Retrieve entities starting from the specified id. (optional)
-     * @param  bool|null $is_deleted Filter deleted orders (optional)
-     * @param  string|null $shipping_country_iso3 Retrieve entities according to shipping country (optional)
      * @param  bool|null $enable_cache If the value is &#39;true&#39;, we will cache orders for a 15 minutes in order to increase speed and reduce requests throttling for some methods and shoping platforms (for example order.shipment.add) (optional, default to false)
-     * @param  string|null $delivery_method Retrieves order with delivery method (optional)
-     * @param  string|null $tags Order tags (optional)
-     * @param  string|null $ship_node_type Retrieves order with ship node type (optional)
-     * @param  string|null $currency_id Currency Id (optional)
-     * @param  string|null $return_status Retrieves orders specified by return status (optional)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderListAsyncWithHttpInfo($customer_id = null, $customer_email = null, $phone = null, $order_status = null, $order_status_ids = null, $start = 0, $count = 10, $page_cursor = null, $sort_by = 'order_id', $sort_direction = 'asc', $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $store_id = null, $ids = null, $order_ids = null, $ebay_order_status = null, $basket_id = null, $financial_status = null, $financial_status_ids = null, $fulfillment_status = null, $fulfillment_channel = null, $shipping_method = null, $skip_order_ids = null, $since_id = null, $is_deleted = null, $shipping_country_iso3 = null, $enable_cache = false, $delivery_method = null, $tags = null, $ship_node_type = null, $currency_id = null, $return_status = null, $use_latest_api_version = false, string $contentType = self::contentTypes['orderList'][0])
+    public function orderListAsyncWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $ids = null, $order_ids = null, $since_id = null, $store_id = null, $customer_id = null, $customer_email = null, $basket_id = null, $currency_id = null, $phone = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_status = null, $return_status = null, $fulfillment_channel = null, $shipping_method = null, $skip_order_ids = null, $is_deleted = null, $shipping_country_iso3 = null, $delivery_method = null, $ship_node_type = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $tags = null, $sort_by = 'order_id', $sort_direction = 'asc', $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['orderList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseOrderList';
-        $request = $this->orderListRequest($customer_id, $customer_email, $phone, $order_status, $order_status_ids, $start, $count, $page_cursor, $sort_by, $sort_direction, $params, $response_fields, $exclude, $created_to, $created_from, $modified_to, $modified_from, $store_id, $ids, $order_ids, $ebay_order_status, $basket_id, $financial_status, $financial_status_ids, $fulfillment_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $since_id, $is_deleted, $shipping_country_iso3, $enable_cache, $delivery_method, $tags, $ship_node_type, $currency_id, $return_status, $use_latest_api_version, $contentType);
+        $request = $this->orderListRequest($start, $count, $page_cursor, $ids, $order_ids, $since_id, $store_id, $customer_id, $customer_email, $basket_id, $currency_id, $phone, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_status, $return_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $is_deleted, $shipping_country_iso3, $delivery_method, $ship_node_type, $created_to, $created_from, $modified_to, $modified_from, $tags, $sort_by, $sort_direction, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3491,50 +3491,50 @@ class OrderApi
     /**
      * Create request for operation 'orderList'
      *
-     * @param  string|null $customer_id Retrieves orders specified by customer id (optional)
-     * @param  string|null $customer_email Retrieves orders specified by customer email (optional)
-     * @param  string|null $phone Filter orders by customer&#39;s phone number (optional)
-     * @param  string|null $order_status Retrieves orders specified by order status (optional)
-     * @param  string[]|null $order_status_ids Retrieves orders specified by order statuses (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve orders via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $ids Retrieves orders specified by ids (optional)
+     * @param  string|null $order_ids Retrieves orders specified by order ids (optional)
+     * @param  string|null $since_id Retrieve entities starting from the specified id. (optional)
+     * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $customer_id Retrieves orders specified by customer id (optional)
+     * @param  string|null $customer_email Retrieves orders specified by customer email (optional)
+     * @param  string|null $basket_id Retrieves order’s info specified by basket id. (optional)
+     * @param  string|null $currency_id Currency Id (optional)
+     * @param  string|null $phone Filter orders by customer&#39;s phone number (optional)
+     * @param  string|null $order_status Retrieves orders specified by order status (optional)
+     * @param  string[]|null $order_status_ids Retrieves orders specified by order statuses (optional)
+     * @param  string|null $ebay_order_status Retrieves orders specified by order status (optional)
+     * @param  string|null $financial_status Retrieves orders specified by financial status (optional)
+     * @param  string[]|null $financial_status_ids Retrieves orders specified by financial status ids (optional)
+     * @param  string|null $fulfillment_status Create order with fulfillment status (optional)
+     * @param  string|null $return_status Retrieves orders specified by return status (optional)
+     * @param  string|null $fulfillment_channel Retrieves order with a fulfillment channel (optional)
+     * @param  string|null $shipping_method Retrieve entities according to shipping method (optional)
+     * @param  string|null $skip_order_ids Skipped orders by ids (optional)
+     * @param  bool|null $is_deleted Filter deleted orders (optional)
+     * @param  string|null $shipping_country_iso3 Retrieve entities according to shipping country (optional)
+     * @param  string|null $delivery_method Retrieves order with delivery method (optional)
+     * @param  string|null $ship_node_type Retrieves order with ship node type (optional)
+     * @param  string|null $created_to Retrieve entities to their creation date (optional)
+     * @param  string|null $created_from Retrieve entities from their creation date (optional)
+     * @param  string|null $modified_to Retrieve entities to their modification date (optional)
+     * @param  string|null $modified_from Retrieve entities from their modification date (optional)
+     * @param  string|null $tags Order tags (optional)
      * @param  string|null $sort_by Set field to sort by (optional, default to 'order_id')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'asc')
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'order_id,customer,totals,address,items,bundles,status')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $created_to Retrieve entities to their creation date (optional)
-     * @param  string|null $created_from Retrieve entities from their creation date (optional)
-     * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $modified_from Retrieve entities from their modification date (optional)
-     * @param  string|null $store_id Store Id (optional)
-     * @param  string|null $ids Retrieves orders specified by ids (optional)
-     * @param  string|null $order_ids Retrieves orders specified by order ids (optional)
-     * @param  string|null $ebay_order_status Retrieves orders specified by order status (optional)
-     * @param  string|null $basket_id Retrieves order’s info specified by basket id. (optional)
-     * @param  string|null $financial_status Retrieves orders specified by financial status (optional)
-     * @param  string[]|null $financial_status_ids Retrieves orders specified by financial status ids (optional)
-     * @param  string|null $fulfillment_status Create order with fulfillment status (optional)
-     * @param  string|null $fulfillment_channel Retrieves order with a fulfillment channel (optional)
-     * @param  string|null $shipping_method Retrieve entities according to shipping method (optional)
-     * @param  string|null $skip_order_ids Skipped orders by ids (optional)
-     * @param  string|null $since_id Retrieve entities starting from the specified id. (optional)
-     * @param  bool|null $is_deleted Filter deleted orders (optional)
-     * @param  string|null $shipping_country_iso3 Retrieve entities according to shipping country (optional)
      * @param  bool|null $enable_cache If the value is &#39;true&#39;, we will cache orders for a 15 minutes in order to increase speed and reduce requests throttling for some methods and shoping platforms (for example order.shipment.add) (optional, default to false)
-     * @param  string|null $delivery_method Retrieves order with delivery method (optional)
-     * @param  string|null $tags Order tags (optional)
-     * @param  string|null $ship_node_type Retrieves order with ship node type (optional)
-     * @param  string|null $currency_id Currency Id (optional)
-     * @param  string|null $return_status Retrieves orders specified by return status (optional)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function orderListRequest($customer_id = null, $customer_email = null, $phone = null, $order_status = null, $order_status_ids = null, $start = 0, $count = 10, $page_cursor = null, $sort_by = 'order_id', $sort_direction = 'asc', $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $store_id = null, $ids = null, $order_ids = null, $ebay_order_status = null, $basket_id = null, $financial_status = null, $financial_status_ids = null, $fulfillment_status = null, $fulfillment_channel = null, $shipping_method = null, $skip_order_ids = null, $since_id = null, $is_deleted = null, $shipping_country_iso3 = null, $enable_cache = false, $delivery_method = null, $tags = null, $ship_node_type = null, $currency_id = null, $return_status = null, $use_latest_api_version = false, string $contentType = self::contentTypes['orderList'][0])
+    public function orderListRequest($start = 0, $count = 10, $page_cursor = null, $ids = null, $order_ids = null, $since_id = null, $store_id = null, $customer_id = null, $customer_email = null, $basket_id = null, $currency_id = null, $phone = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_status = null, $return_status = null, $fulfillment_channel = null, $shipping_method = null, $skip_order_ids = null, $is_deleted = null, $shipping_country_iso3 = null, $delivery_method = null, $ship_node_type = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $tags = null, $sort_by = 'order_id', $sort_direction = 'asc', $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['orderList'][0])
     {
 
 
@@ -3585,6 +3585,69 @@ class OrderApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $start,
+            'start', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $count,
+            'count', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_cursor,
+            'page_cursor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $ids,
+            'ids', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $order_ids,
+            'order_ids', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $since_id,
+            'since_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $store_id,
+            'store_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $customer_id,
             'customer_id', // param base name
             'string', // openApiType
@@ -3596,6 +3659,24 @@ class OrderApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $customer_email,
             'customer_email', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $basket_id,
+            'basket_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $currency_id,
+            'currency_id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -3630,26 +3711,152 @@ class OrderApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $start,
-            'start', // param base name
-            'integer', // openApiType
+            $ebay_order_status,
+            'ebay_order_status', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $count,
-            'count', // param base name
-            'integer', // openApiType
+            $financial_status,
+            'financial_status', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $page_cursor,
-            'page_cursor', // param base name
+            $financial_status_ids,
+            'financial_status_ids', // param base name
+            'array', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $fulfillment_status,
+            'fulfillment_status', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $return_status,
+            'return_status', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $fulfillment_channel,
+            'fulfillment_channel', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $shipping_method,
+            'shipping_method', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $skip_order_ids,
+            'skip_order_ids', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $is_deleted,
+            'is_deleted', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $shipping_country_iso3,
+            'shipping_country_iso3', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $delivery_method,
+            'delivery_method', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $ship_node_type,
+            'ship_node_type', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $created_to,
+            'created_to', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $created_from,
+            'created_from', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $modified_to,
+            'modified_to', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $modified_from,
+            'modified_from', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $tags,
+            'tags', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -3702,216 +3909,9 @@ class OrderApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $created_to,
-            'created_to', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $created_from,
-            'created_from', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $modified_to,
-            'modified_to', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $modified_from,
-            'modified_from', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $store_id,
-            'store_id', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $ids,
-            'ids', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $order_ids,
-            'order_ids', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $ebay_order_status,
-            'ebay_order_status', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $basket_id,
-            'basket_id', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $financial_status,
-            'financial_status', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $financial_status_ids,
-            'financial_status_ids', // param base name
-            'array', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $fulfillment_status,
-            'fulfillment_status', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $fulfillment_channel,
-            'fulfillment_channel', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $shipping_method,
-            'shipping_method', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $skip_order_ids,
-            'skip_order_ids', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $since_id,
-            'since_id', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $is_deleted,
-            'is_deleted', // param base name
-            'boolean', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $shipping_country_iso3,
-            'shipping_country_iso3', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $enable_cache,
             'enable_cache', // param base name
             'boolean', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $delivery_method,
-            'delivery_method', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $tags,
-            'tags', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $ship_node_type,
-            'ship_node_type', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $currency_id,
-            'currency_id', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $return_status,
-            'return_status', // param base name
-            'string', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -6612,19 +6612,19 @@ class OrderApi
      * @param  string $id Entity id (required)
      * @param  string $order_id Defines the order id (required)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_id,items,tracking_numbers')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_id,items,tracking_numbers')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderShipmentInfo'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\OrderShipmentInfo200Response
      */
-    public function orderShipmentInfo($id, $order_id, $start = 0, $params = 'id,order_id,items,tracking_numbers', $response_fields = null, $exclude = null, $store_id = null, string $contentType = self::contentTypes['orderShipmentInfo'][0])
+    public function orderShipmentInfo($id, $order_id, $start = 0, $store_id = null, $response_fields = null, $params = 'id,order_id,items,tracking_numbers', $exclude = null, string $contentType = self::contentTypes['orderShipmentInfo'][0])
     {
-        list($response) = $this->orderShipmentInfoWithHttpInfo($id, $order_id, $start, $params, $response_fields, $exclude, $store_id, $contentType);
+        list($response) = $this->orderShipmentInfoWithHttpInfo($id, $order_id, $start, $store_id, $response_fields, $params, $exclude, $contentType);
         return $response;
     }
 
@@ -6636,19 +6636,19 @@ class OrderApi
      * @param  string $id Entity id (required)
      * @param  string $order_id Defines the order id (required)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_id,items,tracking_numbers')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_id,items,tracking_numbers')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderShipmentInfo'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\OrderShipmentInfo200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderShipmentInfoWithHttpInfo($id, $order_id, $start = 0, $params = 'id,order_id,items,tracking_numbers', $response_fields = null, $exclude = null, $store_id = null, string $contentType = self::contentTypes['orderShipmentInfo'][0])
+    public function orderShipmentInfoWithHttpInfo($id, $order_id, $start = 0, $store_id = null, $response_fields = null, $params = 'id,order_id,items,tracking_numbers', $exclude = null, string $contentType = self::contentTypes['orderShipmentInfo'][0])
     {
-        $request = $this->orderShipmentInfoRequest($id, $order_id, $start, $params, $response_fields, $exclude, $store_id, $contentType);
+        $request = $this->orderShipmentInfoRequest($id, $order_id, $start, $store_id, $response_fields, $params, $exclude, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6767,18 +6767,18 @@ class OrderApi
      * @param  string $id Entity id (required)
      * @param  string $order_id Defines the order id (required)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_id,items,tracking_numbers')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_id,items,tracking_numbers')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderShipmentInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderShipmentInfoAsync($id, $order_id, $start = 0, $params = 'id,order_id,items,tracking_numbers', $response_fields = null, $exclude = null, $store_id = null, string $contentType = self::contentTypes['orderShipmentInfo'][0])
+    public function orderShipmentInfoAsync($id, $order_id, $start = 0, $store_id = null, $response_fields = null, $params = 'id,order_id,items,tracking_numbers', $exclude = null, string $contentType = self::contentTypes['orderShipmentInfo'][0])
     {
-        return $this->orderShipmentInfoAsyncWithHttpInfo($id, $order_id, $start, $params, $response_fields, $exclude, $store_id, $contentType)
+        return $this->orderShipmentInfoAsyncWithHttpInfo($id, $order_id, $start, $store_id, $response_fields, $params, $exclude, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6794,19 +6794,19 @@ class OrderApi
      * @param  string $id Entity id (required)
      * @param  string $order_id Defines the order id (required)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_id,items,tracking_numbers')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_id,items,tracking_numbers')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderShipmentInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderShipmentInfoAsyncWithHttpInfo($id, $order_id, $start = 0, $params = 'id,order_id,items,tracking_numbers', $response_fields = null, $exclude = null, $store_id = null, string $contentType = self::contentTypes['orderShipmentInfo'][0])
+    public function orderShipmentInfoAsyncWithHttpInfo($id, $order_id, $start = 0, $store_id = null, $response_fields = null, $params = 'id,order_id,items,tracking_numbers', $exclude = null, string $contentType = self::contentTypes['orderShipmentInfo'][0])
     {
         $returnType = '\OpenAPI\Client\Model\OrderShipmentInfo200Response';
-        $request = $this->orderShipmentInfoRequest($id, $order_id, $start, $params, $response_fields, $exclude, $store_id, $contentType);
+        $request = $this->orderShipmentInfoRequest($id, $order_id, $start, $store_id, $response_fields, $params, $exclude, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6850,16 +6850,16 @@ class OrderApi
      * @param  string $id Entity id (required)
      * @param  string $order_id Defines the order id (required)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_id,items,tracking_numbers')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_id,items,tracking_numbers')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderShipmentInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function orderShipmentInfoRequest($id, $order_id, $start = 0, $params = 'id,order_id,items,tracking_numbers', $response_fields = null, $exclude = null, $store_id = null, string $contentType = self::contentTypes['orderShipmentInfo'][0])
+    public function orderShipmentInfoRequest($id, $order_id, $start = 0, $store_id = null, $response_fields = null, $params = 'id,order_id,items,tracking_numbers', $exclude = null, string $contentType = self::contentTypes['orderShipmentInfo'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -6891,6 +6891,15 @@ class OrderApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $start,
+            'start', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $id,
             'id', // param base name
             'string', // openApiType
@@ -6909,17 +6918,8 @@ class OrderApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $start,
-            'start', // param base name
-            'integer', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $params,
-            'params', // param base name
+            $store_id,
+            'store_id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -6936,8 +6936,8 @@ class OrderApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $exclude,
-            'exclude', // param base name
+            $params,
+            'params', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -6945,8 +6945,8 @@ class OrderApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $store_id,
-            'store_id', // param base name
+            $exclude,
+            'exclude', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -7025,26 +7025,26 @@ class OrderApi
      * order.shipment.list
      *
      * @param  string $order_id Retrieves shipments specified by order id (required)
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_id,items,tracking_numbers')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_id,items,tracking_numbers')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderShipmentList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseOrderShipmentList
      */
-    public function orderShipmentList($order_id, $page_cursor = null, $start = 0, $count = 10, $params = 'id,order_id,items,tracking_numbers', $response_fields = null, $exclude = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $store_id = null, string $contentType = self::contentTypes['orderShipmentList'][0])
+    public function orderShipmentList($order_id, $start = 0, $count = 10, $page_cursor = null, $store_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $response_fields = null, $params = 'id,order_id,items,tracking_numbers', $exclude = null, string $contentType = self::contentTypes['orderShipmentList'][0])
     {
-        list($response) = $this->orderShipmentListWithHttpInfo($order_id, $page_cursor, $start, $count, $params, $response_fields, $exclude, $created_from, $created_to, $modified_from, $modified_to, $store_id, $contentType);
+        list($response) = $this->orderShipmentListWithHttpInfo($order_id, $start, $count, $page_cursor, $store_id, $created_from, $created_to, $modified_from, $modified_to, $response_fields, $params, $exclude, $contentType);
         return $response;
     }
 
@@ -7054,26 +7054,26 @@ class OrderApi
      * order.shipment.list
      *
      * @param  string $order_id Retrieves shipments specified by order id (required)
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_id,items,tracking_numbers')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_id,items,tracking_numbers')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderShipmentList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseOrderShipmentList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderShipmentListWithHttpInfo($order_id, $page_cursor = null, $start = 0, $count = 10, $params = 'id,order_id,items,tracking_numbers', $response_fields = null, $exclude = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $store_id = null, string $contentType = self::contentTypes['orderShipmentList'][0])
+    public function orderShipmentListWithHttpInfo($order_id, $start = 0, $count = 10, $page_cursor = null, $store_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $response_fields = null, $params = 'id,order_id,items,tracking_numbers', $exclude = null, string $contentType = self::contentTypes['orderShipmentList'][0])
     {
-        $request = $this->orderShipmentListRequest($order_id, $page_cursor, $start, $count, $params, $response_fields, $exclude, $created_from, $created_to, $modified_from, $modified_to, $store_id, $contentType);
+        $request = $this->orderShipmentListRequest($order_id, $start, $count, $page_cursor, $store_id, $created_from, $created_to, $modified_from, $modified_to, $response_fields, $params, $exclude, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7190,25 +7190,25 @@ class OrderApi
      * order.shipment.list
      *
      * @param  string $order_id Retrieves shipments specified by order id (required)
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_id,items,tracking_numbers')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_id,items,tracking_numbers')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderShipmentList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderShipmentListAsync($order_id, $page_cursor = null, $start = 0, $count = 10, $params = 'id,order_id,items,tracking_numbers', $response_fields = null, $exclude = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $store_id = null, string $contentType = self::contentTypes['orderShipmentList'][0])
+    public function orderShipmentListAsync($order_id, $start = 0, $count = 10, $page_cursor = null, $store_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $response_fields = null, $params = 'id,order_id,items,tracking_numbers', $exclude = null, string $contentType = self::contentTypes['orderShipmentList'][0])
     {
-        return $this->orderShipmentListAsyncWithHttpInfo($order_id, $page_cursor, $start, $count, $params, $response_fields, $exclude, $created_from, $created_to, $modified_from, $modified_to, $store_id, $contentType)
+        return $this->orderShipmentListAsyncWithHttpInfo($order_id, $start, $count, $page_cursor, $store_id, $created_from, $created_to, $modified_from, $modified_to, $response_fields, $params, $exclude, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7222,26 +7222,26 @@ class OrderApi
      * order.shipment.list
      *
      * @param  string $order_id Retrieves shipments specified by order id (required)
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_id,items,tracking_numbers')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_id,items,tracking_numbers')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderShipmentList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderShipmentListAsyncWithHttpInfo($order_id, $page_cursor = null, $start = 0, $count = 10, $params = 'id,order_id,items,tracking_numbers', $response_fields = null, $exclude = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $store_id = null, string $contentType = self::contentTypes['orderShipmentList'][0])
+    public function orderShipmentListAsyncWithHttpInfo($order_id, $start = 0, $count = 10, $page_cursor = null, $store_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $response_fields = null, $params = 'id,order_id,items,tracking_numbers', $exclude = null, string $contentType = self::contentTypes['orderShipmentList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseOrderShipmentList';
-        $request = $this->orderShipmentListRequest($order_id, $page_cursor, $start, $count, $params, $response_fields, $exclude, $created_from, $created_to, $modified_from, $modified_to, $store_id, $contentType);
+        $request = $this->orderShipmentListRequest($order_id, $start, $count, $page_cursor, $store_id, $created_from, $created_to, $modified_from, $modified_to, $response_fields, $params, $exclude, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7283,23 +7283,23 @@ class OrderApi
      * Create request for operation 'orderShipmentList'
      *
      * @param  string $order_id Retrieves shipments specified by order id (required)
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_id,items,tracking_numbers')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
-     * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_id,items,tracking_numbers')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderShipmentList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function orderShipmentListRequest($order_id, $page_cursor = null, $start = 0, $count = 10, $params = 'id,order_id,items,tracking_numbers', $response_fields = null, $exclude = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $store_id = null, string $contentType = self::contentTypes['orderShipmentList'][0])
+    public function orderShipmentListRequest($order_id, $start = 0, $count = 10, $page_cursor = null, $store_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $response_fields = null, $params = 'id,order_id,items,tracking_numbers', $exclude = null, string $contentType = self::contentTypes['orderShipmentList'][0])
     {
 
         // verify the required parameter 'order_id' is set
@@ -7330,24 +7330,6 @@ class OrderApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $order_id,
-            'order_id', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            true // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $page_cursor,
-            'page_cursor', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $start,
             'start', // param base name
             'integer', // openApiType
@@ -7366,8 +7348,8 @@ class OrderApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $params,
-            'params', // param base name
+            $page_cursor,
+            'page_cursor', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -7375,17 +7357,17 @@ class OrderApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $response_fields,
-            'response_fields', // param base name
+            $order_id,
+            'order_id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
-            false // required
+            true // required
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $exclude,
-            'exclude', // param base name
+            $store_id,
+            'store_id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -7429,8 +7411,26 @@ class OrderApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $store_id,
-            'store_id', // param base name
+            $response_fields,
+            'response_fields', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $params,
+            'params', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $exclude,
+            'exclude', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -8487,20 +8487,20 @@ class OrderApi
      *
      * @param  string $order_ids Retrieves order transactions specified by order ids (required)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_id,amount,description')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderTransactionList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseOrderTransactionList
      */
-    public function orderTransactionList($order_ids, $count = 10, $store_id = null, $params = 'id,order_id,amount,description', $response_fields = null, $exclude = null, $page_cursor = null, string $contentType = self::contentTypes['orderTransactionList'][0])
+    public function orderTransactionList($order_ids, $count = 10, $page_cursor = null, $store_id = null, $params = 'id,order_id,amount,description', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['orderTransactionList'][0])
     {
-        list($response) = $this->orderTransactionListWithHttpInfo($order_ids, $count, $store_id, $params, $response_fields, $exclude, $page_cursor, $contentType);
+        list($response) = $this->orderTransactionListWithHttpInfo($order_ids, $count, $page_cursor, $store_id, $params, $response_fields, $exclude, $contentType);
         return $response;
     }
 
@@ -8511,20 +8511,20 @@ class OrderApi
      *
      * @param  string $order_ids Retrieves order transactions specified by order ids (required)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_id,amount,description')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderTransactionList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseOrderTransactionList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderTransactionListWithHttpInfo($order_ids, $count = 10, $store_id = null, $params = 'id,order_id,amount,description', $response_fields = null, $exclude = null, $page_cursor = null, string $contentType = self::contentTypes['orderTransactionList'][0])
+    public function orderTransactionListWithHttpInfo($order_ids, $count = 10, $page_cursor = null, $store_id = null, $params = 'id,order_id,amount,description', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['orderTransactionList'][0])
     {
-        $request = $this->orderTransactionListRequest($order_ids, $count, $store_id, $params, $response_fields, $exclude, $page_cursor, $contentType);
+        $request = $this->orderTransactionListRequest($order_ids, $count, $page_cursor, $store_id, $params, $response_fields, $exclude, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -8642,19 +8642,19 @@ class OrderApi
      *
      * @param  string $order_ids Retrieves order transactions specified by order ids (required)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_id,amount,description')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderTransactionList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderTransactionListAsync($order_ids, $count = 10, $store_id = null, $params = 'id,order_id,amount,description', $response_fields = null, $exclude = null, $page_cursor = null, string $contentType = self::contentTypes['orderTransactionList'][0])
+    public function orderTransactionListAsync($order_ids, $count = 10, $page_cursor = null, $store_id = null, $params = 'id,order_id,amount,description', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['orderTransactionList'][0])
     {
-        return $this->orderTransactionListAsyncWithHttpInfo($order_ids, $count, $store_id, $params, $response_fields, $exclude, $page_cursor, $contentType)
+        return $this->orderTransactionListAsyncWithHttpInfo($order_ids, $count, $page_cursor, $store_id, $params, $response_fields, $exclude, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -8669,20 +8669,20 @@ class OrderApi
      *
      * @param  string $order_ids Retrieves order transactions specified by order ids (required)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_id,amount,description')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderTransactionList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderTransactionListAsyncWithHttpInfo($order_ids, $count = 10, $store_id = null, $params = 'id,order_id,amount,description', $response_fields = null, $exclude = null, $page_cursor = null, string $contentType = self::contentTypes['orderTransactionList'][0])
+    public function orderTransactionListAsyncWithHttpInfo($order_ids, $count = 10, $page_cursor = null, $store_id = null, $params = 'id,order_id,amount,description', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['orderTransactionList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseOrderTransactionList';
-        $request = $this->orderTransactionListRequest($order_ids, $count, $store_id, $params, $response_fields, $exclude, $page_cursor, $contentType);
+        $request = $this->orderTransactionListRequest($order_ids, $count, $page_cursor, $store_id, $params, $response_fields, $exclude, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -8725,17 +8725,17 @@ class OrderApi
      *
      * @param  string $order_ids Retrieves order transactions specified by order ids (required)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_id,amount,description')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderTransactionList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function orderTransactionListRequest($order_ids, $count = 10, $store_id = null, $params = 'id,order_id,amount,description', $response_fields = null, $exclude = null, $page_cursor = null, string $contentType = self::contentTypes['orderTransactionList'][0])
+    public function orderTransactionListRequest($order_ids, $count = 10, $page_cursor = null, $store_id = null, $params = 'id,order_id,amount,description', $response_fields = null, $exclude = null, string $contentType = self::contentTypes['orderTransactionList'][0])
     {
 
         // verify the required parameter 'order_ids' is set
@@ -8764,6 +8764,15 @@ class OrderApi
             $count,
             'count', // param base name
             'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_cursor,
+            'page_cursor', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -8808,15 +8817,6 @@ class OrderApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $exclude,
             'exclude', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $page_cursor,
-            'page_cursor', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -8897,28 +8897,28 @@ class OrderApi
      * @param  string $order_id Defines the orders specified by order id (required)
      * @param  string|null $store_id Defines store id where the order should be found (optional)
      * @param  string|null $order_status Defines new order&#39;s status (optional)
+     * @param  string|null $financial_status Update order financial status to specified (optional)
+     * @param  string|null $fulfillment_status Create order with fulfillment status (optional)
      * @param  string|null $cancellation_reason Defines the cancellation reason when the order will be canceled (optional)
+     * @param  string|null $order_payment_method Defines order payment method.&lt;br/&gt;Setting order_payment_method on Shopify will also change financial_status field value to &#39;paid&#39; (optional)
      * @param  string|null $comment Specifies order comment (optional)
      * @param  string|null $admin_comment Specifies admin&#39;s order comment (optional)
      * @param  string|null $admin_private_comment Specifies private admin&#39;s order comment (optional)
+     * @param  string|null $invoice_admin_comment Specifies admin&#39;s order invoice comment (optional)
      * @param  string|null $date_modified Specifies order&#39;s  modification date (optional)
      * @param  string|null $date_finished Specifies order&#39;s  finished date (optional)
-     * @param  string|null $financial_status Update order financial status to specified (optional)
-     * @param  string|null $fulfillment_status Create order with fulfillment status (optional)
-     * @param  string|null $order_payment_method Defines order payment method.&lt;br/&gt;Setting order_payment_method on Shopify will also change financial_status field value to &#39;paid&#39; (optional)
      * @param  bool|null $send_notifications Send notifications to customer after order was created (optional, default to false)
-     * @param  string|null $origin The source of the order (optional)
      * @param  bool|null $create_invoice Determines whether an invoice should be created if it has not already been created (optional)
-     * @param  string|null $invoice_admin_comment Specifies admin&#39;s order invoice comment (optional)
+     * @param  string|null $origin The source of the order (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderUpdate'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\AccountConfigUpdate200Response
      */
-    public function orderUpdate($order_id, $store_id = null, $order_status = null, $cancellation_reason = null, $comment = null, $admin_comment = null, $admin_private_comment = null, $date_modified = null, $date_finished = null, $financial_status = null, $fulfillment_status = null, $order_payment_method = null, $send_notifications = false, $origin = null, $create_invoice = null, $invoice_admin_comment = null, string $contentType = self::contentTypes['orderUpdate'][0])
+    public function orderUpdate($order_id, $store_id = null, $order_status = null, $financial_status = null, $fulfillment_status = null, $cancellation_reason = null, $order_payment_method = null, $comment = null, $admin_comment = null, $admin_private_comment = null, $invoice_admin_comment = null, $date_modified = null, $date_finished = null, $send_notifications = false, $create_invoice = null, $origin = null, string $contentType = self::contentTypes['orderUpdate'][0])
     {
-        list($response) = $this->orderUpdateWithHttpInfo($order_id, $store_id, $order_status, $cancellation_reason, $comment, $admin_comment, $admin_private_comment, $date_modified, $date_finished, $financial_status, $fulfillment_status, $order_payment_method, $send_notifications, $origin, $create_invoice, $invoice_admin_comment, $contentType);
+        list($response) = $this->orderUpdateWithHttpInfo($order_id, $store_id, $order_status, $financial_status, $fulfillment_status, $cancellation_reason, $order_payment_method, $comment, $admin_comment, $admin_private_comment, $invoice_admin_comment, $date_modified, $date_finished, $send_notifications, $create_invoice, $origin, $contentType);
         return $response;
     }
 
@@ -8930,28 +8930,28 @@ class OrderApi
      * @param  string $order_id Defines the orders specified by order id (required)
      * @param  string|null $store_id Defines store id where the order should be found (optional)
      * @param  string|null $order_status Defines new order&#39;s status (optional)
+     * @param  string|null $financial_status Update order financial status to specified (optional)
+     * @param  string|null $fulfillment_status Create order with fulfillment status (optional)
      * @param  string|null $cancellation_reason Defines the cancellation reason when the order will be canceled (optional)
+     * @param  string|null $order_payment_method Defines order payment method.&lt;br/&gt;Setting order_payment_method on Shopify will also change financial_status field value to &#39;paid&#39; (optional)
      * @param  string|null $comment Specifies order comment (optional)
      * @param  string|null $admin_comment Specifies admin&#39;s order comment (optional)
      * @param  string|null $admin_private_comment Specifies private admin&#39;s order comment (optional)
+     * @param  string|null $invoice_admin_comment Specifies admin&#39;s order invoice comment (optional)
      * @param  string|null $date_modified Specifies order&#39;s  modification date (optional)
      * @param  string|null $date_finished Specifies order&#39;s  finished date (optional)
-     * @param  string|null $financial_status Update order financial status to specified (optional)
-     * @param  string|null $fulfillment_status Create order with fulfillment status (optional)
-     * @param  string|null $order_payment_method Defines order payment method.&lt;br/&gt;Setting order_payment_method on Shopify will also change financial_status field value to &#39;paid&#39; (optional)
      * @param  bool|null $send_notifications Send notifications to customer after order was created (optional, default to false)
-     * @param  string|null $origin The source of the order (optional)
      * @param  bool|null $create_invoice Determines whether an invoice should be created if it has not already been created (optional)
-     * @param  string|null $invoice_admin_comment Specifies admin&#39;s order invoice comment (optional)
+     * @param  string|null $origin The source of the order (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderUpdate'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\AccountConfigUpdate200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderUpdateWithHttpInfo($order_id, $store_id = null, $order_status = null, $cancellation_reason = null, $comment = null, $admin_comment = null, $admin_private_comment = null, $date_modified = null, $date_finished = null, $financial_status = null, $fulfillment_status = null, $order_payment_method = null, $send_notifications = false, $origin = null, $create_invoice = null, $invoice_admin_comment = null, string $contentType = self::contentTypes['orderUpdate'][0])
+    public function orderUpdateWithHttpInfo($order_id, $store_id = null, $order_status = null, $financial_status = null, $fulfillment_status = null, $cancellation_reason = null, $order_payment_method = null, $comment = null, $admin_comment = null, $admin_private_comment = null, $invoice_admin_comment = null, $date_modified = null, $date_finished = null, $send_notifications = false, $create_invoice = null, $origin = null, string $contentType = self::contentTypes['orderUpdate'][0])
     {
-        $request = $this->orderUpdateRequest($order_id, $store_id, $order_status, $cancellation_reason, $comment, $admin_comment, $admin_private_comment, $date_modified, $date_finished, $financial_status, $fulfillment_status, $order_payment_method, $send_notifications, $origin, $create_invoice, $invoice_admin_comment, $contentType);
+        $request = $this->orderUpdateRequest($order_id, $store_id, $order_status, $financial_status, $fulfillment_status, $cancellation_reason, $order_payment_method, $comment, $admin_comment, $admin_private_comment, $invoice_admin_comment, $date_modified, $date_finished, $send_notifications, $create_invoice, $origin, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -9070,27 +9070,27 @@ class OrderApi
      * @param  string $order_id Defines the orders specified by order id (required)
      * @param  string|null $store_id Defines store id where the order should be found (optional)
      * @param  string|null $order_status Defines new order&#39;s status (optional)
+     * @param  string|null $financial_status Update order financial status to specified (optional)
+     * @param  string|null $fulfillment_status Create order with fulfillment status (optional)
      * @param  string|null $cancellation_reason Defines the cancellation reason when the order will be canceled (optional)
+     * @param  string|null $order_payment_method Defines order payment method.&lt;br/&gt;Setting order_payment_method on Shopify will also change financial_status field value to &#39;paid&#39; (optional)
      * @param  string|null $comment Specifies order comment (optional)
      * @param  string|null $admin_comment Specifies admin&#39;s order comment (optional)
      * @param  string|null $admin_private_comment Specifies private admin&#39;s order comment (optional)
+     * @param  string|null $invoice_admin_comment Specifies admin&#39;s order invoice comment (optional)
      * @param  string|null $date_modified Specifies order&#39;s  modification date (optional)
      * @param  string|null $date_finished Specifies order&#39;s  finished date (optional)
-     * @param  string|null $financial_status Update order financial status to specified (optional)
-     * @param  string|null $fulfillment_status Create order with fulfillment status (optional)
-     * @param  string|null $order_payment_method Defines order payment method.&lt;br/&gt;Setting order_payment_method on Shopify will also change financial_status field value to &#39;paid&#39; (optional)
      * @param  bool|null $send_notifications Send notifications to customer after order was created (optional, default to false)
-     * @param  string|null $origin The source of the order (optional)
      * @param  bool|null $create_invoice Determines whether an invoice should be created if it has not already been created (optional)
-     * @param  string|null $invoice_admin_comment Specifies admin&#39;s order invoice comment (optional)
+     * @param  string|null $origin The source of the order (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderUpdateAsync($order_id, $store_id = null, $order_status = null, $cancellation_reason = null, $comment = null, $admin_comment = null, $admin_private_comment = null, $date_modified = null, $date_finished = null, $financial_status = null, $fulfillment_status = null, $order_payment_method = null, $send_notifications = false, $origin = null, $create_invoice = null, $invoice_admin_comment = null, string $contentType = self::contentTypes['orderUpdate'][0])
+    public function orderUpdateAsync($order_id, $store_id = null, $order_status = null, $financial_status = null, $fulfillment_status = null, $cancellation_reason = null, $order_payment_method = null, $comment = null, $admin_comment = null, $admin_private_comment = null, $invoice_admin_comment = null, $date_modified = null, $date_finished = null, $send_notifications = false, $create_invoice = null, $origin = null, string $contentType = self::contentTypes['orderUpdate'][0])
     {
-        return $this->orderUpdateAsyncWithHttpInfo($order_id, $store_id, $order_status, $cancellation_reason, $comment, $admin_comment, $admin_private_comment, $date_modified, $date_finished, $financial_status, $fulfillment_status, $order_payment_method, $send_notifications, $origin, $create_invoice, $invoice_admin_comment, $contentType)
+        return $this->orderUpdateAsyncWithHttpInfo($order_id, $store_id, $order_status, $financial_status, $fulfillment_status, $cancellation_reason, $order_payment_method, $comment, $admin_comment, $admin_private_comment, $invoice_admin_comment, $date_modified, $date_finished, $send_notifications, $create_invoice, $origin, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -9106,28 +9106,28 @@ class OrderApi
      * @param  string $order_id Defines the orders specified by order id (required)
      * @param  string|null $store_id Defines store id where the order should be found (optional)
      * @param  string|null $order_status Defines new order&#39;s status (optional)
+     * @param  string|null $financial_status Update order financial status to specified (optional)
+     * @param  string|null $fulfillment_status Create order with fulfillment status (optional)
      * @param  string|null $cancellation_reason Defines the cancellation reason when the order will be canceled (optional)
+     * @param  string|null $order_payment_method Defines order payment method.&lt;br/&gt;Setting order_payment_method on Shopify will also change financial_status field value to &#39;paid&#39; (optional)
      * @param  string|null $comment Specifies order comment (optional)
      * @param  string|null $admin_comment Specifies admin&#39;s order comment (optional)
      * @param  string|null $admin_private_comment Specifies private admin&#39;s order comment (optional)
+     * @param  string|null $invoice_admin_comment Specifies admin&#39;s order invoice comment (optional)
      * @param  string|null $date_modified Specifies order&#39;s  modification date (optional)
      * @param  string|null $date_finished Specifies order&#39;s  finished date (optional)
-     * @param  string|null $financial_status Update order financial status to specified (optional)
-     * @param  string|null $fulfillment_status Create order with fulfillment status (optional)
-     * @param  string|null $order_payment_method Defines order payment method.&lt;br/&gt;Setting order_payment_method on Shopify will also change financial_status field value to &#39;paid&#39; (optional)
      * @param  bool|null $send_notifications Send notifications to customer after order was created (optional, default to false)
-     * @param  string|null $origin The source of the order (optional)
      * @param  bool|null $create_invoice Determines whether an invoice should be created if it has not already been created (optional)
-     * @param  string|null $invoice_admin_comment Specifies admin&#39;s order invoice comment (optional)
+     * @param  string|null $origin The source of the order (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderUpdateAsyncWithHttpInfo($order_id, $store_id = null, $order_status = null, $cancellation_reason = null, $comment = null, $admin_comment = null, $admin_private_comment = null, $date_modified = null, $date_finished = null, $financial_status = null, $fulfillment_status = null, $order_payment_method = null, $send_notifications = false, $origin = null, $create_invoice = null, $invoice_admin_comment = null, string $contentType = self::contentTypes['orderUpdate'][0])
+    public function orderUpdateAsyncWithHttpInfo($order_id, $store_id = null, $order_status = null, $financial_status = null, $fulfillment_status = null, $cancellation_reason = null, $order_payment_method = null, $comment = null, $admin_comment = null, $admin_private_comment = null, $invoice_admin_comment = null, $date_modified = null, $date_finished = null, $send_notifications = false, $create_invoice = null, $origin = null, string $contentType = self::contentTypes['orderUpdate'][0])
     {
         $returnType = '\OpenAPI\Client\Model\AccountConfigUpdate200Response';
-        $request = $this->orderUpdateRequest($order_id, $store_id, $order_status, $cancellation_reason, $comment, $admin_comment, $admin_private_comment, $date_modified, $date_finished, $financial_status, $fulfillment_status, $order_payment_method, $send_notifications, $origin, $create_invoice, $invoice_admin_comment, $contentType);
+        $request = $this->orderUpdateRequest($order_id, $store_id, $order_status, $financial_status, $fulfillment_status, $cancellation_reason, $order_payment_method, $comment, $admin_comment, $admin_private_comment, $invoice_admin_comment, $date_modified, $date_finished, $send_notifications, $create_invoice, $origin, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -9171,25 +9171,25 @@ class OrderApi
      * @param  string $order_id Defines the orders specified by order id (required)
      * @param  string|null $store_id Defines store id where the order should be found (optional)
      * @param  string|null $order_status Defines new order&#39;s status (optional)
+     * @param  string|null $financial_status Update order financial status to specified (optional)
+     * @param  string|null $fulfillment_status Create order with fulfillment status (optional)
      * @param  string|null $cancellation_reason Defines the cancellation reason when the order will be canceled (optional)
+     * @param  string|null $order_payment_method Defines order payment method.&lt;br/&gt;Setting order_payment_method on Shopify will also change financial_status field value to &#39;paid&#39; (optional)
      * @param  string|null $comment Specifies order comment (optional)
      * @param  string|null $admin_comment Specifies admin&#39;s order comment (optional)
      * @param  string|null $admin_private_comment Specifies private admin&#39;s order comment (optional)
+     * @param  string|null $invoice_admin_comment Specifies admin&#39;s order invoice comment (optional)
      * @param  string|null $date_modified Specifies order&#39;s  modification date (optional)
      * @param  string|null $date_finished Specifies order&#39;s  finished date (optional)
-     * @param  string|null $financial_status Update order financial status to specified (optional)
-     * @param  string|null $fulfillment_status Create order with fulfillment status (optional)
-     * @param  string|null $order_payment_method Defines order payment method.&lt;br/&gt;Setting order_payment_method on Shopify will also change financial_status field value to &#39;paid&#39; (optional)
      * @param  bool|null $send_notifications Send notifications to customer after order was created (optional, default to false)
-     * @param  string|null $origin The source of the order (optional)
      * @param  bool|null $create_invoice Determines whether an invoice should be created if it has not already been created (optional)
-     * @param  string|null $invoice_admin_comment Specifies admin&#39;s order invoice comment (optional)
+     * @param  string|null $origin The source of the order (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function orderUpdateRequest($order_id, $store_id = null, $order_status = null, $cancellation_reason = null, $comment = null, $admin_comment = null, $admin_private_comment = null, $date_modified = null, $date_finished = null, $financial_status = null, $fulfillment_status = null, $order_payment_method = null, $send_notifications = false, $origin = null, $create_invoice = null, $invoice_admin_comment = null, string $contentType = self::contentTypes['orderUpdate'][0])
+    public function orderUpdateRequest($order_id, $store_id = null, $order_status = null, $financial_status = null, $fulfillment_status = null, $cancellation_reason = null, $order_payment_method = null, $comment = null, $admin_comment = null, $admin_private_comment = null, $invoice_admin_comment = null, $date_modified = null, $date_finished = null, $send_notifications = false, $create_invoice = null, $origin = null, string $contentType = self::contentTypes['orderUpdate'][0])
     {
 
         // verify the required parameter 'order_id' is set
@@ -9251,8 +9251,35 @@ class OrderApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $financial_status,
+            'financial_status', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $fulfillment_status,
+            'fulfillment_status', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $cancellation_reason,
             'cancellation_reason', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $order_payment_method,
+            'order_payment_method', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -9287,6 +9314,15 @@ class OrderApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $invoice_admin_comment,
+            'invoice_admin_comment', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $date_modified,
             'date_modified', // param base name
             'string', // openApiType
@@ -9305,45 +9341,9 @@ class OrderApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $financial_status,
-            'financial_status', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $fulfillment_status,
-            'fulfillment_status', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $order_payment_method,
-            'order_payment_method', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $send_notifications,
             'send_notifications', // param base name
             'boolean', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $origin,
-            'origin', // param base name
-            'string', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -9359,8 +9359,8 @@ class OrderApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $invoice_admin_comment,
-            'invoice_admin_comment', // param base name
+            $origin,
+            'origin', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

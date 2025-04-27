@@ -274,7 +274,7 @@ try {
 ## `attributeAttributesetList()`
 
 ```php
-attributeAttributesetList($start, $count, $params, $exclude, $response_fields): \OpenAPI\Client\Model\ModelResponseAttributeAttributesetList
+attributeAttributesetList($start, $count, $response_fields, $params, $exclude): \OpenAPI\Client\Model\ModelResponseAttributeAttributesetList
 ```
 
 attribute.attributeset.list
@@ -307,12 +307,12 @@ $apiInstance = new OpenAPI\Client\Api\AttributeApi(
 );
 $start = 0; // int | This parameter sets the number from which you want to get entities
 $count = 20; // int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+$response_fields = {result}; // string | Set this parameter in order to choose which entity fields you want to retrieve
 $params = id,name; // string | Set this parameter in order to choose which entity fields you want to retrieve
 $exclude = id,name; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-$response_fields = {result}; // string | Set this parameter in order to choose which entity fields you want to retrieve
 
 try {
-    $result = $apiInstance->attributeAttributesetList($start, $count, $params, $exclude, $response_fields);
+    $result = $apiInstance->attributeAttributesetList($start, $count, $response_fields, $params, $exclude);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AttributeApi->attributeAttributesetList: ', $e->getMessage(), PHP_EOL;
@@ -325,9 +325,9 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **start** | **int**| This parameter sets the number from which you want to get entities | [optional] [default to 0] |
 | **count** | **int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
+| **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 | **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,name&#39;] |
 | **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
-| **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 
 ### Return type
 
@@ -497,7 +497,7 @@ try {
 ## `attributeGroupList()`
 
 ```php
-attributeGroupList($start, $count, $lang_id, $params, $exclude, $response_fields, $attribute_set_id): \OpenAPI\Client\Model\ModelResponseAttributeGroupList
+attributeGroupList($start, $count, $attribute_set_id, $lang_id, $response_fields, $params, $exclude): \OpenAPI\Client\Model\ModelResponseAttributeGroupList
 ```
 
 attribute.group.list
@@ -530,14 +530,14 @@ $apiInstance = new OpenAPI\Client\Api\AttributeApi(
 );
 $start = 0; // int | This parameter sets the number from which you want to get entities
 $count = 20; // int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+$attribute_set_id = 4; // string | Attribute set id
 $lang_id = 3; // string | Language id
+$response_fields = {result}; // string | Set this parameter in order to choose which entity fields you want to retrieve
 $params = id,name; // string | Set this parameter in order to choose which entity fields you want to retrieve
 $exclude = id,name; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-$response_fields = {result}; // string | Set this parameter in order to choose which entity fields you want to retrieve
-$attribute_set_id = 4; // string | Attribute set id
 
 try {
-    $result = $apiInstance->attributeGroupList($start, $count, $lang_id, $params, $exclude, $response_fields, $attribute_set_id);
+    $result = $apiInstance->attributeGroupList($start, $count, $attribute_set_id, $lang_id, $response_fields, $params, $exclude);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AttributeApi->attributeGroupList: ', $e->getMessage(), PHP_EOL;
@@ -550,11 +550,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **start** | **int**| This parameter sets the number from which you want to get entities | [optional] [default to 0] |
 | **count** | **int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
+| **attribute_set_id** | **string**| Attribute set id | [optional] |
 | **lang_id** | **string**| Language id | [optional] |
+| **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 | **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,name&#39;] |
 | **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
-| **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
-| **attribute_set_id** | **string**| Attribute set id | [optional] |
 
 ### Return type
 
@@ -576,7 +576,7 @@ try {
 ## `attributeInfo()`
 
 ```php
-attributeInfo($id, $attribute_set_id, $store_id, $lang_id, $params, $exclude, $response_fields): \OpenAPI\Client\Model\AttributeInfo200Response
+attributeInfo($id, $attribute_set_id, $store_id, $lang_id, $response_fields, $params, $exclude): \OpenAPI\Client\Model\AttributeInfo200Response
 ```
 
 attribute.info
@@ -611,12 +611,12 @@ $id = 10; // string | Entity id
 $attribute_set_id = 4; // string | Attribute set id
 $store_id = 1; // string | Store Id
 $lang_id = 3; // string | Language id
+$response_fields = {result}; // string | Set this parameter in order to choose which entity fields you want to retrieve
 $params = force_all; // string | Set this parameter in order to choose which entity fields you want to retrieve
 $exclude = name; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-$response_fields = {result}; // string | Set this parameter in order to choose which entity fields you want to retrieve
 
 try {
-    $result = $apiInstance->attributeInfo($id, $attribute_set_id, $store_id, $lang_id, $params, $exclude, $response_fields);
+    $result = $apiInstance->attributeInfo($id, $attribute_set_id, $store_id, $lang_id, $response_fields, $params, $exclude);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AttributeApi->attributeInfo: ', $e->getMessage(), PHP_EOL;
@@ -631,9 +631,9 @@ try {
 | **attribute_set_id** | **string**| Attribute set id | [optional] |
 | **store_id** | **string**| Store Id | [optional] |
 | **lang_id** | **string**| Language id | [optional] |
+| **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 | **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;force_all&#39;] |
 | **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
-| **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 
 ### Return type
 
@@ -655,7 +655,7 @@ try {
 ## `attributeList()`
 
 ```php
-attributeList($start, $count, $type, $attribute_ids, $attribute_set_id, $store_id, $lang_id, $params, $exclude, $response_fields, $visible, $required, $system): \OpenAPI\Client\Model\ModelResponseAttributeList
+attributeList($start, $count, $attribute_ids, $attribute_set_id, $store_id, $lang_id, $type, $visible, $required, $system, $response_fields, $params, $exclude): \OpenAPI\Client\Model\ModelResponseAttributeList
 ```
 
 attribute.list
@@ -688,20 +688,20 @@ $apiInstance = new OpenAPI\Client\Api\AttributeApi(
 );
 $start = 0; // int | This parameter sets the number from which you want to get entities
 $count = 20; // int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-$type = text; // string | Defines attribute's type
 $attribute_ids = 1,2,3; // string | Filter attributes by ids
 $attribute_set_id = 4; // string | Filter items by attribute set id
 $store_id = 1; // string | Store Id
 $lang_id = 3; // string | Retrieves attributes on specified language id
-$params = id,name; // string | Set this parameter in order to choose which entity fields you want to retrieve
-$exclude = id,name; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-$response_fields = {return_code,return_message,pagination,result}; // string | Set this parameter in order to choose which entity fields you want to retrieve
+$type = text; // string | Defines attribute's type
 $visible = true; // bool | Filter items by visibility status
 $required = true; // bool | Defines if the option is required
 $system = false; // bool | True if attribute is system
+$response_fields = {return_code,return_message,pagination,result}; // string | Set this parameter in order to choose which entity fields you want to retrieve
+$params = id,name; // string | Set this parameter in order to choose which entity fields you want to retrieve
+$exclude = id,name; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 
 try {
-    $result = $apiInstance->attributeList($start, $count, $type, $attribute_ids, $attribute_set_id, $store_id, $lang_id, $params, $exclude, $response_fields, $visible, $required, $system);
+    $result = $apiInstance->attributeList($start, $count, $attribute_ids, $attribute_set_id, $store_id, $lang_id, $type, $visible, $required, $system, $response_fields, $params, $exclude);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AttributeApi->attributeList: ', $e->getMessage(), PHP_EOL;
@@ -714,17 +714,17 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **start** | **int**| This parameter sets the number from which you want to get entities | [optional] [default to 0] |
 | **count** | **int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
-| **type** | **string**| Defines attribute&#39;s type | [optional] |
 | **attribute_ids** | **string**| Filter attributes by ids | [optional] |
 | **attribute_set_id** | **string**| Filter items by attribute set id | [optional] |
 | **store_id** | **string**| Store Id | [optional] |
 | **lang_id** | **string**| Retrieves attributes on specified language id | [optional] |
-| **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,name,code,type&#39;] |
-| **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
-| **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **type** | **string**| Defines attribute&#39;s type | [optional] |
 | **visible** | **bool**| Filter items by visibility status | [optional] |
 | **required** | **bool**| Defines if the option is required | [optional] |
 | **system** | **bool**| True if attribute is system | [optional] |
+| **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,name,code,type&#39;] |
+| **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 
 ### Return type
 

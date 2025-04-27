@@ -81,36 +81,9 @@ class CartCouponAddTest extends TestCase
     }
 
     /**
-     * Test attribute "store_id"
-     */
-    public function testPropertyStoreId()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "code"
      */
     public function testPropertyCode()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "name"
-     */
-    public function testPropertyName()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "codes"
-     */
-    public function testPropertyCodes()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -147,6 +120,24 @@ class CartCouponAddTest extends TestCase
      * Test attribute "action_amount"
      */
     public function testPropertyActionAmount()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "codes"
+     */
+    public function testPropertyCodes()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "name"
+     */
+    public function testPropertyName()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -228,6 +219,15 @@ class CartCouponAddTest extends TestCase
      * Test attribute "include_tax"
      */
     public function testPropertyIncludeTax()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "store_id"
+     */
+    public function testPropertyStoreId()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

@@ -58,10 +58,10 @@ class OrderPreestimateShippingList implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'store_id' => 'string',
         'warehouse_id' => 'string',
-        'customer_email' => 'string',
         'customer_id' => 'string',
+        'customer_email' => 'string',
+        'store_id' => 'string',
         'shipp_address_1' => 'string',
         'shipp_city' => 'string',
         'shipp_postcode' => 'string',
@@ -80,10 +80,10 @@ class OrderPreestimateShippingList implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'store_id' => null,
         'warehouse_id' => null,
-        'customer_email' => null,
         'customer_id' => null,
+        'customer_email' => null,
+        'store_id' => null,
         'shipp_address_1' => null,
         'shipp_city' => null,
         'shipp_postcode' => null,
@@ -100,10 +100,10 @@ class OrderPreestimateShippingList implements ModelInterface, ArrayAccess, \Json
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'store_id' => false,
         'warehouse_id' => false,
-        'customer_email' => false,
         'customer_id' => false,
+        'customer_email' => false,
+        'store_id' => false,
         'shipp_address_1' => false,
         'shipp_city' => false,
         'shipp_postcode' => false,
@@ -200,10 +200,10 @@ class OrderPreestimateShippingList implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $attributeMap = [
-        'store_id' => 'store_id',
         'warehouse_id' => 'warehouse_id',
-        'customer_email' => 'customer_email',
         'customer_id' => 'customer_id',
+        'customer_email' => 'customer_email',
+        'store_id' => 'store_id',
         'shipp_address_1' => 'shipp_address_1',
         'shipp_city' => 'shipp_city',
         'shipp_postcode' => 'shipp_postcode',
@@ -220,10 +220,10 @@ class OrderPreestimateShippingList implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-        'store_id' => 'setStoreId',
         'warehouse_id' => 'setWarehouseId',
-        'customer_email' => 'setCustomerEmail',
         'customer_id' => 'setCustomerId',
+        'customer_email' => 'setCustomerEmail',
+        'store_id' => 'setStoreId',
         'shipp_address_1' => 'setShippAddress1',
         'shipp_city' => 'setShippCity',
         'shipp_postcode' => 'setShippPostcode',
@@ -240,10 +240,10 @@ class OrderPreestimateShippingList implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $getters = [
-        'store_id' => 'getStoreId',
         'warehouse_id' => 'getWarehouseId',
-        'customer_email' => 'getCustomerEmail',
         'customer_id' => 'getCustomerId',
+        'customer_email' => 'getCustomerEmail',
+        'store_id' => 'getStoreId',
         'shipp_address_1' => 'getShippAddress1',
         'shipp_city' => 'getShippCity',
         'shipp_postcode' => 'getShippPostcode',
@@ -311,10 +311,10 @@ class OrderPreestimateShippingList implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('store_id', $data ?? [], null);
         $this->setIfExists('warehouse_id', $data ?? [], null);
-        $this->setIfExists('customer_email', $data ?? [], null);
         $this->setIfExists('customer_id', $data ?? [], null);
+        $this->setIfExists('customer_email', $data ?? [], null);
+        $this->setIfExists('store_id', $data ?? [], null);
         $this->setIfExists('shipp_address_1', $data ?? [], null);
         $this->setIfExists('shipp_city', $data ?? [], null);
         $this->setIfExists('shipp_postcode', $data ?? [], null);
@@ -374,33 +374,6 @@ class OrderPreestimateShippingList implements ModelInterface, ArrayAccess, \Json
 
 
     /**
-     * Gets store_id
-     *
-     * @return string|null
-     */
-    public function getStoreId()
-    {
-        return $this->container['store_id'];
-    }
-
-    /**
-     * Sets store_id
-     *
-     * @param string|null $store_id Store Id
-     *
-     * @return self
-     */
-    public function setStoreId($store_id)
-    {
-        if (is_null($store_id)) {
-            throw new \InvalidArgumentException('non-nullable store_id cannot be null');
-        }
-        $this->container['store_id'] = $store_id;
-
-        return $this;
-    }
-
-    /**
      * Gets warehouse_id
      *
      * @return string|null
@@ -423,6 +396,33 @@ class OrderPreestimateShippingList implements ModelInterface, ArrayAccess, \Json
             throw new \InvalidArgumentException('non-nullable warehouse_id cannot be null');
         }
         $this->container['warehouse_id'] = $warehouse_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets customer_id
+     *
+     * @return string|null
+     */
+    public function getCustomerId()
+    {
+        return $this->container['customer_id'];
+    }
+
+    /**
+     * Sets customer_id
+     *
+     * @param string|null $customer_id Retrieves orders specified by customer id
+     *
+     * @return self
+     */
+    public function setCustomerId($customer_id)
+    {
+        if (is_null($customer_id)) {
+            throw new \InvalidArgumentException('non-nullable customer_id cannot be null');
+        }
+        $this->container['customer_id'] = $customer_id;
 
         return $this;
     }
@@ -455,28 +455,28 @@ class OrderPreestimateShippingList implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
-     * Gets customer_id
+     * Gets store_id
      *
      * @return string|null
      */
-    public function getCustomerId()
+    public function getStoreId()
     {
-        return $this->container['customer_id'];
+        return $this->container['store_id'];
     }
 
     /**
-     * Sets customer_id
+     * Sets store_id
      *
-     * @param string|null $customer_id Retrieves orders specified by customer id
+     * @param string|null $store_id Store Id
      *
      * @return self
      */
-    public function setCustomerId($customer_id)
+    public function setStoreId($store_id)
     {
-        if (is_null($customer_id)) {
-            throw new \InvalidArgumentException('non-nullable customer_id cannot be null');
+        if (is_null($store_id)) {
+            throw new \InvalidArgumentException('non-nullable store_id cannot be null');
         }
-        $this->container['customer_id'] = $customer_id;
+        $this->container['store_id'] = $store_id;
 
         return $this;
     }

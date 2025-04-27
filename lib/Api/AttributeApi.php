@@ -548,21 +548,21 @@ class AttributeApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $code,
-            'code', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $name,
             'name', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
             true // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $code,
+            'code', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
@@ -1510,18 +1510,18 @@ class AttributeApi
      *
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeAttributesetList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseAttributeAttributesetList
      */
-    public function attributeAttributesetList($start = 0, $count = 10, $params = 'id,name', $exclude = null, $response_fields = null, string $contentType = self::contentTypes['attributeAttributesetList'][0])
+    public function attributeAttributesetList($start = 0, $count = 10, $response_fields = null, $params = 'id,name', $exclude = null, string $contentType = self::contentTypes['attributeAttributesetList'][0])
     {
-        list($response) = $this->attributeAttributesetListWithHttpInfo($start, $count, $params, $exclude, $response_fields, $contentType);
+        list($response) = $this->attributeAttributesetListWithHttpInfo($start, $count, $response_fields, $params, $exclude, $contentType);
         return $response;
     }
 
@@ -1532,18 +1532,18 @@ class AttributeApi
      *
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeAttributesetList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseAttributeAttributesetList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function attributeAttributesetListWithHttpInfo($start = 0, $count = 10, $params = 'id,name', $exclude = null, $response_fields = null, string $contentType = self::contentTypes['attributeAttributesetList'][0])
+    public function attributeAttributesetListWithHttpInfo($start = 0, $count = 10, $response_fields = null, $params = 'id,name', $exclude = null, string $contentType = self::contentTypes['attributeAttributesetList'][0])
     {
-        $request = $this->attributeAttributesetListRequest($start, $count, $params, $exclude, $response_fields, $contentType);
+        $request = $this->attributeAttributesetListRequest($start, $count, $response_fields, $params, $exclude, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1661,17 +1661,17 @@ class AttributeApi
      *
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeAttributesetList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function attributeAttributesetListAsync($start = 0, $count = 10, $params = 'id,name', $exclude = null, $response_fields = null, string $contentType = self::contentTypes['attributeAttributesetList'][0])
+    public function attributeAttributesetListAsync($start = 0, $count = 10, $response_fields = null, $params = 'id,name', $exclude = null, string $contentType = self::contentTypes['attributeAttributesetList'][0])
     {
-        return $this->attributeAttributesetListAsyncWithHttpInfo($start, $count, $params, $exclude, $response_fields, $contentType)
+        return $this->attributeAttributesetListAsyncWithHttpInfo($start, $count, $response_fields, $params, $exclude, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1686,18 +1686,18 @@ class AttributeApi
      *
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeAttributesetList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function attributeAttributesetListAsyncWithHttpInfo($start = 0, $count = 10, $params = 'id,name', $exclude = null, $response_fields = null, string $contentType = self::contentTypes['attributeAttributesetList'][0])
+    public function attributeAttributesetListAsyncWithHttpInfo($start = 0, $count = 10, $response_fields = null, $params = 'id,name', $exclude = null, string $contentType = self::contentTypes['attributeAttributesetList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseAttributeAttributesetList';
-        $request = $this->attributeAttributesetListRequest($start, $count, $params, $exclude, $response_fields, $contentType);
+        $request = $this->attributeAttributesetListRequest($start, $count, $response_fields, $params, $exclude, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1740,15 +1740,15 @@ class AttributeApi
      *
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeAttributesetList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function attributeAttributesetListRequest($start = 0, $count = 10, $params = 'id,name', $exclude = null, $response_fields = null, string $contentType = self::contentTypes['attributeAttributesetList'][0])
+    public function attributeAttributesetListRequest($start = 0, $count = 10, $response_fields = null, $params = 'id,name', $exclude = null, string $contentType = self::contentTypes['attributeAttributesetList'][0])
     {
 
 
@@ -1784,6 +1784,15 @@ class AttributeApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $response_fields,
+            'response_fields', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $params,
             'params', // param base name
             'string', // openApiType
@@ -1795,15 +1804,6 @@ class AttributeApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $exclude,
             'exclude', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $response_fields,
-            'response_fields', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -2530,21 +2530,21 @@ class AttributeApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $store_id,
-            'store_id', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $id,
             'id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
             true // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $store_id,
+            'store_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
         ) ?? []);
 
 
@@ -2620,20 +2620,20 @@ class AttributeApi
      *
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $attribute_set_id Attribute set id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $attribute_set_id Attribute set id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeGroupList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseAttributeGroupList
      */
-    public function attributeGroupList($start = 0, $count = 10, $lang_id = null, $params = 'id,name', $exclude = null, $response_fields = null, $attribute_set_id = null, string $contentType = self::contentTypes['attributeGroupList'][0])
+    public function attributeGroupList($start = 0, $count = 10, $attribute_set_id = null, $lang_id = null, $response_fields = null, $params = 'id,name', $exclude = null, string $contentType = self::contentTypes['attributeGroupList'][0])
     {
-        list($response) = $this->attributeGroupListWithHttpInfo($start, $count, $lang_id, $params, $exclude, $response_fields, $attribute_set_id, $contentType);
+        list($response) = $this->attributeGroupListWithHttpInfo($start, $count, $attribute_set_id, $lang_id, $response_fields, $params, $exclude, $contentType);
         return $response;
     }
 
@@ -2644,20 +2644,20 @@ class AttributeApi
      *
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $attribute_set_id Attribute set id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $attribute_set_id Attribute set id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeGroupList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseAttributeGroupList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function attributeGroupListWithHttpInfo($start = 0, $count = 10, $lang_id = null, $params = 'id,name', $exclude = null, $response_fields = null, $attribute_set_id = null, string $contentType = self::contentTypes['attributeGroupList'][0])
+    public function attributeGroupListWithHttpInfo($start = 0, $count = 10, $attribute_set_id = null, $lang_id = null, $response_fields = null, $params = 'id,name', $exclude = null, string $contentType = self::contentTypes['attributeGroupList'][0])
     {
-        $request = $this->attributeGroupListRequest($start, $count, $lang_id, $params, $exclude, $response_fields, $attribute_set_id, $contentType);
+        $request = $this->attributeGroupListRequest($start, $count, $attribute_set_id, $lang_id, $response_fields, $params, $exclude, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2775,19 +2775,19 @@ class AttributeApi
      *
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $attribute_set_id Attribute set id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $attribute_set_id Attribute set id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeGroupList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function attributeGroupListAsync($start = 0, $count = 10, $lang_id = null, $params = 'id,name', $exclude = null, $response_fields = null, $attribute_set_id = null, string $contentType = self::contentTypes['attributeGroupList'][0])
+    public function attributeGroupListAsync($start = 0, $count = 10, $attribute_set_id = null, $lang_id = null, $response_fields = null, $params = 'id,name', $exclude = null, string $contentType = self::contentTypes['attributeGroupList'][0])
     {
-        return $this->attributeGroupListAsyncWithHttpInfo($start, $count, $lang_id, $params, $exclude, $response_fields, $attribute_set_id, $contentType)
+        return $this->attributeGroupListAsyncWithHttpInfo($start, $count, $attribute_set_id, $lang_id, $response_fields, $params, $exclude, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2802,20 +2802,20 @@ class AttributeApi
      *
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $attribute_set_id Attribute set id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $attribute_set_id Attribute set id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeGroupList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function attributeGroupListAsyncWithHttpInfo($start = 0, $count = 10, $lang_id = null, $params = 'id,name', $exclude = null, $response_fields = null, $attribute_set_id = null, string $contentType = self::contentTypes['attributeGroupList'][0])
+    public function attributeGroupListAsyncWithHttpInfo($start = 0, $count = 10, $attribute_set_id = null, $lang_id = null, $response_fields = null, $params = 'id,name', $exclude = null, string $contentType = self::contentTypes['attributeGroupList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseAttributeGroupList';
-        $request = $this->attributeGroupListRequest($start, $count, $lang_id, $params, $exclude, $response_fields, $attribute_set_id, $contentType);
+        $request = $this->attributeGroupListRequest($start, $count, $attribute_set_id, $lang_id, $response_fields, $params, $exclude, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2858,17 +2858,17 @@ class AttributeApi
      *
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $attribute_set_id Attribute set id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $attribute_set_id Attribute set id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeGroupList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function attributeGroupListRequest($start = 0, $count = 10, $lang_id = null, $params = 'id,name', $exclude = null, $response_fields = null, $attribute_set_id = null, string $contentType = self::contentTypes['attributeGroupList'][0])
+    public function attributeGroupListRequest($start = 0, $count = 10, $attribute_set_id = null, $lang_id = null, $response_fields = null, $params = 'id,name', $exclude = null, string $contentType = self::contentTypes['attributeGroupList'][0])
     {
 
 
@@ -2906,8 +2906,26 @@ class AttributeApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $attribute_set_id,
+            'attribute_set_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $lang_id,
             'lang_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $response_fields,
+            'response_fields', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -2926,24 +2944,6 @@ class AttributeApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $exclude,
             'exclude', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $response_fields,
-            'response_fields', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $attribute_set_id,
-            'attribute_set_id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -3025,18 +3025,18 @@ class AttributeApi
      * @param  string|null $attribute_set_id Attribute set id (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeInfo'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\AttributeInfo200Response
      */
-    public function attributeInfo($id, $attribute_set_id = null, $store_id = null, $lang_id = null, $params = 'force_all', $exclude = null, $response_fields = null, string $contentType = self::contentTypes['attributeInfo'][0])
+    public function attributeInfo($id, $attribute_set_id = null, $store_id = null, $lang_id = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['attributeInfo'][0])
     {
-        list($response) = $this->attributeInfoWithHttpInfo($id, $attribute_set_id, $store_id, $lang_id, $params, $exclude, $response_fields, $contentType);
+        list($response) = $this->attributeInfoWithHttpInfo($id, $attribute_set_id, $store_id, $lang_id, $response_fields, $params, $exclude, $contentType);
         return $response;
     }
 
@@ -3049,18 +3049,18 @@ class AttributeApi
      * @param  string|null $attribute_set_id Attribute set id (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeInfo'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\AttributeInfo200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function attributeInfoWithHttpInfo($id, $attribute_set_id = null, $store_id = null, $lang_id = null, $params = 'force_all', $exclude = null, $response_fields = null, string $contentType = self::contentTypes['attributeInfo'][0])
+    public function attributeInfoWithHttpInfo($id, $attribute_set_id = null, $store_id = null, $lang_id = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['attributeInfo'][0])
     {
-        $request = $this->attributeInfoRequest($id, $attribute_set_id, $store_id, $lang_id, $params, $exclude, $response_fields, $contentType);
+        $request = $this->attributeInfoRequest($id, $attribute_set_id, $store_id, $lang_id, $response_fields, $params, $exclude, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3180,17 +3180,17 @@ class AttributeApi
      * @param  string|null $attribute_set_id Attribute set id (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function attributeInfoAsync($id, $attribute_set_id = null, $store_id = null, $lang_id = null, $params = 'force_all', $exclude = null, $response_fields = null, string $contentType = self::contentTypes['attributeInfo'][0])
+    public function attributeInfoAsync($id, $attribute_set_id = null, $store_id = null, $lang_id = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['attributeInfo'][0])
     {
-        return $this->attributeInfoAsyncWithHttpInfo($id, $attribute_set_id, $store_id, $lang_id, $params, $exclude, $response_fields, $contentType)
+        return $this->attributeInfoAsyncWithHttpInfo($id, $attribute_set_id, $store_id, $lang_id, $response_fields, $params, $exclude, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3207,18 +3207,18 @@ class AttributeApi
      * @param  string|null $attribute_set_id Attribute set id (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function attributeInfoAsyncWithHttpInfo($id, $attribute_set_id = null, $store_id = null, $lang_id = null, $params = 'force_all', $exclude = null, $response_fields = null, string $contentType = self::contentTypes['attributeInfo'][0])
+    public function attributeInfoAsyncWithHttpInfo($id, $attribute_set_id = null, $store_id = null, $lang_id = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['attributeInfo'][0])
     {
         $returnType = '\OpenAPI\Client\Model\AttributeInfo200Response';
-        $request = $this->attributeInfoRequest($id, $attribute_set_id, $store_id, $lang_id, $params, $exclude, $response_fields, $contentType);
+        $request = $this->attributeInfoRequest($id, $attribute_set_id, $store_id, $lang_id, $response_fields, $params, $exclude, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3263,15 +3263,15 @@ class AttributeApi
      * @param  string|null $attribute_set_id Attribute set id (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function attributeInfoRequest($id, $attribute_set_id = null, $store_id = null, $lang_id = null, $params = 'force_all', $exclude = null, $response_fields = null, string $contentType = self::contentTypes['attributeInfo'][0])
+    public function attributeInfoRequest($id, $attribute_set_id = null, $store_id = null, $lang_id = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['attributeInfo'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -3333,6 +3333,15 @@ class AttributeApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $response_fields,
+            'response_fields', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $params,
             'params', // param base name
             'string', // openApiType
@@ -3344,15 +3353,6 @@ class AttributeApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $exclude,
             'exclude', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $response_fields,
-            'response_fields', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -3432,26 +3432,26 @@ class AttributeApi
      *
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param  string|null $type Defines attribute&#39;s type (optional)
      * @param  string|null $attribute_ids Filter attributes by ids (optional)
      * @param  string|null $attribute_set_id Filter items by attribute set id (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Retrieves attributes on specified language id (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,code,type')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $type Defines attribute&#39;s type (optional)
      * @param  bool|null $visible Filter items by visibility status (optional)
      * @param  bool|null $required Defines if the option is required (optional)
      * @param  bool|null $system True if attribute is system (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,code,type')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseAttributeList
      */
-    public function attributeList($start = 0, $count = 10, $type = null, $attribute_ids = null, $attribute_set_id = null, $store_id = null, $lang_id = null, $params = 'id,name,code,type', $exclude = null, $response_fields = null, $visible = null, $required = null, $system = null, string $contentType = self::contentTypes['attributeList'][0])
+    public function attributeList($start = 0, $count = 10, $attribute_ids = null, $attribute_set_id = null, $store_id = null, $lang_id = null, $type = null, $visible = null, $required = null, $system = null, $response_fields = null, $params = 'id,name,code,type', $exclude = null, string $contentType = self::contentTypes['attributeList'][0])
     {
-        list($response) = $this->attributeListWithHttpInfo($start, $count, $type, $attribute_ids, $attribute_set_id, $store_id, $lang_id, $params, $exclude, $response_fields, $visible, $required, $system, $contentType);
+        list($response) = $this->attributeListWithHttpInfo($start, $count, $attribute_ids, $attribute_set_id, $store_id, $lang_id, $type, $visible, $required, $system, $response_fields, $params, $exclude, $contentType);
         return $response;
     }
 
@@ -3462,26 +3462,26 @@ class AttributeApi
      *
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param  string|null $type Defines attribute&#39;s type (optional)
      * @param  string|null $attribute_ids Filter attributes by ids (optional)
      * @param  string|null $attribute_set_id Filter items by attribute set id (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Retrieves attributes on specified language id (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,code,type')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $type Defines attribute&#39;s type (optional)
      * @param  bool|null $visible Filter items by visibility status (optional)
      * @param  bool|null $required Defines if the option is required (optional)
      * @param  bool|null $system True if attribute is system (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,code,type')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseAttributeList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function attributeListWithHttpInfo($start = 0, $count = 10, $type = null, $attribute_ids = null, $attribute_set_id = null, $store_id = null, $lang_id = null, $params = 'id,name,code,type', $exclude = null, $response_fields = null, $visible = null, $required = null, $system = null, string $contentType = self::contentTypes['attributeList'][0])
+    public function attributeListWithHttpInfo($start = 0, $count = 10, $attribute_ids = null, $attribute_set_id = null, $store_id = null, $lang_id = null, $type = null, $visible = null, $required = null, $system = null, $response_fields = null, $params = 'id,name,code,type', $exclude = null, string $contentType = self::contentTypes['attributeList'][0])
     {
-        $request = $this->attributeListRequest($start, $count, $type, $attribute_ids, $attribute_set_id, $store_id, $lang_id, $params, $exclude, $response_fields, $visible, $required, $system, $contentType);
+        $request = $this->attributeListRequest($start, $count, $attribute_ids, $attribute_set_id, $store_id, $lang_id, $type, $visible, $required, $system, $response_fields, $params, $exclude, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3599,25 +3599,25 @@ class AttributeApi
      *
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param  string|null $type Defines attribute&#39;s type (optional)
      * @param  string|null $attribute_ids Filter attributes by ids (optional)
      * @param  string|null $attribute_set_id Filter items by attribute set id (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Retrieves attributes on specified language id (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,code,type')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $type Defines attribute&#39;s type (optional)
      * @param  bool|null $visible Filter items by visibility status (optional)
      * @param  bool|null $required Defines if the option is required (optional)
      * @param  bool|null $system True if attribute is system (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,code,type')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function attributeListAsync($start = 0, $count = 10, $type = null, $attribute_ids = null, $attribute_set_id = null, $store_id = null, $lang_id = null, $params = 'id,name,code,type', $exclude = null, $response_fields = null, $visible = null, $required = null, $system = null, string $contentType = self::contentTypes['attributeList'][0])
+    public function attributeListAsync($start = 0, $count = 10, $attribute_ids = null, $attribute_set_id = null, $store_id = null, $lang_id = null, $type = null, $visible = null, $required = null, $system = null, $response_fields = null, $params = 'id,name,code,type', $exclude = null, string $contentType = self::contentTypes['attributeList'][0])
     {
-        return $this->attributeListAsyncWithHttpInfo($start, $count, $type, $attribute_ids, $attribute_set_id, $store_id, $lang_id, $params, $exclude, $response_fields, $visible, $required, $system, $contentType)
+        return $this->attributeListAsyncWithHttpInfo($start, $count, $attribute_ids, $attribute_set_id, $store_id, $lang_id, $type, $visible, $required, $system, $response_fields, $params, $exclude, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3632,26 +3632,26 @@ class AttributeApi
      *
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param  string|null $type Defines attribute&#39;s type (optional)
      * @param  string|null $attribute_ids Filter attributes by ids (optional)
      * @param  string|null $attribute_set_id Filter items by attribute set id (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Retrieves attributes on specified language id (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,code,type')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $type Defines attribute&#39;s type (optional)
      * @param  bool|null $visible Filter items by visibility status (optional)
      * @param  bool|null $required Defines if the option is required (optional)
      * @param  bool|null $system True if attribute is system (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,code,type')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function attributeListAsyncWithHttpInfo($start = 0, $count = 10, $type = null, $attribute_ids = null, $attribute_set_id = null, $store_id = null, $lang_id = null, $params = 'id,name,code,type', $exclude = null, $response_fields = null, $visible = null, $required = null, $system = null, string $contentType = self::contentTypes['attributeList'][0])
+    public function attributeListAsyncWithHttpInfo($start = 0, $count = 10, $attribute_ids = null, $attribute_set_id = null, $store_id = null, $lang_id = null, $type = null, $visible = null, $required = null, $system = null, $response_fields = null, $params = 'id,name,code,type', $exclude = null, string $contentType = self::contentTypes['attributeList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseAttributeList';
-        $request = $this->attributeListRequest($start, $count, $type, $attribute_ids, $attribute_set_id, $store_id, $lang_id, $params, $exclude, $response_fields, $visible, $required, $system, $contentType);
+        $request = $this->attributeListRequest($start, $count, $attribute_ids, $attribute_set_id, $store_id, $lang_id, $type, $visible, $required, $system, $response_fields, $params, $exclude, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3694,23 +3694,23 @@ class AttributeApi
      *
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param  string|null $type Defines attribute&#39;s type (optional)
      * @param  string|null $attribute_ids Filter attributes by ids (optional)
      * @param  string|null $attribute_set_id Filter items by attribute set id (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Retrieves attributes on specified language id (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,code,type')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $type Defines attribute&#39;s type (optional)
      * @param  bool|null $visible Filter items by visibility status (optional)
      * @param  bool|null $required Defines if the option is required (optional)
      * @param  bool|null $system True if attribute is system (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,code,type')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function attributeListRequest($start = 0, $count = 10, $type = null, $attribute_ids = null, $attribute_set_id = null, $store_id = null, $lang_id = null, $params = 'id,name,code,type', $exclude = null, $response_fields = null, $visible = null, $required = null, $system = null, string $contentType = self::contentTypes['attributeList'][0])
+    public function attributeListRequest($start = 0, $count = 10, $attribute_ids = null, $attribute_set_id = null, $store_id = null, $lang_id = null, $type = null, $visible = null, $required = null, $system = null, $response_fields = null, $params = 'id,name,code,type', $exclude = null, string $contentType = self::contentTypes['attributeList'][0])
     {
 
 
@@ -3754,15 +3754,6 @@ class AttributeApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $type,
-            'type', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $attribute_ids,
             'attribute_ids', // param base name
             'string', // openApiType
@@ -3799,26 +3790,8 @@ class AttributeApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $params,
-            'params', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $exclude,
-            'exclude', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $response_fields,
-            'response_fields', // param base name
+            $type,
+            'type', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -3847,6 +3820,33 @@ class AttributeApi
             $system,
             'system', // param base name
             'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $response_fields,
+            'response_fields', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $params,
+            'params', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $exclude,
+            'exclude', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required

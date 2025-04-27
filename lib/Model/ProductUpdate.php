@@ -60,84 +60,86 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'id' => 'string',
         'model' => 'string',
-        'old_price' => 'float',
+        'sku' => 'string',
+        'name' => 'string',
+        'description' => 'string',
+        'short_description' => 'string',
         'price' => 'float',
+        'old_price' => 'float',
         'special_price' => 'float',
         'sprice_create' => 'string',
         'sprice_expire' => 'string',
         'cost_price' => 'float',
         'fixed_cost_shipping_price' => 'float',
         'retail_price' => 'float',
-        'quantity' => 'float',
+        'tier_prices' => '\OpenAPI\Client\Model\ProductAddTierPricesInner[]',
+        'reserve_price' => 'float',
+        'buyitnow_price' => 'float',
+        'taxable' => 'bool',
+        'tax_class_id' => 'string',
+        'type' => 'string',
+        'status' => 'string',
+        'condition' => 'string',
+        'visible' => 'string',
+        'in_stock' => 'bool',
+        'avail' => 'bool',
+        'avail_from' => 'string',
+        'product_class' => 'string',
         'available_for_view' => 'bool',
-        'weight' => 'float',
-        'weight_unit' => 'string',
-        'dimensions_unit' => 'string',
-        'increase_quantity' => 'float',
-        'reduce_quantity' => 'float',
-        'warehouse_id' => 'string',
+        'stores_ids' => 'string',
+        'store_id' => 'string',
+        'lang_id' => 'string',
+        'quantity' => 'float',
         'reserve_quantity' => 'float',
         'manage_stock' => 'bool',
         'backorder_status' => 'string',
-        'name' => 'string',
-        'sku' => 'string',
-        'visible' => 'string',
+        'increase_quantity' => 'float',
+        'reduce_quantity' => 'float',
+        'warehouse_id' => 'string',
+        'weight' => 'float',
+        'weight_unit' => 'string',
+        'height' => 'float',
+        'length' => 'float',
+        'width' => 'float',
+        'dimensions_unit' => 'string',
+        'is_virtual' => 'bool',
+        'is_free_shipping' => 'bool',
+        'gtin' => 'string',
+        'upc' => 'string',
+        'mpn' => 'string',
+        'ean' => 'string',
+        'isbn' => 'string',
+        'barcode' => 'string',
         'manufacturer' => 'string',
         'manufacturer_id' => 'string',
         'categories_ids' => 'string',
         'related_products_ids' => 'string',
         'up_sell_products_ids' => 'string',
         'cross_sell_products_ids' => 'string',
-        'description' => 'string',
-        'short_description' => 'string',
         'meta_title' => 'string',
         'meta_keywords' => 'string',
         'meta_description' => 'string',
-        'store_id' => 'string',
-        'lang_id' => 'string',
-        'in_stock' => 'bool',
-        'status' => 'string',
         'seo_url' => 'string',
-        'report_request_id' => 'string',
-        'disable_report_cache' => 'bool',
-        'reindex' => 'bool',
-        'tags' => 'string',
-        'clear_cache' => 'bool',
-        'gtin' => 'string',
-        'upc' => 'string',
-        'mpn' => 'string',
-        'ean' => 'string',
-        'isbn' => 'string',
-        'taxable' => 'bool',
-        'product_class' => 'string',
-        'height' => 'float',
-        'length' => 'float',
-        'width' => 'float',
-        'harmonized_system_code' => 'string',
-        'country_of_origin' => 'string',
         'search_keywords' => 'string',
-        'barcode' => 'string',
-        'is_virtual' => 'bool',
-        'is_free_shipping' => 'bool',
-        'reserve_price' => 'float',
-        'buyitnow_price' => 'float',
-        'avail_from' => 'string',
-        'tax_class_id' => 'string',
-        'type' => 'string',
-        'avail' => 'bool',
+        'tags' => 'string',
         'delivery_code' => 'string',
-        'check_process_status' => 'bool',
         'package_details' => '\OpenAPI\Client\Model\ProductAddPackageDetails',
-        'stores_ids' => 'string',
-        'manufacturer_info' => '\OpenAPI\Client\Model\ProductAddManufacturerInfo',
-        'production_partner_ids' => 'string',
+        'country_of_origin' => 'string',
+        'harmonized_system_code' => 'string',
         'shipping_template_id' => 'int',
         'when_made' => 'string',
         'is_supply' => 'bool',
         'downloadable' => 'bool',
         'materials' => 'string[]',
         'auto_renew' => 'bool',
-        'on_sale' => 'bool'
+        'on_sale' => 'bool',
+        'production_partner_ids' => 'string',
+        'manufacturer_info' => '\OpenAPI\Client\Model\ProductAddManufacturerInfo',
+        'report_request_id' => 'string',
+        'disable_report_cache' => 'bool',
+        'reindex' => 'bool',
+        'clear_cache' => 'bool',
+        'check_process_status' => 'bool'
     ];
 
     /**
@@ -150,84 +152,86 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'id' => null,
         'model' => null,
-        'old_price' => null,
+        'sku' => null,
+        'name' => null,
+        'description' => null,
+        'short_description' => null,
         'price' => null,
+        'old_price' => null,
         'special_price' => null,
         'sprice_create' => null,
         'sprice_expire' => null,
         'cost_price' => null,
         'fixed_cost_shipping_price' => null,
         'retail_price' => null,
-        'quantity' => null,
+        'tier_prices' => null,
+        'reserve_price' => null,
+        'buyitnow_price' => null,
+        'taxable' => null,
+        'tax_class_id' => null,
+        'type' => null,
+        'status' => null,
+        'condition' => null,
+        'visible' => null,
+        'in_stock' => null,
+        'avail' => null,
+        'avail_from' => null,
+        'product_class' => null,
         'available_for_view' => null,
-        'weight' => null,
-        'weight_unit' => null,
-        'dimensions_unit' => null,
-        'increase_quantity' => null,
-        'reduce_quantity' => null,
-        'warehouse_id' => null,
+        'stores_ids' => null,
+        'store_id' => null,
+        'lang_id' => null,
+        'quantity' => null,
         'reserve_quantity' => null,
         'manage_stock' => null,
         'backorder_status' => null,
-        'name' => null,
-        'sku' => null,
-        'visible' => null,
+        'increase_quantity' => null,
+        'reduce_quantity' => null,
+        'warehouse_id' => null,
+        'weight' => null,
+        'weight_unit' => null,
+        'height' => null,
+        'length' => null,
+        'width' => null,
+        'dimensions_unit' => null,
+        'is_virtual' => null,
+        'is_free_shipping' => null,
+        'gtin' => null,
+        'upc' => null,
+        'mpn' => null,
+        'ean' => null,
+        'isbn' => null,
+        'barcode' => null,
         'manufacturer' => null,
         'manufacturer_id' => null,
         'categories_ids' => null,
         'related_products_ids' => null,
         'up_sell_products_ids' => null,
         'cross_sell_products_ids' => null,
-        'description' => null,
-        'short_description' => null,
         'meta_title' => null,
         'meta_keywords' => null,
         'meta_description' => null,
-        'store_id' => null,
-        'lang_id' => null,
-        'in_stock' => null,
-        'status' => null,
         'seo_url' => null,
-        'report_request_id' => null,
-        'disable_report_cache' => null,
-        'reindex' => null,
-        'tags' => null,
-        'clear_cache' => null,
-        'gtin' => null,
-        'upc' => null,
-        'mpn' => null,
-        'ean' => null,
-        'isbn' => null,
-        'taxable' => null,
-        'product_class' => null,
-        'height' => null,
-        'length' => null,
-        'width' => null,
-        'harmonized_system_code' => null,
-        'country_of_origin' => null,
         'search_keywords' => null,
-        'barcode' => null,
-        'is_virtual' => null,
-        'is_free_shipping' => null,
-        'reserve_price' => null,
-        'buyitnow_price' => null,
-        'avail_from' => null,
-        'tax_class_id' => null,
-        'type' => null,
-        'avail' => null,
+        'tags' => null,
         'delivery_code' => null,
-        'check_process_status' => null,
         'package_details' => null,
-        'stores_ids' => null,
-        'manufacturer_info' => null,
-        'production_partner_ids' => null,
+        'country_of_origin' => null,
+        'harmonized_system_code' => null,
         'shipping_template_id' => null,
         'when_made' => null,
         'is_supply' => null,
         'downloadable' => null,
         'materials' => null,
         'auto_renew' => null,
-        'on_sale' => null
+        'on_sale' => null,
+        'production_partner_ids' => null,
+        'manufacturer_info' => null,
+        'report_request_id' => null,
+        'disable_report_cache' => null,
+        'reindex' => null,
+        'clear_cache' => null,
+        'check_process_status' => null
     ];
 
     /**
@@ -238,84 +242,86 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'id' => false,
         'model' => false,
-        'old_price' => false,
+        'sku' => false,
+        'name' => false,
+        'description' => false,
+        'short_description' => false,
         'price' => false,
+        'old_price' => false,
         'special_price' => false,
         'sprice_create' => false,
         'sprice_expire' => false,
         'cost_price' => false,
         'fixed_cost_shipping_price' => false,
         'retail_price' => false,
-        'quantity' => false,
+        'tier_prices' => false,
+        'reserve_price' => false,
+        'buyitnow_price' => false,
+        'taxable' => false,
+        'tax_class_id' => false,
+        'type' => false,
+        'status' => false,
+        'condition' => false,
+        'visible' => false,
+        'in_stock' => false,
+        'avail' => false,
+        'avail_from' => false,
+        'product_class' => false,
         'available_for_view' => false,
-        'weight' => false,
-        'weight_unit' => false,
-        'dimensions_unit' => false,
-        'increase_quantity' => false,
-        'reduce_quantity' => false,
-        'warehouse_id' => false,
+        'stores_ids' => false,
+        'store_id' => false,
+        'lang_id' => false,
+        'quantity' => false,
         'reserve_quantity' => false,
         'manage_stock' => false,
         'backorder_status' => false,
-        'name' => false,
-        'sku' => false,
-        'visible' => false,
+        'increase_quantity' => false,
+        'reduce_quantity' => false,
+        'warehouse_id' => false,
+        'weight' => false,
+        'weight_unit' => false,
+        'height' => false,
+        'length' => false,
+        'width' => false,
+        'dimensions_unit' => false,
+        'is_virtual' => false,
+        'is_free_shipping' => false,
+        'gtin' => false,
+        'upc' => false,
+        'mpn' => false,
+        'ean' => false,
+        'isbn' => false,
+        'barcode' => false,
         'manufacturer' => false,
         'manufacturer_id' => false,
         'categories_ids' => false,
         'related_products_ids' => false,
         'up_sell_products_ids' => false,
         'cross_sell_products_ids' => false,
-        'description' => false,
-        'short_description' => false,
         'meta_title' => false,
         'meta_keywords' => false,
         'meta_description' => false,
-        'store_id' => false,
-        'lang_id' => false,
-        'in_stock' => false,
-        'status' => false,
         'seo_url' => false,
-        'report_request_id' => false,
-        'disable_report_cache' => false,
-        'reindex' => false,
-        'tags' => false,
-        'clear_cache' => false,
-        'gtin' => false,
-        'upc' => false,
-        'mpn' => false,
-        'ean' => false,
-        'isbn' => false,
-        'taxable' => false,
-        'product_class' => false,
-        'height' => false,
-        'length' => false,
-        'width' => false,
-        'harmonized_system_code' => false,
-        'country_of_origin' => false,
         'search_keywords' => false,
-        'barcode' => false,
-        'is_virtual' => false,
-        'is_free_shipping' => false,
-        'reserve_price' => false,
-        'buyitnow_price' => false,
-        'avail_from' => false,
-        'tax_class_id' => false,
-        'type' => false,
-        'avail' => false,
+        'tags' => false,
         'delivery_code' => false,
-        'check_process_status' => false,
         'package_details' => false,
-        'stores_ids' => false,
-        'manufacturer_info' => false,
-        'production_partner_ids' => false,
+        'country_of_origin' => false,
+        'harmonized_system_code' => false,
         'shipping_template_id' => false,
         'when_made' => false,
         'is_supply' => false,
         'downloadable' => false,
         'materials' => false,
         'auto_renew' => false,
-        'on_sale' => false
+        'on_sale' => false,
+        'production_partner_ids' => false,
+        'manufacturer_info' => false,
+        'report_request_id' => false,
+        'disable_report_cache' => false,
+        'reindex' => false,
+        'clear_cache' => false,
+        'check_process_status' => false
     ];
 
     /**
@@ -406,84 +412,86 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'id' => 'id',
         'model' => 'model',
-        'old_price' => 'old_price',
+        'sku' => 'sku',
+        'name' => 'name',
+        'description' => 'description',
+        'short_description' => 'short_description',
         'price' => 'price',
+        'old_price' => 'old_price',
         'special_price' => 'special_price',
         'sprice_create' => 'sprice_create',
         'sprice_expire' => 'sprice_expire',
         'cost_price' => 'cost_price',
         'fixed_cost_shipping_price' => 'fixed_cost_shipping_price',
         'retail_price' => 'retail_price',
-        'quantity' => 'quantity',
+        'tier_prices' => 'tier_prices',
+        'reserve_price' => 'reserve_price',
+        'buyitnow_price' => 'buyitnow_price',
+        'taxable' => 'taxable',
+        'tax_class_id' => 'tax_class_id',
+        'type' => 'type',
+        'status' => 'status',
+        'condition' => 'condition',
+        'visible' => 'visible',
+        'in_stock' => 'in_stock',
+        'avail' => 'avail',
+        'avail_from' => 'avail_from',
+        'product_class' => 'product_class',
         'available_for_view' => 'available_for_view',
-        'weight' => 'weight',
-        'weight_unit' => 'weight_unit',
-        'dimensions_unit' => 'dimensions_unit',
-        'increase_quantity' => 'increase_quantity',
-        'reduce_quantity' => 'reduce_quantity',
-        'warehouse_id' => 'warehouse_id',
+        'stores_ids' => 'stores_ids',
+        'store_id' => 'store_id',
+        'lang_id' => 'lang_id',
+        'quantity' => 'quantity',
         'reserve_quantity' => 'reserve_quantity',
         'manage_stock' => 'manage_stock',
         'backorder_status' => 'backorder_status',
-        'name' => 'name',
-        'sku' => 'sku',
-        'visible' => 'visible',
+        'increase_quantity' => 'increase_quantity',
+        'reduce_quantity' => 'reduce_quantity',
+        'warehouse_id' => 'warehouse_id',
+        'weight' => 'weight',
+        'weight_unit' => 'weight_unit',
+        'height' => 'height',
+        'length' => 'length',
+        'width' => 'width',
+        'dimensions_unit' => 'dimensions_unit',
+        'is_virtual' => 'is_virtual',
+        'is_free_shipping' => 'is_free_shipping',
+        'gtin' => 'gtin',
+        'upc' => 'upc',
+        'mpn' => 'mpn',
+        'ean' => 'ean',
+        'isbn' => 'isbn',
+        'barcode' => 'barcode',
         'manufacturer' => 'manufacturer',
         'manufacturer_id' => 'manufacturer_id',
         'categories_ids' => 'categories_ids',
         'related_products_ids' => 'related_products_ids',
         'up_sell_products_ids' => 'up_sell_products_ids',
         'cross_sell_products_ids' => 'cross_sell_products_ids',
-        'description' => 'description',
-        'short_description' => 'short_description',
         'meta_title' => 'meta_title',
         'meta_keywords' => 'meta_keywords',
         'meta_description' => 'meta_description',
-        'store_id' => 'store_id',
-        'lang_id' => 'lang_id',
-        'in_stock' => 'in_stock',
-        'status' => 'status',
         'seo_url' => 'seo_url',
-        'report_request_id' => 'report_request_id',
-        'disable_report_cache' => 'disable_report_cache',
-        'reindex' => 'reindex',
-        'tags' => 'tags',
-        'clear_cache' => 'clear_cache',
-        'gtin' => 'gtin',
-        'upc' => 'upc',
-        'mpn' => 'mpn',
-        'ean' => 'ean',
-        'isbn' => 'isbn',
-        'taxable' => 'taxable',
-        'product_class' => 'product_class',
-        'height' => 'height',
-        'length' => 'length',
-        'width' => 'width',
-        'harmonized_system_code' => 'harmonized_system_code',
-        'country_of_origin' => 'country_of_origin',
         'search_keywords' => 'search_keywords',
-        'barcode' => 'barcode',
-        'is_virtual' => 'is_virtual',
-        'is_free_shipping' => 'is_free_shipping',
-        'reserve_price' => 'reserve_price',
-        'buyitnow_price' => 'buyitnow_price',
-        'avail_from' => 'avail_from',
-        'tax_class_id' => 'tax_class_id',
-        'type' => 'type',
-        'avail' => 'avail',
+        'tags' => 'tags',
         'delivery_code' => 'delivery_code',
-        'check_process_status' => 'check_process_status',
         'package_details' => 'package_details',
-        'stores_ids' => 'stores_ids',
-        'manufacturer_info' => 'manufacturer_info',
-        'production_partner_ids' => 'production_partner_ids',
+        'country_of_origin' => 'country_of_origin',
+        'harmonized_system_code' => 'harmonized_system_code',
         'shipping_template_id' => 'shipping_template_id',
         'when_made' => 'when_made',
         'is_supply' => 'is_supply',
         'downloadable' => 'downloadable',
         'materials' => 'materials',
         'auto_renew' => 'auto_renew',
-        'on_sale' => 'on_sale'
+        'on_sale' => 'on_sale',
+        'production_partner_ids' => 'production_partner_ids',
+        'manufacturer_info' => 'manufacturer_info',
+        'report_request_id' => 'report_request_id',
+        'disable_report_cache' => 'disable_report_cache',
+        'reindex' => 'reindex',
+        'clear_cache' => 'clear_cache',
+        'check_process_status' => 'check_process_status'
     ];
 
     /**
@@ -494,84 +502,86 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'id' => 'setId',
         'model' => 'setModel',
-        'old_price' => 'setOldPrice',
+        'sku' => 'setSku',
+        'name' => 'setName',
+        'description' => 'setDescription',
+        'short_description' => 'setShortDescription',
         'price' => 'setPrice',
+        'old_price' => 'setOldPrice',
         'special_price' => 'setSpecialPrice',
         'sprice_create' => 'setSpriceCreate',
         'sprice_expire' => 'setSpriceExpire',
         'cost_price' => 'setCostPrice',
         'fixed_cost_shipping_price' => 'setFixedCostShippingPrice',
         'retail_price' => 'setRetailPrice',
-        'quantity' => 'setQuantity',
+        'tier_prices' => 'setTierPrices',
+        'reserve_price' => 'setReservePrice',
+        'buyitnow_price' => 'setBuyitnowPrice',
+        'taxable' => 'setTaxable',
+        'tax_class_id' => 'setTaxClassId',
+        'type' => 'setType',
+        'status' => 'setStatus',
+        'condition' => 'setCondition',
+        'visible' => 'setVisible',
+        'in_stock' => 'setInStock',
+        'avail' => 'setAvail',
+        'avail_from' => 'setAvailFrom',
+        'product_class' => 'setProductClass',
         'available_for_view' => 'setAvailableForView',
-        'weight' => 'setWeight',
-        'weight_unit' => 'setWeightUnit',
-        'dimensions_unit' => 'setDimensionsUnit',
-        'increase_quantity' => 'setIncreaseQuantity',
-        'reduce_quantity' => 'setReduceQuantity',
-        'warehouse_id' => 'setWarehouseId',
+        'stores_ids' => 'setStoresIds',
+        'store_id' => 'setStoreId',
+        'lang_id' => 'setLangId',
+        'quantity' => 'setQuantity',
         'reserve_quantity' => 'setReserveQuantity',
         'manage_stock' => 'setManageStock',
         'backorder_status' => 'setBackorderStatus',
-        'name' => 'setName',
-        'sku' => 'setSku',
-        'visible' => 'setVisible',
+        'increase_quantity' => 'setIncreaseQuantity',
+        'reduce_quantity' => 'setReduceQuantity',
+        'warehouse_id' => 'setWarehouseId',
+        'weight' => 'setWeight',
+        'weight_unit' => 'setWeightUnit',
+        'height' => 'setHeight',
+        'length' => 'setLength',
+        'width' => 'setWidth',
+        'dimensions_unit' => 'setDimensionsUnit',
+        'is_virtual' => 'setIsVirtual',
+        'is_free_shipping' => 'setIsFreeShipping',
+        'gtin' => 'setGtin',
+        'upc' => 'setUpc',
+        'mpn' => 'setMpn',
+        'ean' => 'setEan',
+        'isbn' => 'setIsbn',
+        'barcode' => 'setBarcode',
         'manufacturer' => 'setManufacturer',
         'manufacturer_id' => 'setManufacturerId',
         'categories_ids' => 'setCategoriesIds',
         'related_products_ids' => 'setRelatedProductsIds',
         'up_sell_products_ids' => 'setUpSellProductsIds',
         'cross_sell_products_ids' => 'setCrossSellProductsIds',
-        'description' => 'setDescription',
-        'short_description' => 'setShortDescription',
         'meta_title' => 'setMetaTitle',
         'meta_keywords' => 'setMetaKeywords',
         'meta_description' => 'setMetaDescription',
-        'store_id' => 'setStoreId',
-        'lang_id' => 'setLangId',
-        'in_stock' => 'setInStock',
-        'status' => 'setStatus',
         'seo_url' => 'setSeoUrl',
-        'report_request_id' => 'setReportRequestId',
-        'disable_report_cache' => 'setDisableReportCache',
-        'reindex' => 'setReindex',
-        'tags' => 'setTags',
-        'clear_cache' => 'setClearCache',
-        'gtin' => 'setGtin',
-        'upc' => 'setUpc',
-        'mpn' => 'setMpn',
-        'ean' => 'setEan',
-        'isbn' => 'setIsbn',
-        'taxable' => 'setTaxable',
-        'product_class' => 'setProductClass',
-        'height' => 'setHeight',
-        'length' => 'setLength',
-        'width' => 'setWidth',
-        'harmonized_system_code' => 'setHarmonizedSystemCode',
-        'country_of_origin' => 'setCountryOfOrigin',
         'search_keywords' => 'setSearchKeywords',
-        'barcode' => 'setBarcode',
-        'is_virtual' => 'setIsVirtual',
-        'is_free_shipping' => 'setIsFreeShipping',
-        'reserve_price' => 'setReservePrice',
-        'buyitnow_price' => 'setBuyitnowPrice',
-        'avail_from' => 'setAvailFrom',
-        'tax_class_id' => 'setTaxClassId',
-        'type' => 'setType',
-        'avail' => 'setAvail',
+        'tags' => 'setTags',
         'delivery_code' => 'setDeliveryCode',
-        'check_process_status' => 'setCheckProcessStatus',
         'package_details' => 'setPackageDetails',
-        'stores_ids' => 'setStoresIds',
-        'manufacturer_info' => 'setManufacturerInfo',
-        'production_partner_ids' => 'setProductionPartnerIds',
+        'country_of_origin' => 'setCountryOfOrigin',
+        'harmonized_system_code' => 'setHarmonizedSystemCode',
         'shipping_template_id' => 'setShippingTemplateId',
         'when_made' => 'setWhenMade',
         'is_supply' => 'setIsSupply',
         'downloadable' => 'setDownloadable',
         'materials' => 'setMaterials',
         'auto_renew' => 'setAutoRenew',
-        'on_sale' => 'setOnSale'
+        'on_sale' => 'setOnSale',
+        'production_partner_ids' => 'setProductionPartnerIds',
+        'manufacturer_info' => 'setManufacturerInfo',
+        'report_request_id' => 'setReportRequestId',
+        'disable_report_cache' => 'setDisableReportCache',
+        'reindex' => 'setReindex',
+        'clear_cache' => 'setClearCache',
+        'check_process_status' => 'setCheckProcessStatus'
     ];
 
     /**
@@ -582,84 +592,86 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'id' => 'getId',
         'model' => 'getModel',
-        'old_price' => 'getOldPrice',
+        'sku' => 'getSku',
+        'name' => 'getName',
+        'description' => 'getDescription',
+        'short_description' => 'getShortDescription',
         'price' => 'getPrice',
+        'old_price' => 'getOldPrice',
         'special_price' => 'getSpecialPrice',
         'sprice_create' => 'getSpriceCreate',
         'sprice_expire' => 'getSpriceExpire',
         'cost_price' => 'getCostPrice',
         'fixed_cost_shipping_price' => 'getFixedCostShippingPrice',
         'retail_price' => 'getRetailPrice',
-        'quantity' => 'getQuantity',
+        'tier_prices' => 'getTierPrices',
+        'reserve_price' => 'getReservePrice',
+        'buyitnow_price' => 'getBuyitnowPrice',
+        'taxable' => 'getTaxable',
+        'tax_class_id' => 'getTaxClassId',
+        'type' => 'getType',
+        'status' => 'getStatus',
+        'condition' => 'getCondition',
+        'visible' => 'getVisible',
+        'in_stock' => 'getInStock',
+        'avail' => 'getAvail',
+        'avail_from' => 'getAvailFrom',
+        'product_class' => 'getProductClass',
         'available_for_view' => 'getAvailableForView',
-        'weight' => 'getWeight',
-        'weight_unit' => 'getWeightUnit',
-        'dimensions_unit' => 'getDimensionsUnit',
-        'increase_quantity' => 'getIncreaseQuantity',
-        'reduce_quantity' => 'getReduceQuantity',
-        'warehouse_id' => 'getWarehouseId',
+        'stores_ids' => 'getStoresIds',
+        'store_id' => 'getStoreId',
+        'lang_id' => 'getLangId',
+        'quantity' => 'getQuantity',
         'reserve_quantity' => 'getReserveQuantity',
         'manage_stock' => 'getManageStock',
         'backorder_status' => 'getBackorderStatus',
-        'name' => 'getName',
-        'sku' => 'getSku',
-        'visible' => 'getVisible',
+        'increase_quantity' => 'getIncreaseQuantity',
+        'reduce_quantity' => 'getReduceQuantity',
+        'warehouse_id' => 'getWarehouseId',
+        'weight' => 'getWeight',
+        'weight_unit' => 'getWeightUnit',
+        'height' => 'getHeight',
+        'length' => 'getLength',
+        'width' => 'getWidth',
+        'dimensions_unit' => 'getDimensionsUnit',
+        'is_virtual' => 'getIsVirtual',
+        'is_free_shipping' => 'getIsFreeShipping',
+        'gtin' => 'getGtin',
+        'upc' => 'getUpc',
+        'mpn' => 'getMpn',
+        'ean' => 'getEan',
+        'isbn' => 'getIsbn',
+        'barcode' => 'getBarcode',
         'manufacturer' => 'getManufacturer',
         'manufacturer_id' => 'getManufacturerId',
         'categories_ids' => 'getCategoriesIds',
         'related_products_ids' => 'getRelatedProductsIds',
         'up_sell_products_ids' => 'getUpSellProductsIds',
         'cross_sell_products_ids' => 'getCrossSellProductsIds',
-        'description' => 'getDescription',
-        'short_description' => 'getShortDescription',
         'meta_title' => 'getMetaTitle',
         'meta_keywords' => 'getMetaKeywords',
         'meta_description' => 'getMetaDescription',
-        'store_id' => 'getStoreId',
-        'lang_id' => 'getLangId',
-        'in_stock' => 'getInStock',
-        'status' => 'getStatus',
         'seo_url' => 'getSeoUrl',
-        'report_request_id' => 'getReportRequestId',
-        'disable_report_cache' => 'getDisableReportCache',
-        'reindex' => 'getReindex',
-        'tags' => 'getTags',
-        'clear_cache' => 'getClearCache',
-        'gtin' => 'getGtin',
-        'upc' => 'getUpc',
-        'mpn' => 'getMpn',
-        'ean' => 'getEan',
-        'isbn' => 'getIsbn',
-        'taxable' => 'getTaxable',
-        'product_class' => 'getProductClass',
-        'height' => 'getHeight',
-        'length' => 'getLength',
-        'width' => 'getWidth',
-        'harmonized_system_code' => 'getHarmonizedSystemCode',
-        'country_of_origin' => 'getCountryOfOrigin',
         'search_keywords' => 'getSearchKeywords',
-        'barcode' => 'getBarcode',
-        'is_virtual' => 'getIsVirtual',
-        'is_free_shipping' => 'getIsFreeShipping',
-        'reserve_price' => 'getReservePrice',
-        'buyitnow_price' => 'getBuyitnowPrice',
-        'avail_from' => 'getAvailFrom',
-        'tax_class_id' => 'getTaxClassId',
-        'type' => 'getType',
-        'avail' => 'getAvail',
+        'tags' => 'getTags',
         'delivery_code' => 'getDeliveryCode',
-        'check_process_status' => 'getCheckProcessStatus',
         'package_details' => 'getPackageDetails',
-        'stores_ids' => 'getStoresIds',
-        'manufacturer_info' => 'getManufacturerInfo',
-        'production_partner_ids' => 'getProductionPartnerIds',
+        'country_of_origin' => 'getCountryOfOrigin',
+        'harmonized_system_code' => 'getHarmonizedSystemCode',
         'shipping_template_id' => 'getShippingTemplateId',
         'when_made' => 'getWhenMade',
         'is_supply' => 'getIsSupply',
         'downloadable' => 'getDownloadable',
         'materials' => 'getMaterials',
         'auto_renew' => 'getAutoRenew',
-        'on_sale' => 'getOnSale'
+        'on_sale' => 'getOnSale',
+        'production_partner_ids' => 'getProductionPartnerIds',
+        'manufacturer_info' => 'getManufacturerInfo',
+        'report_request_id' => 'getReportRequestId',
+        'disable_report_cache' => 'getDisableReportCache',
+        'reindex' => 'getReindex',
+        'clear_cache' => 'getClearCache',
+        'check_process_status' => 'getCheckProcessStatus'
     ];
 
     /**
@@ -721,77 +733,72 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('model', $data ?? [], null);
-        $this->setIfExists('old_price', $data ?? [], null);
+        $this->setIfExists('sku', $data ?? [], null);
+        $this->setIfExists('name', $data ?? [], null);
+        $this->setIfExists('description', $data ?? [], null);
+        $this->setIfExists('short_description', $data ?? [], null);
         $this->setIfExists('price', $data ?? [], null);
+        $this->setIfExists('old_price', $data ?? [], null);
         $this->setIfExists('special_price', $data ?? [], null);
         $this->setIfExists('sprice_create', $data ?? [], null);
         $this->setIfExists('sprice_expire', $data ?? [], null);
         $this->setIfExists('cost_price', $data ?? [], null);
         $this->setIfExists('fixed_cost_shipping_price', $data ?? [], null);
         $this->setIfExists('retail_price', $data ?? [], null);
-        $this->setIfExists('quantity', $data ?? [], null);
+        $this->setIfExists('tier_prices', $data ?? [], null);
+        $this->setIfExists('reserve_price', $data ?? [], null);
+        $this->setIfExists('buyitnow_price', $data ?? [], null);
+        $this->setIfExists('taxable', $data ?? [], true);
+        $this->setIfExists('tax_class_id', $data ?? [], null);
+        $this->setIfExists('type', $data ?? [], null);
+        $this->setIfExists('status', $data ?? [], null);
+        $this->setIfExists('condition', $data ?? [], null);
+        $this->setIfExists('visible', $data ?? [], null);
+        $this->setIfExists('in_stock', $data ?? [], null);
+        $this->setIfExists('avail', $data ?? [], true);
+        $this->setIfExists('avail_from', $data ?? [], null);
+        $this->setIfExists('product_class', $data ?? [], null);
         $this->setIfExists('available_for_view', $data ?? [], null);
-        $this->setIfExists('weight', $data ?? [], null);
-        $this->setIfExists('weight_unit', $data ?? [], null);
-        $this->setIfExists('dimensions_unit', $data ?? [], null);
-        $this->setIfExists('increase_quantity', $data ?? [], null);
-        $this->setIfExists('reduce_quantity', $data ?? [], null);
-        $this->setIfExists('warehouse_id', $data ?? [], null);
+        $this->setIfExists('stores_ids', $data ?? [], null);
+        $this->setIfExists('store_id', $data ?? [], null);
+        $this->setIfExists('lang_id', $data ?? [], null);
+        $this->setIfExists('quantity', $data ?? [], null);
         $this->setIfExists('reserve_quantity', $data ?? [], null);
         $this->setIfExists('manage_stock', $data ?? [], null);
         $this->setIfExists('backorder_status', $data ?? [], null);
-        $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('sku', $data ?? [], null);
-        $this->setIfExists('visible', $data ?? [], null);
+        $this->setIfExists('increase_quantity', $data ?? [], null);
+        $this->setIfExists('reduce_quantity', $data ?? [], null);
+        $this->setIfExists('warehouse_id', $data ?? [], null);
+        $this->setIfExists('weight', $data ?? [], null);
+        $this->setIfExists('weight_unit', $data ?? [], null);
+        $this->setIfExists('height', $data ?? [], null);
+        $this->setIfExists('length', $data ?? [], null);
+        $this->setIfExists('width', $data ?? [], null);
+        $this->setIfExists('dimensions_unit', $data ?? [], null);
+        $this->setIfExists('is_virtual', $data ?? [], false);
+        $this->setIfExists('is_free_shipping', $data ?? [], null);
+        $this->setIfExists('gtin', $data ?? [], null);
+        $this->setIfExists('upc', $data ?? [], null);
+        $this->setIfExists('mpn', $data ?? [], null);
+        $this->setIfExists('ean', $data ?? [], null);
+        $this->setIfExists('isbn', $data ?? [], null);
+        $this->setIfExists('barcode', $data ?? [], null);
         $this->setIfExists('manufacturer', $data ?? [], null);
         $this->setIfExists('manufacturer_id', $data ?? [], null);
         $this->setIfExists('categories_ids', $data ?? [], null);
         $this->setIfExists('related_products_ids', $data ?? [], null);
         $this->setIfExists('up_sell_products_ids', $data ?? [], null);
         $this->setIfExists('cross_sell_products_ids', $data ?? [], null);
-        $this->setIfExists('description', $data ?? [], null);
-        $this->setIfExists('short_description', $data ?? [], null);
         $this->setIfExists('meta_title', $data ?? [], null);
         $this->setIfExists('meta_keywords', $data ?? [], null);
         $this->setIfExists('meta_description', $data ?? [], null);
-        $this->setIfExists('store_id', $data ?? [], null);
-        $this->setIfExists('lang_id', $data ?? [], null);
-        $this->setIfExists('in_stock', $data ?? [], null);
-        $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('seo_url', $data ?? [], null);
-        $this->setIfExists('report_request_id', $data ?? [], null);
-        $this->setIfExists('disable_report_cache', $data ?? [], false);
-        $this->setIfExists('reindex', $data ?? [], true);
-        $this->setIfExists('tags', $data ?? [], null);
-        $this->setIfExists('clear_cache', $data ?? [], true);
-        $this->setIfExists('gtin', $data ?? [], null);
-        $this->setIfExists('upc', $data ?? [], null);
-        $this->setIfExists('mpn', $data ?? [], null);
-        $this->setIfExists('ean', $data ?? [], null);
-        $this->setIfExists('isbn', $data ?? [], null);
-        $this->setIfExists('taxable', $data ?? [], true);
-        $this->setIfExists('product_class', $data ?? [], null);
-        $this->setIfExists('height', $data ?? [], null);
-        $this->setIfExists('length', $data ?? [], null);
-        $this->setIfExists('width', $data ?? [], null);
-        $this->setIfExists('harmonized_system_code', $data ?? [], null);
-        $this->setIfExists('country_of_origin', $data ?? [], null);
         $this->setIfExists('search_keywords', $data ?? [], null);
-        $this->setIfExists('barcode', $data ?? [], null);
-        $this->setIfExists('is_virtual', $data ?? [], false);
-        $this->setIfExists('is_free_shipping', $data ?? [], null);
-        $this->setIfExists('reserve_price', $data ?? [], null);
-        $this->setIfExists('buyitnow_price', $data ?? [], null);
-        $this->setIfExists('avail_from', $data ?? [], null);
-        $this->setIfExists('tax_class_id', $data ?? [], null);
-        $this->setIfExists('type', $data ?? [], null);
-        $this->setIfExists('avail', $data ?? [], true);
+        $this->setIfExists('tags', $data ?? [], null);
         $this->setIfExists('delivery_code', $data ?? [], null);
-        $this->setIfExists('check_process_status', $data ?? [], false);
         $this->setIfExists('package_details', $data ?? [], null);
-        $this->setIfExists('stores_ids', $data ?? [], null);
-        $this->setIfExists('manufacturer_info', $data ?? [], null);
-        $this->setIfExists('production_partner_ids', $data ?? [], null);
+        $this->setIfExists('country_of_origin', $data ?? [], null);
+        $this->setIfExists('harmonized_system_code', $data ?? [], null);
         $this->setIfExists('shipping_template_id', $data ?? [], 0);
         $this->setIfExists('when_made', $data ?? [], 'made_to_order');
         $this->setIfExists('is_supply', $data ?? [], true);
@@ -799,6 +806,13 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('materials', $data ?? [], null);
         $this->setIfExists('auto_renew', $data ?? [], false);
         $this->setIfExists('on_sale', $data ?? [], false);
+        $this->setIfExists('production_partner_ids', $data ?? [], null);
+        $this->setIfExists('manufacturer_info', $data ?? [], null);
+        $this->setIfExists('report_request_id', $data ?? [], null);
+        $this->setIfExists('disable_report_cache', $data ?? [], false);
+        $this->setIfExists('reindex', $data ?? [], true);
+        $this->setIfExists('clear_cache', $data ?? [], true);
+        $this->setIfExists('check_process_status', $data ?? [], false);
     }
 
     /**
@@ -898,28 +912,109 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets old_price
+     * Gets sku
      *
-     * @return float|null
+     * @return string|null
      */
-    public function getOldPrice()
+    public function getSku()
     {
-        return $this->container['old_price'];
+        return $this->container['sku'];
     }
 
     /**
-     * Sets old_price
+     * Sets sku
      *
-     * @param float|null $old_price Defines product's old price
+     * @param string|null $sku Defines new product's sku
      *
      * @return self
      */
-    public function setOldPrice($old_price)
+    public function setSku($sku)
     {
-        if (is_null($old_price)) {
-            throw new \InvalidArgumentException('non-nullable old_price cannot be null');
+        if (is_null($sku)) {
+            throw new \InvalidArgumentException('non-nullable sku cannot be null');
         }
-        $this->container['old_price'] = $old_price;
+        $this->container['sku'] = $sku;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name Defines product's name that has to be updated
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        if (is_null($name)) {
+            throw new \InvalidArgumentException('non-nullable name cannot be null');
+        }
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string|null $description Defines new product's description
+     *
+     * @return self
+     */
+    public function setDescription($description)
+    {
+        if (is_null($description)) {
+            throw new \InvalidArgumentException('non-nullable description cannot be null');
+        }
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets short_description
+     *
+     * @return string|null
+     */
+    public function getShortDescription()
+    {
+        return $this->container['short_description'];
+    }
+
+    /**
+     * Sets short_description
+     *
+     * @param string|null $short_description Defines short description
+     *
+     * @return self
+     */
+    public function setShortDescription($short_description)
+    {
+        if (is_null($short_description)) {
+            throw new \InvalidArgumentException('non-nullable short_description cannot be null');
+        }
+        $this->container['short_description'] = $short_description;
 
         return $this;
     }
@@ -947,6 +1042,33 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable price cannot be null');
         }
         $this->container['price'] = $price;
+
+        return $this;
+    }
+
+    /**
+     * Gets old_price
+     *
+     * @return float|null
+     */
+    public function getOldPrice()
+    {
+        return $this->container['old_price'];
+    }
+
+    /**
+     * Sets old_price
+     *
+     * @param float|null $old_price Defines product's old price
+     *
+     * @return self
+     */
+    public function setOldPrice($old_price)
+    {
+        if (is_null($old_price)) {
+            throw new \InvalidArgumentException('non-nullable old_price cannot be null');
+        }
+        $this->container['old_price'] = $old_price;
 
         return $this;
     }
@@ -1114,28 +1236,352 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets quantity
+     * Gets tier_prices
      *
-     * @return float|null
+     * @return \OpenAPI\Client\Model\ProductAddTierPricesInner[]|null
      */
-    public function getQuantity()
+    public function getTierPrices()
     {
-        return $this->container['quantity'];
+        return $this->container['tier_prices'];
     }
 
     /**
-     * Sets quantity
+     * Sets tier_prices
      *
-     * @param float|null $quantity Defines new product's quantity
+     * @param \OpenAPI\Client\Model\ProductAddTierPricesInner[]|null $tier_prices Defines product's tier prices
      *
      * @return self
      */
-    public function setQuantity($quantity)
+    public function setTierPrices($tier_prices)
     {
-        if (is_null($quantity)) {
-            throw new \InvalidArgumentException('non-nullable quantity cannot be null');
+        if (is_null($tier_prices)) {
+            throw new \InvalidArgumentException('non-nullable tier_prices cannot be null');
         }
-        $this->container['quantity'] = $quantity;
+        $this->container['tier_prices'] = $tier_prices;
+
+        return $this;
+    }
+
+    /**
+     * Gets reserve_price
+     *
+     * @return float|null
+     */
+    public function getReservePrice()
+    {
+        return $this->container['reserve_price'];
+    }
+
+    /**
+     * Sets reserve_price
+     *
+     * @param float|null $reserve_price Defines reserve price value
+     *
+     * @return self
+     */
+    public function setReservePrice($reserve_price)
+    {
+        if (is_null($reserve_price)) {
+            throw new \InvalidArgumentException('non-nullable reserve_price cannot be null');
+        }
+        $this->container['reserve_price'] = $reserve_price;
+
+        return $this;
+    }
+
+    /**
+     * Gets buyitnow_price
+     *
+     * @return float|null
+     */
+    public function getBuyitnowPrice()
+    {
+        return $this->container['buyitnow_price'];
+    }
+
+    /**
+     * Sets buyitnow_price
+     *
+     * @param float|null $buyitnow_price Defines buy it now value
+     *
+     * @return self
+     */
+    public function setBuyitnowPrice($buyitnow_price)
+    {
+        if (is_null($buyitnow_price)) {
+            throw new \InvalidArgumentException('non-nullable buyitnow_price cannot be null');
+        }
+        $this->container['buyitnow_price'] = $buyitnow_price;
+
+        return $this;
+    }
+
+    /**
+     * Gets taxable
+     *
+     * @return bool|null
+     */
+    public function getTaxable()
+    {
+        return $this->container['taxable'];
+    }
+
+    /**
+     * Sets taxable
+     *
+     * @param bool|null $taxable Specifies whether a tax is charged
+     *
+     * @return self
+     */
+    public function setTaxable($taxable)
+    {
+        if (is_null($taxable)) {
+            throw new \InvalidArgumentException('non-nullable taxable cannot be null');
+        }
+        $this->container['taxable'] = $taxable;
+
+        return $this;
+    }
+
+    /**
+     * Gets tax_class_id
+     *
+     * @return string|null
+     */
+    public function getTaxClassId()
+    {
+        return $this->container['tax_class_id'];
+    }
+
+    /**
+     * Sets tax_class_id
+     *
+     * @param string|null $tax_class_id Defines tax classes where entity has to be added
+     *
+     * @return self
+     */
+    public function setTaxClassId($tax_class_id)
+    {
+        if (is_null($tax_class_id)) {
+            throw new \InvalidArgumentException('non-nullable tax_class_id cannot be null');
+        }
+        $this->container['tax_class_id'] = $tax_class_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string|null $type Defines product's type
+     *
+     * @return self
+     */
+    public function setType($type)
+    {
+        if (is_null($type)) {
+            throw new \InvalidArgumentException('non-nullable type cannot be null');
+        }
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     *
+     * @return string|null
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param string|null $status Defines product's status
+     *
+     * @return self
+     */
+    public function setStatus($status)
+    {
+        if (is_null($status)) {
+            throw new \InvalidArgumentException('non-nullable status cannot be null');
+        }
+        $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets condition
+     *
+     * @return string|null
+     */
+    public function getCondition()
+    {
+        return $this->container['condition'];
+    }
+
+    /**
+     * Sets condition
+     *
+     * @param string|null $condition The human-readable label for the condition (e.g., \"New\").
+     *
+     * @return self
+     */
+    public function setCondition($condition)
+    {
+        if (is_null($condition)) {
+            throw new \InvalidArgumentException('non-nullable condition cannot be null');
+        }
+        $this->container['condition'] = $condition;
+
+        return $this;
+    }
+
+    /**
+     * Gets visible
+     *
+     * @return string|null
+     */
+    public function getVisible()
+    {
+        return $this->container['visible'];
+    }
+
+    /**
+     * Sets visible
+     *
+     * @param string|null $visible Set visibility status
+     *
+     * @return self
+     */
+    public function setVisible($visible)
+    {
+        if (is_null($visible)) {
+            throw new \InvalidArgumentException('non-nullable visible cannot be null');
+        }
+        $this->container['visible'] = $visible;
+
+        return $this;
+    }
+
+    /**
+     * Gets in_stock
+     *
+     * @return bool|null
+     */
+    public function getInStock()
+    {
+        return $this->container['in_stock'];
+    }
+
+    /**
+     * Sets in_stock
+     *
+     * @param bool|null $in_stock Set stock status
+     *
+     * @return self
+     */
+    public function setInStock($in_stock)
+    {
+        if (is_null($in_stock)) {
+            throw new \InvalidArgumentException('non-nullable in_stock cannot be null');
+        }
+        $this->container['in_stock'] = $in_stock;
+
+        return $this;
+    }
+
+    /**
+     * Gets avail
+     *
+     * @return bool|null
+     */
+    public function getAvail()
+    {
+        return $this->container['avail'];
+    }
+
+    /**
+     * Sets avail
+     *
+     * @param bool|null $avail Defines category's visibility status
+     *
+     * @return self
+     */
+    public function setAvail($avail)
+    {
+        if (is_null($avail)) {
+            throw new \InvalidArgumentException('non-nullable avail cannot be null');
+        }
+        $this->container['avail'] = $avail;
+
+        return $this;
+    }
+
+    /**
+     * Gets avail_from
+     *
+     * @return string|null
+     */
+    public function getAvailFrom()
+    {
+        return $this->container['avail_from'];
+    }
+
+    /**
+     * Sets avail_from
+     *
+     * @param string|null $avail_from Allows to schedule a time in the future that the item becomes available. The value should be greater than the current date and time.
+     *
+     * @return self
+     */
+    public function setAvailFrom($avail_from)
+    {
+        if (is_null($avail_from)) {
+            throw new \InvalidArgumentException('non-nullable avail_from cannot be null');
+        }
+        $this->container['avail_from'] = $avail_from;
+
+        return $this;
+    }
+
+    /**
+     * Gets product_class
+     *
+     * @return string|null
+     */
+    public function getProductClass()
+    {
+        return $this->container['product_class'];
+    }
+
+    /**
+     * Sets product_class
+     *
+     * @param string|null $product_class A categorization for the product
+     *
+     * @return self
+     */
+    public function setProductClass($product_class)
+    {
+        if (is_null($product_class)) {
+            throw new \InvalidArgumentException('non-nullable product_class cannot be null');
+        }
+        $this->container['product_class'] = $product_class;
 
         return $this;
     }
@@ -1168,163 +1614,109 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets weight
-     *
-     * @return float|null
-     */
-    public function getWeight()
-    {
-        return $this->container['weight'];
-    }
-
-    /**
-     * Sets weight
-     *
-     * @param float|null $weight Weight
-     *
-     * @return self
-     */
-    public function setWeight($weight)
-    {
-        if (is_null($weight)) {
-            throw new \InvalidArgumentException('non-nullable weight cannot be null');
-        }
-        $this->container['weight'] = $weight;
-
-        return $this;
-    }
-
-    /**
-     * Gets weight_unit
+     * Gets stores_ids
      *
      * @return string|null
      */
-    public function getWeightUnit()
+    public function getStoresIds()
     {
-        return $this->container['weight_unit'];
+        return $this->container['stores_ids'];
     }
 
     /**
-     * Sets weight_unit
+     * Sets stores_ids
      *
-     * @param string|null $weight_unit Weight Unit
+     * @param string|null $stores_ids Assign product to the stores that is specified by comma-separated stores' id
      *
      * @return self
      */
-    public function setWeightUnit($weight_unit)
+    public function setStoresIds($stores_ids)
     {
-        if (is_null($weight_unit)) {
-            throw new \InvalidArgumentException('non-nullable weight_unit cannot be null');
+        if (is_null($stores_ids)) {
+            throw new \InvalidArgumentException('non-nullable stores_ids cannot be null');
         }
-        $this->container['weight_unit'] = $weight_unit;
+        $this->container['stores_ids'] = $stores_ids;
 
         return $this;
     }
 
     /**
-     * Gets dimensions_unit
+     * Gets store_id
      *
      * @return string|null
      */
-    public function getDimensionsUnit()
+    public function getStoreId()
     {
-        return $this->container['dimensions_unit'];
+        return $this->container['store_id'];
     }
 
     /**
-     * Sets dimensions_unit
+     * Sets store_id
      *
-     * @param string|null $dimensions_unit Weight Unit
+     * @param string|null $store_id Defines store id where the product should be found
      *
      * @return self
      */
-    public function setDimensionsUnit($dimensions_unit)
+    public function setStoreId($store_id)
     {
-        if (is_null($dimensions_unit)) {
-            throw new \InvalidArgumentException('non-nullable dimensions_unit cannot be null');
+        if (is_null($store_id)) {
+            throw new \InvalidArgumentException('non-nullable store_id cannot be null');
         }
-        $this->container['dimensions_unit'] = $dimensions_unit;
+        $this->container['store_id'] = $store_id;
 
         return $this;
     }
 
     /**
-     * Gets increase_quantity
-     *
-     * @return float|null
-     */
-    public function getIncreaseQuantity()
-    {
-        return $this->container['increase_quantity'];
-    }
-
-    /**
-     * Sets increase_quantity
-     *
-     * @param float|null $increase_quantity Defines the incremental changes in product quantity
-     *
-     * @return self
-     */
-    public function setIncreaseQuantity($increase_quantity)
-    {
-        if (is_null($increase_quantity)) {
-            throw new \InvalidArgumentException('non-nullable increase_quantity cannot be null');
-        }
-        $this->container['increase_quantity'] = $increase_quantity;
-
-        return $this;
-    }
-
-    /**
-     * Gets reduce_quantity
-     *
-     * @return float|null
-     */
-    public function getReduceQuantity()
-    {
-        return $this->container['reduce_quantity'];
-    }
-
-    /**
-     * Sets reduce_quantity
-     *
-     * @param float|null $reduce_quantity Defines the decrement changes in product quantity
-     *
-     * @return self
-     */
-    public function setReduceQuantity($reduce_quantity)
-    {
-        if (is_null($reduce_quantity)) {
-            throw new \InvalidArgumentException('non-nullable reduce_quantity cannot be null');
-        }
-        $this->container['reduce_quantity'] = $reduce_quantity;
-
-        return $this;
-    }
-
-    /**
-     * Gets warehouse_id
+     * Gets lang_id
      *
      * @return string|null
      */
-    public function getWarehouseId()
+    public function getLangId()
     {
-        return $this->container['warehouse_id'];
+        return $this->container['lang_id'];
     }
 
     /**
-     * Sets warehouse_id
+     * Sets lang_id
      *
-     * @param string|null $warehouse_id This parameter is used for selecting a warehouse where you need to set/modify a product quantity.
+     * @param string|null $lang_id Language id
      *
      * @return self
      */
-    public function setWarehouseId($warehouse_id)
+    public function setLangId($lang_id)
     {
-        if (is_null($warehouse_id)) {
-            throw new \InvalidArgumentException('non-nullable warehouse_id cannot be null');
+        if (is_null($lang_id)) {
+            throw new \InvalidArgumentException('non-nullable lang_id cannot be null');
         }
-        $this->container['warehouse_id'] = $warehouse_id;
+        $this->container['lang_id'] = $lang_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets quantity
+     *
+     * @return float|null
+     */
+    public function getQuantity()
+    {
+        return $this->container['quantity'];
+    }
+
+    /**
+     * Sets quantity
+     *
+     * @param float|null $quantity Defines new product's quantity
+     *
+     * @return self
+     */
+    public function setQuantity($quantity)
+    {
+        if (is_null($quantity)) {
+            throw new \InvalidArgumentException('non-nullable quantity cannot be null');
+        }
+        $this->container['quantity'] = $quantity;
 
         return $this;
     }
@@ -1411,82 +1803,460 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets name
+     * Gets increase_quantity
      *
-     * @return string|null
+     * @return float|null
      */
-    public function getName()
+    public function getIncreaseQuantity()
     {
-        return $this->container['name'];
+        return $this->container['increase_quantity'];
     }
 
     /**
-     * Sets name
+     * Sets increase_quantity
      *
-     * @param string|null $name Defines product's name that has to be updated
+     * @param float|null $increase_quantity Defines the incremental changes in product quantity
      *
      * @return self
      */
-    public function setName($name)
+    public function setIncreaseQuantity($increase_quantity)
     {
-        if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
+        if (is_null($increase_quantity)) {
+            throw new \InvalidArgumentException('non-nullable increase_quantity cannot be null');
         }
-        $this->container['name'] = $name;
+        $this->container['increase_quantity'] = $increase_quantity;
 
         return $this;
     }
 
     /**
-     * Gets sku
+     * Gets reduce_quantity
      *
-     * @return string|null
+     * @return float|null
      */
-    public function getSku()
+    public function getReduceQuantity()
     {
-        return $this->container['sku'];
+        return $this->container['reduce_quantity'];
     }
 
     /**
-     * Sets sku
+     * Sets reduce_quantity
      *
-     * @param string|null $sku Defines new product's sku
+     * @param float|null $reduce_quantity Defines the decrement changes in product quantity
      *
      * @return self
      */
-    public function setSku($sku)
+    public function setReduceQuantity($reduce_quantity)
     {
-        if (is_null($sku)) {
-            throw new \InvalidArgumentException('non-nullable sku cannot be null');
+        if (is_null($reduce_quantity)) {
+            throw new \InvalidArgumentException('non-nullable reduce_quantity cannot be null');
         }
-        $this->container['sku'] = $sku;
+        $this->container['reduce_quantity'] = $reduce_quantity;
 
         return $this;
     }
 
     /**
-     * Gets visible
+     * Gets warehouse_id
      *
      * @return string|null
      */
-    public function getVisible()
+    public function getWarehouseId()
     {
-        return $this->container['visible'];
+        return $this->container['warehouse_id'];
     }
 
     /**
-     * Sets visible
+     * Sets warehouse_id
      *
-     * @param string|null $visible Set visibility status
+     * @param string|null $warehouse_id This parameter is used for selecting a warehouse where you need to set/modify a product quantity.
      *
      * @return self
      */
-    public function setVisible($visible)
+    public function setWarehouseId($warehouse_id)
     {
-        if (is_null($visible)) {
-            throw new \InvalidArgumentException('non-nullable visible cannot be null');
+        if (is_null($warehouse_id)) {
+            throw new \InvalidArgumentException('non-nullable warehouse_id cannot be null');
         }
-        $this->container['visible'] = $visible;
+        $this->container['warehouse_id'] = $warehouse_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets weight
+     *
+     * @return float|null
+     */
+    public function getWeight()
+    {
+        return $this->container['weight'];
+    }
+
+    /**
+     * Sets weight
+     *
+     * @param float|null $weight Weight
+     *
+     * @return self
+     */
+    public function setWeight($weight)
+    {
+        if (is_null($weight)) {
+            throw new \InvalidArgumentException('non-nullable weight cannot be null');
+        }
+        $this->container['weight'] = $weight;
+
+        return $this;
+    }
+
+    /**
+     * Gets weight_unit
+     *
+     * @return string|null
+     */
+    public function getWeightUnit()
+    {
+        return $this->container['weight_unit'];
+    }
+
+    /**
+     * Sets weight_unit
+     *
+     * @param string|null $weight_unit Weight Unit
+     *
+     * @return self
+     */
+    public function setWeightUnit($weight_unit)
+    {
+        if (is_null($weight_unit)) {
+            throw new \InvalidArgumentException('non-nullable weight_unit cannot be null');
+        }
+        $this->container['weight_unit'] = $weight_unit;
+
+        return $this;
+    }
+
+    /**
+     * Gets height
+     *
+     * @return float|null
+     */
+    public function getHeight()
+    {
+        return $this->container['height'];
+    }
+
+    /**
+     * Sets height
+     *
+     * @param float|null $height Defines product's height
+     *
+     * @return self
+     */
+    public function setHeight($height)
+    {
+        if (is_null($height)) {
+            throw new \InvalidArgumentException('non-nullable height cannot be null');
+        }
+        $this->container['height'] = $height;
+
+        return $this;
+    }
+
+    /**
+     * Gets length
+     *
+     * @return float|null
+     */
+    public function getLength()
+    {
+        return $this->container['length'];
+    }
+
+    /**
+     * Sets length
+     *
+     * @param float|null $length Defines product's length
+     *
+     * @return self
+     */
+    public function setLength($length)
+    {
+        if (is_null($length)) {
+            throw new \InvalidArgumentException('non-nullable length cannot be null');
+        }
+        $this->container['length'] = $length;
+
+        return $this;
+    }
+
+    /**
+     * Gets width
+     *
+     * @return float|null
+     */
+    public function getWidth()
+    {
+        return $this->container['width'];
+    }
+
+    /**
+     * Sets width
+     *
+     * @param float|null $width Defines product's width
+     *
+     * @return self
+     */
+    public function setWidth($width)
+    {
+        if (is_null($width)) {
+            throw new \InvalidArgumentException('non-nullable width cannot be null');
+        }
+        $this->container['width'] = $width;
+
+        return $this;
+    }
+
+    /**
+     * Gets dimensions_unit
+     *
+     * @return string|null
+     */
+    public function getDimensionsUnit()
+    {
+        return $this->container['dimensions_unit'];
+    }
+
+    /**
+     * Sets dimensions_unit
+     *
+     * @param string|null $dimensions_unit Weight Unit
+     *
+     * @return self
+     */
+    public function setDimensionsUnit($dimensions_unit)
+    {
+        if (is_null($dimensions_unit)) {
+            throw new \InvalidArgumentException('non-nullable dimensions_unit cannot be null');
+        }
+        $this->container['dimensions_unit'] = $dimensions_unit;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_virtual
+     *
+     * @return bool|null
+     */
+    public function getIsVirtual()
+    {
+        return $this->container['is_virtual'];
+    }
+
+    /**
+     * Sets is_virtual
+     *
+     * @param bool|null $is_virtual Defines whether the product is virtual
+     *
+     * @return self
+     */
+    public function setIsVirtual($is_virtual)
+    {
+        if (is_null($is_virtual)) {
+            throw new \InvalidArgumentException('non-nullable is_virtual cannot be null');
+        }
+        $this->container['is_virtual'] = $is_virtual;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_free_shipping
+     *
+     * @return bool|null
+     */
+    public function getIsFreeShipping()
+    {
+        return $this->container['is_free_shipping'];
+    }
+
+    /**
+     * Sets is_free_shipping
+     *
+     * @param bool|null $is_free_shipping Specifies product free shipping flag that has to be updated
+     *
+     * @return self
+     */
+    public function setIsFreeShipping($is_free_shipping)
+    {
+        if (is_null($is_free_shipping)) {
+            throw new \InvalidArgumentException('non-nullable is_free_shipping cannot be null');
+        }
+        $this->container['is_free_shipping'] = $is_free_shipping;
+
+        return $this;
+    }
+
+    /**
+     * Gets gtin
+     *
+     * @return string|null
+     */
+    public function getGtin()
+    {
+        return $this->container['gtin'];
+    }
+
+    /**
+     * Sets gtin
+     *
+     * @param string|null $gtin Global Trade Item Number. An GTIN is an identifier for trade items.
+     *
+     * @return self
+     */
+    public function setGtin($gtin)
+    {
+        if (is_null($gtin)) {
+            throw new \InvalidArgumentException('non-nullable gtin cannot be null');
+        }
+        $this->container['gtin'] = $gtin;
+
+        return $this;
+    }
+
+    /**
+     * Gets upc
+     *
+     * @return string|null
+     */
+    public function getUpc()
+    {
+        return $this->container['upc'];
+    }
+
+    /**
+     * Sets upc
+     *
+     * @param string|null $upc Universal Product Code. A UPC (UPC-A) is a commonly used identifer for many different products.
+     *
+     * @return self
+     */
+    public function setUpc($upc)
+    {
+        if (is_null($upc)) {
+            throw new \InvalidArgumentException('non-nullable upc cannot be null');
+        }
+        $this->container['upc'] = $upc;
+
+        return $this;
+    }
+
+    /**
+     * Gets mpn
+     *
+     * @return string|null
+     */
+    public function getMpn()
+    {
+        return $this->container['mpn'];
+    }
+
+    /**
+     * Sets mpn
+     *
+     * @param string|null $mpn Manufacturer Part Number. A MPN is an identifier of a particular part design or material used.
+     *
+     * @return self
+     */
+    public function setMpn($mpn)
+    {
+        if (is_null($mpn)) {
+            throw new \InvalidArgumentException('non-nullable mpn cannot be null');
+        }
+        $this->container['mpn'] = $mpn;
+
+        return $this;
+    }
+
+    /**
+     * Gets ean
+     *
+     * @return string|null
+     */
+    public function getEan()
+    {
+        return $this->container['ean'];
+    }
+
+    /**
+     * Sets ean
+     *
+     * @param string|null $ean European Article Number. An EAN is a unique 8 or 13-digit identifier that many industries (such as book publishers) use to identify products.
+     *
+     * @return self
+     */
+    public function setEan($ean)
+    {
+        if (is_null($ean)) {
+            throw new \InvalidArgumentException('non-nullable ean cannot be null');
+        }
+        $this->container['ean'] = $ean;
+
+        return $this;
+    }
+
+    /**
+     * Gets isbn
+     *
+     * @return string|null
+     */
+    public function getIsbn()
+    {
+        return $this->container['isbn'];
+    }
+
+    /**
+     * Sets isbn
+     *
+     * @param string|null $isbn International Standard Book Number. An ISBN is a unique identifier for books.
+     *
+     * @return self
+     */
+    public function setIsbn($isbn)
+    {
+        if (is_null($isbn)) {
+            throw new \InvalidArgumentException('non-nullable isbn cannot be null');
+        }
+        $this->container['isbn'] = $isbn;
+
+        return $this;
+    }
+
+    /**
+     * Gets barcode
+     *
+     * @return string|null
+     */
+    public function getBarcode()
+    {
+        return $this->container['barcode'];
+    }
+
+    /**
+     * Sets barcode
+     *
+     * @param string|null $barcode A barcode is a unique code composed of numbers used as a product identifier.
+     *
+     * @return self
+     */
+    public function setBarcode($barcode)
+    {
+        if (is_null($barcode)) {
+            throw new \InvalidArgumentException('non-nullable barcode cannot be null');
+        }
+        $this->container['barcode'] = $barcode;
 
         return $this;
     }
@@ -1654,60 +2424,6 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets description
-     *
-     * @return string|null
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string|null $description Defines new product's description
-     *
-     * @return self
-     */
-    public function setDescription($description)
-    {
-        if (is_null($description)) {
-            throw new \InvalidArgumentException('non-nullable description cannot be null');
-        }
-        $this->container['description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * Gets short_description
-     *
-     * @return string|null
-     */
-    public function getShortDescription()
-    {
-        return $this->container['short_description'];
-    }
-
-    /**
-     * Sets short_description
-     *
-     * @param string|null $short_description Defines short description
-     *
-     * @return self
-     */
-    public function setShortDescription($short_description)
-    {
-        if (is_null($short_description)) {
-            throw new \InvalidArgumentException('non-nullable short_description cannot be null');
-        }
-        $this->container['short_description'] = $short_description;
-
-        return $this;
-    }
-
-    /**
      * Gets meta_title
      *
      * @return string|null
@@ -1789,114 +2505,6 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets store_id
-     *
-     * @return string|null
-     */
-    public function getStoreId()
-    {
-        return $this->container['store_id'];
-    }
-
-    /**
-     * Sets store_id
-     *
-     * @param string|null $store_id Defines store id where the product should be found
-     *
-     * @return self
-     */
-    public function setStoreId($store_id)
-    {
-        if (is_null($store_id)) {
-            throw new \InvalidArgumentException('non-nullable store_id cannot be null');
-        }
-        $this->container['store_id'] = $store_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets lang_id
-     *
-     * @return string|null
-     */
-    public function getLangId()
-    {
-        return $this->container['lang_id'];
-    }
-
-    /**
-     * Sets lang_id
-     *
-     * @param string|null $lang_id Language id
-     *
-     * @return self
-     */
-    public function setLangId($lang_id)
-    {
-        if (is_null($lang_id)) {
-            throw new \InvalidArgumentException('non-nullable lang_id cannot be null');
-        }
-        $this->container['lang_id'] = $lang_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets in_stock
-     *
-     * @return bool|null
-     */
-    public function getInStock()
-    {
-        return $this->container['in_stock'];
-    }
-
-    /**
-     * Sets in_stock
-     *
-     * @param bool|null $in_stock Set stock status
-     *
-     * @return self
-     */
-    public function setInStock($in_stock)
-    {
-        if (is_null($in_stock)) {
-            throw new \InvalidArgumentException('non-nullable in_stock cannot be null');
-        }
-        $this->container['in_stock'] = $in_stock;
-
-        return $this;
-    }
-
-    /**
-     * Gets status
-     *
-     * @return string|null
-     */
-    public function getStatus()
-    {
-        return $this->container['status'];
-    }
-
-    /**
-     * Sets status
-     *
-     * @param string|null $status Defines product's status
-     *
-     * @return self
-     */
-    public function setStatus($status)
-    {
-        if (is_null($status)) {
-            throw new \InvalidArgumentException('non-nullable status cannot be null');
-        }
-        $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
      * Gets seo_url
      *
      * @return string|null
@@ -1919,465 +2527,6 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable seo_url cannot be null');
         }
         $this->container['seo_url'] = $seo_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets report_request_id
-     *
-     * @return string|null
-     */
-    public function getReportRequestId()
-    {
-        return $this->container['report_request_id'];
-    }
-
-    /**
-     * Sets report_request_id
-     *
-     * @param string|null $report_request_id Report request id
-     *
-     * @return self
-     */
-    public function setReportRequestId($report_request_id)
-    {
-        if (is_null($report_request_id)) {
-            throw new \InvalidArgumentException('non-nullable report_request_id cannot be null');
-        }
-        $this->container['report_request_id'] = $report_request_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets disable_report_cache
-     *
-     * @return bool|null
-     */
-    public function getDisableReportCache()
-    {
-        return $this->container['disable_report_cache'];
-    }
-
-    /**
-     * Sets disable_report_cache
-     *
-     * @param bool|null $disable_report_cache Disable report cache for current request
-     *
-     * @return self
-     */
-    public function setDisableReportCache($disable_report_cache)
-    {
-        if (is_null($disable_report_cache)) {
-            throw new \InvalidArgumentException('non-nullable disable_report_cache cannot be null');
-        }
-        $this->container['disable_report_cache'] = $disable_report_cache;
-
-        return $this;
-    }
-
-    /**
-     * Gets reindex
-     *
-     * @return bool|null
-     */
-    public function getReindex()
-    {
-        return $this->container['reindex'];
-    }
-
-    /**
-     * Sets reindex
-     *
-     * @param bool|null $reindex Is reindex required
-     *
-     * @return self
-     */
-    public function setReindex($reindex)
-    {
-        if (is_null($reindex)) {
-            throw new \InvalidArgumentException('non-nullable reindex cannot be null');
-        }
-        $this->container['reindex'] = $reindex;
-
-        return $this;
-    }
-
-    /**
-     * Gets tags
-     *
-     * @return string|null
-     */
-    public function getTags()
-    {
-        return $this->container['tags'];
-    }
-
-    /**
-     * Sets tags
-     *
-     * @param string|null $tags Product tags
-     *
-     * @return self
-     */
-    public function setTags($tags)
-    {
-        if (is_null($tags)) {
-            throw new \InvalidArgumentException('non-nullable tags cannot be null');
-        }
-        $this->container['tags'] = $tags;
-
-        return $this;
-    }
-
-    /**
-     * Gets clear_cache
-     *
-     * @return bool|null
-     */
-    public function getClearCache()
-    {
-        return $this->container['clear_cache'];
-    }
-
-    /**
-     * Sets clear_cache
-     *
-     * @param bool|null $clear_cache Is cache clear required
-     *
-     * @return self
-     */
-    public function setClearCache($clear_cache)
-    {
-        if (is_null($clear_cache)) {
-            throw new \InvalidArgumentException('non-nullable clear_cache cannot be null');
-        }
-        $this->container['clear_cache'] = $clear_cache;
-
-        return $this;
-    }
-
-    /**
-     * Gets gtin
-     *
-     * @return string|null
-     */
-    public function getGtin()
-    {
-        return $this->container['gtin'];
-    }
-
-    /**
-     * Sets gtin
-     *
-     * @param string|null $gtin Global Trade Item Number. An GTIN is an identifier for trade items.
-     *
-     * @return self
-     */
-    public function setGtin($gtin)
-    {
-        if (is_null($gtin)) {
-            throw new \InvalidArgumentException('non-nullable gtin cannot be null');
-        }
-        $this->container['gtin'] = $gtin;
-
-        return $this;
-    }
-
-    /**
-     * Gets upc
-     *
-     * @return string|null
-     */
-    public function getUpc()
-    {
-        return $this->container['upc'];
-    }
-
-    /**
-     * Sets upc
-     *
-     * @param string|null $upc Universal Product Code. A UPC (UPC-A) is a commonly used identifer for many different products.
-     *
-     * @return self
-     */
-    public function setUpc($upc)
-    {
-        if (is_null($upc)) {
-            throw new \InvalidArgumentException('non-nullable upc cannot be null');
-        }
-        $this->container['upc'] = $upc;
-
-        return $this;
-    }
-
-    /**
-     * Gets mpn
-     *
-     * @return string|null
-     */
-    public function getMpn()
-    {
-        return $this->container['mpn'];
-    }
-
-    /**
-     * Sets mpn
-     *
-     * @param string|null $mpn Manufacturer Part Number. A MPN is an identifier of a particular part design or material used.
-     *
-     * @return self
-     */
-    public function setMpn($mpn)
-    {
-        if (is_null($mpn)) {
-            throw new \InvalidArgumentException('non-nullable mpn cannot be null');
-        }
-        $this->container['mpn'] = $mpn;
-
-        return $this;
-    }
-
-    /**
-     * Gets ean
-     *
-     * @return string|null
-     */
-    public function getEan()
-    {
-        return $this->container['ean'];
-    }
-
-    /**
-     * Sets ean
-     *
-     * @param string|null $ean European Article Number. An EAN is a unique 8 or 13-digit identifier that many industries (such as book publishers) use to identify products.
-     *
-     * @return self
-     */
-    public function setEan($ean)
-    {
-        if (is_null($ean)) {
-            throw new \InvalidArgumentException('non-nullable ean cannot be null');
-        }
-        $this->container['ean'] = $ean;
-
-        return $this;
-    }
-
-    /**
-     * Gets isbn
-     *
-     * @return string|null
-     */
-    public function getIsbn()
-    {
-        return $this->container['isbn'];
-    }
-
-    /**
-     * Sets isbn
-     *
-     * @param string|null $isbn International Standard Book Number. An ISBN is a unique identifier for books.
-     *
-     * @return self
-     */
-    public function setIsbn($isbn)
-    {
-        if (is_null($isbn)) {
-            throw new \InvalidArgumentException('non-nullable isbn cannot be null');
-        }
-        $this->container['isbn'] = $isbn;
-
-        return $this;
-    }
-
-    /**
-     * Gets taxable
-     *
-     * @return bool|null
-     */
-    public function getTaxable()
-    {
-        return $this->container['taxable'];
-    }
-
-    /**
-     * Sets taxable
-     *
-     * @param bool|null $taxable Specifies whether a tax is charged
-     *
-     * @return self
-     */
-    public function setTaxable($taxable)
-    {
-        if (is_null($taxable)) {
-            throw new \InvalidArgumentException('non-nullable taxable cannot be null');
-        }
-        $this->container['taxable'] = $taxable;
-
-        return $this;
-    }
-
-    /**
-     * Gets product_class
-     *
-     * @return string|null
-     */
-    public function getProductClass()
-    {
-        return $this->container['product_class'];
-    }
-
-    /**
-     * Sets product_class
-     *
-     * @param string|null $product_class A categorization for the product
-     *
-     * @return self
-     */
-    public function setProductClass($product_class)
-    {
-        if (is_null($product_class)) {
-            throw new \InvalidArgumentException('non-nullable product_class cannot be null');
-        }
-        $this->container['product_class'] = $product_class;
-
-        return $this;
-    }
-
-    /**
-     * Gets height
-     *
-     * @return float|null
-     */
-    public function getHeight()
-    {
-        return $this->container['height'];
-    }
-
-    /**
-     * Sets height
-     *
-     * @param float|null $height Defines product's height
-     *
-     * @return self
-     */
-    public function setHeight($height)
-    {
-        if (is_null($height)) {
-            throw new \InvalidArgumentException('non-nullable height cannot be null');
-        }
-        $this->container['height'] = $height;
-
-        return $this;
-    }
-
-    /**
-     * Gets length
-     *
-     * @return float|null
-     */
-    public function getLength()
-    {
-        return $this->container['length'];
-    }
-
-    /**
-     * Sets length
-     *
-     * @param float|null $length Defines product's length
-     *
-     * @return self
-     */
-    public function setLength($length)
-    {
-        if (is_null($length)) {
-            throw new \InvalidArgumentException('non-nullable length cannot be null');
-        }
-        $this->container['length'] = $length;
-
-        return $this;
-    }
-
-    /**
-     * Gets width
-     *
-     * @return float|null
-     */
-    public function getWidth()
-    {
-        return $this->container['width'];
-    }
-
-    /**
-     * Sets width
-     *
-     * @param float|null $width Defines product's width
-     *
-     * @return self
-     */
-    public function setWidth($width)
-    {
-        if (is_null($width)) {
-            throw new \InvalidArgumentException('non-nullable width cannot be null');
-        }
-        $this->container['width'] = $width;
-
-        return $this;
-    }
-
-    /**
-     * Gets harmonized_system_code
-     *
-     * @return string|null
-     */
-    public function getHarmonizedSystemCode()
-    {
-        return $this->container['harmonized_system_code'];
-    }
-
-    /**
-     * Sets harmonized_system_code
-     *
-     * @param string|null $harmonized_system_code Harmonized System Code. An HSC is a 6-digit identifier that allows participating countries to classify traded goods on a common basis for customs purposes
-     *
-     * @return self
-     */
-    public function setHarmonizedSystemCode($harmonized_system_code)
-    {
-        if (is_null($harmonized_system_code)) {
-            throw new \InvalidArgumentException('non-nullable harmonized_system_code cannot be null');
-        }
-        $this->container['harmonized_system_code'] = $harmonized_system_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets country_of_origin
-     *
-     * @return string|null
-     */
-    public function getCountryOfOrigin()
-    {
-        return $this->container['country_of_origin'];
-    }
-
-    /**
-     * Sets country_of_origin
-     *
-     * @param string|null $country_of_origin The country where the inventory item was made
-     *
-     * @return self
-     */
-    public function setCountryOfOrigin($country_of_origin)
-    {
-        if (is_null($country_of_origin)) {
-            throw new \InvalidArgumentException('non-nullable country_of_origin cannot be null');
-        }
-        $this->container['country_of_origin'] = $country_of_origin;
 
         return $this;
     }
@@ -2410,244 +2559,28 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets barcode
+     * Gets tags
      *
      * @return string|null
      */
-    public function getBarcode()
+    public function getTags()
     {
-        return $this->container['barcode'];
+        return $this->container['tags'];
     }
 
     /**
-     * Sets barcode
+     * Sets tags
      *
-     * @param string|null $barcode A barcode is a unique code composed of numbers used as a product identifier.
+     * @param string|null $tags Product tags
      *
      * @return self
      */
-    public function setBarcode($barcode)
+    public function setTags($tags)
     {
-        if (is_null($barcode)) {
-            throw new \InvalidArgumentException('non-nullable barcode cannot be null');
+        if (is_null($tags)) {
+            throw new \InvalidArgumentException('non-nullable tags cannot be null');
         }
-        $this->container['barcode'] = $barcode;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_virtual
-     *
-     * @return bool|null
-     */
-    public function getIsVirtual()
-    {
-        return $this->container['is_virtual'];
-    }
-
-    /**
-     * Sets is_virtual
-     *
-     * @param bool|null $is_virtual Defines whether the product is virtual
-     *
-     * @return self
-     */
-    public function setIsVirtual($is_virtual)
-    {
-        if (is_null($is_virtual)) {
-            throw new \InvalidArgumentException('non-nullable is_virtual cannot be null');
-        }
-        $this->container['is_virtual'] = $is_virtual;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_free_shipping
-     *
-     * @return bool|null
-     */
-    public function getIsFreeShipping()
-    {
-        return $this->container['is_free_shipping'];
-    }
-
-    /**
-     * Sets is_free_shipping
-     *
-     * @param bool|null $is_free_shipping Specifies product free shipping flag that has to be updated
-     *
-     * @return self
-     */
-    public function setIsFreeShipping($is_free_shipping)
-    {
-        if (is_null($is_free_shipping)) {
-            throw new \InvalidArgumentException('non-nullable is_free_shipping cannot be null');
-        }
-        $this->container['is_free_shipping'] = $is_free_shipping;
-
-        return $this;
-    }
-
-    /**
-     * Gets reserve_price
-     *
-     * @return float|null
-     */
-    public function getReservePrice()
-    {
-        return $this->container['reserve_price'];
-    }
-
-    /**
-     * Sets reserve_price
-     *
-     * @param float|null $reserve_price Defines reserve price value
-     *
-     * @return self
-     */
-    public function setReservePrice($reserve_price)
-    {
-        if (is_null($reserve_price)) {
-            throw new \InvalidArgumentException('non-nullable reserve_price cannot be null');
-        }
-        $this->container['reserve_price'] = $reserve_price;
-
-        return $this;
-    }
-
-    /**
-     * Gets buyitnow_price
-     *
-     * @return float|null
-     */
-    public function getBuyitnowPrice()
-    {
-        return $this->container['buyitnow_price'];
-    }
-
-    /**
-     * Sets buyitnow_price
-     *
-     * @param float|null $buyitnow_price Defines buy it now value
-     *
-     * @return self
-     */
-    public function setBuyitnowPrice($buyitnow_price)
-    {
-        if (is_null($buyitnow_price)) {
-            throw new \InvalidArgumentException('non-nullable buyitnow_price cannot be null');
-        }
-        $this->container['buyitnow_price'] = $buyitnow_price;
-
-        return $this;
-    }
-
-    /**
-     * Gets avail_from
-     *
-     * @return string|null
-     */
-    public function getAvailFrom()
-    {
-        return $this->container['avail_from'];
-    }
-
-    /**
-     * Sets avail_from
-     *
-     * @param string|null $avail_from Allows to schedule a time in the future that the item becomes available. The value should be greater than the current date and time.
-     *
-     * @return self
-     */
-    public function setAvailFrom($avail_from)
-    {
-        if (is_null($avail_from)) {
-            throw new \InvalidArgumentException('non-nullable avail_from cannot be null');
-        }
-        $this->container['avail_from'] = $avail_from;
-
-        return $this;
-    }
-
-    /**
-     * Gets tax_class_id
-     *
-     * @return string|null
-     */
-    public function getTaxClassId()
-    {
-        return $this->container['tax_class_id'];
-    }
-
-    /**
-     * Sets tax_class_id
-     *
-     * @param string|null $tax_class_id Defines tax classes where entity has to be added
-     *
-     * @return self
-     */
-    public function setTaxClassId($tax_class_id)
-    {
-        if (is_null($tax_class_id)) {
-            throw new \InvalidArgumentException('non-nullable tax_class_id cannot be null');
-        }
-        $this->container['tax_class_id'] = $tax_class_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string|null $type Defines product's type
-     *
-     * @return self
-     */
-    public function setType($type)
-    {
-        if (is_null($type)) {
-            throw new \InvalidArgumentException('non-nullable type cannot be null');
-        }
-        $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * Gets avail
-     *
-     * @return bool|null
-     */
-    public function getAvail()
-    {
-        return $this->container['avail'];
-    }
-
-    /**
-     * Sets avail
-     *
-     * @param bool|null $avail Defines category's visibility status
-     *
-     * @return self
-     */
-    public function setAvail($avail)
-    {
-        if (is_null($avail)) {
-            throw new \InvalidArgumentException('non-nullable avail cannot be null');
-        }
-        $this->container['avail'] = $avail;
+        $this->container['tags'] = $tags;
 
         return $this;
     }
@@ -2680,33 +2613,6 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets check_process_status
-     *
-     * @return bool|null
-     */
-    public function getCheckProcessStatus()
-    {
-        return $this->container['check_process_status'];
-    }
-
-    /**
-     * Sets check_process_status
-     *
-     * @param bool|null $check_process_status Disable or enable check process status. Please note that the response will be slower due to additional requests to the store.
-     *
-     * @return self
-     */
-    public function setCheckProcessStatus($check_process_status)
-    {
-        if (is_null($check_process_status)) {
-            throw new \InvalidArgumentException('non-nullable check_process_status cannot be null');
-        }
-        $this->container['check_process_status'] = $check_process_status;
-
-        return $this;
-    }
-
-    /**
      * Gets package_details
      *
      * @return \OpenAPI\Client\Model\ProductAddPackageDetails|null
@@ -2734,82 +2640,55 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets stores_ids
+     * Gets country_of_origin
      *
      * @return string|null
      */
-    public function getStoresIds()
+    public function getCountryOfOrigin()
     {
-        return $this->container['stores_ids'];
+        return $this->container['country_of_origin'];
     }
 
     /**
-     * Sets stores_ids
+     * Sets country_of_origin
      *
-     * @param string|null $stores_ids Assign product to the stores that is specified by comma-separated stores' id
+     * @param string|null $country_of_origin The country where the inventory item was made
      *
      * @return self
      */
-    public function setStoresIds($stores_ids)
+    public function setCountryOfOrigin($country_of_origin)
     {
-        if (is_null($stores_ids)) {
-            throw new \InvalidArgumentException('non-nullable stores_ids cannot be null');
+        if (is_null($country_of_origin)) {
+            throw new \InvalidArgumentException('non-nullable country_of_origin cannot be null');
         }
-        $this->container['stores_ids'] = $stores_ids;
+        $this->container['country_of_origin'] = $country_of_origin;
 
         return $this;
     }
 
     /**
-     * Gets manufacturer_info
-     *
-     * @return \OpenAPI\Client\Model\ProductAddManufacturerInfo|null
-     */
-    public function getManufacturerInfo()
-    {
-        return $this->container['manufacturer_info'];
-    }
-
-    /**
-     * Sets manufacturer_info
-     *
-     * @param \OpenAPI\Client\Model\ProductAddManufacturerInfo|null $manufacturer_info manufacturer_info
-     *
-     * @return self
-     */
-    public function setManufacturerInfo($manufacturer_info)
-    {
-        if (is_null($manufacturer_info)) {
-            throw new \InvalidArgumentException('non-nullable manufacturer_info cannot be null');
-        }
-        $this->container['manufacturer_info'] = $manufacturer_info;
-
-        return $this;
-    }
-
-    /**
-     * Gets production_partner_ids
+     * Gets harmonized_system_code
      *
      * @return string|null
      */
-    public function getProductionPartnerIds()
+    public function getHarmonizedSystemCode()
     {
-        return $this->container['production_partner_ids'];
+        return $this->container['harmonized_system_code'];
     }
 
     /**
-     * Sets production_partner_ids
+     * Sets harmonized_system_code
      *
-     * @param string|null $production_partner_ids Defines product production partner ids that has to be updated
+     * @param string|null $harmonized_system_code Harmonized System Code. An HSC is a 6-digit identifier that allows participating countries to classify traded goods on a common basis for customs purposes
      *
      * @return self
      */
-    public function setProductionPartnerIds($production_partner_ids)
+    public function setHarmonizedSystemCode($harmonized_system_code)
     {
-        if (is_null($production_partner_ids)) {
-            throw new \InvalidArgumentException('non-nullable production_partner_ids cannot be null');
+        if (is_null($harmonized_system_code)) {
+            throw new \InvalidArgumentException('non-nullable harmonized_system_code cannot be null');
         }
-        $this->container['production_partner_ids'] = $production_partner_ids;
+        $this->container['harmonized_system_code'] = $harmonized_system_code;
 
         return $this;
     }
@@ -2999,6 +2878,195 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable on_sale cannot be null');
         }
         $this->container['on_sale'] = $on_sale;
+
+        return $this;
+    }
+
+    /**
+     * Gets production_partner_ids
+     *
+     * @return string|null
+     */
+    public function getProductionPartnerIds()
+    {
+        return $this->container['production_partner_ids'];
+    }
+
+    /**
+     * Sets production_partner_ids
+     *
+     * @param string|null $production_partner_ids Defines product production partner ids that has to be updated
+     *
+     * @return self
+     */
+    public function setProductionPartnerIds($production_partner_ids)
+    {
+        if (is_null($production_partner_ids)) {
+            throw new \InvalidArgumentException('non-nullable production_partner_ids cannot be null');
+        }
+        $this->container['production_partner_ids'] = $production_partner_ids;
+
+        return $this;
+    }
+
+    /**
+     * Gets manufacturer_info
+     *
+     * @return \OpenAPI\Client\Model\ProductAddManufacturerInfo|null
+     */
+    public function getManufacturerInfo()
+    {
+        return $this->container['manufacturer_info'];
+    }
+
+    /**
+     * Sets manufacturer_info
+     *
+     * @param \OpenAPI\Client\Model\ProductAddManufacturerInfo|null $manufacturer_info manufacturer_info
+     *
+     * @return self
+     */
+    public function setManufacturerInfo($manufacturer_info)
+    {
+        if (is_null($manufacturer_info)) {
+            throw new \InvalidArgumentException('non-nullable manufacturer_info cannot be null');
+        }
+        $this->container['manufacturer_info'] = $manufacturer_info;
+
+        return $this;
+    }
+
+    /**
+     * Gets report_request_id
+     *
+     * @return string|null
+     */
+    public function getReportRequestId()
+    {
+        return $this->container['report_request_id'];
+    }
+
+    /**
+     * Sets report_request_id
+     *
+     * @param string|null $report_request_id Report request id
+     *
+     * @return self
+     */
+    public function setReportRequestId($report_request_id)
+    {
+        if (is_null($report_request_id)) {
+            throw new \InvalidArgumentException('non-nullable report_request_id cannot be null');
+        }
+        $this->container['report_request_id'] = $report_request_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets disable_report_cache
+     *
+     * @return bool|null
+     */
+    public function getDisableReportCache()
+    {
+        return $this->container['disable_report_cache'];
+    }
+
+    /**
+     * Sets disable_report_cache
+     *
+     * @param bool|null $disable_report_cache Disable report cache for current request
+     *
+     * @return self
+     */
+    public function setDisableReportCache($disable_report_cache)
+    {
+        if (is_null($disable_report_cache)) {
+            throw new \InvalidArgumentException('non-nullable disable_report_cache cannot be null');
+        }
+        $this->container['disable_report_cache'] = $disable_report_cache;
+
+        return $this;
+    }
+
+    /**
+     * Gets reindex
+     *
+     * @return bool|null
+     */
+    public function getReindex()
+    {
+        return $this->container['reindex'];
+    }
+
+    /**
+     * Sets reindex
+     *
+     * @param bool|null $reindex Is reindex required
+     *
+     * @return self
+     */
+    public function setReindex($reindex)
+    {
+        if (is_null($reindex)) {
+            throw new \InvalidArgumentException('non-nullable reindex cannot be null');
+        }
+        $this->container['reindex'] = $reindex;
+
+        return $this;
+    }
+
+    /**
+     * Gets clear_cache
+     *
+     * @return bool|null
+     */
+    public function getClearCache()
+    {
+        return $this->container['clear_cache'];
+    }
+
+    /**
+     * Sets clear_cache
+     *
+     * @param bool|null $clear_cache Is cache clear required
+     *
+     * @return self
+     */
+    public function setClearCache($clear_cache)
+    {
+        if (is_null($clear_cache)) {
+            throw new \InvalidArgumentException('non-nullable clear_cache cannot be null');
+        }
+        $this->container['clear_cache'] = $clear_cache;
+
+        return $this;
+    }
+
+    /**
+     * Gets check_process_status
+     *
+     * @return bool|null
+     */
+    public function getCheckProcessStatus()
+    {
+        return $this->container['check_process_status'];
+    }
+
+    /**
+     * Sets check_process_status
+     *
+     * @param bool|null $check_process_status Disable or enable check process status. Please note that the response will be slower due to additional requests to the store.
+     *
+     * @return self
+     */
+    public function setCheckProcessStatus($check_process_status)
+    {
+        if (is_null($check_process_status)) {
+            throw new \InvalidArgumentException('non-nullable check_process_status cannot be null');
+        }
+        $this->container['check_process_status'] = $check_process_status;
 
         return $this;
     }

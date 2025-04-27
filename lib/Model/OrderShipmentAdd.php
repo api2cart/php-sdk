@@ -59,17 +59,17 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'order_id' => 'string',
-        'store_id' => 'string',
         'warehouse_id' => 'string',
+        'store_id' => 'string',
         'shipment_provider' => 'string',
         'shipping_method' => 'string',
         'items' => '\OpenAPI\Client\Model\OrderShipmentAddItemsInner[]',
-        'send_notifications' => 'bool',
         'tracking_numbers' => '\OpenAPI\Client\Model\OrderShipmentAddTrackingNumbersInner[]',
-        'adjust_stock' => 'bool',
-        'enable_cache' => 'bool',
         'tracking_link' => 'string',
         'is_shipped' => 'bool',
+        'send_notifications' => 'bool',
+        'adjust_stock' => 'bool',
+        'enable_cache' => 'bool',
         'check_process_status' => 'bool',
         'use_latest_api_version' => 'bool'
     ];
@@ -83,17 +83,17 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'order_id' => null,
-        'store_id' => null,
         'warehouse_id' => null,
+        'store_id' => null,
         'shipment_provider' => null,
         'shipping_method' => null,
         'items' => null,
-        'send_notifications' => null,
         'tracking_numbers' => null,
-        'adjust_stock' => null,
-        'enable_cache' => null,
         'tracking_link' => null,
         'is_shipped' => null,
+        'send_notifications' => null,
+        'adjust_stock' => null,
+        'enable_cache' => null,
         'check_process_status' => null,
         'use_latest_api_version' => null
     ];
@@ -105,17 +105,17 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'order_id' => false,
-        'store_id' => false,
         'warehouse_id' => false,
+        'store_id' => false,
         'shipment_provider' => false,
         'shipping_method' => false,
         'items' => false,
-        'send_notifications' => false,
         'tracking_numbers' => false,
-        'adjust_stock' => false,
-        'enable_cache' => false,
         'tracking_link' => false,
         'is_shipped' => false,
+        'send_notifications' => false,
+        'adjust_stock' => false,
+        'enable_cache' => false,
         'check_process_status' => false,
         'use_latest_api_version' => false
     ];
@@ -207,17 +207,17 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'order_id' => 'order_id',
-        'store_id' => 'store_id',
         'warehouse_id' => 'warehouse_id',
+        'store_id' => 'store_id',
         'shipment_provider' => 'shipment_provider',
         'shipping_method' => 'shipping_method',
         'items' => 'items',
-        'send_notifications' => 'send_notifications',
         'tracking_numbers' => 'tracking_numbers',
-        'adjust_stock' => 'adjust_stock',
-        'enable_cache' => 'enable_cache',
         'tracking_link' => 'tracking_link',
         'is_shipped' => 'is_shipped',
+        'send_notifications' => 'send_notifications',
+        'adjust_stock' => 'adjust_stock',
+        'enable_cache' => 'enable_cache',
         'check_process_status' => 'check_process_status',
         'use_latest_api_version' => 'use_latest_api_version'
     ];
@@ -229,17 +229,17 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'order_id' => 'setOrderId',
-        'store_id' => 'setStoreId',
         'warehouse_id' => 'setWarehouseId',
+        'store_id' => 'setStoreId',
         'shipment_provider' => 'setShipmentProvider',
         'shipping_method' => 'setShippingMethod',
         'items' => 'setItems',
-        'send_notifications' => 'setSendNotifications',
         'tracking_numbers' => 'setTrackingNumbers',
-        'adjust_stock' => 'setAdjustStock',
-        'enable_cache' => 'setEnableCache',
         'tracking_link' => 'setTrackingLink',
         'is_shipped' => 'setIsShipped',
+        'send_notifications' => 'setSendNotifications',
+        'adjust_stock' => 'setAdjustStock',
+        'enable_cache' => 'setEnableCache',
         'check_process_status' => 'setCheckProcessStatus',
         'use_latest_api_version' => 'setUseLatestApiVersion'
     ];
@@ -251,17 +251,17 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'order_id' => 'getOrderId',
-        'store_id' => 'getStoreId',
         'warehouse_id' => 'getWarehouseId',
+        'store_id' => 'getStoreId',
         'shipment_provider' => 'getShipmentProvider',
         'shipping_method' => 'getShippingMethod',
         'items' => 'getItems',
-        'send_notifications' => 'getSendNotifications',
         'tracking_numbers' => 'getTrackingNumbers',
-        'adjust_stock' => 'getAdjustStock',
-        'enable_cache' => 'getEnableCache',
         'tracking_link' => 'getTrackingLink',
         'is_shipped' => 'getIsShipped',
+        'send_notifications' => 'getSendNotifications',
+        'adjust_stock' => 'getAdjustStock',
+        'enable_cache' => 'getEnableCache',
         'check_process_status' => 'getCheckProcessStatus',
         'use_latest_api_version' => 'getUseLatestApiVersion'
     ];
@@ -324,17 +324,17 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(?array $data = null)
     {
         $this->setIfExists('order_id', $data ?? [], null);
-        $this->setIfExists('store_id', $data ?? [], null);
         $this->setIfExists('warehouse_id', $data ?? [], null);
+        $this->setIfExists('store_id', $data ?? [], null);
         $this->setIfExists('shipment_provider', $data ?? [], null);
         $this->setIfExists('shipping_method', $data ?? [], null);
         $this->setIfExists('items', $data ?? [], null);
-        $this->setIfExists('send_notifications', $data ?? [], false);
         $this->setIfExists('tracking_numbers', $data ?? [], null);
-        $this->setIfExists('adjust_stock', $data ?? [], false);
-        $this->setIfExists('enable_cache', $data ?? [], false);
         $this->setIfExists('tracking_link', $data ?? [], null);
         $this->setIfExists('is_shipped', $data ?? [], true);
+        $this->setIfExists('send_notifications', $data ?? [], false);
+        $this->setIfExists('adjust_stock', $data ?? [], false);
+        $this->setIfExists('enable_cache', $data ?? [], false);
         $this->setIfExists('check_process_status', $data ?? [], false);
         $this->setIfExists('use_latest_api_version', $data ?? [], false);
     }
@@ -409,33 +409,6 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets store_id
-     *
-     * @return string|null
-     */
-    public function getStoreId()
-    {
-        return $this->container['store_id'];
-    }
-
-    /**
-     * Sets store_id
-     *
-     * @param string|null $store_id Store Id
-     *
-     * @return self
-     */
-    public function setStoreId($store_id)
-    {
-        if (is_null($store_id)) {
-            throw new \InvalidArgumentException('non-nullable store_id cannot be null');
-        }
-        $this->container['store_id'] = $store_id;
-
-        return $this;
-    }
-
-    /**
      * Gets warehouse_id
      *
      * @return string|null
@@ -458,6 +431,33 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable warehouse_id cannot be null');
         }
         $this->container['warehouse_id'] = $warehouse_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets store_id
+     *
+     * @return string|null
+     */
+    public function getStoreId()
+    {
+        return $this->container['store_id'];
+    }
+
+    /**
+     * Sets store_id
+     *
+     * @param string|null $store_id Store Id
+     *
+     * @return self
+     */
+    public function setStoreId($store_id)
+    {
+        if (is_null($store_id)) {
+            throw new \InvalidArgumentException('non-nullable store_id cannot be null');
+        }
+        $this->container['store_id'] = $store_id;
 
         return $this;
     }
@@ -544,33 +544,6 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets send_notifications
-     *
-     * @return bool|null
-     */
-    public function getSendNotifications()
-    {
-        return $this->container['send_notifications'];
-    }
-
-    /**
-     * Sets send_notifications
-     *
-     * @param bool|null $send_notifications Send notifications to customer after shipment was created
-     *
-     * @return self
-     */
-    public function setSendNotifications($send_notifications)
-    {
-        if (is_null($send_notifications)) {
-            throw new \InvalidArgumentException('non-nullable send_notifications cannot be null');
-        }
-        $this->container['send_notifications'] = $send_notifications;
-
-        return $this;
-    }
-
-    /**
      * Gets tracking_numbers
      *
      * @return \OpenAPI\Client\Model\OrderShipmentAddTrackingNumbersInner[]|null
@@ -593,60 +566,6 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable tracking_numbers cannot be null');
         }
         $this->container['tracking_numbers'] = $tracking_numbers;
-
-        return $this;
-    }
-
-    /**
-     * Gets adjust_stock
-     *
-     * @return bool|null
-     */
-    public function getAdjustStock()
-    {
-        return $this->container['adjust_stock'];
-    }
-
-    /**
-     * Sets adjust_stock
-     *
-     * @param bool|null $adjust_stock This parameter is used for adjust stock.
-     *
-     * @return self
-     */
-    public function setAdjustStock($adjust_stock)
-    {
-        if (is_null($adjust_stock)) {
-            throw new \InvalidArgumentException('non-nullable adjust_stock cannot be null');
-        }
-        $this->container['adjust_stock'] = $adjust_stock;
-
-        return $this;
-    }
-
-    /**
-     * Gets enable_cache
-     *
-     * @return bool|null
-     */
-    public function getEnableCache()
-    {
-        return $this->container['enable_cache'];
-    }
-
-    /**
-     * Sets enable_cache
-     *
-     * @param bool|null $enable_cache If the value is 'true' and order exist in our cache, we will use order.info from cache to prepare shipment items.
-     *
-     * @return self
-     */
-    public function setEnableCache($enable_cache)
-    {
-        if (is_null($enable_cache)) {
-            throw new \InvalidArgumentException('non-nullable enable_cache cannot be null');
-        }
-        $this->container['enable_cache'] = $enable_cache;
 
         return $this;
     }
@@ -701,6 +620,87 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable is_shipped cannot be null');
         }
         $this->container['is_shipped'] = $is_shipped;
+
+        return $this;
+    }
+
+    /**
+     * Gets send_notifications
+     *
+     * @return bool|null
+     */
+    public function getSendNotifications()
+    {
+        return $this->container['send_notifications'];
+    }
+
+    /**
+     * Sets send_notifications
+     *
+     * @param bool|null $send_notifications Send notifications to customer after shipment was created
+     *
+     * @return self
+     */
+    public function setSendNotifications($send_notifications)
+    {
+        if (is_null($send_notifications)) {
+            throw new \InvalidArgumentException('non-nullable send_notifications cannot be null');
+        }
+        $this->container['send_notifications'] = $send_notifications;
+
+        return $this;
+    }
+
+    /**
+     * Gets adjust_stock
+     *
+     * @return bool|null
+     */
+    public function getAdjustStock()
+    {
+        return $this->container['adjust_stock'];
+    }
+
+    /**
+     * Sets adjust_stock
+     *
+     * @param bool|null $adjust_stock This parameter is used for adjust stock.
+     *
+     * @return self
+     */
+    public function setAdjustStock($adjust_stock)
+    {
+        if (is_null($adjust_stock)) {
+            throw new \InvalidArgumentException('non-nullable adjust_stock cannot be null');
+        }
+        $this->container['adjust_stock'] = $adjust_stock;
+
+        return $this;
+    }
+
+    /**
+     * Gets enable_cache
+     *
+     * @return bool|null
+     */
+    public function getEnableCache()
+    {
+        return $this->container['enable_cache'];
+    }
+
+    /**
+     * Sets enable_cache
+     *
+     * @param bool|null $enable_cache If the value is 'true' and order exist in our cache, we will use order.info from cache to prepare shipment items.
+     *
+     * @return self
+     */
+    public function setEnableCache($enable_cache)
+    {
+        if (is_null($enable_cache)) {
+            throw new \InvalidArgumentException('non-nullable enable_cache cannot be null');
+        }
+        $this->container['enable_cache'] = $enable_cache;
 
         return $this;
     }

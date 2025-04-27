@@ -907,18 +907,18 @@ class ReturnApi
      * @param  string $id Entity id (required)
      * @param  string|null $order_id Defines the order id (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_products')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['returnInfo'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ReturnInfo200Response
      */
-    public function returnInfo($id, $order_id = null, $store_id = null, $params = 'id,order_products', $exclude = null, $response_fields = null, string $contentType = self::contentTypes['returnInfo'][0])
+    public function returnInfo($id, $order_id = null, $store_id = null, $response_fields = null, $params = 'id,order_products', $exclude = null, string $contentType = self::contentTypes['returnInfo'][0])
     {
-        list($response) = $this->returnInfoWithHttpInfo($id, $order_id, $store_id, $params, $exclude, $response_fields, $contentType);
+        list($response) = $this->returnInfoWithHttpInfo($id, $order_id, $store_id, $response_fields, $params, $exclude, $contentType);
         return $response;
     }
 
@@ -930,18 +930,18 @@ class ReturnApi
      * @param  string $id Entity id (required)
      * @param  string|null $order_id Defines the order id (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_products')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['returnInfo'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ReturnInfo200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function returnInfoWithHttpInfo($id, $order_id = null, $store_id = null, $params = 'id,order_products', $exclude = null, $response_fields = null, string $contentType = self::contentTypes['returnInfo'][0])
+    public function returnInfoWithHttpInfo($id, $order_id = null, $store_id = null, $response_fields = null, $params = 'id,order_products', $exclude = null, string $contentType = self::contentTypes['returnInfo'][0])
     {
-        $request = $this->returnInfoRequest($id, $order_id, $store_id, $params, $exclude, $response_fields, $contentType);
+        $request = $this->returnInfoRequest($id, $order_id, $store_id, $response_fields, $params, $exclude, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1060,17 +1060,17 @@ class ReturnApi
      * @param  string $id Entity id (required)
      * @param  string|null $order_id Defines the order id (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_products')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['returnInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function returnInfoAsync($id, $order_id = null, $store_id = null, $params = 'id,order_products', $exclude = null, $response_fields = null, string $contentType = self::contentTypes['returnInfo'][0])
+    public function returnInfoAsync($id, $order_id = null, $store_id = null, $response_fields = null, $params = 'id,order_products', $exclude = null, string $contentType = self::contentTypes['returnInfo'][0])
     {
-        return $this->returnInfoAsyncWithHttpInfo($id, $order_id, $store_id, $params, $exclude, $response_fields, $contentType)
+        return $this->returnInfoAsyncWithHttpInfo($id, $order_id, $store_id, $response_fields, $params, $exclude, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1086,18 +1086,18 @@ class ReturnApi
      * @param  string $id Entity id (required)
      * @param  string|null $order_id Defines the order id (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_products')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['returnInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function returnInfoAsyncWithHttpInfo($id, $order_id = null, $store_id = null, $params = 'id,order_products', $exclude = null, $response_fields = null, string $contentType = self::contentTypes['returnInfo'][0])
+    public function returnInfoAsyncWithHttpInfo($id, $order_id = null, $store_id = null, $response_fields = null, $params = 'id,order_products', $exclude = null, string $contentType = self::contentTypes['returnInfo'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ReturnInfo200Response';
-        $request = $this->returnInfoRequest($id, $order_id, $store_id, $params, $exclude, $response_fields, $contentType);
+        $request = $this->returnInfoRequest($id, $order_id, $store_id, $response_fields, $params, $exclude, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1141,15 +1141,15 @@ class ReturnApi
      * @param  string $id Entity id (required)
      * @param  string|null $order_id Defines the order id (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_products')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['returnInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function returnInfoRequest($id, $order_id = null, $store_id = null, $params = 'id,order_products', $exclude = null, $response_fields = null, string $contentType = self::contentTypes['returnInfo'][0])
+    public function returnInfoRequest($id, $order_id = null, $store_id = null, $response_fields = null, $params = 'id,order_products', $exclude = null, string $contentType = self::contentTypes['returnInfo'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -1201,6 +1201,15 @@ class ReturnApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $response_fields,
+            'response_fields', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $params,
             'params', // param base name
             'string', // openApiType
@@ -1212,15 +1221,6 @@ class ReturnApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $exclude,
             'exclude', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $response_fields,
-            'response_fields', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -1301,9 +1301,6 @@ class ReturnApi
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_products')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $order_id Defines the order id (optional)
      * @param  string|null $order_ids Retrieves return requests specified by order ids (optional)
      * @param  string|null $customer_id Retrieves return requests specified by customer id (optional)
@@ -1314,6 +1311,9 @@ class ReturnApi
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_products')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $report_request_id Report request id (optional)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['returnList'] to see the possible values for this operation
@@ -1322,9 +1322,9 @@ class ReturnApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseReturnList
      */
-    public function returnList($start = 0, $count = 10, $page_cursor = null, $params = 'id,order_products', $exclude = null, $response_fields = null, $order_id = null, $order_ids = null, $customer_id = null, $store_id = null, $status = null, $return_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['returnList'][0])
+    public function returnList($start = 0, $count = 10, $page_cursor = null, $order_id = null, $order_ids = null, $customer_id = null, $store_id = null, $status = null, $return_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $response_fields = null, $params = 'id,order_products', $exclude = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['returnList'][0])
     {
-        list($response) = $this->returnListWithHttpInfo($start, $count, $page_cursor, $params, $exclude, $response_fields, $order_id, $order_ids, $customer_id, $store_id, $status, $return_type, $created_from, $created_to, $modified_from, $modified_to, $report_request_id, $disable_report_cache, $contentType);
+        list($response) = $this->returnListWithHttpInfo($start, $count, $page_cursor, $order_id, $order_ids, $customer_id, $store_id, $status, $return_type, $created_from, $created_to, $modified_from, $modified_to, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $contentType);
         return $response;
     }
 
@@ -1336,9 +1336,6 @@ class ReturnApi
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_products')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $order_id Defines the order id (optional)
      * @param  string|null $order_ids Retrieves return requests specified by order ids (optional)
      * @param  string|null $customer_id Retrieves return requests specified by customer id (optional)
@@ -1349,6 +1346,9 @@ class ReturnApi
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_products')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $report_request_id Report request id (optional)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['returnList'] to see the possible values for this operation
@@ -1357,9 +1357,9 @@ class ReturnApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseReturnList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function returnListWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $params = 'id,order_products', $exclude = null, $response_fields = null, $order_id = null, $order_ids = null, $customer_id = null, $store_id = null, $status = null, $return_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['returnList'][0])
+    public function returnListWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $order_id = null, $order_ids = null, $customer_id = null, $store_id = null, $status = null, $return_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $response_fields = null, $params = 'id,order_products', $exclude = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['returnList'][0])
     {
-        $request = $this->returnListRequest($start, $count, $page_cursor, $params, $exclude, $response_fields, $order_id, $order_ids, $customer_id, $store_id, $status, $return_type, $created_from, $created_to, $modified_from, $modified_to, $report_request_id, $disable_report_cache, $contentType);
+        $request = $this->returnListRequest($start, $count, $page_cursor, $order_id, $order_ids, $customer_id, $store_id, $status, $return_type, $created_from, $created_to, $modified_from, $modified_to, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1478,9 +1478,6 @@ class ReturnApi
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_products')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $order_id Defines the order id (optional)
      * @param  string|null $order_ids Retrieves return requests specified by order ids (optional)
      * @param  string|null $customer_id Retrieves return requests specified by customer id (optional)
@@ -1491,6 +1488,9 @@ class ReturnApi
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_products')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $report_request_id Report request id (optional)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['returnList'] to see the possible values for this operation
@@ -1498,9 +1498,9 @@ class ReturnApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function returnListAsync($start = 0, $count = 10, $page_cursor = null, $params = 'id,order_products', $exclude = null, $response_fields = null, $order_id = null, $order_ids = null, $customer_id = null, $store_id = null, $status = null, $return_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['returnList'][0])
+    public function returnListAsync($start = 0, $count = 10, $page_cursor = null, $order_id = null, $order_ids = null, $customer_id = null, $store_id = null, $status = null, $return_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $response_fields = null, $params = 'id,order_products', $exclude = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['returnList'][0])
     {
-        return $this->returnListAsyncWithHttpInfo($start, $count, $page_cursor, $params, $exclude, $response_fields, $order_id, $order_ids, $customer_id, $store_id, $status, $return_type, $created_from, $created_to, $modified_from, $modified_to, $report_request_id, $disable_report_cache, $contentType)
+        return $this->returnListAsyncWithHttpInfo($start, $count, $page_cursor, $order_id, $order_ids, $customer_id, $store_id, $status, $return_type, $created_from, $created_to, $modified_from, $modified_to, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1516,9 +1516,6 @@ class ReturnApi
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_products')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $order_id Defines the order id (optional)
      * @param  string|null $order_ids Retrieves return requests specified by order ids (optional)
      * @param  string|null $customer_id Retrieves return requests specified by customer id (optional)
@@ -1529,6 +1526,9 @@ class ReturnApi
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_products')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $report_request_id Report request id (optional)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['returnList'] to see the possible values for this operation
@@ -1536,10 +1536,10 @@ class ReturnApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function returnListAsyncWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $params = 'id,order_products', $exclude = null, $response_fields = null, $order_id = null, $order_ids = null, $customer_id = null, $store_id = null, $status = null, $return_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['returnList'][0])
+    public function returnListAsyncWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $order_id = null, $order_ids = null, $customer_id = null, $store_id = null, $status = null, $return_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $response_fields = null, $params = 'id,order_products', $exclude = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['returnList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseReturnList';
-        $request = $this->returnListRequest($start, $count, $page_cursor, $params, $exclude, $response_fields, $order_id, $order_ids, $customer_id, $store_id, $status, $return_type, $created_from, $created_to, $modified_from, $modified_to, $report_request_id, $disable_report_cache, $contentType);
+        $request = $this->returnListRequest($start, $count, $page_cursor, $order_id, $order_ids, $customer_id, $store_id, $status, $return_type, $created_from, $created_to, $modified_from, $modified_to, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1583,9 +1583,6 @@ class ReturnApi
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_products')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $order_id Defines the order id (optional)
      * @param  string|null $order_ids Retrieves return requests specified by order ids (optional)
      * @param  string|null $customer_id Retrieves return requests specified by customer id (optional)
@@ -1596,6 +1593,9 @@ class ReturnApi
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,order_products')
+     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $report_request_id Report request id (optional)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['returnList'] to see the possible values for this operation
@@ -1603,7 +1603,7 @@ class ReturnApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function returnListRequest($start = 0, $count = 10, $page_cursor = null, $params = 'id,order_products', $exclude = null, $response_fields = null, $order_id = null, $order_ids = null, $customer_id = null, $store_id = null, $status = null, $return_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['returnList'][0])
+    public function returnListRequest($start = 0, $count = 10, $page_cursor = null, $order_id = null, $order_ids = null, $customer_id = null, $store_id = null, $status = null, $return_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $response_fields = null, $params = 'id,order_products', $exclude = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['returnList'][0])
     {
 
 
@@ -1654,33 +1654,6 @@ class ReturnApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $page_cursor,
             'page_cursor', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $params,
-            'params', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $exclude,
-            'exclude', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $response_fields,
-            'response_fields', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -1771,6 +1744,33 @@ class ReturnApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $modified_to,
             'modified_to', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $response_fields,
+            'response_fields', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $params,
+            'params', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $exclude,
+            'exclude', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

@@ -58,19 +58,19 @@ class ProductImageAdd implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'product_id' => 'string',
-        'image_name' => 'string',
         'type' => 'string',
-        'url' => 'string',
-        'label' => 'string',
-        'mime' => 'string',
-        'position' => 'int',
-        'content' => 'string',
+        'image_name' => 'string',
+        'product_id' => 'string',
         'product_variant_id' => 'string',
         'variant_ids' => 'string',
         'option_value_ids' => 'string',
         'store_id' => 'string',
         'lang_id' => 'string',
+        'url' => 'string',
+        'content' => 'string',
+        'label' => 'string',
+        'mime' => 'string',
+        'position' => 'int',
         'use_latest_api_version' => 'bool'
     ];
 
@@ -82,19 +82,19 @@ class ProductImageAdd implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'product_id' => null,
-        'image_name' => null,
         'type' => null,
-        'url' => null,
-        'label' => null,
-        'mime' => null,
-        'position' => null,
-        'content' => null,
+        'image_name' => null,
+        'product_id' => null,
         'product_variant_id' => null,
         'variant_ids' => null,
         'option_value_ids' => null,
         'store_id' => null,
         'lang_id' => null,
+        'url' => null,
+        'content' => null,
+        'label' => null,
+        'mime' => null,
+        'position' => null,
         'use_latest_api_version' => null
     ];
 
@@ -104,19 +104,19 @@ class ProductImageAdd implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'product_id' => false,
-        'image_name' => false,
         'type' => false,
-        'url' => false,
-        'label' => false,
-        'mime' => false,
-        'position' => false,
-        'content' => false,
+        'image_name' => false,
+        'product_id' => false,
         'product_variant_id' => false,
         'variant_ids' => false,
         'option_value_ids' => false,
         'store_id' => false,
         'lang_id' => false,
+        'url' => false,
+        'content' => false,
+        'label' => false,
+        'mime' => false,
+        'position' => false,
         'use_latest_api_version' => false
     ];
 
@@ -206,19 +206,19 @@ class ProductImageAdd implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'product_id' => 'product_id',
-        'image_name' => 'image_name',
         'type' => 'type',
-        'url' => 'url',
-        'label' => 'label',
-        'mime' => 'mime',
-        'position' => 'position',
-        'content' => 'content',
+        'image_name' => 'image_name',
+        'product_id' => 'product_id',
         'product_variant_id' => 'product_variant_id',
         'variant_ids' => 'variant_ids',
         'option_value_ids' => 'option_value_ids',
         'store_id' => 'store_id',
         'lang_id' => 'lang_id',
+        'url' => 'url',
+        'content' => 'content',
+        'label' => 'label',
+        'mime' => 'mime',
+        'position' => 'position',
         'use_latest_api_version' => 'use_latest_api_version'
     ];
 
@@ -228,19 +228,19 @@ class ProductImageAdd implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'product_id' => 'setProductId',
-        'image_name' => 'setImageName',
         'type' => 'setType',
-        'url' => 'setUrl',
-        'label' => 'setLabel',
-        'mime' => 'setMime',
-        'position' => 'setPosition',
-        'content' => 'setContent',
+        'image_name' => 'setImageName',
+        'product_id' => 'setProductId',
         'product_variant_id' => 'setProductVariantId',
         'variant_ids' => 'setVariantIds',
         'option_value_ids' => 'setOptionValueIds',
         'store_id' => 'setStoreId',
         'lang_id' => 'setLangId',
+        'url' => 'setUrl',
+        'content' => 'setContent',
+        'label' => 'setLabel',
+        'mime' => 'setMime',
+        'position' => 'setPosition',
         'use_latest_api_version' => 'setUseLatestApiVersion'
     ];
 
@@ -250,19 +250,19 @@ class ProductImageAdd implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'product_id' => 'getProductId',
-        'image_name' => 'getImageName',
         'type' => 'getType',
-        'url' => 'getUrl',
-        'label' => 'getLabel',
-        'mime' => 'getMime',
-        'position' => 'getPosition',
-        'content' => 'getContent',
+        'image_name' => 'getImageName',
+        'product_id' => 'getProductId',
         'product_variant_id' => 'getProductVariantId',
         'variant_ids' => 'getVariantIds',
         'option_value_ids' => 'getOptionValueIds',
         'store_id' => 'getStoreId',
         'lang_id' => 'getLangId',
+        'url' => 'getUrl',
+        'content' => 'getContent',
+        'label' => 'getLabel',
+        'mime' => 'getMime',
+        'position' => 'getPosition',
         'use_latest_api_version' => 'getUseLatestApiVersion'
     ];
 
@@ -342,19 +342,19 @@ class ProductImageAdd implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('product_id', $data ?? [], null);
-        $this->setIfExists('image_name', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], null);
-        $this->setIfExists('url', $data ?? [], null);
-        $this->setIfExists('label', $data ?? [], null);
-        $this->setIfExists('mime', $data ?? [], null);
-        $this->setIfExists('position', $data ?? [], 0);
-        $this->setIfExists('content', $data ?? [], null);
+        $this->setIfExists('image_name', $data ?? [], null);
+        $this->setIfExists('product_id', $data ?? [], null);
         $this->setIfExists('product_variant_id', $data ?? [], null);
         $this->setIfExists('variant_ids', $data ?? [], null);
         $this->setIfExists('option_value_ids', $data ?? [], null);
         $this->setIfExists('store_id', $data ?? [], null);
         $this->setIfExists('lang_id', $data ?? [], null);
+        $this->setIfExists('url', $data ?? [], null);
+        $this->setIfExists('content', $data ?? [], null);
+        $this->setIfExists('label', $data ?? [], null);
+        $this->setIfExists('mime', $data ?? [], null);
+        $this->setIfExists('position', $data ?? [], 0);
         $this->setIfExists('use_latest_api_version', $data ?? [], false);
     }
 
@@ -385,9 +385,6 @@ class ProductImageAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['image_name'] === null) {
-            $invalidProperties[] = "'image_name' can't be null";
-        }
         if ($this->container['type'] === null) {
             $invalidProperties[] = "'type' can't be null";
         }
@@ -400,6 +397,9 @@ class ProductImageAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
 
+        if ($this->container['image_name'] === null) {
+            $invalidProperties[] = "'image_name' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -414,60 +414,6 @@ class ProductImageAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets product_id
-     *
-     * @return string|null
-     */
-    public function getProductId()
-    {
-        return $this->container['product_id'];
-    }
-
-    /**
-     * Sets product_id
-     *
-     * @param string|null $product_id Defines product id where the image should be added
-     *
-     * @return self
-     */
-    public function setProductId($product_id)
-    {
-        if (is_null($product_id)) {
-            throw new \InvalidArgumentException('non-nullable product_id cannot be null');
-        }
-        $this->container['product_id'] = $product_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets image_name
-     *
-     * @return string
-     */
-    public function getImageName()
-    {
-        return $this->container['image_name'];
-    }
-
-    /**
-     * Sets image_name
-     *
-     * @param string $image_name Defines image's name
-     *
-     * @return self
-     */
-    public function setImageName($image_name)
-    {
-        if (is_null($image_name)) {
-            throw new \InvalidArgumentException('non-nullable image_name cannot be null');
-        }
-        $this->container['image_name'] = $image_name;
-
-        return $this;
-    }
 
     /**
      * Gets type
@@ -507,136 +453,55 @@ class ProductImageAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets url
+     * Gets image_name
      *
-     * @return string|null
+     * @return string
      */
-    public function getUrl()
+    public function getImageName()
     {
-        return $this->container['url'];
+        return $this->container['image_name'];
     }
 
     /**
-     * Sets url
+     * Sets image_name
      *
-     * @param string|null $url Defines URL of the image that has to be added
+     * @param string $image_name Defines image's name
      *
      * @return self
      */
-    public function setUrl($url)
+    public function setImageName($image_name)
     {
-        if (is_null($url)) {
-            throw new \InvalidArgumentException('non-nullable url cannot be null');
+        if (is_null($image_name)) {
+            throw new \InvalidArgumentException('non-nullable image_name cannot be null');
         }
-        $this->container['url'] = $url;
+        $this->container['image_name'] = $image_name;
 
         return $this;
     }
 
     /**
-     * Gets label
+     * Gets product_id
      *
      * @return string|null
      */
-    public function getLabel()
+    public function getProductId()
     {
-        return $this->container['label'];
+        return $this->container['product_id'];
     }
 
     /**
-     * Sets label
+     * Sets product_id
      *
-     * @param string|null $label Defines alternative text that has to be attached to the picture
+     * @param string|null $product_id Defines product id where the image should be added
      *
      * @return self
      */
-    public function setLabel($label)
+    public function setProductId($product_id)
     {
-        if (is_null($label)) {
-            throw new \InvalidArgumentException('non-nullable label cannot be null');
+        if (is_null($product_id)) {
+            throw new \InvalidArgumentException('non-nullable product_id cannot be null');
         }
-        $this->container['label'] = $label;
-
-        return $this;
-    }
-
-    /**
-     * Gets mime
-     *
-     * @return string|null
-     */
-    public function getMime()
-    {
-        return $this->container['mime'];
-    }
-
-    /**
-     * Sets mime
-     *
-     * @param string|null $mime Mime type of image http://en.wikipedia.org/wiki/Internet_media_type.
-     *
-     * @return self
-     */
-    public function setMime($mime)
-    {
-        if (is_null($mime)) {
-            throw new \InvalidArgumentException('non-nullable mime cannot be null');
-        }
-        $this->container['mime'] = $mime;
-
-        return $this;
-    }
-
-    /**
-     * Gets position
-     *
-     * @return int|null
-     */
-    public function getPosition()
-    {
-        return $this->container['position'];
-    }
-
-    /**
-     * Sets position
-     *
-     * @param int|null $position Defines image’s position in the list
-     *
-     * @return self
-     */
-    public function setPosition($position)
-    {
-        if (is_null($position)) {
-            throw new \InvalidArgumentException('non-nullable position cannot be null');
-        }
-        $this->container['position'] = $position;
-
-        return $this;
-    }
-
-    /**
-     * Gets content
-     *
-     * @return string|null
-     */
-    public function getContent()
-    {
-        return $this->container['content'];
-    }
-
-    /**
-     * Sets content
-     *
-     * @param string|null $content Content(body) encoded in base64 of image file
-     *
-     * @return self
-     */
-    public function setContent($content)
-    {
-        if (is_null($content)) {
-            throw new \InvalidArgumentException('non-nullable content cannot be null');
-        }
-        $this->container['content'] = $content;
+        $this->container['product_id'] = $product_id;
 
         return $this;
     }
@@ -772,6 +637,141 @@ class ProductImageAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable lang_id cannot be null');
         }
         $this->container['lang_id'] = $lang_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets url
+     *
+     * @return string|null
+     */
+    public function getUrl()
+    {
+        return $this->container['url'];
+    }
+
+    /**
+     * Sets url
+     *
+     * @param string|null $url Defines URL of the image that has to be added
+     *
+     * @return self
+     */
+    public function setUrl($url)
+    {
+        if (is_null($url)) {
+            throw new \InvalidArgumentException('non-nullable url cannot be null');
+        }
+        $this->container['url'] = $url;
+
+        return $this;
+    }
+
+    /**
+     * Gets content
+     *
+     * @return string|null
+     */
+    public function getContent()
+    {
+        return $this->container['content'];
+    }
+
+    /**
+     * Sets content
+     *
+     * @param string|null $content Content(body) encoded in base64 of image file
+     *
+     * @return self
+     */
+    public function setContent($content)
+    {
+        if (is_null($content)) {
+            throw new \InvalidArgumentException('non-nullable content cannot be null');
+        }
+        $this->container['content'] = $content;
+
+        return $this;
+    }
+
+    /**
+     * Gets label
+     *
+     * @return string|null
+     */
+    public function getLabel()
+    {
+        return $this->container['label'];
+    }
+
+    /**
+     * Sets label
+     *
+     * @param string|null $label Defines alternative text that has to be attached to the picture
+     *
+     * @return self
+     */
+    public function setLabel($label)
+    {
+        if (is_null($label)) {
+            throw new \InvalidArgumentException('non-nullable label cannot be null');
+        }
+        $this->container['label'] = $label;
+
+        return $this;
+    }
+
+    /**
+     * Gets mime
+     *
+     * @return string|null
+     */
+    public function getMime()
+    {
+        return $this->container['mime'];
+    }
+
+    /**
+     * Sets mime
+     *
+     * @param string|null $mime Mime type of image http://en.wikipedia.org/wiki/Internet_media_type.
+     *
+     * @return self
+     */
+    public function setMime($mime)
+    {
+        if (is_null($mime)) {
+            throw new \InvalidArgumentException('non-nullable mime cannot be null');
+        }
+        $this->container['mime'] = $mime;
+
+        return $this;
+    }
+
+    /**
+     * Gets position
+     *
+     * @return int|null
+     */
+    public function getPosition()
+    {
+        return $this->container['position'];
+    }
+
+    /**
+     * Sets position
+     *
+     * @param int|null $position Defines image’s position in the list
+     *
+     * @return self
+     */
+    public function setPosition($position)
+    {
+        if (is_null($position)) {
+            throw new \InvalidArgumentException('non-nullable position cannot be null');
+        }
+        $this->container['position'] = $position;
 
         return $this;
     }

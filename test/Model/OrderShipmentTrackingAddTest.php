@@ -81,15 +81,6 @@ class OrderShipmentTrackingAddTest extends TestCase
     }
 
     /**
-     * Test attribute "store_id"
-     */
-    public function testPropertyStoreId()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "order_id"
      */
     public function testPropertyOrderId()
@@ -111,6 +102,15 @@ class OrderShipmentTrackingAddTest extends TestCase
      * Test attribute "carrier_id"
      */
     public function testPropertyCarrierId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "store_id"
+     */
+    public function testPropertyStoreId()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

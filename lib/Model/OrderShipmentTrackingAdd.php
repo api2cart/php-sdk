@@ -58,10 +58,10 @@ class OrderShipmentTrackingAdd implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'store_id' => 'string',
         'order_id' => 'string',
         'shipment_id' => 'string',
         'carrier_id' => 'string',
+        'store_id' => 'string',
         'tracking_provider' => 'string',
         'tracking_number' => 'string',
         'tracking_link' => 'string',
@@ -76,10 +76,10 @@ class OrderShipmentTrackingAdd implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'store_id' => null,
         'order_id' => null,
         'shipment_id' => null,
         'carrier_id' => null,
+        'store_id' => null,
         'tracking_provider' => null,
         'tracking_number' => null,
         'tracking_link' => null,
@@ -92,10 +92,10 @@ class OrderShipmentTrackingAdd implements ModelInterface, ArrayAccess, \JsonSeri
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'store_id' => false,
         'order_id' => false,
         'shipment_id' => false,
         'carrier_id' => false,
+        'store_id' => false,
         'tracking_provider' => false,
         'tracking_number' => false,
         'tracking_link' => false,
@@ -188,10 +188,10 @@ class OrderShipmentTrackingAdd implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
-        'store_id' => 'store_id',
         'order_id' => 'order_id',
         'shipment_id' => 'shipment_id',
         'carrier_id' => 'carrier_id',
+        'store_id' => 'store_id',
         'tracking_provider' => 'tracking_provider',
         'tracking_number' => 'tracking_number',
         'tracking_link' => 'tracking_link',
@@ -204,10 +204,10 @@ class OrderShipmentTrackingAdd implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'store_id' => 'setStoreId',
         'order_id' => 'setOrderId',
         'shipment_id' => 'setShipmentId',
         'carrier_id' => 'setCarrierId',
+        'store_id' => 'setStoreId',
         'tracking_provider' => 'setTrackingProvider',
         'tracking_number' => 'setTrackingNumber',
         'tracking_link' => 'setTrackingLink',
@@ -220,10 +220,10 @@ class OrderShipmentTrackingAdd implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        'store_id' => 'getStoreId',
         'order_id' => 'getOrderId',
         'shipment_id' => 'getShipmentId',
         'carrier_id' => 'getCarrierId',
+        'store_id' => 'getStoreId',
         'tracking_provider' => 'getTrackingProvider',
         'tracking_number' => 'getTrackingNumber',
         'tracking_link' => 'getTrackingLink',
@@ -287,10 +287,10 @@ class OrderShipmentTrackingAdd implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('store_id', $data ?? [], null);
         $this->setIfExists('order_id', $data ?? [], null);
         $this->setIfExists('shipment_id', $data ?? [], null);
         $this->setIfExists('carrier_id', $data ?? [], null);
+        $this->setIfExists('store_id', $data ?? [], null);
         $this->setIfExists('tracking_provider', $data ?? [], null);
         $this->setIfExists('tracking_number', $data ?? [], null);
         $this->setIfExists('tracking_link', $data ?? [], null);
@@ -344,33 +344,6 @@ class OrderShipmentTrackingAdd implements ModelInterface, ArrayAccess, \JsonSeri
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets store_id
-     *
-     * @return string|null
-     */
-    public function getStoreId()
-    {
-        return $this->container['store_id'];
-    }
-
-    /**
-     * Sets store_id
-     *
-     * @param string|null $store_id Store Id
-     *
-     * @return self
-     */
-    public function setStoreId($store_id)
-    {
-        if (is_null($store_id)) {
-            throw new \InvalidArgumentException('non-nullable store_id cannot be null');
-        }
-        $this->container['store_id'] = $store_id;
-
-        return $this;
-    }
 
     /**
      * Gets order_id
@@ -449,6 +422,33 @@ class OrderShipmentTrackingAdd implements ModelInterface, ArrayAccess, \JsonSeri
             throw new \InvalidArgumentException('non-nullable carrier_id cannot be null');
         }
         $this->container['carrier_id'] = $carrier_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets store_id
+     *
+     * @return string|null
+     */
+    public function getStoreId()
+    {
+        return $this->container['store_id'];
+    }
+
+    /**
+     * Sets store_id
+     *
+     * @param string|null $store_id Store Id
+     *
+     * @return self
+     */
+    public function setStoreId($store_id)
+    {
+        if (is_null($store_id)) {
+            throw new \InvalidArgumentException('non-nullable store_id cannot be null');
+        }
+        $this->container['store_id'] = $store_id;
 
         return $this;
     }

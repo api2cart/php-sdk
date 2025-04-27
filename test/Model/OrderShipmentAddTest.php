@@ -90,18 +90,18 @@ class OrderShipmentAddTest extends TestCase
     }
 
     /**
-     * Test attribute "store_id"
+     * Test attribute "warehouse_id"
      */
-    public function testPropertyStoreId()
+    public function testPropertyWarehouseId()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "warehouse_id"
+     * Test attribute "store_id"
      */
-    public function testPropertyWarehouseId()
+    public function testPropertyStoreId()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -135,36 +135,9 @@ class OrderShipmentAddTest extends TestCase
     }
 
     /**
-     * Test attribute "send_notifications"
-     */
-    public function testPropertySendNotifications()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "tracking_numbers"
      */
     public function testPropertyTrackingNumbers()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "adjust_stock"
-     */
-    public function testPropertyAdjustStock()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "enable_cache"
-     */
-    public function testPropertyEnableCache()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -183,6 +156,33 @@ class OrderShipmentAddTest extends TestCase
      * Test attribute "is_shipped"
      */
     public function testPropertyIsShipped()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "send_notifications"
+     */
+    public function testPropertySendNotifications()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "adjust_stock"
+     */
+    public function testPropertyAdjustStock()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "enable_cache"
+     */
+    public function testPropertyEnableCache()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

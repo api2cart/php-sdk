@@ -66,11 +66,11 @@ class OrderAddOrderItemInner implements ModelInterface, ArrayAccess, \JsonSerial
         'order_item_weight' => 'float',
         'order_item_variant_id' => 'string',
         'order_item_tax' => 'float',
+        'order_item_price_includes_tax' => 'bool',
         'order_item_parent' => 'int',
         'order_item_parent_option_name' => 'string',
         'order_item_allow_refund_items_separately' => 'bool',
         'order_item_allow_ship_items_separately' => 'bool',
-        'order_item_price_includes_tax' => 'bool',
         'order_item_option' => '\OpenAPI\Client\Model\OrderAddOrderItemInnerOrderItemOptionInner[]',
         'order_item_property' => '\OpenAPI\Client\Model\OrderAddOrderItemInnerOrderItemPropertyInner[]'
     ];
@@ -91,11 +91,11 @@ class OrderAddOrderItemInner implements ModelInterface, ArrayAccess, \JsonSerial
         'order_item_weight' => null,
         'order_item_variant_id' => null,
         'order_item_tax' => null,
+        'order_item_price_includes_tax' => null,
         'order_item_parent' => null,
         'order_item_parent_option_name' => null,
         'order_item_allow_refund_items_separately' => null,
         'order_item_allow_ship_items_separately' => null,
-        'order_item_price_includes_tax' => null,
         'order_item_option' => null,
         'order_item_property' => null
     ];
@@ -114,11 +114,11 @@ class OrderAddOrderItemInner implements ModelInterface, ArrayAccess, \JsonSerial
         'order_item_weight' => false,
         'order_item_variant_id' => false,
         'order_item_tax' => false,
+        'order_item_price_includes_tax' => false,
         'order_item_parent' => false,
         'order_item_parent_option_name' => false,
         'order_item_allow_refund_items_separately' => false,
         'order_item_allow_ship_items_separately' => false,
-        'order_item_price_includes_tax' => false,
         'order_item_option' => false,
         'order_item_property' => false
     ];
@@ -217,11 +217,11 @@ class OrderAddOrderItemInner implements ModelInterface, ArrayAccess, \JsonSerial
         'order_item_weight' => 'order_item_weight',
         'order_item_variant_id' => 'order_item_variant_id',
         'order_item_tax' => 'order_item_tax',
+        'order_item_price_includes_tax' => 'order_item_price_includes_tax',
         'order_item_parent' => 'order_item_parent',
         'order_item_parent_option_name' => 'order_item_parent_option_name',
         'order_item_allow_refund_items_separately' => 'order_item_allow_refund_items_separately',
         'order_item_allow_ship_items_separately' => 'order_item_allow_ship_items_separately',
-        'order_item_price_includes_tax' => 'order_item_price_includes_tax',
         'order_item_option' => 'order_item_option',
         'order_item_property' => 'order_item_property'
     ];
@@ -240,11 +240,11 @@ class OrderAddOrderItemInner implements ModelInterface, ArrayAccess, \JsonSerial
         'order_item_weight' => 'setOrderItemWeight',
         'order_item_variant_id' => 'setOrderItemVariantId',
         'order_item_tax' => 'setOrderItemTax',
+        'order_item_price_includes_tax' => 'setOrderItemPriceIncludesTax',
         'order_item_parent' => 'setOrderItemParent',
         'order_item_parent_option_name' => 'setOrderItemParentOptionName',
         'order_item_allow_refund_items_separately' => 'setOrderItemAllowRefundItemsSeparately',
         'order_item_allow_ship_items_separately' => 'setOrderItemAllowShipItemsSeparately',
-        'order_item_price_includes_tax' => 'setOrderItemPriceIncludesTax',
         'order_item_option' => 'setOrderItemOption',
         'order_item_property' => 'setOrderItemProperty'
     ];
@@ -263,11 +263,11 @@ class OrderAddOrderItemInner implements ModelInterface, ArrayAccess, \JsonSerial
         'order_item_weight' => 'getOrderItemWeight',
         'order_item_variant_id' => 'getOrderItemVariantId',
         'order_item_tax' => 'getOrderItemTax',
+        'order_item_price_includes_tax' => 'getOrderItemPriceIncludesTax',
         'order_item_parent' => 'getOrderItemParent',
         'order_item_parent_option_name' => 'getOrderItemParentOptionName',
         'order_item_allow_refund_items_separately' => 'getOrderItemAllowRefundItemsSeparately',
         'order_item_allow_ship_items_separately' => 'getOrderItemAllowShipItemsSeparately',
-        'order_item_price_includes_tax' => 'getOrderItemPriceIncludesTax',
         'order_item_option' => 'getOrderItemOption',
         'order_item_property' => 'getOrderItemProperty'
     ];
@@ -337,11 +337,11 @@ class OrderAddOrderItemInner implements ModelInterface, ArrayAccess, \JsonSerial
         $this->setIfExists('order_item_weight', $data ?? [], null);
         $this->setIfExists('order_item_variant_id', $data ?? [], null);
         $this->setIfExists('order_item_tax', $data ?? [], 0);
+        $this->setIfExists('order_item_price_includes_tax', $data ?? [], false);
         $this->setIfExists('order_item_parent', $data ?? [], null);
         $this->setIfExists('order_item_parent_option_name', $data ?? [], null);
         $this->setIfExists('order_item_allow_refund_items_separately', $data ?? [], null);
         $this->setIfExists('order_item_allow_ship_items_separately', $data ?? [], null);
-        $this->setIfExists('order_item_price_includes_tax', $data ?? [], false);
         $this->setIfExists('order_item_option', $data ?? [], null);
         $this->setIfExists('order_item_property', $data ?? [], null);
     }
@@ -617,6 +617,33 @@ class OrderAddOrderItemInner implements ModelInterface, ArrayAccess, \JsonSerial
     }
 
     /**
+     * Gets order_item_price_includes_tax
+     *
+     * @return bool|null
+     */
+    public function getOrderItemPriceIncludesTax()
+    {
+        return $this->container['order_item_price_includes_tax'];
+    }
+
+    /**
+     * Sets order_item_price_includes_tax
+     *
+     * @param bool|null $order_item_price_includes_tax Defines if item price includes tax
+     *
+     * @return self
+     */
+    public function setOrderItemPriceIncludesTax($order_item_price_includes_tax)
+    {
+        if (is_null($order_item_price_includes_tax)) {
+            throw new \InvalidArgumentException('non-nullable order_item_price_includes_tax cannot be null');
+        }
+        $this->container['order_item_price_includes_tax'] = $order_item_price_includes_tax;
+
+        return $this;
+    }
+
+    /**
      * Gets order_item_parent
      *
      * @return int|null
@@ -720,33 +747,6 @@ class OrderAddOrderItemInner implements ModelInterface, ArrayAccess, \JsonSerial
             throw new \InvalidArgumentException('non-nullable order_item_allow_ship_items_separately cannot be null');
         }
         $this->container['order_item_allow_ship_items_separately'] = $order_item_allow_ship_items_separately;
-
-        return $this;
-    }
-
-    /**
-     * Gets order_item_price_includes_tax
-     *
-     * @return bool|null
-     */
-    public function getOrderItemPriceIncludesTax()
-    {
-        return $this->container['order_item_price_includes_tax'];
-    }
-
-    /**
-     * Sets order_item_price_includes_tax
-     *
-     * @param bool|null $order_item_price_includes_tax Defines if item price includes tax
-     *
-     * @return self
-     */
-    public function setOrderItemPriceIncludesTax($order_item_price_includes_tax)
-    {
-        if (is_null($order_item_price_includes_tax)) {
-            throw new \InvalidArgumentException('non-nullable order_item_price_includes_tax cannot be null');
-        }
-        $this->container['order_item_price_includes_tax'] = $order_item_price_includes_tax;
 
         return $this;
     }

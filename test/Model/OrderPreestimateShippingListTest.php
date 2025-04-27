@@ -81,18 +81,18 @@ class OrderPreestimateShippingListTest extends TestCase
     }
 
     /**
-     * Test attribute "store_id"
+     * Test attribute "warehouse_id"
      */
-    public function testPropertyStoreId()
+    public function testPropertyWarehouseId()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "warehouse_id"
+     * Test attribute "customer_id"
      */
-    public function testPropertyWarehouseId()
+    public function testPropertyCustomerId()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -108,9 +108,9 @@ class OrderPreestimateShippingListTest extends TestCase
     }
 
     /**
-     * Test attribute "customer_id"
+     * Test attribute "store_id"
      */
-    public function testPropertyCustomerId()
+    public function testPropertyStoreId()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

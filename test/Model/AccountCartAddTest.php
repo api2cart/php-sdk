@@ -738,6 +738,15 @@ class AccountCartAddTest extends TestCase
     }
 
     /**
+     * Test attribute "shopline_shared_secret"
+     */
+    public function testPropertyShoplineSharedSecret()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "shopify_access_token"
      */
     public function testPropertyShopifyAccessToken()

@@ -133,11 +133,11 @@ class BatchApi
      *
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $ids Filter batch jobs by ids (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $processed_from Retrieve entities according to their processing datetime (optional)
      * @param  string|null $processed_to Retrieve entities according to their processing datetime (optional)
-     * @param  string|null $ids Filter batch jobs by ids (optional)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional, default to '{return_code,return_message,pagination,result}')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['batchJobList'] to see the possible values for this operation
      *
@@ -145,9 +145,9 @@ class BatchApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseBatchJobList
      */
-    public function batchJobList($count = 10, $page_cursor = null, $created_from = null, $created_to = null, $processed_from = null, $processed_to = null, $ids = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['batchJobList'][0])
+    public function batchJobList($count = 10, $page_cursor = null, $ids = null, $created_from = null, $created_to = null, $processed_from = null, $processed_to = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['batchJobList'][0])
     {
-        list($response) = $this->batchJobListWithHttpInfo($count, $page_cursor, $created_from, $created_to, $processed_from, $processed_to, $ids, $response_fields, $contentType);
+        list($response) = $this->batchJobListWithHttpInfo($count, $page_cursor, $ids, $created_from, $created_to, $processed_from, $processed_to, $response_fields, $contentType);
         return $response;
     }
 
@@ -158,11 +158,11 @@ class BatchApi
      *
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $ids Filter batch jobs by ids (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $processed_from Retrieve entities according to their processing datetime (optional)
      * @param  string|null $processed_to Retrieve entities according to their processing datetime (optional)
-     * @param  string|null $ids Filter batch jobs by ids (optional)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional, default to '{return_code,return_message,pagination,result}')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['batchJobList'] to see the possible values for this operation
      *
@@ -170,9 +170,9 @@ class BatchApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseBatchJobList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function batchJobListWithHttpInfo($count = 10, $page_cursor = null, $created_from = null, $created_to = null, $processed_from = null, $processed_to = null, $ids = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['batchJobList'][0])
+    public function batchJobListWithHttpInfo($count = 10, $page_cursor = null, $ids = null, $created_from = null, $created_to = null, $processed_from = null, $processed_to = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['batchJobList'][0])
     {
-        $request = $this->batchJobListRequest($count, $page_cursor, $created_from, $created_to, $processed_from, $processed_to, $ids, $response_fields, $contentType);
+        $request = $this->batchJobListRequest($count, $page_cursor, $ids, $created_from, $created_to, $processed_from, $processed_to, $response_fields, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -290,20 +290,20 @@ class BatchApi
      *
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $ids Filter batch jobs by ids (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $processed_from Retrieve entities according to their processing datetime (optional)
      * @param  string|null $processed_to Retrieve entities according to their processing datetime (optional)
-     * @param  string|null $ids Filter batch jobs by ids (optional)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional, default to '{return_code,return_message,pagination,result}')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['batchJobList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function batchJobListAsync($count = 10, $page_cursor = null, $created_from = null, $created_to = null, $processed_from = null, $processed_to = null, $ids = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['batchJobList'][0])
+    public function batchJobListAsync($count = 10, $page_cursor = null, $ids = null, $created_from = null, $created_to = null, $processed_from = null, $processed_to = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['batchJobList'][0])
     {
-        return $this->batchJobListAsyncWithHttpInfo($count, $page_cursor, $created_from, $created_to, $processed_from, $processed_to, $ids, $response_fields, $contentType)
+        return $this->batchJobListAsyncWithHttpInfo($count, $page_cursor, $ids, $created_from, $created_to, $processed_from, $processed_to, $response_fields, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -318,21 +318,21 @@ class BatchApi
      *
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $ids Filter batch jobs by ids (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $processed_from Retrieve entities according to their processing datetime (optional)
      * @param  string|null $processed_to Retrieve entities according to their processing datetime (optional)
-     * @param  string|null $ids Filter batch jobs by ids (optional)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional, default to '{return_code,return_message,pagination,result}')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['batchJobList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function batchJobListAsyncWithHttpInfo($count = 10, $page_cursor = null, $created_from = null, $created_to = null, $processed_from = null, $processed_to = null, $ids = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['batchJobList'][0])
+    public function batchJobListAsyncWithHttpInfo($count = 10, $page_cursor = null, $ids = null, $created_from = null, $created_to = null, $processed_from = null, $processed_to = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['batchJobList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseBatchJobList';
-        $request = $this->batchJobListRequest($count, $page_cursor, $created_from, $created_to, $processed_from, $processed_to, $ids, $response_fields, $contentType);
+        $request = $this->batchJobListRequest($count, $page_cursor, $ids, $created_from, $created_to, $processed_from, $processed_to, $response_fields, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -375,18 +375,18 @@ class BatchApi
      *
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $ids Filter batch jobs by ids (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $processed_from Retrieve entities according to their processing datetime (optional)
      * @param  string|null $processed_to Retrieve entities according to their processing datetime (optional)
-     * @param  string|null $ids Filter batch jobs by ids (optional)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional, default to '{return_code,return_message,pagination,result}')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['batchJobList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function batchJobListRequest($count = 10, $page_cursor = null, $created_from = null, $created_to = null, $processed_from = null, $processed_to = null, $ids = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['batchJobList'][0])
+    public function batchJobListRequest($count = 10, $page_cursor = null, $ids = null, $created_from = null, $created_to = null, $processed_from = null, $processed_to = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['batchJobList'][0])
     {
 
 
@@ -425,6 +425,15 @@ class BatchApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $ids,
+            'ids', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $created_from,
             'created_from', // param base name
             'string', // openApiType
@@ -454,15 +463,6 @@ class BatchApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $processed_to,
             'processed_to', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $ids,
-            'ids', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

@@ -81,9 +81,9 @@ class ProductImageAddTest extends TestCase
     }
 
     /**
-     * Test attribute "product_id"
+     * Test attribute "type"
      */
-    public function testPropertyProductId()
+    public function testPropertyType()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -99,54 +99,9 @@ class ProductImageAddTest extends TestCase
     }
 
     /**
-     * Test attribute "type"
+     * Test attribute "product_id"
      */
-    public function testPropertyType()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "url"
-     */
-    public function testPropertyUrl()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "label"
-     */
-    public function testPropertyLabel()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "mime"
-     */
-    public function testPropertyMime()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "position"
-     */
-    public function testPropertyPosition()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "content"
-     */
-    public function testPropertyContent()
+    public function testPropertyProductId()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -192,6 +147,51 @@ class ProductImageAddTest extends TestCase
      * Test attribute "lang_id"
      */
     public function testPropertyLangId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "url"
+     */
+    public function testPropertyUrl()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "content"
+     */
+    public function testPropertyContent()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "label"
+     */
+    public function testPropertyLabel()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "mime"
+     */
+    public function testPropertyMime()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "position"
+     */
+    public function testPropertyPosition()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

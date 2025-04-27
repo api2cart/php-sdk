@@ -128,29 +128,29 @@ class MarketplaceApi
      *
      * marketplace.product.find
      *
-     * @param  string|null $store_id Store Id (optional)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param  string|null $categories_ids Defines product add that is specified by comma-separated categories id (optional)
      * @param  string|null $keyword Defines search keyword (optional)
+     * @param  string|null $categories_ids Defines product add that is specified by comma-separated categories id (optional)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $asin Amazon Standard Identification Number. (optional)
      * @param  string|null $ean European Article Number. An EAN is a unique 8 or 13-digit identifier that many industries (such as book publishers) use to identify products. (optional)
      * @param  string|null $gtin Global Trade Item Number. An GTIN is an identifier for trade items. (optional)
      * @param  string|null $upc Universal Product Code. A UPC (UPC-A) is a commonly used identifer for many different products. (optional)
      * @param  string|null $mpn Manufacturer Part Number. A MPN is an identifier of a particular part design or material used. (optional)
      * @param  string|null $isbn International Standard Book Number. An ISBN is a unique identifier for books. (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketplaceProductFind'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseMarketplaceProductFind
      */
-    public function marketplaceProductFind($store_id = null, $count = 10, $page_cursor = null, $categories_ids = null, $keyword = null, $asin = null, $ean = null, $gtin = null, $upc = null, $mpn = null, $isbn = null, $params = 'force_all', $exclude = null, $response_fields = null, string $contentType = self::contentTypes['marketplaceProductFind'][0])
+    public function marketplaceProductFind($count = 10, $page_cursor = null, $keyword = null, $categories_ids = null, $store_id = null, $asin = null, $ean = null, $gtin = null, $upc = null, $mpn = null, $isbn = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['marketplaceProductFind'][0])
     {
-        list($response) = $this->marketplaceProductFindWithHttpInfo($store_id, $count, $page_cursor, $categories_ids, $keyword, $asin, $ean, $gtin, $upc, $mpn, $isbn, $params, $exclude, $response_fields, $contentType);
+        list($response) = $this->marketplaceProductFindWithHttpInfo($count, $page_cursor, $keyword, $categories_ids, $store_id, $asin, $ean, $gtin, $upc, $mpn, $isbn, $response_fields, $params, $exclude, $contentType);
         return $response;
     }
 
@@ -159,29 +159,29 @@ class MarketplaceApi
      *
      * marketplace.product.find
      *
-     * @param  string|null $store_id Store Id (optional)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param  string|null $categories_ids Defines product add that is specified by comma-separated categories id (optional)
      * @param  string|null $keyword Defines search keyword (optional)
+     * @param  string|null $categories_ids Defines product add that is specified by comma-separated categories id (optional)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $asin Amazon Standard Identification Number. (optional)
      * @param  string|null $ean European Article Number. An EAN is a unique 8 or 13-digit identifier that many industries (such as book publishers) use to identify products. (optional)
      * @param  string|null $gtin Global Trade Item Number. An GTIN is an identifier for trade items. (optional)
      * @param  string|null $upc Universal Product Code. A UPC (UPC-A) is a commonly used identifer for many different products. (optional)
      * @param  string|null $mpn Manufacturer Part Number. A MPN is an identifier of a particular part design or material used. (optional)
      * @param  string|null $isbn International Standard Book Number. An ISBN is a unique identifier for books. (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketplaceProductFind'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseMarketplaceProductFind, HTTP status code, HTTP response headers (array of strings)
      */
-    public function marketplaceProductFindWithHttpInfo($store_id = null, $count = 10, $page_cursor = null, $categories_ids = null, $keyword = null, $asin = null, $ean = null, $gtin = null, $upc = null, $mpn = null, $isbn = null, $params = 'force_all', $exclude = null, $response_fields = null, string $contentType = self::contentTypes['marketplaceProductFind'][0])
+    public function marketplaceProductFindWithHttpInfo($count = 10, $page_cursor = null, $keyword = null, $categories_ids = null, $store_id = null, $asin = null, $ean = null, $gtin = null, $upc = null, $mpn = null, $isbn = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['marketplaceProductFind'][0])
     {
-        $request = $this->marketplaceProductFindRequest($store_id, $count, $page_cursor, $categories_ids, $keyword, $asin, $ean, $gtin, $upc, $mpn, $isbn, $params, $exclude, $response_fields, $contentType);
+        $request = $this->marketplaceProductFindRequest($count, $page_cursor, $keyword, $categories_ids, $store_id, $asin, $ean, $gtin, $upc, $mpn, $isbn, $response_fields, $params, $exclude, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -297,28 +297,28 @@ class MarketplaceApi
      *
      * marketplace.product.find
      *
-     * @param  string|null $store_id Store Id (optional)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param  string|null $categories_ids Defines product add that is specified by comma-separated categories id (optional)
      * @param  string|null $keyword Defines search keyword (optional)
+     * @param  string|null $categories_ids Defines product add that is specified by comma-separated categories id (optional)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $asin Amazon Standard Identification Number. (optional)
      * @param  string|null $ean European Article Number. An EAN is a unique 8 or 13-digit identifier that many industries (such as book publishers) use to identify products. (optional)
      * @param  string|null $gtin Global Trade Item Number. An GTIN is an identifier for trade items. (optional)
      * @param  string|null $upc Universal Product Code. A UPC (UPC-A) is a commonly used identifer for many different products. (optional)
      * @param  string|null $mpn Manufacturer Part Number. A MPN is an identifier of a particular part design or material used. (optional)
      * @param  string|null $isbn International Standard Book Number. An ISBN is a unique identifier for books. (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketplaceProductFind'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function marketplaceProductFindAsync($store_id = null, $count = 10, $page_cursor = null, $categories_ids = null, $keyword = null, $asin = null, $ean = null, $gtin = null, $upc = null, $mpn = null, $isbn = null, $params = 'force_all', $exclude = null, $response_fields = null, string $contentType = self::contentTypes['marketplaceProductFind'][0])
+    public function marketplaceProductFindAsync($count = 10, $page_cursor = null, $keyword = null, $categories_ids = null, $store_id = null, $asin = null, $ean = null, $gtin = null, $upc = null, $mpn = null, $isbn = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['marketplaceProductFind'][0])
     {
-        return $this->marketplaceProductFindAsyncWithHttpInfo($store_id, $count, $page_cursor, $categories_ids, $keyword, $asin, $ean, $gtin, $upc, $mpn, $isbn, $params, $exclude, $response_fields, $contentType)
+        return $this->marketplaceProductFindAsyncWithHttpInfo($count, $page_cursor, $keyword, $categories_ids, $store_id, $asin, $ean, $gtin, $upc, $mpn, $isbn, $response_fields, $params, $exclude, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -331,29 +331,29 @@ class MarketplaceApi
      *
      * marketplace.product.find
      *
-     * @param  string|null $store_id Store Id (optional)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param  string|null $categories_ids Defines product add that is specified by comma-separated categories id (optional)
      * @param  string|null $keyword Defines search keyword (optional)
+     * @param  string|null $categories_ids Defines product add that is specified by comma-separated categories id (optional)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $asin Amazon Standard Identification Number. (optional)
      * @param  string|null $ean European Article Number. An EAN is a unique 8 or 13-digit identifier that many industries (such as book publishers) use to identify products. (optional)
      * @param  string|null $gtin Global Trade Item Number. An GTIN is an identifier for trade items. (optional)
      * @param  string|null $upc Universal Product Code. A UPC (UPC-A) is a commonly used identifer for many different products. (optional)
      * @param  string|null $mpn Manufacturer Part Number. A MPN is an identifier of a particular part design or material used. (optional)
      * @param  string|null $isbn International Standard Book Number. An ISBN is a unique identifier for books. (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketplaceProductFind'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function marketplaceProductFindAsyncWithHttpInfo($store_id = null, $count = 10, $page_cursor = null, $categories_ids = null, $keyword = null, $asin = null, $ean = null, $gtin = null, $upc = null, $mpn = null, $isbn = null, $params = 'force_all', $exclude = null, $response_fields = null, string $contentType = self::contentTypes['marketplaceProductFind'][0])
+    public function marketplaceProductFindAsyncWithHttpInfo($count = 10, $page_cursor = null, $keyword = null, $categories_ids = null, $store_id = null, $asin = null, $ean = null, $gtin = null, $upc = null, $mpn = null, $isbn = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['marketplaceProductFind'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseMarketplaceProductFind';
-        $request = $this->marketplaceProductFindRequest($store_id, $count, $page_cursor, $categories_ids, $keyword, $asin, $ean, $gtin, $upc, $mpn, $isbn, $params, $exclude, $response_fields, $contentType);
+        $request = $this->marketplaceProductFindRequest($count, $page_cursor, $keyword, $categories_ids, $store_id, $asin, $ean, $gtin, $upc, $mpn, $isbn, $response_fields, $params, $exclude, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -394,26 +394,26 @@ class MarketplaceApi
     /**
      * Create request for operation 'marketplaceProductFind'
      *
-     * @param  string|null $store_id Store Id (optional)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param  string|null $categories_ids Defines product add that is specified by comma-separated categories id (optional)
      * @param  string|null $keyword Defines search keyword (optional)
+     * @param  string|null $categories_ids Defines product add that is specified by comma-separated categories id (optional)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $asin Amazon Standard Identification Number. (optional)
      * @param  string|null $ean European Article Number. An EAN is a unique 8 or 13-digit identifier that many industries (such as book publishers) use to identify products. (optional)
      * @param  string|null $gtin Global Trade Item Number. An GTIN is an identifier for trade items. (optional)
      * @param  string|null $upc Universal Product Code. A UPC (UPC-A) is a commonly used identifer for many different products. (optional)
      * @param  string|null $mpn Manufacturer Part Number. A MPN is an identifier of a particular part design or material used. (optional)
      * @param  string|null $isbn International Standard Book Number. An ISBN is a unique identifier for books. (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketplaceProductFind'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function marketplaceProductFindRequest($store_id = null, $count = 10, $page_cursor = null, $categories_ids = null, $keyword = null, $asin = null, $ean = null, $gtin = null, $upc = null, $mpn = null, $isbn = null, $params = 'force_all', $exclude = null, $response_fields = null, string $contentType = self::contentTypes['marketplaceProductFind'][0])
+    public function marketplaceProductFindRequest($count = 10, $page_cursor = null, $keyword = null, $categories_ids = null, $store_id = null, $asin = null, $ean = null, $gtin = null, $upc = null, $mpn = null, $isbn = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['marketplaceProductFind'][0])
     {
 
 
@@ -440,15 +440,6 @@ class MarketplaceApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $store_id,
-            'store_id', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $count,
             'count', // param base name
             'integer', // openApiType
@@ -467,6 +458,15 @@ class MarketplaceApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $keyword,
+            'keyword', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $categories_ids,
             'categories_ids', // param base name
             'string', // openApiType
@@ -476,8 +476,8 @@ class MarketplaceApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $keyword,
-            'keyword', // param base name
+            $store_id,
+            'store_id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -539,6 +539,15 @@ class MarketplaceApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $response_fields,
+            'response_fields', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $params,
             'params', // param base name
             'string', // openApiType
@@ -550,15 +559,6 @@ class MarketplaceApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $exclude,
             'exclude', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $response_fields,
-            'response_fields', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

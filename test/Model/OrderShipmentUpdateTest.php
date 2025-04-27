@@ -81,15 +81,6 @@ class OrderShipmentUpdateTest extends TestCase
     }
 
     /**
-     * Test attribute "store_id"
-     */
-    public function testPropertyStoreId()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "shipment_id"
      */
     public function testPropertyShipmentId()
@@ -108,27 +99,27 @@ class OrderShipmentUpdateTest extends TestCase
     }
 
     /**
+     * Test attribute "store_id"
+     */
+    public function testPropertyStoreId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "shipment_provider"
+     */
+    public function testPropertyShipmentProvider()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "tracking_numbers"
      */
     public function testPropertyTrackingNumbers()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "replace"
-     */
-    public function testPropertyReplace()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "is_shipped"
-     */
-    public function testPropertyIsShipped()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -144,6 +135,15 @@ class OrderShipmentUpdateTest extends TestCase
     }
 
     /**
+     * Test attribute "is_shipped"
+     */
+    public function testPropertyIsShipped()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "delivered_at"
      */
     public function testPropertyDeliveredAt()
@@ -153,9 +153,9 @@ class OrderShipmentUpdateTest extends TestCase
     }
 
     /**
-     * Test attribute "shipment_provider"
+     * Test attribute "replace"
      */
-    public function testPropertyShipmentProvider()
+    public function testPropertyReplace()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
