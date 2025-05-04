@@ -160,4 +160,31 @@ class OrderShipmentUpdateTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "send_notifications"
+     */
+    public function testPropertySendNotifications()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tracking_provider"
+     */
+    public function testPropertyTrackingProvider()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "items"
+     */
+    public function testPropertyItems()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

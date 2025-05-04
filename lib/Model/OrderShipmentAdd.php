@@ -71,6 +71,7 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'adjust_stock' => 'bool',
         'enable_cache' => 'bool',
         'check_process_status' => 'bool',
+        'tracking_provider' => 'string',
         'use_latest_api_version' => 'bool'
     ];
 
@@ -95,6 +96,7 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'adjust_stock' => null,
         'enable_cache' => null,
         'check_process_status' => null,
+        'tracking_provider' => null,
         'use_latest_api_version' => null
     ];
 
@@ -117,6 +119,7 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'adjust_stock' => false,
         'enable_cache' => false,
         'check_process_status' => false,
+        'tracking_provider' => false,
         'use_latest_api_version' => false
     ];
 
@@ -219,6 +222,7 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'adjust_stock' => 'adjust_stock',
         'enable_cache' => 'enable_cache',
         'check_process_status' => 'check_process_status',
+        'tracking_provider' => 'tracking_provider',
         'use_latest_api_version' => 'use_latest_api_version'
     ];
 
@@ -241,6 +245,7 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'adjust_stock' => 'setAdjustStock',
         'enable_cache' => 'setEnableCache',
         'check_process_status' => 'setCheckProcessStatus',
+        'tracking_provider' => 'setTrackingProvider',
         'use_latest_api_version' => 'setUseLatestApiVersion'
     ];
 
@@ -263,6 +268,7 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'adjust_stock' => 'getAdjustStock',
         'enable_cache' => 'getEnableCache',
         'check_process_status' => 'getCheckProcessStatus',
+        'tracking_provider' => 'getTrackingProvider',
         'use_latest_api_version' => 'getUseLatestApiVersion'
     ];
 
@@ -336,6 +342,7 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('adjust_stock', $data ?? [], false);
         $this->setIfExists('enable_cache', $data ?? [], false);
         $this->setIfExists('check_process_status', $data ?? [], false);
+        $this->setIfExists('tracking_provider', $data ?? [], null);
         $this->setIfExists('use_latest_api_version', $data ?? [], false);
     }
 
@@ -728,6 +735,33 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable check_process_status cannot be null');
         }
         $this->container['check_process_status'] = $check_process_status;
+
+        return $this;
+    }
+
+    /**
+     * Gets tracking_provider
+     *
+     * @return string|null
+     */
+    public function getTrackingProvider()
+    {
+        return $this->container['tracking_provider'];
+    }
+
+    /**
+     * Sets tracking_provider
+     *
+     * @param string|null $tracking_provider Defines name of the company which provides shipment tracking
+     *
+     * @return self
+     */
+    public function setTrackingProvider($tracking_provider)
+    {
+        if (is_null($tracking_provider)) {
+            throw new \InvalidArgumentException('non-nullable tracking_provider cannot be null');
+        }
+        $this->container['tracking_provider'] = $tracking_provider;
 
         return $this;
     }

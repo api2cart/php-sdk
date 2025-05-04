@@ -66,7 +66,10 @@ class OrderShipmentUpdate implements ModelInterface, ArrayAccess, \JsonSerializa
         'tracking_link' => 'string',
         'is_shipped' => 'bool',
         'delivered_at' => 'string',
-        'replace' => 'bool'
+        'replace' => 'bool',
+        'send_notifications' => 'bool',
+        'tracking_provider' => 'string',
+        'items' => '\OpenAPI\Client\Model\OrderShipmentAddItemsInner[]'
     ];
 
     /**
@@ -85,7 +88,10 @@ class OrderShipmentUpdate implements ModelInterface, ArrayAccess, \JsonSerializa
         'tracking_link' => null,
         'is_shipped' => null,
         'delivered_at' => null,
-        'replace' => null
+        'replace' => null,
+        'send_notifications' => null,
+        'tracking_provider' => null,
+        'items' => null
     ];
 
     /**
@@ -102,7 +108,10 @@ class OrderShipmentUpdate implements ModelInterface, ArrayAccess, \JsonSerializa
         'tracking_link' => false,
         'is_shipped' => false,
         'delivered_at' => false,
-        'replace' => false
+        'replace' => false,
+        'send_notifications' => false,
+        'tracking_provider' => false,
+        'items' => false
     ];
 
     /**
@@ -199,7 +208,10 @@ class OrderShipmentUpdate implements ModelInterface, ArrayAccess, \JsonSerializa
         'tracking_link' => 'tracking_link',
         'is_shipped' => 'is_shipped',
         'delivered_at' => 'delivered_at',
-        'replace' => 'replace'
+        'replace' => 'replace',
+        'send_notifications' => 'send_notifications',
+        'tracking_provider' => 'tracking_provider',
+        'items' => 'items'
     ];
 
     /**
@@ -216,7 +228,10 @@ class OrderShipmentUpdate implements ModelInterface, ArrayAccess, \JsonSerializa
         'tracking_link' => 'setTrackingLink',
         'is_shipped' => 'setIsShipped',
         'delivered_at' => 'setDeliveredAt',
-        'replace' => 'setReplace'
+        'replace' => 'setReplace',
+        'send_notifications' => 'setSendNotifications',
+        'tracking_provider' => 'setTrackingProvider',
+        'items' => 'setItems'
     ];
 
     /**
@@ -233,7 +248,10 @@ class OrderShipmentUpdate implements ModelInterface, ArrayAccess, \JsonSerializa
         'tracking_link' => 'getTrackingLink',
         'is_shipped' => 'getIsShipped',
         'delivered_at' => 'getDeliveredAt',
-        'replace' => 'getReplace'
+        'replace' => 'getReplace',
+        'send_notifications' => 'getSendNotifications',
+        'tracking_provider' => 'getTrackingProvider',
+        'items' => 'getItems'
     ];
 
     /**
@@ -302,6 +320,9 @@ class OrderShipmentUpdate implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->setIfExists('is_shipped', $data ?? [], true);
         $this->setIfExists('delivered_at', $data ?? [], null);
         $this->setIfExists('replace', $data ?? [], true);
+        $this->setIfExists('send_notifications', $data ?? [], false);
+        $this->setIfExists('tracking_provider', $data ?? [], null);
+        $this->setIfExists('items', $data ?? [], null);
     }
 
     /**
@@ -588,6 +609,87 @@ class OrderShipmentUpdate implements ModelInterface, ArrayAccess, \JsonSerializa
             throw new \InvalidArgumentException('non-nullable replace cannot be null');
         }
         $this->container['replace'] = $replace;
+
+        return $this;
+    }
+
+    /**
+     * Gets send_notifications
+     *
+     * @return bool|null
+     */
+    public function getSendNotifications()
+    {
+        return $this->container['send_notifications'];
+    }
+
+    /**
+     * Sets send_notifications
+     *
+     * @param bool|null $send_notifications Send notifications to customer after order was created
+     *
+     * @return self
+     */
+    public function setSendNotifications($send_notifications)
+    {
+        if (is_null($send_notifications)) {
+            throw new \InvalidArgumentException('non-nullable send_notifications cannot be null');
+        }
+        $this->container['send_notifications'] = $send_notifications;
+
+        return $this;
+    }
+
+    /**
+     * Gets tracking_provider
+     *
+     * @return string|null
+     */
+    public function getTrackingProvider()
+    {
+        return $this->container['tracking_provider'];
+    }
+
+    /**
+     * Sets tracking_provider
+     *
+     * @param string|null $tracking_provider Defines name of the company which provides shipment tracking
+     *
+     * @return self
+     */
+    public function setTrackingProvider($tracking_provider)
+    {
+        if (is_null($tracking_provider)) {
+            throw new \InvalidArgumentException('non-nullable tracking_provider cannot be null');
+        }
+        $this->container['tracking_provider'] = $tracking_provider;
+
+        return $this;
+    }
+
+    /**
+     * Gets items
+     *
+     * @return \OpenAPI\Client\Model\OrderShipmentAddItemsInner[]|null
+     */
+    public function getItems()
+    {
+        return $this->container['items'];
+    }
+
+    /**
+     * Sets items
+     *
+     * @param \OpenAPI\Client\Model\OrderShipmentAddItemsInner[]|null $items Defines items in the order that will be shipped
+     *
+     * @return self
+     */
+    public function setItems($items)
+    {
+        if (is_null($items)) {
+            throw new \InvalidArgumentException('non-nullable items cannot be null');
+        }
+        $this->container['items'] = $items;
 
         return $this;
     }

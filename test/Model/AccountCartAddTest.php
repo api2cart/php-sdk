@@ -387,6 +387,24 @@ class AccountCartAddTest extends TestCase
     }
 
     /**
+     * Test attribute "bigcartel_user_name"
+     */
+    public function testPropertyBigcartelUserName()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bigcartel_password"
+     */
+    public function testPropertyBigcartelPassword()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "demandware_client_id"
      */
     public function testPropertyDemandwareClientId()

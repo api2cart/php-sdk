@@ -198,6 +198,15 @@ class OrderShipmentAddTest extends TestCase
     }
 
     /**
+     * Test attribute "tracking_provider"
+     */
+    public function testPropertyTrackingProvider()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "use_latest_api_version"
      */
     public function testPropertyUseLatestApiVersion()

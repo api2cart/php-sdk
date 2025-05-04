@@ -92,6 +92,8 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'bol_api_key' => 'string',
         'bol_api_secret' => 'string',
         'bol_retailer_id' => 'int',
+        'bigcartel_user_name' => 'string',
+        'bigcartel_password' => 'string',
         'demandware_client_id' => 'string',
         'demandware_api_password' => 'string',
         'demandware_user_name' => 'string',
@@ -251,6 +253,8 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'bol_api_key' => null,
         'bol_api_secret' => null,
         'bol_retailer_id' => null,
+        'bigcartel_user_name' => null,
+        'bigcartel_password' => null,
         'demandware_client_id' => null,
         'demandware_api_password' => null,
         'demandware_user_name' => null,
@@ -408,6 +412,8 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'bol_api_key' => false,
         'bol_api_secret' => false,
         'bol_retailer_id' => false,
+        'bigcartel_user_name' => false,
+        'bigcartel_password' => false,
         'demandware_client_id' => false,
         'demandware_api_password' => false,
         'demandware_user_name' => false,
@@ -645,6 +651,8 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'bol_api_key' => 'bol_api_key',
         'bol_api_secret' => 'bol_api_secret',
         'bol_retailer_id' => 'bol_retailer_id',
+        'bigcartel_user_name' => 'bigcartel_user_name',
+        'bigcartel_password' => 'bigcartel_password',
         'demandware_client_id' => 'demandware_client_id',
         'demandware_api_password' => 'demandware_api_password',
         'demandware_user_name' => 'demandware_user_name',
@@ -802,6 +810,8 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'bol_api_key' => 'setBolApiKey',
         'bol_api_secret' => 'setBolApiSecret',
         'bol_retailer_id' => 'setBolRetailerId',
+        'bigcartel_user_name' => 'setBigcartelUserName',
+        'bigcartel_password' => 'setBigcartelPassword',
         'demandware_client_id' => 'setDemandwareClientId',
         'demandware_api_password' => 'setDemandwareApiPassword',
         'demandware_user_name' => 'setDemandwareUserName',
@@ -959,6 +969,8 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'bol_api_key' => 'getBolApiKey',
         'bol_api_secret' => 'getBolApiSecret',
         'bol_retailer_id' => 'getBolRetailerId',
+        'bigcartel_user_name' => 'getBigcartelUserName',
+        'bigcartel_password' => 'getBigcartelPassword',
         'demandware_client_id' => 'getDemandwareClientId',
         'demandware_api_password' => 'getDemandwareApiPassword',
         'demandware_user_name' => 'getDemandwareUserName',
@@ -1122,6 +1134,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     public const CART_ID_ACE_SHOP = 'AceShop';
     public const CART_ID_AMAZON_SP = 'AmazonSP';
     public const CART_ID_ASP_DOT_NET_STOREFRONT = 'AspDotNetStorefront';
+    public const CART_ID_BIG_CARTEL = 'BigCartel';
     public const CART_ID_BIGCOMMERCE_API = 'BigcommerceApi';
     public const CART_ID_BOL = 'Bol';
     public const CART_ID_COMMERCE_HQ = 'CommerceHQ';
@@ -1194,6 +1207,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             self::CART_ID_ACE_SHOP,
             self::CART_ID_AMAZON_SP,
             self::CART_ID_ASP_DOT_NET_STOREFRONT,
+            self::CART_ID_BIG_CARTEL,
             self::CART_ID_BIGCOMMERCE_API,
             self::CART_ID_BOL,
             self::CART_ID_COMMERCE_HQ,
@@ -1304,6 +1318,8 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('bol_api_key', $data ?? [], null);
         $this->setIfExists('bol_api_secret', $data ?? [], null);
         $this->setIfExists('bol_retailer_id', $data ?? [], null);
+        $this->setIfExists('bigcartel_user_name', $data ?? [], null);
+        $this->setIfExists('bigcartel_password', $data ?? [], null);
         $this->setIfExists('demandware_client_id', $data ?? [], null);
         $this->setIfExists('demandware_api_password', $data ?? [], null);
         $this->setIfExists('demandware_user_name', $data ?? [], null);
@@ -1460,6 +1476,12 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
 
+        if ($this->container['bigcartel_user_name'] === null) {
+            $invalidProperties[] = "'bigcartel_user_name' can't be null";
+        }
+        if ($this->container['bigcartel_password'] === null) {
+            $invalidProperties[] = "'bigcartel_password' can't be null";
+        }
         if (!is_null($this->container['hybris_websites']) && (count($this->container['hybris_websites']) < 1)) {
             $invalidProperties[] = "invalid value for 'hybris_websites', number of items must be greater than or equal to 1.";
         }
@@ -2409,6 +2431,60 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable bol_retailer_id cannot be null');
         }
         $this->container['bol_retailer_id'] = $bol_retailer_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets bigcartel_user_name
+     *
+     * @return string
+     */
+    public function getBigcartelUserName()
+    {
+        return $this->container['bigcartel_user_name'];
+    }
+
+    /**
+     * Sets bigcartel_user_name
+     *
+     * @param string $bigcartel_user_name Subdomain of store
+     *
+     * @return self
+     */
+    public function setBigcartelUserName($bigcartel_user_name)
+    {
+        if (is_null($bigcartel_user_name)) {
+            throw new \InvalidArgumentException('non-nullable bigcartel_user_name cannot be null');
+        }
+        $this->container['bigcartel_user_name'] = $bigcartel_user_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets bigcartel_password
+     *
+     * @return string
+     */
+    public function getBigcartelPassword()
+    {
+        return $this->container['bigcartel_password'];
+    }
+
+    /**
+     * Sets bigcartel_password
+     *
+     * @param string $bigcartel_password BigCartel account password
+     *
+     * @return self
+     */
+    public function setBigcartelPassword($bigcartel_password)
+    {
+        if (is_null($bigcartel_password)) {
+            throw new \InvalidArgumentException('non-nullable bigcartel_password cannot be null');
+        }
+        $this->container['bigcartel_password'] = $bigcartel_password;
 
         return $this;
     }
