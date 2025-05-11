@@ -139,7 +139,10 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'disable_report_cache' => 'bool',
         'reindex' => 'bool',
         'clear_cache' => 'bool',
-        'check_process_status' => 'bool'
+        'check_process_status' => 'bool',
+        'specifics' => '\OpenAPI\Client\Model\ProductAddSpecificsInner[]',
+        'shop_section_id' => 'int',
+        'personalization_details' => '\OpenAPI\Client\Model\ProductAddPersonalizationDetails'
     ];
 
     /**
@@ -231,7 +234,10 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'disable_report_cache' => null,
         'reindex' => null,
         'clear_cache' => null,
-        'check_process_status' => null
+        'check_process_status' => null,
+        'specifics' => null,
+        'shop_section_id' => null,
+        'personalization_details' => null
     ];
 
     /**
@@ -321,7 +327,10 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'disable_report_cache' => false,
         'reindex' => false,
         'clear_cache' => false,
-        'check_process_status' => false
+        'check_process_status' => false,
+        'specifics' => false,
+        'shop_section_id' => false,
+        'personalization_details' => false
     ];
 
     /**
@@ -491,7 +500,10 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'disable_report_cache' => 'disable_report_cache',
         'reindex' => 'reindex',
         'clear_cache' => 'clear_cache',
-        'check_process_status' => 'check_process_status'
+        'check_process_status' => 'check_process_status',
+        'specifics' => 'specifics',
+        'shop_section_id' => 'shop_section_id',
+        'personalization_details' => 'personalization_details'
     ];
 
     /**
@@ -581,7 +593,10 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'disable_report_cache' => 'setDisableReportCache',
         'reindex' => 'setReindex',
         'clear_cache' => 'setClearCache',
-        'check_process_status' => 'setCheckProcessStatus'
+        'check_process_status' => 'setCheckProcessStatus',
+        'specifics' => 'setSpecifics',
+        'shop_section_id' => 'setShopSectionId',
+        'personalization_details' => 'setPersonalizationDetails'
     ];
 
     /**
@@ -671,7 +686,10 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'disable_report_cache' => 'getDisableReportCache',
         'reindex' => 'getReindex',
         'clear_cache' => 'getClearCache',
-        'check_process_status' => 'getCheckProcessStatus'
+        'check_process_status' => 'getCheckProcessStatus',
+        'specifics' => 'getSpecifics',
+        'shop_section_id' => 'getShopSectionId',
+        'personalization_details' => 'getPersonalizationDetails'
     ];
 
     /**
@@ -813,6 +831,9 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('reindex', $data ?? [], true);
         $this->setIfExists('clear_cache', $data ?? [], true);
         $this->setIfExists('check_process_status', $data ?? [], false);
+        $this->setIfExists('specifics', $data ?? [], null);
+        $this->setIfExists('shop_section_id', $data ?? [], null);
+        $this->setIfExists('personalization_details', $data ?? [], null);
     }
 
     /**
@@ -3067,6 +3088,87 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable check_process_status cannot be null');
         }
         $this->container['check_process_status'] = $check_process_status;
+
+        return $this;
+    }
+
+    /**
+     * Gets specifics
+     *
+     * @return \OpenAPI\Client\Model\ProductAddSpecificsInner[]|null
+     */
+    public function getSpecifics()
+    {
+        return $this->container['specifics'];
+    }
+
+    /**
+     * Sets specifics
+     *
+     * @param \OpenAPI\Client\Model\ProductAddSpecificsInner[]|null $specifics An array of Item Specific Name/Value pairs used by the seller to provide descriptive details of an item in a structured manner.         The list of possible specifications can be obtained using the category.info method (additional_fields->product_specifics).         <b>The structure of the parameter is different for specific platforms.</b>
+     *
+     * @return self
+     */
+    public function setSpecifics($specifics)
+    {
+        if (is_null($specifics)) {
+            throw new \InvalidArgumentException('non-nullable specifics cannot be null');
+        }
+        $this->container['specifics'] = $specifics;
+
+        return $this;
+    }
+
+    /**
+     * Gets shop_section_id
+     *
+     * @return int|null
+     */
+    public function getShopSectionId()
+    {
+        return $this->container['shop_section_id'];
+    }
+
+    /**
+     * Sets shop_section_id
+     *
+     * @param int|null $shop_section_id Add Shop Section Id
+     *
+     * @return self
+     */
+    public function setShopSectionId($shop_section_id)
+    {
+        if (is_null($shop_section_id)) {
+            throw new \InvalidArgumentException('non-nullable shop_section_id cannot be null');
+        }
+        $this->container['shop_section_id'] = $shop_section_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets personalization_details
+     *
+     * @return \OpenAPI\Client\Model\ProductAddPersonalizationDetails|null
+     */
+    public function getPersonalizationDetails()
+    {
+        return $this->container['personalization_details'];
+    }
+
+    /**
+     * Sets personalization_details
+     *
+     * @param \OpenAPI\Client\Model\ProductAddPersonalizationDetails|null $personalization_details personalization_details
+     *
+     * @return self
+     */
+    public function setPersonalizationDetails($personalization_details)
+    {
+        if (is_null($personalization_details)) {
+            throw new \InvalidArgumentException('non-nullable personalization_details cannot be null');
+        }
+        $this->container['personalization_details'] = $personalization_details;
 
         return $this;
     }

@@ -10,7 +10,7 @@ All URIs are relative to https://api.api2cart.com/v1.1, except if the operation 
 ## `subscriberList()`
 
 ```php
-subscriberList($start, $count, $page_cursor, $subscribed, $store_id, $email, $created_from, $created_to, $modified_from, $modified_to, $response_fields, $params, $exclude): \OpenAPI\Client\Model\ModelResponseSubscriberList
+subscriberList($ids, $start, $count, $page_cursor, $subscribed, $store_id, $email, $created_from, $created_to, $modified_from, $modified_to, $response_fields, $params, $exclude): \OpenAPI\Client\Model\ModelResponseSubscriberList
 ```
 
 subscriber.list
@@ -41,6 +41,7 @@ $apiInstance = new OpenAPI\Client\Api\SubscriberApi(
     new GuzzleHttp\Client(),
     $config
 );
+$ids = 24,25; // string | Retrieves subscribers specified by ids
 $start = 0; // int | This parameter sets the number from which you want to get entities
 $count = 20; // int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
 $page_cursor = ; // string | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
@@ -56,7 +57,7 @@ $params = id,model,price,images; // string | Set this parameter in order to choo
 $exclude = false; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 
 try {
-    $result = $apiInstance->subscriberList($start, $count, $page_cursor, $subscribed, $store_id, $email, $created_from, $created_to, $modified_from, $modified_to, $response_fields, $params, $exclude);
+    $result = $apiInstance->subscriberList($ids, $start, $count, $page_cursor, $subscribed, $store_id, $email, $created_from, $created_to, $modified_from, $modified_to, $response_fields, $params, $exclude);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriberApi->subscriberList: ', $e->getMessage(), PHP_EOL;
@@ -67,6 +68,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **ids** | **string**| Retrieves subscribers specified by ids | [optional] |
 | **start** | **int**| This parameter sets the number from which you want to get entities | [optional] [default to 0] |
 | **count** | **int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
 | **page_cursor** | **string**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |

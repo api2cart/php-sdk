@@ -169,7 +169,10 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'marketplace_item_properties' => 'string',
         'clear_cache' => 'bool',
         'viewed_count' => 'int',
-        'ordered_count' => 'int'
+        'ordered_count' => 'int',
+        'shop_section_id' => 'int',
+        'return_policy_id' => 'int',
+        'personalization_details' => '\OpenAPI\Client\Model\ProductAddPersonalizationDetails'
     ];
 
     /**
@@ -291,7 +294,10 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'marketplace_item_properties' => null,
         'clear_cache' => null,
         'viewed_count' => null,
-        'ordered_count' => null
+        'ordered_count' => null,
+        'shop_section_id' => null,
+        'return_policy_id' => null,
+        'personalization_details' => null
     ];
 
     /**
@@ -411,7 +417,10 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'marketplace_item_properties' => false,
         'clear_cache' => false,
         'viewed_count' => false,
-        'ordered_count' => false
+        'ordered_count' => false,
+        'shop_section_id' => false,
+        'return_policy_id' => false,
+        'personalization_details' => false
     ];
 
     /**
@@ -611,7 +620,10 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'marketplace_item_properties' => 'marketplace_item_properties',
         'clear_cache' => 'clear_cache',
         'viewed_count' => 'viewed_count',
-        'ordered_count' => 'ordered_count'
+        'ordered_count' => 'ordered_count',
+        'shop_section_id' => 'shop_section_id',
+        'return_policy_id' => 'return_policy_id',
+        'personalization_details' => 'personalization_details'
     ];
 
     /**
@@ -731,7 +743,10 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'marketplace_item_properties' => 'setMarketplaceItemProperties',
         'clear_cache' => 'setClearCache',
         'viewed_count' => 'setViewedCount',
-        'ordered_count' => 'setOrderedCount'
+        'ordered_count' => 'setOrderedCount',
+        'shop_section_id' => 'setShopSectionId',
+        'return_policy_id' => 'setReturnPolicyId',
+        'personalization_details' => 'setPersonalizationDetails'
     ];
 
     /**
@@ -851,7 +866,10 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'marketplace_item_properties' => 'getMarketplaceItemProperties',
         'clear_cache' => 'getClearCache',
         'viewed_count' => 'getViewedCount',
-        'ordered_count' => 'getOrderedCount'
+        'ordered_count' => 'getOrderedCount',
+        'shop_section_id' => 'getShopSectionId',
+        'return_policy_id' => 'getReturnPolicyId',
+        'personalization_details' => 'getPersonalizationDetails'
     ];
 
     /**
@@ -1023,6 +1041,9 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('clear_cache', $data ?? [], true);
         $this->setIfExists('viewed_count', $data ?? [], 0);
         $this->setIfExists('ordered_count', $data ?? [], 0);
+        $this->setIfExists('shop_section_id', $data ?? [], null);
+        $this->setIfExists('return_policy_id', $data ?? [], null);
+        $this->setIfExists('personalization_details', $data ?? [], null);
     }
 
     /**
@@ -4099,6 +4120,87 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable ordered_count cannot be null');
         }
         $this->container['ordered_count'] = $ordered_count;
+
+        return $this;
+    }
+
+    /**
+     * Gets shop_section_id
+     *
+     * @return int|null
+     */
+    public function getShopSectionId()
+    {
+        return $this->container['shop_section_id'];
+    }
+
+    /**
+     * Sets shop_section_id
+     *
+     * @param int|null $shop_section_id Add Shop Section Id
+     *
+     * @return self
+     */
+    public function setShopSectionId($shop_section_id)
+    {
+        if (is_null($shop_section_id)) {
+            throw new \InvalidArgumentException('non-nullable shop_section_id cannot be null');
+        }
+        $this->container['shop_section_id'] = $shop_section_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets return_policy_id
+     *
+     * @return int|null
+     */
+    public function getReturnPolicyId()
+    {
+        return $this->container['return_policy_id'];
+    }
+
+    /**
+     * Sets return_policy_id
+     *
+     * @param int|null $return_policy_id Add Return Policy Id
+     *
+     * @return self
+     */
+    public function setReturnPolicyId($return_policy_id)
+    {
+        if (is_null($return_policy_id)) {
+            throw new \InvalidArgumentException('non-nullable return_policy_id cannot be null');
+        }
+        $this->container['return_policy_id'] = $return_policy_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets personalization_details
+     *
+     * @return \OpenAPI\Client\Model\ProductAddPersonalizationDetails|null
+     */
+    public function getPersonalizationDetails()
+    {
+        return $this->container['personalization_details'];
+    }
+
+    /**
+     * Sets personalization_details
+     *
+     * @param \OpenAPI\Client\Model\ProductAddPersonalizationDetails|null $personalization_details personalization_details
+     *
+     * @return self
+     */
+    public function setPersonalizationDetails($personalization_details)
+    {
+        if (is_null($personalization_details)) {
+            throw new \InvalidArgumentException('non-nullable personalization_details cannot be null');
+        }
+        $this->container['personalization_details'] = $personalization_details;
 
         return $this;
     }

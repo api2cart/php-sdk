@@ -531,6 +531,7 @@ Class | Method | HTTP request | Description
 - [ProductAddLogisticInfoInner](docs/Model/ProductAddLogisticInfoInner.md)
 - [ProductAddManufacturerInfo](docs/Model/ProductAddManufacturerInfo.md)
 - [ProductAddPackageDetails](docs/Model/ProductAddPackageDetails.md)
+- [ProductAddPersonalizationDetails](docs/Model/ProductAddPersonalizationDetails.md)
 - [ProductAddSalesTax](docs/Model/ProductAddSalesTax.md)
 - [ProductAddSellerProfiles](docs/Model/ProductAddSellerProfiles.md)
 - [ProductAddShippingDetailsInner](docs/Model/ProductAddShippingDetailsInner.md)

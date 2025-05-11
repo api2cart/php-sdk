@@ -817,4 +817,31 @@ class ProductUpdateTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "specifics"
+     */
+    public function testPropertySpecifics()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "shop_section_id"
+     */
+    public function testPropertyShopSectionId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "personalization_details"
+     */
+    public function testPropertyPersonalizationDetails()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

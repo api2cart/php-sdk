@@ -128,6 +128,7 @@ class SubscriberApi
      *
      * subscriber.list
      *
+     * @param  string|null $ids Retrieves subscribers specified by ids (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
@@ -147,9 +148,9 @@ class SubscriberApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseSubscriberList
      */
-    public function subscriberList($start = 0, $count = 10, $page_cursor = null, $subscribed = null, $store_id = null, $email = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['subscriberList'][0])
+    public function subscriberList($ids = null, $start = 0, $count = 10, $page_cursor = null, $subscribed = null, $store_id = null, $email = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['subscriberList'][0])
     {
-        list($response) = $this->subscriberListWithHttpInfo($start, $count, $page_cursor, $subscribed, $store_id, $email, $created_from, $created_to, $modified_from, $modified_to, $response_fields, $params, $exclude, $contentType);
+        list($response) = $this->subscriberListWithHttpInfo($ids, $start, $count, $page_cursor, $subscribed, $store_id, $email, $created_from, $created_to, $modified_from, $modified_to, $response_fields, $params, $exclude, $contentType);
         return $response;
     }
 
@@ -158,6 +159,7 @@ class SubscriberApi
      *
      * subscriber.list
      *
+     * @param  string|null $ids Retrieves subscribers specified by ids (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
@@ -177,9 +179,9 @@ class SubscriberApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseSubscriberList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function subscriberListWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $subscribed = null, $store_id = null, $email = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['subscriberList'][0])
+    public function subscriberListWithHttpInfo($ids = null, $start = 0, $count = 10, $page_cursor = null, $subscribed = null, $store_id = null, $email = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['subscriberList'][0])
     {
-        $request = $this->subscriberListRequest($start, $count, $page_cursor, $subscribed, $store_id, $email, $created_from, $created_to, $modified_from, $modified_to, $response_fields, $params, $exclude, $contentType);
+        $request = $this->subscriberListRequest($ids, $start, $count, $page_cursor, $subscribed, $store_id, $email, $created_from, $created_to, $modified_from, $modified_to, $response_fields, $params, $exclude, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -295,6 +297,7 @@ class SubscriberApi
      *
      * subscriber.list
      *
+     * @param  string|null $ids Retrieves subscribers specified by ids (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
@@ -313,9 +316,9 @@ class SubscriberApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function subscriberListAsync($start = 0, $count = 10, $page_cursor = null, $subscribed = null, $store_id = null, $email = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['subscriberList'][0])
+    public function subscriberListAsync($ids = null, $start = 0, $count = 10, $page_cursor = null, $subscribed = null, $store_id = null, $email = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['subscriberList'][0])
     {
-        return $this->subscriberListAsyncWithHttpInfo($start, $count, $page_cursor, $subscribed, $store_id, $email, $created_from, $created_to, $modified_from, $modified_to, $response_fields, $params, $exclude, $contentType)
+        return $this->subscriberListAsyncWithHttpInfo($ids, $start, $count, $page_cursor, $subscribed, $store_id, $email, $created_from, $created_to, $modified_from, $modified_to, $response_fields, $params, $exclude, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -328,6 +331,7 @@ class SubscriberApi
      *
      * subscriber.list
      *
+     * @param  string|null $ids Retrieves subscribers specified by ids (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
@@ -346,10 +350,10 @@ class SubscriberApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function subscriberListAsyncWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $subscribed = null, $store_id = null, $email = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['subscriberList'][0])
+    public function subscriberListAsyncWithHttpInfo($ids = null, $start = 0, $count = 10, $page_cursor = null, $subscribed = null, $store_id = null, $email = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['subscriberList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseSubscriberList';
-        $request = $this->subscriberListRequest($start, $count, $page_cursor, $subscribed, $store_id, $email, $created_from, $created_to, $modified_from, $modified_to, $response_fields, $params, $exclude, $contentType);
+        $request = $this->subscriberListRequest($ids, $start, $count, $page_cursor, $subscribed, $store_id, $email, $created_from, $created_to, $modified_from, $modified_to, $response_fields, $params, $exclude, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -390,6 +394,7 @@ class SubscriberApi
     /**
      * Create request for operation 'subscriberList'
      *
+     * @param  string|null $ids Retrieves subscribers specified by ids (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
@@ -408,8 +413,9 @@ class SubscriberApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function subscriberListRequest($start = 0, $count = 10, $page_cursor = null, $subscribed = null, $store_id = null, $email = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['subscriberList'][0])
+    public function subscriberListRequest($ids = null, $start = 0, $count = 10, $page_cursor = null, $subscribed = null, $store_id = null, $email = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['subscriberList'][0])
     {
+
 
 
 
@@ -432,6 +438,15 @@ class SubscriberApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $ids,
+            'ids', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $start,
