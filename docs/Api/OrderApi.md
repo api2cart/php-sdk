@@ -1735,7 +1735,7 @@ try {
 ## `orderUpdate()`
 
 ```php
-orderUpdate($order_id, $store_id, $order_status, $financial_status, $fulfillment_status, $cancellation_reason, $order_payment_method, $comment, $admin_comment, $admin_private_comment, $invoice_admin_comment, $date_modified, $date_finished, $send_notifications, $create_invoice, $origin): \OpenAPI\Client\Model\AccountConfigUpdate200Response
+orderUpdate($order_id, $store_id, $order_status, $financial_status, $fulfillment_status, $cancellation_reason, $order_payment_method, $comment, $admin_comment, $admin_private_comment, $invoice_admin_comment, $date_modified, $date_finished, $send_notifications, $create_invoice, $origin, $tags): \OpenAPI\Client\Model\AccountConfigUpdate200Response
 ```
 
 order.update
@@ -1782,9 +1782,10 @@ $date_finished = 2014-06-05 05:05:00; // string | Specifies order's  finished da
 $send_notifications = true; // bool | Send notifications to customer after order was created
 $create_invoice = true; // bool | Determines whether an invoice should be created if it has not already been created
 $origin = newsletter; // string | The source of the order
+$tags = tag1,tag2; // string | Order tags
 
 try {
-    $result = $apiInstance->orderUpdate($order_id, $store_id, $order_status, $financial_status, $fulfillment_status, $cancellation_reason, $order_payment_method, $comment, $admin_comment, $admin_private_comment, $invoice_admin_comment, $date_modified, $date_finished, $send_notifications, $create_invoice, $origin);
+    $result = $apiInstance->orderUpdate($order_id, $store_id, $order_status, $financial_status, $fulfillment_status, $cancellation_reason, $order_payment_method, $comment, $admin_comment, $admin_private_comment, $invoice_admin_comment, $date_modified, $date_finished, $send_notifications, $create_invoice, $origin, $tags);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderUpdate: ', $e->getMessage(), PHP_EOL;
@@ -1811,6 +1812,7 @@ try {
 | **send_notifications** | **bool**| Send notifications to customer after order was created | [optional] [default to false] |
 | **create_invoice** | **bool**| Determines whether an invoice should be created if it has not already been created | [optional] |
 | **origin** | **string**| The source of the order | [optional] |
+| **tags** | **string**| Order tags | [optional] |
 
 ### Return type
 
