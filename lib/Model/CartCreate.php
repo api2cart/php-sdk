@@ -862,6 +862,7 @@ class CartCreate implements ModelInterface, ArrayAccess, \JsonSerializable
     public const CART_ID_SS_PREMIUM = 'SSPremium';
     public const CART_ID_SALLA = 'Salla';
     public const CART_ID_SHOPIFY = 'Shopify';
+    public const CART_ID_SHOPEE = 'Shopee';
     public const CART_ID_SHOPLAZZA = 'Shoplazza';
     public const CART_ID_SHOPLINE = 'Shopline';
     public const CART_ID_SHOPWARE = 'Shopware';
@@ -935,6 +936,7 @@ class CartCreate implements ModelInterface, ArrayAccess, \JsonSerializable
             self::CART_ID_SS_PREMIUM,
             self::CART_ID_SALLA,
             self::CART_ID_SHOPIFY,
+            self::CART_ID_SHOPEE,
             self::CART_ID_SHOPLAZZA,
             self::CART_ID_SHOPLINE,
             self::CART_ID_SHOPWARE,

@@ -138,6 +138,12 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shopify_api_key' => 'string',
         'shopify_api_password' => 'string',
         'shopify_shared_secret' => 'string',
+        'shopee_partner_id' => 'string',
+        'shopee_partner_key' => 'string',
+        'shopee_shop_id' => 'string',
+        'shopee_refresh_token' => 'string',
+        'shopee_region' => 'string',
+        'shopee_environment' => 'string',
         'shoplazza_access_token' => 'string',
         'shoplazza_shared_secret' => 'string',
         'shopware_access_key' => 'string',
@@ -208,7 +214,11 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'salla_client_id' => 'string',
         'salla_client_secret' => 'string',
         'salla_refresh_token' => 'string',
-        'salla_access_token' => 'string'
+        'salla_access_token' => 'string',
+        'temu_app_key' => 'string',
+        'temu_app_secret' => 'string',
+        'temu_access_token' => 'string',
+        'temu_region' => 'string'
     ];
 
     /**
@@ -299,6 +309,12 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shopify_api_key' => null,
         'shopify_api_password' => null,
         'shopify_shared_secret' => null,
+        'shopee_partner_id' => null,
+        'shopee_partner_key' => null,
+        'shopee_shop_id' => null,
+        'shopee_refresh_token' => null,
+        'shopee_region' => null,
+        'shopee_environment' => null,
         'shoplazza_access_token' => null,
         'shoplazza_shared_secret' => null,
         'shopware_access_key' => null,
@@ -369,7 +385,11 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'salla_client_id' => null,
         'salla_client_secret' => null,
         'salla_refresh_token' => null,
-        'salla_access_token' => null
+        'salla_access_token' => null,
+        'temu_app_key' => null,
+        'temu_app_secret' => null,
+        'temu_access_token' => null,
+        'temu_region' => null
     ];
 
     /**
@@ -458,6 +478,12 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shopify_api_key' => false,
         'shopify_api_password' => false,
         'shopify_shared_secret' => false,
+        'shopee_partner_id' => false,
+        'shopee_partner_key' => false,
+        'shopee_shop_id' => false,
+        'shopee_refresh_token' => false,
+        'shopee_region' => false,
+        'shopee_environment' => false,
         'shoplazza_access_token' => false,
         'shoplazza_shared_secret' => false,
         'shopware_access_key' => false,
@@ -528,7 +554,11 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'salla_client_id' => false,
         'salla_client_secret' => false,
         'salla_refresh_token' => false,
-        'salla_access_token' => false
+        'salla_access_token' => false,
+        'temu_app_key' => false,
+        'temu_app_secret' => false,
+        'temu_access_token' => false,
+        'temu_region' => false
     ];
 
     /**
@@ -697,6 +727,12 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shopify_api_key' => 'shopify_api_key',
         'shopify_api_password' => 'shopify_api_password',
         'shopify_shared_secret' => 'shopify_shared_secret',
+        'shopee_partner_id' => 'shopee_partner_id',
+        'shopee_partner_key' => 'shopee_partner_key',
+        'shopee_shop_id' => 'shopee_shop_id',
+        'shopee_refresh_token' => 'shopee_refresh_token',
+        'shopee_region' => 'shopee_region',
+        'shopee_environment' => 'shopee_environment',
         'shoplazza_access_token' => 'shoplazza_access_token',
         'shoplazza_shared_secret' => 'shoplazza_shared_secret',
         'shopware_access_key' => 'shopware_access_key',
@@ -767,7 +803,11 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'salla_client_id' => 'salla_client_id',
         'salla_client_secret' => 'salla_client_secret',
         'salla_refresh_token' => 'salla_refresh_token',
-        'salla_access_token' => 'salla_access_token'
+        'salla_access_token' => 'salla_access_token',
+        'temu_app_key' => 'temu_app_key',
+        'temu_app_secret' => 'temu_app_secret',
+        'temu_access_token' => 'temu_access_token',
+        'temu_region' => 'temu_region'
     ];
 
     /**
@@ -856,6 +896,12 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shopify_api_key' => 'setShopifyApiKey',
         'shopify_api_password' => 'setShopifyApiPassword',
         'shopify_shared_secret' => 'setShopifySharedSecret',
+        'shopee_partner_id' => 'setShopeePartnerId',
+        'shopee_partner_key' => 'setShopeePartnerKey',
+        'shopee_shop_id' => 'setShopeeShopId',
+        'shopee_refresh_token' => 'setShopeeRefreshToken',
+        'shopee_region' => 'setShopeeRegion',
+        'shopee_environment' => 'setShopeeEnvironment',
         'shoplazza_access_token' => 'setShoplazzaAccessToken',
         'shoplazza_shared_secret' => 'setShoplazzaSharedSecret',
         'shopware_access_key' => 'setShopwareAccessKey',
@@ -926,7 +972,11 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'salla_client_id' => 'setSallaClientId',
         'salla_client_secret' => 'setSallaClientSecret',
         'salla_refresh_token' => 'setSallaRefreshToken',
-        'salla_access_token' => 'setSallaAccessToken'
+        'salla_access_token' => 'setSallaAccessToken',
+        'temu_app_key' => 'setTemuAppKey',
+        'temu_app_secret' => 'setTemuAppSecret',
+        'temu_access_token' => 'setTemuAccessToken',
+        'temu_region' => 'setTemuRegion'
     ];
 
     /**
@@ -1015,6 +1065,12 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shopify_api_key' => 'getShopifyApiKey',
         'shopify_api_password' => 'getShopifyApiPassword',
         'shopify_shared_secret' => 'getShopifySharedSecret',
+        'shopee_partner_id' => 'getShopeePartnerId',
+        'shopee_partner_key' => 'getShopeePartnerKey',
+        'shopee_shop_id' => 'getShopeeShopId',
+        'shopee_refresh_token' => 'getShopeeRefreshToken',
+        'shopee_region' => 'getShopeeRegion',
+        'shopee_environment' => 'getShopeeEnvironment',
         'shoplazza_access_token' => 'getShoplazzaAccessToken',
         'shoplazza_shared_secret' => 'getShoplazzaSharedSecret',
         'shopware_access_key' => 'getShopwareAccessKey',
@@ -1085,7 +1141,11 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'salla_client_id' => 'getSallaClientId',
         'salla_client_secret' => 'getSallaClientSecret',
         'salla_refresh_token' => 'getSallaRefreshToken',
-        'salla_access_token' => 'getSallaAccessToken'
+        'salla_access_token' => 'getSallaAccessToken',
+        'temu_app_key' => 'getTemuAppKey',
+        'temu_app_secret' => 'getTemuAppSecret',
+        'temu_access_token' => 'getTemuAccessToken',
+        'temu_region' => 'getTemuRegion'
     ];
 
     /**
@@ -1168,6 +1228,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     public const CART_ID_SS_PREMIUM = 'SSPremium';
     public const CART_ID_SALLA = 'Salla';
     public const CART_ID_SHOPIFY = 'Shopify';
+    public const CART_ID_SHOPEE = 'Shopee';
     public const CART_ID_SHOPLAZZA = 'Shoplazza';
     public const CART_ID_SHOPLINE = 'Shopline';
     public const CART_ID_SHOPWARE = 'Shopware';
@@ -1241,6 +1302,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             self::CART_ID_SS_PREMIUM,
             self::CART_ID_SALLA,
             self::CART_ID_SHOPIFY,
+            self::CART_ID_SHOPEE,
             self::CART_ID_SHOPLAZZA,
             self::CART_ID_SHOPLINE,
             self::CART_ID_SHOPWARE,
@@ -1364,6 +1426,12 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('shopify_api_key', $data ?? [], null);
         $this->setIfExists('shopify_api_password', $data ?? [], null);
         $this->setIfExists('shopify_shared_secret', $data ?? [], null);
+        $this->setIfExists('shopee_partner_id', $data ?? [], null);
+        $this->setIfExists('shopee_partner_key', $data ?? [], null);
+        $this->setIfExists('shopee_shop_id', $data ?? [], null);
+        $this->setIfExists('shopee_refresh_token', $data ?? [], null);
+        $this->setIfExists('shopee_region', $data ?? [], null);
+        $this->setIfExists('shopee_environment', $data ?? [], 'production');
         $this->setIfExists('shoplazza_access_token', $data ?? [], null);
         $this->setIfExists('shoplazza_shared_secret', $data ?? [], null);
         $this->setIfExists('shopware_access_key', $data ?? [], null);
@@ -1435,6 +1503,10 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('salla_client_secret', $data ?? [], null);
         $this->setIfExists('salla_refresh_token', $data ?? [], null);
         $this->setIfExists('salla_access_token', $data ?? [], null);
+        $this->setIfExists('temu_app_key', $data ?? [], null);
+        $this->setIfExists('temu_app_secret', $data ?? [], null);
+        $this->setIfExists('temu_access_token', $data ?? [], null);
+        $this->setIfExists('temu_region', $data ?? [], 'US');
     }
 
     /**
@@ -1491,6 +1563,9 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ($this->container['wix_app_secret_key'] === null) {
             $invalidProperties[] = "'wix_app_secret_key' can't be null";
+        }
+        if ($this->container['temu_access_token'] === null) {
+            $invalidProperties[] = "'temu_access_token' can't be null";
         }
         return $invalidProperties;
     }
@@ -3678,6 +3753,168 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets shopee_partner_id
+     *
+     * @return string|null
+     */
+    public function getShopeePartnerId()
+    {
+        return $this->container['shopee_partner_id'];
+    }
+
+    /**
+     * Sets shopee_partner_id
+     *
+     * @param string|null $shopee_partner_id Shopee Partner ID
+     *
+     * @return self
+     */
+    public function setShopeePartnerId($shopee_partner_id)
+    {
+        if (is_null($shopee_partner_id)) {
+            throw new \InvalidArgumentException('non-nullable shopee_partner_id cannot be null');
+        }
+        $this->container['shopee_partner_id'] = $shopee_partner_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets shopee_partner_key
+     *
+     * @return string|null
+     */
+    public function getShopeePartnerKey()
+    {
+        return $this->container['shopee_partner_key'];
+    }
+
+    /**
+     * Sets shopee_partner_key
+     *
+     * @param string|null $shopee_partner_key Shopee Partner Key
+     *
+     * @return self
+     */
+    public function setShopeePartnerKey($shopee_partner_key)
+    {
+        if (is_null($shopee_partner_key)) {
+            throw new \InvalidArgumentException('non-nullable shopee_partner_key cannot be null');
+        }
+        $this->container['shopee_partner_key'] = $shopee_partner_key;
+
+        return $this;
+    }
+
+    /**
+     * Gets shopee_shop_id
+     *
+     * @return string|null
+     */
+    public function getShopeeShopId()
+    {
+        return $this->container['shopee_shop_id'];
+    }
+
+    /**
+     * Sets shopee_shop_id
+     *
+     * @param string|null $shopee_shop_id Shopee SHOP ID
+     *
+     * @return self
+     */
+    public function setShopeeShopId($shopee_shop_id)
+    {
+        if (is_null($shopee_shop_id)) {
+            throw new \InvalidArgumentException('non-nullable shopee_shop_id cannot be null');
+        }
+        $this->container['shopee_shop_id'] = $shopee_shop_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets shopee_refresh_token
+     *
+     * @return string|null
+     */
+    public function getShopeeRefreshToken()
+    {
+        return $this->container['shopee_refresh_token'];
+    }
+
+    /**
+     * Sets shopee_refresh_token
+     *
+     * @param string|null $shopee_refresh_token Shopee Refresh Token
+     *
+     * @return self
+     */
+    public function setShopeeRefreshToken($shopee_refresh_token)
+    {
+        if (is_null($shopee_refresh_token)) {
+            throw new \InvalidArgumentException('non-nullable shopee_refresh_token cannot be null');
+        }
+        $this->container['shopee_refresh_token'] = $shopee_refresh_token;
+
+        return $this;
+    }
+
+    /**
+     * Gets shopee_region
+     *
+     * @return string|null
+     */
+    public function getShopeeRegion()
+    {
+        return $this->container['shopee_region'];
+    }
+
+    /**
+     * Sets shopee_region
+     *
+     * @param string|null $shopee_region Shopee API endpoint Region. Use for Chinese Mainland or Brazil.
+     *
+     * @return self
+     */
+    public function setShopeeRegion($shopee_region)
+    {
+        if (is_null($shopee_region)) {
+            throw new \InvalidArgumentException('non-nullable shopee_region cannot be null');
+        }
+        $this->container['shopee_region'] = $shopee_region;
+
+        return $this;
+    }
+
+    /**
+     * Gets shopee_environment
+     *
+     * @return string|null
+     */
+    public function getShopeeEnvironment()
+    {
+        return $this->container['shopee_environment'];
+    }
+
+    /**
+     * Sets shopee_environment
+     *
+     * @param string|null $shopee_environment Shopee Environment
+     *
+     * @return self
+     */
+    public function setShopeeEnvironment($shopee_environment)
+    {
+        if (is_null($shopee_environment)) {
+            throw new \InvalidArgumentException('non-nullable shopee_environment cannot be null');
+        }
+        $this->container['shopee_environment'] = $shopee_environment;
+
+        return $this;
+    }
+
+    /**
      * Gets shoplazza_access_token
      *
      * @return string|null
@@ -5595,6 +5832,114 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable salla_access_token cannot be null');
         }
         $this->container['salla_access_token'] = $salla_access_token;
+
+        return $this;
+    }
+
+    /**
+     * Gets temu_app_key
+     *
+     * @return string|null
+     */
+    public function getTemuAppKey()
+    {
+        return $this->container['temu_app_key'];
+    }
+
+    /**
+     * Sets temu_app_key
+     *
+     * @param string|null $temu_app_key Temu App Key
+     *
+     * @return self
+     */
+    public function setTemuAppKey($temu_app_key)
+    {
+        if (is_null($temu_app_key)) {
+            throw new \InvalidArgumentException('non-nullable temu_app_key cannot be null');
+        }
+        $this->container['temu_app_key'] = $temu_app_key;
+
+        return $this;
+    }
+
+    /**
+     * Gets temu_app_secret
+     *
+     * @return string|null
+     */
+    public function getTemuAppSecret()
+    {
+        return $this->container['temu_app_secret'];
+    }
+
+    /**
+     * Sets temu_app_secret
+     *
+     * @param string|null $temu_app_secret Temu App Secret
+     *
+     * @return self
+     */
+    public function setTemuAppSecret($temu_app_secret)
+    {
+        if (is_null($temu_app_secret)) {
+            throw new \InvalidArgumentException('non-nullable temu_app_secret cannot be null');
+        }
+        $this->container['temu_app_secret'] = $temu_app_secret;
+
+        return $this;
+    }
+
+    /**
+     * Gets temu_access_token
+     *
+     * @return string
+     */
+    public function getTemuAccessToken()
+    {
+        return $this->container['temu_access_token'];
+    }
+
+    /**
+     * Sets temu_access_token
+     *
+     * @param string $temu_access_token Temu Access Token
+     *
+     * @return self
+     */
+    public function setTemuAccessToken($temu_access_token)
+    {
+        if (is_null($temu_access_token)) {
+            throw new \InvalidArgumentException('non-nullable temu_access_token cannot be null');
+        }
+        $this->container['temu_access_token'] = $temu_access_token;
+
+        return $this;
+    }
+
+    /**
+     * Gets temu_region
+     *
+     * @return string|null
+     */
+    public function getTemuRegion()
+    {
+        return $this->container['temu_region'];
+    }
+
+    /**
+     * Sets temu_region
+     *
+     * @param string|null $temu_region Temu API endpoint Region.
+     *
+     * @return self
+     */
+    public function setTemuRegion($temu_region)
+    {
+        if (is_null($temu_region)) {
+            throw new \InvalidArgumentException('non-nullable temu_region cannot be null');
+        }
+        $this->container['temu_region'] = $temu_region;
 
         return $this;
     }

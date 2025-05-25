@@ -801,6 +801,60 @@ class AccountCartAddTest extends TestCase
     }
 
     /**
+     * Test attribute "shopee_partner_id"
+     */
+    public function testPropertyShopeePartnerId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "shopee_partner_key"
+     */
+    public function testPropertyShopeePartnerKey()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "shopee_shop_id"
+     */
+    public function testPropertyShopeeShopId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "shopee_refresh_token"
+     */
+    public function testPropertyShopeeRefreshToken()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "shopee_region"
+     */
+    public function testPropertyShopeeRegion()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "shopee_environment"
+     */
+    public function testPropertyShopeeEnvironment()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "shoplazza_access_token"
      */
     public function testPropertyShoplazzaAccessToken()
@@ -1434,6 +1488,42 @@ class AccountCartAddTest extends TestCase
      * Test attribute "salla_access_token"
      */
     public function testPropertySallaAccessToken()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "temu_app_key"
+     */
+    public function testPropertyTemuAppKey()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "temu_app_secret"
+     */
+    public function testPropertyTemuAppSecret()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "temu_access_token"
+     */
+    public function testPropertyTemuAccessToken()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "temu_region"
+     */
+    public function testPropertyTemuRegion()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
