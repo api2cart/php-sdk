@@ -1254,6 +1254,9 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     public const CART_ID_ZID = 'Zid';
     public const CART_ID_ZOEY = 'Zoey';
     public const CART_ID_ZOHO = 'Zoho';
+    public const TEMU_REGION_US = 'US';
+    public const TEMU_REGION_EU = 'EU';
+    public const TEMU_REGION__GLOBAL = 'GLOBAL';
 
     /**
      * Gets allowable values of the enum
@@ -1328,6 +1331,20 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             self::CART_ID_ZID,
             self::CART_ID_ZOEY,
             self::CART_ID_ZOHO,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTemuRegionAllowableValues()
+    {
+        return [
+            self::TEMU_REGION_US,
+            self::TEMU_REGION_EU,
+            self::TEMU_REGION__GLOBAL,
         ];
     }
 
@@ -1506,7 +1523,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('temu_app_key', $data ?? [], null);
         $this->setIfExists('temu_app_secret', $data ?? [], null);
         $this->setIfExists('temu_access_token', $data ?? [], null);
-        $this->setIfExists('temu_region', $data ?? [], 'US');
+        $this->setIfExists('temu_region', $data ?? [], null);
     }
 
     /**
@@ -1567,6 +1584,18 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['temu_access_token'] === null) {
             $invalidProperties[] = "'temu_access_token' can't be null";
         }
+        if ($this->container['temu_region'] === null) {
+            $invalidProperties[] = "'temu_region' can't be null";
+        }
+        $allowedValues = $this->getTemuRegionAllowableValues();
+        if (!is_null($this->container['temu_region']) && !in_array($this->container['temu_region'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'temu_region', must be one of '%s'",
+                $this->container['temu_region'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -5920,7 +5949,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets temu_region
      *
-     * @return string|null
+     * @return string
      */
     public function getTemuRegion()
     {
@@ -5930,7 +5959,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets temu_region
      *
-     * @param string|null $temu_region Temu API endpoint Region.
+     * @param string $temu_region Temu API endpoint Region.
      *
      * @return self
      */
@@ -5938,6 +5967,16 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         if (is_null($temu_region)) {
             throw new \InvalidArgumentException('non-nullable temu_region cannot be null');
+        }
+        $allowedValues = $this->getTemuRegionAllowableValues();
+        if (!in_array($temu_region, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'temu_region', must be one of '%s'",
+                    $temu_region,
+                    implode("', '", $allowedValues)
+                )
+            );
         }
         $this->container['temu_region'] = $temu_region;
 

@@ -504,7 +504,7 @@ try {
 | **temu_app_key** | **string**| Temu App Key | [optional] |
 | **temu_app_secret** | **string**| Temu App Secret | [optional] |
 | **temu_access_token** | **string**| Temu Access Token | [optional] |
-| **temu_region** | **string**| Temu API endpoint Region. | [optional] [default to &#39;US&#39;] |
+| **temu_region** | **string**| Temu API endpoint Region. | [optional] |
 
 ### Return type
 
