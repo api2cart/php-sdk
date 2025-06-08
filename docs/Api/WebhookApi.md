@@ -86,7 +86,7 @@ try {
 ## `webhookCreate()`
 
 ```php
-webhookCreate($entity, $action, $callback, $label, $fields, $active, $store_id): \OpenAPI\Client\Model\BasketLiveShippingServiceCreate200Response
+webhookCreate($entity, $action, $callback, $label, $fields, $active, $lang_id, $store_id): \OpenAPI\Client\Model\BasketLiveShippingServiceCreate200Response
 ```
 
 webhook.create
@@ -123,10 +123,11 @@ $callback = https://example.com/callback; // string | Callback url that returns 
 $label = Super webhook; // string | The name you give to the webhook
 $fields = id, name, description; // string | Fields the webhook should send
 $active = true; // bool | Webhook status
+$lang_id = 3; // string | Language id
 $store_id = 1; // string | Defines store id where the webhook should be assigned
 
 try {
-    $result = $apiInstance->webhookCreate($entity, $action, $callback, $label, $fields, $active, $store_id);
+    $result = $apiInstance->webhookCreate($entity, $action, $callback, $label, $fields, $active, $lang_id, $store_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhookApi->webhookCreate: ', $e->getMessage(), PHP_EOL;
@@ -143,6 +144,7 @@ try {
 | **label** | **string**| The name you give to the webhook | [optional] |
 | **fields** | **string**| Fields the webhook should send | [optional] [default to &#39;force_all&#39;] |
 | **active** | **bool**| Webhook status | [optional] [default to true] |
+| **lang_id** | **string**| Language id | [optional] |
 | **store_id** | **string**| Defines store id where the webhook should be assigned | [optional] |
 
 ### Return type
@@ -375,7 +377,7 @@ try {
 ## `webhookUpdate()`
 
 ```php
-webhookUpdate($id, $callback, $label, $fields, $active): \OpenAPI\Client\Model\ProductImageUpdate200Response
+webhookUpdate($id, $callback, $label, $fields, $active, $lang_id): \OpenAPI\Client\Model\ProductImageUpdate200Response
 ```
 
 webhook.update
@@ -411,9 +413,10 @@ $callback = https://example.com/callback; // string | Callback url that returns 
 $label = Super webhook; // string | The name you give to the webhook
 $fields = id, name, description; // string | Fields the webhook should send
 $active = true; // bool | Webhook status
+$lang_id = 3; // string | Language id
 
 try {
-    $result = $apiInstance->webhookUpdate($id, $callback, $label, $fields, $active);
+    $result = $apiInstance->webhookUpdate($id, $callback, $label, $fields, $active, $lang_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhookApi->webhookUpdate: ', $e->getMessage(), PHP_EOL;
@@ -429,6 +432,7 @@ try {
 | **label** | **string**| The name you give to the webhook | [optional] |
 | **fields** | **string**| Fields the webhook should send | [optional] |
 | **active** | **bool**| Webhook status | [optional] |
+| **lang_id** | **string**| Language id | [optional] |
 
 ### Return type
 

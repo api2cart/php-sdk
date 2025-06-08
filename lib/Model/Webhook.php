@@ -61,6 +61,7 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'int',
         'label' => 'string',
         'store_id' => 'string',
+        'lang_id' => 'string',
         'active' => 'bool',
         'callback' => 'string',
         'fields' => 'string',
@@ -83,6 +84,7 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => null,
         'label' => null,
         'store_id' => null,
+        'lang_id' => null,
         'active' => null,
         'callback' => null,
         'fields' => null,
@@ -103,6 +105,7 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => false,
         'label' => false,
         'store_id' => false,
+        'lang_id' => false,
         'active' => false,
         'callback' => false,
         'fields' => false,
@@ -203,6 +206,7 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'id',
         'label' => 'label',
         'store_id' => 'store_id',
+        'lang_id' => 'lang_id',
         'active' => 'active',
         'callback' => 'callback',
         'fields' => 'fields',
@@ -223,6 +227,7 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'setId',
         'label' => 'setLabel',
         'store_id' => 'setStoreId',
+        'lang_id' => 'setLangId',
         'active' => 'setActive',
         'callback' => 'setCallback',
         'fields' => 'setFields',
@@ -243,6 +248,7 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'getId',
         'label' => 'getLabel',
         'store_id' => 'getStoreId',
+        'lang_id' => 'getLangId',
         'active' => 'getActive',
         'callback' => 'getCallback',
         'fields' => 'getFields',
@@ -314,6 +320,7 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('label', $data ?? [], null);
         $this->setIfExists('store_id', $data ?? [], null);
+        $this->setIfExists('lang_id', $data ?? [], null);
         $this->setIfExists('active', $data ?? [], null);
         $this->setIfExists('callback', $data ?? [], null);
         $this->setIfExists('fields', $data ?? [], null);
@@ -444,6 +451,33 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable store_id cannot be null');
         }
         $this->container['store_id'] = $store_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets lang_id
+     *
+     * @return string|null
+     */
+    public function getLangId()
+    {
+        return $this->container['lang_id'];
+    }
+
+    /**
+     * Sets lang_id
+     *
+     * @param string|null $lang_id lang_id
+     *
+     * @return self
+     */
+    public function setLangId($lang_id)
+    {
+        if (is_null($lang_id)) {
+            throw new \InvalidArgumentException('non-nullable lang_id cannot be null');
+        }
+        $this->container['lang_id'] = $lang_id;
 
         return $this;
     }

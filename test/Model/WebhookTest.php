@@ -108,6 +108,15 @@ class WebhookTest extends TestCase
     }
 
     /**
+     * Test attribute "lang_id"
+     */
+    public function testPropertyLangId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "active"
      */
     public function testPropertyActive()

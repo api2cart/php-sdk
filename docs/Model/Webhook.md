@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **id** | **int** |  | [optional]
 **label** | **string** |  | [optional]
 **store_id** | **string** |  | [optional]
+**lang_id** | **string** |  | [optional]
 **active** | **bool** |  | [optional]
 **callback** | **string** |  | [optional]
 **fields** | **string** |  | [optional]
