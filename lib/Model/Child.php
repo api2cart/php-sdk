@@ -85,6 +85,7 @@ class Child implements ModelInterface, ArrayAccess, \JsonSerializable
         'avail_for_sale' => 'bool',
         'allow_backorders' => 'bool',
         'in_stock' => 'bool',
+        'on_sale' => 'bool',
         'manage_stock' => 'bool',
         'inventory_level' => 'float',
         'inventory' => '\OpenAPI\Client\Model\ProductInventory[]',
@@ -141,6 +142,7 @@ class Child implements ModelInterface, ArrayAccess, \JsonSerializable
         'avail_for_sale' => null,
         'allow_backorders' => null,
         'in_stock' => null,
+        'on_sale' => null,
         'manage_stock' => null,
         'inventory_level' => null,
         'inventory' => null,
@@ -195,6 +197,7 @@ class Child implements ModelInterface, ArrayAccess, \JsonSerializable
         'avail_for_sale' => false,
         'allow_backorders' => false,
         'in_stock' => false,
+        'on_sale' => false,
         'manage_stock' => false,
         'inventory_level' => false,
         'inventory' => false,
@@ -329,6 +332,7 @@ class Child implements ModelInterface, ArrayAccess, \JsonSerializable
         'avail_for_sale' => 'avail_for_sale',
         'allow_backorders' => 'allow_backorders',
         'in_stock' => 'in_stock',
+        'on_sale' => 'on_sale',
         'manage_stock' => 'manage_stock',
         'inventory_level' => 'inventory_level',
         'inventory' => 'inventory',
@@ -383,6 +387,7 @@ class Child implements ModelInterface, ArrayAccess, \JsonSerializable
         'avail_for_sale' => 'setAvailForSale',
         'allow_backorders' => 'setAllowBackorders',
         'in_stock' => 'setInStock',
+        'on_sale' => 'setOnSale',
         'manage_stock' => 'setManageStock',
         'inventory_level' => 'setInventoryLevel',
         'inventory' => 'setInventory',
@@ -437,6 +442,7 @@ class Child implements ModelInterface, ArrayAccess, \JsonSerializable
         'avail_for_sale' => 'getAvailForSale',
         'allow_backorders' => 'getAllowBackorders',
         'in_stock' => 'getInStock',
+        'on_sale' => 'getOnSale',
         'manage_stock' => 'getManageStock',
         'inventory_level' => 'getInventoryLevel',
         'inventory' => 'getInventory',
@@ -542,6 +548,7 @@ class Child implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('avail_for_sale', $data ?? [], null);
         $this->setIfExists('allow_backorders', $data ?? [], null);
         $this->setIfExists('in_stock', $data ?? [], null);
+        $this->setIfExists('on_sale', $data ?? [], null);
         $this->setIfExists('manage_stock', $data ?? [], null);
         $this->setIfExists('inventory_level', $data ?? [], null);
         $this->setIfExists('inventory', $data ?? [], null);
@@ -1330,6 +1337,33 @@ class Child implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable in_stock cannot be null');
         }
         $this->container['in_stock'] = $in_stock;
+
+        return $this;
+    }
+
+    /**
+     * Gets on_sale
+     *
+     * @return bool|null
+     */
+    public function getOnSale()
+    {
+        return $this->container['on_sale'];
+    }
+
+    /**
+     * Sets on_sale
+     *
+     * @param bool|null $on_sale on_sale
+     *
+     * @return self
+     */
+    public function setOnSale($on_sale)
+    {
+        if (is_null($on_sale)) {
+            throw new \InvalidArgumentException('non-nullable on_sale cannot be null');
+        }
+        $this->container['on_sale'] = $on_sale;
 
         return $this;
     }

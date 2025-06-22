@@ -144,6 +144,15 @@ class WebhookTest extends TestCase
     }
 
     /**
+     * Test attribute "response_fields"
+     */
+    public function testPropertyResponseFields()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "created_at"
      */
     public function testPropertyCreatedAt()

@@ -491,6 +491,7 @@ class WebhookApi
      * @param  string|null $callback Callback url that returns shipping rates. It should be able to accept POST requests with json data. (optional)
      * @param  string|null $label The name you give to the webhook (optional)
      * @param  string|null $fields Fields the webhook should send (optional, default to 'force_all')
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  bool|null $active Webhook status (optional, default to true)
      * @param  string|null $lang_id Language id (optional)
      * @param  string|null $store_id Defines store id where the webhook should be assigned (optional)
@@ -500,9 +501,9 @@ class WebhookApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\BasketLiveShippingServiceCreate200Response
      */
-    public function webhookCreate($entity, $action, $callback = null, $label = null, $fields = 'force_all', $active = true, $lang_id = null, $store_id = null, string $contentType = self::contentTypes['webhookCreate'][0])
+    public function webhookCreate($entity, $action, $callback = null, $label = null, $fields = 'force_all', $response_fields = null, $active = true, $lang_id = null, $store_id = null, string $contentType = self::contentTypes['webhookCreate'][0])
     {
-        list($response) = $this->webhookCreateWithHttpInfo($entity, $action, $callback, $label, $fields, $active, $lang_id, $store_id, $contentType);
+        list($response) = $this->webhookCreateWithHttpInfo($entity, $action, $callback, $label, $fields, $response_fields, $active, $lang_id, $store_id, $contentType);
         return $response;
     }
 
@@ -516,6 +517,7 @@ class WebhookApi
      * @param  string|null $callback Callback url that returns shipping rates. It should be able to accept POST requests with json data. (optional)
      * @param  string|null $label The name you give to the webhook (optional)
      * @param  string|null $fields Fields the webhook should send (optional, default to 'force_all')
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  bool|null $active Webhook status (optional, default to true)
      * @param  string|null $lang_id Language id (optional)
      * @param  string|null $store_id Defines store id where the webhook should be assigned (optional)
@@ -525,9 +527,9 @@ class WebhookApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\BasketLiveShippingServiceCreate200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function webhookCreateWithHttpInfo($entity, $action, $callback = null, $label = null, $fields = 'force_all', $active = true, $lang_id = null, $store_id = null, string $contentType = self::contentTypes['webhookCreate'][0])
+    public function webhookCreateWithHttpInfo($entity, $action, $callback = null, $label = null, $fields = 'force_all', $response_fields = null, $active = true, $lang_id = null, $store_id = null, string $contentType = self::contentTypes['webhookCreate'][0])
     {
-        $request = $this->webhookCreateRequest($entity, $action, $callback, $label, $fields, $active, $lang_id, $store_id, $contentType);
+        $request = $this->webhookCreateRequest($entity, $action, $callback, $label, $fields, $response_fields, $active, $lang_id, $store_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -648,6 +650,7 @@ class WebhookApi
      * @param  string|null $callback Callback url that returns shipping rates. It should be able to accept POST requests with json data. (optional)
      * @param  string|null $label The name you give to the webhook (optional)
      * @param  string|null $fields Fields the webhook should send (optional, default to 'force_all')
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  bool|null $active Webhook status (optional, default to true)
      * @param  string|null $lang_id Language id (optional)
      * @param  string|null $store_id Defines store id where the webhook should be assigned (optional)
@@ -656,9 +659,9 @@ class WebhookApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function webhookCreateAsync($entity, $action, $callback = null, $label = null, $fields = 'force_all', $active = true, $lang_id = null, $store_id = null, string $contentType = self::contentTypes['webhookCreate'][0])
+    public function webhookCreateAsync($entity, $action, $callback = null, $label = null, $fields = 'force_all', $response_fields = null, $active = true, $lang_id = null, $store_id = null, string $contentType = self::contentTypes['webhookCreate'][0])
     {
-        return $this->webhookCreateAsyncWithHttpInfo($entity, $action, $callback, $label, $fields, $active, $lang_id, $store_id, $contentType)
+        return $this->webhookCreateAsyncWithHttpInfo($entity, $action, $callback, $label, $fields, $response_fields, $active, $lang_id, $store_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -676,6 +679,7 @@ class WebhookApi
      * @param  string|null $callback Callback url that returns shipping rates. It should be able to accept POST requests with json data. (optional)
      * @param  string|null $label The name you give to the webhook (optional)
      * @param  string|null $fields Fields the webhook should send (optional, default to 'force_all')
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  bool|null $active Webhook status (optional, default to true)
      * @param  string|null $lang_id Language id (optional)
      * @param  string|null $store_id Defines store id where the webhook should be assigned (optional)
@@ -684,10 +688,10 @@ class WebhookApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function webhookCreateAsyncWithHttpInfo($entity, $action, $callback = null, $label = null, $fields = 'force_all', $active = true, $lang_id = null, $store_id = null, string $contentType = self::contentTypes['webhookCreate'][0])
+    public function webhookCreateAsyncWithHttpInfo($entity, $action, $callback = null, $label = null, $fields = 'force_all', $response_fields = null, $active = true, $lang_id = null, $store_id = null, string $contentType = self::contentTypes['webhookCreate'][0])
     {
         $returnType = '\OpenAPI\Client\Model\BasketLiveShippingServiceCreate200Response';
-        $request = $this->webhookCreateRequest($entity, $action, $callback, $label, $fields, $active, $lang_id, $store_id, $contentType);
+        $request = $this->webhookCreateRequest($entity, $action, $callback, $label, $fields, $response_fields, $active, $lang_id, $store_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -733,6 +737,7 @@ class WebhookApi
      * @param  string|null $callback Callback url that returns shipping rates. It should be able to accept POST requests with json data. (optional)
      * @param  string|null $label The name you give to the webhook (optional)
      * @param  string|null $fields Fields the webhook should send (optional, default to 'force_all')
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  bool|null $active Webhook status (optional, default to true)
      * @param  string|null $lang_id Language id (optional)
      * @param  string|null $store_id Defines store id where the webhook should be assigned (optional)
@@ -741,7 +746,7 @@ class WebhookApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function webhookCreateRequest($entity, $action, $callback = null, $label = null, $fields = 'force_all', $active = true, $lang_id = null, $store_id = null, string $contentType = self::contentTypes['webhookCreate'][0])
+    public function webhookCreateRequest($entity, $action, $callback = null, $label = null, $fields = 'force_all', $response_fields = null, $active = true, $lang_id = null, $store_id = null, string $contentType = self::contentTypes['webhookCreate'][0])
     {
 
         // verify the required parameter 'entity' is set
@@ -757,6 +762,7 @@ class WebhookApi
                 'Missing the required parameter $action when calling webhookCreate'
             );
         }
+
 
 
 
@@ -812,6 +818,15 @@ class WebhookApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $fields,
             'fields', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $response_fields,
+            'response_fields', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -1940,6 +1955,7 @@ class WebhookApi
      * @param  string|null $callback Callback url that returns shipping rates. It should be able to accept POST requests with json data. (optional)
      * @param  string|null $label The name you give to the webhook (optional)
      * @param  string|null $fields Fields the webhook should send (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  bool|null $active Webhook status (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookUpdate'] to see the possible values for this operation
@@ -1948,9 +1964,9 @@ class WebhookApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ProductImageUpdate200Response
      */
-    public function webhookUpdate($id, $callback = null, $label = null, $fields = null, $active = null, $lang_id = null, string $contentType = self::contentTypes['webhookUpdate'][0])
+    public function webhookUpdate($id, $callback = null, $label = null, $fields = null, $response_fields = null, $active = null, $lang_id = null, string $contentType = self::contentTypes['webhookUpdate'][0])
     {
-        list($response) = $this->webhookUpdateWithHttpInfo($id, $callback, $label, $fields, $active, $lang_id, $contentType);
+        list($response) = $this->webhookUpdateWithHttpInfo($id, $callback, $label, $fields, $response_fields, $active, $lang_id, $contentType);
         return $response;
     }
 
@@ -1963,6 +1979,7 @@ class WebhookApi
      * @param  string|null $callback Callback url that returns shipping rates. It should be able to accept POST requests with json data. (optional)
      * @param  string|null $label The name you give to the webhook (optional)
      * @param  string|null $fields Fields the webhook should send (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  bool|null $active Webhook status (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookUpdate'] to see the possible values for this operation
@@ -1971,9 +1988,9 @@ class WebhookApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ProductImageUpdate200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function webhookUpdateWithHttpInfo($id, $callback = null, $label = null, $fields = null, $active = null, $lang_id = null, string $contentType = self::contentTypes['webhookUpdate'][0])
+    public function webhookUpdateWithHttpInfo($id, $callback = null, $label = null, $fields = null, $response_fields = null, $active = null, $lang_id = null, string $contentType = self::contentTypes['webhookUpdate'][0])
     {
-        $request = $this->webhookUpdateRequest($id, $callback, $label, $fields, $active, $lang_id, $contentType);
+        $request = $this->webhookUpdateRequest($id, $callback, $label, $fields, $response_fields, $active, $lang_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2093,6 +2110,7 @@ class WebhookApi
      * @param  string|null $callback Callback url that returns shipping rates. It should be able to accept POST requests with json data. (optional)
      * @param  string|null $label The name you give to the webhook (optional)
      * @param  string|null $fields Fields the webhook should send (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  bool|null $active Webhook status (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookUpdate'] to see the possible values for this operation
@@ -2100,9 +2118,9 @@ class WebhookApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function webhookUpdateAsync($id, $callback = null, $label = null, $fields = null, $active = null, $lang_id = null, string $contentType = self::contentTypes['webhookUpdate'][0])
+    public function webhookUpdateAsync($id, $callback = null, $label = null, $fields = null, $response_fields = null, $active = null, $lang_id = null, string $contentType = self::contentTypes['webhookUpdate'][0])
     {
-        return $this->webhookUpdateAsyncWithHttpInfo($id, $callback, $label, $fields, $active, $lang_id, $contentType)
+        return $this->webhookUpdateAsyncWithHttpInfo($id, $callback, $label, $fields, $response_fields, $active, $lang_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2119,6 +2137,7 @@ class WebhookApi
      * @param  string|null $callback Callback url that returns shipping rates. It should be able to accept POST requests with json data. (optional)
      * @param  string|null $label The name you give to the webhook (optional)
      * @param  string|null $fields Fields the webhook should send (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  bool|null $active Webhook status (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookUpdate'] to see the possible values for this operation
@@ -2126,10 +2145,10 @@ class WebhookApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function webhookUpdateAsyncWithHttpInfo($id, $callback = null, $label = null, $fields = null, $active = null, $lang_id = null, string $contentType = self::contentTypes['webhookUpdate'][0])
+    public function webhookUpdateAsyncWithHttpInfo($id, $callback = null, $label = null, $fields = null, $response_fields = null, $active = null, $lang_id = null, string $contentType = self::contentTypes['webhookUpdate'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ProductImageUpdate200Response';
-        $request = $this->webhookUpdateRequest($id, $callback, $label, $fields, $active, $lang_id, $contentType);
+        $request = $this->webhookUpdateRequest($id, $callback, $label, $fields, $response_fields, $active, $lang_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2174,6 +2193,7 @@ class WebhookApi
      * @param  string|null $callback Callback url that returns shipping rates. It should be able to accept POST requests with json data. (optional)
      * @param  string|null $label The name you give to the webhook (optional)
      * @param  string|null $fields Fields the webhook should send (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  bool|null $active Webhook status (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookUpdate'] to see the possible values for this operation
@@ -2181,7 +2201,7 @@ class WebhookApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function webhookUpdateRequest($id, $callback = null, $label = null, $fields = null, $active = null, $lang_id = null, string $contentType = self::contentTypes['webhookUpdate'][0])
+    public function webhookUpdateRequest($id, $callback = null, $label = null, $fields = null, $response_fields = null, $active = null, $lang_id = null, string $contentType = self::contentTypes['webhookUpdate'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -2190,6 +2210,7 @@ class WebhookApi
                 'Missing the required parameter $id when calling webhookUpdate'
             );
         }
+
 
 
 
@@ -2235,6 +2256,15 @@ class WebhookApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $fields,
             'fields', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $response_fields,
+            'response_fields', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

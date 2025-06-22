@@ -65,6 +65,7 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
         'active' => 'bool',
         'callback' => 'string',
         'fields' => 'string',
+        'response_fields' => 'string',
         'created_at' => 'string',
         'updated_at' => 'string',
         'entity' => 'string',
@@ -88,6 +89,7 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
         'active' => null,
         'callback' => null,
         'fields' => null,
+        'response_fields' => null,
         'created_at' => null,
         'updated_at' => null,
         'entity' => null,
@@ -109,6 +111,7 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
         'active' => false,
         'callback' => false,
         'fields' => false,
+        'response_fields' => false,
         'created_at' => false,
         'updated_at' => false,
         'entity' => false,
@@ -210,6 +213,7 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
         'active' => 'active',
         'callback' => 'callback',
         'fields' => 'fields',
+        'response_fields' => 'response_fields',
         'created_at' => 'created_at',
         'updated_at' => 'updated_at',
         'entity' => 'entity',
@@ -231,6 +235,7 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
         'active' => 'setActive',
         'callback' => 'setCallback',
         'fields' => 'setFields',
+        'response_fields' => 'setResponseFields',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
         'entity' => 'setEntity',
@@ -252,6 +257,7 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
         'active' => 'getActive',
         'callback' => 'getCallback',
         'fields' => 'getFields',
+        'response_fields' => 'getResponseFields',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
         'entity' => 'getEntity',
@@ -324,6 +330,7 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('active', $data ?? [], null);
         $this->setIfExists('callback', $data ?? [], null);
         $this->setIfExists('fields', $data ?? [], null);
+        $this->setIfExists('response_fields', $data ?? [], null);
         $this->setIfExists('created_at', $data ?? [], null);
         $this->setIfExists('updated_at', $data ?? [], null);
         $this->setIfExists('entity', $data ?? [], null);
@@ -559,6 +566,33 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable fields cannot be null');
         }
         $this->container['fields'] = $fields;
+
+        return $this;
+    }
+
+    /**
+     * Gets response_fields
+     *
+     * @return string|null
+     */
+    public function getResponseFields()
+    {
+        return $this->container['response_fields'];
+    }
+
+    /**
+     * Sets response_fields
+     *
+     * @param string|null $response_fields response_fields
+     *
+     * @return self
+     */
+    public function setResponseFields($response_fields)
+    {
+        if (is_null($response_fields)) {
+            throw new \InvalidArgumentException('non-nullable response_fields cannot be null');
+        }
+        $this->container['response_fields'] = $response_fields;
 
         return $this;
     }

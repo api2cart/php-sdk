@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **avail_for_sale** | **bool** |  | [optional]
 **allow_backorders** | **bool** |  | [optional]
 **in_stock** | **bool** |  | [optional]
+**on_sale** | **bool** |  | [optional]
 **manage_stock** | **bool** |  | [optional]
 **inventory_level** | **float** |  | [optional]
 **inventory** | [**\OpenAPI\Client\Model\ProductInventory[]**](ProductInventory.md) |  | [optional]

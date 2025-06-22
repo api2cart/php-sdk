@@ -324,6 +324,15 @@ class ChildTest extends TestCase
     }
 
     /**
+     * Test attribute "on_sale"
+     */
+    public function testPropertyOnSale()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "manage_stock"
      */
     public function testPropertyManageStock()

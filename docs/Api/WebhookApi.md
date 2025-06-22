@@ -86,7 +86,7 @@ try {
 ## `webhookCreate()`
 
 ```php
-webhookCreate($entity, $action, $callback, $label, $fields, $active, $lang_id, $store_id): \OpenAPI\Client\Model\BasketLiveShippingServiceCreate200Response
+webhookCreate($entity, $action, $callback, $label, $fields, $response_fields, $active, $lang_id, $store_id): \OpenAPI\Client\Model\BasketLiveShippingServiceCreate200Response
 ```
 
 webhook.create
@@ -122,12 +122,13 @@ $action = add; // string | Specify what action (event) will trigger the webhook 
 $callback = https://example.com/callback; // string | Callback url that returns shipping rates. It should be able to accept POST requests with json data.
 $label = Super webhook; // string | The name you give to the webhook
 $fields = id, name, description; // string | Fields the webhook should send
+$response_fields = {result}; // string | Set this parameter in order to choose which entity fields you want to retrieve
 $active = true; // bool | Webhook status
 $lang_id = 3; // string | Language id
 $store_id = 1; // string | Defines store id where the webhook should be assigned
 
 try {
-    $result = $apiInstance->webhookCreate($entity, $action, $callback, $label, $fields, $active, $lang_id, $store_id);
+    $result = $apiInstance->webhookCreate($entity, $action, $callback, $label, $fields, $response_fields, $active, $lang_id, $store_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhookApi->webhookCreate: ', $e->getMessage(), PHP_EOL;
@@ -143,6 +144,7 @@ try {
 | **callback** | **string**| Callback url that returns shipping rates. It should be able to accept POST requests with json data. | [optional] |
 | **label** | **string**| The name you give to the webhook | [optional] |
 | **fields** | **string**| Fields the webhook should send | [optional] [default to &#39;force_all&#39;] |
+| **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 | **active** | **bool**| Webhook status | [optional] [default to true] |
 | **lang_id** | **string**| Language id | [optional] |
 | **store_id** | **string**| Defines store id where the webhook should be assigned | [optional] |
@@ -377,7 +379,7 @@ try {
 ## `webhookUpdate()`
 
 ```php
-webhookUpdate($id, $callback, $label, $fields, $active, $lang_id): \OpenAPI\Client\Model\ProductImageUpdate200Response
+webhookUpdate($id, $callback, $label, $fields, $response_fields, $active, $lang_id): \OpenAPI\Client\Model\ProductImageUpdate200Response
 ```
 
 webhook.update
@@ -412,11 +414,12 @@ $id = 25; // string | Webhook id
 $callback = https://example.com/callback; // string | Callback url that returns shipping rates. It should be able to accept POST requests with json data.
 $label = Super webhook; // string | The name you give to the webhook
 $fields = id, name, description; // string | Fields the webhook should send
+$response_fields = {result}; // string | Set this parameter in order to choose which entity fields you want to retrieve
 $active = true; // bool | Webhook status
 $lang_id = 3; // string | Language id
 
 try {
-    $result = $apiInstance->webhookUpdate($id, $callback, $label, $fields, $active, $lang_id);
+    $result = $apiInstance->webhookUpdate($id, $callback, $label, $fields, $response_fields, $active, $lang_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhookApi->webhookUpdate: ', $e->getMessage(), PHP_EOL;
@@ -431,6 +434,7 @@ try {
 | **callback** | **string**| Callback url that returns shipping rates. It should be able to accept POST requests with json data. | [optional] |
 | **label** | **string**| The name you give to the webhook | [optional] |
 | **fields** | **string**| Fields the webhook should send | [optional] |
+| **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 | **active** | **bool**| Webhook status | [optional] |
 | **lang_id** | **string**| Language id | [optional] |
 
