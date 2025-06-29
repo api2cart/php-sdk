@@ -161,6 +161,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'logistic_info' => '\OpenAPI\Client\Model\ProductAddLogisticInfoInner[]',
         'listing_duration' => 'string',
         'listing_type' => 'string',
+        'category_type' => 'string',
         'return_accepted' => 'bool',
         'seller_profiles' => '\OpenAPI\Client\Model\ProductAddSellerProfiles',
         'auction_confidentiality_level' => 'string',
@@ -286,6 +287,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'logistic_info' => null,
         'listing_duration' => null,
         'listing_type' => null,
+        'category_type' => null,
         'return_accepted' => null,
         'seller_profiles' => null,
         'auction_confidentiality_level' => null,
@@ -409,6 +411,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'logistic_info' => false,
         'listing_duration' => false,
         'listing_type' => false,
+        'category_type' => false,
         'return_accepted' => false,
         'seller_profiles' => false,
         'auction_confidentiality_level' => false,
@@ -612,6 +615,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'logistic_info' => 'logistic_info',
         'listing_duration' => 'listing_duration',
         'listing_type' => 'listing_type',
+        'category_type' => 'category_type',
         'return_accepted' => 'return_accepted',
         'seller_profiles' => 'seller_profiles',
         'auction_confidentiality_level' => 'auction_confidentiality_level',
@@ -735,6 +739,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'logistic_info' => 'setLogisticInfo',
         'listing_duration' => 'setListingDuration',
         'listing_type' => 'setListingType',
+        'category_type' => 'setCategoryType',
         'return_accepted' => 'setReturnAccepted',
         'seller_profiles' => 'setSellerProfiles',
         'auction_confidentiality_level' => 'setAuctionConfidentialityLevel',
@@ -858,6 +863,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'logistic_info' => 'getLogisticInfo',
         'listing_duration' => 'getListingDuration',
         'listing_type' => 'getListingType',
+        'category_type' => 'getCategoryType',
         'return_accepted' => 'getReturnAccepted',
         'seller_profiles' => 'getSellerProfiles',
         'auction_confidentiality_level' => 'getAuctionConfidentialityLevel',
@@ -1032,6 +1038,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('logistic_info', $data ?? [], null);
         $this->setIfExists('listing_duration', $data ?? [], null);
         $this->setIfExists('listing_type', $data ?? [], 'FixedPrice');
+        $this->setIfExists('category_type', $data ?? [], null);
         $this->setIfExists('return_accepted', $data ?? [], null);
         $this->setIfExists('seller_profiles', $data ?? [], null);
         $this->setIfExists('auction_confidentiality_level', $data ?? [], null);
@@ -3877,6 +3884,33 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable listing_type cannot be null');
         }
         $this->container['listing_type'] = $listing_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets category_type
+     *
+     * @return string|null
+     */
+    public function getCategoryType()
+    {
+        return $this->container['category_type'];
+    }
+
+    /**
+     * Sets category_type
+     *
+     * @param string|null $category_type Specifies the type of category (e.g., apparel or other) for the product being added.
+     *
+     * @return self
+     */
+    public function setCategoryType($category_type)
+    {
+        if (is_null($category_type)) {
+            throw new \InvalidArgumentException('non-nullable category_type cannot be null');
+        }
+        $this->container['category_type'] = $category_type;
 
         return $this;
     }

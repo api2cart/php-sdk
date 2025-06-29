@@ -74,7 +74,8 @@ class CartCouponAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'action_condition_operator' => 'string',
         'action_condition_value' => 'string',
         'include_tax' => 'bool',
-        'store_id' => 'string'
+        'store_id' => 'string',
+        'free_cash_on_delivery' => 'bool'
     ];
 
     /**
@@ -101,7 +102,8 @@ class CartCouponAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'action_condition_operator' => null,
         'action_condition_value' => null,
         'include_tax' => null,
-        'store_id' => null
+        'store_id' => null,
+        'free_cash_on_delivery' => null
     ];
 
     /**
@@ -126,7 +128,8 @@ class CartCouponAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'action_condition_operator' => false,
         'action_condition_value' => false,
         'include_tax' => false,
-        'store_id' => false
+        'store_id' => false,
+        'free_cash_on_delivery' => false
     ];
 
     /**
@@ -231,7 +234,8 @@ class CartCouponAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'action_condition_operator' => 'action_condition_operator',
         'action_condition_value' => 'action_condition_value',
         'include_tax' => 'include_tax',
-        'store_id' => 'store_id'
+        'store_id' => 'store_id',
+        'free_cash_on_delivery' => 'free_cash_on_delivery'
     ];
 
     /**
@@ -256,7 +260,8 @@ class CartCouponAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'action_condition_operator' => 'setActionConditionOperator',
         'action_condition_value' => 'setActionConditionValue',
         'include_tax' => 'setIncludeTax',
-        'store_id' => 'setStoreId'
+        'store_id' => 'setStoreId',
+        'free_cash_on_delivery' => 'setFreeCashOnDelivery'
     ];
 
     /**
@@ -281,7 +286,8 @@ class CartCouponAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'action_condition_operator' => 'getActionConditionOperator',
         'action_condition_value' => 'getActionConditionValue',
         'include_tax' => 'getIncludeTax',
-        'store_id' => 'getStoreId'
+        'store_id' => 'getStoreId',
+        'free_cash_on_delivery' => 'getFreeCashOnDelivery'
     ];
 
     /**
@@ -405,6 +411,7 @@ class CartCouponAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('action_condition_value', $data ?? [], null);
         $this->setIfExists('include_tax', $data ?? [], false);
         $this->setIfExists('store_id', $data ?? [], null);
+        $this->setIfExists('free_cash_on_delivery', $data ?? [], null);
     }
 
     /**
@@ -976,6 +983,33 @@ class CartCouponAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable store_id cannot be null');
         }
         $this->container['store_id'] = $store_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets free_cash_on_delivery
+     *
+     * @return bool|null
+     */
+    public function getFreeCashOnDelivery()
+    {
+        return $this->container['free_cash_on_delivery'];
+    }
+
+    /**
+     * Sets free_cash_on_delivery
+     *
+     * @param bool|null $free_cash_on_delivery Defines whether the coupon provides free cash on delivery
+     *
+     * @return self
+     */
+    public function setFreeCashOnDelivery($free_cash_on_delivery)
+    {
+        if (is_null($free_cash_on_delivery)) {
+            throw new \InvalidArgumentException('non-nullable free_cash_on_delivery cannot be null');
+        }
+        $this->container['free_cash_on_delivery'] = $free_cash_on_delivery;
 
         return $this;
     }

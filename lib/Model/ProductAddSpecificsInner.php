@@ -63,6 +63,7 @@ class ProductAddSpecificsInner implements ModelInterface, ArrayAccess, \JsonSeri
         'values' => 'string[]',
         'used_for_variations' => 'bool',
         'scale_id' => 'int',
+        'input_value' => 'string',
         'food_details' => '\OpenAPI\Client\Model\ProductAddSpecificsInnerFoodDetails',
         'group_products_details' => '\OpenAPI\Client\Model\ProductAddSpecificsInnerGroupProductsDetailsInner[]',
         'booking_details' => '\OpenAPI\Client\Model\ProductAddSpecificsInnerBookingDetails'
@@ -81,6 +82,7 @@ class ProductAddSpecificsInner implements ModelInterface, ArrayAccess, \JsonSeri
         'values' => null,
         'used_for_variations' => null,
         'scale_id' => null,
+        'input_value' => null,
         'food_details' => null,
         'group_products_details' => null,
         'booking_details' => null
@@ -97,6 +99,7 @@ class ProductAddSpecificsInner implements ModelInterface, ArrayAccess, \JsonSeri
         'values' => false,
         'used_for_variations' => false,
         'scale_id' => true,
+        'input_value' => true,
         'food_details' => false,
         'group_products_details' => false,
         'booking_details' => false
@@ -193,6 +196,7 @@ class ProductAddSpecificsInner implements ModelInterface, ArrayAccess, \JsonSeri
         'values' => 'values',
         'used_for_variations' => 'used_for_variations',
         'scale_id' => 'scale_id',
+        'input_value' => 'input_value',
         'food_details' => 'food_details',
         'group_products_details' => 'group_products_details',
         'booking_details' => 'booking_details'
@@ -209,6 +213,7 @@ class ProductAddSpecificsInner implements ModelInterface, ArrayAccess, \JsonSeri
         'values' => 'setValues',
         'used_for_variations' => 'setUsedForVariations',
         'scale_id' => 'setScaleId',
+        'input_value' => 'setInputValue',
         'food_details' => 'setFoodDetails',
         'group_products_details' => 'setGroupProductsDetails',
         'booking_details' => 'setBookingDetails'
@@ -225,6 +230,7 @@ class ProductAddSpecificsInner implements ModelInterface, ArrayAccess, \JsonSeri
         'values' => 'getValues',
         'used_for_variations' => 'getUsedForVariations',
         'scale_id' => 'getScaleId',
+        'input_value' => 'getInputValue',
         'food_details' => 'getFoodDetails',
         'group_products_details' => 'getGroupProductsDetails',
         'booking_details' => 'getBookingDetails'
@@ -292,6 +298,7 @@ class ProductAddSpecificsInner implements ModelInterface, ArrayAccess, \JsonSeri
         $this->setIfExists('values', $data ?? [], null);
         $this->setIfExists('used_for_variations', $data ?? [], false);
         $this->setIfExists('scale_id', $data ?? [], null);
+        $this->setIfExists('input_value', $data ?? [], null);
         $this->setIfExists('food_details', $data ?? [], null);
         $this->setIfExists('group_products_details', $data ?? [], null);
         $this->setIfExists('booking_details', $data ?? [], null);
@@ -490,6 +497,40 @@ class ProductAddSpecificsInner implements ModelInterface, ArrayAccess, \JsonSeri
             }
         }
         $this->container['scale_id'] = $scale_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets input_value
+     *
+     * @return string|null
+     */
+    public function getInputValue()
+    {
+        return $this->container['input_value'];
+    }
+
+    /**
+     * Sets input_value
+     *
+     * @param string|null $input_value input_value
+     *
+     * @return self
+     */
+    public function setInputValue($input_value)
+    {
+        if (is_null($input_value)) {
+            array_push($this->openAPINullablesSetToNull, 'input_value');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('input_value', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['input_value'] = $input_value;
 
         return $this;
     }

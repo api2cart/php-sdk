@@ -1367,7 +1367,7 @@ orderShipmentList($order_id, $start, $count, $page_cursor, $store_id, $created_f
 
 order.shipment.list
 
-Get list of shipments by orders.
+Get list of shipments per order.
 
 ### Example
 

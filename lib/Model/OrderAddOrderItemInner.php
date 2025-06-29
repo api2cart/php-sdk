@@ -66,6 +66,7 @@ class OrderAddOrderItemInner implements ModelInterface, ArrayAccess, \JsonSerial
         'order_item_weight' => 'float',
         'order_item_variant_id' => 'string',
         'order_item_tax' => 'float',
+        'order_item_tax_class' => 'string',
         'order_item_price_includes_tax' => 'bool',
         'order_item_parent' => 'int',
         'order_item_parent_option_name' => 'string',
@@ -91,6 +92,7 @@ class OrderAddOrderItemInner implements ModelInterface, ArrayAccess, \JsonSerial
         'order_item_weight' => null,
         'order_item_variant_id' => null,
         'order_item_tax' => null,
+        'order_item_tax_class' => null,
         'order_item_price_includes_tax' => null,
         'order_item_parent' => null,
         'order_item_parent_option_name' => null,
@@ -114,6 +116,7 @@ class OrderAddOrderItemInner implements ModelInterface, ArrayAccess, \JsonSerial
         'order_item_weight' => false,
         'order_item_variant_id' => false,
         'order_item_tax' => false,
+        'order_item_tax_class' => false,
         'order_item_price_includes_tax' => false,
         'order_item_parent' => false,
         'order_item_parent_option_name' => false,
@@ -217,6 +220,7 @@ class OrderAddOrderItemInner implements ModelInterface, ArrayAccess, \JsonSerial
         'order_item_weight' => 'order_item_weight',
         'order_item_variant_id' => 'order_item_variant_id',
         'order_item_tax' => 'order_item_tax',
+        'order_item_tax_class' => 'order_item_tax_class',
         'order_item_price_includes_tax' => 'order_item_price_includes_tax',
         'order_item_parent' => 'order_item_parent',
         'order_item_parent_option_name' => 'order_item_parent_option_name',
@@ -240,6 +244,7 @@ class OrderAddOrderItemInner implements ModelInterface, ArrayAccess, \JsonSerial
         'order_item_weight' => 'setOrderItemWeight',
         'order_item_variant_id' => 'setOrderItemVariantId',
         'order_item_tax' => 'setOrderItemTax',
+        'order_item_tax_class' => 'setOrderItemTaxClass',
         'order_item_price_includes_tax' => 'setOrderItemPriceIncludesTax',
         'order_item_parent' => 'setOrderItemParent',
         'order_item_parent_option_name' => 'setOrderItemParentOptionName',
@@ -263,6 +268,7 @@ class OrderAddOrderItemInner implements ModelInterface, ArrayAccess, \JsonSerial
         'order_item_weight' => 'getOrderItemWeight',
         'order_item_variant_id' => 'getOrderItemVariantId',
         'order_item_tax' => 'getOrderItemTax',
+        'order_item_tax_class' => 'getOrderItemTaxClass',
         'order_item_price_includes_tax' => 'getOrderItemPriceIncludesTax',
         'order_item_parent' => 'getOrderItemParent',
         'order_item_parent_option_name' => 'getOrderItemParentOptionName',
@@ -337,6 +343,7 @@ class OrderAddOrderItemInner implements ModelInterface, ArrayAccess, \JsonSerial
         $this->setIfExists('order_item_weight', $data ?? [], null);
         $this->setIfExists('order_item_variant_id', $data ?? [], null);
         $this->setIfExists('order_item_tax', $data ?? [], 0);
+        $this->setIfExists('order_item_tax_class', $data ?? [], null);
         $this->setIfExists('order_item_price_includes_tax', $data ?? [], false);
         $this->setIfExists('order_item_parent', $data ?? [], null);
         $this->setIfExists('order_item_parent_option_name', $data ?? [], null);
@@ -612,6 +619,33 @@ class OrderAddOrderItemInner implements ModelInterface, ArrayAccess, \JsonSerial
             throw new \InvalidArgumentException('non-nullable order_item_tax cannot be null');
         }
         $this->container['order_item_tax'] = $order_item_tax;
+
+        return $this;
+    }
+
+    /**
+     * Gets order_item_tax_class
+     *
+     * @return string|null
+     */
+    public function getOrderItemTaxClass()
+    {
+        return $this->container['order_item_tax_class'];
+    }
+
+    /**
+     * Sets order_item_tax_class
+     *
+     * @param string|null $order_item_tax_class Id of the tax class of product.
+     *
+     * @return self
+     */
+    public function setOrderItemTaxClass($order_item_tax_class)
+    {
+        if (is_null($order_item_tax_class)) {
+            throw new \InvalidArgumentException('non-nullable order_item_tax_class cannot be null');
+        }
+        $this->container['order_item_tax_class'] = $order_item_tax_class;
 
         return $this;
     }

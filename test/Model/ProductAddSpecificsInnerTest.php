@@ -126,6 +126,15 @@ class ProductAddSpecificsInnerTest extends TestCase
     }
 
     /**
+     * Test attribute "input_value"
+     */
+    public function testPropertyInputValue()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "food_details"
      */
     public function testPropertyFoodDetails()

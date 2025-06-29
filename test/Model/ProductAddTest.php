@@ -1008,6 +1008,15 @@ class ProductAddTest extends TestCase
     }
 
     /**
+     * Test attribute "category_type"
+     */
+    public function testPropertyCategoryType()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "return_accepted"
      */
     public function testPropertyReturnAccepted()

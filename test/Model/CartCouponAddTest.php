@@ -232,4 +232,13 @@ class CartCouponAddTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "free_cash_on_delivery"
+     */
+    public function testPropertyFreeCashOnDelivery()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

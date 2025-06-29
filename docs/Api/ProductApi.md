@@ -814,7 +814,7 @@ try {
 ## `productCount()`
 
 ```php
-productCount($product_ids, $since_id, $categories_ids, $category_id, $store_id, $lang_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $brand_name, $product_attributes, $status, $type, $find_value, $find_where, $report_request_id, $return_global, $disable_report_cache, $use_latest_api_version): \OpenAPI\Client\Model\ProductCount200Response
+productCount($product_ids, $since_id, $categories_ids, $category_id, $store_id, $lang_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $brand_name, $product_attributes, $status, $type, $visible, $find_value, $find_where, $report_request_id, $return_global, $disable_report_cache, $use_latest_api_version): \OpenAPI\Client\Model\ProductCount200Response
 ```
 
 product.count
@@ -861,6 +861,7 @@ $brand_name = Abidas; // string | Retrieves brands specified by brand name
 $product_attributes = product_attributes[0][attribute_id]=132&product_attributes[0][values][0]=custom value 1&product_attributes[0][values][1]=custom value 2; // string[] | Defines product attributes
 $status = disabled; // string | Defines product's status
 $type = simple; // string | Defines products's type
+$visible = everywhere; // string | Filter items by visibility status
 $find_value = Phone; // string | Entity search that is specified by some value
 $find_where = name; // string | Counts products that are searched specified by field
 $report_request_id = 105245017661; // string | Report request id
@@ -869,7 +870,7 @@ $disable_report_cache = false; // bool | Disable report cache for current reques
 $use_latest_api_version = true; // bool | Use the latest platform API version
 
 try {
-    $result = $apiInstance->productCount($product_ids, $since_id, $categories_ids, $category_id, $store_id, $lang_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $brand_name, $product_attributes, $status, $type, $find_value, $find_where, $report_request_id, $return_global, $disable_report_cache, $use_latest_api_version);
+    $result = $apiInstance->productCount($product_ids, $since_id, $categories_ids, $category_id, $store_id, $lang_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $brand_name, $product_attributes, $status, $type, $visible, $find_value, $find_where, $report_request_id, $return_global, $disable_report_cache, $use_latest_api_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productCount: ', $e->getMessage(), PHP_EOL;
@@ -896,6 +897,7 @@ try {
 | **product_attributes** | [**string[]**](../Model/string.md)| Defines product attributes | [optional] |
 | **status** | **string**| Defines product&#39;s status | [optional] |
 | **type** | **string**| Defines products&#39;s type | [optional] |
+| **visible** | **string**| Filter items by visibility status | [optional] [default to &#39;everywhere&#39;] |
 | **find_value** | **string**| Entity search that is specified by some value | [optional] |
 | **find_where** | **string**| Counts products that are searched specified by field | [optional] |
 | **report_request_id** | **string**| Report request id | [optional] |
@@ -1668,7 +1670,7 @@ try {
 ## `productList()`
 
 ```php
-productList($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $lang_id, $currency_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $status, $type, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version): \OpenAPI\Client\Model\ModelResponseProductList
+productList($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $lang_id, $currency_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $status, $type, $visible, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version): \OpenAPI\Client\Model\ModelResponseProductList
 ```
 
 product.list
@@ -1720,6 +1722,7 @@ $brand_name = Abidas; // string | Retrieves brands specified by brand name
 $product_attributes = product_attributes[0][attribute_id]=132&product_attributes[0][values][0]=custom value 1&product_attributes[0][values][1]=custom value 2; // string[] | Defines product attributes
 $status = disabled; // string | Defines product's status
 $type = simple; // string | Defines products's type
+$visible = everywhere; // string | Filter items by visibility status
 $find_value = Phone; // string | Entity search that is specified by some value
 $find_where = name; // string | Product search that is specified by field
 $return_global = false; // bool | Determines the type of products to be returned. If set to 'true', only global products will be returned; if set to 'false', only local products will be returned.
@@ -1734,7 +1737,7 @@ $disable_report_cache = false; // bool | Disable report cache for current reques
 $use_latest_api_version = true; // bool | Use the latest platform API version
 
 try {
-    $result = $apiInstance->productList($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $lang_id, $currency_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $status, $type, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version);
+    $result = $apiInstance->productList($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $lang_id, $currency_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $status, $type, $visible, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productList: ', $e->getMessage(), PHP_EOL;
@@ -1766,6 +1769,7 @@ try {
 | **product_attributes** | [**string[]**](../Model/string.md)| Defines product attributes | [optional] |
 | **status** | **string**| Defines product&#39;s status | [optional] |
 | **type** | **string**| Defines products&#39;s type | [optional] |
+| **visible** | **string**| Filter items by visibility status | [optional] [default to &#39;everywhere&#39;] |
 | **find_value** | **string**| Entity search that is specified by some value | [optional] |
 | **find_where** | **string**| Product search that is specified by field | [optional] |
 | **return_global** | **bool**| Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. | [optional] [default to false] |

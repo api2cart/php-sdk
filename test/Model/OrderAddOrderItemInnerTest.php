@@ -153,6 +153,15 @@ class OrderAddOrderItemInnerTest extends TestCase
     }
 
     /**
+     * Test attribute "order_item_tax_class"
+     */
+    public function testPropertyOrderItemTaxClass()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "order_item_price_includes_tax"
      */
     public function testPropertyOrderItemPriceIncludesTax()
