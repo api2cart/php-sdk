@@ -1225,6 +1225,7 @@ class CustomerApi
      * @param  string|null $group_id Customer group_id (optional)
      * @param  string|null $store_id Counts customer specified by store id (optional)
      * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
+     * @param  bool|null $include_guests Indicates whether to include guest customers in the total count. (optional, default to false)
      * @param  string|null $find_value Entity search that is specified by some value (optional)
      * @param  string|null $find_where Counts customers that are searched specified by field (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
@@ -1237,9 +1238,9 @@ class CustomerApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CustomerCount200Response
      */
-    public function customerCount($ids = null, $since_id = null, $customer_list_id = null, $group_id = null, $store_id = null, $avail = true, $find_value = null, $find_where = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, string $contentType = self::contentTypes['customerCount'][0])
+    public function customerCount($ids = null, $since_id = null, $customer_list_id = null, $group_id = null, $store_id = null, $avail = true, $include_guests = false, $find_value = null, $find_where = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, string $contentType = self::contentTypes['customerCount'][0])
     {
-        list($response) = $this->customerCountWithHttpInfo($ids, $since_id, $customer_list_id, $group_id, $store_id, $avail, $find_value, $find_where, $created_from, $created_to, $modified_from, $modified_to, $contentType);
+        list($response) = $this->customerCountWithHttpInfo($ids, $since_id, $customer_list_id, $group_id, $store_id, $avail, $include_guests, $find_value, $find_where, $created_from, $created_to, $modified_from, $modified_to, $contentType);
         return $response;
     }
 
@@ -1254,6 +1255,7 @@ class CustomerApi
      * @param  string|null $group_id Customer group_id (optional)
      * @param  string|null $store_id Counts customer specified by store id (optional)
      * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
+     * @param  bool|null $include_guests Indicates whether to include guest customers in the total count. (optional, default to false)
      * @param  string|null $find_value Entity search that is specified by some value (optional)
      * @param  string|null $find_where Counts customers that are searched specified by field (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
@@ -1266,9 +1268,9 @@ class CustomerApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CustomerCount200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function customerCountWithHttpInfo($ids = null, $since_id = null, $customer_list_id = null, $group_id = null, $store_id = null, $avail = true, $find_value = null, $find_where = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, string $contentType = self::contentTypes['customerCount'][0])
+    public function customerCountWithHttpInfo($ids = null, $since_id = null, $customer_list_id = null, $group_id = null, $store_id = null, $avail = true, $include_guests = false, $find_value = null, $find_where = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, string $contentType = self::contentTypes['customerCount'][0])
     {
-        $request = $this->customerCountRequest($ids, $since_id, $customer_list_id, $group_id, $store_id, $avail, $find_value, $find_where, $created_from, $created_to, $modified_from, $modified_to, $contentType);
+        $request = $this->customerCountRequest($ids, $since_id, $customer_list_id, $group_id, $store_id, $avail, $include_guests, $find_value, $find_where, $created_from, $created_to, $modified_from, $modified_to, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1390,6 +1392,7 @@ class CustomerApi
      * @param  string|null $group_id Customer group_id (optional)
      * @param  string|null $store_id Counts customer specified by store id (optional)
      * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
+     * @param  bool|null $include_guests Indicates whether to include guest customers in the total count. (optional, default to false)
      * @param  string|null $find_value Entity search that is specified by some value (optional)
      * @param  string|null $find_where Counts customers that are searched specified by field (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
@@ -1401,9 +1404,9 @@ class CustomerApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerCountAsync($ids = null, $since_id = null, $customer_list_id = null, $group_id = null, $store_id = null, $avail = true, $find_value = null, $find_where = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, string $contentType = self::contentTypes['customerCount'][0])
+    public function customerCountAsync($ids = null, $since_id = null, $customer_list_id = null, $group_id = null, $store_id = null, $avail = true, $include_guests = false, $find_value = null, $find_where = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, string $contentType = self::contentTypes['customerCount'][0])
     {
-        return $this->customerCountAsyncWithHttpInfo($ids, $since_id, $customer_list_id, $group_id, $store_id, $avail, $find_value, $find_where, $created_from, $created_to, $modified_from, $modified_to, $contentType)
+        return $this->customerCountAsyncWithHttpInfo($ids, $since_id, $customer_list_id, $group_id, $store_id, $avail, $include_guests, $find_value, $find_where, $created_from, $created_to, $modified_from, $modified_to, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1422,6 +1425,7 @@ class CustomerApi
      * @param  string|null $group_id Customer group_id (optional)
      * @param  string|null $store_id Counts customer specified by store id (optional)
      * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
+     * @param  bool|null $include_guests Indicates whether to include guest customers in the total count. (optional, default to false)
      * @param  string|null $find_value Entity search that is specified by some value (optional)
      * @param  string|null $find_where Counts customers that are searched specified by field (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
@@ -1433,10 +1437,10 @@ class CustomerApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerCountAsyncWithHttpInfo($ids = null, $since_id = null, $customer_list_id = null, $group_id = null, $store_id = null, $avail = true, $find_value = null, $find_where = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, string $contentType = self::contentTypes['customerCount'][0])
+    public function customerCountAsyncWithHttpInfo($ids = null, $since_id = null, $customer_list_id = null, $group_id = null, $store_id = null, $avail = true, $include_guests = false, $find_value = null, $find_where = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, string $contentType = self::contentTypes['customerCount'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CustomerCount200Response';
-        $request = $this->customerCountRequest($ids, $since_id, $customer_list_id, $group_id, $store_id, $avail, $find_value, $find_where, $created_from, $created_to, $modified_from, $modified_to, $contentType);
+        $request = $this->customerCountRequest($ids, $since_id, $customer_list_id, $group_id, $store_id, $avail, $include_guests, $find_value, $find_where, $created_from, $created_to, $modified_from, $modified_to, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1483,6 +1487,7 @@ class CustomerApi
      * @param  string|null $group_id Customer group_id (optional)
      * @param  string|null $store_id Counts customer specified by store id (optional)
      * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
+     * @param  bool|null $include_guests Indicates whether to include guest customers in the total count. (optional, default to false)
      * @param  string|null $find_value Entity search that is specified by some value (optional)
      * @param  string|null $find_where Counts customers that are searched specified by field (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
@@ -1494,8 +1499,9 @@ class CustomerApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function customerCountRequest($ids = null, $since_id = null, $customer_list_id = null, $group_id = null, $store_id = null, $avail = true, $find_value = null, $find_where = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, string $contentType = self::contentTypes['customerCount'][0])
+    public function customerCountRequest($ids = null, $since_id = null, $customer_list_id = null, $group_id = null, $store_id = null, $avail = true, $include_guests = false, $find_value = null, $find_where = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, string $contentType = self::contentTypes['customerCount'][0])
     {
+
 
 
 
@@ -1566,6 +1572,15 @@ class CustomerApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $avail,
             'avail', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $include_guests,
+            'include_guests', // param base name
             'boolean', // openApiType
             'form', // style
             true, // explode
@@ -2020,15 +2035,16 @@ class CustomerApi
      * @param  string|null $find_where Entity search that is specified by the comma-separated unique fields (optional, default to 'email')
      * @param  string|null $find_params Entity search that is specified by comma-separated parameters (optional, default to 'whole_words')
      * @param  string|null $store_id Store Id (optional)
+     * @param  bool|null $include_guests Indicates whether to search among guest customers when looking up a customer. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerFind'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CustomerFind200Response
      */
-    public function customerFind($find_value, $find_where = 'email', $find_params = 'whole_words', $store_id = null, string $contentType = self::contentTypes['customerFind'][0])
+    public function customerFind($find_value, $find_where = 'email', $find_params = 'whole_words', $store_id = null, $include_guests = false, string $contentType = self::contentTypes['customerFind'][0])
     {
-        list($response) = $this->customerFindWithHttpInfo($find_value, $find_where, $find_params, $store_id, $contentType);
+        list($response) = $this->customerFindWithHttpInfo($find_value, $find_where, $find_params, $store_id, $include_guests, $contentType);
         return $response;
     }
 
@@ -2041,15 +2057,16 @@ class CustomerApi
      * @param  string|null $find_where Entity search that is specified by the comma-separated unique fields (optional, default to 'email')
      * @param  string|null $find_params Entity search that is specified by comma-separated parameters (optional, default to 'whole_words')
      * @param  string|null $store_id Store Id (optional)
+     * @param  bool|null $include_guests Indicates whether to search among guest customers when looking up a customer. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerFind'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CustomerFind200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function customerFindWithHttpInfo($find_value, $find_where = 'email', $find_params = 'whole_words', $store_id = null, string $contentType = self::contentTypes['customerFind'][0])
+    public function customerFindWithHttpInfo($find_value, $find_where = 'email', $find_params = 'whole_words', $store_id = null, $include_guests = false, string $contentType = self::contentTypes['customerFind'][0])
     {
-        $request = $this->customerFindRequest($find_value, $find_where, $find_params, $store_id, $contentType);
+        $request = $this->customerFindRequest($find_value, $find_where, $find_params, $store_id, $include_guests, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2169,14 +2186,15 @@ class CustomerApi
      * @param  string|null $find_where Entity search that is specified by the comma-separated unique fields (optional, default to 'email')
      * @param  string|null $find_params Entity search that is specified by comma-separated parameters (optional, default to 'whole_words')
      * @param  string|null $store_id Store Id (optional)
+     * @param  bool|null $include_guests Indicates whether to search among guest customers when looking up a customer. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerFind'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerFindAsync($find_value, $find_where = 'email', $find_params = 'whole_words', $store_id = null, string $contentType = self::contentTypes['customerFind'][0])
+    public function customerFindAsync($find_value, $find_where = 'email', $find_params = 'whole_words', $store_id = null, $include_guests = false, string $contentType = self::contentTypes['customerFind'][0])
     {
-        return $this->customerFindAsyncWithHttpInfo($find_value, $find_where, $find_params, $store_id, $contentType)
+        return $this->customerFindAsyncWithHttpInfo($find_value, $find_where, $find_params, $store_id, $include_guests, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2193,15 +2211,16 @@ class CustomerApi
      * @param  string|null $find_where Entity search that is specified by the comma-separated unique fields (optional, default to 'email')
      * @param  string|null $find_params Entity search that is specified by comma-separated parameters (optional, default to 'whole_words')
      * @param  string|null $store_id Store Id (optional)
+     * @param  bool|null $include_guests Indicates whether to search among guest customers when looking up a customer. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerFind'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerFindAsyncWithHttpInfo($find_value, $find_where = 'email', $find_params = 'whole_words', $store_id = null, string $contentType = self::contentTypes['customerFind'][0])
+    public function customerFindAsyncWithHttpInfo($find_value, $find_where = 'email', $find_params = 'whole_words', $store_id = null, $include_guests = false, string $contentType = self::contentTypes['customerFind'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CustomerFind200Response';
-        $request = $this->customerFindRequest($find_value, $find_where, $find_params, $store_id, $contentType);
+        $request = $this->customerFindRequest($find_value, $find_where, $find_params, $store_id, $include_guests, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2246,12 +2265,13 @@ class CustomerApi
      * @param  string|null $find_where Entity search that is specified by the comma-separated unique fields (optional, default to 'email')
      * @param  string|null $find_params Entity search that is specified by comma-separated parameters (optional, default to 'whole_words')
      * @param  string|null $store_id Store Id (optional)
+     * @param  bool|null $include_guests Indicates whether to search among guest customers when looking up a customer. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerFind'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function customerFindRequest($find_value, $find_where = 'email', $find_params = 'whole_words', $store_id = null, string $contentType = self::contentTypes['customerFind'][0])
+    public function customerFindRequest($find_value, $find_where = 'email', $find_params = 'whole_words', $store_id = null, $include_guests = false, string $contentType = self::contentTypes['customerFind'][0])
     {
 
         // verify the required parameter 'find_value' is set
@@ -2260,6 +2280,7 @@ class CustomerApi
                 'Missing the required parameter $find_value when calling customerFind'
             );
         }
+
 
 
 
@@ -2304,6 +2325,15 @@ class CustomerApi
             $store_id,
             'store_id', // param base name
             'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $include_guests,
+            'include_guests', // param base name
+            'boolean', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3565,6 +3595,7 @@ class CustomerApi
      * @param  string|null $group_id Customer group_id (optional)
      * @param  string|null $store_id Retrieves customers specified by store id (optional)
      * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
+     * @param  bool|null $include_guests Indicates whether to include guest customers in the list results. (optional, default to false)
      * @param  string|null $find_value Entity search that is specified by some value (optional)
      * @param  string|null $find_where Customer search that is specified by field (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
@@ -3582,9 +3613,9 @@ class CustomerApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseCustomerList
      */
-    public function customerList($start = 0, $count = 10, $page_cursor = null, $ids = null, $since_id = null, $customer_list_id = null, $group_id = null, $store_id = null, $avail = true, $find_value = null, $find_where = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $sort_by = 'created_time', $sort_direction = 'asc', $response_fields = null, $params = 'id,email,first_name,last_name', $exclude = null, string $contentType = self::contentTypes['customerList'][0])
+    public function customerList($start = 0, $count = 10, $page_cursor = null, $ids = null, $since_id = null, $customer_list_id = null, $group_id = null, $store_id = null, $avail = true, $include_guests = false, $find_value = null, $find_where = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $sort_by = 'created_time', $sort_direction = 'asc', $response_fields = null, $params = 'id,email,first_name,last_name', $exclude = null, string $contentType = self::contentTypes['customerList'][0])
     {
-        list($response) = $this->customerListWithHttpInfo($start, $count, $page_cursor, $ids, $since_id, $customer_list_id, $group_id, $store_id, $avail, $find_value, $find_where, $created_from, $created_to, $modified_from, $modified_to, $sort_by, $sort_direction, $response_fields, $params, $exclude, $contentType);
+        list($response) = $this->customerListWithHttpInfo($start, $count, $page_cursor, $ids, $since_id, $customer_list_id, $group_id, $store_id, $avail, $include_guests, $find_value, $find_where, $created_from, $created_to, $modified_from, $modified_to, $sort_by, $sort_direction, $response_fields, $params, $exclude, $contentType);
         return $response;
     }
 
@@ -3602,6 +3633,7 @@ class CustomerApi
      * @param  string|null $group_id Customer group_id (optional)
      * @param  string|null $store_id Retrieves customers specified by store id (optional)
      * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
+     * @param  bool|null $include_guests Indicates whether to include guest customers in the list results. (optional, default to false)
      * @param  string|null $find_value Entity search that is specified by some value (optional)
      * @param  string|null $find_where Customer search that is specified by field (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
@@ -3619,9 +3651,9 @@ class CustomerApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseCustomerList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function customerListWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $ids = null, $since_id = null, $customer_list_id = null, $group_id = null, $store_id = null, $avail = true, $find_value = null, $find_where = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $sort_by = 'created_time', $sort_direction = 'asc', $response_fields = null, $params = 'id,email,first_name,last_name', $exclude = null, string $contentType = self::contentTypes['customerList'][0])
+    public function customerListWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $ids = null, $since_id = null, $customer_list_id = null, $group_id = null, $store_id = null, $avail = true, $include_guests = false, $find_value = null, $find_where = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $sort_by = 'created_time', $sort_direction = 'asc', $response_fields = null, $params = 'id,email,first_name,last_name', $exclude = null, string $contentType = self::contentTypes['customerList'][0])
     {
-        $request = $this->customerListRequest($start, $count, $page_cursor, $ids, $since_id, $customer_list_id, $group_id, $store_id, $avail, $find_value, $find_where, $created_from, $created_to, $modified_from, $modified_to, $sort_by, $sort_direction, $response_fields, $params, $exclude, $contentType);
+        $request = $this->customerListRequest($start, $count, $page_cursor, $ids, $since_id, $customer_list_id, $group_id, $store_id, $avail, $include_guests, $find_value, $find_where, $created_from, $created_to, $modified_from, $modified_to, $sort_by, $sort_direction, $response_fields, $params, $exclude, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3746,6 +3778,7 @@ class CustomerApi
      * @param  string|null $group_id Customer group_id (optional)
      * @param  string|null $store_id Retrieves customers specified by store id (optional)
      * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
+     * @param  bool|null $include_guests Indicates whether to include guest customers in the list results. (optional, default to false)
      * @param  string|null $find_value Entity search that is specified by some value (optional)
      * @param  string|null $find_where Customer search that is specified by field (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
@@ -3762,9 +3795,9 @@ class CustomerApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerListAsync($start = 0, $count = 10, $page_cursor = null, $ids = null, $since_id = null, $customer_list_id = null, $group_id = null, $store_id = null, $avail = true, $find_value = null, $find_where = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $sort_by = 'created_time', $sort_direction = 'asc', $response_fields = null, $params = 'id,email,first_name,last_name', $exclude = null, string $contentType = self::contentTypes['customerList'][0])
+    public function customerListAsync($start = 0, $count = 10, $page_cursor = null, $ids = null, $since_id = null, $customer_list_id = null, $group_id = null, $store_id = null, $avail = true, $include_guests = false, $find_value = null, $find_where = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $sort_by = 'created_time', $sort_direction = 'asc', $response_fields = null, $params = 'id,email,first_name,last_name', $exclude = null, string $contentType = self::contentTypes['customerList'][0])
     {
-        return $this->customerListAsyncWithHttpInfo($start, $count, $page_cursor, $ids, $since_id, $customer_list_id, $group_id, $store_id, $avail, $find_value, $find_where, $created_from, $created_to, $modified_from, $modified_to, $sort_by, $sort_direction, $response_fields, $params, $exclude, $contentType)
+        return $this->customerListAsyncWithHttpInfo($start, $count, $page_cursor, $ids, $since_id, $customer_list_id, $group_id, $store_id, $avail, $include_guests, $find_value, $find_where, $created_from, $created_to, $modified_from, $modified_to, $sort_by, $sort_direction, $response_fields, $params, $exclude, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3786,6 +3819,7 @@ class CustomerApi
      * @param  string|null $group_id Customer group_id (optional)
      * @param  string|null $store_id Retrieves customers specified by store id (optional)
      * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
+     * @param  bool|null $include_guests Indicates whether to include guest customers in the list results. (optional, default to false)
      * @param  string|null $find_value Entity search that is specified by some value (optional)
      * @param  string|null $find_where Customer search that is specified by field (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
@@ -3802,10 +3836,10 @@ class CustomerApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerListAsyncWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $ids = null, $since_id = null, $customer_list_id = null, $group_id = null, $store_id = null, $avail = true, $find_value = null, $find_where = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $sort_by = 'created_time', $sort_direction = 'asc', $response_fields = null, $params = 'id,email,first_name,last_name', $exclude = null, string $contentType = self::contentTypes['customerList'][0])
+    public function customerListAsyncWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $ids = null, $since_id = null, $customer_list_id = null, $group_id = null, $store_id = null, $avail = true, $include_guests = false, $find_value = null, $find_where = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $sort_by = 'created_time', $sort_direction = 'asc', $response_fields = null, $params = 'id,email,first_name,last_name', $exclude = null, string $contentType = self::contentTypes['customerList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseCustomerList';
-        $request = $this->customerListRequest($start, $count, $page_cursor, $ids, $since_id, $customer_list_id, $group_id, $store_id, $avail, $find_value, $find_where, $created_from, $created_to, $modified_from, $modified_to, $sort_by, $sort_direction, $response_fields, $params, $exclude, $contentType);
+        $request = $this->customerListRequest($start, $count, $page_cursor, $ids, $since_id, $customer_list_id, $group_id, $store_id, $avail, $include_guests, $find_value, $find_where, $created_from, $created_to, $modified_from, $modified_to, $sort_by, $sort_direction, $response_fields, $params, $exclude, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3855,6 +3889,7 @@ class CustomerApi
      * @param  string|null $group_id Customer group_id (optional)
      * @param  string|null $store_id Retrieves customers specified by store id (optional)
      * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
+     * @param  bool|null $include_guests Indicates whether to include guest customers in the list results. (optional, default to false)
      * @param  string|null $find_value Entity search that is specified by some value (optional)
      * @param  string|null $find_where Customer search that is specified by field (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
@@ -3871,8 +3906,9 @@ class CustomerApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function customerListRequest($start = 0, $count = 10, $page_cursor = null, $ids = null, $since_id = null, $customer_list_id = null, $group_id = null, $store_id = null, $avail = true, $find_value = null, $find_where = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $sort_by = 'created_time', $sort_direction = 'asc', $response_fields = null, $params = 'id,email,first_name,last_name', $exclude = null, string $contentType = self::contentTypes['customerList'][0])
+    public function customerListRequest($start = 0, $count = 10, $page_cursor = null, $ids = null, $since_id = null, $customer_list_id = null, $group_id = null, $store_id = null, $avail = true, $include_guests = false, $find_value = null, $find_where = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $sort_by = 'created_time', $sort_direction = 'asc', $response_fields = null, $params = 'id,email,first_name,last_name', $exclude = null, string $contentType = self::contentTypes['customerList'][0])
     {
+
 
 
 
@@ -3978,6 +4014,15 @@ class CustomerApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $avail,
             'avail', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $include_guests,
+            'include_guests', // param base name
             'boolean', // openApiType
             'form', // style
             true, // explode

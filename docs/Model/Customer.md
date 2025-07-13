@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **last_login** | [**\OpenAPI\Client\Model\A2CDateTime**](A2CDateTime.md) |  | [optional]
 **birth_day** | [**\OpenAPI\Client\Model\A2CDateTime**](A2CDateTime.md) |  | [optional]
 **status** | **string** |  | [optional]
+**is_guest** | **bool** |  | [optional]
 **news_letter_subscription** | **bool** |  | [optional]
 **consents** | [**\OpenAPI\Client\Model\CustomerConsent[]**](CustomerConsent.md) |  | [optional]
 **gender** | **string** |  | [optional]

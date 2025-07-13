@@ -869,6 +869,7 @@ class CartCreate implements ModelInterface, ArrayAccess, \JsonSerializable
     public const CART_ID_SHOPWARE_API = 'ShopwareApi';
     public const CART_ID_SQUARE = 'Square';
     public const CART_ID_SQUARESPACE = 'Squarespace';
+    public const CART_ID_TEMU = 'Temu';
     public const CART_ID_TIENDANUBE = 'Tiendanube';
     public const CART_ID_TIK_TOK_SHOP = 'TikTokShop';
     public const CART_ID_TOMATOCART = 'Tomatocart';
@@ -943,6 +944,7 @@ class CartCreate implements ModelInterface, ArrayAccess, \JsonSerializable
             self::CART_ID_SHOPWARE_API,
             self::CART_ID_SQUARE,
             self::CART_ID_SQUARESPACE,
+            self::CART_ID_TEMU,
             self::CART_ID_TIENDANUBE,
             self::CART_ID_TIK_TOK_SHOP,
             self::CART_ID_TOMATOCART,

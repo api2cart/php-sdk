@@ -189,6 +189,15 @@ class CustomerTest extends TestCase
     }
 
     /**
+     * Test attribute "is_guest"
+     */
+    public function testPropertyIsGuest()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "news_letter_subscription"
      */
     public function testPropertyNewsLetterSubscription()

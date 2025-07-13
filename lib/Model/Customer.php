@@ -70,6 +70,7 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_login' => '\OpenAPI\Client\Model\A2CDateTime',
         'birth_day' => '\OpenAPI\Client\Model\A2CDateTime',
         'status' => 'string',
+        'is_guest' => 'bool',
         'news_letter_subscription' => 'bool',
         'consents' => '\OpenAPI\Client\Model\CustomerConsent[]',
         'gender' => 'string',
@@ -106,6 +107,7 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_login' => null,
         'birth_day' => null,
         'status' => null,
+        'is_guest' => null,
         'news_letter_subscription' => null,
         'consents' => null,
         'gender' => null,
@@ -140,6 +142,7 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_login' => false,
         'birth_day' => false,
         'status' => false,
+        'is_guest' => false,
         'news_letter_subscription' => false,
         'consents' => false,
         'gender' => false,
@@ -254,6 +257,7 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_login' => 'last_login',
         'birth_day' => 'birth_day',
         'status' => 'status',
+        'is_guest' => 'is_guest',
         'news_letter_subscription' => 'news_letter_subscription',
         'consents' => 'consents',
         'gender' => 'gender',
@@ -288,6 +292,7 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_login' => 'setLastLogin',
         'birth_day' => 'setBirthDay',
         'status' => 'setStatus',
+        'is_guest' => 'setIsGuest',
         'news_letter_subscription' => 'setNewsLetterSubscription',
         'consents' => 'setConsents',
         'gender' => 'setGender',
@@ -322,6 +327,7 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_login' => 'getLastLogin',
         'birth_day' => 'getBirthDay',
         'status' => 'getStatus',
+        'is_guest' => 'getIsGuest',
         'news_letter_subscription' => 'getNewsLetterSubscription',
         'consents' => 'getConsents',
         'gender' => 'getGender',
@@ -407,6 +413,7 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('last_login', $data ?? [], null);
         $this->setIfExists('birth_day', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
+        $this->setIfExists('is_guest', $data ?? [], null);
         $this->setIfExists('news_letter_subscription', $data ?? [], null);
         $this->setIfExists('consents', $data ?? [], null);
         $this->setIfExists('gender', $data ?? [], null);
@@ -785,6 +792,33 @@ class Customer implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable status cannot be null');
         }
         $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_guest
+     *
+     * @return bool|null
+     */
+    public function getIsGuest()
+    {
+        return $this->container['is_guest'];
+    }
+
+    /**
+     * Sets is_guest
+     *
+     * @param bool|null $is_guest is_guest
+     *
+     * @return self
+     */
+    public function setIsGuest($is_guest)
+    {
+        if (is_null($is_guest)) {
+            throw new \InvalidArgumentException('non-nullable is_guest cannot be null');
+        }
+        $this->container['is_guest'] = $is_guest;
 
         return $this;
     }

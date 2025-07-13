@@ -236,7 +236,7 @@ try {
 ## `customerCount()`
 
 ```php
-customerCount($ids, $since_id, $customer_list_id, $group_id, $store_id, $avail, $find_value, $find_where, $created_from, $created_to, $modified_from, $modified_to): \OpenAPI\Client\Model\CustomerCount200Response
+customerCount($ids, $since_id, $customer_list_id, $group_id, $store_id, $avail, $include_guests, $find_value, $find_where, $created_from, $created_to, $modified_from, $modified_to): \OpenAPI\Client\Model\CustomerCount200Response
 ```
 
 customer.count
@@ -273,6 +273,7 @@ $customer_list_id = exampleListId; // string | The numeric ID of the customer li
 $group_id = 3; // string | Customer group_id
 $store_id = 1; // string | Counts customer specified by store id
 $avail = false; // bool | Defines category's visibility status
+$include_guests = true; // bool | Indicates whether to include guest customers in the total count.
 $find_value = mail@gmail.com; // string | Entity search that is specified by some value
 $find_where = email; // string | Counts customers that are searched specified by field
 $created_from = 2010-07-29 13:45:52; // string | Retrieve entities from their creation date
@@ -281,7 +282,7 @@ $modified_from = 2010-07-29 13:45:52; // string | Retrieve entities from their m
 $modified_to = 2100-08-29 13:45:52; // string | Retrieve entities to their modification date
 
 try {
-    $result = $apiInstance->customerCount($ids, $since_id, $customer_list_id, $group_id, $store_id, $avail, $find_value, $find_where, $created_from, $created_to, $modified_from, $modified_to);
+    $result = $apiInstance->customerCount($ids, $since_id, $customer_list_id, $group_id, $store_id, $avail, $include_guests, $find_value, $find_where, $created_from, $created_to, $modified_from, $modified_to);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->customerCount: ', $e->getMessage(), PHP_EOL;
@@ -298,6 +299,7 @@ try {
 | **group_id** | **string**| Customer group_id | [optional] |
 | **store_id** | **string**| Counts customer specified by store id | [optional] |
 | **avail** | **bool**| Defines category&#39;s visibility status | [optional] [default to true] |
+| **include_guests** | **bool**| Indicates whether to include guest customers in the total count. | [optional] [default to false] |
 | **find_value** | **string**| Entity search that is specified by some value | [optional] |
 | **find_where** | **string**| Counts customers that are searched specified by field | [optional] |
 | **created_from** | **string**| Retrieve entities from their creation date | [optional] |
@@ -392,7 +394,7 @@ try {
 ## `customerFind()`
 
 ```php
-customerFind($find_value, $find_where, $find_params, $store_id): \OpenAPI\Client\Model\CustomerFind200Response
+customerFind($find_value, $find_where, $find_params, $store_id, $include_guests): \OpenAPI\Client\Model\CustomerFind200Response
 ```
 
 customer.find
@@ -427,9 +429,10 @@ $find_value = mail@gmail.com; // string | Entity search that is specified by som
 $find_where = email; // string | Entity search that is specified by the comma-separated unique fields
 $find_params = regex; // string | Entity search that is specified by comma-separated parameters
 $store_id = 1; // string | Store Id
+$include_guests = true; // bool | Indicates whether to search among guest customers when looking up a customer.
 
 try {
-    $result = $apiInstance->customerFind($find_value, $find_where, $find_params, $store_id);
+    $result = $apiInstance->customerFind($find_value, $find_where, $find_params, $store_id, $include_guests);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->customerFind: ', $e->getMessage(), PHP_EOL;
@@ -444,6 +447,7 @@ try {
 | **find_where** | **string**| Entity search that is specified by the comma-separated unique fields | [optional] [default to &#39;email&#39;] |
 | **find_params** | **string**| Entity search that is specified by comma-separated parameters | [optional] [default to &#39;whole_words&#39;] |
 | **store_id** | **string**| Store Id | [optional] |
+| **include_guests** | **bool**| Indicates whether to search among guest customers when looking up a customer. | [optional] [default to false] |
 
 ### Return type
 
@@ -696,7 +700,7 @@ try {
 ## `customerList()`
 
 ```php
-customerList($start, $count, $page_cursor, $ids, $since_id, $customer_list_id, $group_id, $store_id, $avail, $find_value, $find_where, $created_from, $created_to, $modified_from, $modified_to, $sort_by, $sort_direction, $response_fields, $params, $exclude): \OpenAPI\Client\Model\ModelResponseCustomerList
+customerList($start, $count, $page_cursor, $ids, $since_id, $customer_list_id, $group_id, $store_id, $avail, $include_guests, $find_value, $find_where, $created_from, $created_to, $modified_from, $modified_to, $sort_by, $sort_direction, $response_fields, $params, $exclude): \OpenAPI\Client\Model\ModelResponseCustomerList
 ```
 
 customer.list
@@ -736,6 +740,7 @@ $customer_list_id = exampleListId; // string | The numeric ID of the customer li
 $group_id = 3; // string | Customer group_id
 $store_id = 1; // string | Retrieves customers specified by store id
 $avail = false; // bool | Defines category's visibility status
+$include_guests = true; // bool | Indicates whether to include guest customers in the list results.
 $find_value = mail@gmail.com; // string | Entity search that is specified by some value
 $find_where = email; // string | Customer search that is specified by field
 $created_from = 2010-07-29 13:45:52; // string | Retrieve entities from their creation date
@@ -749,7 +754,7 @@ $params = id,email; // string | Set this parameter in order to choose which enti
 $exclude = id,email; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 
 try {
-    $result = $apiInstance->customerList($start, $count, $page_cursor, $ids, $since_id, $customer_list_id, $group_id, $store_id, $avail, $find_value, $find_where, $created_from, $created_to, $modified_from, $modified_to, $sort_by, $sort_direction, $response_fields, $params, $exclude);
+    $result = $apiInstance->customerList($start, $count, $page_cursor, $ids, $since_id, $customer_list_id, $group_id, $store_id, $avail, $include_guests, $find_value, $find_where, $created_from, $created_to, $modified_from, $modified_to, $sort_by, $sort_direction, $response_fields, $params, $exclude);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->customerList: ', $e->getMessage(), PHP_EOL;
@@ -769,6 +774,7 @@ try {
 | **group_id** | **string**| Customer group_id | [optional] |
 | **store_id** | **string**| Retrieves customers specified by store id | [optional] |
 | **avail** | **bool**| Defines category&#39;s visibility status | [optional] [default to true] |
+| **include_guests** | **bool**| Indicates whether to include guest customers in the list results. | [optional] [default to false] |
 | **find_value** | **string**| Entity search that is specified by some value | [optional] |
 | **find_where** | **string**| Customer search that is specified by field | [optional] |
 | **created_from** | **string**| Retrieve entities from their creation date | [optional] |
