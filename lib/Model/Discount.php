@@ -100,12 +100,12 @@ class Discount implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => false,
         'modifier_type' => false,
         'value' => false,
-        'from_time' => false,
-        'to_time' => false,
-        'customer_group_ids' => false,
-        'sort_order' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'from_time' => true,
+        'to_time' => true,
+        'customer_group_ids' => true,
+        'sort_order' => true,
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -481,7 +481,14 @@ class Discount implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setFromTime($from_time)
     {
         if (is_null($from_time)) {
-            throw new \InvalidArgumentException('non-nullable from_time cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'from_time');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('from_time', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['from_time'] = $from_time;
 
@@ -508,7 +515,14 @@ class Discount implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setToTime($to_time)
     {
         if (is_null($to_time)) {
-            throw new \InvalidArgumentException('non-nullable to_time cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'to_time');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('to_time', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['to_time'] = $to_time;
 
@@ -535,7 +549,14 @@ class Discount implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCustomerGroupIds($customer_group_ids)
     {
         if (is_null($customer_group_ids)) {
-            throw new \InvalidArgumentException('non-nullable customer_group_ids cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'customer_group_ids');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('customer_group_ids', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['customer_group_ids'] = $customer_group_ids;
 
@@ -562,7 +583,14 @@ class Discount implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setSortOrder($sort_order)
     {
         if (is_null($sort_order)) {
-            throw new \InvalidArgumentException('non-nullable sort_order cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'sort_order');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('sort_order', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['sort_order'] = $sort_order;
 
@@ -589,7 +617,14 @@ class Discount implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -616,7 +651,14 @@ class Discount implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

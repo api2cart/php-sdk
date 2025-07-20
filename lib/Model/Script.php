@@ -101,17 +101,17 @@ class Script implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'id' => false,
-        'name' => false,
-        'description' => false,
-        'src' => false,
-        'scope' => false,
-        'event' => false,
-        'load_method' => false,
-        'html' => false,
-        'created_time' => false,
-        'modified_time' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'name' => true,
+        'description' => true,
+        'src' => true,
+        'scope' => true,
+        'event' => true,
+        'load_method' => true,
+        'html' => true,
+        'created_time' => true,
+        'modified_time' => true,
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -414,7 +414,14 @@ class Script implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setName($name)
     {
         if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['name'] = $name;
 
@@ -441,7 +448,14 @@ class Script implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDescription($description)
     {
         if (is_null($description)) {
-            throw new \InvalidArgumentException('non-nullable description cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'description');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('description', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['description'] = $description;
 
@@ -468,7 +482,14 @@ class Script implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setSrc($src)
     {
         if (is_null($src)) {
-            throw new \InvalidArgumentException('non-nullable src cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'src');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('src', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['src'] = $src;
 
@@ -495,7 +516,14 @@ class Script implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setScope($scope)
     {
         if (is_null($scope)) {
-            throw new \InvalidArgumentException('non-nullable scope cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'scope');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('scope', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['scope'] = $scope;
 
@@ -522,7 +550,14 @@ class Script implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setEvent($event)
     {
         if (is_null($event)) {
-            throw new \InvalidArgumentException('non-nullable event cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'event');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('event', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['event'] = $event;
 
@@ -549,7 +584,14 @@ class Script implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setLoadMethod($load_method)
     {
         if (is_null($load_method)) {
-            throw new \InvalidArgumentException('non-nullable load_method cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'load_method');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('load_method', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['load_method'] = $load_method;
 
@@ -576,7 +618,14 @@ class Script implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setHtml($html)
     {
         if (is_null($html)) {
-            throw new \InvalidArgumentException('non-nullable html cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'html');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('html', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['html'] = $html;
 
@@ -603,7 +652,14 @@ class Script implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCreatedTime($created_time)
     {
         if (is_null($created_time)) {
-            throw new \InvalidArgumentException('non-nullable created_time cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'created_time');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('created_time', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['created_time'] = $created_time;
 
@@ -630,7 +686,14 @@ class Script implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setModifiedTime($modified_time)
     {
         if (is_null($modified_time)) {
-            throw new \InvalidArgumentException('non-nullable modified_time cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'modified_time');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('modified_time', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['modified_time'] = $modified_time;
 
@@ -657,7 +720,14 @@ class Script implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -684,7 +754,14 @@ class Script implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

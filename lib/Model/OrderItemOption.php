@@ -94,15 +94,15 @@ class OrderItemOption implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'option_id' => false,
+        'option_id' => true,
         'name' => false,
         'value' => false,
         'price' => false,
-        'weight' => false,
-        'type' => false,
-        'product_option_value_id' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'weight' => true,
+        'type' => true,
+        'product_option_value_id' => true,
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -366,7 +366,14 @@ class OrderItemOption implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setOptionId($option_id)
     {
         if (is_null($option_id)) {
-            throw new \InvalidArgumentException('non-nullable option_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'option_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('option_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['option_id'] = $option_id;
 
@@ -474,7 +481,14 @@ class OrderItemOption implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setWeight($weight)
     {
         if (is_null($weight)) {
-            throw new \InvalidArgumentException('non-nullable weight cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'weight');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('weight', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['weight'] = $weight;
 
@@ -501,7 +515,14 @@ class OrderItemOption implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setType($type)
     {
         if (is_null($type)) {
-            throw new \InvalidArgumentException('non-nullable type cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['type'] = $type;
 
@@ -528,7 +549,14 @@ class OrderItemOption implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setProductOptionValueId($product_option_value_id)
     {
         if (is_null($product_option_value_id)) {
-            throw new \InvalidArgumentException('non-nullable product_option_value_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'product_option_value_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('product_option_value_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['product_option_value_id'] = $product_option_value_id;
 
@@ -555,7 +583,14 @@ class OrderItemOption implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -582,7 +617,14 @@ class OrderItemOption implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

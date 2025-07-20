@@ -97,15 +97,15 @@ class Currency implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'id' => false,
-        'name' => false,
+        'name' => true,
         'iso3' => false,
         'symbol_left' => false,
-        'symbol_right' => false,
-        'rate' => false,
-        'avail' => false,
-        'default' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'symbol_right' => true,
+        'rate' => true,
+        'avail' => true,
+        'default' => true,
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -400,7 +400,14 @@ class Currency implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setName($name)
     {
         if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['name'] = $name;
 
@@ -481,7 +488,14 @@ class Currency implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setSymbolRight($symbol_right)
     {
         if (is_null($symbol_right)) {
-            throw new \InvalidArgumentException('non-nullable symbol_right cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'symbol_right');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('symbol_right', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['symbol_right'] = $symbol_right;
 
@@ -508,7 +522,14 @@ class Currency implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setRate($rate)
     {
         if (is_null($rate)) {
-            throw new \InvalidArgumentException('non-nullable rate cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'rate');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('rate', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['rate'] = $rate;
 
@@ -535,7 +556,14 @@ class Currency implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAvail($avail)
     {
         if (is_null($avail)) {
-            throw new \InvalidArgumentException('non-nullable avail cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'avail');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('avail', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['avail'] = $avail;
 
@@ -562,7 +590,14 @@ class Currency implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDefault($default)
     {
         if (is_null($default)) {
-            throw new \InvalidArgumentException('non-nullable default cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'default');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('default', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['default'] = $default;
 
@@ -589,7 +624,14 @@ class Currency implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -616,7 +658,14 @@ class Currency implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

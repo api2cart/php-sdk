@@ -88,12 +88,12 @@ class CustomerWishListItem implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => false,
+        'id' => true,
         'product_id' => false,
-        'child_id' => false,
-        'created_time' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'child_id' => true,
+        'created_time' => true,
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -345,7 +345,14 @@ class CustomerWishListItem implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setId($id)
     {
         if (is_null($id)) {
-            throw new \InvalidArgumentException('non-nullable id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['id'] = $id;
 
@@ -399,7 +406,14 @@ class CustomerWishListItem implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setChildId($child_id)
     {
         if (is_null($child_id)) {
-            throw new \InvalidArgumentException('non-nullable child_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'child_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('child_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['child_id'] = $child_id;
 
@@ -426,7 +440,14 @@ class CustomerWishListItem implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setCreatedTime($created_time)
     {
         if (is_null($created_time)) {
-            throw new \InvalidArgumentException('non-nullable created_time cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'created_time');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('created_time', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['created_time'] = $created_time;
 
@@ -453,7 +474,14 @@ class CustomerWishListItem implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -480,7 +508,14 @@ class CustomerWishListItem implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

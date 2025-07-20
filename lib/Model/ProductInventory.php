@@ -90,10 +90,10 @@ class ProductInventory implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'warehouse_id' => false,
         'quantity' => false,
-        'in_stock' => false,
-        'priority' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'in_stock' => true,
+        'priority' => true,
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -399,7 +399,14 @@ class ProductInventory implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setInStock($in_stock)
     {
         if (is_null($in_stock)) {
-            throw new \InvalidArgumentException('non-nullable in_stock cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'in_stock');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('in_stock', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['in_stock'] = $in_stock;
 
@@ -426,7 +433,14 @@ class ProductInventory implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPriority($priority)
     {
         if (is_null($priority)) {
-            throw new \InvalidArgumentException('non-nullable priority cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'priority');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('priority', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['priority'] = $priority;
 
@@ -453,7 +467,14 @@ class ProductInventory implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -480,7 +501,14 @@ class ProductInventory implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

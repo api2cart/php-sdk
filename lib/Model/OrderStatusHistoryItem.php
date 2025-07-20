@@ -93,10 +93,10 @@ class OrderStatusHistoryItem implements ModelInterface, ArrayAccess, \JsonSerial
         'id' => false,
         'name' => false,
         'modified_time' => false,
-        'notify' => false,
-        'comment' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'notify' => true,
+        'comment' => true,
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -433,7 +433,14 @@ class OrderStatusHistoryItem implements ModelInterface, ArrayAccess, \JsonSerial
     public function setNotify($notify)
     {
         if (is_null($notify)) {
-            throw new \InvalidArgumentException('non-nullable notify cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'notify');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('notify', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['notify'] = $notify;
 
@@ -460,7 +467,14 @@ class OrderStatusHistoryItem implements ModelInterface, ArrayAccess, \JsonSerial
     public function setComment($comment)
     {
         if (is_null($comment)) {
-            throw new \InvalidArgumentException('non-nullable comment cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'comment');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('comment', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['comment'] = $comment;
 
@@ -487,7 +501,14 @@ class OrderStatusHistoryItem implements ModelInterface, ArrayAccess, \JsonSerial
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -514,7 +535,14 @@ class OrderStatusHistoryItem implements ModelInterface, ArrayAccess, \JsonSerial
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

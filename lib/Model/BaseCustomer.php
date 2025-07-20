@@ -92,11 +92,11 @@ class BaseCustomer implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'id' => false,
         'email' => false,
-        'first_name' => false,
-        'last_name' => false,
-        'phone' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'first_name' => true,
+        'last_name' => true,
+        'phone' => true,
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -406,7 +406,14 @@ class BaseCustomer implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setFirstName($first_name)
     {
         if (is_null($first_name)) {
-            throw new \InvalidArgumentException('non-nullable first_name cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'first_name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('first_name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['first_name'] = $first_name;
 
@@ -433,7 +440,14 @@ class BaseCustomer implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setLastName($last_name)
     {
         if (is_null($last_name)) {
-            throw new \InvalidArgumentException('non-nullable last_name cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'last_name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('last_name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['last_name'] = $last_name;
 
@@ -460,7 +474,14 @@ class BaseCustomer implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPhone($phone)
     {
         if (is_null($phone)) {
-            throw new \InvalidArgumentException('non-nullable phone cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'phone');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('phone', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['phone'] = $phone;
 
@@ -487,7 +508,14 @@ class BaseCustomer implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -514,7 +542,14 @@ class BaseCustomer implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

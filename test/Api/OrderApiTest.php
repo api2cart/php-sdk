@@ -121,18 +121,6 @@ class OrderApiTest extends TestCase
     }
 
     /**
-     * Test case for orderFind
-     *
-     * order.find.
-     *
-     */
-    public function testOrderFind()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test case for orderFulfillmentStatusList
      *
      * order.fulfillment_status.list.

@@ -86,11 +86,11 @@ class ResponseBatchJobResult implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'return_code' => false,
-        'return_message' => false,
-        'result' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'return_code' => true,
+        'return_message' => true,
+        'result' => true,
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -338,7 +338,14 @@ class ResponseBatchJobResult implements ModelInterface, ArrayAccess, \JsonSerial
     public function setReturnCode($return_code)
     {
         if (is_null($return_code)) {
-            throw new \InvalidArgumentException('non-nullable return_code cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'return_code');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('return_code', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['return_code'] = $return_code;
 
@@ -365,7 +372,14 @@ class ResponseBatchJobResult implements ModelInterface, ArrayAccess, \JsonSerial
     public function setReturnMessage($return_message)
     {
         if (is_null($return_message)) {
-            throw new \InvalidArgumentException('non-nullable return_message cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'return_message');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('return_message', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['return_message'] = $return_message;
 
@@ -392,7 +406,14 @@ class ResponseBatchJobResult implements ModelInterface, ArrayAccess, \JsonSerial
     public function setResult($result)
     {
         if (is_null($result)) {
-            throw new \InvalidArgumentException('non-nullable result cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'result');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('result', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['result'] = $result;
 
@@ -419,7 +440,14 @@ class ResponseBatchJobResult implements ModelInterface, ArrayAccess, \JsonSerial
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -446,7 +474,14 @@ class ResponseBatchJobResult implements ModelInterface, ArrayAccess, \JsonSerial
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

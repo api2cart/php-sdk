@@ -117,25 +117,25 @@ class CartStoreInfo implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'store_id' => false,
-        'name' => false,
-        'language' => false,
+        'name' => true,
+        'language' => true,
         'store_languages' => false,
         'currency' => false,
         'store_currencies' => false,
-        'timezone' => false,
-        'country' => false,
-        'root_category_id' => false,
-        'multi_store_url' => false,
-        'active' => false,
-        'weight_unit' => false,
-        'dimension_unit' => false,
-        'prices_include_tax' => false,
+        'timezone' => true,
+        'country' => true,
+        'root_category_id' => true,
+        'multi_store_url' => true,
+        'active' => true,
+        'weight_unit' => true,
+        'dimension_unit' => true,
+        'prices_include_tax' => true,
         'carrier_info' => false,
-        'store_owner_info' => false,
-        'default_warehouse_id' => false,
+        'store_owner_info' => true,
+        'default_warehouse_id' => true,
         'channels' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -470,7 +470,14 @@ class CartStoreInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setName($name)
     {
         if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['name'] = $name;
 
@@ -497,7 +504,14 @@ class CartStoreInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setLanguage($language)
     {
         if (is_null($language)) {
-            throw new \InvalidArgumentException('non-nullable language cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'language');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('language', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['language'] = $language;
 
@@ -605,7 +619,14 @@ class CartStoreInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setTimezone($timezone)
     {
         if (is_null($timezone)) {
-            throw new \InvalidArgumentException('non-nullable timezone cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'timezone');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('timezone', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['timezone'] = $timezone;
 
@@ -632,7 +653,14 @@ class CartStoreInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCountry($country)
     {
         if (is_null($country)) {
-            throw new \InvalidArgumentException('non-nullable country cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'country');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('country', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['country'] = $country;
 
@@ -659,7 +687,14 @@ class CartStoreInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setRootCategoryId($root_category_id)
     {
         if (is_null($root_category_id)) {
-            throw new \InvalidArgumentException('non-nullable root_category_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'root_category_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('root_category_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['root_category_id'] = $root_category_id;
 
@@ -686,7 +721,14 @@ class CartStoreInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setMultiStoreUrl($multi_store_url)
     {
         if (is_null($multi_store_url)) {
-            throw new \InvalidArgumentException('non-nullable multi_store_url cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'multi_store_url');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('multi_store_url', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['multi_store_url'] = $multi_store_url;
 
@@ -713,7 +755,14 @@ class CartStoreInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setActive($active)
     {
         if (is_null($active)) {
-            throw new \InvalidArgumentException('non-nullable active cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'active');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('active', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['active'] = $active;
 
@@ -740,7 +789,14 @@ class CartStoreInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setWeightUnit($weight_unit)
     {
         if (is_null($weight_unit)) {
-            throw new \InvalidArgumentException('non-nullable weight_unit cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'weight_unit');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('weight_unit', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['weight_unit'] = $weight_unit;
 
@@ -767,7 +823,14 @@ class CartStoreInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDimensionUnit($dimension_unit)
     {
         if (is_null($dimension_unit)) {
-            throw new \InvalidArgumentException('non-nullable dimension_unit cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'dimension_unit');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('dimension_unit', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['dimension_unit'] = $dimension_unit;
 
@@ -794,7 +857,14 @@ class CartStoreInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPricesIncludeTax($prices_include_tax)
     {
         if (is_null($prices_include_tax)) {
-            throw new \InvalidArgumentException('non-nullable prices_include_tax cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'prices_include_tax');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('prices_include_tax', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['prices_include_tax'] = $prices_include_tax;
 
@@ -848,7 +918,14 @@ class CartStoreInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setStoreOwnerInfo($store_owner_info)
     {
         if (is_null($store_owner_info)) {
-            throw new \InvalidArgumentException('non-nullable store_owner_info cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'store_owner_info');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('store_owner_info', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['store_owner_info'] = $store_owner_info;
 
@@ -875,7 +952,14 @@ class CartStoreInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDefaultWarehouseId($default_warehouse_id)
     {
         if (is_null($default_warehouse_id)) {
-            throw new \InvalidArgumentException('non-nullable default_warehouse_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'default_warehouse_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('default_warehouse_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['default_warehouse_id'] = $default_warehouse_id;
 
@@ -929,7 +1013,14 @@ class CartStoreInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -956,7 +1047,14 @@ class CartStoreInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

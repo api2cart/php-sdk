@@ -73,18 +73,6 @@ class CartApiTest extends TestCase
     }
 
     /**
-     * Test case for cartBridge
-     *
-     * cart.bridge.
-     *
-     */
-    public function testCartBridge()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test case for cartCatalogPriceRulesCount
      *
      * cart.catalog_price_rules.count.
@@ -103,42 +91,6 @@ class CartApiTest extends TestCase
      *
      */
     public function testCartCatalogPriceRulesList()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for cartClearCache
-     *
-     * cart.clear_cache.
-     *
-     */
-    public function testCartClearCache()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for cartConfig
-     *
-     * cart.config.
-     *
-     */
-    public function testCartConfig()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for cartConfigUpdate
-     *
-     * cart.config.update.
-     *
-     */
-    public function testCartConfigUpdate()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -205,36 +157,12 @@ class CartApiTest extends TestCase
     }
 
     /**
-     * Test case for cartCreate
-     *
-     * cart.create.
-     *
-     */
-    public function testCartCreate()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test case for cartDelete
      *
      * cart.delete.
      *
      */
     public function testCartDelete()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for cartDisconnect
-     *
-     * cart.disconnect.
-     *
-     */
-    public function testCartDisconnect()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -295,18 +223,6 @@ class CartApiTest extends TestCase
      *
      */
     public function testCartInfo()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for cartList
-     *
-     * cart.list.
-     *
-     */
-    public function testCartList()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

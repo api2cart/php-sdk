@@ -1,29 +1,22 @@
 # OpenAPI\Client\CartApi
 
-All URIs are relative to https://api.api2cart.com/v1.1, except if the operation defines another base path.
+All URIs are relative to https://api.api2cart.local.com/v1.1, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**cartBridge()**](CartApi.md#cartBridge) | **GET** /cart.bridge.json | cart.bridge |
 | [**cartCatalogPriceRulesCount()**](CartApi.md#cartCatalogPriceRulesCount) | **GET** /cart.catalog_price_rules.count.json | cart.catalog_price_rules.count |
 | [**cartCatalogPriceRulesList()**](CartApi.md#cartCatalogPriceRulesList) | **GET** /cart.catalog_price_rules.list.json | cart.catalog_price_rules.list |
-| [**cartClearCache()**](CartApi.md#cartClearCache) | **POST** /cart.clear_cache.json | cart.clear_cache |
-| [**cartConfig()**](CartApi.md#cartConfig) | **GET** /cart.config.json | cart.config |
-| [**cartConfigUpdate()**](CartApi.md#cartConfigUpdate) | **PUT** /cart.config.update.json | cart.config.update |
 | [**cartCouponAdd()**](CartApi.md#cartCouponAdd) | **POST** /cart.coupon.add.json | cart.coupon.add |
 | [**cartCouponConditionAdd()**](CartApi.md#cartCouponConditionAdd) | **POST** /cart.coupon.condition.add.json | cart.coupon.condition.add |
 | [**cartCouponCount()**](CartApi.md#cartCouponCount) | **GET** /cart.coupon.count.json | cart.coupon.count |
 | [**cartCouponDelete()**](CartApi.md#cartCouponDelete) | **DELETE** /cart.coupon.delete.json | cart.coupon.delete |
 | [**cartCouponList()**](CartApi.md#cartCouponList) | **GET** /cart.coupon.list.json | cart.coupon.list |
-| [**cartCreate()**](CartApi.md#cartCreate) | **POST** /cart.create.json | cart.create |
 | [**cartDelete()**](CartApi.md#cartDelete) | **DELETE** /cart.delete.json | cart.delete |
-| [**cartDisconnect()**](CartApi.md#cartDisconnect) | **GET** /cart.disconnect.json | cart.disconnect |
 | [**cartGiftcardAdd()**](CartApi.md#cartGiftcardAdd) | **POST** /cart.giftcard.add.json | cart.giftcard.add |
 | [**cartGiftcardCount()**](CartApi.md#cartGiftcardCount) | **GET** /cart.giftcard.count.json | cart.giftcard.count |
 | [**cartGiftcardDelete()**](CartApi.md#cartGiftcardDelete) | **DELETE** /cart.giftcard.delete.json | cart.giftcard.delete |
 | [**cartGiftcardList()**](CartApi.md#cartGiftcardList) | **GET** /cart.giftcard.list.json | cart.giftcard.list |
 | [**cartInfo()**](CartApi.md#cartInfo) | **GET** /cart.info.json | cart.info |
-| [**cartList()**](CartApi.md#cartList) | **GET** /cart.list.json | cart.list |
 | [**cartMetaDataList()**](CartApi.md#cartMetaDataList) | **GET** /cart.meta_data.list.json | cart.meta_data.list |
 | [**cartMetaDataSet()**](CartApi.md#cartMetaDataSet) | **POST** /cart.meta_data.set.json | cart.meta_data.set |
 | [**cartMetaDataUnset()**](CartApi.md#cartMetaDataUnset) | **DELETE** /cart.meta_data.unset.json | cart.meta_data.unset |
@@ -35,65 +28,6 @@ All URIs are relative to https://api.api2cart.com/v1.1, except if the operation 
 | [**cartShippingZonesList()**](CartApi.md#cartShippingZonesList) | **GET** /cart.shipping_zones.list.json | cart.shipping_zones.list |
 | [**cartValidate()**](CartApi.md#cartValidate) | **GET** /cart.validate.json | cart.validate |
 
-
-## `cartBridge()`
-
-```php
-cartBridge(): \OpenAPI\Client\Model\CartBridge200Response
-```
-
-cart.bridge
-
-Get bridge key and store key
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: ApiKeyAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
-
-
-$apiInstance = new OpenAPI\Client\Api\CartApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-
-try {
-    $result = $apiInstance->cartBridge();
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CartApi->cartBridge: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**\OpenAPI\Client\Model\CartBridge200Response**](../Model/CartBridge200Response.md)
-
-### Authorization
-
-[ApiKeyAuth](../../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
 
 ## `cartCatalogPriceRulesCount()`
 
@@ -232,209 +166,6 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `cartClearCache()`
-
-```php
-cartClearCache($cache_type): \OpenAPI\Client\Model\CartClearCache200Response
-```
-
-cart.clear_cache
-
-Clear cache on store.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: StoreKeyAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-store-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-store-key', 'Bearer');
-
-// Configure API key authorization: ApiKeyAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
-
-
-$apiInstance = new OpenAPI\Client\Api\CartApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$cache_type = storage_cache; // string | Defines which cache should be cleared.
-
-try {
-    $result = $apiInstance->cartClearCache($cache_type);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CartApi->cartClearCache: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **cache_type** | **string**| Defines which cache should be cleared. | |
-
-### Return type
-
-[**\OpenAPI\Client\Model\CartClearCache200Response**](../Model/CartClearCache200Response.md)
-
-### Authorization
-
-[StoreKeyAuth](../../README.md#StoreKeyAuth), [ApiKeyAuth](../../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `cartConfig()`
-
-```php
-cartConfig($params, $exclude): \OpenAPI\Client\Model\CartConfig200Response
-```
-
-cart.config
-
-Get list of cart configs
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: StoreKeyAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-store-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-store-key', 'Bearer');
-
-// Configure API key authorization: ApiKeyAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
-
-
-$apiInstance = new OpenAPI\Client\Api\CartApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$params = store_name,store_url,db_prefix; // string | Set this parameter in order to choose which entity fields you want to retrieve
-$exclude = store_name,store_url,db_prefix; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-
-try {
-    $result = $apiInstance->cartConfig($params, $exclude);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CartApi->cartConfig: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;store_name,store_url,db_prefix&#39;] |
-| **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
-
-### Return type
-
-[**\OpenAPI\Client\Model\CartConfig200Response**](../Model/CartConfig200Response.md)
-
-### Authorization
-
-[StoreKeyAuth](../../README.md#StoreKeyAuth), [ApiKeyAuth](../../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `cartConfigUpdate()`
-
-```php
-cartConfigUpdate($cart_config_update): \OpenAPI\Client\Model\CartConfigUpdate200Response
-```
-
-cart.config.update
-
-Use this API method to update custom data in client database.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: StoreKeyAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-store-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-store-key', 'Bearer');
-
-// Configure API key authorization: ApiKeyAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
-
-
-$apiInstance = new OpenAPI\Client\Api\CartApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$cart_config_update = new \OpenAPI\Client\Model\CartConfigUpdate(); // \OpenAPI\Client\Model\CartConfigUpdate
-
-try {
-    $result = $apiInstance->cartConfigUpdate($cart_config_update);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CartApi->cartConfigUpdate: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **cart_config_update** | [**\OpenAPI\Client\Model\CartConfigUpdate**](../Model/CartConfigUpdate.md)|  | |
-
-### Return type
-
-[**\OpenAPI\Client\Model\CartConfigUpdate200Response**](../Model/CartConfigUpdate200Response.md)
-
-### Authorization
-
-[StoreKeyAuth](../../README.md#StoreKeyAuth), [ApiKeyAuth](../../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
@@ -830,68 +561,6 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `cartCreate()`
-
-```php
-cartCreate($cart_create): \OpenAPI\Client\Model\AccountCartAdd200Response
-```
-
-cart.create
-
-Add store to the account
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: ApiKeyAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
-
-
-$apiInstance = new OpenAPI\Client\Api\CartApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$cart_create = new \OpenAPI\Client\Model\CartCreate(); // \OpenAPI\Client\Model\CartCreate
-
-try {
-    $result = $apiInstance->cartCreate($cart_create);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CartApi->cartCreate: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **cart_create** | [**\OpenAPI\Client\Model\CartCreate**](../Model/CartCreate.md)|  | |
-
-### Return type
-
-[**\OpenAPI\Client\Model\AccountCartAdd200Response**](../Model/AccountCartAdd200Response.md)
-
-### Authorization
-
-[ApiKeyAuth](../../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `cartDelete()`
 
 ```php
@@ -945,73 +614,6 @@ try {
 ### Return type
 
 [**\OpenAPI\Client\Model\CartDelete200Response**](../Model/CartDelete200Response.md)
-
-### Authorization
-
-[StoreKeyAuth](../../README.md#StoreKeyAuth), [ApiKeyAuth](../../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `cartDisconnect()`
-
-```php
-cartDisconnect($delete_bridge): \OpenAPI\Client\Model\CartDisconnect200Response
-```
-
-cart.disconnect
-
-Disconnect with the store and clear store session data.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: StoreKeyAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-store-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-store-key', 'Bearer');
-
-// Configure API key authorization: ApiKeyAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
-
-
-$apiInstance = new OpenAPI\Client\Api\CartApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$delete_bridge = true; // bool | Identifies if there is a necessity to delete bridge
-
-try {
-    $result = $apiInstance->cartDisconnect($delete_bridge);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CartApi->cartDisconnect: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **delete_bridge** | **bool**| Identifies if there is a necessity to delete bridge | [optional] [default to false] |
-
-### Return type
-
-[**\OpenAPI\Client\Model\CartDisconnect200Response**](../Model/CartDisconnect200Response.md)
 
 ### Authorization
 
@@ -1379,65 +981,6 @@ try {
 ### Authorization
 
 [StoreKeyAuth](../../README.md#StoreKeyAuth), [ApiKeyAuth](../../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `cartList()`
-
-```php
-cartList(): \OpenAPI\Client\Model\CartList200Response
-```
-
-cart.list
-
-Get list of supported carts
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: ApiKeyAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
-
-
-$apiInstance = new OpenAPI\Client\Api\CartApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-
-try {
-    $result = $apiInstance->cartList();
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CartApi->cartList: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**\OpenAPI\Client\Model\CartList200Response**](../Model/CartList200Response.md)
-
-### Authorization
-
-[ApiKeyAuth](../../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 

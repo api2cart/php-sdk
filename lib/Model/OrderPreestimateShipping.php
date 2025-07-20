@@ -97,15 +97,15 @@ class OrderPreestimateShipping implements ModelInterface, ArrayAccess, \JsonSeri
       */
     protected static array $openAPINullables = [
         'method_code' => false,
-        'method_name' => false,
-        'carrier_code' => false,
-        'carrier_name' => false,
-        'description' => false,
-        'price' => false,
-        'price_inc_tax' => false,
-        'delivery_time' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'method_name' => true,
+        'carrier_code' => true,
+        'carrier_name' => true,
+        'description' => true,
+        'price' => true,
+        'price_inc_tax' => true,
+        'delivery_time' => true,
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -400,7 +400,14 @@ class OrderPreestimateShipping implements ModelInterface, ArrayAccess, \JsonSeri
     public function setMethodName($method_name)
     {
         if (is_null($method_name)) {
-            throw new \InvalidArgumentException('non-nullable method_name cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'method_name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('method_name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['method_name'] = $method_name;
 
@@ -427,7 +434,14 @@ class OrderPreestimateShipping implements ModelInterface, ArrayAccess, \JsonSeri
     public function setCarrierCode($carrier_code)
     {
         if (is_null($carrier_code)) {
-            throw new \InvalidArgumentException('non-nullable carrier_code cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'carrier_code');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('carrier_code', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['carrier_code'] = $carrier_code;
 
@@ -454,7 +468,14 @@ class OrderPreestimateShipping implements ModelInterface, ArrayAccess, \JsonSeri
     public function setCarrierName($carrier_name)
     {
         if (is_null($carrier_name)) {
-            throw new \InvalidArgumentException('non-nullable carrier_name cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'carrier_name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('carrier_name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['carrier_name'] = $carrier_name;
 
@@ -481,7 +502,14 @@ class OrderPreestimateShipping implements ModelInterface, ArrayAccess, \JsonSeri
     public function setDescription($description)
     {
         if (is_null($description)) {
-            throw new \InvalidArgumentException('non-nullable description cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'description');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('description', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['description'] = $description;
 
@@ -508,7 +536,14 @@ class OrderPreestimateShipping implements ModelInterface, ArrayAccess, \JsonSeri
     public function setPrice($price)
     {
         if (is_null($price)) {
-            throw new \InvalidArgumentException('non-nullable price cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'price');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('price', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['price'] = $price;
 
@@ -535,7 +570,14 @@ class OrderPreestimateShipping implements ModelInterface, ArrayAccess, \JsonSeri
     public function setPriceIncTax($price_inc_tax)
     {
         if (is_null($price_inc_tax)) {
-            throw new \InvalidArgumentException('non-nullable price_inc_tax cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'price_inc_tax');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('price_inc_tax', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['price_inc_tax'] = $price_inc_tax;
 
@@ -562,7 +604,14 @@ class OrderPreestimateShipping implements ModelInterface, ArrayAccess, \JsonSeri
     public function setDeliveryTime($delivery_time)
     {
         if (is_null($delivery_time)) {
-            throw new \InvalidArgumentException('non-nullable delivery_time cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'delivery_time');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('delivery_time', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['delivery_time'] = $delivery_time;
 
@@ -589,7 +638,14 @@ class OrderPreestimateShipping implements ModelInterface, ArrayAccess, \JsonSeri
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -616,7 +672,14 @@ class OrderPreestimateShipping implements ModelInterface, ArrayAccess, \JsonSeri
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

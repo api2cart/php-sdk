@@ -1,6 +1,6 @@
 # OpenAPI\Client\ProductApi
 
-All URIs are relative to https://api.api2cart.com/v1.1, except if the operation defines another base path.
+All URIs are relative to https://api.api2cart.local.com/v1.1, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -18,7 +18,6 @@ All URIs are relative to https://api.api2cart.com/v1.1, except if the operation 
 | [**productCurrencyList()**](ProductApi.md#productCurrencyList) | **GET** /product.currency.list.json | product.currency.list |
 | [**productDelete()**](ProductApi.md#productDelete) | **DELETE** /product.delete.json | product.delete |
 | [**productDeleteBatch()**](ProductApi.md#productDeleteBatch) | **POST** /product.delete.batch.json | product.delete.batch |
-| [**productFields()**](ProductApi.md#productFields) | **GET** /product.fields.json | product.fields |
 | [**productFind()**](ProductApi.md#productFind) | **GET** /product.find.json | product.find |
 | [**productImageAdd()**](ProductApi.md#productImageAdd) | **POST** /product.image.add.json | product.image.add |
 | [**productImageDelete()**](ProductApi.md#productImageDelete) | **DELETE** /product.image.delete.json | product.image.delete |
@@ -44,13 +43,10 @@ All URIs are relative to https://api.api2cart.com/v1.1, except if the operation 
 | [**productUpdateBatch()**](ProductApi.md#productUpdateBatch) | **POST** /product.update.batch.json | product.update.batch |
 | [**productVariantAdd()**](ProductApi.md#productVariantAdd) | **POST** /product.variant.add.json | product.variant.add |
 | [**productVariantAddBatch()**](ProductApi.md#productVariantAddBatch) | **POST** /product.variant.add.batch.json | product.variant.add.batch |
-| [**productVariantCount()**](ProductApi.md#productVariantCount) | **GET** /product.variant.count.json | product.variant.count |
 | [**productVariantDelete()**](ProductApi.md#productVariantDelete) | **DELETE** /product.variant.delete.json | product.variant.delete |
 | [**productVariantDeleteBatch()**](ProductApi.md#productVariantDeleteBatch) | **POST** /product.variant.delete.batch.json | product.variant.delete.batch |
 | [**productVariantImageAdd()**](ProductApi.md#productVariantImageAdd) | **POST** /product.variant.image.add.json | product.variant.image.add |
 | [**productVariantImageDelete()**](ProductApi.md#productVariantImageDelete) | **DELETE** /product.variant.image.delete.json | product.variant.image.delete |
-| [**productVariantInfo()**](ProductApi.md#productVariantInfo) | **GET** /product.variant.info.json | product.variant.info |
-| [**productVariantList()**](ProductApi.md#productVariantList) | **GET** /product.variant.list.json | product.variant.list |
 | [**productVariantPriceAdd()**](ProductApi.md#productVariantPriceAdd) | **POST** /product.variant.price.add.json | product.variant.price.add |
 | [**productVariantPriceDelete()**](ProductApi.md#productVariantPriceDelete) | **DELETE** /product.variant.price.delete.json | product.variant.price.delete |
 | [**productVariantPriceUpdate()**](ProductApi.md#productVariantPriceUpdate) | **PUT** /product.variant.price.update.json | product.variant.price.update |
@@ -1212,70 +1208,6 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `productFields()`
-
-```php
-productFields(): \OpenAPI\Client\Model\CartConfigUpdate200Response
-```
-
-product.fields
-
-Retrieve all available fields for product item in store.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: StoreKeyAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-store-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-store-key', 'Bearer');
-
-// Configure API key authorization: ApiKeyAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
-
-
-$apiInstance = new OpenAPI\Client\Api\ProductApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-
-try {
-    $result = $apiInstance->productFields();
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductApi->productFields: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**\OpenAPI\Client\Model\CartConfigUpdate200Response**](../Model/CartConfigUpdate200Response.md)
-
-### Authorization
-
-[StoreKeyAuth](../../README.md#StoreKeyAuth), [ApiKeyAuth](../../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
@@ -3165,85 +3097,6 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `productVariantCount()`
-
-```php
-productVariantCount($product_id, $category_id, $store_id, $created_from, $created_to, $modified_from, $modified_to): \OpenAPI\Client\Model\ProductVariantCount200Response
-```
-
-product.variant.count
-
-Get count variants.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: StoreKeyAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-store-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-store-key', 'Bearer');
-
-// Configure API key authorization: ApiKeyAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
-
-
-$apiInstance = new OpenAPI\Client\Api\ProductApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$product_id = 10; // string | Retrieves products' variants specified by product id
-$category_id = 6; // string | Counts products’ variants specified by category id
-$store_id = 1; // string | Retrieves variants specified by store id
-$created_from = 2010-07-29 13:45:52; // string | Retrieve entities from their creation date
-$created_to = 2100-08-29 13:45:52; // string | Retrieve entities to their creation date
-$modified_from = 2010-07-29 13:45:52; // string | Retrieve entities from their modification date
-$modified_to = 2100-08-29 13:45:52; // string | Retrieve entities to their modification date
-
-try {
-    $result = $apiInstance->productVariantCount($product_id, $category_id, $store_id, $created_from, $created_to, $modified_from, $modified_to);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductApi->productVariantCount: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **product_id** | **string**| Retrieves products&#39; variants specified by product id | |
-| **category_id** | **string**| Counts products’ variants specified by category id | [optional] |
-| **store_id** | **string**| Retrieves variants specified by store id | [optional] |
-| **created_from** | **string**| Retrieve entities from their creation date | [optional] |
-| **created_to** | **string**| Retrieve entities to their creation date | [optional] |
-| **modified_from** | **string**| Retrieve entities from their modification date | [optional] |
-| **modified_to** | **string**| Retrieve entities to their modification date | [optional] |
-
-### Return type
-
-[**\OpenAPI\Client\Model\ProductVariantCount200Response**](../Model/ProductVariantCount200Response.md)
-
-### Authorization
-
-[StoreKeyAuth](../../README.md#StoreKeyAuth), [ApiKeyAuth](../../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `productVariantDelete()`
 
 ```php
@@ -3508,166 +3361,6 @@ try {
 ### Return type
 
 [**\OpenAPI\Client\Model\AttributeDelete200Response**](../Model/AttributeDelete200Response.md)
-
-### Authorization
-
-[StoreKeyAuth](../../README.md#StoreKeyAuth), [ApiKeyAuth](../../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `productVariantInfo()`
-
-```php
-productVariantInfo($id, $store_id, $params, $exclude): \OpenAPI\Client\Model\ProductInfo200Response
-```
-
-product.variant.info
-
-Get variant info. This method is deprecated, and its development is stopped. Please use \"product.child_item.info\" instead.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: StoreKeyAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-store-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-store-key', 'Bearer');
-
-// Configure API key authorization: ApiKeyAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
-
-
-$apiInstance = new OpenAPI\Client\Api\ProductApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$id = 10; // string | Retrieves variant's info specified by variant id
-$store_id = 1; // string | Retrieves variant info specified by store id
-$params = id,model,price,images; // string | Set this parameter in order to choose which entity fields you want to retrieve
-$exclude = false; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-
-try {
-    $result = $apiInstance->productVariantInfo($id, $store_id, $params, $exclude);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductApi->productVariantInfo: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| Retrieves variant&#39;s info specified by variant id | |
-| **store_id** | **string**| Retrieves variant info specified by store id | [optional] |
-| **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,name,description,price&#39;] |
-| **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
-
-### Return type
-
-[**\OpenAPI\Client\Model\ProductInfo200Response**](../Model/ProductInfo200Response.md)
-
-### Authorization
-
-[StoreKeyAuth](../../README.md#StoreKeyAuth), [ApiKeyAuth](../../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `productVariantList()`
-
-```php
-productVariantList($start, $count, $product_id, $category_id, $store_id, $created_from, $created_to, $modified_from, $modified_to, $params, $exclude): \OpenAPI\Client\Model\ProductVariantList200Response
-```
-
-product.variant.list
-
-Get a list of variants. This method is deprecated, and its development is stopped. Please use \"product.child_item.list\" instead.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: StoreKeyAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-store-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-store-key', 'Bearer');
-
-// Configure API key authorization: ApiKeyAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
-
-
-$apiInstance = new OpenAPI\Client\Api\ProductApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$start = 0; // int | This parameter sets the number from which you want to get entities
-$count = 20; // int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-$product_id = 10; // string | Retrieves products' variants specified by product id
-$category_id = 6; // string | Retrieves products’ variants specified by category id
-$store_id = 1; // string | Retrieves variants specified by store id
-$created_from = 2010-07-29 13:45:52; // string | Retrieve entities from their creation date
-$created_to = 2100-08-29 13:45:52; // string | Retrieve entities to their creation date
-$modified_from = 2010-07-29 13:45:52; // string | Retrieve entities from their modification date
-$modified_to = 2100-08-29 13:45:52; // string | Retrieve entities to their modification date
-$params = id,model,price,images; // string | Set this parameter in order to choose which entity fields you want to retrieve
-$exclude = false; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-
-try {
-    $result = $apiInstance->productVariantList($start, $count, $product_id, $category_id, $store_id, $created_from, $created_to, $modified_from, $modified_to, $params, $exclude);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductApi->productVariantList: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **start** | **int**| This parameter sets the number from which you want to get entities | [optional] [default to 0] |
-| **count** | **int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
-| **product_id** | **string**| Retrieves products&#39; variants specified by product id | [optional] |
-| **category_id** | **string**| Retrieves products’ variants specified by category id | [optional] |
-| **store_id** | **string**| Retrieves variants specified by store id | [optional] |
-| **created_from** | **string**| Retrieve entities from their creation date | [optional] |
-| **created_to** | **string**| Retrieve entities to their creation date | [optional] |
-| **modified_from** | **string**| Retrieve entities from their modification date | [optional] |
-| **modified_to** | **string**| Retrieve entities to their modification date | [optional] |
-| **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,name,description,price&#39;] |
-| **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
-
-### Return type
-
-[**\OpenAPI\Client\Model\ProductVariantList200Response**](../Model/ProductVariantList200Response.md)
 
 ### Authorization
 

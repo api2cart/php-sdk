@@ -84,10 +84,10 @@ class ResponseOrderShipmentListResult implements ModelInterface, ArrayAccess, \J
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'shipment_count' => false,
+        'shipment_count' => true,
         'shipment' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -331,7 +331,14 @@ class ResponseOrderShipmentListResult implements ModelInterface, ArrayAccess, \J
     public function setShipmentCount($shipment_count)
     {
         if (is_null($shipment_count)) {
-            throw new \InvalidArgumentException('non-nullable shipment_count cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'shipment_count');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('shipment_count', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['shipment_count'] = $shipment_count;
 
@@ -385,7 +392,14 @@ class ResponseOrderShipmentListResult implements ModelInterface, ArrayAccess, \J
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -412,7 +426,14 @@ class ResponseOrderShipmentListResult implements ModelInterface, ArrayAccess, \J
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

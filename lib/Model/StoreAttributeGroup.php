@@ -92,11 +92,11 @@ class StoreAttributeGroup implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static array $openAPINullables = [
         'id' => false,
         'name' => false,
-        'position' => false,
-        'attribute_set_id' => false,
+        'position' => true,
+        'attribute_set_id' => true,
         'assigned_attribute_ids' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -406,7 +406,14 @@ class StoreAttributeGroup implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setPosition($position)
     {
         if (is_null($position)) {
-            throw new \InvalidArgumentException('non-nullable position cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'position');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('position', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['position'] = $position;
 
@@ -433,7 +440,14 @@ class StoreAttributeGroup implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setAttributeSetId($attribute_set_id)
     {
         if (is_null($attribute_set_id)) {
-            throw new \InvalidArgumentException('non-nullable attribute_set_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'attribute_set_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('attribute_set_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['attribute_set_id'] = $attribute_set_id;
 
@@ -487,7 +501,14 @@ class StoreAttributeGroup implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -514,7 +535,14 @@ class StoreAttributeGroup implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

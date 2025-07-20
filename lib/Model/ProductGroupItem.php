@@ -90,13 +90,13 @@ class ProductGroupItem implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'child_item_id' => false,
+        'child_item_id' => true,
         'product_id' => false,
         'default_qty_in_pack' => false,
-        'is_qty_in_pack_fixed' => false,
-        'price' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'is_qty_in_pack_fixed' => true,
+        'price' => true,
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -352,7 +352,14 @@ class ProductGroupItem implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setChildItemId($child_item_id)
     {
         if (is_null($child_item_id)) {
-            throw new \InvalidArgumentException('non-nullable child_item_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'child_item_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('child_item_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['child_item_id'] = $child_item_id;
 
@@ -433,7 +440,14 @@ class ProductGroupItem implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setIsQtyInPackFixed($is_qty_in_pack_fixed)
     {
         if (is_null($is_qty_in_pack_fixed)) {
-            throw new \InvalidArgumentException('non-nullable is_qty_in_pack_fixed cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'is_qty_in_pack_fixed');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('is_qty_in_pack_fixed', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['is_qty_in_pack_fixed'] = $is_qty_in_pack_fixed;
 
@@ -460,7 +474,14 @@ class ProductGroupItem implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPrice($price)
     {
         if (is_null($price)) {
-            throw new \InvalidArgumentException('non-nullable price cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'price');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('price', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['price'] = $price;
 
@@ -487,7 +508,14 @@ class ProductGroupItem implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -514,7 +542,14 @@ class ProductGroupItem implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

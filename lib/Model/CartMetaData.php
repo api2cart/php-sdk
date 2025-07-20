@@ -89,11 +89,11 @@ class CartMetaData implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'id' => false,
-        'key' => false,
-        'value' => false,
-        'namespace' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'key' => true,
+        'value' => true,
+        'namespace' => true,
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -372,7 +372,14 @@ class CartMetaData implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setKey($key)
     {
         if (is_null($key)) {
-            throw new \InvalidArgumentException('non-nullable key cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'key');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('key', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['key'] = $key;
 
@@ -399,7 +406,14 @@ class CartMetaData implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setValue($value)
     {
         if (is_null($value)) {
-            throw new \InvalidArgumentException('non-nullable value cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'value');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('value', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['value'] = $value;
 
@@ -426,7 +440,14 @@ class CartMetaData implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setNamespace($namespace)
     {
         if (is_null($namespace)) {
-            throw new \InvalidArgumentException('non-nullable namespace cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'namespace');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('namespace', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['namespace'] = $namespace;
 
@@ -453,7 +474,14 @@ class CartMetaData implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -480,7 +508,14 @@ class CartMetaData implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

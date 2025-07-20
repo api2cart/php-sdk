@@ -104,20 +104,20 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => false,
-        'label' => false,
-        'store_id' => false,
-        'lang_id' => false,
-        'active' => false,
-        'callback' => false,
-        'fields' => false,
-        'response_fields' => false,
-        'created_at' => false,
-        'updated_at' => false,
-        'entity' => false,
-        'action' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'id' => true,
+        'label' => true,
+        'store_id' => true,
+        'lang_id' => true,
+        'active' => true,
+        'callback' => true,
+        'fields' => true,
+        'response_fields' => true,
+        'created_at' => true,
+        'updated_at' => true,
+        'entity' => true,
+        'action' => true,
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -401,7 +401,14 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setId($id)
     {
         if (is_null($id)) {
-            throw new \InvalidArgumentException('non-nullable id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['id'] = $id;
 
@@ -428,7 +435,14 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setLabel($label)
     {
         if (is_null($label)) {
-            throw new \InvalidArgumentException('non-nullable label cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'label');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('label', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['label'] = $label;
 
@@ -455,7 +469,14 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setStoreId($store_id)
     {
         if (is_null($store_id)) {
-            throw new \InvalidArgumentException('non-nullable store_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'store_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('store_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['store_id'] = $store_id;
 
@@ -482,7 +503,14 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setLangId($lang_id)
     {
         if (is_null($lang_id)) {
-            throw new \InvalidArgumentException('non-nullable lang_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'lang_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('lang_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['lang_id'] = $lang_id;
 
@@ -509,7 +537,14 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setActive($active)
     {
         if (is_null($active)) {
-            throw new \InvalidArgumentException('non-nullable active cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'active');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('active', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['active'] = $active;
 
@@ -536,7 +571,14 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCallback($callback)
     {
         if (is_null($callback)) {
-            throw new \InvalidArgumentException('non-nullable callback cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'callback');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('callback', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['callback'] = $callback;
 
@@ -563,7 +605,14 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setFields($fields)
     {
         if (is_null($fields)) {
-            throw new \InvalidArgumentException('non-nullable fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['fields'] = $fields;
 
@@ -590,7 +639,14 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setResponseFields($response_fields)
     {
         if (is_null($response_fields)) {
-            throw new \InvalidArgumentException('non-nullable response_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'response_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('response_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['response_fields'] = $response_fields;
 
@@ -617,7 +673,14 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCreatedAt($created_at)
     {
         if (is_null($created_at)) {
-            throw new \InvalidArgumentException('non-nullable created_at cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'created_at');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('created_at', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['created_at'] = $created_at;
 
@@ -644,7 +707,14 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setUpdatedAt($updated_at)
     {
         if (is_null($updated_at)) {
-            throw new \InvalidArgumentException('non-nullable updated_at cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'updated_at');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('updated_at', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['updated_at'] = $updated_at;
 
@@ -671,7 +741,14 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setEntity($entity)
     {
         if (is_null($entity)) {
-            throw new \InvalidArgumentException('non-nullable entity cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'entity');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('entity', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['entity'] = $entity;
 
@@ -698,7 +775,14 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAction($action)
     {
         if (is_null($action)) {
-            throw new \InvalidArgumentException('non-nullable action cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'action');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('action', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['action'] = $action;
 
@@ -725,7 +809,14 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -752,7 +843,14 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

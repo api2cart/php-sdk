@@ -104,17 +104,17 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'id' => false,
         'order_id' => false,
-        'name' => false,
-        'warehouse_id' => false,
-        'shipment_provider' => false,
+        'name' => true,
+        'warehouse_id' => true,
+        'shipment_provider' => true,
         'tracking_numbers' => false,
-        'created_at' => false,
-        'modified_time' => false,
+        'created_at' => true,
+        'modified_time' => true,
         'items' => false,
-        'is_shipped' => false,
-        'delivered_at' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'is_shipped' => true,
+        'delivered_at' => true,
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -448,7 +448,14 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setName($name)
     {
         if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['name'] = $name;
 
@@ -475,7 +482,14 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setWarehouseId($warehouse_id)
     {
         if (is_null($warehouse_id)) {
-            throw new \InvalidArgumentException('non-nullable warehouse_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'warehouse_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('warehouse_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['warehouse_id'] = $warehouse_id;
 
@@ -502,7 +516,14 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setShipmentProvider($shipment_provider)
     {
         if (is_null($shipment_provider)) {
-            throw new \InvalidArgumentException('non-nullable shipment_provider cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'shipment_provider');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('shipment_provider', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['shipment_provider'] = $shipment_provider;
 
@@ -556,7 +577,14 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCreatedAt($created_at)
     {
         if (is_null($created_at)) {
-            throw new \InvalidArgumentException('non-nullable created_at cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'created_at');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('created_at', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['created_at'] = $created_at;
 
@@ -583,7 +611,14 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setModifiedTime($modified_time)
     {
         if (is_null($modified_time)) {
-            throw new \InvalidArgumentException('non-nullable modified_time cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'modified_time');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('modified_time', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['modified_time'] = $modified_time;
 
@@ -637,7 +672,14 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setIsShipped($is_shipped)
     {
         if (is_null($is_shipped)) {
-            throw new \InvalidArgumentException('non-nullable is_shipped cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'is_shipped');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('is_shipped', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['is_shipped'] = $is_shipped;
 
@@ -664,7 +706,14 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDeliveredAt($delivered_at)
     {
         if (is_null($delivered_at)) {
-            throw new \InvalidArgumentException('non-nullable delivered_at cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'delivered_at');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('delivered_at', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['delivered_at'] = $delivered_at;
 
@@ -691,7 +740,14 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -718,7 +774,14 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

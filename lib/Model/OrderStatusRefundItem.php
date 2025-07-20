@@ -90,13 +90,13 @@ class OrderStatusRefundItem implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'product_id' => false,
-        'variant_id' => false,
-        'order_product_id' => false,
-        'qty' => false,
-        'refund' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'product_id' => true,
+        'variant_id' => true,
+        'order_product_id' => true,
+        'qty' => true,
+        'refund' => true,
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -352,7 +352,14 @@ class OrderStatusRefundItem implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setProductId($product_id)
     {
         if (is_null($product_id)) {
-            throw new \InvalidArgumentException('non-nullable product_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'product_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('product_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['product_id'] = $product_id;
 
@@ -379,7 +386,14 @@ class OrderStatusRefundItem implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setVariantId($variant_id)
     {
         if (is_null($variant_id)) {
-            throw new \InvalidArgumentException('non-nullable variant_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'variant_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('variant_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['variant_id'] = $variant_id;
 
@@ -406,7 +420,14 @@ class OrderStatusRefundItem implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setOrderProductId($order_product_id)
     {
         if (is_null($order_product_id)) {
-            throw new \InvalidArgumentException('non-nullable order_product_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'order_product_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('order_product_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['order_product_id'] = $order_product_id;
 
@@ -433,7 +454,14 @@ class OrderStatusRefundItem implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setQty($qty)
     {
         if (is_null($qty)) {
-            throw new \InvalidArgumentException('non-nullable qty cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'qty');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('qty', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['qty'] = $qty;
 
@@ -460,7 +488,14 @@ class OrderStatusRefundItem implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setRefund($refund)
     {
         if (is_null($refund)) {
-            throw new \InvalidArgumentException('non-nullable refund cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'refund');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('refund', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['refund'] = $refund;
 
@@ -487,7 +522,14 @@ class OrderStatusRefundItem implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -514,7 +556,14 @@ class OrderStatusRefundItem implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

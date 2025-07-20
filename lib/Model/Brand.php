@@ -108,19 +108,19 @@ class Brand implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'id' => false,
         'name' => false,
-        'created_time' => false,
-        'modified_time' => false,
-        'full_description' => false,
-        'short_description' => false,
+        'created_time' => true,
+        'modified_time' => true,
+        'full_description' => true,
+        'short_description' => true,
         'stores_ids' => false,
         'active' => false,
         'url' => false,
-        'meta_title' => false,
-        'meta_keywords' => false,
-        'meta_description' => false,
+        'meta_title' => true,
+        'meta_keywords' => true,
+        'meta_description' => true,
         'images' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -462,7 +462,14 @@ class Brand implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCreatedTime($created_time)
     {
         if (is_null($created_time)) {
-            throw new \InvalidArgumentException('non-nullable created_time cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'created_time');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('created_time', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['created_time'] = $created_time;
 
@@ -489,7 +496,14 @@ class Brand implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setModifiedTime($modified_time)
     {
         if (is_null($modified_time)) {
-            throw new \InvalidArgumentException('non-nullable modified_time cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'modified_time');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('modified_time', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['modified_time'] = $modified_time;
 
@@ -516,7 +530,14 @@ class Brand implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setFullDescription($full_description)
     {
         if (is_null($full_description)) {
-            throw new \InvalidArgumentException('non-nullable full_description cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'full_description');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('full_description', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['full_description'] = $full_description;
 
@@ -543,7 +564,14 @@ class Brand implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setShortDescription($short_description)
     {
         if (is_null($short_description)) {
-            throw new \InvalidArgumentException('non-nullable short_description cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'short_description');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('short_description', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['short_description'] = $short_description;
 
@@ -651,7 +679,14 @@ class Brand implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setMetaTitle($meta_title)
     {
         if (is_null($meta_title)) {
-            throw new \InvalidArgumentException('non-nullable meta_title cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'meta_title');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('meta_title', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['meta_title'] = $meta_title;
 
@@ -678,7 +713,14 @@ class Brand implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setMetaKeywords($meta_keywords)
     {
         if (is_null($meta_keywords)) {
-            throw new \InvalidArgumentException('non-nullable meta_keywords cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'meta_keywords');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('meta_keywords', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['meta_keywords'] = $meta_keywords;
 
@@ -705,7 +747,14 @@ class Brand implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setMetaDescription($meta_description)
     {
         if (is_null($meta_description)) {
-            throw new \InvalidArgumentException('non-nullable meta_description cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'meta_description');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('meta_description', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['meta_description'] = $meta_description;
 
@@ -759,7 +808,14 @@ class Brand implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -786,7 +842,14 @@ class Brand implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

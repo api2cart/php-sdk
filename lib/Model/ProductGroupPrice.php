@@ -94,15 +94,15 @@ class ProductGroupPrice implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => false,
+        'id' => true,
         'group_id' => false,
         'price' => false,
-        'store_id' => false,
-        'quantity' => false,
-        'start_time' => false,
-        'expire_time' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'store_id' => true,
+        'quantity' => true,
+        'start_time' => true,
+        'expire_time' => true,
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -366,7 +366,14 @@ class ProductGroupPrice implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setId($id)
     {
         if (is_null($id)) {
-            throw new \InvalidArgumentException('non-nullable id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['id'] = $id;
 
@@ -447,7 +454,14 @@ class ProductGroupPrice implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setStoreId($store_id)
     {
         if (is_null($store_id)) {
-            throw new \InvalidArgumentException('non-nullable store_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'store_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('store_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['store_id'] = $store_id;
 
@@ -474,7 +488,14 @@ class ProductGroupPrice implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setQuantity($quantity)
     {
         if (is_null($quantity)) {
-            throw new \InvalidArgumentException('non-nullable quantity cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'quantity');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('quantity', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['quantity'] = $quantity;
 
@@ -501,7 +522,14 @@ class ProductGroupPrice implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setStartTime($start_time)
     {
         if (is_null($start_time)) {
-            throw new \InvalidArgumentException('non-nullable start_time cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'start_time');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('start_time', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['start_time'] = $start_time;
 
@@ -528,7 +556,14 @@ class ProductGroupPrice implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setExpireTime($expire_time)
     {
         if (is_null($expire_time)) {
-            throw new \InvalidArgumentException('non-nullable expire_time cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'expire_time');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('expire_time', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['expire_time'] = $expire_time;
 
@@ -555,7 +590,14 @@ class ProductGroupPrice implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -582,7 +624,14 @@ class ProductGroupPrice implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

@@ -109,18 +109,18 @@ class ProductAttribute implements ModelInterface, ArrayAccess, \JsonSerializable
         'attribute_id' => false,
         'code' => false,
         'name' => false,
-        'lang_id' => false,
-        'store_id' => false,
-        'value' => false,
-        'required' => false,
-        'visible' => false,
-        'type' => false,
-        'position' => false,
-        'attribute_group_id' => false,
-        'product_id' => false,
-        'variant_id' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'lang_id' => true,
+        'store_id' => true,
+        'value' => true,
+        'required' => true,
+        'visible' => true,
+        'type' => true,
+        'position' => true,
+        'attribute_group_id' => true,
+        'product_id' => true,
+        'variant_id' => true,
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -489,7 +489,14 @@ class ProductAttribute implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setLangId($lang_id)
     {
         if (is_null($lang_id)) {
-            throw new \InvalidArgumentException('non-nullable lang_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'lang_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('lang_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['lang_id'] = $lang_id;
 
@@ -516,7 +523,14 @@ class ProductAttribute implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setStoreId($store_id)
     {
         if (is_null($store_id)) {
-            throw new \InvalidArgumentException('non-nullable store_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'store_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('store_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['store_id'] = $store_id;
 
@@ -543,7 +557,14 @@ class ProductAttribute implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setValue($value)
     {
         if (is_null($value)) {
-            throw new \InvalidArgumentException('non-nullable value cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'value');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('value', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['value'] = $value;
 
@@ -570,7 +591,14 @@ class ProductAttribute implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setRequired($required)
     {
         if (is_null($required)) {
-            throw new \InvalidArgumentException('non-nullable required cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'required');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('required', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['required'] = $required;
 
@@ -597,7 +625,14 @@ class ProductAttribute implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setVisible($visible)
     {
         if (is_null($visible)) {
-            throw new \InvalidArgumentException('non-nullable visible cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'visible');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('visible', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['visible'] = $visible;
 
@@ -624,7 +659,14 @@ class ProductAttribute implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setType($type)
     {
         if (is_null($type)) {
-            throw new \InvalidArgumentException('non-nullable type cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['type'] = $type;
 
@@ -651,7 +693,14 @@ class ProductAttribute implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPosition($position)
     {
         if (is_null($position)) {
-            throw new \InvalidArgumentException('non-nullable position cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'position');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('position', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['position'] = $position;
 
@@ -678,7 +727,14 @@ class ProductAttribute implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAttributeGroupId($attribute_group_id)
     {
         if (is_null($attribute_group_id)) {
-            throw new \InvalidArgumentException('non-nullable attribute_group_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'attribute_group_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('attribute_group_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['attribute_group_id'] = $attribute_group_id;
 
@@ -705,7 +761,14 @@ class ProductAttribute implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setProductId($product_id)
     {
         if (is_null($product_id)) {
-            throw new \InvalidArgumentException('non-nullable product_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'product_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('product_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['product_id'] = $product_id;
 
@@ -732,7 +795,14 @@ class ProductAttribute implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setVariantId($variant_id)
     {
         if (is_null($variant_id)) {
-            throw new \InvalidArgumentException('non-nullable variant_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'variant_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('variant_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['variant_id'] = $variant_id;
 
@@ -759,7 +829,14 @@ class ProductAttribute implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -786,7 +863,14 @@ class ProductAttribute implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

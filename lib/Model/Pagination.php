@@ -84,10 +84,10 @@ class Pagination implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'previous' => false,
-        'next' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'previous' => true,
+        'next' => true,
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -331,7 +331,14 @@ class Pagination implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPrevious($previous)
     {
         if (is_null($previous)) {
-            throw new \InvalidArgumentException('non-nullable previous cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'previous');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('previous', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['previous'] = $previous;
 
@@ -358,7 +365,14 @@ class Pagination implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setNext($next)
     {
         if (is_null($next)) {
-            throw new \InvalidArgumentException('non-nullable next cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'next');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('next', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['next'] = $next;
 
@@ -385,7 +399,14 @@ class Pagination implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -412,7 +433,14 @@ class Pagination implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

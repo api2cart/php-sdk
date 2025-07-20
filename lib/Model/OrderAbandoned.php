@@ -100,15 +100,15 @@ class OrderAbandoned implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'id' => false,
         'customer' => false,
-        'basket_id' => false,
-        'basket_url' => false,
-        'created_at' => false,
-        'modified_at' => false,
+        'basket_id' => true,
+        'basket_url' => true,
+        'created_at' => true,
+        'modified_at' => true,
         'currency' => false,
         'totals' => false,
         'order_products' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -434,7 +434,14 @@ class OrderAbandoned implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setBasketId($basket_id)
     {
         if (is_null($basket_id)) {
-            throw new \InvalidArgumentException('non-nullable basket_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'basket_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('basket_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['basket_id'] = $basket_id;
 
@@ -461,7 +468,14 @@ class OrderAbandoned implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setBasketUrl($basket_url)
     {
         if (is_null($basket_url)) {
-            throw new \InvalidArgumentException('non-nullable basket_url cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'basket_url');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('basket_url', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['basket_url'] = $basket_url;
 
@@ -488,7 +502,14 @@ class OrderAbandoned implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCreatedAt($created_at)
     {
         if (is_null($created_at)) {
-            throw new \InvalidArgumentException('non-nullable created_at cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'created_at');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('created_at', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['created_at'] = $created_at;
 
@@ -515,7 +536,14 @@ class OrderAbandoned implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setModifiedAt($modified_at)
     {
         if (is_null($modified_at)) {
-            throw new \InvalidArgumentException('non-nullable modified_at cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'modified_at');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('modified_at', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['modified_at'] = $modified_at;
 
@@ -623,7 +651,14 @@ class OrderAbandoned implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -650,7 +685,14 @@ class OrderAbandoned implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

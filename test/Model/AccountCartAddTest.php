@@ -405,6 +405,42 @@ class AccountCartAddTest extends TestCase
     }
 
     /**
+     * Test attribute "bricklink_consumer_key"
+     */
+    public function testPropertyBricklinkConsumerKey()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bricklink_consumer_secret"
+     */
+    public function testPropertyBricklinkConsumerSecret()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bricklink_token"
+     */
+    public function testPropertyBricklinkToken()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bricklink_token_secret"
+     */
+    public function testPropertyBricklinkTokenSecret()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "demandware_client_id"
      */
     public function testPropertyDemandwareClientId()

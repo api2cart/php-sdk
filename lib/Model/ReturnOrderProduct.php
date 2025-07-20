@@ -98,17 +98,17 @@ class ReturnOrderProduct implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'product_id' => false,
+        'product_id' => true,
         'order_product_id' => false,
-        'sku' => false,
-        'name' => false,
+        'sku' => true,
+        'name' => true,
         'quantity' => false,
         'reason' => false,
-        'action' => false,
-        'condition' => false,
-        'customer_comment' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'action' => true,
+        'condition' => true,
+        'customer_comment' => true,
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -380,7 +380,14 @@ class ReturnOrderProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setProductId($product_id)
     {
         if (is_null($product_id)) {
-            throw new \InvalidArgumentException('non-nullable product_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'product_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('product_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['product_id'] = $product_id;
 
@@ -434,7 +441,14 @@ class ReturnOrderProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setSku($sku)
     {
         if (is_null($sku)) {
-            throw new \InvalidArgumentException('non-nullable sku cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'sku');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('sku', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['sku'] = $sku;
 
@@ -461,7 +475,14 @@ class ReturnOrderProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setName($name)
     {
         if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['name'] = $name;
 
@@ -542,7 +563,14 @@ class ReturnOrderProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setAction($action)
     {
         if (is_null($action)) {
-            throw new \InvalidArgumentException('non-nullable action cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'action');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('action', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['action'] = $action;
 
@@ -569,7 +597,14 @@ class ReturnOrderProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setCondition($condition)
     {
         if (is_null($condition)) {
-            throw new \InvalidArgumentException('non-nullable condition cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'condition');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('condition', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['condition'] = $condition;
 
@@ -596,7 +631,14 @@ class ReturnOrderProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setCustomerComment($customer_comment)
     {
         if (is_null($customer_comment)) {
-            throw new \InvalidArgumentException('non-nullable customer_comment cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'customer_comment');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('customer_comment', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['customer_comment'] = $customer_comment;
 
@@ -623,7 +665,14 @@ class ReturnOrderProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -650,7 +699,14 @@ class ReturnOrderProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

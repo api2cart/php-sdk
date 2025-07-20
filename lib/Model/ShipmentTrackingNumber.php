@@ -84,10 +84,10 @@ class ShipmentTrackingNumber implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'carrier_id' => false,
-        'tracking_number' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'carrier_id' => true,
+        'tracking_number' => true,
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -331,7 +331,14 @@ class ShipmentTrackingNumber implements ModelInterface, ArrayAccess, \JsonSerial
     public function setCarrierId($carrier_id)
     {
         if (is_null($carrier_id)) {
-            throw new \InvalidArgumentException('non-nullable carrier_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'carrier_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('carrier_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['carrier_id'] = $carrier_id;
 
@@ -358,7 +365,14 @@ class ShipmentTrackingNumber implements ModelInterface, ArrayAccess, \JsonSerial
     public function setTrackingNumber($tracking_number)
     {
         if (is_null($tracking_number)) {
-            throw new \InvalidArgumentException('non-nullable tracking_number cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'tracking_number');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('tracking_number', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['tracking_number'] = $tracking_number;
 
@@ -385,7 +399,14 @@ class ShipmentTrackingNumber implements ModelInterface, ArrayAccess, \JsonSerial
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -412,7 +433,14 @@ class ShipmentTrackingNumber implements ModelInterface, ArrayAccess, \JsonSerial
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

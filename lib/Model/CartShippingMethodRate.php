@@ -94,15 +94,15 @@ class CartShippingMethodRate implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'min_weight' => false,
-        'max_weight' => false,
-        'min_order_amount' => false,
-        'max_order_amount' => false,
-        'min_items_count' => false,
-        'max_items_count' => false,
-        'price' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'min_weight' => true,
+        'max_weight' => true,
+        'min_order_amount' => true,
+        'max_order_amount' => true,
+        'min_items_count' => true,
+        'max_items_count' => true,
+        'price' => true,
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -366,7 +366,14 @@ class CartShippingMethodRate implements ModelInterface, ArrayAccess, \JsonSerial
     public function setMinWeight($min_weight)
     {
         if (is_null($min_weight)) {
-            throw new \InvalidArgumentException('non-nullable min_weight cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'min_weight');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('min_weight', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['min_weight'] = $min_weight;
 
@@ -393,7 +400,14 @@ class CartShippingMethodRate implements ModelInterface, ArrayAccess, \JsonSerial
     public function setMaxWeight($max_weight)
     {
         if (is_null($max_weight)) {
-            throw new \InvalidArgumentException('non-nullable max_weight cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'max_weight');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('max_weight', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['max_weight'] = $max_weight;
 
@@ -420,7 +434,14 @@ class CartShippingMethodRate implements ModelInterface, ArrayAccess, \JsonSerial
     public function setMinOrderAmount($min_order_amount)
     {
         if (is_null($min_order_amount)) {
-            throw new \InvalidArgumentException('non-nullable min_order_amount cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'min_order_amount');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('min_order_amount', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['min_order_amount'] = $min_order_amount;
 
@@ -447,7 +468,14 @@ class CartShippingMethodRate implements ModelInterface, ArrayAccess, \JsonSerial
     public function setMaxOrderAmount($max_order_amount)
     {
         if (is_null($max_order_amount)) {
-            throw new \InvalidArgumentException('non-nullable max_order_amount cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'max_order_amount');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('max_order_amount', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['max_order_amount'] = $max_order_amount;
 
@@ -474,7 +502,14 @@ class CartShippingMethodRate implements ModelInterface, ArrayAccess, \JsonSerial
     public function setMinItemsCount($min_items_count)
     {
         if (is_null($min_items_count)) {
-            throw new \InvalidArgumentException('non-nullable min_items_count cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'min_items_count');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('min_items_count', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['min_items_count'] = $min_items_count;
 
@@ -501,7 +536,14 @@ class CartShippingMethodRate implements ModelInterface, ArrayAccess, \JsonSerial
     public function setMaxItemsCount($max_items_count)
     {
         if (is_null($max_items_count)) {
-            throw new \InvalidArgumentException('non-nullable max_items_count cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'max_items_count');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('max_items_count', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['max_items_count'] = $max_items_count;
 
@@ -528,7 +570,14 @@ class CartShippingMethodRate implements ModelInterface, ArrayAccess, \JsonSerial
     public function setPrice($price)
     {
         if (is_null($price)) {
-            throw new \InvalidArgumentException('non-nullable price cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'price');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('price', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['price'] = $price;
 
@@ -555,7 +604,14 @@ class CartShippingMethodRate implements ModelInterface, ArrayAccess, \JsonSerial
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -582,7 +638,14 @@ class CartShippingMethodRate implements ModelInterface, ArrayAccess, \JsonSerial
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

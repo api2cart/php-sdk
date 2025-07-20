@@ -1,6 +1,6 @@
 # OpenAPI\Client\OrderApi
 
-All URIs are relative to https://api.api2cart.com/v1.1, except if the operation defines another base path.
+All URIs are relative to https://api.api2cart.local.com/v1.1, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -8,7 +8,6 @@ All URIs are relative to https://api.api2cart.com/v1.1, except if the operation 
 | [**orderAdd()**](OrderApi.md#orderAdd) | **POST** /order.add.json | order.add |
 | [**orderCount()**](OrderApi.md#orderCount) | **GET** /order.count.json | order.count |
 | [**orderFinancialStatusList()**](OrderApi.md#orderFinancialStatusList) | **GET** /order.financial_status.list.json | order.financial_status.list |
-| [**orderFind()**](OrderApi.md#orderFind) | **GET** /order.find.json | order.find |
 | [**orderFulfillmentStatusList()**](OrderApi.md#orderFulfillmentStatusList) | **GET** /order.fulfillment_status.list.json | order.fulfillment_status.list |
 | [**orderInfo()**](OrderApi.md#orderInfo) | **GET** /order.info.json | order.info |
 | [**orderList()**](OrderApi.md#orderList) | **GET** /order.list.json | order.list |
@@ -344,95 +343,6 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**\OpenAPI\Client\Model\OrderFinancialStatusList200Response**](../Model/OrderFinancialStatusList200Response.md)
-
-### Authorization
-
-[StoreKeyAuth](../../README.md#StoreKeyAuth), [ApiKeyAuth](../../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `orderFind()`
-
-```php
-orderFind($start, $count, $customer_id, $customer_email, $order_status, $financial_status, $created_to, $created_from, $modified_to, $modified_from, $params, $exclude): \OpenAPI\Client\Model\OrderFind200Response
-```
-
-order.find
-
-This method is deprecated and won't be supported in the future. Please use \"order.list\" instead.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: StoreKeyAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-store-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-store-key', 'Bearer');
-
-// Configure API key authorization: ApiKeyAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
-
-
-$apiInstance = new OpenAPI\Client\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$start = 0; // int | This parameter sets the number from which you want to get entities
-$count = 20; // int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-$customer_id = 5; // string | Retrieves orders specified by customer id
-$customer_email = jubari@hannsgroup.com; // string | Retrieves orders specified by customer email
-$order_status = Completed; // string | Retrieves orders specified by order status
-$financial_status = paid; // string | Retrieves orders specified by financial status
-$created_to = 2100-08-29 13:45:52; // string | Retrieve entities to their creation date
-$created_from = 2010-07-29 13:45:52; // string | Retrieve entities from their creation date
-$modified_to = 2100-08-29 13:45:52; // string | Retrieve entities to their modification date
-$modified_from = 2010-07-29 13:45:52; // string | Retrieve entities from their modification date
-$params = order_id,totals,status; // string | Set this parameter in order to choose which entity fields you want to retrieve
-$exclude = order_id,totals,status; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-
-try {
-    $result = $apiInstance->orderFind($start, $count, $customer_id, $customer_email, $order_status, $financial_status, $created_to, $created_from, $modified_to, $modified_from, $params, $exclude);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling OrderApi->orderFind: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **start** | **int**| This parameter sets the number from which you want to get entities | [optional] [default to 0] |
-| **count** | **int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
-| **customer_id** | **string**| Retrieves orders specified by customer id | [optional] |
-| **customer_email** | **string**| Retrieves orders specified by customer email | [optional] |
-| **order_status** | **string**| Retrieves orders specified by order status | [optional] |
-| **financial_status** | **string**| Retrieves orders specified by financial status | [optional] |
-| **created_to** | **string**| Retrieve entities to their creation date | [optional] |
-| **created_from** | **string**| Retrieve entities from their creation date | [optional] |
-| **modified_to** | **string**| Retrieve entities to their modification date | [optional] |
-| **modified_from** | **string**| Retrieve entities from their modification date | [optional] |
-| **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;order_id,customer,totals,address,items,bundles,status&#39;] |
-| **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
-
-### Return type
-
-[**\OpenAPI\Client\Model\OrderFind200Response**](../Model/OrderFind200Response.md)
 
 ### Authorization
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * ModelResponseCartShippingZonesList
+ * CategoryAssign200Response
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * ModelResponseCartShippingZonesList Class Doc Comment
+ * CategoryAssign200Response Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -41,7 +41,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ModelResponseCartShippingZonesList implements ModelInterface, ArrayAccess, \JsonSerializable
+class CategoryAssign200Response implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ModelResponseCartShippingZonesList implements ModelInterface, ArrayAccess,
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Model_Response_Cart_ShippingZones_List';
+    protected static $openAPIModelName = 'CategoryAssign_200_response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,10 +60,7 @@ class ModelResponseCartShippingZonesList implements ModelInterface, ArrayAccess,
     protected static $openAPITypes = [
         'return_code' => 'int',
         'return_message' => 'string',
-        'pagination' => '\OpenAPI\Client\Model\Pagination',
-        'result' => '\OpenAPI\Client\Model\ResponseCartShippingZonesListResult',
-        'additional_fields' => 'object',
-        'custom_fields' => 'object'
+        'result' => 'object'
     ];
 
     /**
@@ -76,10 +73,7 @@ class ModelResponseCartShippingZonesList implements ModelInterface, ArrayAccess,
     protected static $openAPIFormats = [
         'return_code' => null,
         'return_message' => null,
-        'pagination' => null,
-        'result' => null,
-        'additional_fields' => null,
-        'custom_fields' => null
+        'result' => null
     ];
 
     /**
@@ -88,12 +82,9 @@ class ModelResponseCartShippingZonesList implements ModelInterface, ArrayAccess,
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'return_code' => true,
-        'return_message' => true,
-        'pagination' => true,
-        'result' => true,
-        'additional_fields' => true,
-        'custom_fields' => true
+        'return_code' => false,
+        'return_message' => false,
+        'result' => false
     ];
 
     /**
@@ -184,10 +175,7 @@ class ModelResponseCartShippingZonesList implements ModelInterface, ArrayAccess,
     protected static $attributeMap = [
         'return_code' => 'return_code',
         'return_message' => 'return_message',
-        'pagination' => 'pagination',
-        'result' => 'result',
-        'additional_fields' => 'additional_fields',
-        'custom_fields' => 'custom_fields'
+        'result' => 'result'
     ];
 
     /**
@@ -198,10 +186,7 @@ class ModelResponseCartShippingZonesList implements ModelInterface, ArrayAccess,
     protected static $setters = [
         'return_code' => 'setReturnCode',
         'return_message' => 'setReturnMessage',
-        'pagination' => 'setPagination',
-        'result' => 'setResult',
-        'additional_fields' => 'setAdditionalFields',
-        'custom_fields' => 'setCustomFields'
+        'result' => 'setResult'
     ];
 
     /**
@@ -212,10 +197,7 @@ class ModelResponseCartShippingZonesList implements ModelInterface, ArrayAccess,
     protected static $getters = [
         'return_code' => 'getReturnCode',
         'return_message' => 'getReturnMessage',
-        'pagination' => 'getPagination',
-        'result' => 'getResult',
-        'additional_fields' => 'getAdditionalFields',
-        'custom_fields' => 'getCustomFields'
+        'result' => 'getResult'
     ];
 
     /**
@@ -277,10 +259,7 @@ class ModelResponseCartShippingZonesList implements ModelInterface, ArrayAccess,
     {
         $this->setIfExists('return_code', $data ?? [], null);
         $this->setIfExists('return_message', $data ?? [], null);
-        $this->setIfExists('pagination', $data ?? [], null);
         $this->setIfExists('result', $data ?? [], null);
-        $this->setIfExists('additional_fields', $data ?? [], null);
-        $this->setIfExists('custom_fields', $data ?? [], null);
     }
 
     /**
@@ -345,14 +324,7 @@ class ModelResponseCartShippingZonesList implements ModelInterface, ArrayAccess,
     public function setReturnCode($return_code)
     {
         if (is_null($return_code)) {
-            array_push($this->openAPINullablesSetToNull, 'return_code');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('return_code', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable return_code cannot be null');
         }
         $this->container['return_code'] = $return_code;
 
@@ -379,14 +351,7 @@ class ModelResponseCartShippingZonesList implements ModelInterface, ArrayAccess,
     public function setReturnMessage($return_message)
     {
         if (is_null($return_message)) {
-            array_push($this->openAPINullablesSetToNull, 'return_message');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('return_message', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable return_message cannot be null');
         }
         $this->container['return_message'] = $return_message;
 
@@ -394,43 +359,9 @@ class ModelResponseCartShippingZonesList implements ModelInterface, ArrayAccess,
     }
 
     /**
-     * Gets pagination
-     *
-     * @return \OpenAPI\Client\Model\Pagination|null
-     */
-    public function getPagination()
-    {
-        return $this->container['pagination'];
-    }
-
-    /**
-     * Sets pagination
-     *
-     * @param \OpenAPI\Client\Model\Pagination|null $pagination pagination
-     *
-     * @return self
-     */
-    public function setPagination($pagination)
-    {
-        if (is_null($pagination)) {
-            array_push($this->openAPINullablesSetToNull, 'pagination');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('pagination', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['pagination'] = $pagination;
-
-        return $this;
-    }
-
-    /**
      * Gets result
      *
-     * @return \OpenAPI\Client\Model\ResponseCartShippingZonesListResult|null
+     * @return object|null
      */
     public function getResult()
     {
@@ -440,91 +371,16 @@ class ModelResponseCartShippingZonesList implements ModelInterface, ArrayAccess,
     /**
      * Sets result
      *
-     * @param \OpenAPI\Client\Model\ResponseCartShippingZonesListResult|null $result result
+     * @param object|null $result result
      *
      * @return self
      */
     public function setResult($result)
     {
         if (is_null($result)) {
-            array_push($this->openAPINullablesSetToNull, 'result');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('result', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable result cannot be null');
         }
         $this->container['result'] = $result;
-
-        return $this;
-    }
-
-    /**
-     * Gets additional_fields
-     *
-     * @return object|null
-     */
-    public function getAdditionalFields()
-    {
-        return $this->container['additional_fields'];
-    }
-
-    /**
-     * Sets additional_fields
-     *
-     * @param object|null $additional_fields additional_fields
-     *
-     * @return self
-     */
-    public function setAdditionalFields($additional_fields)
-    {
-        if (is_null($additional_fields)) {
-            array_push($this->openAPINullablesSetToNull, 'additional_fields');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('additional_fields', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['additional_fields'] = $additional_fields;
-
-        return $this;
-    }
-
-    /**
-     * Gets custom_fields
-     *
-     * @return object|null
-     */
-    public function getCustomFields()
-    {
-        return $this->container['custom_fields'];
-    }
-
-    /**
-     * Sets custom_fields
-     *
-     * @param object|null $custom_fields custom_fields
-     *
-     * @return self
-     */
-    public function setCustomFields($custom_fields)
-    {
-        if (is_null($custom_fields)) {
-            array_push($this->openAPINullablesSetToNull, 'custom_fields');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('custom_fields', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['custom_fields'] = $custom_fields;
 
         return $this;
     }

@@ -99,13 +99,13 @@ class CatalogPriceRuleAction implements ModelInterface, ArrayAccess, \JsonSerial
         'scope' => false,
         'apply_to' => false,
         'type' => false,
-        'quantity' => false,
+        'quantity' => true,
         'value' => false,
-        'currency_code' => false,
-        'include_tax' => false,
+        'currency_code' => true,
+        'include_tax' => true,
         'conditions' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -454,7 +454,14 @@ class CatalogPriceRuleAction implements ModelInterface, ArrayAccess, \JsonSerial
     public function setQuantity($quantity)
     {
         if (is_null($quantity)) {
-            throw new \InvalidArgumentException('non-nullable quantity cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'quantity');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('quantity', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['quantity'] = $quantity;
 
@@ -508,7 +515,14 @@ class CatalogPriceRuleAction implements ModelInterface, ArrayAccess, \JsonSerial
     public function setCurrencyCode($currency_code)
     {
         if (is_null($currency_code)) {
-            throw new \InvalidArgumentException('non-nullable currency_code cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'currency_code');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('currency_code', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['currency_code'] = $currency_code;
 
@@ -535,7 +549,14 @@ class CatalogPriceRuleAction implements ModelInterface, ArrayAccess, \JsonSerial
     public function setIncludeTax($include_tax)
     {
         if (is_null($include_tax)) {
-            throw new \InvalidArgumentException('non-nullable include_tax cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'include_tax');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('include_tax', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['include_tax'] = $include_tax;
 
@@ -589,7 +610,14 @@ class CatalogPriceRuleAction implements ModelInterface, ArrayAccess, \JsonSerial
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -616,7 +644,14 @@ class CatalogPriceRuleAction implements ModelInterface, ArrayAccess, \JsonSerial
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

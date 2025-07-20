@@ -113,23 +113,23 @@ class Category implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'id' => false,
-        'parent_id' => false,
-        'created_at' => false,
-        'modified_at' => false,
+        'parent_id' => true,
+        'created_at' => true,
+        'modified_at' => true,
         'name' => false,
-        'short_description' => false,
-        'description' => false,
+        'short_description' => true,
+        'description' => true,
         'stores_ids' => false,
-        'keywords' => false,
-        'meta_description' => false,
-        'meta_title' => false,
+        'keywords' => true,
+        'meta_description' => true,
+        'meta_title' => true,
         'avail' => false,
-        'path' => false,
-        'seo_url' => false,
-        'sort_order' => false,
+        'path' => true,
+        'seo_url' => true,
+        'sort_order' => true,
         'images' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -456,7 +456,14 @@ class Category implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setParentId($parent_id)
     {
         if (is_null($parent_id)) {
-            throw new \InvalidArgumentException('non-nullable parent_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'parent_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('parent_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['parent_id'] = $parent_id;
 
@@ -483,7 +490,14 @@ class Category implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCreatedAt($created_at)
     {
         if (is_null($created_at)) {
-            throw new \InvalidArgumentException('non-nullable created_at cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'created_at');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('created_at', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['created_at'] = $created_at;
 
@@ -510,7 +524,14 @@ class Category implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setModifiedAt($modified_at)
     {
         if (is_null($modified_at)) {
-            throw new \InvalidArgumentException('non-nullable modified_at cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'modified_at');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('modified_at', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['modified_at'] = $modified_at;
 
@@ -564,7 +585,14 @@ class Category implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setShortDescription($short_description)
     {
         if (is_null($short_description)) {
-            throw new \InvalidArgumentException('non-nullable short_description cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'short_description');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('short_description', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['short_description'] = $short_description;
 
@@ -591,7 +619,14 @@ class Category implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDescription($description)
     {
         if (is_null($description)) {
-            throw new \InvalidArgumentException('non-nullable description cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'description');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('description', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['description'] = $description;
 
@@ -645,7 +680,14 @@ class Category implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setKeywords($keywords)
     {
         if (is_null($keywords)) {
-            throw new \InvalidArgumentException('non-nullable keywords cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'keywords');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('keywords', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['keywords'] = $keywords;
 
@@ -672,7 +714,14 @@ class Category implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setMetaDescription($meta_description)
     {
         if (is_null($meta_description)) {
-            throw new \InvalidArgumentException('non-nullable meta_description cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'meta_description');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('meta_description', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['meta_description'] = $meta_description;
 
@@ -699,7 +748,14 @@ class Category implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setMetaTitle($meta_title)
     {
         if (is_null($meta_title)) {
-            throw new \InvalidArgumentException('non-nullable meta_title cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'meta_title');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('meta_title', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['meta_title'] = $meta_title;
 
@@ -753,7 +809,14 @@ class Category implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPath($path)
     {
         if (is_null($path)) {
-            throw new \InvalidArgumentException('non-nullable path cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'path');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('path', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['path'] = $path;
 
@@ -780,7 +843,14 @@ class Category implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setSeoUrl($seo_url)
     {
         if (is_null($seo_url)) {
-            throw new \InvalidArgumentException('non-nullable seo_url cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'seo_url');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('seo_url', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['seo_url'] = $seo_url;
 
@@ -807,7 +877,14 @@ class Category implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setSortOrder($sort_order)
     {
         if (is_null($sort_order)) {
-            throw new \InvalidArgumentException('non-nullable sort_order cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'sort_order');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('sort_order', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['sort_order'] = $sort_order;
 
@@ -861,7 +938,14 @@ class Category implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -888,7 +972,14 @@ class Category implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

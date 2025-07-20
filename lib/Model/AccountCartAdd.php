@@ -94,6 +94,10 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'bol_retailer_id' => 'int',
         'bigcartel_user_name' => 'string',
         'bigcartel_password' => 'string',
+        'bricklink_consumer_key' => 'string',
+        'bricklink_consumer_secret' => 'string',
+        'bricklink_token' => 'string',
+        'bricklink_token_secret' => 'string',
         'demandware_client_id' => 'string',
         'demandware_api_password' => 'string',
         'demandware_user_name' => 'string',
@@ -265,6 +269,10 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'bol_retailer_id' => null,
         'bigcartel_user_name' => null,
         'bigcartel_password' => null,
+        'bricklink_consumer_key' => null,
+        'bricklink_consumer_secret' => null,
+        'bricklink_token' => null,
+        'bricklink_token_secret' => null,
         'demandware_client_id' => null,
         'demandware_api_password' => null,
         'demandware_user_name' => null,
@@ -434,6 +442,10 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'bol_retailer_id' => false,
         'bigcartel_user_name' => false,
         'bigcartel_password' => false,
+        'bricklink_consumer_key' => false,
+        'bricklink_consumer_secret' => false,
+        'bricklink_token' => false,
+        'bricklink_token_secret' => false,
         'demandware_client_id' => false,
         'demandware_api_password' => false,
         'demandware_user_name' => false,
@@ -683,6 +695,10 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'bol_retailer_id' => 'bol_retailer_id',
         'bigcartel_user_name' => 'bigcartel_user_name',
         'bigcartel_password' => 'bigcartel_password',
+        'bricklink_consumer_key' => 'bricklink_consumer_key',
+        'bricklink_consumer_secret' => 'bricklink_consumer_secret',
+        'bricklink_token' => 'bricklink_token',
+        'bricklink_token_secret' => 'bricklink_token_secret',
         'demandware_client_id' => 'demandware_client_id',
         'demandware_api_password' => 'demandware_api_password',
         'demandware_user_name' => 'demandware_user_name',
@@ -852,6 +868,10 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'bol_retailer_id' => 'setBolRetailerId',
         'bigcartel_user_name' => 'setBigcartelUserName',
         'bigcartel_password' => 'setBigcartelPassword',
+        'bricklink_consumer_key' => 'setBricklinkConsumerKey',
+        'bricklink_consumer_secret' => 'setBricklinkConsumerSecret',
+        'bricklink_token' => 'setBricklinkToken',
+        'bricklink_token_secret' => 'setBricklinkTokenSecret',
         'demandware_client_id' => 'setDemandwareClientId',
         'demandware_api_password' => 'setDemandwareApiPassword',
         'demandware_user_name' => 'setDemandwareUserName',
@@ -1021,6 +1041,10 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'bol_retailer_id' => 'getBolRetailerId',
         'bigcartel_user_name' => 'getBigcartelUserName',
         'bigcartel_password' => 'getBigcartelPassword',
+        'bricklink_consumer_key' => 'getBricklinkConsumerKey',
+        'bricklink_consumer_secret' => 'getBricklinkConsumerSecret',
+        'bricklink_token' => 'getBricklinkToken',
+        'bricklink_token_secret' => 'getBricklinkTokenSecret',
         'demandware_client_id' => 'getDemandwareClientId',
         'demandware_api_password' => 'getDemandwareApiPassword',
         'demandware_user_name' => 'getDemandwareUserName',
@@ -1401,6 +1425,10 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('bol_retailer_id', $data ?? [], null);
         $this->setIfExists('bigcartel_user_name', $data ?? [], null);
         $this->setIfExists('bigcartel_password', $data ?? [], null);
+        $this->setIfExists('bricklink_consumer_key', $data ?? [], null);
+        $this->setIfExists('bricklink_consumer_secret', $data ?? [], null);
+        $this->setIfExists('bricklink_token', $data ?? [], null);
+        $this->setIfExists('bricklink_token_secret', $data ?? [], null);
         $this->setIfExists('demandware_client_id', $data ?? [], null);
         $this->setIfExists('demandware_api_password', $data ?? [], null);
         $this->setIfExists('demandware_user_name', $data ?? [], null);
@@ -1572,6 +1600,18 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ($this->container['bigcartel_password'] === null) {
             $invalidProperties[] = "'bigcartel_password' can't be null";
+        }
+        if ($this->container['bricklink_consumer_key'] === null) {
+            $invalidProperties[] = "'bricklink_consumer_key' can't be null";
+        }
+        if ($this->container['bricklink_consumer_secret'] === null) {
+            $invalidProperties[] = "'bricklink_consumer_secret' can't be null";
+        }
+        if ($this->container['bricklink_token'] === null) {
+            $invalidProperties[] = "'bricklink_token' can't be null";
+        }
+        if ($this->container['bricklink_token_secret'] === null) {
+            $invalidProperties[] = "'bricklink_token_secret' can't be null";
         }
         if (!is_null($this->container['hybris_websites']) && (count($this->container['hybris_websites']) < 1)) {
             $invalidProperties[] = "invalid value for 'hybris_websites', number of items must be greater than or equal to 1.";
@@ -2591,6 +2631,114 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable bigcartel_password cannot be null');
         }
         $this->container['bigcartel_password'] = $bigcartel_password;
+
+        return $this;
+    }
+
+    /**
+     * Gets bricklink_consumer_key
+     *
+     * @return string
+     */
+    public function getBricklinkConsumerKey()
+    {
+        return $this->container['bricklink_consumer_key'];
+    }
+
+    /**
+     * Sets bricklink_consumer_key
+     *
+     * @param string $bricklink_consumer_key Bricklink Consumer Key
+     *
+     * @return self
+     */
+    public function setBricklinkConsumerKey($bricklink_consumer_key)
+    {
+        if (is_null($bricklink_consumer_key)) {
+            throw new \InvalidArgumentException('non-nullable bricklink_consumer_key cannot be null');
+        }
+        $this->container['bricklink_consumer_key'] = $bricklink_consumer_key;
+
+        return $this;
+    }
+
+    /**
+     * Gets bricklink_consumer_secret
+     *
+     * @return string
+     */
+    public function getBricklinkConsumerSecret()
+    {
+        return $this->container['bricklink_consumer_secret'];
+    }
+
+    /**
+     * Sets bricklink_consumer_secret
+     *
+     * @param string $bricklink_consumer_secret Bricklink Consumer Secret
+     *
+     * @return self
+     */
+    public function setBricklinkConsumerSecret($bricklink_consumer_secret)
+    {
+        if (is_null($bricklink_consumer_secret)) {
+            throw new \InvalidArgumentException('non-nullable bricklink_consumer_secret cannot be null');
+        }
+        $this->container['bricklink_consumer_secret'] = $bricklink_consumer_secret;
+
+        return $this;
+    }
+
+    /**
+     * Gets bricklink_token
+     *
+     * @return string
+     */
+    public function getBricklinkToken()
+    {
+        return $this->container['bricklink_token'];
+    }
+
+    /**
+     * Sets bricklink_token
+     *
+     * @param string $bricklink_token Bricklink Access Token
+     *
+     * @return self
+     */
+    public function setBricklinkToken($bricklink_token)
+    {
+        if (is_null($bricklink_token)) {
+            throw new \InvalidArgumentException('non-nullable bricklink_token cannot be null');
+        }
+        $this->container['bricklink_token'] = $bricklink_token;
+
+        return $this;
+    }
+
+    /**
+     * Gets bricklink_token_secret
+     *
+     * @return string
+     */
+    public function getBricklinkTokenSecret()
+    {
+        return $this->container['bricklink_token_secret'];
+    }
+
+    /**
+     * Sets bricklink_token_secret
+     *
+     * @param string $bricklink_token_secret Bricklink Access Token Secret
+     *
+     * @return self
+     */
+    public function setBricklinkTokenSecret($bricklink_token_secret)
+    {
+        if (is_null($bricklink_token_secret)) {
+            throw new \InvalidArgumentException('non-nullable bricklink_token_secret cannot be null');
+        }
+        $this->container['bricklink_token_secret'] = $bricklink_token_secret;
 
         return $this;
     }

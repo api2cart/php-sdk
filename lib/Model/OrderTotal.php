@@ -95,14 +95,14 @@ class OrderTotal implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'subtotal_ex_tax' => false,
-        'wrapping_ex_tax' => false,
+        'wrapping_ex_tax' => true,
         'shipping_ex_tax' => false,
         'total_discount' => false,
         'total_tax' => false,
         'total' => false,
-        'total_paid' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'total_paid' => true,
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -393,7 +393,14 @@ class OrderTotal implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setWrappingExTax($wrapping_ex_tax)
     {
         if (is_null($wrapping_ex_tax)) {
-            throw new \InvalidArgumentException('non-nullable wrapping_ex_tax cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'wrapping_ex_tax');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('wrapping_ex_tax', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['wrapping_ex_tax'] = $wrapping_ex_tax;
 
@@ -528,7 +535,14 @@ class OrderTotal implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setTotalPaid($total_paid)
     {
         if (is_null($total_paid)) {
-            throw new \InvalidArgumentException('non-nullable total_paid cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'total_paid');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('total_paid', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['total_paid'] = $total_paid;
 
@@ -555,7 +569,14 @@ class OrderTotal implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -582,7 +603,14 @@ class OrderTotal implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

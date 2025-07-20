@@ -1,6 +1,6 @@
 # OpenAPI\Client\CategoryApi
 
-All URIs are relative to https://api.api2cart.com/v1.1, except if the operation defines another base path.
+All URIs are relative to https://api.api2cart.local.com/v1.1, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -183,7 +183,7 @@ try {
 ## `categoryAssign()`
 
 ```php
-categoryAssign($category_id, $product_id, $store_id): \OpenAPI\Client\Model\CartConfigUpdate200Response
+categoryAssign($category_id, $product_id, $store_id): \OpenAPI\Client\Model\CategoryAssign200Response
 ```
 
 category.assign
@@ -236,7 +236,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\CartConfigUpdate200Response**](../Model/CartConfigUpdate200Response.md)
+[**\OpenAPI\Client\Model\CategoryAssign200Response**](../Model/CategoryAssign200Response.md)
 
 ### Authorization
 
@@ -829,7 +829,7 @@ try {
 ## `categoryUnassign()`
 
 ```php
-categoryUnassign($category_id, $product_id, $store_id): \OpenAPI\Client\Model\CartConfigUpdate200Response
+categoryUnassign($category_id, $product_id, $store_id): \OpenAPI\Client\Model\CategoryAssign200Response
 ```
 
 category.unassign
@@ -882,7 +882,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\CartConfigUpdate200Response**](../Model/CartConfigUpdate200Response.md)
+[**\OpenAPI\Client\Model\CategoryAssign200Response**](../Model/CategoryAssign200Response.md)
 
 ### Authorization
 

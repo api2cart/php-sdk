@@ -105,19 +105,19 @@ class ProductReview implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'id' => false,
-        'product_id' => false,
-        'customer_id' => false,
-        'nick_name' => false,
-        'email' => false,
-        'summary' => false,
-        'message' => false,
-        'rating' => false,
+        'product_id' => true,
+        'customer_id' => true,
+        'nick_name' => true,
+        'email' => true,
+        'summary' => true,
+        'message' => true,
+        'rating' => true,
         'ratings' => false,
-        'status' => false,
-        'created_time' => false,
+        'status' => true,
+        'created_time' => true,
         'medias' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -428,7 +428,14 @@ class ProductReview implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setProductId($product_id)
     {
         if (is_null($product_id)) {
-            throw new \InvalidArgumentException('non-nullable product_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'product_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('product_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['product_id'] = $product_id;
 
@@ -455,7 +462,14 @@ class ProductReview implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCustomerId($customer_id)
     {
         if (is_null($customer_id)) {
-            throw new \InvalidArgumentException('non-nullable customer_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'customer_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('customer_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['customer_id'] = $customer_id;
 
@@ -482,7 +496,14 @@ class ProductReview implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setNickName($nick_name)
     {
         if (is_null($nick_name)) {
-            throw new \InvalidArgumentException('non-nullable nick_name cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'nick_name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('nick_name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['nick_name'] = $nick_name;
 
@@ -509,7 +530,14 @@ class ProductReview implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setEmail($email)
     {
         if (is_null($email)) {
-            throw new \InvalidArgumentException('non-nullable email cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'email');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('email', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['email'] = $email;
 
@@ -536,7 +564,14 @@ class ProductReview implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setSummary($summary)
     {
         if (is_null($summary)) {
-            throw new \InvalidArgumentException('non-nullable summary cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'summary');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('summary', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['summary'] = $summary;
 
@@ -563,7 +598,14 @@ class ProductReview implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setMessage($message)
     {
         if (is_null($message)) {
-            throw new \InvalidArgumentException('non-nullable message cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'message');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('message', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['message'] = $message;
 
@@ -590,7 +632,14 @@ class ProductReview implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setRating($rating)
     {
         if (is_null($rating)) {
-            throw new \InvalidArgumentException('non-nullable rating cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'rating');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('rating', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['rating'] = $rating;
 
@@ -644,7 +693,14 @@ class ProductReview implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setStatus($status)
     {
         if (is_null($status)) {
-            throw new \InvalidArgumentException('non-nullable status cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'status');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('status', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['status'] = $status;
 
@@ -671,7 +727,14 @@ class ProductReview implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCreatedTime($created_time)
     {
         if (is_null($created_time)) {
-            throw new \InvalidArgumentException('non-nullable created_time cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'created_time');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('created_time', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['created_time'] = $created_time;
 
@@ -725,7 +788,14 @@ class ProductReview implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -752,7 +822,14 @@ class ProductReview implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

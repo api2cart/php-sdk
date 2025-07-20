@@ -84,10 +84,10 @@ class ResponseCartCatalogPriceRulesListResult implements ModelInterface, ArrayAc
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'catalog_price_rules_count' => false,
+        'catalog_price_rules_count' => true,
         'catalog_price_rules' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -331,7 +331,14 @@ class ResponseCartCatalogPriceRulesListResult implements ModelInterface, ArrayAc
     public function setCatalogPriceRulesCount($catalog_price_rules_count)
     {
         if (is_null($catalog_price_rules_count)) {
-            throw new \InvalidArgumentException('non-nullable catalog_price_rules_count cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'catalog_price_rules_count');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('catalog_price_rules_count', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['catalog_price_rules_count'] = $catalog_price_rules_count;
 
@@ -385,7 +392,14 @@ class ResponseCartCatalogPriceRulesListResult implements ModelInterface, ArrayAc
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -412,7 +426,14 @@ class ResponseCartCatalogPriceRulesListResult implements ModelInterface, ArrayAc
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

@@ -241,18 +241,6 @@ class ProductApiTest extends TestCase
     }
 
     /**
-     * Test case for productFields
-     *
-     * product.fields.
-     *
-     */
-    public function testProductFields()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test case for productFind
      *
      * product.find.
@@ -553,18 +541,6 @@ class ProductApiTest extends TestCase
     }
 
     /**
-     * Test case for productVariantCount
-     *
-     * product.variant.count.
-     *
-     */
-    public function testProductVariantCount()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test case for productVariantDelete
      *
      * product.variant.delete.
@@ -607,30 +583,6 @@ class ProductApiTest extends TestCase
      *
      */
     public function testProductVariantImageDelete()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for productVariantInfo
-     *
-     * product.variant.info.
-     *
-     */
-    public function testProductVariantInfo()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for productVariantList
-     *
-     * product.variant.list.
-     *
-     */
-    public function testProductVariantList()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

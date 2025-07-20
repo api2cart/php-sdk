@@ -100,18 +100,18 @@ class CartShippingMethod implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'name' => false,
-        'handling_fee' => false,
-        'handling_enabled' => false,
-        'handling_type' => false,
-        'default_price' => false,
-        'default_price_type' => false,
-        'type' => false,
-        'enabled' => false,
-        'min_order_amount' => false,
+        'name' => true,
+        'handling_fee' => true,
+        'handling_enabled' => true,
+        'handling_type' => true,
+        'default_price' => true,
+        'default_price_type' => true,
+        'type' => true,
+        'enabled' => true,
+        'min_order_amount' => true,
         'rates' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -387,7 +387,14 @@ class CartShippingMethod implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setName($name)
     {
         if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['name'] = $name;
 
@@ -414,7 +421,14 @@ class CartShippingMethod implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setHandlingFee($handling_fee)
     {
         if (is_null($handling_fee)) {
-            throw new \InvalidArgumentException('non-nullable handling_fee cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'handling_fee');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('handling_fee', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['handling_fee'] = $handling_fee;
 
@@ -441,7 +455,14 @@ class CartShippingMethod implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setHandlingEnabled($handling_enabled)
     {
         if (is_null($handling_enabled)) {
-            throw new \InvalidArgumentException('non-nullable handling_enabled cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'handling_enabled');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('handling_enabled', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['handling_enabled'] = $handling_enabled;
 
@@ -468,7 +489,14 @@ class CartShippingMethod implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setHandlingType($handling_type)
     {
         if (is_null($handling_type)) {
-            throw new \InvalidArgumentException('non-nullable handling_type cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'handling_type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('handling_type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['handling_type'] = $handling_type;
 
@@ -495,7 +523,14 @@ class CartShippingMethod implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setDefaultPrice($default_price)
     {
         if (is_null($default_price)) {
-            throw new \InvalidArgumentException('non-nullable default_price cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'default_price');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('default_price', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['default_price'] = $default_price;
 
@@ -522,7 +557,14 @@ class CartShippingMethod implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setDefaultPriceType($default_price_type)
     {
         if (is_null($default_price_type)) {
-            throw new \InvalidArgumentException('non-nullable default_price_type cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'default_price_type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('default_price_type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['default_price_type'] = $default_price_type;
 
@@ -549,7 +591,14 @@ class CartShippingMethod implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setType($type)
     {
         if (is_null($type)) {
-            throw new \InvalidArgumentException('non-nullable type cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['type'] = $type;
 
@@ -576,7 +625,14 @@ class CartShippingMethod implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setEnabled($enabled)
     {
         if (is_null($enabled)) {
-            throw new \InvalidArgumentException('non-nullable enabled cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'enabled');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('enabled', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['enabled'] = $enabled;
 
@@ -603,7 +659,14 @@ class CartShippingMethod implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setMinOrderAmount($min_order_amount)
     {
         if (is_null($min_order_amount)) {
-            throw new \InvalidArgumentException('non-nullable min_order_amount cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'min_order_amount');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('min_order_amount', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['min_order_amount'] = $min_order_amount;
 
@@ -657,7 +720,14 @@ class CartShippingMethod implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -684,7 +754,14 @@ class CartShippingMethod implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

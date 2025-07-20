@@ -134,32 +134,32 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'id' => false,
         'order_id' => false,
-        'basket_id' => false,
-        'channel_id' => false,
+        'basket_id' => true,
+        'channel_id' => true,
         'customer' => false,
         'create_at' => false,
-        'currency' => false,
-        'shipping_address' => false,
-        'billing_address' => false,
-        'payment_method' => false,
-        'shipping_method' => false,
+        'currency' => true,
+        'shipping_address' => true,
+        'billing_address' => true,
+        'payment_method' => true,
+        'shipping_method' => true,
         'shipping_methods' => false,
         'status' => false,
-        'totals' => false,
-        'total' => false,
+        'totals' => true,
+        'total' => true,
         'discounts' => false,
         'order_products' => false,
         'bundles' => false,
-        'modified_at' => false,
-        'finished_time' => false,
-        'comment' => false,
-        'store_id' => false,
+        'modified_at' => true,
+        'finished_time' => true,
+        'comment' => true,
+        'store_id' => true,
         'warehouses_ids' => false,
         'refunds' => false,
-        'gift_message' => false,
-        'order_details_url' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'gift_message' => true,
+        'order_details_url' => true,
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -553,7 +553,14 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setBasketId($basket_id)
     {
         if (is_null($basket_id)) {
-            throw new \InvalidArgumentException('non-nullable basket_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'basket_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('basket_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['basket_id'] = $basket_id;
 
@@ -580,7 +587,14 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setChannelId($channel_id)
     {
         if (is_null($channel_id)) {
-            throw new \InvalidArgumentException('non-nullable channel_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'channel_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('channel_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['channel_id'] = $channel_id;
 
@@ -661,7 +675,14 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCurrency($currency)
     {
         if (is_null($currency)) {
-            throw new \InvalidArgumentException('non-nullable currency cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'currency');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('currency', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['currency'] = $currency;
 
@@ -688,7 +709,14 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setShippingAddress($shipping_address)
     {
         if (is_null($shipping_address)) {
-            throw new \InvalidArgumentException('non-nullable shipping_address cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'shipping_address');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('shipping_address', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['shipping_address'] = $shipping_address;
 
@@ -715,7 +743,14 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setBillingAddress($billing_address)
     {
         if (is_null($billing_address)) {
-            throw new \InvalidArgumentException('non-nullable billing_address cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'billing_address');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('billing_address', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['billing_address'] = $billing_address;
 
@@ -742,7 +777,14 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPaymentMethod($payment_method)
     {
         if (is_null($payment_method)) {
-            throw new \InvalidArgumentException('non-nullable payment_method cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'payment_method');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('payment_method', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['payment_method'] = $payment_method;
 
@@ -769,7 +811,14 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setShippingMethod($shipping_method)
     {
         if (is_null($shipping_method)) {
-            throw new \InvalidArgumentException('non-nullable shipping_method cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'shipping_method');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('shipping_method', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['shipping_method'] = $shipping_method;
 
@@ -850,7 +899,14 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setTotals($totals)
     {
         if (is_null($totals)) {
-            throw new \InvalidArgumentException('non-nullable totals cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'totals');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('totals', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['totals'] = $totals;
 
@@ -877,7 +933,14 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setTotal($total)
     {
         if (is_null($total)) {
-            throw new \InvalidArgumentException('non-nullable total cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'total');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('total', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['total'] = $total;
 
@@ -985,7 +1048,14 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setModifiedAt($modified_at)
     {
         if (is_null($modified_at)) {
-            throw new \InvalidArgumentException('non-nullable modified_at cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'modified_at');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('modified_at', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['modified_at'] = $modified_at;
 
@@ -1012,7 +1082,14 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setFinishedTime($finished_time)
     {
         if (is_null($finished_time)) {
-            throw new \InvalidArgumentException('non-nullable finished_time cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'finished_time');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('finished_time', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['finished_time'] = $finished_time;
 
@@ -1039,7 +1116,14 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setComment($comment)
     {
         if (is_null($comment)) {
-            throw new \InvalidArgumentException('non-nullable comment cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'comment');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('comment', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['comment'] = $comment;
 
@@ -1066,7 +1150,14 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setStoreId($store_id)
     {
         if (is_null($store_id)) {
-            throw new \InvalidArgumentException('non-nullable store_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'store_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('store_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['store_id'] = $store_id;
 
@@ -1147,7 +1238,14 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setGiftMessage($gift_message)
     {
         if (is_null($gift_message)) {
-            throw new \InvalidArgumentException('non-nullable gift_message cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'gift_message');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('gift_message', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['gift_message'] = $gift_message;
 
@@ -1174,7 +1272,14 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setOrderDetailsUrl($order_details_url)
     {
         if (is_null($order_details_url)) {
-            throw new \InvalidArgumentException('non-nullable order_details_url cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'order_details_url');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('order_details_url', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['order_details_url'] = $order_details_url;
 
@@ -1201,7 +1306,14 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -1228,7 +1340,14 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

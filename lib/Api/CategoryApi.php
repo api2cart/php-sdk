@@ -1014,7 +1014,7 @@ class CategoryApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\CartConfigUpdate200Response
+     * @return \OpenAPI\Client\Model\CategoryAssign200Response
      */
     public function categoryAssign($category_id, $product_id, $store_id = null, string $contentType = self::contentTypes['categoryAssign'][0])
     {
@@ -1034,7 +1034,7 @@ class CategoryApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\CartConfigUpdate200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\CategoryAssign200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function categoryAssignWithHttpInfo($category_id, $product_id, $store_id = null, string $contentType = self::contentTypes['categoryAssign'][0])
     {
@@ -1065,11 +1065,11 @@ class CategoryApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\CartConfigUpdate200Response' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\CategoryAssign200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\CartConfigUpdate200Response' !== 'string') {
+                        if ('\OpenAPI\Client\Model\CategoryAssign200Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1087,7 +1087,7 @@ class CategoryApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\CartConfigUpdate200Response', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\CategoryAssign200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1106,7 +1106,7 @@ class CategoryApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\CartConfigUpdate200Response';
+            $returnType = '\OpenAPI\Client\Model\CategoryAssign200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1139,7 +1139,7 @@ class CategoryApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\CartConfigUpdate200Response',
+                        '\OpenAPI\Client\Model\CategoryAssign200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1187,7 +1187,7 @@ class CategoryApi
      */
     public function categoryAssignAsyncWithHttpInfo($category_id, $product_id, $store_id = null, string $contentType = self::contentTypes['categoryAssign'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\CartConfigUpdate200Response';
+        $returnType = '\OpenAPI\Client\Model\CategoryAssign200Response';
         $request = $this->categoryAssignRequest($category_id, $product_id, $store_id, $contentType);
 
         return $this->client
@@ -4409,7 +4409,7 @@ class CategoryApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\CartConfigUpdate200Response
+     * @return \OpenAPI\Client\Model\CategoryAssign200Response
      */
     public function categoryUnassign($category_id, $product_id, $store_id = null, string $contentType = self::contentTypes['categoryUnassign'][0])
     {
@@ -4429,7 +4429,7 @@ class CategoryApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\CartConfigUpdate200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\CategoryAssign200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function categoryUnassignWithHttpInfo($category_id, $product_id, $store_id = null, string $contentType = self::contentTypes['categoryUnassign'][0])
     {
@@ -4460,11 +4460,11 @@ class CategoryApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\CartConfigUpdate200Response' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\CategoryAssign200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\CartConfigUpdate200Response' !== 'string') {
+                        if ('\OpenAPI\Client\Model\CategoryAssign200Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -4482,7 +4482,7 @@ class CategoryApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\CartConfigUpdate200Response', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\CategoryAssign200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -4501,7 +4501,7 @@ class CategoryApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\CartConfigUpdate200Response';
+            $returnType = '\OpenAPI\Client\Model\CategoryAssign200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -4534,7 +4534,7 @@ class CategoryApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\CartConfigUpdate200Response',
+                        '\OpenAPI\Client\Model\CategoryAssign200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4582,7 +4582,7 @@ class CategoryApi
      */
     public function categoryUnassignAsyncWithHttpInfo($category_id, $product_id, $store_id = null, string $contentType = self::contentTypes['categoryUnassign'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\CartConfigUpdate200Response';
+        $returnType = '\OpenAPI\Client\Model\CategoryAssign200Response';
         $request = $this->categoryUnassignRequest($category_id, $product_id, $store_id, $contentType);
 
         return $this->client

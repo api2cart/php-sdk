@@ -103,18 +103,18 @@ class Subscriber implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'id' => false,
-        'customer_id' => false,
-        'email' => false,
-        'subscribed' => false,
-        'first_name' => false,
-        'last_name' => false,
+        'customer_id' => true,
+        'email' => true,
+        'subscribed' => true,
+        'first_name' => true,
+        'last_name' => true,
         'stores_ids' => false,
-        'created_time' => false,
-        'modified_time' => false,
-        'lang_id' => false,
-        'gender' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'created_time' => true,
+        'modified_time' => true,
+        'lang_id' => true,
+        'gender' => true,
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -421,7 +421,14 @@ class Subscriber implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCustomerId($customer_id)
     {
         if (is_null($customer_id)) {
-            throw new \InvalidArgumentException('non-nullable customer_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'customer_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('customer_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['customer_id'] = $customer_id;
 
@@ -448,7 +455,14 @@ class Subscriber implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setEmail($email)
     {
         if (is_null($email)) {
-            throw new \InvalidArgumentException('non-nullable email cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'email');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('email', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['email'] = $email;
 
@@ -475,7 +489,14 @@ class Subscriber implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setSubscribed($subscribed)
     {
         if (is_null($subscribed)) {
-            throw new \InvalidArgumentException('non-nullable subscribed cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'subscribed');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('subscribed', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['subscribed'] = $subscribed;
 
@@ -502,7 +523,14 @@ class Subscriber implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setFirstName($first_name)
     {
         if (is_null($first_name)) {
-            throw new \InvalidArgumentException('non-nullable first_name cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'first_name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('first_name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['first_name'] = $first_name;
 
@@ -529,7 +557,14 @@ class Subscriber implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setLastName($last_name)
     {
         if (is_null($last_name)) {
-            throw new \InvalidArgumentException('non-nullable last_name cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'last_name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('last_name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['last_name'] = $last_name;
 
@@ -583,7 +618,14 @@ class Subscriber implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCreatedTime($created_time)
     {
         if (is_null($created_time)) {
-            throw new \InvalidArgumentException('non-nullable created_time cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'created_time');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('created_time', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['created_time'] = $created_time;
 
@@ -610,7 +652,14 @@ class Subscriber implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setModifiedTime($modified_time)
     {
         if (is_null($modified_time)) {
-            throw new \InvalidArgumentException('non-nullable modified_time cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'modified_time');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('modified_time', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['modified_time'] = $modified_time;
 
@@ -637,7 +686,14 @@ class Subscriber implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setLangId($lang_id)
     {
         if (is_null($lang_id)) {
-            throw new \InvalidArgumentException('non-nullable lang_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'lang_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('lang_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['lang_id'] = $lang_id;
 
@@ -664,7 +720,14 @@ class Subscriber implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setGender($gender)
     {
         if (is_null($gender)) {
-            throw new \InvalidArgumentException('non-nullable gender cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'gender');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('gender', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['gender'] = $gender;
 
@@ -691,7 +754,14 @@ class Subscriber implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -718,7 +788,14 @@ class Subscriber implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

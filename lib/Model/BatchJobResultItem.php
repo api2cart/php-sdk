@@ -92,11 +92,11 @@ class BatchJobResultItem implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static array $openAPINullables = [
         'id' => false,
         'status' => false,
-        'entity_id' => false,
+        'entity_id' => true,
         'errors' => false,
         'warnings' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -406,7 +406,14 @@ class BatchJobResultItem implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setEntityId($entity_id)
     {
         if (is_null($entity_id)) {
-            throw new \InvalidArgumentException('non-nullable entity_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'entity_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('entity_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['entity_id'] = $entity_id;
 
@@ -487,7 +494,14 @@ class BatchJobResultItem implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -514,7 +528,14 @@ class BatchJobResultItem implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

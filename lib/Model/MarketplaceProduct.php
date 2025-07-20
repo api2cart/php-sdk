@@ -125,29 +125,29 @@ class MarketplaceProduct implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static array $openAPINullables = [
         'id' => false,
-        'type' => false,
-        'u_asin' => false,
-        'u_ean' => false,
-        'u_gtin' => false,
-        'u_isbn' => false,
-        'u_mpn' => false,
-        'u_upc' => false,
-        'name' => false,
-        'description' => false,
-        'url' => false,
-        'price' => false,
+        'type' => true,
+        'u_asin' => true,
+        'u_ean' => true,
+        'u_gtin' => true,
+        'u_isbn' => true,
+        'u_mpn' => true,
+        'u_upc' => true,
+        'name' => true,
+        'description' => true,
+        'url' => true,
+        'price' => true,
         'images' => false,
         'product_options' => false,
-        'manufacturer' => false,
-        'brand' => false,
-        'weight' => false,
-        'weight_unit' => false,
-        'dimensions_unit' => false,
-        'width' => false,
-        'height' => false,
-        'length' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'manufacturer' => true,
+        'brand' => true,
+        'weight' => true,
+        'weight_unit' => true,
+        'dimensions_unit' => true,
+        'width' => true,
+        'height' => true,
+        'length' => true,
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -498,7 +498,14 @@ class MarketplaceProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setType($type)
     {
         if (is_null($type)) {
-            throw new \InvalidArgumentException('non-nullable type cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['type'] = $type;
 
@@ -525,7 +532,14 @@ class MarketplaceProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setUAsin($u_asin)
     {
         if (is_null($u_asin)) {
-            throw new \InvalidArgumentException('non-nullable u_asin cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'u_asin');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('u_asin', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['u_asin'] = $u_asin;
 
@@ -552,7 +566,14 @@ class MarketplaceProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setUEan($u_ean)
     {
         if (is_null($u_ean)) {
-            throw new \InvalidArgumentException('non-nullable u_ean cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'u_ean');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('u_ean', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['u_ean'] = $u_ean;
 
@@ -579,7 +600,14 @@ class MarketplaceProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setUGtin($u_gtin)
     {
         if (is_null($u_gtin)) {
-            throw new \InvalidArgumentException('non-nullable u_gtin cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'u_gtin');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('u_gtin', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['u_gtin'] = $u_gtin;
 
@@ -606,7 +634,14 @@ class MarketplaceProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setUIsbn($u_isbn)
     {
         if (is_null($u_isbn)) {
-            throw new \InvalidArgumentException('non-nullable u_isbn cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'u_isbn');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('u_isbn', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['u_isbn'] = $u_isbn;
 
@@ -633,7 +668,14 @@ class MarketplaceProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setUMpn($u_mpn)
     {
         if (is_null($u_mpn)) {
-            throw new \InvalidArgumentException('non-nullable u_mpn cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'u_mpn');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('u_mpn', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['u_mpn'] = $u_mpn;
 
@@ -660,7 +702,14 @@ class MarketplaceProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setUUpc($u_upc)
     {
         if (is_null($u_upc)) {
-            throw new \InvalidArgumentException('non-nullable u_upc cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'u_upc');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('u_upc', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['u_upc'] = $u_upc;
 
@@ -687,7 +736,14 @@ class MarketplaceProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setName($name)
     {
         if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['name'] = $name;
 
@@ -714,7 +770,14 @@ class MarketplaceProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setDescription($description)
     {
         if (is_null($description)) {
-            throw new \InvalidArgumentException('non-nullable description cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'description');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('description', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['description'] = $description;
 
@@ -741,7 +804,14 @@ class MarketplaceProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setUrl($url)
     {
         if (is_null($url)) {
-            throw new \InvalidArgumentException('non-nullable url cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'url');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('url', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['url'] = $url;
 
@@ -768,7 +838,14 @@ class MarketplaceProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setPrice($price)
     {
         if (is_null($price)) {
-            throw new \InvalidArgumentException('non-nullable price cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'price');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('price', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['price'] = $price;
 
@@ -849,7 +926,14 @@ class MarketplaceProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setManufacturer($manufacturer)
     {
         if (is_null($manufacturer)) {
-            throw new \InvalidArgumentException('non-nullable manufacturer cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'manufacturer');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('manufacturer', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['manufacturer'] = $manufacturer;
 
@@ -876,7 +960,14 @@ class MarketplaceProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setBrand($brand)
     {
         if (is_null($brand)) {
-            throw new \InvalidArgumentException('non-nullable brand cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'brand');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('brand', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['brand'] = $brand;
 
@@ -903,7 +994,14 @@ class MarketplaceProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setWeight($weight)
     {
         if (is_null($weight)) {
-            throw new \InvalidArgumentException('non-nullable weight cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'weight');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('weight', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['weight'] = $weight;
 
@@ -930,7 +1028,14 @@ class MarketplaceProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setWeightUnit($weight_unit)
     {
         if (is_null($weight_unit)) {
-            throw new \InvalidArgumentException('non-nullable weight_unit cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'weight_unit');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('weight_unit', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['weight_unit'] = $weight_unit;
 
@@ -957,7 +1062,14 @@ class MarketplaceProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setDimensionsUnit($dimensions_unit)
     {
         if (is_null($dimensions_unit)) {
-            throw new \InvalidArgumentException('non-nullable dimensions_unit cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'dimensions_unit');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('dimensions_unit', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['dimensions_unit'] = $dimensions_unit;
 
@@ -984,7 +1096,14 @@ class MarketplaceProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setWidth($width)
     {
         if (is_null($width)) {
-            throw new \InvalidArgumentException('non-nullable width cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'width');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('width', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['width'] = $width;
 
@@ -1011,7 +1130,14 @@ class MarketplaceProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setHeight($height)
     {
         if (is_null($height)) {
-            throw new \InvalidArgumentException('non-nullable height cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'height');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('height', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['height'] = $height;
 
@@ -1038,7 +1164,14 @@ class MarketplaceProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setLength($length)
     {
         if (is_null($length)) {
-            throw new \InvalidArgumentException('non-nullable length cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'length');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('length', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['length'] = $length;
 
@@ -1065,7 +1198,14 @@ class MarketplaceProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -1092,7 +1232,14 @@ class MarketplaceProduct implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

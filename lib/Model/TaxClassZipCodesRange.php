@@ -84,10 +84,10 @@ class TaxClassZipCodesRange implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'from' => false,
-        'to' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'from' => true,
+        'to' => true,
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -331,7 +331,14 @@ class TaxClassZipCodesRange implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setFrom($from)
     {
         if (is_null($from)) {
-            throw new \InvalidArgumentException('non-nullable from cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'from');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('from', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['from'] = $from;
 
@@ -358,7 +365,14 @@ class TaxClassZipCodesRange implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setTo($to)
     {
         if (is_null($to)) {
-            throw new \InvalidArgumentException('non-nullable to cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'to');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('to', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['to'] = $to;
 
@@ -385,7 +399,14 @@ class TaxClassZipCodesRange implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -412,7 +433,14 @@ class TaxClassZipCodesRange implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

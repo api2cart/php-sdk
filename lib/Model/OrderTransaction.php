@@ -127,30 +127,30 @@ class OrderTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'id' => false,
-        'transaction_id' => false,
+        'transaction_id' => true,
         'order_id' => false,
-        'parent_id' => false,
-        'description' => false,
-        'status' => false,
-        'gateway' => false,
-        'reference_number' => false,
-        'currency' => false,
-        'amount' => false,
-        'created_time' => false,
-        'settlement_currency' => false,
-        'settlement_amount' => false,
-        'settlement_created_time' => false,
-        'card_brand' => false,
-        'card_bin' => false,
-        'card_last_four' => false,
-        'avs_street_resp_code' => false,
-        'avs_postal_resp_code' => false,
-        'avs_message' => false,
-        'cvv_code' => false,
-        'cvv_message' => false,
-        'is_test_mode' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'parent_id' => true,
+        'description' => true,
+        'status' => true,
+        'gateway' => true,
+        'reference_number' => true,
+        'currency' => true,
+        'amount' => true,
+        'created_time' => true,
+        'settlement_currency' => true,
+        'settlement_amount' => true,
+        'settlement_created_time' => true,
+        'card_brand' => true,
+        'card_bin' => true,
+        'card_last_four' => true,
+        'avs_street_resp_code' => true,
+        'avs_postal_resp_code' => true,
+        'avs_message' => true,
+        'cvv_code' => true,
+        'cvv_message' => true,
+        'is_test_mode' => true,
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -505,7 +505,14 @@ class OrderTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setTransactionId($transaction_id)
     {
         if (is_null($transaction_id)) {
-            throw new \InvalidArgumentException('non-nullable transaction_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'transaction_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('transaction_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['transaction_id'] = $transaction_id;
 
@@ -559,7 +566,14 @@ class OrderTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setParentId($parent_id)
     {
         if (is_null($parent_id)) {
-            throw new \InvalidArgumentException('non-nullable parent_id cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'parent_id');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('parent_id', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['parent_id'] = $parent_id;
 
@@ -586,7 +600,14 @@ class OrderTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDescription($description)
     {
         if (is_null($description)) {
-            throw new \InvalidArgumentException('non-nullable description cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'description');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('description', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['description'] = $description;
 
@@ -613,7 +634,14 @@ class OrderTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setStatus($status)
     {
         if (is_null($status)) {
-            throw new \InvalidArgumentException('non-nullable status cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'status');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('status', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['status'] = $status;
 
@@ -640,7 +668,14 @@ class OrderTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setGateway($gateway)
     {
         if (is_null($gateway)) {
-            throw new \InvalidArgumentException('non-nullable gateway cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'gateway');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('gateway', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['gateway'] = $gateway;
 
@@ -667,7 +702,14 @@ class OrderTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setReferenceNumber($reference_number)
     {
         if (is_null($reference_number)) {
-            throw new \InvalidArgumentException('non-nullable reference_number cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'reference_number');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('reference_number', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['reference_number'] = $reference_number;
 
@@ -694,7 +736,14 @@ class OrderTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCurrency($currency)
     {
         if (is_null($currency)) {
-            throw new \InvalidArgumentException('non-nullable currency cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'currency');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('currency', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['currency'] = $currency;
 
@@ -721,7 +770,14 @@ class OrderTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAmount($amount)
     {
         if (is_null($amount)) {
-            throw new \InvalidArgumentException('non-nullable amount cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'amount');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('amount', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['amount'] = $amount;
 
@@ -748,7 +804,14 @@ class OrderTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCreatedTime($created_time)
     {
         if (is_null($created_time)) {
-            throw new \InvalidArgumentException('non-nullable created_time cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'created_time');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('created_time', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['created_time'] = $created_time;
 
@@ -775,7 +838,14 @@ class OrderTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setSettlementCurrency($settlement_currency)
     {
         if (is_null($settlement_currency)) {
-            throw new \InvalidArgumentException('non-nullable settlement_currency cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'settlement_currency');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('settlement_currency', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['settlement_currency'] = $settlement_currency;
 
@@ -802,7 +872,14 @@ class OrderTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setSettlementAmount($settlement_amount)
     {
         if (is_null($settlement_amount)) {
-            throw new \InvalidArgumentException('non-nullable settlement_amount cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'settlement_amount');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('settlement_amount', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['settlement_amount'] = $settlement_amount;
 
@@ -829,7 +906,14 @@ class OrderTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setSettlementCreatedTime($settlement_created_time)
     {
         if (is_null($settlement_created_time)) {
-            throw new \InvalidArgumentException('non-nullable settlement_created_time cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'settlement_created_time');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('settlement_created_time', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['settlement_created_time'] = $settlement_created_time;
 
@@ -856,7 +940,14 @@ class OrderTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCardBrand($card_brand)
     {
         if (is_null($card_brand)) {
-            throw new \InvalidArgumentException('non-nullable card_brand cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'card_brand');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('card_brand', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['card_brand'] = $card_brand;
 
@@ -883,7 +974,14 @@ class OrderTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCardBin($card_bin)
     {
         if (is_null($card_bin)) {
-            throw new \InvalidArgumentException('non-nullable card_bin cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'card_bin');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('card_bin', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['card_bin'] = $card_bin;
 
@@ -910,7 +1008,14 @@ class OrderTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCardLastFour($card_last_four)
     {
         if (is_null($card_last_four)) {
-            throw new \InvalidArgumentException('non-nullable card_last_four cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'card_last_four');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('card_last_four', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['card_last_four'] = $card_last_four;
 
@@ -937,7 +1042,14 @@ class OrderTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAvsStreetRespCode($avs_street_resp_code)
     {
         if (is_null($avs_street_resp_code)) {
-            throw new \InvalidArgumentException('non-nullable avs_street_resp_code cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'avs_street_resp_code');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('avs_street_resp_code', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['avs_street_resp_code'] = $avs_street_resp_code;
 
@@ -964,7 +1076,14 @@ class OrderTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAvsPostalRespCode($avs_postal_resp_code)
     {
         if (is_null($avs_postal_resp_code)) {
-            throw new \InvalidArgumentException('non-nullable avs_postal_resp_code cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'avs_postal_resp_code');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('avs_postal_resp_code', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['avs_postal_resp_code'] = $avs_postal_resp_code;
 
@@ -991,7 +1110,14 @@ class OrderTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAvsMessage($avs_message)
     {
         if (is_null($avs_message)) {
-            throw new \InvalidArgumentException('non-nullable avs_message cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'avs_message');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('avs_message', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['avs_message'] = $avs_message;
 
@@ -1018,7 +1144,14 @@ class OrderTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCvvCode($cvv_code)
     {
         if (is_null($cvv_code)) {
-            throw new \InvalidArgumentException('non-nullable cvv_code cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'cvv_code');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('cvv_code', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['cvv_code'] = $cvv_code;
 
@@ -1045,7 +1178,14 @@ class OrderTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCvvMessage($cvv_message)
     {
         if (is_null($cvv_message)) {
-            throw new \InvalidArgumentException('non-nullable cvv_message cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'cvv_message');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('cvv_message', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['cvv_message'] = $cvv_message;
 
@@ -1072,7 +1212,14 @@ class OrderTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setIsTestMode($is_test_mode)
     {
         if (is_null($is_test_mode)) {
-            throw new \InvalidArgumentException('non-nullable is_test_mode cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'is_test_mode');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('is_test_mode', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['is_test_mode'] = $is_test_mode;
 
@@ -1099,7 +1246,14 @@ class OrderTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -1126,7 +1280,14 @@ class OrderTransaction implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

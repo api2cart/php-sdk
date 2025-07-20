@@ -109,21 +109,21 @@ class CatalogPriceRule implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'id' => false,
-        'gid' => false,
-        'type' => false,
-        'name' => false,
-        'description' => false,
-        'short_description' => false,
-        'avail' => false,
+        'gid' => true,
+        'type' => true,
+        'name' => true,
+        'description' => true,
+        'short_description' => true,
+        'avail' => true,
         'actions' => false,
-        'created_time' => false,
-        'date_start' => false,
-        'date_end' => false,
-        'usage_count' => false,
+        'created_time' => true,
+        'date_start' => true,
+        'date_end' => true,
+        'usage_count' => true,
         'conditions' => false,
-        'uses_per_order_limit' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'uses_per_order_limit' => true,
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -442,7 +442,14 @@ class CatalogPriceRule implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setGid($gid)
     {
         if (is_null($gid)) {
-            throw new \InvalidArgumentException('non-nullable gid cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'gid');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('gid', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['gid'] = $gid;
 
@@ -469,7 +476,14 @@ class CatalogPriceRule implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setType($type)
     {
         if (is_null($type)) {
-            throw new \InvalidArgumentException('non-nullable type cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'type');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('type', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['type'] = $type;
 
@@ -496,7 +510,14 @@ class CatalogPriceRule implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setName($name)
     {
         if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['name'] = $name;
 
@@ -523,7 +544,14 @@ class CatalogPriceRule implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDescription($description)
     {
         if (is_null($description)) {
-            throw new \InvalidArgumentException('non-nullable description cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'description');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('description', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['description'] = $description;
 
@@ -550,7 +578,14 @@ class CatalogPriceRule implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setShortDescription($short_description)
     {
         if (is_null($short_description)) {
-            throw new \InvalidArgumentException('non-nullable short_description cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'short_description');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('short_description', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['short_description'] = $short_description;
 
@@ -577,7 +612,14 @@ class CatalogPriceRule implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAvail($avail)
     {
         if (is_null($avail)) {
-            throw new \InvalidArgumentException('non-nullable avail cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'avail');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('avail', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['avail'] = $avail;
 
@@ -631,7 +673,14 @@ class CatalogPriceRule implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCreatedTime($created_time)
     {
         if (is_null($created_time)) {
-            throw new \InvalidArgumentException('non-nullable created_time cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'created_time');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('created_time', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['created_time'] = $created_time;
 
@@ -658,7 +707,14 @@ class CatalogPriceRule implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDateStart($date_start)
     {
         if (is_null($date_start)) {
-            throw new \InvalidArgumentException('non-nullable date_start cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'date_start');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('date_start', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['date_start'] = $date_start;
 
@@ -685,7 +741,14 @@ class CatalogPriceRule implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDateEnd($date_end)
     {
         if (is_null($date_end)) {
-            throw new \InvalidArgumentException('non-nullable date_end cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'date_end');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('date_end', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['date_end'] = $date_end;
 
@@ -712,7 +775,14 @@ class CatalogPriceRule implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setUsageCount($usage_count)
     {
         if (is_null($usage_count)) {
-            throw new \InvalidArgumentException('non-nullable usage_count cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'usage_count');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('usage_count', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['usage_count'] = $usage_count;
 
@@ -766,7 +836,14 @@ class CatalogPriceRule implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setUsesPerOrderLimit($uses_per_order_limit)
     {
         if (is_null($uses_per_order_limit)) {
-            throw new \InvalidArgumentException('non-nullable uses_per_order_limit cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'uses_per_order_limit');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('uses_per_order_limit', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['uses_per_order_limit'] = $uses_per_order_limit;
 
@@ -793,7 +870,14 @@ class CatalogPriceRule implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -820,7 +904,14 @@ class CatalogPriceRule implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

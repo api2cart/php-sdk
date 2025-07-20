@@ -113,23 +113,23 @@ class Coupon implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'id' => false,
-        'code' => false,
+        'code' => true,
         'codes' => false,
-        'name' => false,
-        'description' => false,
+        'name' => true,
+        'description' => true,
         'actions' => false,
-        'date_start' => false,
-        'date_end' => false,
-        'avail' => false,
-        'priority' => false,
-        'used_times' => false,
-        'usage_limit' => false,
-        'usage_limit_per_customer' => false,
-        'logic_operator' => false,
+        'date_start' => true,
+        'date_end' => true,
+        'avail' => true,
+        'priority' => true,
+        'used_times' => true,
+        'usage_limit' => true,
+        'usage_limit_per_customer' => true,
+        'logic_operator' => true,
         'conditions' => false,
         'usage_history' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -456,7 +456,14 @@ class Coupon implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCode($code)
     {
         if (is_null($code)) {
-            throw new \InvalidArgumentException('non-nullable code cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'code');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('code', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['code'] = $code;
 
@@ -510,7 +517,14 @@ class Coupon implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setName($name)
     {
         if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['name'] = $name;
 
@@ -537,7 +551,14 @@ class Coupon implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDescription($description)
     {
         if (is_null($description)) {
-            throw new \InvalidArgumentException('non-nullable description cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'description');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('description', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['description'] = $description;
 
@@ -591,7 +612,14 @@ class Coupon implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDateStart($date_start)
     {
         if (is_null($date_start)) {
-            throw new \InvalidArgumentException('non-nullable date_start cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'date_start');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('date_start', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['date_start'] = $date_start;
 
@@ -618,7 +646,14 @@ class Coupon implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDateEnd($date_end)
     {
         if (is_null($date_end)) {
-            throw new \InvalidArgumentException('non-nullable date_end cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'date_end');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('date_end', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['date_end'] = $date_end;
 
@@ -645,7 +680,14 @@ class Coupon implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAvail($avail)
     {
         if (is_null($avail)) {
-            throw new \InvalidArgumentException('non-nullable avail cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'avail');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('avail', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['avail'] = $avail;
 
@@ -672,7 +714,14 @@ class Coupon implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPriority($priority)
     {
         if (is_null($priority)) {
-            throw new \InvalidArgumentException('non-nullable priority cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'priority');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('priority', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['priority'] = $priority;
 
@@ -699,7 +748,14 @@ class Coupon implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setUsedTimes($used_times)
     {
         if (is_null($used_times)) {
-            throw new \InvalidArgumentException('non-nullable used_times cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'used_times');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('used_times', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['used_times'] = $used_times;
 
@@ -726,7 +782,14 @@ class Coupon implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setUsageLimit($usage_limit)
     {
         if (is_null($usage_limit)) {
-            throw new \InvalidArgumentException('non-nullable usage_limit cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'usage_limit');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('usage_limit', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['usage_limit'] = $usage_limit;
 
@@ -753,7 +816,14 @@ class Coupon implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setUsageLimitPerCustomer($usage_limit_per_customer)
     {
         if (is_null($usage_limit_per_customer)) {
-            throw new \InvalidArgumentException('non-nullable usage_limit_per_customer cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'usage_limit_per_customer');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('usage_limit_per_customer', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['usage_limit_per_customer'] = $usage_limit_per_customer;
 
@@ -780,7 +850,14 @@ class Coupon implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setLogicOperator($logic_operator)
     {
         if (is_null($logic_operator)) {
-            throw new \InvalidArgumentException('non-nullable logic_operator cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'logic_operator');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('logic_operator', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['logic_operator'] = $logic_operator;
 
@@ -861,7 +938,14 @@ class Coupon implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -888,7 +972,14 @@ class Coupon implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

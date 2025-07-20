@@ -116,23 +116,23 @@ class GiftCard implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'id' => false,
         'code' => false,
-        'name' => false,
+        'name' => true,
         'type' => false,
-        'currency_code' => false,
+        'currency_code' => true,
         'amount' => false,
         'initial_amount' => false,
         'status' => false,
-        'created_at' => false,
-        'avail_to' => false,
-        'free_product_ids' => false,
-        'message' => false,
-        'issuer_email' => false,
-        'recipient_email' => false,
-        'issuer_name' => false,
-        'recipient_name' => false,
+        'created_at' => true,
+        'avail_to' => true,
+        'free_product_ids' => true,
+        'message' => true,
+        'issuer_email' => true,
+        'recipient_email' => true,
+        'issuer_name' => true,
+        'recipient_name' => true,
         'usage_history' => false,
-        'additional_fields' => false,
-        'custom_fields' => false
+        'additional_fields' => true,
+        'custom_fields' => true
     ];
 
     /**
@@ -490,7 +490,14 @@ class GiftCard implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setName($name)
     {
         if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['name'] = $name;
 
@@ -544,7 +551,14 @@ class GiftCard implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCurrencyCode($currency_code)
     {
         if (is_null($currency_code)) {
-            throw new \InvalidArgumentException('non-nullable currency_code cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'currency_code');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('currency_code', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['currency_code'] = $currency_code;
 
@@ -652,7 +666,14 @@ class GiftCard implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCreatedAt($created_at)
     {
         if (is_null($created_at)) {
-            throw new \InvalidArgumentException('non-nullable created_at cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'created_at');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('created_at', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['created_at'] = $created_at;
 
@@ -679,7 +700,14 @@ class GiftCard implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAvailTo($avail_to)
     {
         if (is_null($avail_to)) {
-            throw new \InvalidArgumentException('non-nullable avail_to cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'avail_to');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('avail_to', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['avail_to'] = $avail_to;
 
@@ -706,7 +734,14 @@ class GiftCard implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setFreeProductIds($free_product_ids)
     {
         if (is_null($free_product_ids)) {
-            throw new \InvalidArgumentException('non-nullable free_product_ids cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'free_product_ids');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('free_product_ids', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['free_product_ids'] = $free_product_ids;
 
@@ -733,7 +768,14 @@ class GiftCard implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setMessage($message)
     {
         if (is_null($message)) {
-            throw new \InvalidArgumentException('non-nullable message cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'message');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('message', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['message'] = $message;
 
@@ -760,7 +802,14 @@ class GiftCard implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setIssuerEmail($issuer_email)
     {
         if (is_null($issuer_email)) {
-            throw new \InvalidArgumentException('non-nullable issuer_email cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'issuer_email');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('issuer_email', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['issuer_email'] = $issuer_email;
 
@@ -787,7 +836,14 @@ class GiftCard implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setRecipientEmail($recipient_email)
     {
         if (is_null($recipient_email)) {
-            throw new \InvalidArgumentException('non-nullable recipient_email cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'recipient_email');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('recipient_email', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['recipient_email'] = $recipient_email;
 
@@ -814,7 +870,14 @@ class GiftCard implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setIssuerName($issuer_name)
     {
         if (is_null($issuer_name)) {
-            throw new \InvalidArgumentException('non-nullable issuer_name cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'issuer_name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('issuer_name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['issuer_name'] = $issuer_name;
 
@@ -841,7 +904,14 @@ class GiftCard implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setRecipientName($recipient_name)
     {
         if (is_null($recipient_name)) {
-            throw new \InvalidArgumentException('non-nullable recipient_name cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'recipient_name');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('recipient_name', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['recipient_name'] = $recipient_name;
 
@@ -895,7 +965,14 @@ class GiftCard implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAdditionalFields($additional_fields)
     {
         if (is_null($additional_fields)) {
-            throw new \InvalidArgumentException('non-nullable additional_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'additional_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('additional_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['additional_fields'] = $additional_fields;
 
@@ -922,7 +999,14 @@ class GiftCard implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setCustomFields($custom_fields)
     {
         if (is_null($custom_fields)) {
-            throw new \InvalidArgumentException('non-nullable custom_fields cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'custom_fields');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('custom_fields', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['custom_fields'] = $custom_fields;
 

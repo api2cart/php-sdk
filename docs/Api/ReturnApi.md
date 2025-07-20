@@ -1,6 +1,6 @@
 # OpenAPI\Client\ReturnApi
 
-All URIs are relative to https://api.api2cart.com/v1.1, except if the operation defines another base path.
+All URIs are relative to https://api.api2cart.local.com/v1.1, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
