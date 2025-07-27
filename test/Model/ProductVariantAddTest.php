@@ -315,6 +315,15 @@ class ProductVariantAddTest extends TestCase
     }
 
     /**
+     * Test attribute "low_stock_threshold"
+     */
+    public function testPropertyLowStockThreshold()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "weight"
      */
     public function testPropertyWeight()

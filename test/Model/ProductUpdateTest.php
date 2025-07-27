@@ -414,6 +414,15 @@ class ProductUpdateTest extends TestCase
     }
 
     /**
+     * Test attribute "low_stock_threshold"
+     */
+    public function testPropertyLowStockThreshold()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "warehouse_id"
      */
     public function testPropertyWarehouseId()

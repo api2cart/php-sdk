@@ -95,6 +95,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'backorder_status' => 'string',
         'min_order_quantity' => 'float',
         'max_order_quantity' => 'float',
+        'low_stock_threshold' => 'float',
         'weight' => 'float',
         'weight_unit' => 'string',
         'width' => 'float',
@@ -221,6 +222,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'backorder_status' => null,
         'min_order_quantity' => null,
         'max_order_quantity' => null,
+        'low_stock_threshold' => null,
         'weight' => null,
         'weight_unit' => null,
         'width' => null,
@@ -345,6 +347,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'backorder_status' => false,
         'min_order_quantity' => false,
         'max_order_quantity' => false,
+        'low_stock_threshold' => false,
         'weight' => false,
         'weight_unit' => false,
         'width' => false,
@@ -549,6 +552,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'backorder_status' => 'backorder_status',
         'min_order_quantity' => 'min_order_quantity',
         'max_order_quantity' => 'max_order_quantity',
+        'low_stock_threshold' => 'low_stock_threshold',
         'weight' => 'weight',
         'weight_unit' => 'weight_unit',
         'width' => 'width',
@@ -673,6 +677,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'backorder_status' => 'setBackorderStatus',
         'min_order_quantity' => 'setMinOrderQuantity',
         'max_order_quantity' => 'setMaxOrderQuantity',
+        'low_stock_threshold' => 'setLowStockThreshold',
         'weight' => 'setWeight',
         'weight_unit' => 'setWeightUnit',
         'width' => 'setWidth',
@@ -797,6 +802,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'backorder_status' => 'getBackorderStatus',
         'min_order_quantity' => 'getMinOrderQuantity',
         'max_order_quantity' => 'getMaxOrderQuantity',
+        'low_stock_threshold' => 'getLowStockThreshold',
         'weight' => 'getWeight',
         'weight_unit' => 'getWeightUnit',
         'width' => 'getWidth',
@@ -972,6 +978,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('backorder_status', $data ?? [], null);
         $this->setIfExists('min_order_quantity', $data ?? [], null);
         $this->setIfExists('max_order_quantity', $data ?? [], null);
+        $this->setIfExists('low_stock_threshold', $data ?? [], null);
         $this->setIfExists('weight', $data ?? [], 0);
         $this->setIfExists('weight_unit', $data ?? [], null);
         $this->setIfExists('width', $data ?? [], null);
@@ -2102,6 +2109,33 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable max_order_quantity cannot be null');
         }
         $this->container['max_order_quantity'] = $max_order_quantity;
+
+        return $this;
+    }
+
+    /**
+     * Gets low_stock_threshold
+     *
+     * @return float|null
+     */
+    public function getLowStockThreshold()
+    {
+        return $this->container['low_stock_threshold'];
+    }
+
+    /**
+     * Sets low_stock_threshold
+     *
+     * @param float|null $low_stock_threshold Specify the quantity threshold below which the product is considered low in stock
+     *
+     * @return self
+     */
+    public function setLowStockThreshold($low_stock_threshold)
+    {
+        if (is_null($low_stock_threshold)) {
+            throw new \InvalidArgumentException('non-nullable low_stock_threshold cannot be null');
+        }
+        $this->container['low_stock_threshold'] = $low_stock_threshold;
 
         return $this;
     }

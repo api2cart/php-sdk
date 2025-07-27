@@ -369,6 +369,15 @@ class ChildTest extends TestCase
     }
 
     /**
+     * Test attribute "low_stock_threshold"
+     */
+    public function testPropertyLowStockThreshold()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "default_qty_in_pack"
      */
     public function testPropertyDefaultQtyInPack()

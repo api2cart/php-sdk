@@ -90,6 +90,7 @@ class Child implements ModelInterface, ArrayAccess, \JsonSerializable
         'inventory_level' => 'float',
         'inventory' => '\OpenAPI\Client\Model\ProductInventory[]',
         'min_quantity' => 'float',
+        'low_stock_threshold' => 'float',
         'default_qty_in_pack' => 'float',
         'is_qty_in_pack_fixed' => 'bool',
         'weight_unit' => 'string',
@@ -147,6 +148,7 @@ class Child implements ModelInterface, ArrayAccess, \JsonSerializable
         'inventory_level' => null,
         'inventory' => null,
         'min_quantity' => null,
+        'low_stock_threshold' => null,
         'default_qty_in_pack' => null,
         'is_qty_in_pack_fixed' => null,
         'weight_unit' => null,
@@ -202,6 +204,7 @@ class Child implements ModelInterface, ArrayAccess, \JsonSerializable
         'inventory_level' => true,
         'inventory' => false,
         'min_quantity' => true,
+        'low_stock_threshold' => true,
         'default_qty_in_pack' => true,
         'is_qty_in_pack_fixed' => true,
         'weight_unit' => true,
@@ -337,6 +340,7 @@ class Child implements ModelInterface, ArrayAccess, \JsonSerializable
         'inventory_level' => 'inventory_level',
         'inventory' => 'inventory',
         'min_quantity' => 'min_quantity',
+        'low_stock_threshold' => 'low_stock_threshold',
         'default_qty_in_pack' => 'default_qty_in_pack',
         'is_qty_in_pack_fixed' => 'is_qty_in_pack_fixed',
         'weight_unit' => 'weight_unit',
@@ -392,6 +396,7 @@ class Child implements ModelInterface, ArrayAccess, \JsonSerializable
         'inventory_level' => 'setInventoryLevel',
         'inventory' => 'setInventory',
         'min_quantity' => 'setMinQuantity',
+        'low_stock_threshold' => 'setLowStockThreshold',
         'default_qty_in_pack' => 'setDefaultQtyInPack',
         'is_qty_in_pack_fixed' => 'setIsQtyInPackFixed',
         'weight_unit' => 'setWeightUnit',
@@ -447,6 +452,7 @@ class Child implements ModelInterface, ArrayAccess, \JsonSerializable
         'inventory_level' => 'getInventoryLevel',
         'inventory' => 'getInventory',
         'min_quantity' => 'getMinQuantity',
+        'low_stock_threshold' => 'getLowStockThreshold',
         'default_qty_in_pack' => 'getDefaultQtyInPack',
         'is_qty_in_pack_fixed' => 'getIsQtyInPackFixed',
         'weight_unit' => 'getWeightUnit',
@@ -553,6 +559,7 @@ class Child implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('inventory_level', $data ?? [], null);
         $this->setIfExists('inventory', $data ?? [], null);
         $this->setIfExists('min_quantity', $data ?? [], null);
+        $this->setIfExists('low_stock_threshold', $data ?? [], null);
         $this->setIfExists('default_qty_in_pack', $data ?? [], null);
         $this->setIfExists('is_qty_in_pack_fixed', $data ?? [], null);
         $this->setIfExists('weight_unit', $data ?? [], null);
@@ -1654,6 +1661,40 @@ class Child implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['min_quantity'] = $min_quantity;
+
+        return $this;
+    }
+
+    /**
+     * Gets low_stock_threshold
+     *
+     * @return float|null
+     */
+    public function getLowStockThreshold()
+    {
+        return $this->container['low_stock_threshold'];
+    }
+
+    /**
+     * Sets low_stock_threshold
+     *
+     * @param float|null $low_stock_threshold low_stock_threshold
+     *
+     * @return self
+     */
+    public function setLowStockThreshold($low_stock_threshold)
+    {
+        if (is_null($low_stock_threshold)) {
+            array_push($this->openAPINullablesSetToNull, 'low_stock_threshold');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('low_stock_threshold', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['low_stock_threshold'] = $low_stock_threshold;
 
         return $this;
     }

@@ -71,6 +71,7 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'visible' => 'string',
         'status' => 'string',
         'backorder_status' => 'string',
+        'low_stock_threshold' => 'float',
         'available_for_sale' => 'bool',
         'avail' => 'bool',
         'is_default' => 'bool',
@@ -134,6 +135,7 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'visible' => null,
         'status' => null,
         'backorder_status' => null,
+        'low_stock_threshold' => null,
         'available_for_sale' => null,
         'avail' => null,
         'is_default' => null,
@@ -195,6 +197,7 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'visible' => false,
         'status' => false,
         'backorder_status' => false,
+        'low_stock_threshold' => false,
         'available_for_sale' => false,
         'avail' => false,
         'is_default' => false,
@@ -336,6 +339,7 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'visible' => 'visible',
         'status' => 'status',
         'backorder_status' => 'backorder_status',
+        'low_stock_threshold' => 'low_stock_threshold',
         'available_for_sale' => 'available_for_sale',
         'avail' => 'avail',
         'is_default' => 'is_default',
@@ -397,6 +401,7 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'visible' => 'setVisible',
         'status' => 'setStatus',
         'backorder_status' => 'setBackorderStatus',
+        'low_stock_threshold' => 'setLowStockThreshold',
         'available_for_sale' => 'setAvailableForSale',
         'avail' => 'setAvail',
         'is_default' => 'setIsDefault',
@@ -458,6 +463,7 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'visible' => 'getVisible',
         'status' => 'getStatus',
         'backorder_status' => 'getBackorderStatus',
+        'low_stock_threshold' => 'getLowStockThreshold',
         'available_for_sale' => 'getAvailableForSale',
         'avail' => 'getAvail',
         'is_default' => 'getIsDefault',
@@ -570,6 +576,7 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->setIfExists('visible', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('backorder_status', $data ?? [], null);
+        $this->setIfExists('low_stock_threshold', $data ?? [], null);
         $this->setIfExists('available_for_sale', $data ?? [], true);
         $this->setIfExists('avail', $data ?? [], true);
         $this->setIfExists('is_default', $data ?? [], null);
@@ -1001,6 +1008,33 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
             throw new \InvalidArgumentException('non-nullable backorder_status cannot be null');
         }
         $this->container['backorder_status'] = $backorder_status;
+
+        return $this;
+    }
+
+    /**
+     * Gets low_stock_threshold
+     *
+     * @return float|null
+     */
+    public function getLowStockThreshold()
+    {
+        return $this->container['low_stock_threshold'];
+    }
+
+    /**
+     * Sets low_stock_threshold
+     *
+     * @param float|null $low_stock_threshold Specify the quantity threshold below which the product is considered low in stock
+     *
+     * @return self
+     */
+    public function setLowStockThreshold($low_stock_threshold)
+    {
+        if (is_null($low_stock_threshold)) {
+            throw new \InvalidArgumentException('non-nullable low_stock_threshold cannot be null');
+        }
+        $this->container['low_stock_threshold'] = $low_stock_threshold;
 
         return $this;
     }

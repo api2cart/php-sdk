@@ -84,6 +84,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'in_stock' => 'bool',
         'backorder_status' => 'string',
         'manage_stock' => 'bool',
+        'low_stock_threshold' => 'float',
         'weight' => 'float',
         'width' => 'float',
         'height' => 'float',
@@ -146,6 +147,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'in_stock' => null,
         'backorder_status' => null,
         'manage_stock' => null,
+        'low_stock_threshold' => null,
         'weight' => null,
         'width' => null,
         'height' => null,
@@ -206,6 +208,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'in_stock' => false,
         'backorder_status' => false,
         'manage_stock' => false,
+        'low_stock_threshold' => false,
         'weight' => false,
         'width' => false,
         'height' => false,
@@ -346,6 +349,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'in_stock' => 'in_stock',
         'backorder_status' => 'backorder_status',
         'manage_stock' => 'manage_stock',
+        'low_stock_threshold' => 'low_stock_threshold',
         'weight' => 'weight',
         'width' => 'width',
         'height' => 'height',
@@ -406,6 +410,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'in_stock' => 'setInStock',
         'backorder_status' => 'setBackorderStatus',
         'manage_stock' => 'setManageStock',
+        'low_stock_threshold' => 'setLowStockThreshold',
         'weight' => 'setWeight',
         'width' => 'setWidth',
         'height' => 'setHeight',
@@ -466,6 +471,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'in_stock' => 'getInStock',
         'backorder_status' => 'getBackorderStatus',
         'manage_stock' => 'getManageStock',
+        'low_stock_threshold' => 'getLowStockThreshold',
         'weight' => 'getWeight',
         'width' => 'getWidth',
         'height' => 'getHeight',
@@ -577,6 +583,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('in_stock', $data ?? [], null);
         $this->setIfExists('backorder_status', $data ?? [], null);
         $this->setIfExists('manage_stock', $data ?? [], null);
+        $this->setIfExists('low_stock_threshold', $data ?? [], null);
         $this->setIfExists('weight', $data ?? [], 0);
         $this->setIfExists('width', $data ?? [], null);
         $this->setIfExists('height', $data ?? [], null);
@@ -1348,6 +1355,33 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
             throw new \InvalidArgumentException('non-nullable manage_stock cannot be null');
         }
         $this->container['manage_stock'] = $manage_stock;
+
+        return $this;
+    }
+
+    /**
+     * Gets low_stock_threshold
+     *
+     * @return float|null
+     */
+    public function getLowStockThreshold()
+    {
+        return $this->container['low_stock_threshold'];
+    }
+
+    /**
+     * Sets low_stock_threshold
+     *
+     * @param float|null $low_stock_threshold Specify the quantity threshold below which the product is considered low in stock
+     *
+     * @return self
+     */
+    public function setLowStockThreshold($low_stock_threshold)
+    {
+        if (is_null($low_stock_threshold)) {
+            throw new \InvalidArgumentException('non-nullable low_stock_threshold cannot be null');
+        }
+        $this->container['low_stock_threshold'] = $low_stock_threshold;
 
         return $this;
     }

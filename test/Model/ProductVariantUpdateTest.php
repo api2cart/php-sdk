@@ -198,6 +198,15 @@ class ProductVariantUpdateTest extends TestCase
     }
 
     /**
+     * Test attribute "low_stock_threshold"
+     */
+    public function testPropertyLowStockThreshold()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "available_for_sale"
      */
     public function testPropertyAvailableForSale()

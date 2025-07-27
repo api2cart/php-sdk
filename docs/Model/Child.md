@@ -36,6 +36,7 @@ Name | Type | Description | Notes
 **inventory_level** | **float** |  | [optional]
 **inventory** | [**\OpenAPI\Client\Model\ProductInventory[]**](ProductInventory.md) |  | [optional]
 **min_quantity** | **float** |  | [optional]
+**low_stock_threshold** | **float** |  | [optional]
 **default_qty_in_pack** | **float** |  | [optional]
 **is_qty_in_pack_fixed** | **bool** |  | [optional]
 **weight_unit** | **string** |  | [optional]

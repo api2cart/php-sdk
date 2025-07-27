@@ -8396,15 +8396,16 @@ class ProductApi
      * @param  bool|null $disable_cache Disable cache for current request (optional, default to false)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
+     * @param  string|null $product_type A categorization for the product (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseProductList
      */
-    public function productList($start = 0, $count = 10, $page_cursor = null, $product_ids = null, $since_id = null, $categories_ids = null, $category_id = null, $store_id = null, $lang_id = null, $currency_id = null, $avail_view = null, $avail_sale = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $sku = null, $brand_name = null, $product_attributes = null, $status = null, $type = null, $visible = 'everywhere', $find_value = null, $find_where = null, $return_global = false, $params = 'id,name,description,price,categories_ids', $response_fields = null, $exclude = null, $sort_by = 'id', $sort_direction = 'asc', $report_request_id = null, $disable_cache = false, $disable_report_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['productList'][0])
+    public function productList($start = 0, $count = 10, $page_cursor = null, $product_ids = null, $since_id = null, $categories_ids = null, $category_id = null, $store_id = null, $lang_id = null, $currency_id = null, $avail_view = null, $avail_sale = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $sku = null, $brand_name = null, $product_attributes = null, $status = null, $type = null, $visible = 'everywhere', $find_value = null, $find_where = null, $return_global = false, $params = 'id,name,description,price,categories_ids', $response_fields = null, $exclude = null, $sort_by = 'id', $sort_direction = 'asc', $report_request_id = null, $disable_cache = false, $disable_report_cache = false, $use_latest_api_version = false, $product_type = null, string $contentType = self::contentTypes['productList'][0])
     {
-        list($response) = $this->productListWithHttpInfo($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $lang_id, $currency_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $status, $type, $visible, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version, $contentType);
+        list($response) = $this->productListWithHttpInfo($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $lang_id, $currency_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $status, $type, $visible, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version, $product_type, $contentType);
         return $response;
     }
 
@@ -8447,15 +8448,16 @@ class ProductApi
      * @param  bool|null $disable_cache Disable cache for current request (optional, default to false)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
+     * @param  string|null $product_type A categorization for the product (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseProductList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productListWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $product_ids = null, $since_id = null, $categories_ids = null, $category_id = null, $store_id = null, $lang_id = null, $currency_id = null, $avail_view = null, $avail_sale = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $sku = null, $brand_name = null, $product_attributes = null, $status = null, $type = null, $visible = 'everywhere', $find_value = null, $find_where = null, $return_global = false, $params = 'id,name,description,price,categories_ids', $response_fields = null, $exclude = null, $sort_by = 'id', $sort_direction = 'asc', $report_request_id = null, $disable_cache = false, $disable_report_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['productList'][0])
+    public function productListWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $product_ids = null, $since_id = null, $categories_ids = null, $category_id = null, $store_id = null, $lang_id = null, $currency_id = null, $avail_view = null, $avail_sale = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $sku = null, $brand_name = null, $product_attributes = null, $status = null, $type = null, $visible = 'everywhere', $find_value = null, $find_where = null, $return_global = false, $params = 'id,name,description,price,categories_ids', $response_fields = null, $exclude = null, $sort_by = 'id', $sort_direction = 'asc', $report_request_id = null, $disable_cache = false, $disable_report_cache = false, $use_latest_api_version = false, $product_type = null, string $contentType = self::contentTypes['productList'][0])
     {
-        $request = $this->productListRequest($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $lang_id, $currency_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $status, $type, $visible, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version, $contentType);
+        $request = $this->productListRequest($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $lang_id, $currency_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $status, $type, $visible, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version, $product_type, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -8605,14 +8607,15 @@ class ProductApi
      * @param  bool|null $disable_cache Disable cache for current request (optional, default to false)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
+     * @param  string|null $product_type A categorization for the product (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productListAsync($start = 0, $count = 10, $page_cursor = null, $product_ids = null, $since_id = null, $categories_ids = null, $category_id = null, $store_id = null, $lang_id = null, $currency_id = null, $avail_view = null, $avail_sale = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $sku = null, $brand_name = null, $product_attributes = null, $status = null, $type = null, $visible = 'everywhere', $find_value = null, $find_where = null, $return_global = false, $params = 'id,name,description,price,categories_ids', $response_fields = null, $exclude = null, $sort_by = 'id', $sort_direction = 'asc', $report_request_id = null, $disable_cache = false, $disable_report_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['productList'][0])
+    public function productListAsync($start = 0, $count = 10, $page_cursor = null, $product_ids = null, $since_id = null, $categories_ids = null, $category_id = null, $store_id = null, $lang_id = null, $currency_id = null, $avail_view = null, $avail_sale = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $sku = null, $brand_name = null, $product_attributes = null, $status = null, $type = null, $visible = 'everywhere', $find_value = null, $find_where = null, $return_global = false, $params = 'id,name,description,price,categories_ids', $response_fields = null, $exclude = null, $sort_by = 'id', $sort_direction = 'asc', $report_request_id = null, $disable_cache = false, $disable_report_cache = false, $use_latest_api_version = false, $product_type = null, string $contentType = self::contentTypes['productList'][0])
     {
-        return $this->productListAsyncWithHttpInfo($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $lang_id, $currency_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $status, $type, $visible, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version, $contentType)
+        return $this->productListAsyncWithHttpInfo($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $lang_id, $currency_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $status, $type, $visible, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version, $product_type, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -8659,15 +8662,16 @@ class ProductApi
      * @param  bool|null $disable_cache Disable cache for current request (optional, default to false)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
+     * @param  string|null $product_type A categorization for the product (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productListAsyncWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $product_ids = null, $since_id = null, $categories_ids = null, $category_id = null, $store_id = null, $lang_id = null, $currency_id = null, $avail_view = null, $avail_sale = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $sku = null, $brand_name = null, $product_attributes = null, $status = null, $type = null, $visible = 'everywhere', $find_value = null, $find_where = null, $return_global = false, $params = 'id,name,description,price,categories_ids', $response_fields = null, $exclude = null, $sort_by = 'id', $sort_direction = 'asc', $report_request_id = null, $disable_cache = false, $disable_report_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['productList'][0])
+    public function productListAsyncWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $product_ids = null, $since_id = null, $categories_ids = null, $category_id = null, $store_id = null, $lang_id = null, $currency_id = null, $avail_view = null, $avail_sale = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $sku = null, $brand_name = null, $product_attributes = null, $status = null, $type = null, $visible = 'everywhere', $find_value = null, $find_where = null, $return_global = false, $params = 'id,name,description,price,categories_ids', $response_fields = null, $exclude = null, $sort_by = 'id', $sort_direction = 'asc', $report_request_id = null, $disable_cache = false, $disable_report_cache = false, $use_latest_api_version = false, $product_type = null, string $contentType = self::contentTypes['productList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseProductList';
-        $request = $this->productListRequest($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $lang_id, $currency_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $status, $type, $visible, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version, $contentType);
+        $request = $this->productListRequest($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $lang_id, $currency_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $status, $type, $visible, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version, $product_type, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -8742,13 +8746,15 @@ class ProductApi
      * @param  bool|null $disable_cache Disable cache for current request (optional, default to false)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
+     * @param  string|null $product_type A categorization for the product (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function productListRequest($start = 0, $count = 10, $page_cursor = null, $product_ids = null, $since_id = null, $categories_ids = null, $category_id = null, $store_id = null, $lang_id = null, $currency_id = null, $avail_view = null, $avail_sale = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $sku = null, $brand_name = null, $product_attributes = null, $status = null, $type = null, $visible = 'everywhere', $find_value = null, $find_where = null, $return_global = false, $params = 'id,name,description,price,categories_ids', $response_fields = null, $exclude = null, $sort_by = 'id', $sort_direction = 'asc', $report_request_id = null, $disable_cache = false, $disable_report_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['productList'][0])
+    public function productListRequest($start = 0, $count = 10, $page_cursor = null, $product_ids = null, $since_id = null, $categories_ids = null, $category_id = null, $store_id = null, $lang_id = null, $currency_id = null, $avail_view = null, $avail_sale = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $sku = null, $brand_name = null, $product_attributes = null, $status = null, $type = null, $visible = 'everywhere', $find_value = null, $find_where = null, $return_global = false, $params = 'id,name,description,price,categories_ids', $response_fields = null, $exclude = null, $sort_by = 'id', $sort_direction = 'asc', $report_request_id = null, $disable_cache = false, $disable_report_cache = false, $use_latest_api_version = false, $product_type = null, string $contentType = self::contentTypes['productList'][0])
     {
+
 
 
 
@@ -9094,6 +9100,15 @@ class ProductApi
             $use_latest_api_version,
             'use_latest_api_version', // param base name
             'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $product_type,
+            'product_type', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required

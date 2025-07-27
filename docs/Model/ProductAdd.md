@@ -41,6 +41,7 @@ Name | Type | Description | Notes
 **backorder_status** | **string** | Set backorder status | [optional]
 **min_order_quantity** | **float** | The minimum quantity an order must contain, to be eligible to purchase this product. | [optional]
 **max_order_quantity** | **float** | The maximum quantity an order can contain when purchasing the product. | [optional]
+**low_stock_threshold** | **float** | Specify the quantity threshold below which the product is considered low in stock | [optional]
 **weight** | **float** | Weight | [optional] [default to 0]
 **weight_unit** | **string** | Weight Unit | [optional]
 **width** | **float** | Defines product&#39;s width | [optional]

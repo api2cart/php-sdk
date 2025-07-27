@@ -95,6 +95,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'backorder_status' => 'string',
         'increase_quantity' => 'float',
         'reduce_quantity' => 'float',
+        'low_stock_threshold' => 'float',
         'warehouse_id' => 'string',
         'weight' => 'float',
         'weight_unit' => 'string',
@@ -190,6 +191,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'backorder_status' => null,
         'increase_quantity' => null,
         'reduce_quantity' => null,
+        'low_stock_threshold' => null,
         'warehouse_id' => null,
         'weight' => null,
         'weight_unit' => null,
@@ -283,6 +285,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'backorder_status' => false,
         'increase_quantity' => false,
         'reduce_quantity' => false,
+        'low_stock_threshold' => false,
         'warehouse_id' => false,
         'weight' => false,
         'weight_unit' => false,
@@ -456,6 +459,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'backorder_status' => 'backorder_status',
         'increase_quantity' => 'increase_quantity',
         'reduce_quantity' => 'reduce_quantity',
+        'low_stock_threshold' => 'low_stock_threshold',
         'warehouse_id' => 'warehouse_id',
         'weight' => 'weight',
         'weight_unit' => 'weight_unit',
@@ -549,6 +553,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'backorder_status' => 'setBackorderStatus',
         'increase_quantity' => 'setIncreaseQuantity',
         'reduce_quantity' => 'setReduceQuantity',
+        'low_stock_threshold' => 'setLowStockThreshold',
         'warehouse_id' => 'setWarehouseId',
         'weight' => 'setWeight',
         'weight_unit' => 'setWeightUnit',
@@ -642,6 +647,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'backorder_status' => 'getBackorderStatus',
         'increase_quantity' => 'getIncreaseQuantity',
         'reduce_quantity' => 'getReduceQuantity',
+        'low_stock_threshold' => 'getLowStockThreshold',
         'warehouse_id' => 'getWarehouseId',
         'weight' => 'getWeight',
         'weight_unit' => 'getWeightUnit',
@@ -786,6 +792,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('backorder_status', $data ?? [], null);
         $this->setIfExists('increase_quantity', $data ?? [], null);
         $this->setIfExists('reduce_quantity', $data ?? [], null);
+        $this->setIfExists('low_stock_threshold', $data ?? [], null);
         $this->setIfExists('warehouse_id', $data ?? [], null);
         $this->setIfExists('weight', $data ?? [], null);
         $this->setIfExists('weight_unit', $data ?? [], null);
@@ -1873,6 +1880,33 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable reduce_quantity cannot be null');
         }
         $this->container['reduce_quantity'] = $reduce_quantity;
+
+        return $this;
+    }
+
+    /**
+     * Gets low_stock_threshold
+     *
+     * @return float|null
+     */
+    public function getLowStockThreshold()
+    {
+        return $this->container['low_stock_threshold'];
+    }
+
+    /**
+     * Sets low_stock_threshold
+     *
+     * @param float|null $low_stock_threshold Specify the quantity threshold below which the product is considered low in stock
+     *
+     * @return self
+     */
+    public function setLowStockThreshold($low_stock_threshold)
+    {
+        if (is_null($low_stock_threshold)) {
+            throw new \InvalidArgumentException('non-nullable low_stock_threshold cannot be null');
+        }
+        $this->container['low_stock_threshold'] = $low_stock_threshold;
 
         return $this;
     }

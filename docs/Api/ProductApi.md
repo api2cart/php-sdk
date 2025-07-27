@@ -1602,7 +1602,7 @@ try {
 ## `productList()`
 
 ```php
-productList($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $lang_id, $currency_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $status, $type, $visible, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version): \OpenAPI\Client\Model\ModelResponseProductList
+productList($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $lang_id, $currency_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $status, $type, $visible, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version, $product_type): \OpenAPI\Client\Model\ModelResponseProductList
 ```
 
 product.list
@@ -1667,9 +1667,10 @@ $report_request_id = 105245017661; // string | Report request id
 $disable_cache = false; // bool | Disable cache for current request
 $disable_report_cache = false; // bool | Disable report cache for current request
 $use_latest_api_version = true; // bool | Use the latest platform API version
+$product_type = BICYCLE; // string | A categorization for the product
 
 try {
-    $result = $apiInstance->productList($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $lang_id, $currency_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $status, $type, $visible, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version);
+    $result = $apiInstance->productList($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $lang_id, $currency_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $status, $type, $visible, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version, $product_type);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productList: ', $e->getMessage(), PHP_EOL;
@@ -1714,6 +1715,7 @@ try {
 | **disable_cache** | **bool**| Disable cache for current request | [optional] [default to false] |
 | **disable_report_cache** | **bool**| Disable report cache for current request | [optional] [default to false] |
 | **use_latest_api_version** | **bool**| Use the latest platform API version | [optional] [default to false] |
+| **product_type** | **string**| A categorization for the product | [optional] |
 
 ### Return type
 
