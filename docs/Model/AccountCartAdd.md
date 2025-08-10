@@ -38,12 +38,12 @@ Name | Type | Description | Notes
 **bol_api_key** | **string** | Bol API Key | [optional]
 **bol_api_secret** | **string** | Bol API Secret | [optional]
 **bol_retailer_id** | **int** | Bol Retailer ID | [optional]
-**bigcartel_user_name** | **string** | Subdomain of store |
-**bigcartel_password** | **string** | BigCartel account password |
-**bricklink_consumer_key** | **string** | Bricklink Consumer Key |
-**bricklink_consumer_secret** | **string** | Bricklink Consumer Secret |
-**bricklink_token** | **string** | Bricklink Access Token |
-**bricklink_token_secret** | **string** | Bricklink Access Token Secret |
+**bigcartel_user_name** | **string** | Subdomain of store | [optional]
+**bigcartel_password** | **string** | BigCartel account password | [optional]
+**bricklink_consumer_key** | **string** | Bricklink Consumer Key | [optional]
+**bricklink_consumer_secret** | **string** | Bricklink Consumer Secret | [optional]
+**bricklink_token** | **string** | Bricklink Access Token | [optional]
+**bricklink_token_secret** | **string** | Bricklink Access Token Secret | [optional]
 **demandware_client_id** | **string** | Demandware client id | [optional]
 **demandware_api_password** | **string** | Demandware api password | [optional]
 **demandware_user_name** | **string** | Demandware user name | [optional]
@@ -128,8 +128,8 @@ Name | Type | Description | Notes
 **magento_access_token** | **string** | Magento Access Token | [optional]
 **magento_token_secret** | **string** | Magento Token Secret | [optional]
 **prestashop_webservice_key** | **string** | Prestashop webservice key | [optional]
-**wix_app_id** | **string** | Wix App ID |
-**wix_app_secret_key** | **string** | Wix App Secret Key |
+**wix_app_id** | **string** | Wix App ID | [optional]
+**wix_app_secret_key** | **string** | Wix App Secret Key | [optional]
 **wix_instance_id** | **string** | Wix Instance ID | [optional]
 **wix_refresh_token** | **string** | Wix refresh token | [optional]
 **mercado_libre_app_id** | **string** | Mercado Libre App ID | [optional]
@@ -167,7 +167,7 @@ Name | Type | Description | Notes
 **salla_access_token** | **string** | Salla Access Token | [optional]
 **temu_app_key** | **string** | Temu App Key | [optional]
 **temu_app_secret** | **string** | Temu App Secret | [optional]
-**temu_access_token** | **string** | Temu Access Token |
-**temu_region** | **string** | Temu API endpoint Region. |
+**temu_access_token** | **string** | Temu Access Token | [optional]
+**temu_region** | **string** | Temu API endpoint Region. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

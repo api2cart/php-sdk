@@ -66,6 +66,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'short_description' => 'string',
         'available_for_view' => 'bool',
         'available_for_sale' => 'bool',
+        'status' => 'string',
         'is_virtual' => 'bool',
         'is_default' => 'bool',
         'store_id' => 'string',
@@ -97,6 +98,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'ean' => 'string',
         'mpn' => 'string',
         'isbn' => 'string',
+        'seo_url' => 'string',
         'manufacturer' => 'string',
         'created_at' => 'string',
         'meta_title' => 'string',
@@ -129,6 +131,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'short_description' => null,
         'available_for_view' => null,
         'available_for_sale' => null,
+        'status' => null,
         'is_virtual' => null,
         'is_default' => null,
         'store_id' => null,
@@ -160,6 +163,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'ean' => null,
         'mpn' => null,
         'isbn' => null,
+        'seo_url' => null,
         'manufacturer' => null,
         'created_at' => null,
         'meta_title' => null,
@@ -190,6 +194,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'short_description' => false,
         'available_for_view' => false,
         'available_for_sale' => false,
+        'status' => false,
         'is_virtual' => false,
         'is_default' => false,
         'store_id' => false,
@@ -221,6 +226,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'ean' => false,
         'mpn' => false,
         'isbn' => false,
+        'seo_url' => false,
         'manufacturer' => false,
         'created_at' => false,
         'meta_title' => false,
@@ -331,6 +337,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'short_description' => 'short_description',
         'available_for_view' => 'available_for_view',
         'available_for_sale' => 'available_for_sale',
+        'status' => 'status',
         'is_virtual' => 'is_virtual',
         'is_default' => 'is_default',
         'store_id' => 'store_id',
@@ -362,6 +369,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'ean' => 'ean',
         'mpn' => 'mpn',
         'isbn' => 'isbn',
+        'seo_url' => 'seo_url',
         'manufacturer' => 'manufacturer',
         'created_at' => 'created_at',
         'meta_title' => 'meta_title',
@@ -392,6 +400,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'short_description' => 'setShortDescription',
         'available_for_view' => 'setAvailableForView',
         'available_for_sale' => 'setAvailableForSale',
+        'status' => 'setStatus',
         'is_virtual' => 'setIsVirtual',
         'is_default' => 'setIsDefault',
         'store_id' => 'setStoreId',
@@ -423,6 +432,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'ean' => 'setEan',
         'mpn' => 'setMpn',
         'isbn' => 'setIsbn',
+        'seo_url' => 'setSeoUrl',
         'manufacturer' => 'setManufacturer',
         'created_at' => 'setCreatedAt',
         'meta_title' => 'setMetaTitle',
@@ -453,6 +463,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'short_description' => 'getShortDescription',
         'available_for_view' => 'getAvailableForView',
         'available_for_sale' => 'getAvailableForSale',
+        'status' => 'getStatus',
         'is_virtual' => 'getIsVirtual',
         'is_default' => 'getIsDefault',
         'store_id' => 'getStoreId',
@@ -484,6 +495,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'ean' => 'getEan',
         'mpn' => 'getMpn',
         'isbn' => 'getIsbn',
+        'seo_url' => 'getSeoUrl',
         'manufacturer' => 'getManufacturer',
         'created_at' => 'getCreatedAt',
         'meta_title' => 'getMetaTitle',
@@ -565,6 +577,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('short_description', $data ?? [], null);
         $this->setIfExists('available_for_view', $data ?? [], true);
         $this->setIfExists('available_for_sale', $data ?? [], true);
+        $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('is_virtual', $data ?? [], false);
         $this->setIfExists('is_default', $data ?? [], null);
         $this->setIfExists('store_id', $data ?? [], null);
@@ -596,6 +609,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('ean', $data ?? [], null);
         $this->setIfExists('mpn', $data ?? [], null);
         $this->setIfExists('isbn', $data ?? [], null);
+        $this->setIfExists('seo_url', $data ?? [], null);
         $this->setIfExists('manufacturer', $data ?? [], null);
         $this->setIfExists('created_at', $data ?? [], null);
         $this->setIfExists('meta_title', $data ?? [], null);
@@ -869,6 +883,33 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
             throw new \InvalidArgumentException('non-nullable available_for_sale cannot be null');
         }
         $this->container['available_for_sale'] = $available_for_sale;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     *
+     * @return string|null
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param string|null $status Defines status
+     *
+     * @return self
+     */
+    public function setStatus($status)
+    {
+        if (is_null($status)) {
+            throw new \InvalidArgumentException('non-nullable status cannot be null');
+        }
+        $this->container['status'] = $status;
 
         return $this;
     }
@@ -1706,6 +1747,33 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
             throw new \InvalidArgumentException('non-nullable isbn cannot be null');
         }
         $this->container['isbn'] = $isbn;
+
+        return $this;
+    }
+
+    /**
+     * Gets seo_url
+     *
+     * @return string|null
+     */
+    public function getSeoUrl()
+    {
+        return $this->container['seo_url'];
+    }
+
+    /**
+     * Sets seo_url
+     *
+     * @param string|null $seo_url Defines unique URL for SEO
+     *
+     * @return self
+     */
+    public function setSeoUrl($seo_url)
+    {
+        if (is_null($seo_url)) {
+            throw new \InvalidArgumentException('non-nullable seo_url cannot be null');
+        }
+        $this->container['seo_url'] = $seo_url;
 
         return $this;
     }

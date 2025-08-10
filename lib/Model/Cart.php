@@ -61,6 +61,7 @@ class Cart implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'string',
         'url' => 'string',
         'version' => 'string',
+        'bridge_version' => 'string',
         'db_prefix' => 'string',
         'stores_info' => '\OpenAPI\Client\Model\CartStoreInfo[]',
         'warehouses' => '\OpenAPI\Client\Model\CartWarehouse[]',
@@ -80,6 +81,7 @@ class Cart implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => null,
         'url' => null,
         'version' => null,
+        'bridge_version' => null,
         'db_prefix' => null,
         'stores_info' => null,
         'warehouses' => null,
@@ -97,6 +99,7 @@ class Cart implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => true,
         'url' => true,
         'version' => true,
+        'bridge_version' => true,
         'db_prefix' => true,
         'stores_info' => false,
         'warehouses' => false,
@@ -194,6 +197,7 @@ class Cart implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'name',
         'url' => 'url',
         'version' => 'version',
+        'bridge_version' => 'bridge_version',
         'db_prefix' => 'db_prefix',
         'stores_info' => 'stores_info',
         'warehouses' => 'warehouses',
@@ -211,6 +215,7 @@ class Cart implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'setName',
         'url' => 'setUrl',
         'version' => 'setVersion',
+        'bridge_version' => 'setBridgeVersion',
         'db_prefix' => 'setDbPrefix',
         'stores_info' => 'setStoresInfo',
         'warehouses' => 'setWarehouses',
@@ -228,6 +233,7 @@ class Cart implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'getName',
         'url' => 'getUrl',
         'version' => 'getVersion',
+        'bridge_version' => 'getBridgeVersion',
         'db_prefix' => 'getDbPrefix',
         'stores_info' => 'getStoresInfo',
         'warehouses' => 'getWarehouses',
@@ -296,6 +302,7 @@ class Cart implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('url', $data ?? [], null);
         $this->setIfExists('version', $data ?? [], null);
+        $this->setIfExists('bridge_version', $data ?? [], null);
         $this->setIfExists('db_prefix', $data ?? [], null);
         $this->setIfExists('stores_info', $data ?? [], null);
         $this->setIfExists('warehouses', $data ?? [], null);
@@ -444,6 +451,40 @@ class Cart implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['version'] = $version;
+
+        return $this;
+    }
+
+    /**
+     * Gets bridge_version
+     *
+     * @return string|null
+     */
+    public function getBridgeVersion()
+    {
+        return $this->container['bridge_version'];
+    }
+
+    /**
+     * Sets bridge_version
+     *
+     * @param string|null $bridge_version bridge_version
+     *
+     * @return self
+     */
+    public function setBridgeVersion($bridge_version)
+    {
+        if (is_null($bridge_version)) {
+            array_push($this->openAPINullablesSetToNull, 'bridge_version');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('bridge_version', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['bridge_version'] = $bridge_version;
 
         return $this;
     }

@@ -143,7 +143,9 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'check_process_status' => 'bool',
         'specifics' => '\OpenAPI\Client\Model\ProductAddSpecificsInner[]',
         'shop_section_id' => 'int',
-        'personalization_details' => '\OpenAPI\Client\Model\ProductAddPersonalizationDetails'
+        'personalization_details' => '\OpenAPI\Client\Model\ProductAddPersonalizationDetails',
+        'marketplace_item_properties' => 'string',
+        'min_order_quantity' => 'float'
     ];
 
     /**
@@ -239,7 +241,9 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'check_process_status' => null,
         'specifics' => null,
         'shop_section_id' => null,
-        'personalization_details' => null
+        'personalization_details' => null,
+        'marketplace_item_properties' => null,
+        'min_order_quantity' => null
     ];
 
     /**
@@ -333,7 +337,9 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'check_process_status' => false,
         'specifics' => false,
         'shop_section_id' => false,
-        'personalization_details' => false
+        'personalization_details' => false,
+        'marketplace_item_properties' => false,
+        'min_order_quantity' => false
     ];
 
     /**
@@ -507,7 +513,9 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'check_process_status' => 'check_process_status',
         'specifics' => 'specifics',
         'shop_section_id' => 'shop_section_id',
-        'personalization_details' => 'personalization_details'
+        'personalization_details' => 'personalization_details',
+        'marketplace_item_properties' => 'marketplace_item_properties',
+        'min_order_quantity' => 'min_order_quantity'
     ];
 
     /**
@@ -601,7 +609,9 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'check_process_status' => 'setCheckProcessStatus',
         'specifics' => 'setSpecifics',
         'shop_section_id' => 'setShopSectionId',
-        'personalization_details' => 'setPersonalizationDetails'
+        'personalization_details' => 'setPersonalizationDetails',
+        'marketplace_item_properties' => 'setMarketplaceItemProperties',
+        'min_order_quantity' => 'setMinOrderQuantity'
     ];
 
     /**
@@ -695,7 +705,9 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'check_process_status' => 'getCheckProcessStatus',
         'specifics' => 'getSpecifics',
         'shop_section_id' => 'getShopSectionId',
-        'personalization_details' => 'getPersonalizationDetails'
+        'personalization_details' => 'getPersonalizationDetails',
+        'marketplace_item_properties' => 'getMarketplaceItemProperties',
+        'min_order_quantity' => 'getMinOrderQuantity'
     ];
 
     /**
@@ -841,6 +853,8 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('specifics', $data ?? [], null);
         $this->setIfExists('shop_section_id', $data ?? [], null);
         $this->setIfExists('personalization_details', $data ?? [], null);
+        $this->setIfExists('marketplace_item_properties', $data ?? [], null);
+        $this->setIfExists('min_order_quantity', $data ?? [], null);
     }
 
     /**
@@ -3203,6 +3217,60 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable personalization_details cannot be null');
         }
         $this->container['personalization_details'] = $personalization_details;
+
+        return $this;
+    }
+
+    /**
+     * Gets marketplace_item_properties
+     *
+     * @return string|null
+     */
+    public function getMarketplaceItemProperties()
+    {
+        return $this->container['marketplace_item_properties'];
+    }
+
+    /**
+     * Sets marketplace_item_properties
+     *
+     * @param string|null $marketplace_item_properties String containing the JSON representation of the supplied data
+     *
+     * @return self
+     */
+    public function setMarketplaceItemProperties($marketplace_item_properties)
+    {
+        if (is_null($marketplace_item_properties)) {
+            throw new \InvalidArgumentException('non-nullable marketplace_item_properties cannot be null');
+        }
+        $this->container['marketplace_item_properties'] = $marketplace_item_properties;
+
+        return $this;
+    }
+
+    /**
+     * Gets min_order_quantity
+     *
+     * @return float|null
+     */
+    public function getMinOrderQuantity()
+    {
+        return $this->container['min_order_quantity'];
+    }
+
+    /**
+     * Sets min_order_quantity
+     *
+     * @param float|null $min_order_quantity The minimum quantity an order must contain, to be eligible to purchase this product.
+     *
+     * @return self
+     */
+    public function setMinOrderQuantity($min_order_quantity)
+    {
+        if (is_null($min_order_quantity)) {
+            throw new \InvalidArgumentException('non-nullable min_order_quantity cannot be null');
+        }
+        $this->container['min_order_quantity'] = $min_order_quantity;
 
         return $this;
     }

@@ -108,6 +108,15 @@ class CartTest extends TestCase
     }
 
     /**
+     * Test attribute "bridge_version"
+     */
+    public function testPropertyBridgeVersion()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "db_prefix"
      */
     public function testPropertyDbPrefix()

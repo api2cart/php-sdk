@@ -853,4 +853,22 @@ class ProductUpdateTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "marketplace_item_properties"
+     */
+    public function testPropertyMarketplaceItemProperties()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "min_order_quantity"
+     */
+    public function testPropertyMinOrderQuantity()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

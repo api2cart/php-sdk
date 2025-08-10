@@ -1279,9 +1279,6 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     public const CART_ID_ZID = 'Zid';
     public const CART_ID_ZOEY = 'Zoey';
     public const CART_ID_ZOHO = 'Zoho';
-    public const TEMU_REGION_US = 'US';
-    public const TEMU_REGION_EU = 'EU';
-    public const TEMU_REGION__GLOBAL = 'GLOBAL';
 
     /**
      * Gets allowable values of the enum
@@ -1357,20 +1354,6 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             self::CART_ID_ZID,
             self::CART_ID_ZOEY,
             self::CART_ID_ZOHO,
-        ];
-    }
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getTemuRegionAllowableValues()
-    {
-        return [
-            self::TEMU_REGION_US,
-            self::TEMU_REGION_EU,
-            self::TEMU_REGION__GLOBAL,
         ];
     }
 
@@ -1595,47 +1578,8 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
 
-        if ($this->container['bigcartel_user_name'] === null) {
-            $invalidProperties[] = "'bigcartel_user_name' can't be null";
-        }
-        if ($this->container['bigcartel_password'] === null) {
-            $invalidProperties[] = "'bigcartel_password' can't be null";
-        }
-        if ($this->container['bricklink_consumer_key'] === null) {
-            $invalidProperties[] = "'bricklink_consumer_key' can't be null";
-        }
-        if ($this->container['bricklink_consumer_secret'] === null) {
-            $invalidProperties[] = "'bricklink_consumer_secret' can't be null";
-        }
-        if ($this->container['bricklink_token'] === null) {
-            $invalidProperties[] = "'bricklink_token' can't be null";
-        }
-        if ($this->container['bricklink_token_secret'] === null) {
-            $invalidProperties[] = "'bricklink_token_secret' can't be null";
-        }
         if (!is_null($this->container['hybris_websites']) && (count($this->container['hybris_websites']) < 1)) {
             $invalidProperties[] = "invalid value for 'hybris_websites', number of items must be greater than or equal to 1.";
-        }
-
-        if ($this->container['wix_app_id'] === null) {
-            $invalidProperties[] = "'wix_app_id' can't be null";
-        }
-        if ($this->container['wix_app_secret_key'] === null) {
-            $invalidProperties[] = "'wix_app_secret_key' can't be null";
-        }
-        if ($this->container['temu_access_token'] === null) {
-            $invalidProperties[] = "'temu_access_token' can't be null";
-        }
-        if ($this->container['temu_region'] === null) {
-            $invalidProperties[] = "'temu_region' can't be null";
-        }
-        $allowedValues = $this->getTemuRegionAllowableValues();
-        if (!is_null($this->container['temu_region']) && !in_array($this->container['temu_region'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'temu_region', must be one of '%s'",
-                $this->container['temu_region'],
-                implode("', '", $allowedValues)
-            );
         }
 
         return $invalidProperties;
@@ -2584,7 +2528,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets bigcartel_user_name
      *
-     * @return string
+     * @return string|null
      */
     public function getBigcartelUserName()
     {
@@ -2594,7 +2538,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets bigcartel_user_name
      *
-     * @param string $bigcartel_user_name Subdomain of store
+     * @param string|null $bigcartel_user_name Subdomain of store
      *
      * @return self
      */
@@ -2611,7 +2555,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets bigcartel_password
      *
-     * @return string
+     * @return string|null
      */
     public function getBigcartelPassword()
     {
@@ -2621,7 +2565,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets bigcartel_password
      *
-     * @param string $bigcartel_password BigCartel account password
+     * @param string|null $bigcartel_password BigCartel account password
      *
      * @return self
      */
@@ -2638,7 +2582,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets bricklink_consumer_key
      *
-     * @return string
+     * @return string|null
      */
     public function getBricklinkConsumerKey()
     {
@@ -2648,7 +2592,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets bricklink_consumer_key
      *
-     * @param string $bricklink_consumer_key Bricklink Consumer Key
+     * @param string|null $bricklink_consumer_key Bricklink Consumer Key
      *
      * @return self
      */
@@ -2665,7 +2609,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets bricklink_consumer_secret
      *
-     * @return string
+     * @return string|null
      */
     public function getBricklinkConsumerSecret()
     {
@@ -2675,7 +2619,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets bricklink_consumer_secret
      *
-     * @param string $bricklink_consumer_secret Bricklink Consumer Secret
+     * @param string|null $bricklink_consumer_secret Bricklink Consumer Secret
      *
      * @return self
      */
@@ -2692,7 +2636,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets bricklink_token
      *
-     * @return string
+     * @return string|null
      */
     public function getBricklinkToken()
     {
@@ -2702,7 +2646,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets bricklink_token
      *
-     * @param string $bricklink_token Bricklink Access Token
+     * @param string|null $bricklink_token Bricklink Access Token
      *
      * @return self
      */
@@ -2719,7 +2663,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets bricklink_token_secret
      *
-     * @return string
+     * @return string|null
      */
     public function getBricklinkTokenSecret()
     {
@@ -2729,7 +2673,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets bricklink_token_secret
      *
-     * @param string $bricklink_token_secret Bricklink Access Token Secret
+     * @param string|null $bricklink_token_secret Bricklink Access Token Secret
      *
      * @return self
      */
@@ -5019,7 +4963,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets wix_app_id
      *
-     * @return string
+     * @return string|null
      */
     public function getWixAppId()
     {
@@ -5029,7 +4973,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets wix_app_id
      *
-     * @param string $wix_app_id Wix App ID
+     * @param string|null $wix_app_id Wix App ID
      *
      * @return self
      */
@@ -5046,7 +4990,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets wix_app_secret_key
      *
-     * @return string
+     * @return string|null
      */
     public function getWixAppSecretKey()
     {
@@ -5056,7 +5000,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets wix_app_secret_key
      *
-     * @param string $wix_app_secret_key Wix App Secret Key
+     * @param string|null $wix_app_secret_key Wix App Secret Key
      *
      * @return self
      */
@@ -6072,7 +6016,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets temu_access_token
      *
-     * @return string
+     * @return string|null
      */
     public function getTemuAccessToken()
     {
@@ -6082,7 +6026,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets temu_access_token
      *
-     * @param string $temu_access_token Temu Access Token
+     * @param string|null $temu_access_token Temu Access Token
      *
      * @return self
      */
@@ -6099,7 +6043,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets temu_region
      *
-     * @return string
+     * @return string|null
      */
     public function getTemuRegion()
     {
@@ -6109,7 +6053,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets temu_region
      *
-     * @param string $temu_region Temu API endpoint Region.
+     * @param string|null $temu_region Temu API endpoint Region.
      *
      * @return self
      */
@@ -6117,16 +6061,6 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         if (is_null($temu_region)) {
             throw new \InvalidArgumentException('non-nullable temu_region cannot be null');
-        }
-        $allowedValues = $this->getTemuRegionAllowableValues();
-        if (!in_array($temu_region, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'temu_region', must be one of '%s'",
-                    $temu_region,
-                    implode("', '", $allowedValues)
-                )
-            );
         }
         $this->container['temu_region'] = $temu_region;
 

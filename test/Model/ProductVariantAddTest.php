@@ -153,6 +153,15 @@ class ProductVariantAddTest extends TestCase
     }
 
     /**
+     * Test attribute "status"
+     */
+    public function testPropertyStatus()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "is_virtual"
      */
     public function testPropertyIsVirtual()
@@ -426,6 +435,15 @@ class ProductVariantAddTest extends TestCase
      * Test attribute "isbn"
      */
     public function testPropertyIsbn()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "seo_url"
+     */
+    public function testPropertySeoUrl()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

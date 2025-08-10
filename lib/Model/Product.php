@@ -88,10 +88,10 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
         'weight_unit' => 'string',
         'sort_order' => 'int',
         'in_stock' => 'bool',
-        'on_sale' => 'bool',
         'backorders' => 'string',
         'manage_stock' => 'string',
         'is_stock_managed' => 'bool',
+        'on_sale' => 'bool',
         'create_at' => '\OpenAPI\Client\Model\A2CDateTime',
         'modified_at' => '\OpenAPI\Client\Model\A2CDateTime',
         'tax_class_id' => 'string',
@@ -155,10 +155,10 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
         'weight_unit' => null,
         'sort_order' => null,
         'in_stock' => null,
-        'on_sale' => null,
         'backorders' => null,
         'manage_stock' => null,
         'is_stock_managed' => null,
+        'on_sale' => null,
         'create_at' => null,
         'modified_at' => null,
         'tax_class_id' => null,
@@ -220,10 +220,10 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
         'weight_unit' => true,
         'sort_order' => true,
         'in_stock' => true,
-        'on_sale' => true,
         'backorders' => true,
         'manage_stock' => true,
         'is_stock_managed' => true,
+        'on_sale' => true,
         'create_at' => true,
         'modified_at' => true,
         'tax_class_id' => true,
@@ -365,10 +365,10 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
         'weight_unit' => 'weight_unit',
         'sort_order' => 'sort_order',
         'in_stock' => 'in_stock',
-        'on_sale' => 'on_sale',
         'backorders' => 'backorders',
         'manage_stock' => 'manage_stock',
         'is_stock_managed' => 'is_stock_managed',
+        'on_sale' => 'on_sale',
         'create_at' => 'create_at',
         'modified_at' => 'modified_at',
         'tax_class_id' => 'tax_class_id',
@@ -430,10 +430,10 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
         'weight_unit' => 'setWeightUnit',
         'sort_order' => 'setSortOrder',
         'in_stock' => 'setInStock',
-        'on_sale' => 'setOnSale',
         'backorders' => 'setBackorders',
         'manage_stock' => 'setManageStock',
         'is_stock_managed' => 'setIsStockManaged',
+        'on_sale' => 'setOnSale',
         'create_at' => 'setCreateAt',
         'modified_at' => 'setModifiedAt',
         'tax_class_id' => 'setTaxClassId',
@@ -495,10 +495,10 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
         'weight_unit' => 'getWeightUnit',
         'sort_order' => 'getSortOrder',
         'in_stock' => 'getInStock',
-        'on_sale' => 'getOnSale',
         'backorders' => 'getBackorders',
         'manage_stock' => 'getManageStock',
         'is_stock_managed' => 'getIsStockManaged',
+        'on_sale' => 'getOnSale',
         'create_at' => 'getCreateAt',
         'modified_at' => 'getModifiedAt',
         'tax_class_id' => 'getTaxClassId',
@@ -611,10 +611,10 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('weight_unit', $data ?? [], null);
         $this->setIfExists('sort_order', $data ?? [], null);
         $this->setIfExists('in_stock', $data ?? [], null);
-        $this->setIfExists('on_sale', $data ?? [], null);
         $this->setIfExists('backorders', $data ?? [], null);
         $this->setIfExists('manage_stock', $data ?? [], null);
         $this->setIfExists('is_stock_managed', $data ?? [], null);
+        $this->setIfExists('on_sale', $data ?? [], null);
         $this->setIfExists('create_at', $data ?? [], null);
         $this->setIfExists('modified_at', $data ?? [], null);
         $this->setIfExists('tax_class_id', $data ?? [], null);
@@ -1661,40 +1661,6 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets on_sale
-     *
-     * @return bool|null
-     */
-    public function getOnSale()
-    {
-        return $this->container['on_sale'];
-    }
-
-    /**
-     * Sets on_sale
-     *
-     * @param bool|null $on_sale on_sale
-     *
-     * @return self
-     */
-    public function setOnSale($on_sale)
-    {
-        if (is_null($on_sale)) {
-            array_push($this->openAPINullablesSetToNull, 'on_sale');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('on_sale', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['on_sale'] = $on_sale;
-
-        return $this;
-    }
-
-    /**
      * Gets backorders
      *
      * @return string|null
@@ -1792,6 +1758,40 @@ class Product implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['is_stock_managed'] = $is_stock_managed;
+
+        return $this;
+    }
+
+    /**
+     * Gets on_sale
+     *
+     * @return bool|null
+     */
+    public function getOnSale()
+    {
+        return $this->container['on_sale'];
+    }
+
+    /**
+     * Sets on_sale
+     *
+     * @param bool|null $on_sale on_sale
+     *
+     * @return self
+     */
+    public function setOnSale($on_sale)
+    {
+        if (is_null($on_sale)) {
+            array_push($this->openAPINullablesSetToNull, 'on_sale');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('on_sale', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['on_sale'] = $on_sale;
 
         return $this;
     }
