@@ -241,4 +241,13 @@ class CartCouponAddTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "customer_id"
+     */
+    public function testPropertyCustomerId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

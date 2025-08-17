@@ -471,7 +471,7 @@ try {
 ## `cartCouponList()`
 
 ```php
-cartCouponList($start, $count, $page_cursor, $coupons_ids, $store_id, $lang_id, $avail, $date_start_from, $date_start_to, $date_end_from, $date_end_to, $response_fields, $params, $exclude): \OpenAPI\Client\Model\ModelResponseCartCouponList
+cartCouponList($start, $count, $page_cursor, $coupons_ids, $store_id, $lang_id, $avail, $status, $date_start_from, $date_start_to, $date_end_from, $date_end_to, $response_fields, $params, $exclude): \OpenAPI\Client\Model\ModelResponseCartCouponList
 ```
 
 cart.coupon.list
@@ -509,6 +509,7 @@ $coupons_ids = 1,2,3; // string | Filter coupons by ids
 $store_id = 1; // string | Filter coupons by store id
 $lang_id = 3; // string | Language id
 $avail = false; // bool | Filter coupons by avail status
+$status = disabled; // string | Defines coupon's status
 $date_start_from = 2016-12-29 16:44:30; // string | Filter entity by date_start (greater or equal)
 $date_start_to = 2016-12-29 16:44:30; // string | Filter entity by date_start (less or equal)
 $date_end_from = 2016-12-29 16:44:30; // string | Filter entity by date_end (greater or equal)
@@ -518,7 +519,7 @@ $params = id,code,type,amount; // string | Set this parameter in order to choose
 $exclude = usage_history,type; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 
 try {
-    $result = $apiInstance->cartCouponList($start, $count, $page_cursor, $coupons_ids, $store_id, $lang_id, $avail, $date_start_from, $date_start_to, $date_end_from, $date_end_to, $response_fields, $params, $exclude);
+    $result = $apiInstance->cartCouponList($start, $count, $page_cursor, $coupons_ids, $store_id, $lang_id, $avail, $status, $date_start_from, $date_start_to, $date_end_from, $date_end_to, $response_fields, $params, $exclude);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CartApi->cartCouponList: ', $e->getMessage(), PHP_EOL;
@@ -536,6 +537,7 @@ try {
 | **store_id** | **string**| Filter coupons by store id | [optional] |
 | **lang_id** | **string**| Language id | [optional] |
 | **avail** | **bool**| Filter coupons by avail status | [optional] |
+| **status** | **string**| Defines coupon&#39;s status | [optional] |
 | **date_start_from** | **string**| Filter entity by date_start (greater or equal) | [optional] |
 | **date_start_to** | **string**| Filter entity by date_start (less or equal) | [optional] |
 | **date_end_from** | **string**| Filter entity by date_end (greater or equal) | [optional] |

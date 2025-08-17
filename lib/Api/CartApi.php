@@ -2404,6 +2404,7 @@ class CartApi
      * @param  string|null $store_id Filter coupons by store id (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  bool|null $avail Filter coupons by avail status (optional)
+     * @param  string|null $status Defines coupon&#39;s status (optional)
      * @param  string|null $date_start_from Filter entity by date_start (greater or equal) (optional)
      * @param  string|null $date_start_to Filter entity by date_start (less or equal) (optional)
      * @param  string|null $date_end_from Filter entity by date_end (greater or equal) (optional)
@@ -2417,9 +2418,9 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseCartCouponList
      */
-    public function cartCouponList($start = 0, $count = 10, $page_cursor = null, $coupons_ids = null, $store_id = null, $lang_id = null, $avail = null, $date_start_from = null, $date_start_to = null, $date_end_from = null, $date_end_to = null, $response_fields = null, $params = 'id,code,name,description', $exclude = null, string $contentType = self::contentTypes['cartCouponList'][0])
+    public function cartCouponList($start = 0, $count = 10, $page_cursor = null, $coupons_ids = null, $store_id = null, $lang_id = null, $avail = null, $status = null, $date_start_from = null, $date_start_to = null, $date_end_from = null, $date_end_to = null, $response_fields = null, $params = 'id,code,name,description', $exclude = null, string $contentType = self::contentTypes['cartCouponList'][0])
     {
-        list($response) = $this->cartCouponListWithHttpInfo($start, $count, $page_cursor, $coupons_ids, $store_id, $lang_id, $avail, $date_start_from, $date_start_to, $date_end_from, $date_end_to, $response_fields, $params, $exclude, $contentType);
+        list($response) = $this->cartCouponListWithHttpInfo($start, $count, $page_cursor, $coupons_ids, $store_id, $lang_id, $avail, $status, $date_start_from, $date_start_to, $date_end_from, $date_end_to, $response_fields, $params, $exclude, $contentType);
         return $response;
     }
 
@@ -2435,6 +2436,7 @@ class CartApi
      * @param  string|null $store_id Filter coupons by store id (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  bool|null $avail Filter coupons by avail status (optional)
+     * @param  string|null $status Defines coupon&#39;s status (optional)
      * @param  string|null $date_start_from Filter entity by date_start (greater or equal) (optional)
      * @param  string|null $date_start_to Filter entity by date_start (less or equal) (optional)
      * @param  string|null $date_end_from Filter entity by date_end (greater or equal) (optional)
@@ -2448,9 +2450,9 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseCartCouponList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cartCouponListWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $coupons_ids = null, $store_id = null, $lang_id = null, $avail = null, $date_start_from = null, $date_start_to = null, $date_end_from = null, $date_end_to = null, $response_fields = null, $params = 'id,code,name,description', $exclude = null, string $contentType = self::contentTypes['cartCouponList'][0])
+    public function cartCouponListWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $coupons_ids = null, $store_id = null, $lang_id = null, $avail = null, $status = null, $date_start_from = null, $date_start_to = null, $date_end_from = null, $date_end_to = null, $response_fields = null, $params = 'id,code,name,description', $exclude = null, string $contentType = self::contentTypes['cartCouponList'][0])
     {
-        $request = $this->cartCouponListRequest($start, $count, $page_cursor, $coupons_ids, $store_id, $lang_id, $avail, $date_start_from, $date_start_to, $date_end_from, $date_end_to, $response_fields, $params, $exclude, $contentType);
+        $request = $this->cartCouponListRequest($start, $count, $page_cursor, $coupons_ids, $store_id, $lang_id, $avail, $status, $date_start_from, $date_start_to, $date_end_from, $date_end_to, $response_fields, $params, $exclude, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2573,6 +2575,7 @@ class CartApi
      * @param  string|null $store_id Filter coupons by store id (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  bool|null $avail Filter coupons by avail status (optional)
+     * @param  string|null $status Defines coupon&#39;s status (optional)
      * @param  string|null $date_start_from Filter entity by date_start (greater or equal) (optional)
      * @param  string|null $date_start_to Filter entity by date_start (less or equal) (optional)
      * @param  string|null $date_end_from Filter entity by date_end (greater or equal) (optional)
@@ -2585,9 +2588,9 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartCouponListAsync($start = 0, $count = 10, $page_cursor = null, $coupons_ids = null, $store_id = null, $lang_id = null, $avail = null, $date_start_from = null, $date_start_to = null, $date_end_from = null, $date_end_to = null, $response_fields = null, $params = 'id,code,name,description', $exclude = null, string $contentType = self::contentTypes['cartCouponList'][0])
+    public function cartCouponListAsync($start = 0, $count = 10, $page_cursor = null, $coupons_ids = null, $store_id = null, $lang_id = null, $avail = null, $status = null, $date_start_from = null, $date_start_to = null, $date_end_from = null, $date_end_to = null, $response_fields = null, $params = 'id,code,name,description', $exclude = null, string $contentType = self::contentTypes['cartCouponList'][0])
     {
-        return $this->cartCouponListAsyncWithHttpInfo($start, $count, $page_cursor, $coupons_ids, $store_id, $lang_id, $avail, $date_start_from, $date_start_to, $date_end_from, $date_end_to, $response_fields, $params, $exclude, $contentType)
+        return $this->cartCouponListAsyncWithHttpInfo($start, $count, $page_cursor, $coupons_ids, $store_id, $lang_id, $avail, $status, $date_start_from, $date_start_to, $date_end_from, $date_end_to, $response_fields, $params, $exclude, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2607,6 +2610,7 @@ class CartApi
      * @param  string|null $store_id Filter coupons by store id (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  bool|null $avail Filter coupons by avail status (optional)
+     * @param  string|null $status Defines coupon&#39;s status (optional)
      * @param  string|null $date_start_from Filter entity by date_start (greater or equal) (optional)
      * @param  string|null $date_start_to Filter entity by date_start (less or equal) (optional)
      * @param  string|null $date_end_from Filter entity by date_end (greater or equal) (optional)
@@ -2619,10 +2623,10 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartCouponListAsyncWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $coupons_ids = null, $store_id = null, $lang_id = null, $avail = null, $date_start_from = null, $date_start_to = null, $date_end_from = null, $date_end_to = null, $response_fields = null, $params = 'id,code,name,description', $exclude = null, string $contentType = self::contentTypes['cartCouponList'][0])
+    public function cartCouponListAsyncWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $coupons_ids = null, $store_id = null, $lang_id = null, $avail = null, $status = null, $date_start_from = null, $date_start_to = null, $date_end_from = null, $date_end_to = null, $response_fields = null, $params = 'id,code,name,description', $exclude = null, string $contentType = self::contentTypes['cartCouponList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseCartCouponList';
-        $request = $this->cartCouponListRequest($start, $count, $page_cursor, $coupons_ids, $store_id, $lang_id, $avail, $date_start_from, $date_start_to, $date_end_from, $date_end_to, $response_fields, $params, $exclude, $contentType);
+        $request = $this->cartCouponListRequest($start, $count, $page_cursor, $coupons_ids, $store_id, $lang_id, $avail, $status, $date_start_from, $date_start_to, $date_end_from, $date_end_to, $response_fields, $params, $exclude, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2670,6 +2674,7 @@ class CartApi
      * @param  string|null $store_id Filter coupons by store id (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  bool|null $avail Filter coupons by avail status (optional)
+     * @param  string|null $status Defines coupon&#39;s status (optional)
      * @param  string|null $date_start_from Filter entity by date_start (greater or equal) (optional)
      * @param  string|null $date_start_to Filter entity by date_start (less or equal) (optional)
      * @param  string|null $date_end_from Filter entity by date_end (greater or equal) (optional)
@@ -2682,8 +2687,9 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function cartCouponListRequest($start = 0, $count = 10, $page_cursor = null, $coupons_ids = null, $store_id = null, $lang_id = null, $avail = null, $date_start_from = null, $date_start_to = null, $date_end_from = null, $date_end_to = null, $response_fields = null, $params = 'id,code,name,description', $exclude = null, string $contentType = self::contentTypes['cartCouponList'][0])
+    public function cartCouponListRequest($start = 0, $count = 10, $page_cursor = null, $coupons_ids = null, $store_id = null, $lang_id = null, $avail = null, $status = null, $date_start_from = null, $date_start_to = null, $date_end_from = null, $date_end_to = null, $response_fields = null, $params = 'id,code,name,description', $exclude = null, string $contentType = self::contentTypes['cartCouponList'][0])
     {
+
 
 
 
@@ -2766,6 +2772,15 @@ class CartApi
             $avail,
             'avail', // param base name
             'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $status,
+            'status', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required

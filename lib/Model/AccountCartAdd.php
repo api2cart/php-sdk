@@ -1219,6 +1219,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     public const CART_ID_AMAZON_SP = 'AmazonSP';
     public const CART_ID_ASP_DOT_NET_STOREFRONT = 'AspDotNetStorefront';
     public const CART_ID_BIG_CARTEL = 'BigCartel';
+    public const CART_ID_BRICKLINK = 'Bricklink';
     public const CART_ID_BIGCOMMERCE_API = 'BigcommerceApi';
     public const CART_ID_BOL = 'Bol';
     public const CART_ID_COMMERCE_HQ = 'CommerceHQ';
@@ -1294,6 +1295,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             self::CART_ID_AMAZON_SP,
             self::CART_ID_ASP_DOT_NET_STOREFRONT,
             self::CART_ID_BIG_CARTEL,
+            self::CART_ID_BRICKLINK,
             self::CART_ID_BIGCOMMERCE_API,
             self::CART_ID_BOL,
             self::CART_ID_COMMERCE_HQ,

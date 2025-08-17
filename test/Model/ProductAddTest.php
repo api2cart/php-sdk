@@ -549,6 +549,15 @@ class ProductAddTest extends TestCase
     }
 
     /**
+     * Test attribute "external_product_link"
+     */
+    public function testPropertyExternalProductLink()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "harmonized_system_code"
      */
     public function testPropertyHarmonizedSystemCode()

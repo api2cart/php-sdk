@@ -110,6 +110,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'mpn' => 'string',
         'asin' => 'string',
         'product_reference' => 'string',
+        'external_product_link' => 'string',
         'harmonized_system_code' => 'string',
         'country_of_origin' => 'string',
         'manufacturer' => 'string',
@@ -237,6 +238,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'mpn' => null,
         'asin' => null,
         'product_reference' => null,
+        'external_product_link' => null,
         'harmonized_system_code' => null,
         'country_of_origin' => null,
         'manufacturer' => null,
@@ -362,6 +364,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'mpn' => false,
         'asin' => false,
         'product_reference' => false,
+        'external_product_link' => false,
         'harmonized_system_code' => false,
         'country_of_origin' => false,
         'manufacturer' => false,
@@ -567,6 +570,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'mpn' => 'mpn',
         'asin' => 'asin',
         'product_reference' => 'product_reference',
+        'external_product_link' => 'external_product_link',
         'harmonized_system_code' => 'harmonized_system_code',
         'country_of_origin' => 'country_of_origin',
         'manufacturer' => 'manufacturer',
@@ -692,6 +696,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'mpn' => 'setMpn',
         'asin' => 'setAsin',
         'product_reference' => 'setProductReference',
+        'external_product_link' => 'setExternalProductLink',
         'harmonized_system_code' => 'setHarmonizedSystemCode',
         'country_of_origin' => 'setCountryOfOrigin',
         'manufacturer' => 'setManufacturer',
@@ -817,6 +822,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'mpn' => 'getMpn',
         'asin' => 'getAsin',
         'product_reference' => 'getProductReference',
+        'external_product_link' => 'getExternalProductLink',
         'harmonized_system_code' => 'getHarmonizedSystemCode',
         'country_of_origin' => 'getCountryOfOrigin',
         'manufacturer' => 'getManufacturer',
@@ -993,6 +999,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('mpn', $data ?? [], null);
         $this->setIfExists('asin', $data ?? [], null);
         $this->setIfExists('product_reference', $data ?? [], null);
+        $this->setIfExists('external_product_link', $data ?? [], null);
         $this->setIfExists('harmonized_system_code', $data ?? [], null);
         $this->setIfExists('country_of_origin', $data ?? [], null);
         $this->setIfExists('manufacturer', $data ?? [], null);
@@ -2514,6 +2521,33 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable product_reference cannot be null');
         }
         $this->container['product_reference'] = $product_reference;
+
+        return $this;
+    }
+
+    /**
+     * Gets external_product_link
+     *
+     * @return string|null
+     */
+    public function getExternalProductLink()
+    {
+        return $this->container['external_product_link'];
+    }
+
+    /**
+     * Sets external_product_link
+     *
+     * @param string|null $external_product_link External product link
+     *
+     * @return self
+     */
+    public function setExternalProductLink($external_product_link)
+    {
+        if (is_null($external_product_link)) {
+            throw new \InvalidArgumentException('non-nullable external_product_link cannot be null');
+        }
+        $this->container['external_product_link'] = $external_product_link;
 
         return $this;
     }
