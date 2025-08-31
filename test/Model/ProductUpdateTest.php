@@ -855,6 +855,15 @@ class ProductUpdateTest extends TestCase
     }
 
     /**
+     * Test attribute "external_product_link"
+     */
+    public function testPropertyExternalProductLink()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "marketplace_item_properties"
      */
     public function testPropertyMarketplaceItemProperties()

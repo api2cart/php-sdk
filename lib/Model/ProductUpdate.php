@@ -144,6 +144,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'specifics' => '\OpenAPI\Client\Model\ProductAddSpecificsInner[]',
         'shop_section_id' => 'int',
         'personalization_details' => '\OpenAPI\Client\Model\ProductAddPersonalizationDetails',
+        'external_product_link' => 'string',
         'marketplace_item_properties' => 'string',
         'min_order_quantity' => 'float'
     ];
@@ -242,6 +243,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'specifics' => null,
         'shop_section_id' => null,
         'personalization_details' => null,
+        'external_product_link' => null,
         'marketplace_item_properties' => null,
         'min_order_quantity' => null
     ];
@@ -338,6 +340,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'specifics' => false,
         'shop_section_id' => false,
         'personalization_details' => false,
+        'external_product_link' => false,
         'marketplace_item_properties' => false,
         'min_order_quantity' => false
     ];
@@ -514,6 +517,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'specifics' => 'specifics',
         'shop_section_id' => 'shop_section_id',
         'personalization_details' => 'personalization_details',
+        'external_product_link' => 'external_product_link',
         'marketplace_item_properties' => 'marketplace_item_properties',
         'min_order_quantity' => 'min_order_quantity'
     ];
@@ -610,6 +614,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'specifics' => 'setSpecifics',
         'shop_section_id' => 'setShopSectionId',
         'personalization_details' => 'setPersonalizationDetails',
+        'external_product_link' => 'setExternalProductLink',
         'marketplace_item_properties' => 'setMarketplaceItemProperties',
         'min_order_quantity' => 'setMinOrderQuantity'
     ];
@@ -706,6 +711,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'specifics' => 'getSpecifics',
         'shop_section_id' => 'getShopSectionId',
         'personalization_details' => 'getPersonalizationDetails',
+        'external_product_link' => 'getExternalProductLink',
         'marketplace_item_properties' => 'getMarketplaceItemProperties',
         'min_order_quantity' => 'getMinOrderQuantity'
     ];
@@ -853,6 +859,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('specifics', $data ?? [], null);
         $this->setIfExists('shop_section_id', $data ?? [], null);
         $this->setIfExists('personalization_details', $data ?? [], null);
+        $this->setIfExists('external_product_link', $data ?? [], null);
         $this->setIfExists('marketplace_item_properties', $data ?? [], null);
         $this->setIfExists('min_order_quantity', $data ?? [], null);
     }
@@ -3217,6 +3224,33 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable personalization_details cannot be null');
         }
         $this->container['personalization_details'] = $personalization_details;
+
+        return $this;
+    }
+
+    /**
+     * Gets external_product_link
+     *
+     * @return string|null
+     */
+    public function getExternalProductLink()
+    {
+        return $this->container['external_product_link'];
+    }
+
+    /**
+     * Sets external_product_link
+     *
+     * @param string|null $external_product_link External product link
+     *
+     * @return self
+     */
+    public function setExternalProductLink($external_product_link)
+    {
+        if (is_null($external_product_link)) {
+            throw new \InvalidArgumentException('non-nullable external_product_link cannot be null');
+        }
+        $this->container['external_product_link'] = $external_product_link;
 
         return $this;
     }
