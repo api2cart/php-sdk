@@ -159,6 +159,7 @@ Class | Method | HTTP request | Description
 *MarketplaceApi* | [**marketplaceProductFind**](docs/Api/MarketplaceApi.md#marketplaceproductfind) | **GET** /marketplace.product.find.json | marketplace.product.find
 *OrderApi* | [**orderAbandonedList**](docs/Api/OrderApi.md#orderabandonedlist) | **GET** /order.abandoned.list.json | order.abandoned.list
 *OrderApi* | [**orderAdd**](docs/Api/OrderApi.md#orderadd) | **POST** /order.add.json | order.add
+*OrderApi* | [**orderCalculate**](docs/Api/OrderApi.md#ordercalculate) | **POST** /order.calculate.json | order.calculate
 *OrderApi* | [**orderCount**](docs/Api/OrderApi.md#ordercount) | **GET** /order.count.json | order.count
 *OrderApi* | [**orderFinancialStatusList**](docs/Api/OrderApi.md#orderfinancialstatuslist) | **GET** /order.financial_status.list.json | order.financial_status.list
 *OrderApi* | [**orderFulfillmentStatusList**](docs/Api/OrderApi.md#orderfulfillmentstatuslist) | **GET** /order.fulfillment_status.list.json | order.fulfillment_status.list
@@ -434,6 +435,15 @@ Class | Method | HTTP request | Description
 - [OrderAddOrderItemInner](docs/Model/OrderAddOrderItemInner.md)
 - [OrderAddOrderItemInnerOrderItemOptionInner](docs/Model/OrderAddOrderItemInnerOrderItemOptionInner.md)
 - [OrderAddOrderItemInnerOrderItemPropertyInner](docs/Model/OrderAddOrderItemInnerOrderItemPropertyInner.md)
+- [OrderCalculate](docs/Model/OrderCalculate.md)
+- [OrderCalculate200Response](docs/Model/OrderCalculate200Response.md)
+- [OrderCalculateDiscount](docs/Model/OrderCalculateDiscount.md)
+- [OrderCalculateItem](docs/Model/OrderCalculateItem.md)
+- [OrderCalculateOrderItemInner](docs/Model/OrderCalculateOrderItemInner.md)
+- [OrderCalculateOrderItemInnerOrderItemOptionInner](docs/Model/OrderCalculateOrderItemInnerOrderItemOptionInner.md)
+- [OrderCalculateShippingRate](docs/Model/OrderCalculateShippingRate.md)
+- [OrderCalculateSubtotal](docs/Model/OrderCalculateSubtotal.md)
+- [OrderCalculateTax](docs/Model/OrderCalculateTax.md)
 - [OrderCount200Response](docs/Model/OrderCount200Response.md)
 - [OrderCount200ResponseResult](docs/Model/OrderCount200ResponseResult.md)
 - [OrderFinancialStatusList200Response](docs/Model/OrderFinancialStatusList200Response.md)

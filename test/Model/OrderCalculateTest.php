@@ -1,6 +1,6 @@
 <?php
 /**
- * CustomerAddTest
+ * OrderCalculateTest
  *
  * PHP version 7.4
  *
@@ -32,15 +32,15 @@ namespace OpenAPI\Client\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * CustomerAddTest Class Doc Comment
+ * OrderCalculateTest Class Doc Comment
  *
  * @category    Class
- * @description CustomerAdd
+ * @description OrderCalculate
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class CustomerAddTest extends TestCase
+class OrderCalculateTest extends TestCase
 {
 
     /**
@@ -72,207 +72,27 @@ class CustomerAddTest extends TestCase
     }
 
     /**
-     * Test "CustomerAdd"
+     * Test "OrderCalculate"
      */
-    public function testCustomerAdd()
+    public function testOrderCalculate()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "email"
+     * Test attribute "customer_email"
      */
-    public function testPropertyEmail()
+    public function testPropertyCustomerEmail()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "first_name"
+     * Test attribute "currency_id"
      */
-    public function testPropertyFirstName()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "last_name"
-     */
-    public function testPropertyLastName()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "password"
-     */
-    public function testPropertyPassword()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "group"
-     */
-    public function testPropertyGroup()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "group_id"
-     */
-    public function testPropertyGroupId()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "group_ids"
-     */
-    public function testPropertyGroupIds()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "status"
-     */
-    public function testPropertyStatus()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "created_time"
-     */
-    public function testPropertyCreatedTime()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "modified_time"
-     */
-    public function testPropertyModifiedTime()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "login"
-     */
-    public function testPropertyLogin()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "last_login"
-     */
-    public function testPropertyLastLogin()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "birth_day"
-     */
-    public function testPropertyBirthDay()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "news_letter_subscription"
-     */
-    public function testPropertyNewsLetterSubscription()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "consents"
-     */
-    public function testPropertyConsents()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "gender"
-     */
-    public function testPropertyGender()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "website"
-     */
-    public function testPropertyWebsite()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "fax"
-     */
-    public function testPropertyFax()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "company"
-     */
-    public function testPropertyCompany()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "phone"
-     */
-    public function testPropertyPhone()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "note"
-     */
-    public function testPropertyNote()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "country"
-     */
-    public function testPropertyCountry()
+    public function testPropertyCurrencyId()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -288,9 +108,207 @@ class CustomerAddTest extends TestCase
     }
 
     /**
-     * Test attribute "address"
+     * Test attribute "coupons"
      */
-    public function testPropertyAddress()
+    public function testPropertyCoupons()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "shipp_first_name"
+     */
+    public function testPropertyShippFirstName()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "shipp_last_name"
+     */
+    public function testPropertyShippLastName()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "shipp_address_1"
+     */
+    public function testPropertyShippAddress1()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "shipp_address_2"
+     */
+    public function testPropertyShippAddress2()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "shipp_city"
+     */
+    public function testPropertyShippCity()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "shipp_postcode"
+     */
+    public function testPropertyShippPostcode()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "shipp_state"
+     */
+    public function testPropertyShippState()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "shipp_country"
+     */
+    public function testPropertyShippCountry()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "shipp_company"
+     */
+    public function testPropertyShippCompany()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "shipp_phone"
+     */
+    public function testPropertyShippPhone()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bill_first_name"
+     */
+    public function testPropertyBillFirstName()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bill_last_name"
+     */
+    public function testPropertyBillLastName()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bill_address_1"
+     */
+    public function testPropertyBillAddress1()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bill_address_2"
+     */
+    public function testPropertyBillAddress2()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bill_city"
+     */
+    public function testPropertyBillCity()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bill_postcode"
+     */
+    public function testPropertyBillPostcode()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bill_state"
+     */
+    public function testPropertyBillState()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bill_country"
+     */
+    public function testPropertyBillCountry()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bill_company"
+     */
+    public function testPropertyBillCompany()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bill_phone"
+     */
+    public function testPropertyBillPhone()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "response_fields"
+     */
+    public function testPropertyResponseFields()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "order_item"
+     */
+    public function testPropertyOrderItem()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

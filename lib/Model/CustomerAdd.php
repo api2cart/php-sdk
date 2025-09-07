@@ -63,6 +63,7 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_name' => 'string',
         'password' => 'string',
         'group' => 'string',
+        'group_id' => 'string',
         'group_ids' => 'string',
         'status' => 'string',
         'created_time' => 'string',
@@ -96,6 +97,7 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_name' => null,
         'password' => null,
         'group' => null,
+        'group_id' => null,
         'group_ids' => null,
         'status' => null,
         'created_time' => null,
@@ -127,6 +129,7 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_name' => false,
         'password' => false,
         'group' => false,
+        'group_id' => false,
         'group_ids' => false,
         'status' => false,
         'created_time' => false,
@@ -238,6 +241,7 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_name' => 'last_name',
         'password' => 'password',
         'group' => 'group',
+        'group_id' => 'group_id',
         'group_ids' => 'group_ids',
         'status' => 'status',
         'created_time' => 'created_time',
@@ -269,6 +273,7 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_name' => 'setLastName',
         'password' => 'setPassword',
         'group' => 'setGroup',
+        'group_id' => 'setGroupId',
         'group_ids' => 'setGroupIds',
         'status' => 'setStatus',
         'created_time' => 'setCreatedTime',
@@ -300,6 +305,7 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_name' => 'getLastName',
         'password' => 'getPassword',
         'group' => 'getGroup',
+        'group_id' => 'getGroupId',
         'group_ids' => 'getGroupIds',
         'status' => 'getStatus',
         'created_time' => 'getCreatedTime',
@@ -382,6 +388,7 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('last_name', $data ?? [], null);
         $this->setIfExists('password', $data ?? [], null);
         $this->setIfExists('group', $data ?? [], null);
+        $this->setIfExists('group_id', $data ?? [], null);
         $this->setIfExists('group_ids', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], 'enabled');
         $this->setIfExists('created_time', $data ?? [], null);
@@ -582,6 +589,33 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable group cannot be null');
         }
         $this->container['group'] = $group;
+
+        return $this;
+    }
+
+    /**
+     * Gets group_id
+     *
+     * @return string|null
+     */
+    public function getGroupId()
+    {
+        return $this->container['group_id'];
+    }
+
+    /**
+     * Sets group_id
+     *
+     * @param string|null $group_id Customer group_id
+     *
+     * @return self
+     */
+    public function setGroupId($group_id)
+    {
+        if (is_null($group_id)) {
+            throw new \InvalidArgumentException('non-nullable group_id cannot be null');
+        }
+        $this->container['group_id'] = $group_id;
 
         return $this;
     }

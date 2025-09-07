@@ -6,6 +6,7 @@ All URIs are relative to https://api.api2cart.local.com/v1.1, except if the oper
 | ------------- | ------------- | ------------- |
 | [**orderAbandonedList()**](OrderApi.md#orderAbandonedList) | **GET** /order.abandoned.list.json | order.abandoned.list |
 | [**orderAdd()**](OrderApi.md#orderAdd) | **POST** /order.add.json | order.add |
+| [**orderCalculate()**](OrderApi.md#orderCalculate) | **POST** /order.calculate.json | order.calculate |
 | [**orderCount()**](OrderApi.md#orderCount) | **GET** /order.count.json | order.count |
 | [**orderFinancialStatusList()**](OrderApi.md#orderFinancialStatusList) | **GET** /order.financial_status.list.json | order.financial_status.list |
 | [**orderFulfillmentStatusList()**](OrderApi.md#orderFulfillmentStatusList) | **GET** /order.fulfillment_status.list.json | order.fulfillment_status.list |
@@ -174,6 +175,73 @@ try {
 ### Return type
 
 [**\OpenAPI\Client\Model\OrderAdd200Response**](../Model/OrderAdd200Response.md)
+
+### Authorization
+
+[StoreKeyAuth](../../README.md#StoreKeyAuth), [ApiKeyAuth](../../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `orderCalculate()`
+
+```php
+orderCalculate($order_calculate): \OpenAPI\Client\Model\OrderCalculate200Response
+```
+
+order.calculate
+
+<p>Calculates the total cost of an order for a given customer and a set of products, as well as the available shipping methods based on the specified address. The calculation takes into account store product prices, discounts, taxes, shipping costs, and other store settings. The result includes a detailed breakdown of the final order cost by its components.</p> <p>Note that the final totals, taxes, and other amounts must include the corresponding values for the selected shipping method.</p><p>The result of this method can be used when creating an order using the <strong>order.add</strong> method.</p>
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: StoreKeyAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-store-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-store-key', 'Bearer');
+
+// Configure API key authorization: ApiKeyAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+
+
+$apiInstance = new OpenAPI\Client\Api\OrderApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$order_calculate = new \OpenAPI\Client\Model\OrderCalculate(); // \OpenAPI\Client\Model\OrderCalculate
+
+try {
+    $result = $apiInstance->orderCalculate($order_calculate);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderCalculate: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **order_calculate** | [**\OpenAPI\Client\Model\OrderCalculate**](../Model/OrderCalculate.md)|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\OrderCalculate200Response**](../Model/OrderCalculate200Response.md)
 
 ### Authorization
 

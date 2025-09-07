@@ -288,6 +288,15 @@ class ProductAddBatchPayloadInnerTest extends TestCase
     }
 
     /**
+     * Test attribute "specifics"
+     */
+    public function testPropertySpecifics()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "is_free_shipping"
      */
     public function testPropertyIsFreeShipping()
@@ -588,6 +597,15 @@ class ProductAddBatchPayloadInnerTest extends TestCase
      * Test attribute "seo_url"
      */
     public function testPropertySeoUrl()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "external_product_link"
+     */
+    public function testPropertyExternalProductLink()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

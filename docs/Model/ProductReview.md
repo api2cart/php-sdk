@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **ratings** | [**\OpenAPI\Client\Model\ProductReviewRating[]**](ProductReviewRating.md) |  | [optional]
 **status** | **string** |  | [optional]
 **created_time** | [**\OpenAPI\Client\Model\A2CDateTime**](A2CDateTime.md) |  | [optional]
+**modified_time** | [**\OpenAPI\Client\Model\A2CDateTime**](A2CDateTime.md) |  | [optional]
 **medias** | [**\OpenAPI\Client\Model\Media[]**](Media.md) |  | [optional]
 **additional_fields** | **object** |  | [optional]
 **custom_fields** | **object** |  | [optional]

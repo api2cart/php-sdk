@@ -97,6 +97,18 @@ class OrderApiTest extends TestCase
     }
 
     /**
+     * Test case for orderCalculate
+     *
+     * order.calculate.
+     *
+     */
+    public function testOrderCalculate()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for orderCount
      *
      * order.count.

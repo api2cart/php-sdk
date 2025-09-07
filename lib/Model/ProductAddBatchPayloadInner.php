@@ -81,6 +81,7 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'manage_stock' => 'bool',
         'product_type' => 'string',
         'marketplace_item_properties' => 'object',
+        'specifics' => 'object',
         'is_free_shipping' => 'bool',
         'taxable' => 'bool',
         'status' => 'string',
@@ -115,6 +116,7 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'harmonized_system_code' => 'string',
         'url' => 'string',
         'seo_url' => 'string',
+        'external_product_link' => 'string',
         'manufacturer' => 'string',
         'manufacturer_id' => 'string',
         'backorder_status' => 'string',
@@ -154,6 +156,7 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'manage_stock' => null,
         'product_type' => null,
         'marketplace_item_properties' => null,
+        'specifics' => null,
         'is_free_shipping' => null,
         'taxable' => null,
         'status' => null,
@@ -188,6 +191,7 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'harmonized_system_code' => null,
         'url' => null,
         'seo_url' => null,
+        'external_product_link' => null,
         'manufacturer' => null,
         'manufacturer_id' => null,
         'backorder_status' => null,
@@ -225,6 +229,7 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'manage_stock' => false,
         'product_type' => false,
         'marketplace_item_properties' => false,
+        'specifics' => false,
         'is_free_shipping' => false,
         'taxable' => false,
         'status' => false,
@@ -259,6 +264,7 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'harmonized_system_code' => false,
         'url' => false,
         'seo_url' => false,
+        'external_product_link' => false,
         'manufacturer' => false,
         'manufacturer_id' => false,
         'backorder_status' => false,
@@ -376,6 +382,7 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'manage_stock' => 'manage_stock',
         'product_type' => 'product_type',
         'marketplace_item_properties' => 'marketplace_item_properties',
+        'specifics' => 'specifics',
         'is_free_shipping' => 'is_free_shipping',
         'taxable' => 'taxable',
         'status' => 'status',
@@ -410,6 +417,7 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'harmonized_system_code' => 'harmonized_system_code',
         'url' => 'url',
         'seo_url' => 'seo_url',
+        'external_product_link' => 'external_product_link',
         'manufacturer' => 'manufacturer',
         'manufacturer_id' => 'manufacturer_id',
         'backorder_status' => 'backorder_status',
@@ -447,6 +455,7 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'manage_stock' => 'setManageStock',
         'product_type' => 'setProductType',
         'marketplace_item_properties' => 'setMarketplaceItemProperties',
+        'specifics' => 'setSpecifics',
         'is_free_shipping' => 'setIsFreeShipping',
         'taxable' => 'setTaxable',
         'status' => 'setStatus',
@@ -481,6 +490,7 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'harmonized_system_code' => 'setHarmonizedSystemCode',
         'url' => 'setUrl',
         'seo_url' => 'setSeoUrl',
+        'external_product_link' => 'setExternalProductLink',
         'manufacturer' => 'setManufacturer',
         'manufacturer_id' => 'setManufacturerId',
         'backorder_status' => 'setBackorderStatus',
@@ -518,6 +528,7 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'manage_stock' => 'getManageStock',
         'product_type' => 'getProductType',
         'marketplace_item_properties' => 'getMarketplaceItemProperties',
+        'specifics' => 'getSpecifics',
         'is_free_shipping' => 'getIsFreeShipping',
         'taxable' => 'getTaxable',
         'status' => 'getStatus',
@@ -552,6 +563,7 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'harmonized_system_code' => 'getHarmonizedSystemCode',
         'url' => 'getUrl',
         'seo_url' => 'getSeoUrl',
+        'external_product_link' => 'getExternalProductLink',
         'manufacturer' => 'getManufacturer',
         'manufacturer_id' => 'getManufacturerId',
         'backorder_status' => 'getBackorderStatus',
@@ -640,6 +652,7 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         $this->setIfExists('manage_stock', $data ?? [], null);
         $this->setIfExists('product_type', $data ?? [], null);
         $this->setIfExists('marketplace_item_properties', $data ?? [], null);
+        $this->setIfExists('specifics', $data ?? [], null);
         $this->setIfExists('is_free_shipping', $data ?? [], null);
         $this->setIfExists('taxable', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
@@ -674,6 +687,7 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         $this->setIfExists('harmonized_system_code', $data ?? [], null);
         $this->setIfExists('url', $data ?? [], null);
         $this->setIfExists('seo_url', $data ?? [], null);
+        $this->setIfExists('external_product_link', $data ?? [], null);
         $this->setIfExists('manufacturer', $data ?? [], null);
         $this->setIfExists('manufacturer_id', $data ?? [], null);
         $this->setIfExists('backorder_status', $data ?? [], null);
@@ -1381,6 +1395,33 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
             throw new \InvalidArgumentException('non-nullable marketplace_item_properties cannot be null');
         }
         $this->container['marketplace_item_properties'] = $marketplace_item_properties;
+
+        return $this;
+    }
+
+    /**
+     * Gets specifics
+     *
+     * @return object|null
+     */
+    public function getSpecifics()
+    {
+        return $this->container['specifics'];
+    }
+
+    /**
+     * Sets specifics
+     *
+     * @param object|null $specifics specifics
+     *
+     * @return self
+     */
+    public function setSpecifics($specifics)
+    {
+        if (is_null($specifics)) {
+            throw new \InvalidArgumentException('non-nullable specifics cannot be null');
+        }
+        $this->container['specifics'] = $specifics;
 
         return $this;
     }
@@ -2334,6 +2375,33 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
             throw new \InvalidArgumentException('non-nullable seo_url cannot be null');
         }
         $this->container['seo_url'] = $seo_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets external_product_link
+     *
+     * @return string|null
+     */
+    public function getExternalProductLink()
+    {
+        return $this->container['external_product_link'];
+    }
+
+    /**
+     * Sets external_product_link
+     *
+     * @param string|null $external_product_link external_product_link
+     *
+     * @return self
+     */
+    public function setExternalProductLink($external_product_link)
+    {
+        if (is_null($external_product_link)) {
+            throw new \InvalidArgumentException('non-nullable external_product_link cannot be null');
+        }
+        $this->container['external_product_link'] = $external_product_link;
 
         return $this;
     }

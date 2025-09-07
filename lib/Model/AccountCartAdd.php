@@ -1230,6 +1230,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     public const CART_ID_E_BAY = 'EBay';
     public const CART_ID_ECWID = 'Ecwid';
     public const CART_ID_ETSY_APIV3 = 'EtsyAPIv3';
+    public const CART_ID_FACEBOOK = 'Facebook';
     public const CART_ID_FLIPKART = 'Flipkart';
     public const CART_ID_GAMBIO = 'Gambio';
     public const CART_ID_HYBRIS = 'Hybris';
@@ -1306,6 +1307,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             self::CART_ID_E_BAY,
             self::CART_ID_ECWID,
             self::CART_ID_ETSY_APIV3,
+            self::CART_ID_FACEBOOK,
             self::CART_ID_FLIPKART,
             self::CART_ID_GAMBIO,
             self::CART_ID_HYBRIS,

@@ -1,6 +1,6 @@
 <?php
 /**
- * ProductReview
+ * OrderCalculateItem
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * ProductReview Class Doc Comment
+ * OrderCalculateItem Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -41,7 +41,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ProductReview implements ModelInterface, ArrayAccess, \JsonSerializable
+class OrderCalculateItem implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ProductReview implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Product_Review';
+    protected static $openAPIModelName = 'Order_Calculate_Item';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,19 +58,19 @@ class ProductReview implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'string',
         'product_id' => 'string',
-        'customer_id' => 'string',
-        'nick_name' => 'string',
-        'email' => 'string',
-        'summary' => 'string',
-        'message' => 'string',
-        'rating' => 'float',
-        'ratings' => '\OpenAPI\Client\Model\ProductReviewRating[]',
-        'status' => 'string',
-        'created_time' => '\OpenAPI\Client\Model\A2CDateTime',
-        'modified_time' => '\OpenAPI\Client\Model\A2CDateTime',
-        'medias' => '\OpenAPI\Client\Model\Media[]',
+        'sku' => 'string',
+        'name' => 'string',
+        'quantity' => 'int',
+        'price' => 'float',
+        'price_inc_tax' => 'float',
+        'tax_rate' => 'float',
+        'unit_discount' => 'float',
+        'weight' => 'float',
+        'weight_unit' => 'string',
+        'barcode' => 'string',
+        'variant_id' => 'string',
+        'options' => '\OpenAPI\Client\Model\OrderItemOption[]',
         'additional_fields' => 'object',
         'custom_fields' => 'object'
     ];
@@ -83,19 +83,19 @@ class ProductReview implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
         'product_id' => null,
-        'customer_id' => null,
-        'nick_name' => null,
-        'email' => null,
-        'summary' => null,
-        'message' => null,
-        'rating' => null,
-        'ratings' => null,
-        'status' => null,
-        'created_time' => null,
-        'modified_time' => null,
-        'medias' => null,
+        'sku' => null,
+        'name' => null,
+        'quantity' => null,
+        'price' => null,
+        'price_inc_tax' => null,
+        'tax_rate' => null,
+        'unit_discount' => null,
+        'weight' => null,
+        'weight_unit' => null,
+        'barcode' => null,
+        'variant_id' => null,
+        'options' => null,
         'additional_fields' => null,
         'custom_fields' => null
     ];
@@ -106,19 +106,19 @@ class ProductReview implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => false,
-        'product_id' => true,
-        'customer_id' => true,
-        'nick_name' => true,
-        'email' => true,
-        'summary' => true,
-        'message' => true,
-        'rating' => true,
-        'ratings' => false,
-        'status' => true,
-        'created_time' => true,
-        'modified_time' => true,
-        'medias' => false,
+        'product_id' => false,
+        'sku' => false,
+        'name' => false,
+        'quantity' => false,
+        'price' => false,
+        'price_inc_tax' => false,
+        'tax_rate' => false,
+        'unit_discount' => false,
+        'weight' => true,
+        'weight_unit' => true,
+        'barcode' => true,
+        'variant_id' => true,
+        'options' => false,
         'additional_fields' => true,
         'custom_fields' => true
     ];
@@ -209,19 +209,19 @@ class ProductReview implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
         'product_id' => 'product_id',
-        'customer_id' => 'customer_id',
-        'nick_name' => 'nick_name',
-        'email' => 'email',
-        'summary' => 'summary',
-        'message' => 'message',
-        'rating' => 'rating',
-        'ratings' => 'ratings',
-        'status' => 'status',
-        'created_time' => 'created_time',
-        'modified_time' => 'modified_time',
-        'medias' => 'medias',
+        'sku' => 'sku',
+        'name' => 'name',
+        'quantity' => 'quantity',
+        'price' => 'price',
+        'price_inc_tax' => 'price_inc_tax',
+        'tax_rate' => 'tax_rate',
+        'unit_discount' => 'unit_discount',
+        'weight' => 'weight',
+        'weight_unit' => 'weight_unit',
+        'barcode' => 'barcode',
+        'variant_id' => 'variant_id',
+        'options' => 'options',
         'additional_fields' => 'additional_fields',
         'custom_fields' => 'custom_fields'
     ];
@@ -232,19 +232,19 @@ class ProductReview implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
         'product_id' => 'setProductId',
-        'customer_id' => 'setCustomerId',
-        'nick_name' => 'setNickName',
-        'email' => 'setEmail',
-        'summary' => 'setSummary',
-        'message' => 'setMessage',
-        'rating' => 'setRating',
-        'ratings' => 'setRatings',
-        'status' => 'setStatus',
-        'created_time' => 'setCreatedTime',
-        'modified_time' => 'setModifiedTime',
-        'medias' => 'setMedias',
+        'sku' => 'setSku',
+        'name' => 'setName',
+        'quantity' => 'setQuantity',
+        'price' => 'setPrice',
+        'price_inc_tax' => 'setPriceIncTax',
+        'tax_rate' => 'setTaxRate',
+        'unit_discount' => 'setUnitDiscount',
+        'weight' => 'setWeight',
+        'weight_unit' => 'setWeightUnit',
+        'barcode' => 'setBarcode',
+        'variant_id' => 'setVariantId',
+        'options' => 'setOptions',
         'additional_fields' => 'setAdditionalFields',
         'custom_fields' => 'setCustomFields'
     ];
@@ -255,19 +255,19 @@ class ProductReview implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
         'product_id' => 'getProductId',
-        'customer_id' => 'getCustomerId',
-        'nick_name' => 'getNickName',
-        'email' => 'getEmail',
-        'summary' => 'getSummary',
-        'message' => 'getMessage',
-        'rating' => 'getRating',
-        'ratings' => 'getRatings',
-        'status' => 'getStatus',
-        'created_time' => 'getCreatedTime',
-        'modified_time' => 'getModifiedTime',
-        'medias' => 'getMedias',
+        'sku' => 'getSku',
+        'name' => 'getName',
+        'quantity' => 'getQuantity',
+        'price' => 'getPrice',
+        'price_inc_tax' => 'getPriceIncTax',
+        'tax_rate' => 'getTaxRate',
+        'unit_discount' => 'getUnitDiscount',
+        'weight' => 'getWeight',
+        'weight_unit' => 'getWeightUnit',
+        'barcode' => 'getBarcode',
+        'variant_id' => 'getVariantId',
+        'options' => 'getOptions',
         'additional_fields' => 'getAdditionalFields',
         'custom_fields' => 'getCustomFields'
     ];
@@ -329,19 +329,19 @@ class ProductReview implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('product_id', $data ?? [], null);
-        $this->setIfExists('customer_id', $data ?? [], null);
-        $this->setIfExists('nick_name', $data ?? [], null);
-        $this->setIfExists('email', $data ?? [], null);
-        $this->setIfExists('summary', $data ?? [], null);
-        $this->setIfExists('message', $data ?? [], null);
-        $this->setIfExists('rating', $data ?? [], null);
-        $this->setIfExists('ratings', $data ?? [], null);
-        $this->setIfExists('status', $data ?? [], null);
-        $this->setIfExists('created_time', $data ?? [], null);
-        $this->setIfExists('modified_time', $data ?? [], null);
-        $this->setIfExists('medias', $data ?? [], null);
+        $this->setIfExists('sku', $data ?? [], null);
+        $this->setIfExists('name', $data ?? [], null);
+        $this->setIfExists('quantity', $data ?? [], null);
+        $this->setIfExists('price', $data ?? [], null);
+        $this->setIfExists('price_inc_tax', $data ?? [], null);
+        $this->setIfExists('tax_rate', $data ?? [], null);
+        $this->setIfExists('unit_discount', $data ?? [], null);
+        $this->setIfExists('weight', $data ?? [], null);
+        $this->setIfExists('weight_unit', $data ?? [], null);
+        $this->setIfExists('barcode', $data ?? [], null);
+        $this->setIfExists('variant_id', $data ?? [], null);
+        $this->setIfExists('options', $data ?? [], null);
         $this->setIfExists('additional_fields', $data ?? [], null);
         $this->setIfExists('custom_fields', $data ?? [], null);
     }
@@ -389,33 +389,6 @@ class ProductReview implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
-     *
-     * @return string|null
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param string|null $id id
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        if (is_null($id)) {
-            throw new \InvalidArgumentException('non-nullable id cannot be null');
-        }
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
      * Gets product_id
      *
      * @return string|null
@@ -435,14 +408,7 @@ class ProductReview implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setProductId($product_id)
     {
         if (is_null($product_id)) {
-            array_push($this->openAPINullablesSetToNull, 'product_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('product_id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable product_id cannot be null');
         }
         $this->container['product_id'] = $product_id;
 
@@ -450,361 +416,353 @@ class ProductReview implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets customer_id
+     * Gets sku
      *
      * @return string|null
      */
-    public function getCustomerId()
+    public function getSku()
     {
-        return $this->container['customer_id'];
+        return $this->container['sku'];
     }
 
     /**
-     * Sets customer_id
+     * Sets sku
      *
-     * @param string|null $customer_id customer_id
+     * @param string|null $sku sku
      *
      * @return self
      */
-    public function setCustomerId($customer_id)
+    public function setSku($sku)
     {
-        if (is_null($customer_id)) {
-            array_push($this->openAPINullablesSetToNull, 'customer_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('customer_id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($sku)) {
+            throw new \InvalidArgumentException('non-nullable sku cannot be null');
         }
-        $this->container['customer_id'] = $customer_id;
+        $this->container['sku'] = $sku;
 
         return $this;
     }
 
     /**
-     * Gets nick_name
+     * Gets name
      *
      * @return string|null
      */
-    public function getNickName()
+    public function getName()
     {
-        return $this->container['nick_name'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets nick_name
+     * Sets name
      *
-     * @param string|null $nick_name nick_name
+     * @param string|null $name name
      *
      * @return self
      */
-    public function setNickName($nick_name)
+    public function setName($name)
     {
-        if (is_null($nick_name)) {
-            array_push($this->openAPINullablesSetToNull, 'nick_name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('nick_name', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($name)) {
+            throw new \InvalidArgumentException('non-nullable name cannot be null');
         }
-        $this->container['nick_name'] = $nick_name;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets email
+     * Gets quantity
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getEmail()
+    public function getQuantity()
     {
-        return $this->container['email'];
+        return $this->container['quantity'];
     }
 
     /**
-     * Sets email
+     * Sets quantity
      *
-     * @param string|null $email email
+     * @param int|null $quantity quantity
      *
      * @return self
      */
-    public function setEmail($email)
+    public function setQuantity($quantity)
     {
-        if (is_null($email)) {
-            array_push($this->openAPINullablesSetToNull, 'email');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('email', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($quantity)) {
+            throw new \InvalidArgumentException('non-nullable quantity cannot be null');
         }
-        $this->container['email'] = $email;
+        $this->container['quantity'] = $quantity;
 
         return $this;
     }
 
     /**
-     * Gets summary
-     *
-     * @return string|null
-     */
-    public function getSummary()
-    {
-        return $this->container['summary'];
-    }
-
-    /**
-     * Sets summary
-     *
-     * @param string|null $summary summary
-     *
-     * @return self
-     */
-    public function setSummary($summary)
-    {
-        if (is_null($summary)) {
-            array_push($this->openAPINullablesSetToNull, 'summary');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('summary', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['summary'] = $summary;
-
-        return $this;
-    }
-
-    /**
-     * Gets message
-     *
-     * @return string|null
-     */
-    public function getMessage()
-    {
-        return $this->container['message'];
-    }
-
-    /**
-     * Sets message
-     *
-     * @param string|null $message message
-     *
-     * @return self
-     */
-    public function setMessage($message)
-    {
-        if (is_null($message)) {
-            array_push($this->openAPINullablesSetToNull, 'message');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('message', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['message'] = $message;
-
-        return $this;
-    }
-
-    /**
-     * Gets rating
+     * Gets price
      *
      * @return float|null
      */
-    public function getRating()
+    public function getPrice()
     {
-        return $this->container['rating'];
+        return $this->container['price'];
     }
 
     /**
-     * Sets rating
+     * Sets price
      *
-     * @param float|null $rating rating
+     * @param float|null $price price
      *
      * @return self
      */
-    public function setRating($rating)
+    public function setPrice($price)
     {
-        if (is_null($rating)) {
-            array_push($this->openAPINullablesSetToNull, 'rating');
+        if (is_null($price)) {
+            throw new \InvalidArgumentException('non-nullable price cannot be null');
+        }
+        $this->container['price'] = $price;
+
+        return $this;
+    }
+
+    /**
+     * Gets price_inc_tax
+     *
+     * @return float|null
+     */
+    public function getPriceIncTax()
+    {
+        return $this->container['price_inc_tax'];
+    }
+
+    /**
+     * Sets price_inc_tax
+     *
+     * @param float|null $price_inc_tax price_inc_tax
+     *
+     * @return self
+     */
+    public function setPriceIncTax($price_inc_tax)
+    {
+        if (is_null($price_inc_tax)) {
+            throw new \InvalidArgumentException('non-nullable price_inc_tax cannot be null');
+        }
+        $this->container['price_inc_tax'] = $price_inc_tax;
+
+        return $this;
+    }
+
+    /**
+     * Gets tax_rate
+     *
+     * @return float|null
+     */
+    public function getTaxRate()
+    {
+        return $this->container['tax_rate'];
+    }
+
+    /**
+     * Sets tax_rate
+     *
+     * @param float|null $tax_rate tax_rate
+     *
+     * @return self
+     */
+    public function setTaxRate($tax_rate)
+    {
+        if (is_null($tax_rate)) {
+            throw new \InvalidArgumentException('non-nullable tax_rate cannot be null');
+        }
+        $this->container['tax_rate'] = $tax_rate;
+
+        return $this;
+    }
+
+    /**
+     * Gets unit_discount
+     *
+     * @return float|null
+     */
+    public function getUnitDiscount()
+    {
+        return $this->container['unit_discount'];
+    }
+
+    /**
+     * Sets unit_discount
+     *
+     * @param float|null $unit_discount unit_discount
+     *
+     * @return self
+     */
+    public function setUnitDiscount($unit_discount)
+    {
+        if (is_null($unit_discount)) {
+            throw new \InvalidArgumentException('non-nullable unit_discount cannot be null');
+        }
+        $this->container['unit_discount'] = $unit_discount;
+
+        return $this;
+    }
+
+    /**
+     * Gets weight
+     *
+     * @return float|null
+     */
+    public function getWeight()
+    {
+        return $this->container['weight'];
+    }
+
+    /**
+     * Sets weight
+     *
+     * @param float|null $weight weight
+     *
+     * @return self
+     */
+    public function setWeight($weight)
+    {
+        if (is_null($weight)) {
+            array_push($this->openAPINullablesSetToNull, 'weight');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('rating', $nullablesSetToNull);
+            $index = array_search('weight', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['rating'] = $rating;
+        $this->container['weight'] = $weight;
 
         return $this;
     }
 
     /**
-     * Gets ratings
-     *
-     * @return \OpenAPI\Client\Model\ProductReviewRating[]|null
-     */
-    public function getRatings()
-    {
-        return $this->container['ratings'];
-    }
-
-    /**
-     * Sets ratings
-     *
-     * @param \OpenAPI\Client\Model\ProductReviewRating[]|null $ratings ratings
-     *
-     * @return self
-     */
-    public function setRatings($ratings)
-    {
-        if (is_null($ratings)) {
-            throw new \InvalidArgumentException('non-nullable ratings cannot be null');
-        }
-        $this->container['ratings'] = $ratings;
-
-        return $this;
-    }
-
-    /**
-     * Gets status
+     * Gets weight_unit
      *
      * @return string|null
      */
-    public function getStatus()
+    public function getWeightUnit()
     {
-        return $this->container['status'];
+        return $this->container['weight_unit'];
     }
 
     /**
-     * Sets status
+     * Sets weight_unit
      *
-     * @param string|null $status status
+     * @param string|null $weight_unit weight_unit
      *
      * @return self
      */
-    public function setStatus($status)
+    public function setWeightUnit($weight_unit)
     {
-        if (is_null($status)) {
-            array_push($this->openAPINullablesSetToNull, 'status');
+        if (is_null($weight_unit)) {
+            array_push($this->openAPINullablesSetToNull, 'weight_unit');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('status', $nullablesSetToNull);
+            $index = array_search('weight_unit', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['status'] = $status;
+        $this->container['weight_unit'] = $weight_unit;
 
         return $this;
     }
 
     /**
-     * Gets created_time
+     * Gets barcode
      *
-     * @return \OpenAPI\Client\Model\A2CDateTime|null
+     * @return string|null
      */
-    public function getCreatedTime()
+    public function getBarcode()
     {
-        return $this->container['created_time'];
+        return $this->container['barcode'];
     }
 
     /**
-     * Sets created_time
+     * Sets barcode
      *
-     * @param \OpenAPI\Client\Model\A2CDateTime|null $created_time created_time
+     * @param string|null $barcode barcode
      *
      * @return self
      */
-    public function setCreatedTime($created_time)
+    public function setBarcode($barcode)
     {
-        if (is_null($created_time)) {
-            array_push($this->openAPINullablesSetToNull, 'created_time');
+        if (is_null($barcode)) {
+            array_push($this->openAPINullablesSetToNull, 'barcode');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('created_time', $nullablesSetToNull);
+            $index = array_search('barcode', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['created_time'] = $created_time;
+        $this->container['barcode'] = $barcode;
 
         return $this;
     }
 
     /**
-     * Gets modified_time
+     * Gets variant_id
      *
-     * @return \OpenAPI\Client\Model\A2CDateTime|null
+     * @return string|null
      */
-    public function getModifiedTime()
+    public function getVariantId()
     {
-        return $this->container['modified_time'];
+        return $this->container['variant_id'];
     }
 
     /**
-     * Sets modified_time
+     * Sets variant_id
      *
-     * @param \OpenAPI\Client\Model\A2CDateTime|null $modified_time modified_time
+     * @param string|null $variant_id variant_id
      *
      * @return self
      */
-    public function setModifiedTime($modified_time)
+    public function setVariantId($variant_id)
     {
-        if (is_null($modified_time)) {
-            array_push($this->openAPINullablesSetToNull, 'modified_time');
+        if (is_null($variant_id)) {
+            array_push($this->openAPINullablesSetToNull, 'variant_id');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('modified_time', $nullablesSetToNull);
+            $index = array_search('variant_id', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['modified_time'] = $modified_time;
+        $this->container['variant_id'] = $variant_id;
 
         return $this;
     }
 
     /**
-     * Gets medias
+     * Gets options
      *
-     * @return \OpenAPI\Client\Model\Media[]|null
+     * @return \OpenAPI\Client\Model\OrderItemOption[]|null
      */
-    public function getMedias()
+    public function getOptions()
     {
-        return $this->container['medias'];
+        return $this->container['options'];
     }
 
     /**
-     * Sets medias
+     * Sets options
      *
-     * @param \OpenAPI\Client\Model\Media[]|null $medias medias
+     * @param \OpenAPI\Client\Model\OrderItemOption[]|null $options options
      *
      * @return self
      */
-    public function setMedias($medias)
+    public function setOptions($options)
     {
-        if (is_null($medias)) {
-            throw new \InvalidArgumentException('non-nullable medias cannot be null');
+        if (is_null($options)) {
+            throw new \InvalidArgumentException('non-nullable options cannot be null');
         }
-        $this->container['medias'] = $medias;
+        $this->container['options'] = $options;
 
         return $this;
     }

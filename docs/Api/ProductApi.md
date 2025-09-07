@@ -1737,7 +1737,7 @@ try {
 ## `productManufacturerAdd()`
 
 ```php
-productManufacturerAdd($product_id, $manufacturer, $store_id): \OpenAPI\Client\Model\ProductManufacturerAdd200Response
+productManufacturerAdd($product_id, $manufacturer, $store_id, $meta_title, $meta_keywords, $meta_description, $search_keywords, $image_url, $seo_url): \OpenAPI\Client\Model\ProductManufacturerAdd200Response
 ```
 
 product.manufacturer.add
@@ -1771,9 +1771,15 @@ $apiInstance = new OpenAPI\Client\Api\ProductApi(
 $product_id = 10; // string | Defines products specified by product id
 $manufacturer = Samsung; // string | Defines product’s manufacturer's name
 $store_id = 1; // string | Store Id
+$meta_title = category,test; // string | Defines unique meta title for each entity
+$meta_keywords = category,test; // string | Defines unique meta keywords for each entity
+$meta_description = category,test; // string | Defines unique meta description of a entity
+$search_keywords = key1,key2,key3; // string | Defines unique search keywords
+$image_url = https://docs.api2cart.com/img/logo.png; // string | Image Url
+$seo_url = some seo url; // string | Defines unique URL for SEO
 
 try {
-    $result = $apiInstance->productManufacturerAdd($product_id, $manufacturer, $store_id);
+    $result = $apiInstance->productManufacturerAdd($product_id, $manufacturer, $store_id, $meta_title, $meta_keywords, $meta_description, $search_keywords, $image_url, $seo_url);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productManufacturerAdd: ', $e->getMessage(), PHP_EOL;
@@ -1787,6 +1793,12 @@ try {
 | **product_id** | **string**| Defines products specified by product id | |
 | **manufacturer** | **string**| Defines product’s manufacturer&#39;s name | |
 | **store_id** | **string**| Store Id | [optional] |
+| **meta_title** | **string**| Defines unique meta title for each entity | [optional] |
+| **meta_keywords** | **string**| Defines unique meta keywords for each entity | [optional] |
+| **meta_description** | **string**| Defines unique meta description of a entity | [optional] |
+| **search_keywords** | **string**| Defines unique search keywords | [optional] |
+| **image_url** | **string**| Image Url | [optional] |
+| **seo_url** | **string**| Defines unique URL for SEO | [optional] |
 
 ### Return type
 
@@ -2613,7 +2625,7 @@ try {
 ## `productReviewList()`
 
 ```php
-productReviewList($product_id, $start, $count, $page_cursor, $ids, $store_id, $status, $response_fields, $params, $exclude): \OpenAPI\Client\Model\ModelResponseProductReviewList
+productReviewList($product_id, $start, $count, $page_cursor, $ids, $store_id, $lang_id, $status, $created_from, $created_to, $customer_id, $sort_by, $sort_direction, $response_fields, $params, $exclude): \OpenAPI\Client\Model\ModelResponseProductReviewList
 ```
 
 product.review.list
@@ -2650,13 +2662,19 @@ $count = 20; // int | This parameter sets the entity amount that has to be retri
 $page_cursor = ; // string | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
 $ids = 24,25; // string | Retrieves reviews specified by ids
 $store_id = 1; // string | Store Id
+$lang_id = 3; // string | Language id
 $status = disabled; // string | Defines status
+$created_from = 2010-07-29 13:45:52; // string | Retrieve entities from their creation date
+$created_to = 2100-08-29 13:45:52; // string | Retrieve entities to their creation date
+$customer_id = 5; // string | Retrieves orders specified by customer id
+$sort_by = value_id; // string | Set field to sort by
+$sort_direction = asc; // string | Set sorting direction
 $response_fields = {return_code,return_message,pagination,result}; // string | Set this parameter in order to choose which entity fields you want to retrieve
 $params = id,model,price,images; // string | Set this parameter in order to choose which entity fields you want to retrieve
 $exclude = false; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 
 try {
-    $result = $apiInstance->productReviewList($product_id, $start, $count, $page_cursor, $ids, $store_id, $status, $response_fields, $params, $exclude);
+    $result = $apiInstance->productReviewList($product_id, $start, $count, $page_cursor, $ids, $store_id, $lang_id, $status, $created_from, $created_to, $customer_id, $sort_by, $sort_direction, $response_fields, $params, $exclude);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productReviewList: ', $e->getMessage(), PHP_EOL;
@@ -2673,7 +2691,13 @@ try {
 | **page_cursor** | **string**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
 | **ids** | **string**| Retrieves reviews specified by ids | [optional] |
 | **store_id** | **string**| Store Id | [optional] |
+| **lang_id** | **string**| Language id | [optional] |
 | **status** | **string**| Defines status | [optional] |
+| **created_from** | **string**| Retrieve entities from their creation date | [optional] |
+| **created_to** | **string**| Retrieve entities to their creation date | [optional] |
+| **customer_id** | **string**| Retrieves orders specified by customer id | [optional] |
+| **sort_by** | **string**| Set field to sort by | [optional] [default to &#39;id&#39;] |
+| **sort_direction** | **string**| Set sorting direction | [optional] [default to &#39;asc&#39;] |
 | **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 | **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time&#39;] |
 | **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |

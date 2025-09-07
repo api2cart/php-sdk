@@ -1,6 +1,6 @@
 <?php
 /**
- * ProductReviewTest
+ * OrderCalculateDiscountTest
  *
  * PHP version 7.4
  *
@@ -32,15 +32,15 @@ namespace OpenAPI\Client\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ProductReviewTest Class Doc Comment
+ * OrderCalculateDiscountTest Class Doc Comment
  *
  * @category    Class
- * @description ProductReview
+ * @description OrderCalculateDiscount
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class ProductReviewTest extends TestCase
+class OrderCalculateDiscountTest extends TestCase
 {
 
     /**
@@ -72,126 +72,45 @@ class ProductReviewTest extends TestCase
     }
 
     /**
-     * Test "ProductReview"
+     * Test "OrderCalculateDiscount"
      */
-    public function testProductReview()
+    public function testOrderCalculateDiscount()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "code"
      */
-    public function testPropertyId()
+    public function testPropertyCode()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "product_id"
+     * Test attribute "value"
      */
-    public function testPropertyProductId()
+    public function testPropertyValue()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "customer_id"
+     * Test attribute "type"
      */
-    public function testPropertyCustomerId()
+    public function testPropertyType()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "nick_name"
+     * Test attribute "free_shipping"
      */
-    public function testPropertyNickName()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "email"
-     */
-    public function testPropertyEmail()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "summary"
-     */
-    public function testPropertySummary()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "message"
-     */
-    public function testPropertyMessage()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "rating"
-     */
-    public function testPropertyRating()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "ratings"
-     */
-    public function testPropertyRatings()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "status"
-     */
-    public function testPropertyStatus()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "created_time"
-     */
-    public function testPropertyCreatedTime()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "modified_time"
-     */
-    public function testPropertyModifiedTime()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "medias"
-     */
-    public function testPropertyMedias()
+    public function testPropertyFreeShipping()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

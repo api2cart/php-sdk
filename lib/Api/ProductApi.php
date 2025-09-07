@@ -9188,15 +9188,21 @@ class ProductApi
      * @param  string $product_id Defines products specified by product id (required)
      * @param  string $manufacturer Defines product’s manufacturer&#39;s name (required)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $meta_title Defines unique meta title for each entity (optional)
+     * @param  string|null $meta_keywords Defines unique meta keywords for each entity (optional)
+     * @param  string|null $meta_description Defines unique meta description of a entity (optional)
+     * @param  string|null $search_keywords Defines unique search keywords (optional)
+     * @param  string|null $image_url Image Url (optional)
+     * @param  string|null $seo_url Defines unique URL for SEO (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productManufacturerAdd'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ProductManufacturerAdd200Response
      */
-    public function productManufacturerAdd($product_id, $manufacturer, $store_id = null, string $contentType = self::contentTypes['productManufacturerAdd'][0])
+    public function productManufacturerAdd($product_id, $manufacturer, $store_id = null, $meta_title = null, $meta_keywords = null, $meta_description = null, $search_keywords = null, $image_url = null, $seo_url = null, string $contentType = self::contentTypes['productManufacturerAdd'][0])
     {
-        list($response) = $this->productManufacturerAddWithHttpInfo($product_id, $manufacturer, $store_id, $contentType);
+        list($response) = $this->productManufacturerAddWithHttpInfo($product_id, $manufacturer, $store_id, $meta_title, $meta_keywords, $meta_description, $search_keywords, $image_url, $seo_url, $contentType);
         return $response;
     }
 
@@ -9208,15 +9214,21 @@ class ProductApi
      * @param  string $product_id Defines products specified by product id (required)
      * @param  string $manufacturer Defines product’s manufacturer&#39;s name (required)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $meta_title Defines unique meta title for each entity (optional)
+     * @param  string|null $meta_keywords Defines unique meta keywords for each entity (optional)
+     * @param  string|null $meta_description Defines unique meta description of a entity (optional)
+     * @param  string|null $search_keywords Defines unique search keywords (optional)
+     * @param  string|null $image_url Image Url (optional)
+     * @param  string|null $seo_url Defines unique URL for SEO (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productManufacturerAdd'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ProductManufacturerAdd200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productManufacturerAddWithHttpInfo($product_id, $manufacturer, $store_id = null, string $contentType = self::contentTypes['productManufacturerAdd'][0])
+    public function productManufacturerAddWithHttpInfo($product_id, $manufacturer, $store_id = null, $meta_title = null, $meta_keywords = null, $meta_description = null, $search_keywords = null, $image_url = null, $seo_url = null, string $contentType = self::contentTypes['productManufacturerAdd'][0])
     {
-        $request = $this->productManufacturerAddRequest($product_id, $manufacturer, $store_id, $contentType);
+        $request = $this->productManufacturerAddRequest($product_id, $manufacturer, $store_id, $meta_title, $meta_keywords, $meta_description, $search_keywords, $image_url, $seo_url, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -9335,14 +9347,20 @@ class ProductApi
      * @param  string $product_id Defines products specified by product id (required)
      * @param  string $manufacturer Defines product’s manufacturer&#39;s name (required)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $meta_title Defines unique meta title for each entity (optional)
+     * @param  string|null $meta_keywords Defines unique meta keywords for each entity (optional)
+     * @param  string|null $meta_description Defines unique meta description of a entity (optional)
+     * @param  string|null $search_keywords Defines unique search keywords (optional)
+     * @param  string|null $image_url Image Url (optional)
+     * @param  string|null $seo_url Defines unique URL for SEO (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productManufacturerAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productManufacturerAddAsync($product_id, $manufacturer, $store_id = null, string $contentType = self::contentTypes['productManufacturerAdd'][0])
+    public function productManufacturerAddAsync($product_id, $manufacturer, $store_id = null, $meta_title = null, $meta_keywords = null, $meta_description = null, $search_keywords = null, $image_url = null, $seo_url = null, string $contentType = self::contentTypes['productManufacturerAdd'][0])
     {
-        return $this->productManufacturerAddAsyncWithHttpInfo($product_id, $manufacturer, $store_id, $contentType)
+        return $this->productManufacturerAddAsyncWithHttpInfo($product_id, $manufacturer, $store_id, $meta_title, $meta_keywords, $meta_description, $search_keywords, $image_url, $seo_url, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -9358,15 +9376,21 @@ class ProductApi
      * @param  string $product_id Defines products specified by product id (required)
      * @param  string $manufacturer Defines product’s manufacturer&#39;s name (required)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $meta_title Defines unique meta title for each entity (optional)
+     * @param  string|null $meta_keywords Defines unique meta keywords for each entity (optional)
+     * @param  string|null $meta_description Defines unique meta description of a entity (optional)
+     * @param  string|null $search_keywords Defines unique search keywords (optional)
+     * @param  string|null $image_url Image Url (optional)
+     * @param  string|null $seo_url Defines unique URL for SEO (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productManufacturerAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productManufacturerAddAsyncWithHttpInfo($product_id, $manufacturer, $store_id = null, string $contentType = self::contentTypes['productManufacturerAdd'][0])
+    public function productManufacturerAddAsyncWithHttpInfo($product_id, $manufacturer, $store_id = null, $meta_title = null, $meta_keywords = null, $meta_description = null, $search_keywords = null, $image_url = null, $seo_url = null, string $contentType = self::contentTypes['productManufacturerAdd'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ProductManufacturerAdd200Response';
-        $request = $this->productManufacturerAddRequest($product_id, $manufacturer, $store_id, $contentType);
+        $request = $this->productManufacturerAddRequest($product_id, $manufacturer, $store_id, $meta_title, $meta_keywords, $meta_description, $search_keywords, $image_url, $seo_url, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -9410,12 +9434,18 @@ class ProductApi
      * @param  string $product_id Defines products specified by product id (required)
      * @param  string $manufacturer Defines product’s manufacturer&#39;s name (required)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $meta_title Defines unique meta title for each entity (optional)
+     * @param  string|null $meta_keywords Defines unique meta keywords for each entity (optional)
+     * @param  string|null $meta_description Defines unique meta description of a entity (optional)
+     * @param  string|null $search_keywords Defines unique search keywords (optional)
+     * @param  string|null $image_url Image Url (optional)
+     * @param  string|null $seo_url Defines unique URL for SEO (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productManufacturerAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function productManufacturerAddRequest($product_id, $manufacturer, $store_id = null, string $contentType = self::contentTypes['productManufacturerAdd'][0])
+    public function productManufacturerAddRequest($product_id, $manufacturer, $store_id = null, $meta_title = null, $meta_keywords = null, $meta_description = null, $search_keywords = null, $image_url = null, $seo_url = null, string $contentType = self::contentTypes['productManufacturerAdd'][0])
     {
 
         // verify the required parameter 'product_id' is set
@@ -9431,6 +9461,12 @@ class ProductApi
                 'Missing the required parameter $manufacturer when calling productManufacturerAdd'
             );
         }
+
+
+
+
+
+
 
 
 
@@ -9463,6 +9499,60 @@ class ProductApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $store_id,
             'store_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $meta_title,
+            'meta_title', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $meta_keywords,
+            'meta_keywords', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $meta_description,
+            'meta_description', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $search_keywords,
+            'search_keywords', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $image_url,
+            'image_url', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $seo_url,
+            'seo_url', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -13601,7 +13691,13 @@ class ProductApi
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $ids Retrieves reviews specified by ids (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $lang_id Language id (optional)
      * @param  string|null $status Defines status (optional)
+     * @param  string|null $created_from Retrieve entities from their creation date (optional)
+     * @param  string|null $created_to Retrieve entities to their creation date (optional)
+     * @param  string|null $customer_id Retrieves orders specified by customer id (optional)
+     * @param  string|null $sort_by Set field to sort by (optional, default to 'id')
+     * @param  string|null $sort_direction Set sorting direction (optional, default to 'asc')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
@@ -13611,9 +13707,9 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseProductReviewList
      */
-    public function productReviewList($product_id, $start = 0, $count = 10, $page_cursor = null, $ids = null, $store_id = null, $status = null, $response_fields = null, $params = 'id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time', $exclude = null, string $contentType = self::contentTypes['productReviewList'][0])
+    public function productReviewList($product_id, $start = 0, $count = 10, $page_cursor = null, $ids = null, $store_id = null, $lang_id = null, $status = null, $created_from = null, $created_to = null, $customer_id = null, $sort_by = 'id', $sort_direction = 'asc', $response_fields = null, $params = 'id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time', $exclude = null, string $contentType = self::contentTypes['productReviewList'][0])
     {
-        list($response) = $this->productReviewListWithHttpInfo($product_id, $start, $count, $page_cursor, $ids, $store_id, $status, $response_fields, $params, $exclude, $contentType);
+        list($response) = $this->productReviewListWithHttpInfo($product_id, $start, $count, $page_cursor, $ids, $store_id, $lang_id, $status, $created_from, $created_to, $customer_id, $sort_by, $sort_direction, $response_fields, $params, $exclude, $contentType);
         return $response;
     }
 
@@ -13628,7 +13724,13 @@ class ProductApi
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $ids Retrieves reviews specified by ids (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $lang_id Language id (optional)
      * @param  string|null $status Defines status (optional)
+     * @param  string|null $created_from Retrieve entities from their creation date (optional)
+     * @param  string|null $created_to Retrieve entities to their creation date (optional)
+     * @param  string|null $customer_id Retrieves orders specified by customer id (optional)
+     * @param  string|null $sort_by Set field to sort by (optional, default to 'id')
+     * @param  string|null $sort_direction Set sorting direction (optional, default to 'asc')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
@@ -13638,9 +13740,9 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseProductReviewList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productReviewListWithHttpInfo($product_id, $start = 0, $count = 10, $page_cursor = null, $ids = null, $store_id = null, $status = null, $response_fields = null, $params = 'id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time', $exclude = null, string $contentType = self::contentTypes['productReviewList'][0])
+    public function productReviewListWithHttpInfo($product_id, $start = 0, $count = 10, $page_cursor = null, $ids = null, $store_id = null, $lang_id = null, $status = null, $created_from = null, $created_to = null, $customer_id = null, $sort_by = 'id', $sort_direction = 'asc', $response_fields = null, $params = 'id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time', $exclude = null, string $contentType = self::contentTypes['productReviewList'][0])
     {
-        $request = $this->productReviewListRequest($product_id, $start, $count, $page_cursor, $ids, $store_id, $status, $response_fields, $params, $exclude, $contentType);
+        $request = $this->productReviewListRequest($product_id, $start, $count, $page_cursor, $ids, $store_id, $lang_id, $status, $created_from, $created_to, $customer_id, $sort_by, $sort_direction, $response_fields, $params, $exclude, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -13762,7 +13864,13 @@ class ProductApi
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $ids Retrieves reviews specified by ids (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $lang_id Language id (optional)
      * @param  string|null $status Defines status (optional)
+     * @param  string|null $created_from Retrieve entities from their creation date (optional)
+     * @param  string|null $created_to Retrieve entities to their creation date (optional)
+     * @param  string|null $customer_id Retrieves orders specified by customer id (optional)
+     * @param  string|null $sort_by Set field to sort by (optional, default to 'id')
+     * @param  string|null $sort_direction Set sorting direction (optional, default to 'asc')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
@@ -13771,9 +13879,9 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productReviewListAsync($product_id, $start = 0, $count = 10, $page_cursor = null, $ids = null, $store_id = null, $status = null, $response_fields = null, $params = 'id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time', $exclude = null, string $contentType = self::contentTypes['productReviewList'][0])
+    public function productReviewListAsync($product_id, $start = 0, $count = 10, $page_cursor = null, $ids = null, $store_id = null, $lang_id = null, $status = null, $created_from = null, $created_to = null, $customer_id = null, $sort_by = 'id', $sort_direction = 'asc', $response_fields = null, $params = 'id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time', $exclude = null, string $contentType = self::contentTypes['productReviewList'][0])
     {
-        return $this->productReviewListAsyncWithHttpInfo($product_id, $start, $count, $page_cursor, $ids, $store_id, $status, $response_fields, $params, $exclude, $contentType)
+        return $this->productReviewListAsyncWithHttpInfo($product_id, $start, $count, $page_cursor, $ids, $store_id, $lang_id, $status, $created_from, $created_to, $customer_id, $sort_by, $sort_direction, $response_fields, $params, $exclude, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -13792,7 +13900,13 @@ class ProductApi
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $ids Retrieves reviews specified by ids (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $lang_id Language id (optional)
      * @param  string|null $status Defines status (optional)
+     * @param  string|null $created_from Retrieve entities from their creation date (optional)
+     * @param  string|null $created_to Retrieve entities to their creation date (optional)
+     * @param  string|null $customer_id Retrieves orders specified by customer id (optional)
+     * @param  string|null $sort_by Set field to sort by (optional, default to 'id')
+     * @param  string|null $sort_direction Set sorting direction (optional, default to 'asc')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
@@ -13801,10 +13915,10 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productReviewListAsyncWithHttpInfo($product_id, $start = 0, $count = 10, $page_cursor = null, $ids = null, $store_id = null, $status = null, $response_fields = null, $params = 'id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time', $exclude = null, string $contentType = self::contentTypes['productReviewList'][0])
+    public function productReviewListAsyncWithHttpInfo($product_id, $start = 0, $count = 10, $page_cursor = null, $ids = null, $store_id = null, $lang_id = null, $status = null, $created_from = null, $created_to = null, $customer_id = null, $sort_by = 'id', $sort_direction = 'asc', $response_fields = null, $params = 'id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time', $exclude = null, string $contentType = self::contentTypes['productReviewList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseProductReviewList';
-        $request = $this->productReviewListRequest($product_id, $start, $count, $page_cursor, $ids, $store_id, $status, $response_fields, $params, $exclude, $contentType);
+        $request = $this->productReviewListRequest($product_id, $start, $count, $page_cursor, $ids, $store_id, $lang_id, $status, $created_from, $created_to, $customer_id, $sort_by, $sort_direction, $response_fields, $params, $exclude, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -13851,7 +13965,13 @@ class ProductApi
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $ids Retrieves reviews specified by ids (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $lang_id Language id (optional)
      * @param  string|null $status Defines status (optional)
+     * @param  string|null $created_from Retrieve entities from their creation date (optional)
+     * @param  string|null $created_to Retrieve entities to their creation date (optional)
+     * @param  string|null $customer_id Retrieves orders specified by customer id (optional)
+     * @param  string|null $sort_by Set field to sort by (optional, default to 'id')
+     * @param  string|null $sort_direction Set sorting direction (optional, default to 'asc')
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
@@ -13860,7 +13980,7 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function productReviewListRequest($product_id, $start = 0, $count = 10, $page_cursor = null, $ids = null, $store_id = null, $status = null, $response_fields = null, $params = 'id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time', $exclude = null, string $contentType = self::contentTypes['productReviewList'][0])
+    public function productReviewListRequest($product_id, $start = 0, $count = 10, $page_cursor = null, $ids = null, $store_id = null, $lang_id = null, $status = null, $created_from = null, $created_to = null, $customer_id = null, $sort_by = 'id', $sort_direction = 'asc', $response_fields = null, $params = 'id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time', $exclude = null, string $contentType = self::contentTypes['productReviewList'][0])
     {
 
         // verify the required parameter 'product_id' is set
@@ -13869,6 +13989,12 @@ class ProductApi
                 'Missing the required parameter $product_id when calling productReviewList'
             );
         }
+
+
+
+
+
+
 
 
 
@@ -13943,8 +14069,62 @@ class ProductApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $lang_id,
+            'lang_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $status,
             'status', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $created_from,
+            'created_from', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $created_to,
+            'created_to', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $customer_id,
+            'customer_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $sort_by,
+            'sort_by', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $sort_direction,
+            'sort_direction', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
