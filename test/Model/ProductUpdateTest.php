@@ -324,6 +324,15 @@ class ProductUpdateTest extends TestCase
     }
 
     /**
+     * Test attribute "brand_name"
+     */
+    public function testPropertyBrandName()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "available_for_view"
      */
     public function testPropertyAvailableForView()

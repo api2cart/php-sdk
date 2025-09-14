@@ -81,6 +81,7 @@ class ProductUpdateBatchPayloadInner implements ModelInterface, ArrayAccess, \Js
         'status' => 'string',
         'type' => 'string',
         'condition' => 'string',
+        'condition_description' => 'string',
         'visible' => 'string',
         'available_for_view' => 'bool',
         'available_for_sale' => 'bool',
@@ -154,6 +155,7 @@ class ProductUpdateBatchPayloadInner implements ModelInterface, ArrayAccess, \Js
         'status' => null,
         'type' => null,
         'condition' => null,
+        'condition_description' => null,
         'visible' => null,
         'available_for_view' => null,
         'available_for_sale' => null,
@@ -225,6 +227,7 @@ class ProductUpdateBatchPayloadInner implements ModelInterface, ArrayAccess, \Js
         'status' => false,
         'type' => false,
         'condition' => false,
+        'condition_description' => false,
         'visible' => false,
         'available_for_view' => false,
         'available_for_sale' => false,
@@ -376,6 +379,7 @@ class ProductUpdateBatchPayloadInner implements ModelInterface, ArrayAccess, \Js
         'status' => 'status',
         'type' => 'type',
         'condition' => 'condition',
+        'condition_description' => 'condition_description',
         'visible' => 'visible',
         'available_for_view' => 'available_for_view',
         'available_for_sale' => 'available_for_sale',
@@ -447,6 +451,7 @@ class ProductUpdateBatchPayloadInner implements ModelInterface, ArrayAccess, \Js
         'status' => 'setStatus',
         'type' => 'setType',
         'condition' => 'setCondition',
+        'condition_description' => 'setConditionDescription',
         'visible' => 'setVisible',
         'available_for_view' => 'setAvailableForView',
         'available_for_sale' => 'setAvailableForSale',
@@ -518,6 +523,7 @@ class ProductUpdateBatchPayloadInner implements ModelInterface, ArrayAccess, \Js
         'status' => 'getStatus',
         'type' => 'getType',
         'condition' => 'getCondition',
+        'condition_description' => 'getConditionDescription',
         'visible' => 'getVisible',
         'available_for_view' => 'getAvailableForView',
         'available_for_sale' => 'getAvailableForSale',
@@ -640,6 +646,7 @@ class ProductUpdateBatchPayloadInner implements ModelInterface, ArrayAccess, \Js
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('condition', $data ?? [], null);
+        $this->setIfExists('condition_description', $data ?? [], null);
         $this->setIfExists('visible', $data ?? [], null);
         $this->setIfExists('available_for_view', $data ?? [], null);
         $this->setIfExists('available_for_sale', $data ?? [], null);
@@ -1364,6 +1371,33 @@ class ProductUpdateBatchPayloadInner implements ModelInterface, ArrayAccess, \Js
             throw new \InvalidArgumentException('non-nullable condition cannot be null');
         }
         $this->container['condition'] = $condition;
+
+        return $this;
+    }
+
+    /**
+     * Gets condition_description
+     *
+     * @return string|null
+     */
+    public function getConditionDescription()
+    {
+        return $this->container['condition_description'];
+    }
+
+    /**
+     * Sets condition_description
+     *
+     * @param string|null $condition_description condition_description
+     *
+     * @return self
+     */
+    public function setConditionDescription($condition_description)
+    {
+        if (is_null($condition_description)) {
+            throw new \InvalidArgumentException('non-nullable condition_description cannot be null');
+        }
+        $this->container['condition_description'] = $condition_description;
 
         return $this;
     }

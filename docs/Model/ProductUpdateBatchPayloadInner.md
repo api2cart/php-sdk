@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 **status** | **string** |  | [optional]
 **type** | **string** |  | [optional]
 **condition** | **string** |  | [optional]
+**condition_description** | **string** |  | [optional]
 **visible** | **string** |  | [optional]
 **available_for_view** | **bool** |  | [optional]
 **available_for_sale** | **bool** |  | [optional]

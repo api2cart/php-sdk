@@ -288,6 +288,15 @@ class ProductUpdateBatchPayloadInnerTest extends TestCase
     }
 
     /**
+     * Test attribute "condition_description"
+     */
+    public function testPropertyConditionDescription()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "visible"
      */
     public function testPropertyVisible()

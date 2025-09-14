@@ -85,6 +85,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'avail' => 'bool',
         'avail_from' => 'string',
         'product_class' => 'string',
+        'brand_name' => 'string',
         'available_for_view' => 'bool',
         'stores_ids' => 'string',
         'store_id' => 'string',
@@ -184,6 +185,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'avail' => null,
         'avail_from' => null,
         'product_class' => null,
+        'brand_name' => null,
         'available_for_view' => null,
         'stores_ids' => null,
         'store_id' => null,
@@ -281,6 +283,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'avail' => false,
         'avail_from' => false,
         'product_class' => false,
+        'brand_name' => false,
         'available_for_view' => false,
         'stores_ids' => false,
         'store_id' => false,
@@ -458,6 +461,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'avail' => 'avail',
         'avail_from' => 'avail_from',
         'product_class' => 'product_class',
+        'brand_name' => 'brand_name',
         'available_for_view' => 'available_for_view',
         'stores_ids' => 'stores_ids',
         'store_id' => 'store_id',
@@ -555,6 +559,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'avail' => 'setAvail',
         'avail_from' => 'setAvailFrom',
         'product_class' => 'setProductClass',
+        'brand_name' => 'setBrandName',
         'available_for_view' => 'setAvailableForView',
         'stores_ids' => 'setStoresIds',
         'store_id' => 'setStoreId',
@@ -652,6 +657,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'avail' => 'getAvail',
         'avail_from' => 'getAvailFrom',
         'product_class' => 'getProductClass',
+        'brand_name' => 'getBrandName',
         'available_for_view' => 'getAvailableForView',
         'stores_ids' => 'getStoresIds',
         'store_id' => 'getStoreId',
@@ -800,6 +806,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('avail', $data ?? [], true);
         $this->setIfExists('avail_from', $data ?? [], null);
         $this->setIfExists('product_class', $data ?? [], null);
+        $this->setIfExists('brand_name', $data ?? [], null);
         $this->setIfExists('available_for_view', $data ?? [], null);
         $this->setIfExists('stores_ids', $data ?? [], null);
         $this->setIfExists('store_id', $data ?? [], null);
@@ -1631,6 +1638,33 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable product_class cannot be null');
         }
         $this->container['product_class'] = $product_class;
+
+        return $this;
+    }
+
+    /**
+     * Gets brand_name
+     *
+     * @return string|null
+     */
+    public function getBrandName()
+    {
+        return $this->container['brand_name'];
+    }
+
+    /**
+     * Sets brand_name
+     *
+     * @param string|null $brand_name Retrieves brands specified by brand name
+     *
+     * @return self
+     */
+    public function setBrandName($brand_name)
+    {
+        if (is_null($brand_name)) {
+            throw new \InvalidArgumentException('non-nullable brand_name cannot be null');
+        }
+        $this->container['brand_name'] = $brand_name;
 
         return $this;
     }
