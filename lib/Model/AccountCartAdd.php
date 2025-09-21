@@ -151,6 +151,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shoplazza_access_token' => 'string',
         'shoplazza_shared_secret' => 'string',
         'shopware_access_key' => 'string',
+        'unas_api_key' => 'string',
         'shopware_api_key' => 'string',
         'shopware_api_secret' => 'string',
         'miva_access_token' => 'string',
@@ -326,6 +327,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shoplazza_access_token' => null,
         'shoplazza_shared_secret' => null,
         'shopware_access_key' => null,
+        'unas_api_key' => null,
         'shopware_api_key' => null,
         'shopware_api_secret' => null,
         'miva_access_token' => null,
@@ -499,6 +501,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shoplazza_access_token' => false,
         'shoplazza_shared_secret' => false,
         'shopware_access_key' => false,
+        'unas_api_key' => false,
         'shopware_api_key' => false,
         'shopware_api_secret' => false,
         'miva_access_token' => false,
@@ -752,6 +755,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shoplazza_access_token' => 'shoplazza_access_token',
         'shoplazza_shared_secret' => 'shoplazza_shared_secret',
         'shopware_access_key' => 'shopware_access_key',
+        'unas_api_key' => 'unas_api_key',
         'shopware_api_key' => 'shopware_api_key',
         'shopware_api_secret' => 'shopware_api_secret',
         'miva_access_token' => 'miva_access_token',
@@ -925,6 +929,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shoplazza_access_token' => 'setShoplazzaAccessToken',
         'shoplazza_shared_secret' => 'setShoplazzaSharedSecret',
         'shopware_access_key' => 'setShopwareAccessKey',
+        'unas_api_key' => 'setUnasApiKey',
         'shopware_api_key' => 'setShopwareApiKey',
         'shopware_api_secret' => 'setShopwareApiSecret',
         'miva_access_token' => 'setMivaAccessToken',
@@ -1098,6 +1103,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shoplazza_access_token' => 'getShoplazzaAccessToken',
         'shoplazza_shared_secret' => 'getShoplazzaSharedSecret',
         'shopware_access_key' => 'getShopwareAccessKey',
+        'unas_api_key' => 'getUnasApiKey',
         'shopware_api_key' => 'getShopwareApiKey',
         'shopware_api_secret' => 'getShopwareApiSecret',
         'miva_access_token' => 'getMivaAccessToken',
@@ -1469,6 +1475,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('shoplazza_access_token', $data ?? [], null);
         $this->setIfExists('shoplazza_shared_secret', $data ?? [], null);
         $this->setIfExists('shopware_access_key', $data ?? [], null);
+        $this->setIfExists('unas_api_key', $data ?? [], null);
         $this->setIfExists('shopware_api_key', $data ?? [], null);
         $this->setIfExists('shopware_api_secret', $data ?? [], null);
         $this->setIfExists('miva_access_token', $data ?? [], null);
@@ -4118,6 +4125,33 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable shopware_access_key cannot be null');
         }
         $this->container['shopware_access_key'] = $shopware_access_key;
+
+        return $this;
+    }
+
+    /**
+     * Gets unas_api_key
+     *
+     * @return string|null
+     */
+    public function getUnasApiKey()
+    {
+        return $this->container['unas_api_key'];
+    }
+
+    /**
+     * Sets unas_api_key
+     *
+     * @param string|null $unas_api_key UNAS API Key
+     *
+     * @return self
+     */
+    public function setUnasApiKey($unas_api_key)
+    {
+        if (is_null($unas_api_key)) {
+            throw new \InvalidArgumentException('non-nullable unas_api_key cannot be null');
+        }
+        $this->container['unas_api_key'] = $unas_api_key;
 
         return $this;
     }

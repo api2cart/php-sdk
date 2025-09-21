@@ -110,6 +110,7 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'meta_title' => 'string',
         'meta_description' => 'string',
         'meta_keywords' => 'string',
+        'manufacturer' => 'string',
         'reindex' => 'bool',
         'clear_cache' => 'bool'
     ];
@@ -174,6 +175,7 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'meta_title' => null,
         'meta_description' => null,
         'meta_keywords' => null,
+        'manufacturer' => null,
         'reindex' => null,
         'clear_cache' => null
     ];
@@ -236,6 +238,7 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'meta_title' => false,
         'meta_description' => false,
         'meta_keywords' => false,
+        'manufacturer' => false,
         'reindex' => false,
         'clear_cache' => false
     ];
@@ -378,6 +381,7 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'meta_title' => 'meta_title',
         'meta_description' => 'meta_description',
         'meta_keywords' => 'meta_keywords',
+        'manufacturer' => 'manufacturer',
         'reindex' => 'reindex',
         'clear_cache' => 'clear_cache'
     ];
@@ -440,6 +444,7 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'meta_title' => 'setMetaTitle',
         'meta_description' => 'setMetaDescription',
         'meta_keywords' => 'setMetaKeywords',
+        'manufacturer' => 'setManufacturer',
         'reindex' => 'setReindex',
         'clear_cache' => 'setClearCache'
     ];
@@ -502,6 +507,7 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'meta_title' => 'getMetaTitle',
         'meta_description' => 'getMetaDescription',
         'meta_keywords' => 'getMetaKeywords',
+        'manufacturer' => 'getManufacturer',
         'reindex' => 'getReindex',
         'clear_cache' => 'getClearCache'
     ];
@@ -581,7 +587,7 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->setIfExists('avail', $data ?? [], true);
         $this->setIfExists('is_default', $data ?? [], null);
         $this->setIfExists('is_free_shipping', $data ?? [], null);
-        $this->setIfExists('taxable', $data ?? [], true);
+        $this->setIfExists('taxable', $data ?? [], null);
         $this->setIfExists('tax_class_id', $data ?? [], null);
         $this->setIfExists('is_virtual', $data ?? [], false);
         $this->setIfExists('manage_stock', $data ?? [], null);
@@ -615,6 +621,7 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->setIfExists('meta_title', $data ?? [], null);
         $this->setIfExists('meta_description', $data ?? [], null);
         $this->setIfExists('meta_keywords', $data ?? [], null);
+        $this->setIfExists('manufacturer', $data ?? [], null);
         $this->setIfExists('reindex', $data ?? [], true);
         $this->setIfExists('clear_cache', $data ?? [], true);
     }
@@ -2061,6 +2068,33 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
             throw new \InvalidArgumentException('non-nullable meta_keywords cannot be null');
         }
         $this->container['meta_keywords'] = $meta_keywords;
+
+        return $this;
+    }
+
+    /**
+     * Gets manufacturer
+     *
+     * @return string|null
+     */
+    public function getManufacturer()
+    {
+        return $this->container['manufacturer'];
+    }
+
+    /**
+     * Sets manufacturer
+     *
+     * @param string|null $manufacturer Specifies the product variant's manufacturer
+     *
+     * @return self
+     */
+    public function setManufacturer($manufacturer)
+    {
+        if (is_null($manufacturer)) {
+            throw new \InvalidArgumentException('non-nullable manufacturer cannot be null');
+        }
+        $this->container['manufacturer'] = $manufacturer;
 
         return $this;
     }

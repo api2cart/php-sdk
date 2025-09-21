@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **tier_prices** | [**\OpenAPI\Client\Model\ProductAddTierPricesInner[]**](ProductAddTierPricesInner.md) | Defines product&#39;s tier prices | [optional]
 **reserve_price** | **float** | Defines reserve price value | [optional]
 **buyitnow_price** | **float** | Defines buy it now value | [optional]
-**taxable** | **bool** | Specifies whether a tax is charged | [optional] [default to true]
+**taxable** | **bool** | Specifies whether a tax is charged | [optional]
 **tax_class_id** | **string** | Defines tax classes where entity has to be added | [optional]
 **type** | **string** | Defines product&#39;s type | [optional]
 **status** | **string** | Defines product&#39;s status | [optional]

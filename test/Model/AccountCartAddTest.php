@@ -918,6 +918,15 @@ class AccountCartAddTest extends TestCase
     }
 
     /**
+     * Test attribute "unas_api_key"
+     */
+    public function testPropertyUnasApiKey()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "shopware_api_key"
      */
     public function testPropertyShopwareApiKey()

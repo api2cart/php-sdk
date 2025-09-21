@@ -796,7 +796,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('tier_prices', $data ?? [], null);
         $this->setIfExists('reserve_price', $data ?? [], null);
         $this->setIfExists('buyitnow_price', $data ?? [], null);
-        $this->setIfExists('taxable', $data ?? [], true);
+        $this->setIfExists('taxable', $data ?? [], null);
         $this->setIfExists('tax_class_id', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);

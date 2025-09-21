@@ -549,6 +549,15 @@ class ProductVariantUpdateTest extends TestCase
     }
 
     /**
+     * Test attribute "manufacturer"
+     */
+    public function testPropertyManufacturer()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "reindex"
      */
     public function testPropertyReindex()
