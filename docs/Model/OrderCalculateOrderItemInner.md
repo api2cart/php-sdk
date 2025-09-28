@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **order_item_id** | **string** | Defines orders specified by order item id |
 **order_item_quantity** | **int** | Defines orders specified by order item quantity |
 **order_item_variant_id** | **string** | Ordered product variant. Where x is order item ID | [optional]
+**order_item_parent** | **int** | Index of the parent grouped/bundle product | [optional]
+**order_item_parent_option_name** | **string** | Option name of the parent grouped/bundle product | [optional]
 **order_item_option** | [**\OpenAPI\Client\Model\OrderCalculateOrderItemInnerOrderItemOptionInner[]**](OrderCalculateOrderItemInnerOrderItemOptionInner.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -1,6 +1,6 @@
 <?php
 /**
- * OrderCalculateItemTest
+ * OrderCalculateBundleTest
  *
  * PHP version 7.4
  *
@@ -32,15 +32,15 @@ namespace OpenAPI\Client\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * OrderCalculateItemTest Class Doc Comment
+ * OrderCalculateBundleTest Class Doc Comment
  *
  * @category    Class
- * @description OrderCalculateItem
+ * @description OrderCalculateBundle
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class OrderCalculateItemTest extends TestCase
+class OrderCalculateBundleTest extends TestCase
 {
 
     /**
@@ -72,9 +72,9 @@ class OrderCalculateItemTest extends TestCase
     }
 
     /**
-     * Test "OrderCalculateItem"
+     * Test "OrderCalculateBundle"
      */
-    public function testOrderCalculateItem()
+    public function testOrderCalculateBundle()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -183,15 +183,6 @@ class OrderCalculateItemTest extends TestCase
      * Test attribute "variant_id"
      */
     public function testPropertyVariantId()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "bundle_product_id"
-     */
-    public function testPropertyBundleProductId()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

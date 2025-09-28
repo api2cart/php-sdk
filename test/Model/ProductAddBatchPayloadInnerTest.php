@@ -171,6 +171,15 @@ class ProductAddBatchPayloadInnerTest extends TestCase
     }
 
     /**
+     * Test attribute "isbn"
+     */
+    public function testPropertyIsbn()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "barcode"
      */
     public function testPropertyBarcode()
@@ -234,6 +243,15 @@ class ProductAddBatchPayloadInnerTest extends TestCase
     }
 
     /**
+     * Test attribute "avail_from"
+     */
+    public function testPropertyAvailFrom()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "advanced_prices"
      */
     public function testPropertyAdvancedPrices()
@@ -246,6 +264,33 @@ class ProductAddBatchPayloadInnerTest extends TestCase
      * Test attribute "fixed_cost_shipping_price"
      */
     public function testPropertyFixedCostShippingPrice()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "buyitnow_price"
+     */
+    public function testPropertyBuyitnowPrice()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "reserve_price"
+     */
+    public function testPropertyReservePrice()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "best_offer"
+     */
+    public function testPropertyBestOffer()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -333,6 +378,15 @@ class ProductAddBatchPayloadInnerTest extends TestCase
     }
 
     /**
+     * Test attribute "condition_description"
+     */
+    public function testPropertyConditionDescription()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "visible"
      */
     public function testPropertyVisible()
@@ -381,6 +435,24 @@ class ProductAddBatchPayloadInnerTest extends TestCase
      * Test attribute "type"
      */
     public function testPropertyType()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "listing_type"
+     */
+    public function testPropertyListingType()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "listing_duration"
+     */
+    public function testPropertyListingDuration()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -534,6 +606,15 @@ class ProductAddBatchPayloadInnerTest extends TestCase
      * Test attribute "tax_class_id"
      */
     public function testPropertyTaxClassId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "sales_tax"
+     */
+    public function testPropertySalesTax()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

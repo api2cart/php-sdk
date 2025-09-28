@@ -1,6 +1,6 @@
 <?php
 /**
- * OrderCalculateOrderItemInnerTest
+ * ProductAddBatchPayloadInnerSalesTaxTest
  *
  * PHP version 7.4
  *
@@ -32,15 +32,15 @@ namespace OpenAPI\Client\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * OrderCalculateOrderItemInnerTest Class Doc Comment
+ * ProductAddBatchPayloadInnerSalesTaxTest Class Doc Comment
  *
  * @category    Class
- * @description OrderCalculateOrderItemInner
+ * @description ProductAddBatchPayloadInnerSalesTax
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class OrderCalculateOrderItemInnerTest extends TestCase
+class ProductAddBatchPayloadInnerSalesTaxTest extends TestCase
 {
 
     /**
@@ -72,63 +72,27 @@ class OrderCalculateOrderItemInnerTest extends TestCase
     }
 
     /**
-     * Test "OrderCalculateOrderItemInner"
+     * Test "ProductAddBatchPayloadInnerSalesTax"
      */
-    public function testOrderCalculateOrderItemInner()
+    public function testProductAddBatchPayloadInnerSalesTax()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "order_item_id"
+     * Test attribute "tax_percent"
      */
-    public function testPropertyOrderItemId()
+    public function testPropertyTaxPercent()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "order_item_quantity"
+     * Test attribute "taxable"
      */
-    public function testPropertyOrderItemQuantity()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "order_item_variant_id"
-     */
-    public function testPropertyOrderItemVariantId()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "order_item_parent"
-     */
-    public function testPropertyOrderItemParent()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "order_item_parent_option_name"
-     */
-    public function testPropertyOrderItemParentOptionName()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "order_item_option"
-     */
-    public function testPropertyOrderItemOption()
+    public function testPropertyTaxable()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

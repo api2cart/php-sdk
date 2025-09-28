@@ -210,6 +210,7 @@ docs/Model/OrderAddOrderItemInnerOrderItemOptionInner.md
 docs/Model/OrderAddOrderItemInnerOrderItemPropertyInner.md
 docs/Model/OrderCalculate.md
 docs/Model/OrderCalculate200Response.md
+docs/Model/OrderCalculateBundle.md
 docs/Model/OrderCalculateDiscount.md
 docs/Model/OrderCalculateItem.md
 docs/Model/OrderCalculateOrderItemInner.md
@@ -278,6 +279,7 @@ docs/Model/ProductAddBatch.md
 docs/Model/ProductAddBatchPayloadInner.md
 docs/Model/ProductAddBatchPayloadInnerAdvancedPricesInner.md
 docs/Model/ProductAddBatchPayloadInnerImagesInner.md
+docs/Model/ProductAddBatchPayloadInnerSalesTax.md
 docs/Model/ProductAddBestOffer.md
 docs/Model/ProductAddCertificationsInner.md
 docs/Model/ProductAddCertificationsInnerFilesInner.md
@@ -658,6 +660,7 @@ lib/Model/OrderAddOrderItemInnerOrderItemOptionInner.php
 lib/Model/OrderAddOrderItemInnerOrderItemPropertyInner.php
 lib/Model/OrderCalculate.php
 lib/Model/OrderCalculate200Response.php
+lib/Model/OrderCalculateBundle.php
 lib/Model/OrderCalculateDiscount.php
 lib/Model/OrderCalculateItem.php
 lib/Model/OrderCalculateOrderItemInner.php
@@ -726,6 +729,7 @@ lib/Model/ProductAddBatch.php
 lib/Model/ProductAddBatchPayloadInner.php
 lib/Model/ProductAddBatchPayloadInnerAdvancedPricesInner.php
 lib/Model/ProductAddBatchPayloadInnerImagesInner.php
+lib/Model/ProductAddBatchPayloadInnerSalesTax.php
 lib/Model/ProductAddBestOffer.php
 lib/Model/ProductAddCertificationsInner.php
 lib/Model/ProductAddCertificationsInnerFilesInner.php
@@ -1101,6 +1105,7 @@ test/Model/OrderAddOrderItemInnerOrderItemPropertyInnerTest.php
 test/Model/OrderAddOrderItemInnerTest.php
 test/Model/OrderAddTest.php
 test/Model/OrderCalculate200ResponseTest.php
+test/Model/OrderCalculateBundleTest.php
 test/Model/OrderCalculateDiscountTest.php
 test/Model/OrderCalculateItemTest.php
 test/Model/OrderCalculateOrderItemInnerOrderItemOptionInnerTest.php
@@ -1167,6 +1172,7 @@ test/Model/ProductAdd200ResponseResultTest.php
 test/Model/ProductAdd200ResponseTest.php
 test/Model/ProductAddBatchPayloadInnerAdvancedPricesInnerTest.php
 test/Model/ProductAddBatchPayloadInnerImagesInnerTest.php
+test/Model/ProductAddBatchPayloadInnerSalesTaxTest.php
 test/Model/ProductAddBatchPayloadInnerTest.php
 test/Model/ProductAddBatchTest.php
 test/Model/ProductAddBestOfferTest.php

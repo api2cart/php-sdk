@@ -1,6 +1,6 @@
 <?php
 /**
- * OrderCalculateItem
+ * OrderCalculateBundle
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * OrderCalculateItem Class Doc Comment
+ * OrderCalculateBundle Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -41,7 +41,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class OrderCalculateItem implements ModelInterface, ArrayAccess, \JsonSerializable
+class OrderCalculateBundle implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class OrderCalculateItem implements ModelInterface, ArrayAccess, \JsonSerializab
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Order_Calculate_Item';
+    protected static $openAPIModelName = 'Order_Calculate_Bundle';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -70,7 +70,6 @@ class OrderCalculateItem implements ModelInterface, ArrayAccess, \JsonSerializab
         'weight_unit' => 'string',
         'barcode' => 'string',
         'variant_id' => 'string',
-        'bundle_product_id' => 'string',
         'options' => '\OpenAPI\Client\Model\OrderItemOption[]',
         'additional_fields' => 'object',
         'custom_fields' => 'object'
@@ -96,7 +95,6 @@ class OrderCalculateItem implements ModelInterface, ArrayAccess, \JsonSerializab
         'weight_unit' => null,
         'barcode' => null,
         'variant_id' => null,
-        'bundle_product_id' => null,
         'options' => null,
         'additional_fields' => null,
         'custom_fields' => null
@@ -120,7 +118,6 @@ class OrderCalculateItem implements ModelInterface, ArrayAccess, \JsonSerializab
         'weight_unit' => true,
         'barcode' => true,
         'variant_id' => true,
-        'bundle_product_id' => true,
         'options' => false,
         'additional_fields' => true,
         'custom_fields' => true
@@ -224,7 +221,6 @@ class OrderCalculateItem implements ModelInterface, ArrayAccess, \JsonSerializab
         'weight_unit' => 'weight_unit',
         'barcode' => 'barcode',
         'variant_id' => 'variant_id',
-        'bundle_product_id' => 'bundle_product_id',
         'options' => 'options',
         'additional_fields' => 'additional_fields',
         'custom_fields' => 'custom_fields'
@@ -248,7 +244,6 @@ class OrderCalculateItem implements ModelInterface, ArrayAccess, \JsonSerializab
         'weight_unit' => 'setWeightUnit',
         'barcode' => 'setBarcode',
         'variant_id' => 'setVariantId',
-        'bundle_product_id' => 'setBundleProductId',
         'options' => 'setOptions',
         'additional_fields' => 'setAdditionalFields',
         'custom_fields' => 'setCustomFields'
@@ -272,7 +267,6 @@ class OrderCalculateItem implements ModelInterface, ArrayAccess, \JsonSerializab
         'weight_unit' => 'getWeightUnit',
         'barcode' => 'getBarcode',
         'variant_id' => 'getVariantId',
-        'bundle_product_id' => 'getBundleProductId',
         'options' => 'getOptions',
         'additional_fields' => 'getAdditionalFields',
         'custom_fields' => 'getCustomFields'
@@ -347,7 +341,6 @@ class OrderCalculateItem implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->setIfExists('weight_unit', $data ?? [], null);
         $this->setIfExists('barcode', $data ?? [], null);
         $this->setIfExists('variant_id', $data ?? [], null);
-        $this->setIfExists('bundle_product_id', $data ?? [], null);
         $this->setIfExists('options', $data ?? [], null);
         $this->setIfExists('additional_fields', $data ?? [], null);
         $this->setIfExists('custom_fields', $data ?? [], null);
@@ -743,40 +736,6 @@ class OrderCalculateItem implements ModelInterface, ArrayAccess, \JsonSerializab
             }
         }
         $this->container['variant_id'] = $variant_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets bundle_product_id
-     *
-     * @return string|null
-     */
-    public function getBundleProductId()
-    {
-        return $this->container['bundle_product_id'];
-    }
-
-    /**
-     * Sets bundle_product_id
-     *
-     * @param string|null $bundle_product_id bundle_product_id
-     *
-     * @return self
-     */
-    public function setBundleProductId($bundle_product_id)
-    {
-        if (is_null($bundle_product_id)) {
-            array_push($this->openAPINullablesSetToNull, 'bundle_product_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('bundle_product_id', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['bundle_product_id'] = $bundle_product_id;
 
         return $this;
     }

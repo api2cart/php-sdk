@@ -1,6 +1,6 @@
 <?php
 /**
- * OrderCalculateOrderItemInner
+ * ProductAddBatchPayloadInnerSalesTax
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * OrderCalculateOrderItemInner Class Doc Comment
+ * ProductAddBatchPayloadInnerSalesTax Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -41,7 +41,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class OrderCalculateOrderItemInner implements ModelInterface, ArrayAccess, \JsonSerializable
+class ProductAddBatchPayloadInnerSalesTax implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class OrderCalculateOrderItemInner implements ModelInterface, ArrayAccess, \Json
       *
       * @var string
       */
-    protected static $openAPIModelName = 'OrderCalculate_order_item_inner';
+    protected static $openAPIModelName = 'ProductAddBatch_payload_inner_sales_tax';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,12 +58,8 @@ class OrderCalculateOrderItemInner implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'order_item_id' => 'string',
-        'order_item_quantity' => 'int',
-        'order_item_variant_id' => 'string',
-        'order_item_parent' => 'int',
-        'order_item_parent_option_name' => 'string',
-        'order_item_option' => '\OpenAPI\Client\Model\OrderCalculateOrderItemInnerOrderItemOptionInner[]'
+        'tax_percent' => 'float',
+        'taxable' => 'bool'
     ];
 
     /**
@@ -74,12 +70,8 @@ class OrderCalculateOrderItemInner implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'order_item_id' => null,
-        'order_item_quantity' => null,
-        'order_item_variant_id' => null,
-        'order_item_parent' => null,
-        'order_item_parent_option_name' => null,
-        'order_item_option' => null
+        'tax_percent' => null,
+        'taxable' => null
     ];
 
     /**
@@ -88,12 +80,8 @@ class OrderCalculateOrderItemInner implements ModelInterface, ArrayAccess, \Json
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'order_item_id' => false,
-        'order_item_quantity' => false,
-        'order_item_variant_id' => false,
-        'order_item_parent' => false,
-        'order_item_parent_option_name' => false,
-        'order_item_option' => false
+        'tax_percent' => false,
+        'taxable' => false
     ];
 
     /**
@@ -182,12 +170,8 @@ class OrderCalculateOrderItemInner implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $attributeMap = [
-        'order_item_id' => 'order_item_id',
-        'order_item_quantity' => 'order_item_quantity',
-        'order_item_variant_id' => 'order_item_variant_id',
-        'order_item_parent' => 'order_item_parent',
-        'order_item_parent_option_name' => 'order_item_parent_option_name',
-        'order_item_option' => 'order_item_option'
+        'tax_percent' => 'tax_percent',
+        'taxable' => 'taxable'
     ];
 
     /**
@@ -196,12 +180,8 @@ class OrderCalculateOrderItemInner implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-        'order_item_id' => 'setOrderItemId',
-        'order_item_quantity' => 'setOrderItemQuantity',
-        'order_item_variant_id' => 'setOrderItemVariantId',
-        'order_item_parent' => 'setOrderItemParent',
-        'order_item_parent_option_name' => 'setOrderItemParentOptionName',
-        'order_item_option' => 'setOrderItemOption'
+        'tax_percent' => 'setTaxPercent',
+        'taxable' => 'setTaxable'
     ];
 
     /**
@@ -210,12 +190,8 @@ class OrderCalculateOrderItemInner implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $getters = [
-        'order_item_id' => 'getOrderItemId',
-        'order_item_quantity' => 'getOrderItemQuantity',
-        'order_item_variant_id' => 'getOrderItemVariantId',
-        'order_item_parent' => 'getOrderItemParent',
-        'order_item_parent_option_name' => 'getOrderItemParentOptionName',
-        'order_item_option' => 'getOrderItemOption'
+        'tax_percent' => 'getTaxPercent',
+        'taxable' => 'getTaxable'
     ];
 
     /**
@@ -275,12 +251,8 @@ class OrderCalculateOrderItemInner implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('order_item_id', $data ?? [], null);
-        $this->setIfExists('order_item_quantity', $data ?? [], null);
-        $this->setIfExists('order_item_variant_id', $data ?? [], null);
-        $this->setIfExists('order_item_parent', $data ?? [], null);
-        $this->setIfExists('order_item_parent_option_name', $data ?? [], null);
-        $this->setIfExists('order_item_option', $data ?? [], null);
+        $this->setIfExists('tax_percent', $data ?? [], null);
+        $this->setIfExists('taxable', $data ?? [], null);
     }
 
     /**
@@ -310,12 +282,10 @@ class OrderCalculateOrderItemInner implements ModelInterface, ArrayAccess, \Json
     {
         $invalidProperties = [];
 
-        if ($this->container['order_item_id'] === null) {
-            $invalidProperties[] = "'order_item_id' can't be null";
+        if (!is_null($this->container['tax_percent']) && ($this->container['tax_percent'] < 0)) {
+            $invalidProperties[] = "invalid value for 'tax_percent', must be bigger than or equal to 0.";
         }
-        if ($this->container['order_item_quantity'] === null) {
-            $invalidProperties[] = "'order_item_quantity' can't be null";
-        }
+
         return $invalidProperties;
     }
 
@@ -332,163 +302,60 @@ class OrderCalculateOrderItemInner implements ModelInterface, ArrayAccess, \Json
 
 
     /**
-     * Gets order_item_id
+     * Gets tax_percent
      *
-     * @return string
+     * @return float|null
      */
-    public function getOrderItemId()
+    public function getTaxPercent()
     {
-        return $this->container['order_item_id'];
+        return $this->container['tax_percent'];
     }
 
     /**
-     * Sets order_item_id
+     * Sets tax_percent
      *
-     * @param string $order_item_id Defines orders specified by order item id
+     * @param float|null $tax_percent tax_percent
      *
      * @return self
      */
-    public function setOrderItemId($order_item_id)
+    public function setTaxPercent($tax_percent)
     {
-        if (is_null($order_item_id)) {
-            throw new \InvalidArgumentException('non-nullable order_item_id cannot be null');
+        if (is_null($tax_percent)) {
+            throw new \InvalidArgumentException('non-nullable tax_percent cannot be null');
         }
-        $this->container['order_item_id'] = $order_item_id;
+
+        if (($tax_percent < 0)) {
+            throw new \InvalidArgumentException('invalid value for $tax_percent when calling ProductAddBatchPayloadInnerSalesTax., must be bigger than or equal to 0.');
+        }
+
+        $this->container['tax_percent'] = $tax_percent;
 
         return $this;
     }
 
     /**
-     * Gets order_item_quantity
+     * Gets taxable
      *
-     * @return int
+     * @return bool|null
      */
-    public function getOrderItemQuantity()
+    public function getTaxable()
     {
-        return $this->container['order_item_quantity'];
+        return $this->container['taxable'];
     }
 
     /**
-     * Sets order_item_quantity
+     * Sets taxable
      *
-     * @param int $order_item_quantity Defines orders specified by order item quantity
+     * @param bool|null $taxable taxable
      *
      * @return self
      */
-    public function setOrderItemQuantity($order_item_quantity)
+    public function setTaxable($taxable)
     {
-        if (is_null($order_item_quantity)) {
-            throw new \InvalidArgumentException('non-nullable order_item_quantity cannot be null');
+        if (is_null($taxable)) {
+            throw new \InvalidArgumentException('non-nullable taxable cannot be null');
         }
-        $this->container['order_item_quantity'] = $order_item_quantity;
-
-        return $this;
-    }
-
-    /**
-     * Gets order_item_variant_id
-     *
-     * @return string|null
-     */
-    public function getOrderItemVariantId()
-    {
-        return $this->container['order_item_variant_id'];
-    }
-
-    /**
-     * Sets order_item_variant_id
-     *
-     * @param string|null $order_item_variant_id Ordered product variant. Where x is order item ID
-     *
-     * @return self
-     */
-    public function setOrderItemVariantId($order_item_variant_id)
-    {
-        if (is_null($order_item_variant_id)) {
-            throw new \InvalidArgumentException('non-nullable order_item_variant_id cannot be null');
-        }
-        $this->container['order_item_variant_id'] = $order_item_variant_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets order_item_parent
-     *
-     * @return int|null
-     */
-    public function getOrderItemParent()
-    {
-        return $this->container['order_item_parent'];
-    }
-
-    /**
-     * Sets order_item_parent
-     *
-     * @param int|null $order_item_parent Index of the parent grouped/bundle product
-     *
-     * @return self
-     */
-    public function setOrderItemParent($order_item_parent)
-    {
-        if (is_null($order_item_parent)) {
-            throw new \InvalidArgumentException('non-nullable order_item_parent cannot be null');
-        }
-        $this->container['order_item_parent'] = $order_item_parent;
-
-        return $this;
-    }
-
-    /**
-     * Gets order_item_parent_option_name
-     *
-     * @return string|null
-     */
-    public function getOrderItemParentOptionName()
-    {
-        return $this->container['order_item_parent_option_name'];
-    }
-
-    /**
-     * Sets order_item_parent_option_name
-     *
-     * @param string|null $order_item_parent_option_name Option name of the parent grouped/bundle product
-     *
-     * @return self
-     */
-    public function setOrderItemParentOptionName($order_item_parent_option_name)
-    {
-        if (is_null($order_item_parent_option_name)) {
-            throw new \InvalidArgumentException('non-nullable order_item_parent_option_name cannot be null');
-        }
-        $this->container['order_item_parent_option_name'] = $order_item_parent_option_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets order_item_option
-     *
-     * @return \OpenAPI\Client\Model\OrderCalculateOrderItemInnerOrderItemOptionInner[]|null
-     */
-    public function getOrderItemOption()
-    {
-        return $this->container['order_item_option'];
-    }
-
-    /**
-     * Sets order_item_option
-     *
-     * @param \OpenAPI\Client\Model\OrderCalculateOrderItemInnerOrderItemOptionInner[]|null $order_item_option order_item_option
-     *
-     * @return self
-     */
-    public function setOrderItemOption($order_item_option)
-    {
-        if (is_null($order_item_option)) {
-            throw new \InvalidArgumentException('non-nullable order_item_option cannot be null');
-        }
-        $this->container['order_item_option'] = $order_item_option;
+        $this->container['taxable'] = $taxable;
 
         return $this;
     }

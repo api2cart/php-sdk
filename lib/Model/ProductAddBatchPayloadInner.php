@@ -68,6 +68,7 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'ean' => 'string',
         'gtin' => 'string',
         'mpn' => 'string',
+        'isbn' => 'string',
         'barcode' => 'string',
         'price' => 'float',
         'old_price' => 'float',
@@ -75,8 +76,12 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'special_price' => 'float',
         'sprice_create' => 'string',
         'sprice_expire' => 'string',
+        'avail_from' => 'string',
         'advanced_prices' => '\OpenAPI\Client\Model\ProductAddBatchPayloadInnerAdvancedPricesInner[]',
         'fixed_cost_shipping_price' => 'float',
+        'buyitnow_price' => 'float',
+        'reserve_price' => 'float',
+        'best_offer' => 'float',
         'quantity' => 'float',
         'manage_stock' => 'bool',
         'product_type' => 'string',
@@ -86,12 +91,15 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'taxable' => 'bool',
         'status' => 'string',
         'condition' => 'string',
+        'condition_description' => 'string',
         'visible' => 'string',
         'available_for_view' => 'bool',
         'available_for_sale' => 'bool',
         'is_virtual' => 'bool',
         'in_stock' => 'bool',
         'type' => 'string',
+        'listing_type' => 'string',
+        'listing_duration' => 'string',
         'downloadable' => 'bool',
         'weight' => 'float',
         'length' => 'float',
@@ -109,6 +117,7 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'cross_sell_products_ids' => 'string[]',
         'stores_ids' => 'string[]',
         'tax_class_id' => 'string',
+        'sales_tax' => '\OpenAPI\Client\Model\ProductAddBatchPayloadInnerSalesTax',
         'meta_title' => 'string',
         'meta_description' => 'string',
         'meta_keywords' => 'string[]',
@@ -143,6 +152,7 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'ean' => null,
         'gtin' => null,
         'mpn' => null,
+        'isbn' => null,
         'barcode' => null,
         'price' => null,
         'old_price' => null,
@@ -150,8 +160,12 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'special_price' => null,
         'sprice_create' => null,
         'sprice_expire' => null,
+        'avail_from' => null,
         'advanced_prices' => null,
         'fixed_cost_shipping_price' => null,
+        'buyitnow_price' => null,
+        'reserve_price' => null,
+        'best_offer' => null,
         'quantity' => null,
         'manage_stock' => null,
         'product_type' => null,
@@ -161,12 +175,15 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'taxable' => null,
         'status' => null,
         'condition' => null,
+        'condition_description' => null,
         'visible' => null,
         'available_for_view' => null,
         'available_for_sale' => null,
         'is_virtual' => null,
         'in_stock' => null,
         'type' => null,
+        'listing_type' => null,
+        'listing_duration' => null,
         'downloadable' => null,
         'weight' => null,
         'length' => null,
@@ -184,6 +201,7 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'cross_sell_products_ids' => null,
         'stores_ids' => null,
         'tax_class_id' => null,
+        'sales_tax' => null,
         'meta_title' => null,
         'meta_description' => null,
         'meta_keywords' => null,
@@ -216,6 +234,7 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'ean' => false,
         'gtin' => false,
         'mpn' => false,
+        'isbn' => false,
         'barcode' => false,
         'price' => false,
         'old_price' => false,
@@ -223,8 +242,12 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'special_price' => false,
         'sprice_create' => false,
         'sprice_expire' => false,
+        'avail_from' => false,
         'advanced_prices' => false,
         'fixed_cost_shipping_price' => false,
+        'buyitnow_price' => false,
+        'reserve_price' => false,
+        'best_offer' => false,
         'quantity' => false,
         'manage_stock' => false,
         'product_type' => false,
@@ -234,12 +257,15 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'taxable' => false,
         'status' => false,
         'condition' => false,
+        'condition_description' => false,
         'visible' => false,
         'available_for_view' => false,
         'available_for_sale' => false,
         'is_virtual' => false,
         'in_stock' => false,
         'type' => false,
+        'listing_type' => false,
+        'listing_duration' => false,
         'downloadable' => false,
         'weight' => false,
         'length' => false,
@@ -257,6 +283,7 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'cross_sell_products_ids' => false,
         'stores_ids' => false,
         'tax_class_id' => false,
+        'sales_tax' => false,
         'meta_title' => false,
         'meta_description' => false,
         'meta_keywords' => false,
@@ -369,6 +396,7 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'ean' => 'ean',
         'gtin' => 'gtin',
         'mpn' => 'mpn',
+        'isbn' => 'isbn',
         'barcode' => 'barcode',
         'price' => 'price',
         'old_price' => 'old_price',
@@ -376,8 +404,12 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'special_price' => 'special_price',
         'sprice_create' => 'sprice_create',
         'sprice_expire' => 'sprice_expire',
+        'avail_from' => 'avail_from',
         'advanced_prices' => 'advanced_prices',
         'fixed_cost_shipping_price' => 'fixed_cost_shipping_price',
+        'buyitnow_price' => 'buyitnow_price',
+        'reserve_price' => 'reserve_price',
+        'best_offer' => 'best_offer',
         'quantity' => 'quantity',
         'manage_stock' => 'manage_stock',
         'product_type' => 'product_type',
@@ -387,12 +419,15 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'taxable' => 'taxable',
         'status' => 'status',
         'condition' => 'condition',
+        'condition_description' => 'condition_description',
         'visible' => 'visible',
         'available_for_view' => 'available_for_view',
         'available_for_sale' => 'available_for_sale',
         'is_virtual' => 'is_virtual',
         'in_stock' => 'in_stock',
         'type' => 'type',
+        'listing_type' => 'listing_type',
+        'listing_duration' => 'listing_duration',
         'downloadable' => 'downloadable',
         'weight' => 'weight',
         'length' => 'length',
@@ -410,6 +445,7 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'cross_sell_products_ids' => 'cross_sell_products_ids',
         'stores_ids' => 'stores_ids',
         'tax_class_id' => 'tax_class_id',
+        'sales_tax' => 'sales_tax',
         'meta_title' => 'meta_title',
         'meta_description' => 'meta_description',
         'meta_keywords' => 'meta_keywords',
@@ -442,6 +478,7 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'ean' => 'setEan',
         'gtin' => 'setGtin',
         'mpn' => 'setMpn',
+        'isbn' => 'setIsbn',
         'barcode' => 'setBarcode',
         'price' => 'setPrice',
         'old_price' => 'setOldPrice',
@@ -449,8 +486,12 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'special_price' => 'setSpecialPrice',
         'sprice_create' => 'setSpriceCreate',
         'sprice_expire' => 'setSpriceExpire',
+        'avail_from' => 'setAvailFrom',
         'advanced_prices' => 'setAdvancedPrices',
         'fixed_cost_shipping_price' => 'setFixedCostShippingPrice',
+        'buyitnow_price' => 'setBuyitnowPrice',
+        'reserve_price' => 'setReservePrice',
+        'best_offer' => 'setBestOffer',
         'quantity' => 'setQuantity',
         'manage_stock' => 'setManageStock',
         'product_type' => 'setProductType',
@@ -460,12 +501,15 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'taxable' => 'setTaxable',
         'status' => 'setStatus',
         'condition' => 'setCondition',
+        'condition_description' => 'setConditionDescription',
         'visible' => 'setVisible',
         'available_for_view' => 'setAvailableForView',
         'available_for_sale' => 'setAvailableForSale',
         'is_virtual' => 'setIsVirtual',
         'in_stock' => 'setInStock',
         'type' => 'setType',
+        'listing_type' => 'setListingType',
+        'listing_duration' => 'setListingDuration',
         'downloadable' => 'setDownloadable',
         'weight' => 'setWeight',
         'length' => 'setLength',
@@ -483,6 +527,7 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'cross_sell_products_ids' => 'setCrossSellProductsIds',
         'stores_ids' => 'setStoresIds',
         'tax_class_id' => 'setTaxClassId',
+        'sales_tax' => 'setSalesTax',
         'meta_title' => 'setMetaTitle',
         'meta_description' => 'setMetaDescription',
         'meta_keywords' => 'setMetaKeywords',
@@ -515,6 +560,7 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'ean' => 'getEan',
         'gtin' => 'getGtin',
         'mpn' => 'getMpn',
+        'isbn' => 'getIsbn',
         'barcode' => 'getBarcode',
         'price' => 'getPrice',
         'old_price' => 'getOldPrice',
@@ -522,8 +568,12 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'special_price' => 'getSpecialPrice',
         'sprice_create' => 'getSpriceCreate',
         'sprice_expire' => 'getSpriceExpire',
+        'avail_from' => 'getAvailFrom',
         'advanced_prices' => 'getAdvancedPrices',
         'fixed_cost_shipping_price' => 'getFixedCostShippingPrice',
+        'buyitnow_price' => 'getBuyitnowPrice',
+        'reserve_price' => 'getReservePrice',
+        'best_offer' => 'getBestOffer',
         'quantity' => 'getQuantity',
         'manage_stock' => 'getManageStock',
         'product_type' => 'getProductType',
@@ -533,12 +583,15 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'taxable' => 'getTaxable',
         'status' => 'getStatus',
         'condition' => 'getCondition',
+        'condition_description' => 'getConditionDescription',
         'visible' => 'getVisible',
         'available_for_view' => 'getAvailableForView',
         'available_for_sale' => 'getAvailableForSale',
         'is_virtual' => 'getIsVirtual',
         'in_stock' => 'getInStock',
         'type' => 'getType',
+        'listing_type' => 'getListingType',
+        'listing_duration' => 'getListingDuration',
         'downloadable' => 'getDownloadable',
         'weight' => 'getWeight',
         'length' => 'getLength',
@@ -556,6 +609,7 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         'cross_sell_products_ids' => 'getCrossSellProductsIds',
         'stores_ids' => 'getStoresIds',
         'tax_class_id' => 'getTaxClassId',
+        'sales_tax' => 'getSalesTax',
         'meta_title' => 'getMetaTitle',
         'meta_description' => 'getMetaDescription',
         'meta_keywords' => 'getMetaKeywords',
@@ -639,6 +693,7 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         $this->setIfExists('ean', $data ?? [], null);
         $this->setIfExists('gtin', $data ?? [], null);
         $this->setIfExists('mpn', $data ?? [], null);
+        $this->setIfExists('isbn', $data ?? [], null);
         $this->setIfExists('barcode', $data ?? [], null);
         $this->setIfExists('price', $data ?? [], null);
         $this->setIfExists('old_price', $data ?? [], null);
@@ -646,8 +701,12 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         $this->setIfExists('special_price', $data ?? [], null);
         $this->setIfExists('sprice_create', $data ?? [], null);
         $this->setIfExists('sprice_expire', $data ?? [], null);
+        $this->setIfExists('avail_from', $data ?? [], null);
         $this->setIfExists('advanced_prices', $data ?? [], null);
         $this->setIfExists('fixed_cost_shipping_price', $data ?? [], null);
+        $this->setIfExists('buyitnow_price', $data ?? [], null);
+        $this->setIfExists('reserve_price', $data ?? [], null);
+        $this->setIfExists('best_offer', $data ?? [], null);
         $this->setIfExists('quantity', $data ?? [], null);
         $this->setIfExists('manage_stock', $data ?? [], null);
         $this->setIfExists('product_type', $data ?? [], null);
@@ -657,12 +716,15 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         $this->setIfExists('taxable', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('condition', $data ?? [], null);
+        $this->setIfExists('condition_description', $data ?? [], null);
         $this->setIfExists('visible', $data ?? [], null);
         $this->setIfExists('available_for_view', $data ?? [], null);
         $this->setIfExists('available_for_sale', $data ?? [], null);
         $this->setIfExists('is_virtual', $data ?? [], null);
         $this->setIfExists('in_stock', $data ?? [], null);
         $this->setIfExists('type', $data ?? [], null);
+        $this->setIfExists('listing_type', $data ?? [], null);
+        $this->setIfExists('listing_duration', $data ?? [], null);
         $this->setIfExists('downloadable', $data ?? [], null);
         $this->setIfExists('weight', $data ?? [], null);
         $this->setIfExists('length', $data ?? [], null);
@@ -680,6 +742,7 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
         $this->setIfExists('cross_sell_products_ids', $data ?? [], null);
         $this->setIfExists('stores_ids', $data ?? [], null);
         $this->setIfExists('tax_class_id', $data ?? [], null);
+        $this->setIfExists('sales_tax', $data ?? [], null);
         $this->setIfExists('meta_title', $data ?? [], null);
         $this->setIfExists('meta_description', $data ?? [], null);
         $this->setIfExists('meta_keywords', $data ?? [], null);
@@ -1049,6 +1112,33 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
+     * Gets isbn
+     *
+     * @return string|null
+     */
+    public function getIsbn()
+    {
+        return $this->container['isbn'];
+    }
+
+    /**
+     * Sets isbn
+     *
+     * @param string|null $isbn isbn
+     *
+     * @return self
+     */
+    public function setIsbn($isbn)
+    {
+        if (is_null($isbn)) {
+            throw new \InvalidArgumentException('non-nullable isbn cannot be null');
+        }
+        $this->container['isbn'] = $isbn;
+
+        return $this;
+    }
+
+    /**
      * Gets barcode
      *
      * @return string|null
@@ -1238,6 +1328,33 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
+     * Gets avail_from
+     *
+     * @return string|null
+     */
+    public function getAvailFrom()
+    {
+        return $this->container['avail_from'];
+    }
+
+    /**
+     * Sets avail_from
+     *
+     * @param string|null $avail_from avail_from
+     *
+     * @return self
+     */
+    public function setAvailFrom($avail_from)
+    {
+        if (is_null($avail_from)) {
+            throw new \InvalidArgumentException('non-nullable avail_from cannot be null');
+        }
+        $this->container['avail_from'] = $avail_from;
+
+        return $this;
+    }
+
+    /**
      * Gets advanced_prices
      *
      * @return \OpenAPI\Client\Model\ProductAddBatchPayloadInnerAdvancedPricesInner[]|null
@@ -1287,6 +1404,87 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
             throw new \InvalidArgumentException('non-nullable fixed_cost_shipping_price cannot be null');
         }
         $this->container['fixed_cost_shipping_price'] = $fixed_cost_shipping_price;
+
+        return $this;
+    }
+
+    /**
+     * Gets buyitnow_price
+     *
+     * @return float|null
+     */
+    public function getBuyitnowPrice()
+    {
+        return $this->container['buyitnow_price'];
+    }
+
+    /**
+     * Sets buyitnow_price
+     *
+     * @param float|null $buyitnow_price buyitnow_price
+     *
+     * @return self
+     */
+    public function setBuyitnowPrice($buyitnow_price)
+    {
+        if (is_null($buyitnow_price)) {
+            throw new \InvalidArgumentException('non-nullable buyitnow_price cannot be null');
+        }
+        $this->container['buyitnow_price'] = $buyitnow_price;
+
+        return $this;
+    }
+
+    /**
+     * Gets reserve_price
+     *
+     * @return float|null
+     */
+    public function getReservePrice()
+    {
+        return $this->container['reserve_price'];
+    }
+
+    /**
+     * Sets reserve_price
+     *
+     * @param float|null $reserve_price reserve_price
+     *
+     * @return self
+     */
+    public function setReservePrice($reserve_price)
+    {
+        if (is_null($reserve_price)) {
+            throw new \InvalidArgumentException('non-nullable reserve_price cannot be null');
+        }
+        $this->container['reserve_price'] = $reserve_price;
+
+        return $this;
+    }
+
+    /**
+     * Gets best_offer
+     *
+     * @return float|null
+     */
+    public function getBestOffer()
+    {
+        return $this->container['best_offer'];
+    }
+
+    /**
+     * Sets best_offer
+     *
+     * @param float|null $best_offer best_offer
+     *
+     * @return self
+     */
+    public function setBestOffer($best_offer)
+    {
+        if (is_null($best_offer)) {
+            throw new \InvalidArgumentException('non-nullable best_offer cannot be null');
+        }
+        $this->container['best_offer'] = $best_offer;
 
         return $this;
     }
@@ -1535,6 +1733,33 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
+     * Gets condition_description
+     *
+     * @return string|null
+     */
+    public function getConditionDescription()
+    {
+        return $this->container['condition_description'];
+    }
+
+    /**
+     * Sets condition_description
+     *
+     * @param string|null $condition_description condition_description
+     *
+     * @return self
+     */
+    public function setConditionDescription($condition_description)
+    {
+        if (is_null($condition_description)) {
+            throw new \InvalidArgumentException('non-nullable condition_description cannot be null');
+        }
+        $this->container['condition_description'] = $condition_description;
+
+        return $this;
+    }
+
+    /**
      * Gets visible
      *
      * @return string|null
@@ -1692,6 +1917,60 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
             throw new \InvalidArgumentException('non-nullable type cannot be null');
         }
         $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets listing_type
+     *
+     * @return string|null
+     */
+    public function getListingType()
+    {
+        return $this->container['listing_type'];
+    }
+
+    /**
+     * Sets listing_type
+     *
+     * @param string|null $listing_type listing_type
+     *
+     * @return self
+     */
+    public function setListingType($listing_type)
+    {
+        if (is_null($listing_type)) {
+            throw new \InvalidArgumentException('non-nullable listing_type cannot be null');
+        }
+        $this->container['listing_type'] = $listing_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets listing_duration
+     *
+     * @return string|null
+     */
+    public function getListingDuration()
+    {
+        return $this->container['listing_duration'];
+    }
+
+    /**
+     * Sets listing_duration
+     *
+     * @param string|null $listing_duration listing_duration
+     *
+     * @return self
+     */
+    public function setListingDuration($listing_duration)
+    {
+        if (is_null($listing_duration)) {
+            throw new \InvalidArgumentException('non-nullable listing_duration cannot be null');
+        }
+        $this->container['listing_duration'] = $listing_duration;
 
         return $this;
     }
@@ -2176,6 +2455,33 @@ class ProductAddBatchPayloadInner implements ModelInterface, ArrayAccess, \JsonS
             throw new \InvalidArgumentException('non-nullable tax_class_id cannot be null');
         }
         $this->container['tax_class_id'] = $tax_class_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets sales_tax
+     *
+     * @return \OpenAPI\Client\Model\ProductAddBatchPayloadInnerSalesTax|null
+     */
+    public function getSalesTax()
+    {
+        return $this->container['sales_tax'];
+    }
+
+    /**
+     * Sets sales_tax
+     *
+     * @param \OpenAPI\Client\Model\ProductAddBatchPayloadInnerSalesTax|null $sales_tax sales_tax
+     *
+     * @return self
+     */
+    public function setSalesTax($sales_tax)
+    {
+        if (is_null($sales_tax)) {
+            throw new \InvalidArgumentException('non-nullable sales_tax cannot be null');
+        }
+        $this->container['sales_tax'] = $sales_tax;
 
         return $this;
     }

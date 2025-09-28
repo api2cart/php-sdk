@@ -1,4 +1,4 @@
-# # OrderCalculateItem
+# # OrderCalculateBundle
 
 ## Properties
 
@@ -16,7 +16,6 @@ Name | Type | Description | Notes
 **weight_unit** | **string** |  | [optional]
 **barcode** | **string** |  | [optional]
 **variant_id** | **string** |  | [optional]
-**bundle_product_id** | **string** |  | [optional]
 **options** | [**\OpenAPI\Client\Model\OrderItemOption[]**](OrderItemOption.md) |  | [optional]
 **additional_fields** | **object** |  | [optional]
 **custom_fields** | **object** |  | [optional]
