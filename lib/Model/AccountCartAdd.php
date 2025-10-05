@@ -1272,6 +1272,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     public const CART_ID_TIK_TOK_SHOP = 'TikTokShop';
     public const CART_ID_TOMATOCART = 'Tomatocart';
     public const CART_ID_UBERCART = 'Ubercart';
+    public const CART_ID_UNAS = 'Unas';
     public const CART_ID_VIRTUEMART = 'Virtuemart';
     public const CART_ID_VOLUSION = 'Volusion';
     public const CART_ID_W_PECOMMERCE = 'WPecommerce';
@@ -1349,6 +1350,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             self::CART_ID_TIK_TOK_SHOP,
             self::CART_ID_TOMATOCART,
             self::CART_ID_UBERCART,
+            self::CART_ID_UNAS,
             self::CART_ID_VIRTUEMART,
             self::CART_ID_VOLUSION,
             self::CART_ID_W_PECOMMERCE,
