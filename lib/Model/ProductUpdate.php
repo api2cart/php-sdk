@@ -129,6 +129,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'country_of_origin' => 'string',
         'harmonized_system_code' => 'string',
         'shipping_template_id' => 'int',
+        'processing_profile_id' => 'int',
         'when_made' => 'string',
         'is_supply' => 'bool',
         'downloadable' => 'bool',
@@ -229,6 +230,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'country_of_origin' => null,
         'harmonized_system_code' => null,
         'shipping_template_id' => null,
+        'processing_profile_id' => null,
         'when_made' => null,
         'is_supply' => null,
         'downloadable' => null,
@@ -327,6 +329,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'country_of_origin' => false,
         'harmonized_system_code' => false,
         'shipping_template_id' => false,
+        'processing_profile_id' => false,
         'when_made' => false,
         'is_supply' => false,
         'downloadable' => false,
@@ -505,6 +508,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'country_of_origin' => 'country_of_origin',
         'harmonized_system_code' => 'harmonized_system_code',
         'shipping_template_id' => 'shipping_template_id',
+        'processing_profile_id' => 'processing_profile_id',
         'when_made' => 'when_made',
         'is_supply' => 'is_supply',
         'downloadable' => 'downloadable',
@@ -603,6 +607,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'country_of_origin' => 'setCountryOfOrigin',
         'harmonized_system_code' => 'setHarmonizedSystemCode',
         'shipping_template_id' => 'setShippingTemplateId',
+        'processing_profile_id' => 'setProcessingProfileId',
         'when_made' => 'setWhenMade',
         'is_supply' => 'setIsSupply',
         'downloadable' => 'setDownloadable',
@@ -701,6 +706,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'country_of_origin' => 'getCountryOfOrigin',
         'harmonized_system_code' => 'getHarmonizedSystemCode',
         'shipping_template_id' => 'getShippingTemplateId',
+        'processing_profile_id' => 'getProcessingProfileId',
         'when_made' => 'getWhenMade',
         'is_supply' => 'getIsSupply',
         'downloadable' => 'getDownloadable',
@@ -850,6 +856,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('country_of_origin', $data ?? [], null);
         $this->setIfExists('harmonized_system_code', $data ?? [], null);
         $this->setIfExists('shipping_template_id', $data ?? [], 0);
+        $this->setIfExists('processing_profile_id', $data ?? [], null);
         $this->setIfExists('when_made', $data ?? [], 'made_to_order');
         $this->setIfExists('is_supply', $data ?? [], true);
         $this->setIfExists('downloadable', $data ?? [], false);
@@ -2826,6 +2833,33 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable shipping_template_id cannot be null');
         }
         $this->container['shipping_template_id'] = $shipping_template_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets processing_profile_id
+     *
+     * @return int|null
+     */
+    public function getProcessingProfileId()
+    {
+        return $this->container['processing_profile_id'];
+    }
+
+    /**
+     * Sets processing_profile_id
+     *
+     * @param int|null $processing_profile_id The numeric ID of the processing profile (readiness state) for physical products in Etsy. You can find possible values in the \"cart.info\" API method response, in the field processing_profiles[]->readiness_state_id.
+     *
+     * @return self
+     */
+    public function setProcessingProfileId($processing_profile_id)
+    {
+        if (is_null($processing_profile_id)) {
+            throw new \InvalidArgumentException('non-nullable processing_profile_id cannot be null');
+        }
+        $this->container['processing_profile_id'] = $processing_profile_id;
 
         return $this;
     }

@@ -117,6 +117,15 @@ class CartTest extends TestCase
     }
 
     /**
+     * Test attribute "default_rounding_precision"
+     */
+    public function testPropertyDefaultRoundingPrecision()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "db_prefix"
      */
     public function testPropertyDbPrefix()

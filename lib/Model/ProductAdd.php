@@ -153,6 +153,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'payment_methods' => 'string[]',
         'paypal_email' => 'string',
         'shipping_template_id' => 'int',
+        'processing_profile_id' => 'int',
         'shipping_details' => '\OpenAPI\Client\Model\ProductAddShippingDetailsInner[]',
         'is_free_shipping' => 'bool',
         'delivery_code' => 'string',
@@ -281,6 +282,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'payment_methods' => null,
         'paypal_email' => null,
         'shipping_template_id' => null,
+        'processing_profile_id' => null,
         'shipping_details' => null,
         'is_free_shipping' => null,
         'delivery_code' => null,
@@ -407,6 +409,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'payment_methods' => false,
         'paypal_email' => false,
         'shipping_template_id' => false,
+        'processing_profile_id' => false,
         'shipping_details' => false,
         'is_free_shipping' => false,
         'delivery_code' => false,
@@ -613,6 +616,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'payment_methods' => 'payment_methods',
         'paypal_email' => 'paypal_email',
         'shipping_template_id' => 'shipping_template_id',
+        'processing_profile_id' => 'processing_profile_id',
         'shipping_details' => 'shipping_details',
         'is_free_shipping' => 'is_free_shipping',
         'delivery_code' => 'delivery_code',
@@ -739,6 +743,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'payment_methods' => 'setPaymentMethods',
         'paypal_email' => 'setPaypalEmail',
         'shipping_template_id' => 'setShippingTemplateId',
+        'processing_profile_id' => 'setProcessingProfileId',
         'shipping_details' => 'setShippingDetails',
         'is_free_shipping' => 'setIsFreeShipping',
         'delivery_code' => 'setDeliveryCode',
@@ -865,6 +870,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'payment_methods' => 'getPaymentMethods',
         'paypal_email' => 'getPaypalEmail',
         'shipping_template_id' => 'getShippingTemplateId',
+        'processing_profile_id' => 'getProcessingProfileId',
         'shipping_details' => 'getShippingDetails',
         'is_free_shipping' => 'getIsFreeShipping',
         'delivery_code' => 'getDeliveryCode',
@@ -1042,6 +1048,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('payment_methods', $data ?? [], null);
         $this->setIfExists('paypal_email', $data ?? [], null);
         $this->setIfExists('shipping_template_id', $data ?? [], 0);
+        $this->setIfExists('processing_profile_id', $data ?? [], null);
         $this->setIfExists('shipping_details', $data ?? [], null);
         $this->setIfExists('is_free_shipping', $data ?? [], null);
         $this->setIfExists('delivery_code', $data ?? [], null);
@@ -3682,6 +3689,33 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable shipping_template_id cannot be null');
         }
         $this->container['shipping_template_id'] = $shipping_template_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets processing_profile_id
+     *
+     * @return int|null
+     */
+    public function getProcessingProfileId()
+    {
+        return $this->container['processing_profile_id'];
+    }
+
+    /**
+     * Sets processing_profile_id
+     *
+     * @param int|null $processing_profile_id The numeric ID of the processing profile (readiness state) for physical products in Etsy. You can find possible values in the \"cart.info\" API method response, in the field processing_profiles[]->readiness_state_id.
+     *
+     * @return self
+     */
+    public function setProcessingProfileId($processing_profile_id)
+    {
+        if (is_null($processing_profile_id)) {
+            throw new \InvalidArgumentException('non-nullable processing_profile_id cannot be null');
+        }
+        $this->container['processing_profile_id'] = $processing_profile_id;
 
         return $this;
     }

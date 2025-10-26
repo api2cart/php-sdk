@@ -62,6 +62,7 @@ class Cart implements ModelInterface, ArrayAccess, \JsonSerializable
         'url' => 'string',
         'version' => 'string',
         'bridge_version' => 'string',
+        'default_rounding_precision' => 'int',
         'db_prefix' => 'string',
         'stores_info' => '\OpenAPI\Client\Model\CartStoreInfo[]',
         'warehouses' => '\OpenAPI\Client\Model\CartWarehouse[]',
@@ -82,6 +83,7 @@ class Cart implements ModelInterface, ArrayAccess, \JsonSerializable
         'url' => null,
         'version' => null,
         'bridge_version' => null,
+        'default_rounding_precision' => null,
         'db_prefix' => null,
         'stores_info' => null,
         'warehouses' => null,
@@ -100,6 +102,7 @@ class Cart implements ModelInterface, ArrayAccess, \JsonSerializable
         'url' => true,
         'version' => true,
         'bridge_version' => true,
+        'default_rounding_precision' => true,
         'db_prefix' => true,
         'stores_info' => false,
         'warehouses' => false,
@@ -198,6 +201,7 @@ class Cart implements ModelInterface, ArrayAccess, \JsonSerializable
         'url' => 'url',
         'version' => 'version',
         'bridge_version' => 'bridge_version',
+        'default_rounding_precision' => 'default_rounding_precision',
         'db_prefix' => 'db_prefix',
         'stores_info' => 'stores_info',
         'warehouses' => 'warehouses',
@@ -216,6 +220,7 @@ class Cart implements ModelInterface, ArrayAccess, \JsonSerializable
         'url' => 'setUrl',
         'version' => 'setVersion',
         'bridge_version' => 'setBridgeVersion',
+        'default_rounding_precision' => 'setDefaultRoundingPrecision',
         'db_prefix' => 'setDbPrefix',
         'stores_info' => 'setStoresInfo',
         'warehouses' => 'setWarehouses',
@@ -234,6 +239,7 @@ class Cart implements ModelInterface, ArrayAccess, \JsonSerializable
         'url' => 'getUrl',
         'version' => 'getVersion',
         'bridge_version' => 'getBridgeVersion',
+        'default_rounding_precision' => 'getDefaultRoundingPrecision',
         'db_prefix' => 'getDbPrefix',
         'stores_info' => 'getStoresInfo',
         'warehouses' => 'getWarehouses',
@@ -303,6 +309,7 @@ class Cart implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('url', $data ?? [], null);
         $this->setIfExists('version', $data ?? [], null);
         $this->setIfExists('bridge_version', $data ?? [], null);
+        $this->setIfExists('default_rounding_precision', $data ?? [], null);
         $this->setIfExists('db_prefix', $data ?? [], null);
         $this->setIfExists('stores_info', $data ?? [], null);
         $this->setIfExists('warehouses', $data ?? [], null);
@@ -485,6 +492,40 @@ class Cart implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['bridge_version'] = $bridge_version;
+
+        return $this;
+    }
+
+    /**
+     * Gets default_rounding_precision
+     *
+     * @return int|null
+     */
+    public function getDefaultRoundingPrecision()
+    {
+        return $this->container['default_rounding_precision'];
+    }
+
+    /**
+     * Sets default_rounding_precision
+     *
+     * @param int|null $default_rounding_precision default_rounding_precision
+     *
+     * @return self
+     */
+    public function setDefaultRoundingPrecision($default_rounding_precision)
+    {
+        if (is_null($default_rounding_precision)) {
+            array_push($this->openAPINullablesSetToNull, 'default_rounding_precision');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('default_rounding_precision', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['default_rounding_precision'] = $default_rounding_precision;
 
         return $this;
     }

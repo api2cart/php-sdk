@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **url** | **string** |  | [optional]
 **version** | **string** |  | [optional]
 **bridge_version** | **string** |  | [optional]
+**default_rounding_precision** | **int** |  | [optional]
 **db_prefix** | **string** |  | [optional]
 **stores_info** | [**\OpenAPI\Client\Model\CartStoreInfo[]**](CartStoreInfo.md) |  | [optional]
 **warehouses** | [**\OpenAPI\Client\Model\CartWarehouse[]**](CartWarehouse.md) |  | [optional]

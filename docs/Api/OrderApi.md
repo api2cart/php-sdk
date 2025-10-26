@@ -495,7 +495,7 @@ try {
 ## `orderInfo()`
 
 ```php
-orderInfo($id, $order_id, $store_id, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version): \OpenAPI\Client\Model\OrderInfo200Response
+orderInfo($id, $order_id, $store_id, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $rounding_precision): \OpenAPI\Client\Model\OrderInfo200Response
 ```
 
 order.info
@@ -534,9 +534,10 @@ $response_fields = {result{order_id,customer,totals,address,items,bundles,status
 $exclude = order_id,totals,status; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 $enable_cache = true; // bool | If the value is 'true' and order exist in our cache, we will return order.info response from cache
 $use_latest_api_version = true; // bool | Use the latest platform API version
+$rounding_precision = 3; // int | <p>Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).</p> <p>Supported values range from <b>1</b> to <b>6</b>.</p> <p>The default rounding precision may vary depending on the platform. You can retrieve the default value using the <strong>cart.info</strong> method in the <code>default_rounding_precision</code> field. </p><p>Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.</p>
 
 try {
-    $result = $apiInstance->orderInfo($id, $order_id, $store_id, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version);
+    $result = $apiInstance->orderInfo($id, $order_id, $store_id, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $rounding_precision);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderInfo: ', $e->getMessage(), PHP_EOL;
@@ -555,6 +556,7 @@ try {
 | **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 | **enable_cache** | **bool**| If the value is &#39;true&#39; and order exist in our cache, we will return order.info response from cache | [optional] [default to false] |
 | **use_latest_api_version** | **bool**| Use the latest platform API version | [optional] [default to false] |
+| **rounding_precision** | **int**| &lt;p&gt;Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).&lt;/p&gt; &lt;p&gt;Supported values range from &lt;b&gt;1&lt;/b&gt; to &lt;b&gt;6&lt;/b&gt;.&lt;/p&gt; &lt;p&gt;The default rounding precision may vary depending on the platform. You can retrieve the default value using the &lt;strong&gt;cart.info&lt;/strong&gt; method in the &lt;code&gt;default_rounding_precision&lt;/code&gt; field. &lt;/p&gt;&lt;p&gt;Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.&lt;/p&gt; | [optional] |
 
 ### Return type
 
@@ -576,7 +578,7 @@ try {
 ## `orderList()`
 
 ```php
-orderList($start, $count, $page_cursor, $ids, $order_ids, $since_id, $store_id, $customer_id, $customer_email, $basket_id, $currency_id, $phone, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_status, $return_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $is_deleted, $shipping_country_iso3, $delivery_method, $ship_node_type, $created_to, $created_from, $modified_to, $modified_from, $tags, $sort_by, $sort_direction, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version): \OpenAPI\Client\Model\ModelResponseOrderList
+orderList($start, $count, $page_cursor, $ids, $order_ids, $since_id, $store_id, $customer_id, $customer_email, $basket_id, $currency_id, $phone, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_status, $return_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $is_deleted, $shipping_country_iso3, $delivery_method, $ship_node_type, $created_to, $created_from, $modified_to, $modified_from, $tags, $sort_by, $sort_direction, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $rounding_precision): \OpenAPI\Client\Model\ModelResponseOrderList
 ```
 
 order.list
@@ -645,9 +647,10 @@ $response_fields = {return_code,pagination,result{order{order_id,customer,totals
 $exclude = order_id,totals,status; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 $enable_cache = true; // bool | If the value is 'true', we will cache orders for a 15 minutes in order to increase speed and reduce requests throttling for some methods and shoping platforms (for example order.shipment.add)
 $use_latest_api_version = true; // bool | Use the latest platform API version
+$rounding_precision = 3; // int | <p>Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).</p> <p>Supported values range from <b>1</b> to <b>6</b>.</p> <p>The default rounding precision may vary depending on the platform. You can retrieve the default value using the <strong>cart.info</strong> method in the <code>default_rounding_precision</code> field. </p><p>Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.</p>
 
 try {
-    $result = $apiInstance->orderList($start, $count, $page_cursor, $ids, $order_ids, $since_id, $store_id, $customer_id, $customer_email, $basket_id, $currency_id, $phone, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_status, $return_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $is_deleted, $shipping_country_iso3, $delivery_method, $ship_node_type, $created_to, $created_from, $modified_to, $modified_from, $tags, $sort_by, $sort_direction, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version);
+    $result = $apiInstance->orderList($start, $count, $page_cursor, $ids, $order_ids, $since_id, $store_id, $customer_id, $customer_email, $basket_id, $currency_id, $phone, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_status, $return_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $is_deleted, $shipping_country_iso3, $delivery_method, $ship_node_type, $created_to, $created_from, $modified_to, $modified_from, $tags, $sort_by, $sort_direction, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $rounding_precision);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderList: ', $e->getMessage(), PHP_EOL;
@@ -696,6 +699,7 @@ try {
 | **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 | **enable_cache** | **bool**| If the value is &#39;true&#39;, we will cache orders for a 15 minutes in order to increase speed and reduce requests throttling for some methods and shoping platforms (for example order.shipment.add) | [optional] [default to false] |
 | **use_latest_api_version** | **bool**| Use the latest platform API version | [optional] [default to false] |
+| **rounding_precision** | **int**| &lt;p&gt;Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).&lt;/p&gt; &lt;p&gt;Supported values range from &lt;b&gt;1&lt;/b&gt; to &lt;b&gt;6&lt;/b&gt;.&lt;/p&gt; &lt;p&gt;The default rounding precision may vary depending on the platform. You can retrieve the default value using the &lt;strong&gt;cart.info&lt;/strong&gt; method in the &lt;code&gt;default_rounding_precision&lt;/code&gt; field. &lt;/p&gt;&lt;p&gt;Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.&lt;/p&gt; | [optional] |
 
 ### Return type
 

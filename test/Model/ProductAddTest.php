@@ -936,6 +936,15 @@ class ProductAddTest extends TestCase
     }
 
     /**
+     * Test attribute "processing_profile_id"
+     */
+    public function testPropertyProcessingProfileId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "shipping_details"
      */
     public function testPropertyShippingDetails()

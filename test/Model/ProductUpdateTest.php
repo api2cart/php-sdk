@@ -720,6 +720,15 @@ class ProductUpdateTest extends TestCase
     }
 
     /**
+     * Test attribute "processing_profile_id"
+     */
+    public function testPropertyProcessingProfileId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "when_made"
      */
     public function testPropertyWhenMade()
