@@ -810,7 +810,7 @@ try {
 ## `productCount()`
 
 ```php
-productCount($product_ids, $since_id, $categories_ids, $category_id, $store_id, $lang_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $brand_name, $product_attributes, $status, $type, $visible, $find_value, $find_where, $report_request_id, $return_global, $disable_report_cache, $use_latest_api_version): \OpenAPI\Client\Model\ProductCount200Response
+productCount($sku, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $lang_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $brand_name, $manufacturer_id, $product_attributes, $status, $type, $visible, $find_value, $find_where, $report_request_id, $return_global, $disable_report_cache, $use_latest_api_version): \OpenAPI\Client\Model\ProductCount200Response
 ```
 
 product.count
@@ -841,6 +841,7 @@ $apiInstance = new OpenAPI\Client\Api\ProductApi(
     new GuzzleHttp\Client(),
     $config
 );
+$sku = bag_01; // string | Filter by product's sku
 $product_ids = 4,5; // string | Counts products specified by product ids
 $since_id = 56; // string | Retrieve entities starting from the specified id.
 $categories_ids = 23,56; // string | Defines product add that is specified by comma-separated categories id
@@ -854,6 +855,7 @@ $created_to = 2100-08-29 13:45:52; // string | Retrieve entities to their creati
 $modified_from = 2010-07-29 13:45:52; // string | Retrieve entities from their modification date
 $modified_to = 2100-08-29 13:45:52; // string | Retrieve entities to their modification date
 $brand_name = Abidas; // string | Retrieves brands specified by brand name
+$manufacturer_id = 1; // string | Defines product's manufacturer by manufacturer_id
 $product_attributes = product_attributes[0][attribute_id]=132&product_attributes[0][values][0]=custom value 1&product_attributes[0][values][1]=custom value 2; // string[] | Defines product attributes
 $status = disabled; // string | Defines product's status
 $type = simple; // string | Defines products's type
@@ -866,7 +868,7 @@ $disable_report_cache = false; // bool | Disable report cache for current reques
 $use_latest_api_version = true; // bool | Use the latest platform API version
 
 try {
-    $result = $apiInstance->productCount($product_ids, $since_id, $categories_ids, $category_id, $store_id, $lang_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $brand_name, $product_attributes, $status, $type, $visible, $find_value, $find_where, $report_request_id, $return_global, $disable_report_cache, $use_latest_api_version);
+    $result = $apiInstance->productCount($sku, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $lang_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $brand_name, $manufacturer_id, $product_attributes, $status, $type, $visible, $find_value, $find_where, $report_request_id, $return_global, $disable_report_cache, $use_latest_api_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productCount: ', $e->getMessage(), PHP_EOL;
@@ -877,6 +879,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **sku** | **string**| Filter by product&#39;s sku | [optional] |
 | **product_ids** | **string**| Counts products specified by product ids | [optional] |
 | **since_id** | **string**| Retrieve entities starting from the specified id. | [optional] |
 | **categories_ids** | **string**| Defines product add that is specified by comma-separated categories id | [optional] |
@@ -890,6 +893,7 @@ try {
 | **modified_from** | **string**| Retrieve entities from their modification date | [optional] |
 | **modified_to** | **string**| Retrieve entities to their modification date | [optional] |
 | **brand_name** | **string**| Retrieves brands specified by brand name | [optional] |
+| **manufacturer_id** | **string**| Defines product&#39;s manufacturer by manufacturer_id | [optional] |
 | **product_attributes** | [**string[]**](../Model/string.md)| Defines product attributes | [optional] |
 | **status** | **string**| Defines product&#39;s status | [optional] |
 | **type** | **string**| Defines products&#39;s type | [optional] |
@@ -1602,7 +1606,7 @@ try {
 ## `productList()`
 
 ```php
-productList($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $lang_id, $currency_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $status, $type, $visible, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version, $product_type): \OpenAPI\Client\Model\ModelResponseProductList
+productList($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $lang_id, $currency_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $manufacturer_id, $status, $type, $visible, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version, $product_type): \OpenAPI\Client\Model\ModelResponseProductList
 ```
 
 product.list
@@ -1652,6 +1656,7 @@ $modified_to = 2100-08-29 13:45:52; // string | Retrieve entities to their modif
 $sku = bag_01; // string | Filter by product's sku
 $brand_name = Abidas; // string | Retrieves brands specified by brand name
 $product_attributes = product_attributes[0][attribute_id]=132&product_attributes[0][values][0]=custom value 1&product_attributes[0][values][1]=custom value 2; // string[] | Defines product attributes
+$manufacturer_id = 1; // string | Defines product's manufacturer by manufacturer_id
 $status = disabled; // string | Defines product's status
 $type = simple; // string | Defines products's type
 $visible = everywhere; // string | Filter items by visibility status
@@ -1670,7 +1675,7 @@ $use_latest_api_version = true; // bool | Use the latest platform API version
 $product_type = BICYCLE; // string | A categorization for the product
 
 try {
-    $result = $apiInstance->productList($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $lang_id, $currency_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $status, $type, $visible, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version, $product_type);
+    $result = $apiInstance->productList($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $lang_id, $currency_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $manufacturer_id, $status, $type, $visible, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version, $product_type);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productList: ', $e->getMessage(), PHP_EOL;
@@ -1700,6 +1705,7 @@ try {
 | **sku** | **string**| Filter by product&#39;s sku | [optional] |
 | **brand_name** | **string**| Retrieves brands specified by brand name | [optional] |
 | **product_attributes** | [**string[]**](../Model/string.md)| Defines product attributes | [optional] |
+| **manufacturer_id** | **string**| Defines product&#39;s manufacturer by manufacturer_id | [optional] |
 | **status** | **string**| Defines product&#39;s status | [optional] |
 | **type** | **string**| Defines products&#39;s type | [optional] |
 | **visible** | **string**| Filter items by visibility status | [optional] [default to &#39;everywhere&#39;] |

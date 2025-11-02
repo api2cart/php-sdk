@@ -702,6 +702,15 @@ class OrderAddTest extends TestCase
     }
 
     /**
+     * Test attribute "fee_price"
+     */
+    public function testPropertyFeePrice()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "order_item"
      */
     public function testPropertyOrderItem()

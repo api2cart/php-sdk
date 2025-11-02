@@ -127,6 +127,7 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'note_attributes' => '\OpenAPI\Client\Model\OrderAddNoteAttributesInner[]',
         'clear_cache' => 'bool',
         'origin' => 'string',
+        'fee_price' => 'float',
         'order_item' => '\OpenAPI\Client\Model\OrderAddOrderItemInner[]'
     ];
 
@@ -207,6 +208,7 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'note_attributes' => null,
         'clear_cache' => null,
         'origin' => null,
+        'fee_price' => null,
         'order_item' => null
     ];
 
@@ -285,6 +287,7 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'note_attributes' => false,
         'clear_cache' => false,
         'origin' => false,
+        'fee_price' => false,
         'order_item' => false
     ];
 
@@ -443,6 +446,7 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'note_attributes' => 'note_attributes',
         'clear_cache' => 'clear_cache',
         'origin' => 'origin',
+        'fee_price' => 'fee_price',
         'order_item' => 'order_item'
     ];
 
@@ -521,6 +525,7 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'note_attributes' => 'setNoteAttributes',
         'clear_cache' => 'setClearCache',
         'origin' => 'setOrigin',
+        'fee_price' => 'setFeePrice',
         'order_item' => 'setOrderItem'
     ];
 
@@ -599,6 +604,7 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'note_attributes' => 'getNoteAttributes',
         'clear_cache' => 'getClearCache',
         'origin' => 'getOrigin',
+        'fee_price' => 'getFeePrice',
         'order_item' => 'getOrderItem'
     ];
 
@@ -728,6 +734,7 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('note_attributes', $data ?? [], null);
         $this->setIfExists('clear_cache', $data ?? [], true);
         $this->setIfExists('origin', $data ?? [], null);
+        $this->setIfExists('fee_price', $data ?? [], null);
         $this->setIfExists('order_item', $data ?? [], null);
     }
 
@@ -2671,6 +2678,33 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable origin cannot be null');
         }
         $this->container['origin'] = $origin;
+
+        return $this;
+    }
+
+    /**
+     * Gets fee_price
+     *
+     * @return float|null
+     */
+    public function getFeePrice()
+    {
+        return $this->container['fee_price'];
+    }
+
+    /**
+     * Sets fee_price
+     *
+     * @param float|null $fee_price Specifies refund's fee price
+     *
+     * @return self
+     */
+    public function setFeePrice($fee_price)
+    {
+        if (is_null($fee_price)) {
+            throw new \InvalidArgumentException('non-nullable fee_price cannot be null');
+        }
+        $this->container['fee_price'] = $fee_price;
 
         return $this;
     }
