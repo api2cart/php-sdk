@@ -62,6 +62,7 @@ class OrderCalculate implements ModelInterface, ArrayAccess, \JsonSerializable
         'currency_id' => 'string',
         'store_id' => 'string',
         'coupons' => 'string[]',
+        'rounding_precision' => 'int',
         'shipp_first_name' => 'string',
         'shipp_last_name' => 'string',
         'shipp_address_1' => 'string',
@@ -98,6 +99,7 @@ class OrderCalculate implements ModelInterface, ArrayAccess, \JsonSerializable
         'currency_id' => null,
         'store_id' => null,
         'coupons' => null,
+        'rounding_precision' => null,
         'shipp_first_name' => null,
         'shipp_last_name' => null,
         'shipp_address_1' => null,
@@ -132,6 +134,7 @@ class OrderCalculate implements ModelInterface, ArrayAccess, \JsonSerializable
         'currency_id' => false,
         'store_id' => false,
         'coupons' => false,
+        'rounding_precision' => false,
         'shipp_first_name' => false,
         'shipp_last_name' => false,
         'shipp_address_1' => false,
@@ -246,6 +249,7 @@ class OrderCalculate implements ModelInterface, ArrayAccess, \JsonSerializable
         'currency_id' => 'currency_id',
         'store_id' => 'store_id',
         'coupons' => 'coupons',
+        'rounding_precision' => 'rounding_precision',
         'shipp_first_name' => 'shipp_first_name',
         'shipp_last_name' => 'shipp_last_name',
         'shipp_address_1' => 'shipp_address_1',
@@ -280,6 +284,7 @@ class OrderCalculate implements ModelInterface, ArrayAccess, \JsonSerializable
         'currency_id' => 'setCurrencyId',
         'store_id' => 'setStoreId',
         'coupons' => 'setCoupons',
+        'rounding_precision' => 'setRoundingPrecision',
         'shipp_first_name' => 'setShippFirstName',
         'shipp_last_name' => 'setShippLastName',
         'shipp_address_1' => 'setShippAddress1',
@@ -314,6 +319,7 @@ class OrderCalculate implements ModelInterface, ArrayAccess, \JsonSerializable
         'currency_id' => 'getCurrencyId',
         'store_id' => 'getStoreId',
         'coupons' => 'getCoupons',
+        'rounding_precision' => 'getRoundingPrecision',
         'shipp_first_name' => 'getShippFirstName',
         'shipp_last_name' => 'getShippLastName',
         'shipp_address_1' => 'getShippAddress1',
@@ -399,6 +405,7 @@ class OrderCalculate implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('currency_id', $data ?? [], null);
         $this->setIfExists('store_id', $data ?? [], null);
         $this->setIfExists('coupons', $data ?? [], null);
+        $this->setIfExists('rounding_precision', $data ?? [], null);
         $this->setIfExists('shipp_first_name', $data ?? [], null);
         $this->setIfExists('shipp_last_name', $data ?? [], null);
         $this->setIfExists('shipp_address_1', $data ?? [], null);
@@ -602,6 +609,33 @@ class OrderCalculate implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('invalid length for $coupons when calling OrderCalculate., number of items must be greater than or equal to 1.');
         }
         $this->container['coupons'] = $coupons;
+
+        return $this;
+    }
+
+    /**
+     * Gets rounding_precision
+     *
+     * @return int|null
+     */
+    public function getRoundingPrecision()
+    {
+        return $this->container['rounding_precision'];
+    }
+
+    /**
+     * Sets rounding_precision
+     *
+     * @param int|null $rounding_precision <p>Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).</p> <p>Supported values range from <b>1</b> to <b>6</b>.</p> <p>The default rounding precision may vary depending on the platform. You can retrieve the default value using the <strong>cart.info</strong> method in the <code>default_rounding_precision</code> field. </p><p>Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.</p>
+     *
+     * @return self
+     */
+    public function setRoundingPrecision($rounding_precision)
+    {
+        if (is_null($rounding_precision)) {
+            throw new \InvalidArgumentException('non-nullable rounding_precision cannot be null');
+        }
+        $this->container['rounding_precision'] = $rounding_precision;
 
         return $this;
     }

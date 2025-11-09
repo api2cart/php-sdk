@@ -60,7 +60,8 @@ class ProductPriceUpdateGroupPricesInner implements ModelInterface, ArrayAccess,
     protected static $openAPITypes = [
         'id' => 'int',
         'group_id' => 'string',
-        'price' => 'float'
+        'price' => 'float',
+        'qty' => 'int'
     ];
 
     /**
@@ -73,7 +74,8 @@ class ProductPriceUpdateGroupPricesInner implements ModelInterface, ArrayAccess,
     protected static $openAPIFormats = [
         'id' => null,
         'group_id' => null,
-        'price' => null
+        'price' => null,
+        'qty' => null
     ];
 
     /**
@@ -84,7 +86,8 @@ class ProductPriceUpdateGroupPricesInner implements ModelInterface, ArrayAccess,
     protected static array $openAPINullables = [
         'id' => false,
         'group_id' => false,
-        'price' => false
+        'price' => false,
+        'qty' => false
     ];
 
     /**
@@ -175,7 +178,8 @@ class ProductPriceUpdateGroupPricesInner implements ModelInterface, ArrayAccess,
     protected static $attributeMap = [
         'id' => 'id',
         'group_id' => 'group_id',
-        'price' => 'price'
+        'price' => 'price',
+        'qty' => 'qty'
     ];
 
     /**
@@ -186,7 +190,8 @@ class ProductPriceUpdateGroupPricesInner implements ModelInterface, ArrayAccess,
     protected static $setters = [
         'id' => 'setId',
         'group_id' => 'setGroupId',
-        'price' => 'setPrice'
+        'price' => 'setPrice',
+        'qty' => 'setQty'
     ];
 
     /**
@@ -197,7 +202,8 @@ class ProductPriceUpdateGroupPricesInner implements ModelInterface, ArrayAccess,
     protected static $getters = [
         'id' => 'getId',
         'group_id' => 'getGroupId',
-        'price' => 'getPrice'
+        'price' => 'getPrice',
+        'qty' => 'getQty'
     ];
 
     /**
@@ -260,6 +266,7 @@ class ProductPriceUpdateGroupPricesInner implements ModelInterface, ArrayAccess,
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('group_id', $data ?? [], null);
         $this->setIfExists('price', $data ?? [], null);
+        $this->setIfExists('qty', $data ?? [], null);
     }
 
     /**
@@ -381,6 +388,33 @@ class ProductPriceUpdateGroupPricesInner implements ModelInterface, ArrayAccess,
             throw new \InvalidArgumentException('non-nullable price cannot be null');
         }
         $this->container['price'] = $price;
+
+        return $this;
+    }
+
+    /**
+     * Gets qty
+     *
+     * @return int|null
+     */
+    public function getQty()
+    {
+        return $this->container['qty'];
+    }
+
+    /**
+     * Sets qty
+     *
+     * @param int|null $qty qty
+     *
+     * @return self
+     */
+    public function setQty($qty)
+    {
+        if (is_null($qty)) {
+            throw new \InvalidArgumentException('non-nullable qty cannot be null');
+        }
+        $this->container['qty'] = $qty;
 
         return $this;
     }

@@ -83,6 +83,10 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'amazon_seller_id' => 'string',
         'aspdotnetstorefront_api_user' => 'string',
         'aspdotnetstorefront_api_pass' => 'string',
+        'americommerce_app_id' => 'string',
+        'americommerce_app_secret' => 'string',
+        'americommerce_access_token' => 'string',
+        'americommerce_refresh_token' => 'string',
         'bigcommerceapi_admin_account' => 'string',
         'bigcommerceapi_api_path' => 'string',
         'bigcommerceapi_api_key' => 'string',
@@ -259,6 +263,10 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'amazon_seller_id' => null,
         'aspdotnetstorefront_api_user' => null,
         'aspdotnetstorefront_api_pass' => null,
+        'americommerce_app_id' => null,
+        'americommerce_app_secret' => null,
+        'americommerce_access_token' => null,
+        'americommerce_refresh_token' => null,
         'bigcommerceapi_admin_account' => null,
         'bigcommerceapi_api_path' => null,
         'bigcommerceapi_api_key' => null,
@@ -433,6 +441,10 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'amazon_seller_id' => false,
         'aspdotnetstorefront_api_user' => false,
         'aspdotnetstorefront_api_pass' => false,
+        'americommerce_app_id' => false,
+        'americommerce_app_secret' => false,
+        'americommerce_access_token' => false,
+        'americommerce_refresh_token' => false,
         'bigcommerceapi_admin_account' => false,
         'bigcommerceapi_api_path' => false,
         'bigcommerceapi_api_key' => false,
@@ -687,6 +699,10 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'amazon_seller_id' => 'amazon_seller_id',
         'aspdotnetstorefront_api_user' => 'aspdotnetstorefront_api_user',
         'aspdotnetstorefront_api_pass' => 'aspdotnetstorefront_api_pass',
+        'americommerce_app_id' => 'americommerce_app_id',
+        'americommerce_app_secret' => 'americommerce_app_secret',
+        'americommerce_access_token' => 'americommerce_access_token',
+        'americommerce_refresh_token' => 'americommerce_refresh_token',
         'bigcommerceapi_admin_account' => 'bigcommerceapi_admin_account',
         'bigcommerceapi_api_path' => 'bigcommerceapi_api_path',
         'bigcommerceapi_api_key' => 'bigcommerceapi_api_key',
@@ -861,6 +877,10 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'amazon_seller_id' => 'setAmazonSellerId',
         'aspdotnetstorefront_api_user' => 'setAspdotnetstorefrontApiUser',
         'aspdotnetstorefront_api_pass' => 'setAspdotnetstorefrontApiPass',
+        'americommerce_app_id' => 'setAmericommerceAppId',
+        'americommerce_app_secret' => 'setAmericommerceAppSecret',
+        'americommerce_access_token' => 'setAmericommerceAccessToken',
+        'americommerce_refresh_token' => 'setAmericommerceRefreshToken',
         'bigcommerceapi_admin_account' => 'setBigcommerceapiAdminAccount',
         'bigcommerceapi_api_path' => 'setBigcommerceapiApiPath',
         'bigcommerceapi_api_key' => 'setBigcommerceapiApiKey',
@@ -1035,6 +1055,10 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'amazon_seller_id' => 'getAmazonSellerId',
         'aspdotnetstorefront_api_user' => 'getAspdotnetstorefrontApiUser',
         'aspdotnetstorefront_api_pass' => 'getAspdotnetstorefrontApiPass',
+        'americommerce_app_id' => 'getAmericommerceAppId',
+        'americommerce_app_secret' => 'getAmericommerceAppSecret',
+        'americommerce_access_token' => 'getAmericommerceAccessToken',
+        'americommerce_refresh_token' => 'getAmericommerceRefreshToken',
         'bigcommerceapi_admin_account' => 'getBigcommerceapiAdminAccount',
         'bigcommerceapi_api_path' => 'getBigcommerceapiApiPath',
         'bigcommerceapi_api_key' => 'getBigcommerceapiApiKey',
@@ -1223,6 +1247,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     public const CART_ID__3_D_CART_API = '3DCartApi';
     public const CART_ID_ACE_SHOP = 'AceShop';
     public const CART_ID_AMAZON_SP = 'AmazonSP';
+    public const CART_ID_AMERICOMMERCE = 'Americommerce';
     public const CART_ID_ASP_DOT_NET_STOREFRONT = 'AspDotNetStorefront';
     public const CART_ID_BIG_CARTEL = 'BigCartel';
     public const CART_ID_BRICKLINK = 'Bricklink';
@@ -1301,6 +1326,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             self::CART_ID__3_D_CART_API,
             self::CART_ID_ACE_SHOP,
             self::CART_ID_AMAZON_SP,
+            self::CART_ID_AMERICOMMERCE,
             self::CART_ID_ASP_DOT_NET_STOREFRONT,
             self::CART_ID_BIG_CARTEL,
             self::CART_ID_BRICKLINK,
@@ -1409,6 +1435,10 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('amazon_seller_id', $data ?? [], null);
         $this->setIfExists('aspdotnetstorefront_api_user', $data ?? [], null);
         $this->setIfExists('aspdotnetstorefront_api_pass', $data ?? [], null);
+        $this->setIfExists('americommerce_app_id', $data ?? [], null);
+        $this->setIfExists('americommerce_app_secret', $data ?? [], null);
+        $this->setIfExists('americommerce_access_token', $data ?? [], null);
+        $this->setIfExists('americommerce_refresh_token', $data ?? [], null);
         $this->setIfExists('bigcommerceapi_admin_account', $data ?? [], null);
         $this->setIfExists('bigcommerceapi_api_path', $data ?? [], null);
         $this->setIfExists('bigcommerceapi_api_key', $data ?? [], null);
@@ -2291,6 +2321,114 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable aspdotnetstorefront_api_pass cannot be null');
         }
         $this->container['aspdotnetstorefront_api_pass'] = $aspdotnetstorefront_api_pass;
+
+        return $this;
+    }
+
+    /**
+     * Gets americommerce_app_id
+     *
+     * @return string|null
+     */
+    public function getAmericommerceAppId()
+    {
+        return $this->container['americommerce_app_id'];
+    }
+
+    /**
+     * Sets americommerce_app_id
+     *
+     * @param string|null $americommerce_app_id Americommerce App ID
+     *
+     * @return self
+     */
+    public function setAmericommerceAppId($americommerce_app_id)
+    {
+        if (is_null($americommerce_app_id)) {
+            throw new \InvalidArgumentException('non-nullable americommerce_app_id cannot be null');
+        }
+        $this->container['americommerce_app_id'] = $americommerce_app_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets americommerce_app_secret
+     *
+     * @return string|null
+     */
+    public function getAmericommerceAppSecret()
+    {
+        return $this->container['americommerce_app_secret'];
+    }
+
+    /**
+     * Sets americommerce_app_secret
+     *
+     * @param string|null $americommerce_app_secret Americommerce App Secret
+     *
+     * @return self
+     */
+    public function setAmericommerceAppSecret($americommerce_app_secret)
+    {
+        if (is_null($americommerce_app_secret)) {
+            throw new \InvalidArgumentException('non-nullable americommerce_app_secret cannot be null');
+        }
+        $this->container['americommerce_app_secret'] = $americommerce_app_secret;
+
+        return $this;
+    }
+
+    /**
+     * Gets americommerce_access_token
+     *
+     * @return string|null
+     */
+    public function getAmericommerceAccessToken()
+    {
+        return $this->container['americommerce_access_token'];
+    }
+
+    /**
+     * Sets americommerce_access_token
+     *
+     * @param string|null $americommerce_access_token Americommerce Access Token
+     *
+     * @return self
+     */
+    public function setAmericommerceAccessToken($americommerce_access_token)
+    {
+        if (is_null($americommerce_access_token)) {
+            throw new \InvalidArgumentException('non-nullable americommerce_access_token cannot be null');
+        }
+        $this->container['americommerce_access_token'] = $americommerce_access_token;
+
+        return $this;
+    }
+
+    /**
+     * Gets americommerce_refresh_token
+     *
+     * @return string|null
+     */
+    public function getAmericommerceRefreshToken()
+    {
+        return $this->container['americommerce_refresh_token'];
+    }
+
+    /**
+     * Sets americommerce_refresh_token
+     *
+     * @param string|null $americommerce_refresh_token Americommerce Refresh Token
+     *
+     * @return self
+     */
+    public function setAmericommerceRefreshToken($americommerce_refresh_token)
+    {
+        if (is_null($americommerce_refresh_token)) {
+            throw new \InvalidArgumentException('non-nullable americommerce_refresh_token cannot be null');
+        }
+        $this->container['americommerce_refresh_token'] = $americommerce_refresh_token;
 
         return $this;
     }

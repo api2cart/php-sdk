@@ -306,6 +306,42 @@ class AccountCartAddTest extends TestCase
     }
 
     /**
+     * Test attribute "americommerce_app_id"
+     */
+    public function testPropertyAmericommerceAppId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "americommerce_app_secret"
+     */
+    public function testPropertyAmericommerceAppSecret()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "americommerce_access_token"
+     */
+    public function testPropertyAmericommerceAccessToken()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "americommerce_refresh_token"
+     */
+    public function testPropertyAmericommerceRefreshToken()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "bigcommerceapi_admin_account"
      */
     public function testPropertyBigcommerceapiAdminAccount()

@@ -106,4 +106,13 @@ class ProductPriceUpdateGroupPricesInnerTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "qty"
+     */
+    public function testPropertyQty()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

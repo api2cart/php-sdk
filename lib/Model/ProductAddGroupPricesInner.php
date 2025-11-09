@@ -59,7 +59,8 @@ class ProductAddGroupPricesInner implements ModelInterface, ArrayAccess, \JsonSe
       */
     protected static $openAPITypes = [
         'group_id' => 'string',
-        'price' => 'float'
+        'price' => 'float',
+        'qty' => 'int'
     ];
 
     /**
@@ -71,7 +72,8 @@ class ProductAddGroupPricesInner implements ModelInterface, ArrayAccess, \JsonSe
       */
     protected static $openAPIFormats = [
         'group_id' => null,
-        'price' => null
+        'price' => null,
+        'qty' => null
     ];
 
     /**
@@ -81,7 +83,8 @@ class ProductAddGroupPricesInner implements ModelInterface, ArrayAccess, \JsonSe
       */
     protected static array $openAPINullables = [
         'group_id' => false,
-        'price' => false
+        'price' => false,
+        'qty' => false
     ];
 
     /**
@@ -171,7 +174,8 @@ class ProductAddGroupPricesInner implements ModelInterface, ArrayAccess, \JsonSe
      */
     protected static $attributeMap = [
         'group_id' => 'group_id',
-        'price' => 'price'
+        'price' => 'price',
+        'qty' => 'qty'
     ];
 
     /**
@@ -181,7 +185,8 @@ class ProductAddGroupPricesInner implements ModelInterface, ArrayAccess, \JsonSe
      */
     protected static $setters = [
         'group_id' => 'setGroupId',
-        'price' => 'setPrice'
+        'price' => 'setPrice',
+        'qty' => 'setQty'
     ];
 
     /**
@@ -191,7 +196,8 @@ class ProductAddGroupPricesInner implements ModelInterface, ArrayAccess, \JsonSe
      */
     protected static $getters = [
         'group_id' => 'getGroupId',
-        'price' => 'getPrice'
+        'price' => 'getPrice',
+        'qty' => 'getQty'
     ];
 
     /**
@@ -253,6 +259,7 @@ class ProductAddGroupPricesInner implements ModelInterface, ArrayAccess, \JsonSe
     {
         $this->setIfExists('group_id', $data ?? [], null);
         $this->setIfExists('price', $data ?? [], null);
+        $this->setIfExists('qty', $data ?? [], null);
     }
 
     /**
@@ -347,6 +354,33 @@ class ProductAddGroupPricesInner implements ModelInterface, ArrayAccess, \JsonSe
             throw new \InvalidArgumentException('non-nullable price cannot be null');
         }
         $this->container['price'] = $price;
+
+        return $this;
+    }
+
+    /**
+     * Gets qty
+     *
+     * @return int|null
+     */
+    public function getQty()
+    {
+        return $this->container['qty'];
+    }
+
+    /**
+     * Sets qty
+     *
+     * @param int|null $qty qty
+     *
+     * @return self
+     */
+    public function setQty($qty)
+    {
+        if (is_null($qty)) {
+            throw new \InvalidArgumentException('non-nullable qty cannot be null');
+        }
+        $this->container['qty'] = $qty;
 
         return $this;
     }

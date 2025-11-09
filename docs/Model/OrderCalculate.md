@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **currency_id** | **string** | Currency Id | [optional]
 **store_id** | **string** | Store Id | [optional]
 **coupons** | **string[]** | Coupons that will be applied to order. If the order isn&#39;t eligible for any given discount code or there is no discount with such a code it will be skipped during calculation | [optional]
+**rounding_precision** | **int** | &lt;p&gt;Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).&lt;/p&gt; &lt;p&gt;Supported values range from &lt;b&gt;1&lt;/b&gt; to &lt;b&gt;6&lt;/b&gt;.&lt;/p&gt; &lt;p&gt;The default rounding precision may vary depending on the platform. You can retrieve the default value using the &lt;strong&gt;cart.info&lt;/strong&gt; method in the &lt;code&gt;default_rounding_precision&lt;/code&gt; field. &lt;/p&gt;&lt;p&gt;Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.&lt;/p&gt; | [optional]
 **shipp_first_name** | **string** | Specifies shipping first name |
 **shipp_last_name** | **string** | Specifies shipping last name |
 **shipp_address_1** | **string** | Specifies first shipping address |

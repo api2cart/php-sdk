@@ -117,6 +117,15 @@ class OrderCalculateTest extends TestCase
     }
 
     /**
+     * Test attribute "rounding_precision"
+     */
+    public function testPropertyRoundingPrecision()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "shipp_first_name"
      */
     public function testPropertyShippFirstName()
