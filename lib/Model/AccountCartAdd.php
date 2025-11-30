@@ -227,7 +227,12 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'temu_app_key' => 'string',
         'temu_app_secret' => 'string',
         'temu_access_token' => 'string',
-        'temu_region' => 'string'
+        'temu_region' => 'string',
+        'scapi_client_id' => 'string',
+        'scapi_client_secret' => 'string',
+        'scapi_organization_id' => 'string',
+        'scapi_short_code' => 'string',
+        'scapi_scopes' => 'string'
     ];
 
     /**
@@ -407,7 +412,12 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'temu_app_key' => null,
         'temu_app_secret' => null,
         'temu_access_token' => null,
-        'temu_region' => null
+        'temu_region' => null,
+        'scapi_client_id' => null,
+        'scapi_client_secret' => null,
+        'scapi_organization_id' => null,
+        'scapi_short_code' => null,
+        'scapi_scopes' => null
     ];
 
     /**
@@ -585,7 +595,12 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'temu_app_key' => false,
         'temu_app_secret' => false,
         'temu_access_token' => false,
-        'temu_region' => false
+        'temu_region' => false,
+        'scapi_client_id' => false,
+        'scapi_client_secret' => false,
+        'scapi_organization_id' => false,
+        'scapi_short_code' => false,
+        'scapi_scopes' => false
     ];
 
     /**
@@ -843,7 +858,12 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'temu_app_key' => 'temu_app_key',
         'temu_app_secret' => 'temu_app_secret',
         'temu_access_token' => 'temu_access_token',
-        'temu_region' => 'temu_region'
+        'temu_region' => 'temu_region',
+        'scapi_client_id' => 'scapi_client_id',
+        'scapi_client_secret' => 'scapi_client_secret',
+        'scapi_organization_id' => 'scapi_organization_id',
+        'scapi_short_code' => 'scapi_short_code',
+        'scapi_scopes' => 'scapi_scopes'
     ];
 
     /**
@@ -1021,7 +1041,12 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'temu_app_key' => 'setTemuAppKey',
         'temu_app_secret' => 'setTemuAppSecret',
         'temu_access_token' => 'setTemuAccessToken',
-        'temu_region' => 'setTemuRegion'
+        'temu_region' => 'setTemuRegion',
+        'scapi_client_id' => 'setScapiClientId',
+        'scapi_client_secret' => 'setScapiClientSecret',
+        'scapi_organization_id' => 'setScapiOrganizationId',
+        'scapi_short_code' => 'setScapiShortCode',
+        'scapi_scopes' => 'setScapiScopes'
     ];
 
     /**
@@ -1199,7 +1224,12 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'temu_app_key' => 'getTemuAppKey',
         'temu_app_secret' => 'getTemuAppSecret',
         'temu_access_token' => 'getTemuAccessToken',
-        'temu_region' => 'getTemuRegion'
+        'temu_region' => 'getTemuRegion',
+        'scapi_client_id' => 'getScapiClientId',
+        'scapi_client_secret' => 'getScapiClientSecret',
+        'scapi_organization_id' => 'getScapiOrganizationId',
+        'scapi_short_code' => 'getScapiShortCode',
+        'scapi_scopes' => 'getScapiScopes'
     ];
 
     /**
@@ -1580,6 +1610,11 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('temu_app_secret', $data ?? [], null);
         $this->setIfExists('temu_access_token', $data ?? [], null);
         $this->setIfExists('temu_region', $data ?? [], null);
+        $this->setIfExists('scapi_client_id', $data ?? [], null);
+        $this->setIfExists('scapi_client_secret', $data ?? [], null);
+        $this->setIfExists('scapi_organization_id', $data ?? [], null);
+        $this->setIfExists('scapi_short_code', $data ?? [], null);
+        $this->setIfExists('scapi_scopes', $data ?? [], null);
     }
 
     /**
@@ -6241,6 +6276,141 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable temu_region cannot be null');
         }
         $this->container['temu_region'] = $temu_region;
+
+        return $this;
+    }
+
+    /**
+     * Gets scapi_client_id
+     *
+     * @return string|null
+     */
+    public function getScapiClientId()
+    {
+        return $this->container['scapi_client_id'];
+    }
+
+    /**
+     * Sets scapi_client_id
+     *
+     * @param string|null $scapi_client_id Salesforce Commerce API Client ID
+     *
+     * @return self
+     */
+    public function setScapiClientId($scapi_client_id)
+    {
+        if (is_null($scapi_client_id)) {
+            throw new \InvalidArgumentException('non-nullable scapi_client_id cannot be null');
+        }
+        $this->container['scapi_client_id'] = $scapi_client_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets scapi_client_secret
+     *
+     * @return string|null
+     */
+    public function getScapiClientSecret()
+    {
+        return $this->container['scapi_client_secret'];
+    }
+
+    /**
+     * Sets scapi_client_secret
+     *
+     * @param string|null $scapi_client_secret Salesforce Commerce API Client Secret
+     *
+     * @return self
+     */
+    public function setScapiClientSecret($scapi_client_secret)
+    {
+        if (is_null($scapi_client_secret)) {
+            throw new \InvalidArgumentException('non-nullable scapi_client_secret cannot be null');
+        }
+        $this->container['scapi_client_secret'] = $scapi_client_secret;
+
+        return $this;
+    }
+
+    /**
+     * Gets scapi_organization_id
+     *
+     * @return string|null
+     */
+    public function getScapiOrganizationId()
+    {
+        return $this->container['scapi_organization_id'];
+    }
+
+    /**
+     * Sets scapi_organization_id
+     *
+     * @param string|null $scapi_organization_id Salesforce Commerce Organization ID
+     *
+     * @return self
+     */
+    public function setScapiOrganizationId($scapi_organization_id)
+    {
+        if (is_null($scapi_organization_id)) {
+            throw new \InvalidArgumentException('non-nullable scapi_organization_id cannot be null');
+        }
+        $this->container['scapi_organization_id'] = $scapi_organization_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets scapi_short_code
+     *
+     * @return string|null
+     */
+    public function getScapiShortCode()
+    {
+        return $this->container['scapi_short_code'];
+    }
+
+    /**
+     * Sets scapi_short_code
+     *
+     * @param string|null $scapi_short_code Salesforce Commerce Short Code
+     *
+     * @return self
+     */
+    public function setScapiShortCode($scapi_short_code)
+    {
+        if (is_null($scapi_short_code)) {
+            throw new \InvalidArgumentException('non-nullable scapi_short_code cannot be null');
+        }
+        $this->container['scapi_short_code'] = $scapi_short_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets scapi_scopes
+     *
+     * @return string|null
+     */
+    public function getScapiScopes()
+    {
+        return $this->container['scapi_scopes'];
+    }
+
+    /**
+     * Sets scapi_scopes
+     *
+     * @param string|null $scapi_scopes Salesforce Commerce API Scopes
+     *
+     * @return self
+     */
+    public function setScapiScopes($scapi_scopes)
+    {
+        if (is_null($scapi_scopes)) {
+            throw new \InvalidArgumentException('non-nullable scapi_scopes cannot be null');
+        }
+        $this->container['scapi_scopes'] = $scapi_scopes;
 
         return $this;
     }

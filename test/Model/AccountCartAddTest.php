@@ -1609,4 +1609,49 @@ class AccountCartAddTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "scapi_client_id"
+     */
+    public function testPropertyScapiClientId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "scapi_client_secret"
+     */
+    public function testPropertyScapiClientSecret()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "scapi_organization_id"
+     */
+    public function testPropertyScapiOrganizationId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "scapi_short_code"
+     */
+    public function testPropertyScapiShortCode()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "scapi_scopes"
+     */
+    public function testPropertyScapiScopes()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

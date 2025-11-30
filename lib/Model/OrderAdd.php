@@ -72,6 +72,7 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'customer_country' => 'string',
         'customer_birthday' => 'string',
         'customer_fax' => 'string',
+        'is_guest' => 'bool',
         'order_payment_method' => 'string',
         'transaction_id' => 'string',
         'currency' => 'string',
@@ -153,6 +154,7 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'customer_country' => null,
         'customer_birthday' => null,
         'customer_fax' => null,
+        'is_guest' => null,
         'order_payment_method' => null,
         'transaction_id' => null,
         'currency' => null,
@@ -232,6 +234,7 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'customer_country' => false,
         'customer_birthday' => false,
         'customer_fax' => false,
+        'is_guest' => false,
         'order_payment_method' => false,
         'transaction_id' => false,
         'currency' => false,
@@ -391,6 +394,7 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'customer_country' => 'customer_country',
         'customer_birthday' => 'customer_birthday',
         'customer_fax' => 'customer_fax',
+        'is_guest' => 'is_guest',
         'order_payment_method' => 'order_payment_method',
         'transaction_id' => 'transaction_id',
         'currency' => 'currency',
@@ -470,6 +474,7 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'customer_country' => 'setCustomerCountry',
         'customer_birthday' => 'setCustomerBirthday',
         'customer_fax' => 'setCustomerFax',
+        'is_guest' => 'setIsGuest',
         'order_payment_method' => 'setOrderPaymentMethod',
         'transaction_id' => 'setTransactionId',
         'currency' => 'setCurrency',
@@ -549,6 +554,7 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'customer_country' => 'getCustomerCountry',
         'customer_birthday' => 'getCustomerBirthday',
         'customer_fax' => 'getCustomerFax',
+        'is_guest' => 'getIsGuest',
         'order_payment_method' => 'getOrderPaymentMethod',
         'transaction_id' => 'getTransactionId',
         'currency' => 'getCurrency',
@@ -679,6 +685,7 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('customer_country', $data ?? [], null);
         $this->setIfExists('customer_birthday', $data ?? [], null);
         $this->setIfExists('customer_fax', $data ?? [], null);
+        $this->setIfExists('is_guest', $data ?? [], false);
         $this->setIfExists('order_payment_method', $data ?? [], null);
         $this->setIfExists('transaction_id', $data ?? [], null);
         $this->setIfExists('currency', $data ?? [], null);
@@ -1188,6 +1195,33 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable customer_fax cannot be null');
         }
         $this->container['customer_fax'] = $customer_fax;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_guest
+     *
+     * @return bool|null
+     */
+    public function getIsGuest()
+    {
+        return $this->container['is_guest'];
+    }
+
+    /**
+     * Sets is_guest
+     *
+     * @param bool|null $is_guest Indicates whether the customer is a guest customer
+     *
+     * @return self
+     */
+    public function setIsGuest($is_guest)
+    {
+        if (is_null($is_guest)) {
+            throw new \InvalidArgumentException('non-nullable is_guest cannot be null');
+        }
+        $this->container['is_guest'] = $is_guest;
 
         return $this;
     }

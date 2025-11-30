@@ -207,6 +207,15 @@ class OrderAddTest extends TestCase
     }
 
     /**
+     * Test attribute "is_guest"
+     */
+    public function testPropertyIsGuest()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "order_payment_method"
      */
     public function testPropertyOrderPaymentMethod()
