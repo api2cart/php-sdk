@@ -112,7 +112,8 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'meta_keywords' => 'string',
         'manufacturer' => 'string',
         'reindex' => 'bool',
-        'clear_cache' => 'bool'
+        'clear_cache' => 'bool',
+        'processing_profile_id' => 'int'
     ];
 
     /**
@@ -177,7 +178,8 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'meta_keywords' => null,
         'manufacturer' => null,
         'reindex' => null,
-        'clear_cache' => null
+        'clear_cache' => null,
+        'processing_profile_id' => null
     ];
 
     /**
@@ -240,7 +242,8 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'meta_keywords' => false,
         'manufacturer' => false,
         'reindex' => false,
-        'clear_cache' => false
+        'clear_cache' => false,
+        'processing_profile_id' => false
     ];
 
     /**
@@ -383,7 +386,8 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'meta_keywords' => 'meta_keywords',
         'manufacturer' => 'manufacturer',
         'reindex' => 'reindex',
-        'clear_cache' => 'clear_cache'
+        'clear_cache' => 'clear_cache',
+        'processing_profile_id' => 'processing_profile_id'
     ];
 
     /**
@@ -446,7 +450,8 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'meta_keywords' => 'setMetaKeywords',
         'manufacturer' => 'setManufacturer',
         'reindex' => 'setReindex',
-        'clear_cache' => 'setClearCache'
+        'clear_cache' => 'setClearCache',
+        'processing_profile_id' => 'setProcessingProfileId'
     ];
 
     /**
@@ -509,7 +514,8 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'meta_keywords' => 'getMetaKeywords',
         'manufacturer' => 'getManufacturer',
         'reindex' => 'getReindex',
-        'clear_cache' => 'getClearCache'
+        'clear_cache' => 'getClearCache',
+        'processing_profile_id' => 'getProcessingProfileId'
     ];
 
     /**
@@ -624,6 +630,7 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->setIfExists('manufacturer', $data ?? [], null);
         $this->setIfExists('reindex', $data ?? [], true);
         $this->setIfExists('clear_cache', $data ?? [], true);
+        $this->setIfExists('processing_profile_id', $data ?? [], null);
     }
 
     /**
@@ -2149,6 +2156,33 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
             throw new \InvalidArgumentException('non-nullable clear_cache cannot be null');
         }
         $this->container['clear_cache'] = $clear_cache;
+
+        return $this;
+    }
+
+    /**
+     * Gets processing_profile_id
+     *
+     * @return int|null
+     */
+    public function getProcessingProfileId()
+    {
+        return $this->container['processing_profile_id'];
+    }
+
+    /**
+     * Sets processing_profile_id
+     *
+     * @param int|null $processing_profile_id The numeric ID of the processing profile (readiness state) for physical products in Etsy. You can find possible values in the \"cart.info\" API method response, in the field processing_profiles[]->readiness_state_id.
+     *
+     * @return self
+     */
+    public function setProcessingProfileId($processing_profile_id)
+    {
+        if (is_null($processing_profile_id)) {
+            throw new \InvalidArgumentException('non-nullable processing_profile_id cannot be null');
+        }
+        $this->container['processing_profile_id'] = $processing_profile_id;
 
         return $this;
     }

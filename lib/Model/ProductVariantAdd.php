@@ -111,6 +111,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'is_free_shipping' => 'bool',
         'country_of_origin' => 'string',
         'harmonized_system_code' => 'string',
+        'processing_profile_id' => 'int',
         'marketplace_item_properties' => 'string',
         'clear_cache' => 'bool'
     ];
@@ -176,6 +177,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'is_free_shipping' => null,
         'country_of_origin' => null,
         'harmonized_system_code' => null,
+        'processing_profile_id' => null,
         'marketplace_item_properties' => null,
         'clear_cache' => null
     ];
@@ -239,6 +241,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'is_free_shipping' => false,
         'country_of_origin' => false,
         'harmonized_system_code' => false,
+        'processing_profile_id' => false,
         'marketplace_item_properties' => false,
         'clear_cache' => false
     ];
@@ -382,6 +385,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'is_free_shipping' => 'is_free_shipping',
         'country_of_origin' => 'country_of_origin',
         'harmonized_system_code' => 'harmonized_system_code',
+        'processing_profile_id' => 'processing_profile_id',
         'marketplace_item_properties' => 'marketplace_item_properties',
         'clear_cache' => 'clear_cache'
     ];
@@ -445,6 +449,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'is_free_shipping' => 'setIsFreeShipping',
         'country_of_origin' => 'setCountryOfOrigin',
         'harmonized_system_code' => 'setHarmonizedSystemCode',
+        'processing_profile_id' => 'setProcessingProfileId',
         'marketplace_item_properties' => 'setMarketplaceItemProperties',
         'clear_cache' => 'setClearCache'
     ];
@@ -508,6 +513,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'is_free_shipping' => 'getIsFreeShipping',
         'country_of_origin' => 'getCountryOfOrigin',
         'harmonized_system_code' => 'getHarmonizedSystemCode',
+        'processing_profile_id' => 'getProcessingProfileId',
         'marketplace_item_properties' => 'getMarketplaceItemProperties',
         'clear_cache' => 'getClearCache'
     ];
@@ -622,6 +628,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('is_free_shipping', $data ?? [], null);
         $this->setIfExists('country_of_origin', $data ?? [], null);
         $this->setIfExists('harmonized_system_code', $data ?? [], null);
+        $this->setIfExists('processing_profile_id', $data ?? [], null);
         $this->setIfExists('marketplace_item_properties', $data ?? [], null);
         $this->setIfExists('clear_cache', $data ?? [], true);
     }
@@ -2098,6 +2105,33 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
             throw new \InvalidArgumentException('non-nullable harmonized_system_code cannot be null');
         }
         $this->container['harmonized_system_code'] = $harmonized_system_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets processing_profile_id
+     *
+     * @return int|null
+     */
+    public function getProcessingProfileId()
+    {
+        return $this->container['processing_profile_id'];
+    }
+
+    /**
+     * Sets processing_profile_id
+     *
+     * @param int|null $processing_profile_id The numeric ID of the processing profile (readiness state) for physical products in Etsy. You can find possible values in the \"cart.info\" API method response, in the field processing_profiles[]->readiness_state_id.
+     *
+     * @return self
+     */
+    public function setProcessingProfileId($processing_profile_id)
+    {
+        if (is_null($processing_profile_id)) {
+            throw new \InvalidArgumentException('non-nullable processing_profile_id cannot be null');
+        }
+        $this->container['processing_profile_id'] = $processing_profile_id;
 
         return $this;
     }

@@ -558,6 +558,15 @@ class ProductVariantAddTest extends TestCase
     }
 
     /**
+     * Test attribute "processing_profile_id"
+     */
+    public function testPropertyProcessingProfileId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "marketplace_item_properties"
      */
     public function testPropertyMarketplaceItemProperties()

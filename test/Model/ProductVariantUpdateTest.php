@@ -574,4 +574,13 @@ class ProductVariantUpdateTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "processing_profile_id"
+     */
+    public function testPropertyProcessingProfileId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }
