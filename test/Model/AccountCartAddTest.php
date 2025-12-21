@@ -846,6 +846,15 @@ class AccountCartAddTest extends TestCase
     }
 
     /**
+     * Test attribute "shopify_client_id"
+     */
+    public function testPropertyShopifyClientId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "shopify_api_key"
      */
     public function testPropertyShopifyApiKey()

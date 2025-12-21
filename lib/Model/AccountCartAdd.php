@@ -143,6 +143,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shopline_app_secret' => 'string',
         'shopline_shared_secret' => 'string',
         'shopify_access_token' => 'string',
+        'shopify_client_id' => 'string',
         'shopify_api_key' => 'string',
         'shopify_api_password' => 'string',
         'shopify_shared_secret' => 'string',
@@ -328,6 +329,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shopline_app_secret' => null,
         'shopline_shared_secret' => null,
         'shopify_access_token' => null,
+        'shopify_client_id' => null,
         'shopify_api_key' => null,
         'shopify_api_password' => null,
         'shopify_shared_secret' => null,
@@ -511,6 +513,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shopline_app_secret' => false,
         'shopline_shared_secret' => false,
         'shopify_access_token' => false,
+        'shopify_client_id' => false,
         'shopify_api_key' => false,
         'shopify_api_password' => false,
         'shopify_shared_secret' => false,
@@ -774,6 +777,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shopline_app_secret' => 'shopline_app_secret',
         'shopline_shared_secret' => 'shopline_shared_secret',
         'shopify_access_token' => 'shopify_access_token',
+        'shopify_client_id' => 'shopify_client_id',
         'shopify_api_key' => 'shopify_api_key',
         'shopify_api_password' => 'shopify_api_password',
         'shopify_shared_secret' => 'shopify_shared_secret',
@@ -957,6 +961,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shopline_app_secret' => 'setShoplineAppSecret',
         'shopline_shared_secret' => 'setShoplineSharedSecret',
         'shopify_access_token' => 'setShopifyAccessToken',
+        'shopify_client_id' => 'setShopifyClientId',
         'shopify_api_key' => 'setShopifyApiKey',
         'shopify_api_password' => 'setShopifyApiPassword',
         'shopify_shared_secret' => 'setShopifySharedSecret',
@@ -1140,6 +1145,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shopline_app_secret' => 'getShoplineAppSecret',
         'shopline_shared_secret' => 'getShoplineSharedSecret',
         'shopify_access_token' => 'getShopifyAccessToken',
+        'shopify_client_id' => 'getShopifyClientId',
         'shopify_api_key' => 'getShopifyApiKey',
         'shopify_api_password' => 'getShopifyApiPassword',
         'shopify_shared_secret' => 'getShopifySharedSecret',
@@ -1525,6 +1531,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('shopline_app_secret', $data ?? [], null);
         $this->setIfExists('shopline_shared_secret', $data ?? [], null);
         $this->setIfExists('shopify_access_token', $data ?? [], null);
+        $this->setIfExists('shopify_client_id', $data ?? [], null);
         $this->setIfExists('shopify_api_key', $data ?? [], null);
         $this->setIfExists('shopify_api_password', $data ?? [], null);
         $this->setIfExists('shopify_shared_secret', $data ?? [], null);
@@ -3976,6 +3983,33 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable shopify_access_token cannot be null');
         }
         $this->container['shopify_access_token'] = $shopify_access_token;
+
+        return $this;
+    }
+
+    /**
+     * Gets shopify_client_id
+     *
+     * @return string|null
+     */
+    public function getShopifyClientId()
+    {
+        return $this->container['shopify_client_id'];
+    }
+
+    /**
+     * Sets shopify_client_id
+     *
+     * @param string|null $shopify_client_id Shopify Client ID
+     *
+     * @return self
+     */
+    public function setShopifyClientId($shopify_client_id)
+    {
+        if (is_null($shopify_client_id)) {
+            throw new \InvalidArgumentException('non-nullable shopify_client_id cannot be null');
+        }
+        $this->container['shopify_client_id'] = $shopify_client_id;
 
         return $this;
     }
