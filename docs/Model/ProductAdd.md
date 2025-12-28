@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **lang_id** | **string** | Language id | [optional]
 **old_price** | **float** | Defines product&#39;s old price | [optional]
 **special_price** | **float** | Defines product&#39;s model that has to be added | [optional]
-**wholesale_price** | **float** | Defines product&#39;s sale price | [optional]
+**wholesale_price** | **float** | This parameter is deprecated. Please use the &lt;strong&gt;old_price&lt;/strong&gt; parameter instead. | [optional]
 **cost_price** | **float** | Defines new product&#39;s cost price | [optional]
 **fixed_cost_shipping_price** | **float** | Specifies product&#39;s fixed cost shipping price | [optional]
 **tier_prices** | [**\OpenAPI\Client\Model\ProductAddTierPricesInner[]**](ProductAddTierPricesInner.md) | Defines product&#39;s tier prices | [optional]

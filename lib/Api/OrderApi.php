@@ -2554,15 +2554,16 @@ class OrderApi
      * @param  bool|null $enable_cache If the value is &#39;true&#39; and order exist in our cache, we will return order.info response from cache (optional, default to false)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  int|null $rounding_precision &lt;p&gt;Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).&lt;/p&gt; &lt;p&gt;Supported values range from &lt;b&gt;1&lt;/b&gt; to &lt;b&gt;6&lt;/b&gt;.&lt;/p&gt; &lt;p&gt;The default rounding precision may vary depending on the platform. You can retrieve the default value using the &lt;strong&gt;cart.info&lt;/strong&gt; method in the &lt;code&gt;default_rounding_precision&lt;/code&gt; field. &lt;/p&gt;&lt;p&gt;Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.&lt;/p&gt; (optional)
+     * @param  bool|null $allow_user_defined_order_statuses Indicates whether custom (user-defined) order statuses should be included in the response. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderInfo'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\OrderInfo200Response
      */
-    public function orderInfo($id = null, $order_id = null, $store_id = null, $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, $rounding_precision = null, string $contentType = self::contentTypes['orderInfo'][0])
+    public function orderInfo($id = null, $order_id = null, $store_id = null, $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, $rounding_precision = null, $allow_user_defined_order_statuses = false, string $contentType = self::contentTypes['orderInfo'][0])
     {
-        list($response) = $this->orderInfoWithHttpInfo($id, $order_id, $store_id, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $rounding_precision, $contentType);
+        list($response) = $this->orderInfoWithHttpInfo($id, $order_id, $store_id, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $rounding_precision, $allow_user_defined_order_statuses, $contentType);
         return $response;
     }
 
@@ -2580,15 +2581,16 @@ class OrderApi
      * @param  bool|null $enable_cache If the value is &#39;true&#39; and order exist in our cache, we will return order.info response from cache (optional, default to false)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  int|null $rounding_precision &lt;p&gt;Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).&lt;/p&gt; &lt;p&gt;Supported values range from &lt;b&gt;1&lt;/b&gt; to &lt;b&gt;6&lt;/b&gt;.&lt;/p&gt; &lt;p&gt;The default rounding precision may vary depending on the platform. You can retrieve the default value using the &lt;strong&gt;cart.info&lt;/strong&gt; method in the &lt;code&gt;default_rounding_precision&lt;/code&gt; field. &lt;/p&gt;&lt;p&gt;Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.&lt;/p&gt; (optional)
+     * @param  bool|null $allow_user_defined_order_statuses Indicates whether custom (user-defined) order statuses should be included in the response. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderInfo'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\OrderInfo200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderInfoWithHttpInfo($id = null, $order_id = null, $store_id = null, $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, $rounding_precision = null, string $contentType = self::contentTypes['orderInfo'][0])
+    public function orderInfoWithHttpInfo($id = null, $order_id = null, $store_id = null, $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, $rounding_precision = null, $allow_user_defined_order_statuses = false, string $contentType = self::contentTypes['orderInfo'][0])
     {
-        $request = $this->orderInfoRequest($id, $order_id, $store_id, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $rounding_precision, $contentType);
+        $request = $this->orderInfoRequest($id, $order_id, $store_id, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $rounding_precision, $allow_user_defined_order_statuses, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2713,14 +2715,15 @@ class OrderApi
      * @param  bool|null $enable_cache If the value is &#39;true&#39; and order exist in our cache, we will return order.info response from cache (optional, default to false)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  int|null $rounding_precision &lt;p&gt;Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).&lt;/p&gt; &lt;p&gt;Supported values range from &lt;b&gt;1&lt;/b&gt; to &lt;b&gt;6&lt;/b&gt;.&lt;/p&gt; &lt;p&gt;The default rounding precision may vary depending on the platform. You can retrieve the default value using the &lt;strong&gt;cart.info&lt;/strong&gt; method in the &lt;code&gt;default_rounding_precision&lt;/code&gt; field. &lt;/p&gt;&lt;p&gt;Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.&lt;/p&gt; (optional)
+     * @param  bool|null $allow_user_defined_order_statuses Indicates whether custom (user-defined) order statuses should be included in the response. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderInfoAsync($id = null, $order_id = null, $store_id = null, $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, $rounding_precision = null, string $contentType = self::contentTypes['orderInfo'][0])
+    public function orderInfoAsync($id = null, $order_id = null, $store_id = null, $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, $rounding_precision = null, $allow_user_defined_order_statuses = false, string $contentType = self::contentTypes['orderInfo'][0])
     {
-        return $this->orderInfoAsyncWithHttpInfo($id, $order_id, $store_id, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $rounding_precision, $contentType)
+        return $this->orderInfoAsyncWithHttpInfo($id, $order_id, $store_id, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $rounding_precision, $allow_user_defined_order_statuses, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2742,15 +2745,16 @@ class OrderApi
      * @param  bool|null $enable_cache If the value is &#39;true&#39; and order exist in our cache, we will return order.info response from cache (optional, default to false)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  int|null $rounding_precision &lt;p&gt;Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).&lt;/p&gt; &lt;p&gt;Supported values range from &lt;b&gt;1&lt;/b&gt; to &lt;b&gt;6&lt;/b&gt;.&lt;/p&gt; &lt;p&gt;The default rounding precision may vary depending on the platform. You can retrieve the default value using the &lt;strong&gt;cart.info&lt;/strong&gt; method in the &lt;code&gt;default_rounding_precision&lt;/code&gt; field. &lt;/p&gt;&lt;p&gt;Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.&lt;/p&gt; (optional)
+     * @param  bool|null $allow_user_defined_order_statuses Indicates whether custom (user-defined) order statuses should be included in the response. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderInfoAsyncWithHttpInfo($id = null, $order_id = null, $store_id = null, $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, $rounding_precision = null, string $contentType = self::contentTypes['orderInfo'][0])
+    public function orderInfoAsyncWithHttpInfo($id = null, $order_id = null, $store_id = null, $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, $rounding_precision = null, $allow_user_defined_order_statuses = false, string $contentType = self::contentTypes['orderInfo'][0])
     {
         $returnType = '\OpenAPI\Client\Model\OrderInfo200Response';
-        $request = $this->orderInfoRequest($id, $order_id, $store_id, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $rounding_precision, $contentType);
+        $request = $this->orderInfoRequest($id, $order_id, $store_id, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $rounding_precision, $allow_user_defined_order_statuses, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2800,13 +2804,15 @@ class OrderApi
      * @param  bool|null $enable_cache If the value is &#39;true&#39; and order exist in our cache, we will return order.info response from cache (optional, default to false)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  int|null $rounding_precision &lt;p&gt;Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).&lt;/p&gt; &lt;p&gt;Supported values range from &lt;b&gt;1&lt;/b&gt; to &lt;b&gt;6&lt;/b&gt;.&lt;/p&gt; &lt;p&gt;The default rounding precision may vary depending on the platform. You can retrieve the default value using the &lt;strong&gt;cart.info&lt;/strong&gt; method in the &lt;code&gt;default_rounding_precision&lt;/code&gt; field. &lt;/p&gt;&lt;p&gt;Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.&lt;/p&gt; (optional)
+     * @param  bool|null $allow_user_defined_order_statuses Indicates whether custom (user-defined) order statuses should be included in the response. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function orderInfoRequest($id = null, $order_id = null, $store_id = null, $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, $rounding_precision = null, string $contentType = self::contentTypes['orderInfo'][0])
+    public function orderInfoRequest($id = null, $order_id = null, $store_id = null, $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, $rounding_precision = null, $allow_user_defined_order_statuses = false, string $contentType = self::contentTypes['orderInfo'][0])
     {
+
 
 
 
@@ -2902,6 +2908,15 @@ class OrderApi
             $rounding_precision,
             'rounding_precision', // param base name
             'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $allow_user_defined_order_statuses,
+            'allow_user_defined_order_statuses', // param base name
+            'boolean', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3017,15 +3032,16 @@ class OrderApi
      * @param  bool|null $enable_cache If the value is &#39;true&#39;, we will cache orders for a 15 minutes in order to increase speed and reduce requests throttling for some methods and shoping platforms (for example order.shipment.add) (optional, default to false)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  int|null $rounding_precision &lt;p&gt;Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).&lt;/p&gt; &lt;p&gt;Supported values range from &lt;b&gt;1&lt;/b&gt; to &lt;b&gt;6&lt;/b&gt;.&lt;/p&gt; &lt;p&gt;The default rounding precision may vary depending on the platform. You can retrieve the default value using the &lt;strong&gt;cart.info&lt;/strong&gt; method in the &lt;code&gt;default_rounding_precision&lt;/code&gt; field. &lt;/p&gt;&lt;p&gt;Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.&lt;/p&gt; (optional)
+     * @param  bool|null $allow_user_defined_order_statuses Indicates whether custom (user-defined) order statuses should be included in the response. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseOrderList
      */
-    public function orderList($start = 0, $count = 10, $page_cursor = null, $ids = null, $order_ids = null, $since_id = null, $store_id = null, $customer_id = null, $customer_email = null, $basket_id = null, $currency_id = null, $phone = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_status = null, $return_status = null, $fulfillment_channel = null, $shipping_method = null, $skip_order_ids = null, $is_deleted = null, $shipping_country_iso3 = null, $delivery_method = null, $ship_node_type = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $tags = null, $sort_by = 'order_id', $sort_direction = 'asc', $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, $rounding_precision = null, string $contentType = self::contentTypes['orderList'][0])
+    public function orderList($start = 0, $count = 10, $page_cursor = null, $ids = null, $order_ids = null, $since_id = null, $store_id = null, $customer_id = null, $customer_email = null, $basket_id = null, $currency_id = null, $phone = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_status = null, $return_status = null, $fulfillment_channel = null, $shipping_method = null, $skip_order_ids = null, $is_deleted = null, $shipping_country_iso3 = null, $delivery_method = null, $ship_node_type = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $tags = null, $sort_by = 'order_id', $sort_direction = 'asc', $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, $rounding_precision = null, $allow_user_defined_order_statuses = false, string $contentType = self::contentTypes['orderList'][0])
     {
-        list($response) = $this->orderListWithHttpInfo($start, $count, $page_cursor, $ids, $order_ids, $since_id, $store_id, $customer_id, $customer_email, $basket_id, $currency_id, $phone, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_status, $return_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $is_deleted, $shipping_country_iso3, $delivery_method, $ship_node_type, $created_to, $created_from, $modified_to, $modified_from, $tags, $sort_by, $sort_direction, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $rounding_precision, $contentType);
+        list($response) = $this->orderListWithHttpInfo($start, $count, $page_cursor, $ids, $order_ids, $since_id, $store_id, $customer_id, $customer_email, $basket_id, $currency_id, $phone, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_status, $return_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $is_deleted, $shipping_country_iso3, $delivery_method, $ship_node_type, $created_to, $created_from, $modified_to, $modified_from, $tags, $sort_by, $sort_direction, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $rounding_precision, $allow_user_defined_order_statuses, $contentType);
         return $response;
     }
 
@@ -3073,15 +3089,16 @@ class OrderApi
      * @param  bool|null $enable_cache If the value is &#39;true&#39;, we will cache orders for a 15 minutes in order to increase speed and reduce requests throttling for some methods and shoping platforms (for example order.shipment.add) (optional, default to false)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  int|null $rounding_precision &lt;p&gt;Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).&lt;/p&gt; &lt;p&gt;Supported values range from &lt;b&gt;1&lt;/b&gt; to &lt;b&gt;6&lt;/b&gt;.&lt;/p&gt; &lt;p&gt;The default rounding precision may vary depending on the platform. You can retrieve the default value using the &lt;strong&gt;cart.info&lt;/strong&gt; method in the &lt;code&gt;default_rounding_precision&lt;/code&gt; field. &lt;/p&gt;&lt;p&gt;Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.&lt;/p&gt; (optional)
+     * @param  bool|null $allow_user_defined_order_statuses Indicates whether custom (user-defined) order statuses should be included in the response. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseOrderList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderListWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $ids = null, $order_ids = null, $since_id = null, $store_id = null, $customer_id = null, $customer_email = null, $basket_id = null, $currency_id = null, $phone = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_status = null, $return_status = null, $fulfillment_channel = null, $shipping_method = null, $skip_order_ids = null, $is_deleted = null, $shipping_country_iso3 = null, $delivery_method = null, $ship_node_type = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $tags = null, $sort_by = 'order_id', $sort_direction = 'asc', $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, $rounding_precision = null, string $contentType = self::contentTypes['orderList'][0])
+    public function orderListWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $ids = null, $order_ids = null, $since_id = null, $store_id = null, $customer_id = null, $customer_email = null, $basket_id = null, $currency_id = null, $phone = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_status = null, $return_status = null, $fulfillment_channel = null, $shipping_method = null, $skip_order_ids = null, $is_deleted = null, $shipping_country_iso3 = null, $delivery_method = null, $ship_node_type = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $tags = null, $sort_by = 'order_id', $sort_direction = 'asc', $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, $rounding_precision = null, $allow_user_defined_order_statuses = false, string $contentType = self::contentTypes['orderList'][0])
     {
-        $request = $this->orderListRequest($start, $count, $page_cursor, $ids, $order_ids, $since_id, $store_id, $customer_id, $customer_email, $basket_id, $currency_id, $phone, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_status, $return_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $is_deleted, $shipping_country_iso3, $delivery_method, $ship_node_type, $created_to, $created_from, $modified_to, $modified_from, $tags, $sort_by, $sort_direction, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $rounding_precision, $contentType);
+        $request = $this->orderListRequest($start, $count, $page_cursor, $ids, $order_ids, $since_id, $store_id, $customer_id, $customer_email, $basket_id, $currency_id, $phone, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_status, $return_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $is_deleted, $shipping_country_iso3, $delivery_method, $ship_node_type, $created_to, $created_from, $modified_to, $modified_from, $tags, $sort_by, $sort_direction, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $rounding_precision, $allow_user_defined_order_statuses, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3236,14 +3253,15 @@ class OrderApi
      * @param  bool|null $enable_cache If the value is &#39;true&#39;, we will cache orders for a 15 minutes in order to increase speed and reduce requests throttling for some methods and shoping platforms (for example order.shipment.add) (optional, default to false)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  int|null $rounding_precision &lt;p&gt;Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).&lt;/p&gt; &lt;p&gt;Supported values range from &lt;b&gt;1&lt;/b&gt; to &lt;b&gt;6&lt;/b&gt;.&lt;/p&gt; &lt;p&gt;The default rounding precision may vary depending on the platform. You can retrieve the default value using the &lt;strong&gt;cart.info&lt;/strong&gt; method in the &lt;code&gt;default_rounding_precision&lt;/code&gt; field. &lt;/p&gt;&lt;p&gt;Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.&lt;/p&gt; (optional)
+     * @param  bool|null $allow_user_defined_order_statuses Indicates whether custom (user-defined) order statuses should be included in the response. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderListAsync($start = 0, $count = 10, $page_cursor = null, $ids = null, $order_ids = null, $since_id = null, $store_id = null, $customer_id = null, $customer_email = null, $basket_id = null, $currency_id = null, $phone = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_status = null, $return_status = null, $fulfillment_channel = null, $shipping_method = null, $skip_order_ids = null, $is_deleted = null, $shipping_country_iso3 = null, $delivery_method = null, $ship_node_type = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $tags = null, $sort_by = 'order_id', $sort_direction = 'asc', $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, $rounding_precision = null, string $contentType = self::contentTypes['orderList'][0])
+    public function orderListAsync($start = 0, $count = 10, $page_cursor = null, $ids = null, $order_ids = null, $since_id = null, $store_id = null, $customer_id = null, $customer_email = null, $basket_id = null, $currency_id = null, $phone = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_status = null, $return_status = null, $fulfillment_channel = null, $shipping_method = null, $skip_order_ids = null, $is_deleted = null, $shipping_country_iso3 = null, $delivery_method = null, $ship_node_type = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $tags = null, $sort_by = 'order_id', $sort_direction = 'asc', $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, $rounding_precision = null, $allow_user_defined_order_statuses = false, string $contentType = self::contentTypes['orderList'][0])
     {
-        return $this->orderListAsyncWithHttpInfo($start, $count, $page_cursor, $ids, $order_ids, $since_id, $store_id, $customer_id, $customer_email, $basket_id, $currency_id, $phone, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_status, $return_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $is_deleted, $shipping_country_iso3, $delivery_method, $ship_node_type, $created_to, $created_from, $modified_to, $modified_from, $tags, $sort_by, $sort_direction, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $rounding_precision, $contentType)
+        return $this->orderListAsyncWithHttpInfo($start, $count, $page_cursor, $ids, $order_ids, $since_id, $store_id, $customer_id, $customer_email, $basket_id, $currency_id, $phone, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_status, $return_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $is_deleted, $shipping_country_iso3, $delivery_method, $ship_node_type, $created_to, $created_from, $modified_to, $modified_from, $tags, $sort_by, $sort_direction, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $rounding_precision, $allow_user_defined_order_statuses, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3295,15 +3313,16 @@ class OrderApi
      * @param  bool|null $enable_cache If the value is &#39;true&#39;, we will cache orders for a 15 minutes in order to increase speed and reduce requests throttling for some methods and shoping platforms (for example order.shipment.add) (optional, default to false)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  int|null $rounding_precision &lt;p&gt;Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).&lt;/p&gt; &lt;p&gt;Supported values range from &lt;b&gt;1&lt;/b&gt; to &lt;b&gt;6&lt;/b&gt;.&lt;/p&gt; &lt;p&gt;The default rounding precision may vary depending on the platform. You can retrieve the default value using the &lt;strong&gt;cart.info&lt;/strong&gt; method in the &lt;code&gt;default_rounding_precision&lt;/code&gt; field. &lt;/p&gt;&lt;p&gt;Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.&lt;/p&gt; (optional)
+     * @param  bool|null $allow_user_defined_order_statuses Indicates whether custom (user-defined) order statuses should be included in the response. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderListAsyncWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $ids = null, $order_ids = null, $since_id = null, $store_id = null, $customer_id = null, $customer_email = null, $basket_id = null, $currency_id = null, $phone = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_status = null, $return_status = null, $fulfillment_channel = null, $shipping_method = null, $skip_order_ids = null, $is_deleted = null, $shipping_country_iso3 = null, $delivery_method = null, $ship_node_type = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $tags = null, $sort_by = 'order_id', $sort_direction = 'asc', $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, $rounding_precision = null, string $contentType = self::contentTypes['orderList'][0])
+    public function orderListAsyncWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $ids = null, $order_ids = null, $since_id = null, $store_id = null, $customer_id = null, $customer_email = null, $basket_id = null, $currency_id = null, $phone = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_status = null, $return_status = null, $fulfillment_channel = null, $shipping_method = null, $skip_order_ids = null, $is_deleted = null, $shipping_country_iso3 = null, $delivery_method = null, $ship_node_type = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $tags = null, $sort_by = 'order_id', $sort_direction = 'asc', $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, $rounding_precision = null, $allow_user_defined_order_statuses = false, string $contentType = self::contentTypes['orderList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseOrderList';
-        $request = $this->orderListRequest($start, $count, $page_cursor, $ids, $order_ids, $since_id, $store_id, $customer_id, $customer_email, $basket_id, $currency_id, $phone, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_status, $return_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $is_deleted, $shipping_country_iso3, $delivery_method, $ship_node_type, $created_to, $created_from, $modified_to, $modified_from, $tags, $sort_by, $sort_direction, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $rounding_precision, $contentType);
+        $request = $this->orderListRequest($start, $count, $page_cursor, $ids, $order_ids, $since_id, $store_id, $customer_id, $customer_email, $basket_id, $currency_id, $phone, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_status, $return_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $is_deleted, $shipping_country_iso3, $delivery_method, $ship_node_type, $created_to, $created_from, $modified_to, $modified_from, $tags, $sort_by, $sort_direction, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $rounding_precision, $allow_user_defined_order_statuses, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3383,13 +3402,15 @@ class OrderApi
      * @param  bool|null $enable_cache If the value is &#39;true&#39;, we will cache orders for a 15 minutes in order to increase speed and reduce requests throttling for some methods and shoping platforms (for example order.shipment.add) (optional, default to false)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  int|null $rounding_precision &lt;p&gt;Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).&lt;/p&gt; &lt;p&gt;Supported values range from &lt;b&gt;1&lt;/b&gt; to &lt;b&gt;6&lt;/b&gt;.&lt;/p&gt; &lt;p&gt;The default rounding precision may vary depending on the platform. You can retrieve the default value using the &lt;strong&gt;cart.info&lt;/strong&gt; method in the &lt;code&gt;default_rounding_precision&lt;/code&gt; field. &lt;/p&gt;&lt;p&gt;Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.&lt;/p&gt; (optional)
+     * @param  bool|null $allow_user_defined_order_statuses Indicates whether custom (user-defined) order statuses should be included in the response. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function orderListRequest($start = 0, $count = 10, $page_cursor = null, $ids = null, $order_ids = null, $since_id = null, $store_id = null, $customer_id = null, $customer_email = null, $basket_id = null, $currency_id = null, $phone = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_status = null, $return_status = null, $fulfillment_channel = null, $shipping_method = null, $skip_order_ids = null, $is_deleted = null, $shipping_country_iso3 = null, $delivery_method = null, $ship_node_type = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $tags = null, $sort_by = 'order_id', $sort_direction = 'asc', $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, $rounding_precision = null, string $contentType = self::contentTypes['orderList'][0])
+    public function orderListRequest($start = 0, $count = 10, $page_cursor = null, $ids = null, $order_ids = null, $since_id = null, $store_id = null, $customer_id = null, $customer_email = null, $basket_id = null, $currency_id = null, $phone = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_status = null, $return_status = null, $fulfillment_channel = null, $shipping_method = null, $skip_order_ids = null, $is_deleted = null, $shipping_country_iso3 = null, $delivery_method = null, $ship_node_type = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $tags = null, $sort_by = 'order_id', $sort_direction = 'asc', $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, $rounding_precision = null, $allow_user_defined_order_statuses = false, string $contentType = self::contentTypes['orderList'][0])
     {
+
 
 
 
@@ -3785,6 +3806,15 @@ class OrderApi
             $rounding_precision,
             'rounding_precision', // param base name
             'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $allow_user_defined_order_statuses,
+            'allow_user_defined_order_statuses', // param base name
+            'boolean', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -8008,6 +8038,7 @@ class OrderApi
      *
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $action Available statuses for the specified action. (optional)
+     * @param  bool|null $allow_user_defined_order_statuses Indicates whether custom (user-defined) order statuses should be included in the response. (optional, default to false)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderStatusList'] to see the possible values for this operation
      *
@@ -8015,9 +8046,9 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseOrderStatusList
      */
-    public function orderStatusList($store_id = null, $action = null, $response_fields = null, string $contentType = self::contentTypes['orderStatusList'][0])
+    public function orderStatusList($store_id = null, $action = null, $allow_user_defined_order_statuses = false, $response_fields = null, string $contentType = self::contentTypes['orderStatusList'][0])
     {
-        list($response) = $this->orderStatusListWithHttpInfo($store_id, $action, $response_fields, $contentType);
+        list($response) = $this->orderStatusListWithHttpInfo($store_id, $action, $allow_user_defined_order_statuses, $response_fields, $contentType);
         return $response;
     }
 
@@ -8028,6 +8059,7 @@ class OrderApi
      *
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $action Available statuses for the specified action. (optional)
+     * @param  bool|null $allow_user_defined_order_statuses Indicates whether custom (user-defined) order statuses should be included in the response. (optional, default to false)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderStatusList'] to see the possible values for this operation
      *
@@ -8035,9 +8067,9 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseOrderStatusList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderStatusListWithHttpInfo($store_id = null, $action = null, $response_fields = null, string $contentType = self::contentTypes['orderStatusList'][0])
+    public function orderStatusListWithHttpInfo($store_id = null, $action = null, $allow_user_defined_order_statuses = false, $response_fields = null, string $contentType = self::contentTypes['orderStatusList'][0])
     {
-        $request = $this->orderStatusListRequest($store_id, $action, $response_fields, $contentType);
+        $request = $this->orderStatusListRequest($store_id, $action, $allow_user_defined_order_statuses, $response_fields, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -8155,15 +8187,16 @@ class OrderApi
      *
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $action Available statuses for the specified action. (optional)
+     * @param  bool|null $allow_user_defined_order_statuses Indicates whether custom (user-defined) order statuses should be included in the response. (optional, default to false)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderStatusList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderStatusListAsync($store_id = null, $action = null, $response_fields = null, string $contentType = self::contentTypes['orderStatusList'][0])
+    public function orderStatusListAsync($store_id = null, $action = null, $allow_user_defined_order_statuses = false, $response_fields = null, string $contentType = self::contentTypes['orderStatusList'][0])
     {
-        return $this->orderStatusListAsyncWithHttpInfo($store_id, $action, $response_fields, $contentType)
+        return $this->orderStatusListAsyncWithHttpInfo($store_id, $action, $allow_user_defined_order_statuses, $response_fields, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -8178,16 +8211,17 @@ class OrderApi
      *
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $action Available statuses for the specified action. (optional)
+     * @param  bool|null $allow_user_defined_order_statuses Indicates whether custom (user-defined) order statuses should be included in the response. (optional, default to false)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderStatusList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderStatusListAsyncWithHttpInfo($store_id = null, $action = null, $response_fields = null, string $contentType = self::contentTypes['orderStatusList'][0])
+    public function orderStatusListAsyncWithHttpInfo($store_id = null, $action = null, $allow_user_defined_order_statuses = false, $response_fields = null, string $contentType = self::contentTypes['orderStatusList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseOrderStatusList';
-        $request = $this->orderStatusListRequest($store_id, $action, $response_fields, $contentType);
+        $request = $this->orderStatusListRequest($store_id, $action, $allow_user_defined_order_statuses, $response_fields, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -8230,14 +8264,16 @@ class OrderApi
      *
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $action Available statuses for the specified action. (optional)
+     * @param  bool|null $allow_user_defined_order_statuses Indicates whether custom (user-defined) order statuses should be included in the response. (optional, default to false)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderStatusList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function orderStatusListRequest($store_id = null, $action = null, $response_fields = null, string $contentType = self::contentTypes['orderStatusList'][0])
+    public function orderStatusListRequest($store_id = null, $action = null, $allow_user_defined_order_statuses = false, $response_fields = null, string $contentType = self::contentTypes['orderStatusList'][0])
     {
+
 
 
 
@@ -8264,6 +8300,15 @@ class OrderApi
             $action,
             'action', // param base name
             'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $allow_user_defined_order_statuses,
+            'allow_user_defined_order_statuses', // param base name
+            'boolean', // openApiType
             'form', // style
             true, // explode
             false // required

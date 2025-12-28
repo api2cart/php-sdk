@@ -1762,7 +1762,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets wholesale_price
      *
-     * @param float|null $wholesale_price Defines product's sale price
+     * @param float|null $wholesale_price This parameter is deprecated. Please use the <strong>old_price</strong> parameter instead.
      *
      * @return self
      */
