@@ -94,6 +94,8 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'fixed_cost_shipping_price' => 'float',
         'sprice_create' => 'string',
         'sprice_expire' => 'string',
+        'measure_unit' => 'string',
+        'unit_price' => 'float',
         'weight' => 'float',
         'barcode' => 'string',
         'width' => 'float',
@@ -160,6 +162,8 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'fixed_cost_shipping_price' => null,
         'sprice_create' => null,
         'sprice_expire' => null,
+        'measure_unit' => null,
+        'unit_price' => null,
         'weight' => null,
         'barcode' => null,
         'width' => null,
@@ -224,6 +228,8 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'fixed_cost_shipping_price' => false,
         'sprice_create' => false,
         'sprice_expire' => false,
+        'measure_unit' => false,
+        'unit_price' => false,
         'weight' => false,
         'barcode' => false,
         'width' => false,
@@ -368,6 +374,8 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'fixed_cost_shipping_price' => 'fixed_cost_shipping_price',
         'sprice_create' => 'sprice_create',
         'sprice_expire' => 'sprice_expire',
+        'measure_unit' => 'measure_unit',
+        'unit_price' => 'unit_price',
         'weight' => 'weight',
         'barcode' => 'barcode',
         'width' => 'width',
@@ -432,6 +440,8 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'fixed_cost_shipping_price' => 'setFixedCostShippingPrice',
         'sprice_create' => 'setSpriceCreate',
         'sprice_expire' => 'setSpriceExpire',
+        'measure_unit' => 'setMeasureUnit',
+        'unit_price' => 'setUnitPrice',
         'weight' => 'setWeight',
         'barcode' => 'setBarcode',
         'width' => 'setWidth',
@@ -496,6 +506,8 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'fixed_cost_shipping_price' => 'getFixedCostShippingPrice',
         'sprice_create' => 'getSpriceCreate',
         'sprice_expire' => 'getSpriceExpire',
+        'measure_unit' => 'getMeasureUnit',
+        'unit_price' => 'getUnitPrice',
         'weight' => 'getWeight',
         'barcode' => 'getBarcode',
         'width' => 'getWidth',
@@ -611,6 +623,8 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->setIfExists('fixed_cost_shipping_price', $data ?? [], null);
         $this->setIfExists('sprice_create', $data ?? [], null);
         $this->setIfExists('sprice_expire', $data ?? [], null);
+        $this->setIfExists('measure_unit', $data ?? [], null);
+        $this->setIfExists('unit_price', $data ?? [], null);
         $this->setIfExists('weight', $data ?? [], 0);
         $this->setIfExists('barcode', $data ?? [], null);
         $this->setIfExists('width', $data ?? [], null);
@@ -1643,6 +1657,60 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
             throw new \InvalidArgumentException('non-nullable sprice_expire cannot be null');
         }
         $this->container['sprice_expire'] = $sprice_expire;
+
+        return $this;
+    }
+
+    /**
+     * Gets measure_unit
+     *
+     * @return string|null
+     */
+    public function getMeasureUnit()
+    {
+        return $this->container['measure_unit'];
+    }
+
+    /**
+     * Sets measure_unit
+     *
+     * @param string|null $measure_unit Unit for the price per unit. Must be in allowed list
+     *
+     * @return self
+     */
+    public function setMeasureUnit($measure_unit)
+    {
+        if (is_null($measure_unit)) {
+            throw new \InvalidArgumentException('non-nullable measure_unit cannot be null');
+        }
+        $this->container['measure_unit'] = $measure_unit;
+
+        return $this;
+    }
+
+    /**
+     * Gets unit_price
+     *
+     * @return float|null
+     */
+    public function getUnitPrice()
+    {
+        return $this->container['unit_price'];
+    }
+
+    /**
+     * Sets unit_price
+     *
+     * @param float|null $unit_price Defines new product's unit price
+     *
+     * @return self
+     */
+    public function setUnitPrice($unit_price)
+    {
+        if (is_null($unit_price)) {
+            throw new \InvalidArgumentException('non-nullable unit_price cannot be null');
+        }
+        $this->container['unit_price'] = $unit_price;
 
         return $this;
     }

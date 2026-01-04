@@ -87,6 +87,8 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'product_class' => 'string',
         'brand_name' => 'string',
         'available_for_view' => 'bool',
+        'measure_unit' => 'string',
+        'unit_price' => 'float',
         'stores_ids' => 'string',
         'store_id' => 'string',
         'lang_id' => 'string',
@@ -188,6 +190,8 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'product_class' => null,
         'brand_name' => null,
         'available_for_view' => null,
+        'measure_unit' => null,
+        'unit_price' => null,
         'stores_ids' => null,
         'store_id' => null,
         'lang_id' => null,
@@ -287,6 +291,8 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'product_class' => false,
         'brand_name' => false,
         'available_for_view' => false,
+        'measure_unit' => false,
+        'unit_price' => false,
         'stores_ids' => false,
         'store_id' => false,
         'lang_id' => false,
@@ -466,6 +472,8 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'product_class' => 'product_class',
         'brand_name' => 'brand_name',
         'available_for_view' => 'available_for_view',
+        'measure_unit' => 'measure_unit',
+        'unit_price' => 'unit_price',
         'stores_ids' => 'stores_ids',
         'store_id' => 'store_id',
         'lang_id' => 'lang_id',
@@ -565,6 +573,8 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'product_class' => 'setProductClass',
         'brand_name' => 'setBrandName',
         'available_for_view' => 'setAvailableForView',
+        'measure_unit' => 'setMeasureUnit',
+        'unit_price' => 'setUnitPrice',
         'stores_ids' => 'setStoresIds',
         'store_id' => 'setStoreId',
         'lang_id' => 'setLangId',
@@ -664,6 +674,8 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'product_class' => 'getProductClass',
         'brand_name' => 'getBrandName',
         'available_for_view' => 'getAvailableForView',
+        'measure_unit' => 'getMeasureUnit',
+        'unit_price' => 'getUnitPrice',
         'stores_ids' => 'getStoresIds',
         'store_id' => 'getStoreId',
         'lang_id' => 'getLangId',
@@ -814,6 +826,8 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('product_class', $data ?? [], null);
         $this->setIfExists('brand_name', $data ?? [], null);
         $this->setIfExists('available_for_view', $data ?? [], null);
+        $this->setIfExists('measure_unit', $data ?? [], null);
+        $this->setIfExists('unit_price', $data ?? [], null);
         $this->setIfExists('stores_ids', $data ?? [], null);
         $this->setIfExists('store_id', $data ?? [], null);
         $this->setIfExists('lang_id', $data ?? [], null);
@@ -1699,6 +1713,60 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable available_for_view cannot be null');
         }
         $this->container['available_for_view'] = $available_for_view;
+
+        return $this;
+    }
+
+    /**
+     * Gets measure_unit
+     *
+     * @return string|null
+     */
+    public function getMeasureUnit()
+    {
+        return $this->container['measure_unit'];
+    }
+
+    /**
+     * Sets measure_unit
+     *
+     * @param string|null $measure_unit Unit for the price per unit. Must be in allowed list
+     *
+     * @return self
+     */
+    public function setMeasureUnit($measure_unit)
+    {
+        if (is_null($measure_unit)) {
+            throw new \InvalidArgumentException('non-nullable measure_unit cannot be null');
+        }
+        $this->container['measure_unit'] = $measure_unit;
+
+        return $this;
+    }
+
+    /**
+     * Gets unit_price
+     *
+     * @return float|null
+     */
+    public function getUnitPrice()
+    {
+        return $this->container['unit_price'];
+    }
+
+    /**
+     * Sets unit_price
+     *
+     * @param float|null $unit_price Defines new product's unit price
+     *
+     * @return self
+     */
+    public function setUnitPrice($unit_price)
+    {
+        if (is_null($unit_price)) {
+            throw new \InvalidArgumentException('non-nullable unit_price cannot be null');
+        }
+        $this->container['unit_price'] = $unit_price;
 
         return $this;
     }

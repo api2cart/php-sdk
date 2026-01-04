@@ -261,6 +261,24 @@ class ChildTest extends TestCase
     }
 
     /**
+     * Test attribute "unit_price"
+     */
+    public function testPropertyUnitPrice()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "measure_unit"
+     */
+    public function testPropertyMeasureUnit()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "list_price"
      */
     public function testPropertyListPrice()

@@ -78,6 +78,8 @@ class Child implements ModelInterface, ArrayAccess, \JsonSerializable
         'combination' => '\OpenAPI\Client\Model\ProductChildItemCombination[]',
         'default_price' => 'float',
         'cost_price' => 'float',
+        'unit_price' => 'float',
+        'measure_unit' => 'string',
         'list_price' => 'float',
         'wholesale_price' => 'float',
         'advanced_price' => '\OpenAPI\Client\Model\ProductAdvancedPrice[]',
@@ -136,6 +138,8 @@ class Child implements ModelInterface, ArrayAccess, \JsonSerializable
         'combination' => null,
         'default_price' => null,
         'cost_price' => null,
+        'unit_price' => null,
+        'measure_unit' => null,
         'list_price' => null,
         'wholesale_price' => null,
         'advanced_price' => null,
@@ -192,6 +196,8 @@ class Child implements ModelInterface, ArrayAccess, \JsonSerializable
         'combination' => false,
         'default_price' => true,
         'cost_price' => true,
+        'unit_price' => true,
+        'measure_unit' => true,
         'list_price' => true,
         'wholesale_price' => true,
         'advanced_price' => false,
@@ -328,6 +334,8 @@ class Child implements ModelInterface, ArrayAccess, \JsonSerializable
         'combination' => 'combination',
         'default_price' => 'default_price',
         'cost_price' => 'cost_price',
+        'unit_price' => 'unit_price',
+        'measure_unit' => 'measure_unit',
         'list_price' => 'list_price',
         'wholesale_price' => 'wholesale_price',
         'advanced_price' => 'advanced_price',
@@ -384,6 +392,8 @@ class Child implements ModelInterface, ArrayAccess, \JsonSerializable
         'combination' => 'setCombination',
         'default_price' => 'setDefaultPrice',
         'cost_price' => 'setCostPrice',
+        'unit_price' => 'setUnitPrice',
+        'measure_unit' => 'setMeasureUnit',
         'list_price' => 'setListPrice',
         'wholesale_price' => 'setWholesalePrice',
         'advanced_price' => 'setAdvancedPrice',
@@ -440,6 +450,8 @@ class Child implements ModelInterface, ArrayAccess, \JsonSerializable
         'combination' => 'getCombination',
         'default_price' => 'getDefaultPrice',
         'cost_price' => 'getCostPrice',
+        'unit_price' => 'getUnitPrice',
+        'measure_unit' => 'getMeasureUnit',
         'list_price' => 'getListPrice',
         'wholesale_price' => 'getWholesalePrice',
         'advanced_price' => 'getAdvancedPrice',
@@ -547,6 +559,8 @@ class Child implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('combination', $data ?? [], null);
         $this->setIfExists('default_price', $data ?? [], null);
         $this->setIfExists('cost_price', $data ?? [], null);
+        $this->setIfExists('unit_price', $data ?? [], null);
+        $this->setIfExists('measure_unit', $data ?? [], null);
         $this->setIfExists('list_price', $data ?? [], null);
         $this->setIfExists('wholesale_price', $data ?? [], null);
         $this->setIfExists('advanced_price', $data ?? [], null);
@@ -1267,6 +1281,74 @@ class Child implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['cost_price'] = $cost_price;
+
+        return $this;
+    }
+
+    /**
+     * Gets unit_price
+     *
+     * @return float|null
+     */
+    public function getUnitPrice()
+    {
+        return $this->container['unit_price'];
+    }
+
+    /**
+     * Sets unit_price
+     *
+     * @param float|null $unit_price unit_price
+     *
+     * @return self
+     */
+    public function setUnitPrice($unit_price)
+    {
+        if (is_null($unit_price)) {
+            array_push($this->openAPINullablesSetToNull, 'unit_price');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('unit_price', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['unit_price'] = $unit_price;
+
+        return $this;
+    }
+
+    /**
+     * Gets measure_unit
+     *
+     * @return string|null
+     */
+    public function getMeasureUnit()
+    {
+        return $this->container['measure_unit'];
+    }
+
+    /**
+     * Sets measure_unit
+     *
+     * @param string|null $measure_unit measure_unit
+     *
+     * @return self
+     */
+    public function setMeasureUnit($measure_unit)
+    {
+        if (is_null($measure_unit)) {
+            array_push($this->openAPINullablesSetToNull, 'measure_unit');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('measure_unit', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['measure_unit'] = $measure_unit;
 
         return $this;
     }

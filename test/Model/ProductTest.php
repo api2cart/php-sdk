@@ -171,6 +171,24 @@ class ProductTest extends TestCase
     }
 
     /**
+     * Test attribute "unit_price"
+     */
+    public function testPropertyUnitPrice()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "measure_unit"
+     */
+    public function testPropertyMeasureUnit()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "quantity"
      */
     public function testPropertyQuantity()

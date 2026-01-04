@@ -80,6 +80,8 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'sprice_modified' => 'string',
         'sprice_expire' => 'string',
         'tier_prices' => '\OpenAPI\Client\Model\ProductAddTierPricesInner[]',
+        'measure_unit' => 'string',
+        'unit_price' => 'float',
         'quantity' => 'float',
         'warehouse_id' => 'string',
         'in_stock' => 'bool',
@@ -146,6 +148,8 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'sprice_modified' => null,
         'sprice_expire' => null,
         'tier_prices' => null,
+        'measure_unit' => null,
+        'unit_price' => null,
         'quantity' => null,
         'warehouse_id' => null,
         'in_stock' => null,
@@ -210,6 +214,8 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'sprice_modified' => false,
         'sprice_expire' => false,
         'tier_prices' => false,
+        'measure_unit' => false,
+        'unit_price' => false,
         'quantity' => false,
         'warehouse_id' => false,
         'in_stock' => false,
@@ -354,6 +360,8 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'sprice_modified' => 'sprice_modified',
         'sprice_expire' => 'sprice_expire',
         'tier_prices' => 'tier_prices',
+        'measure_unit' => 'measure_unit',
+        'unit_price' => 'unit_price',
         'quantity' => 'quantity',
         'warehouse_id' => 'warehouse_id',
         'in_stock' => 'in_stock',
@@ -418,6 +426,8 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'sprice_modified' => 'setSpriceModified',
         'sprice_expire' => 'setSpriceExpire',
         'tier_prices' => 'setTierPrices',
+        'measure_unit' => 'setMeasureUnit',
+        'unit_price' => 'setUnitPrice',
         'quantity' => 'setQuantity',
         'warehouse_id' => 'setWarehouseId',
         'in_stock' => 'setInStock',
@@ -482,6 +492,8 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'sprice_modified' => 'getSpriceModified',
         'sprice_expire' => 'getSpriceExpire',
         'tier_prices' => 'getTierPrices',
+        'measure_unit' => 'getMeasureUnit',
+        'unit_price' => 'getUnitPrice',
         'quantity' => 'getQuantity',
         'warehouse_id' => 'getWarehouseId',
         'in_stock' => 'getInStock',
@@ -597,6 +609,8 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('sprice_modified', $data ?? [], null);
         $this->setIfExists('sprice_expire', $data ?? [], null);
         $this->setIfExists('tier_prices', $data ?? [], null);
+        $this->setIfExists('measure_unit', $data ?? [], null);
+        $this->setIfExists('unit_price', $data ?? [], null);
         $this->setIfExists('quantity', $data ?? [], 0);
         $this->setIfExists('warehouse_id', $data ?? [], null);
         $this->setIfExists('in_stock', $data ?? [], null);
@@ -1268,6 +1282,60 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
             throw new \InvalidArgumentException('non-nullable tier_prices cannot be null');
         }
         $this->container['tier_prices'] = $tier_prices;
+
+        return $this;
+    }
+
+    /**
+     * Gets measure_unit
+     *
+     * @return string|null
+     */
+    public function getMeasureUnit()
+    {
+        return $this->container['measure_unit'];
+    }
+
+    /**
+     * Sets measure_unit
+     *
+     * @param string|null $measure_unit Unit for the price per unit. Must be in allowed list
+     *
+     * @return self
+     */
+    public function setMeasureUnit($measure_unit)
+    {
+        if (is_null($measure_unit)) {
+            throw new \InvalidArgumentException('non-nullable measure_unit cannot be null');
+        }
+        $this->container['measure_unit'] = $measure_unit;
+
+        return $this;
+    }
+
+    /**
+     * Gets unit_price
+     *
+     * @return float|null
+     */
+    public function getUnitPrice()
+    {
+        return $this->container['unit_price'];
+    }
+
+    /**
+     * Sets unit_price
+     *
+     * @param float|null $unit_price Defines new product's unit price
+     *
+     * @return self
+     */
+    public function setUnitPrice($unit_price)
+    {
+        if (is_null($unit_price)) {
+            throw new \InvalidArgumentException('non-nullable unit_price cannot be null');
+        }
+        $this->container['unit_price'] = $unit_price;
 
         return $this;
     }

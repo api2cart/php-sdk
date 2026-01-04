@@ -24,6 +24,8 @@ Name | Type | Description | Notes
 **combination** | [**\OpenAPI\Client\Model\ProductChildItemCombination[]**](ProductChildItemCombination.md) |  | [optional]
 **default_price** | **float** |  | [optional]
 **cost_price** | **float** |  | [optional]
+**unit_price** | **float** |  | [optional]
+**measure_unit** | **string** |  | [optional]
 **list_price** | **float** |  | [optional]
 **wholesale_price** | **float** |  | [optional]
 **advanced_price** | [**\OpenAPI\Client\Model\ProductAdvancedPrice[]**](ProductAdvancedPrice.md) |  | [optional]

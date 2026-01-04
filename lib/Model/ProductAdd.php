@@ -88,6 +88,8 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'group_prices' => '\OpenAPI\Client\Model\ProductAddGroupPricesInner[]',
         'buyitnow_price' => 'float',
         'reserve_price' => 'float',
+        'measure_unit' => 'string',
+        'unit_price' => 'float',
         'quantity' => 'float',
         'in_stock' => 'bool',
         'manage_stock' => 'bool',
@@ -217,6 +219,8 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'group_prices' => null,
         'buyitnow_price' => null,
         'reserve_price' => null,
+        'measure_unit' => null,
+        'unit_price' => null,
         'quantity' => null,
         'in_stock' => null,
         'manage_stock' => null,
@@ -344,6 +348,8 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'group_prices' => false,
         'buyitnow_price' => false,
         'reserve_price' => false,
+        'measure_unit' => false,
+        'unit_price' => false,
         'quantity' => false,
         'in_stock' => false,
         'manage_stock' => false,
@@ -551,6 +557,8 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'group_prices' => 'group_prices',
         'buyitnow_price' => 'buyitnow_price',
         'reserve_price' => 'reserve_price',
+        'measure_unit' => 'measure_unit',
+        'unit_price' => 'unit_price',
         'quantity' => 'quantity',
         'in_stock' => 'in_stock',
         'manage_stock' => 'manage_stock',
@@ -678,6 +686,8 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'group_prices' => 'setGroupPrices',
         'buyitnow_price' => 'setBuyitnowPrice',
         'reserve_price' => 'setReservePrice',
+        'measure_unit' => 'setMeasureUnit',
+        'unit_price' => 'setUnitPrice',
         'quantity' => 'setQuantity',
         'in_stock' => 'setInStock',
         'manage_stock' => 'setManageStock',
@@ -805,6 +815,8 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'group_prices' => 'getGroupPrices',
         'buyitnow_price' => 'getBuyitnowPrice',
         'reserve_price' => 'getReservePrice',
+        'measure_unit' => 'getMeasureUnit',
+        'unit_price' => 'getUnitPrice',
         'quantity' => 'getQuantity',
         'in_stock' => 'getInStock',
         'manage_stock' => 'getManageStock',
@@ -983,6 +995,8 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('group_prices', $data ?? [], null);
         $this->setIfExists('buyitnow_price', $data ?? [], null);
         $this->setIfExists('reserve_price', $data ?? [], null);
+        $this->setIfExists('measure_unit', $data ?? [], null);
+        $this->setIfExists('unit_price', $data ?? [], null);
         $this->setIfExists('quantity', $data ?? [], 0);
         $this->setIfExists('in_stock', $data ?? [], null);
         $this->setIfExists('manage_stock', $data ?? [], null);
@@ -1934,6 +1948,60 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable reserve_price cannot be null');
         }
         $this->container['reserve_price'] = $reserve_price;
+
+        return $this;
+    }
+
+    /**
+     * Gets measure_unit
+     *
+     * @return string|null
+     */
+    public function getMeasureUnit()
+    {
+        return $this->container['measure_unit'];
+    }
+
+    /**
+     * Sets measure_unit
+     *
+     * @param string|null $measure_unit Unit for the price per unit. Must be in allowed list
+     *
+     * @return self
+     */
+    public function setMeasureUnit($measure_unit)
+    {
+        if (is_null($measure_unit)) {
+            throw new \InvalidArgumentException('non-nullable measure_unit cannot be null');
+        }
+        $this->container['measure_unit'] = $measure_unit;
+
+        return $this;
+    }
+
+    /**
+     * Gets unit_price
+     *
+     * @return float|null
+     */
+    public function getUnitPrice()
+    {
+        return $this->container['unit_price'];
+    }
+
+    /**
+     * Sets unit_price
+     *
+     * @param float|null $unit_price Defines new product's unit price
+     *
+     * @return self
+     */
+    public function setUnitPrice($unit_price)
+    {
+        if (is_null($unit_price)) {
+            throw new \InvalidArgumentException('non-nullable unit_price cannot be null');
+        }
+        $this->container['unit_price'] = $unit_price;
 
         return $this;
     }

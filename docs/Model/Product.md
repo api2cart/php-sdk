@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **price** | **float** |  | [optional]
 **advanced_price** | [**\OpenAPI\Client\Model\ProductAdvancedPrice[]**](ProductAdvancedPrice.md) |  | [optional]
 **cost_price** | **float** |  | [optional]
+**unit_price** | **float** |  | [optional]
+**measure_unit** | **string** |  | [optional]
 **quantity** | **float** |  | [optional]
 **inventory** | [**\OpenAPI\Client\Model\ProductInventory[]**](ProductInventory.md) |  | [optional]
 **group_items** | [**\OpenAPI\Client\Model\ProductGroupItem[]**](ProductGroupItem.md) |  | [optional]
