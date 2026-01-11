@@ -8820,15 +8820,16 @@ class OrderApi
      * @param  bool|null $create_invoice Determines whether an invoice should be created if it has not already been created (optional)
      * @param  string|null $origin The source of the order (optional)
      * @param  string|null $tags Order tags (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderUpdate'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\AccountConfigUpdate200Response
      */
-    public function orderUpdate($order_id, $store_id = null, $order_status = null, $financial_status = null, $fulfillment_status = null, $cancellation_reason = null, $order_payment_method = null, $comment = null, $admin_comment = null, $admin_private_comment = null, $invoice_admin_comment = null, $date_modified = null, $date_finished = null, $send_notifications = false, $create_invoice = null, $origin = null, $tags = null, string $contentType = self::contentTypes['orderUpdate'][0])
+    public function orderUpdate($order_id, $store_id = null, $order_status = null, $financial_status = null, $fulfillment_status = null, $cancellation_reason = null, $order_payment_method = null, $comment = null, $admin_comment = null, $admin_private_comment = null, $invoice_admin_comment = null, $date_modified = null, $date_finished = null, $send_notifications = false, $create_invoice = null, $origin = null, $tags = null, $idempotency_key = null, string $contentType = self::contentTypes['orderUpdate'][0])
     {
-        list($response) = $this->orderUpdateWithHttpInfo($order_id, $store_id, $order_status, $financial_status, $fulfillment_status, $cancellation_reason, $order_payment_method, $comment, $admin_comment, $admin_private_comment, $invoice_admin_comment, $date_modified, $date_finished, $send_notifications, $create_invoice, $origin, $tags, $contentType);
+        list($response) = $this->orderUpdateWithHttpInfo($order_id, $store_id, $order_status, $financial_status, $fulfillment_status, $cancellation_reason, $order_payment_method, $comment, $admin_comment, $admin_private_comment, $invoice_admin_comment, $date_modified, $date_finished, $send_notifications, $create_invoice, $origin, $tags, $idempotency_key, $contentType);
         return $response;
     }
 
@@ -8854,15 +8855,16 @@ class OrderApi
      * @param  bool|null $create_invoice Determines whether an invoice should be created if it has not already been created (optional)
      * @param  string|null $origin The source of the order (optional)
      * @param  string|null $tags Order tags (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderUpdate'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\AccountConfigUpdate200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderUpdateWithHttpInfo($order_id, $store_id = null, $order_status = null, $financial_status = null, $fulfillment_status = null, $cancellation_reason = null, $order_payment_method = null, $comment = null, $admin_comment = null, $admin_private_comment = null, $invoice_admin_comment = null, $date_modified = null, $date_finished = null, $send_notifications = false, $create_invoice = null, $origin = null, $tags = null, string $contentType = self::contentTypes['orderUpdate'][0])
+    public function orderUpdateWithHttpInfo($order_id, $store_id = null, $order_status = null, $financial_status = null, $fulfillment_status = null, $cancellation_reason = null, $order_payment_method = null, $comment = null, $admin_comment = null, $admin_private_comment = null, $invoice_admin_comment = null, $date_modified = null, $date_finished = null, $send_notifications = false, $create_invoice = null, $origin = null, $tags = null, $idempotency_key = null, string $contentType = self::contentTypes['orderUpdate'][0])
     {
-        $request = $this->orderUpdateRequest($order_id, $store_id, $order_status, $financial_status, $fulfillment_status, $cancellation_reason, $order_payment_method, $comment, $admin_comment, $admin_private_comment, $invoice_admin_comment, $date_modified, $date_finished, $send_notifications, $create_invoice, $origin, $tags, $contentType);
+        $request = $this->orderUpdateRequest($order_id, $store_id, $order_status, $financial_status, $fulfillment_status, $cancellation_reason, $order_payment_method, $comment, $admin_comment, $admin_private_comment, $invoice_admin_comment, $date_modified, $date_finished, $send_notifications, $create_invoice, $origin, $tags, $idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -8995,14 +8997,15 @@ class OrderApi
      * @param  bool|null $create_invoice Determines whether an invoice should be created if it has not already been created (optional)
      * @param  string|null $origin The source of the order (optional)
      * @param  string|null $tags Order tags (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderUpdateAsync($order_id, $store_id = null, $order_status = null, $financial_status = null, $fulfillment_status = null, $cancellation_reason = null, $order_payment_method = null, $comment = null, $admin_comment = null, $admin_private_comment = null, $invoice_admin_comment = null, $date_modified = null, $date_finished = null, $send_notifications = false, $create_invoice = null, $origin = null, $tags = null, string $contentType = self::contentTypes['orderUpdate'][0])
+    public function orderUpdateAsync($order_id, $store_id = null, $order_status = null, $financial_status = null, $fulfillment_status = null, $cancellation_reason = null, $order_payment_method = null, $comment = null, $admin_comment = null, $admin_private_comment = null, $invoice_admin_comment = null, $date_modified = null, $date_finished = null, $send_notifications = false, $create_invoice = null, $origin = null, $tags = null, $idempotency_key = null, string $contentType = self::contentTypes['orderUpdate'][0])
     {
-        return $this->orderUpdateAsyncWithHttpInfo($order_id, $store_id, $order_status, $financial_status, $fulfillment_status, $cancellation_reason, $order_payment_method, $comment, $admin_comment, $admin_private_comment, $invoice_admin_comment, $date_modified, $date_finished, $send_notifications, $create_invoice, $origin, $tags, $contentType)
+        return $this->orderUpdateAsyncWithHttpInfo($order_id, $store_id, $order_status, $financial_status, $fulfillment_status, $cancellation_reason, $order_payment_method, $comment, $admin_comment, $admin_private_comment, $invoice_admin_comment, $date_modified, $date_finished, $send_notifications, $create_invoice, $origin, $tags, $idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -9032,15 +9035,16 @@ class OrderApi
      * @param  bool|null $create_invoice Determines whether an invoice should be created if it has not already been created (optional)
      * @param  string|null $origin The source of the order (optional)
      * @param  string|null $tags Order tags (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderUpdateAsyncWithHttpInfo($order_id, $store_id = null, $order_status = null, $financial_status = null, $fulfillment_status = null, $cancellation_reason = null, $order_payment_method = null, $comment = null, $admin_comment = null, $admin_private_comment = null, $invoice_admin_comment = null, $date_modified = null, $date_finished = null, $send_notifications = false, $create_invoice = null, $origin = null, $tags = null, string $contentType = self::contentTypes['orderUpdate'][0])
+    public function orderUpdateAsyncWithHttpInfo($order_id, $store_id = null, $order_status = null, $financial_status = null, $fulfillment_status = null, $cancellation_reason = null, $order_payment_method = null, $comment = null, $admin_comment = null, $admin_private_comment = null, $invoice_admin_comment = null, $date_modified = null, $date_finished = null, $send_notifications = false, $create_invoice = null, $origin = null, $tags = null, $idempotency_key = null, string $contentType = self::contentTypes['orderUpdate'][0])
     {
         $returnType = '\OpenAPI\Client\Model\AccountConfigUpdate200Response';
-        $request = $this->orderUpdateRequest($order_id, $store_id, $order_status, $financial_status, $fulfillment_status, $cancellation_reason, $order_payment_method, $comment, $admin_comment, $admin_private_comment, $invoice_admin_comment, $date_modified, $date_finished, $send_notifications, $create_invoice, $origin, $tags, $contentType);
+        $request = $this->orderUpdateRequest($order_id, $store_id, $order_status, $financial_status, $fulfillment_status, $cancellation_reason, $order_payment_method, $comment, $admin_comment, $admin_private_comment, $invoice_admin_comment, $date_modified, $date_finished, $send_notifications, $create_invoice, $origin, $tags, $idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -9098,12 +9102,13 @@ class OrderApi
      * @param  bool|null $create_invoice Determines whether an invoice should be created if it has not already been created (optional)
      * @param  string|null $origin The source of the order (optional)
      * @param  string|null $tags Order tags (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function orderUpdateRequest($order_id, $store_id = null, $order_status = null, $financial_status = null, $fulfillment_status = null, $cancellation_reason = null, $order_payment_method = null, $comment = null, $admin_comment = null, $admin_private_comment = null, $invoice_admin_comment = null, $date_modified = null, $date_finished = null, $send_notifications = false, $create_invoice = null, $origin = null, $tags = null, string $contentType = self::contentTypes['orderUpdate'][0])
+    public function orderUpdateRequest($order_id, $store_id = null, $order_status = null, $financial_status = null, $fulfillment_status = null, $cancellation_reason = null, $order_payment_method = null, $comment = null, $admin_comment = null, $admin_private_comment = null, $invoice_admin_comment = null, $date_modified = null, $date_finished = null, $send_notifications = false, $create_invoice = null, $origin = null, $tags = null, $idempotency_key = null, string $contentType = self::contentTypes['orderUpdate'][0])
     {
 
         // verify the required parameter 'order_id' is set
@@ -9112,6 +9117,7 @@ class OrderApi
                 'Missing the required parameter $order_id when calling orderUpdate'
             );
         }
+
 
 
 
@@ -9285,6 +9291,15 @@ class OrderApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $tags,
             'tags', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idempotency_key,
+            'idempotency_key', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

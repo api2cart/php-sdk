@@ -15,5 +15,6 @@ Name | Type | Description | Notes
 **required** | **bool** | Defines if the option is required | [optional] [default to false]
 **values** | [**\OpenAPI\Client\Model\ProductOptionAddValuesInner[]**](ProductOptionAddValuesInner.md) | An array of option values.&lt;/b&gt; | [optional]
 **clear_cache** | **bool** | Is cache clear required | [optional] [default to true]
+**idempotency_key** | **string** | A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

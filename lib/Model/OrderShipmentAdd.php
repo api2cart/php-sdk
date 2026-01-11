@@ -72,7 +72,8 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'enable_cache' => 'bool',
         'check_process_status' => 'bool',
         'tracking_provider' => 'string',
-        'use_latest_api_version' => 'bool'
+        'use_latest_api_version' => 'bool',
+        'idempotency_key' => 'string'
     ];
 
     /**
@@ -97,7 +98,8 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'enable_cache' => null,
         'check_process_status' => null,
         'tracking_provider' => null,
-        'use_latest_api_version' => null
+        'use_latest_api_version' => null,
+        'idempotency_key' => null
     ];
 
     /**
@@ -120,7 +122,8 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'enable_cache' => false,
         'check_process_status' => false,
         'tracking_provider' => false,
-        'use_latest_api_version' => false
+        'use_latest_api_version' => false,
+        'idempotency_key' => false
     ];
 
     /**
@@ -223,7 +226,8 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'enable_cache' => 'enable_cache',
         'check_process_status' => 'check_process_status',
         'tracking_provider' => 'tracking_provider',
-        'use_latest_api_version' => 'use_latest_api_version'
+        'use_latest_api_version' => 'use_latest_api_version',
+        'idempotency_key' => 'idempotency_key'
     ];
 
     /**
@@ -246,7 +250,8 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'enable_cache' => 'setEnableCache',
         'check_process_status' => 'setCheckProcessStatus',
         'tracking_provider' => 'setTrackingProvider',
-        'use_latest_api_version' => 'setUseLatestApiVersion'
+        'use_latest_api_version' => 'setUseLatestApiVersion',
+        'idempotency_key' => 'setIdempotencyKey'
     ];
 
     /**
@@ -269,7 +274,8 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'enable_cache' => 'getEnableCache',
         'check_process_status' => 'getCheckProcessStatus',
         'tracking_provider' => 'getTrackingProvider',
-        'use_latest_api_version' => 'getUseLatestApiVersion'
+        'use_latest_api_version' => 'getUseLatestApiVersion',
+        'idempotency_key' => 'getIdempotencyKey'
     ];
 
     /**
@@ -344,6 +350,7 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('check_process_status', $data ?? [], false);
         $this->setIfExists('tracking_provider', $data ?? [], null);
         $this->setIfExists('use_latest_api_version', $data ?? [], false);
+        $this->setIfExists('idempotency_key', $data ?? [], null);
     }
 
     /**
@@ -789,6 +796,33 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable use_latest_api_version cannot be null');
         }
         $this->container['use_latest_api_version'] = $use_latest_api_version;
+
+        return $this;
+    }
+
+    /**
+     * Gets idempotency_key
+     *
+     * @return string|null
+     */
+    public function getIdempotencyKey()
+    {
+        return $this->container['idempotency_key'];
+    }
+
+    /**
+     * Sets idempotency_key
+     *
+     * @param string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
+     *
+     * @return self
+     */
+    public function setIdempotencyKey($idempotency_key)
+    {
+        if (is_null($idempotency_key)) {
+            throw new \InvalidArgumentException('non-nullable idempotency_key cannot be null');
+        }
+        $this->container['idempotency_key'] = $idempotency_key;
 
         return $this;
     }

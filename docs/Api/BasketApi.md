@@ -89,7 +89,7 @@ try {
 ## `basketItemAdd()`
 
 ```php
-basketItemAdd($customer_id, $product_id, $variant_id, $quantity, $store_id): \OpenAPI\Client\Model\BasketItemAdd200Response
+basketItemAdd($customer_id, $product_id, $variant_id, $quantity, $store_id, $idempotency_key): \OpenAPI\Client\Model\BasketItemAdd200Response
 ```
 
 basket.item.add
@@ -125,9 +125,10 @@ $product_id = 10; // string | Defines id of the product which should be added to
 $variant_id = 45; // string | Defines product's variants specified by variant id
 $quantity = 6; // float | Defines new items quantity
 $store_id = 1; // string | Store Id
+$idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->basketItemAdd($customer_id, $product_id, $variant_id, $quantity, $store_id);
+    $result = $apiInstance->basketItemAdd($customer_id, $product_id, $variant_id, $quantity, $store_id, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BasketApi->basketItemAdd: ', $e->getMessage(), PHP_EOL;
@@ -143,6 +144,7 @@ try {
 | **variant_id** | **string**| Defines product&#39;s variants specified by variant id | [optional] |
 | **quantity** | **float**| Defines new items quantity | [optional] [default to 0] |
 | **store_id** | **string**| Store Id | [optional] |
+| **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
 
@@ -164,7 +166,7 @@ try {
 ## `basketLiveShippingServiceCreate()`
 
 ```php
-basketLiveShippingServiceCreate($name, $callback, $store_id): \OpenAPI\Client\Model\BasketLiveShippingServiceCreate200Response
+basketLiveShippingServiceCreate($name, $callback, $store_id, $idempotency_key): \OpenAPI\Client\Model\BasketLiveShippingServiceCreate200Response
 ```
 
 basket.live_shipping_service.create
@@ -198,9 +200,10 @@ $apiInstance = new OpenAPI\Client\Api\BasketApi(
 $name = BestDelivery; // string | Shipping Service Name
 $callback = https://example.com/callback; // string | Callback url that returns shipping rates. It should be able to accept POST requests with json data.
 $store_id = 1; // string | Store Id
+$idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->basketLiveShippingServiceCreate($name, $callback, $store_id);
+    $result = $apiInstance->basketLiveShippingServiceCreate($name, $callback, $store_id, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BasketApi->basketLiveShippingServiceCreate: ', $e->getMessage(), PHP_EOL;
@@ -214,6 +217,7 @@ try {
 | **name** | **string**| Shipping Service Name | |
 | **callback** | **string**| Callback url that returns shipping rates. It should be able to accept POST requests with json data. | |
 | **store_id** | **string**| Store Id | [optional] |
+| **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
 

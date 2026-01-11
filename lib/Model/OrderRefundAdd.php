@@ -67,7 +67,8 @@ class OrderRefundAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'item_restock' => 'bool',
         'send_notifications' => 'bool',
         'date' => 'string',
-        'is_online' => 'bool'
+        'is_online' => 'bool',
+        'idempotency_key' => 'string'
     ];
 
     /**
@@ -87,7 +88,8 @@ class OrderRefundAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'item_restock' => null,
         'send_notifications' => null,
         'date' => null,
-        'is_online' => null
+        'is_online' => null,
+        'idempotency_key' => null
     ];
 
     /**
@@ -105,7 +107,8 @@ class OrderRefundAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'item_restock' => false,
         'send_notifications' => false,
         'date' => false,
-        'is_online' => false
+        'is_online' => false,
+        'idempotency_key' => false
     ];
 
     /**
@@ -203,7 +206,8 @@ class OrderRefundAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'item_restock' => 'item_restock',
         'send_notifications' => 'send_notifications',
         'date' => 'date',
-        'is_online' => 'is_online'
+        'is_online' => 'is_online',
+        'idempotency_key' => 'idempotency_key'
     ];
 
     /**
@@ -221,7 +225,8 @@ class OrderRefundAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'item_restock' => 'setItemRestock',
         'send_notifications' => 'setSendNotifications',
         'date' => 'setDate',
-        'is_online' => 'setIsOnline'
+        'is_online' => 'setIsOnline',
+        'idempotency_key' => 'setIdempotencyKey'
     ];
 
     /**
@@ -239,7 +244,8 @@ class OrderRefundAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'item_restock' => 'getItemRestock',
         'send_notifications' => 'getSendNotifications',
         'date' => 'getDate',
-        'is_online' => 'getIsOnline'
+        'is_online' => 'getIsOnline',
+        'idempotency_key' => 'getIdempotencyKey'
     ];
 
     /**
@@ -309,6 +315,7 @@ class OrderRefundAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('send_notifications', $data ?? [], false);
         $this->setIfExists('date', $data ?? [], null);
         $this->setIfExists('is_online', $data ?? [], false);
+        $this->setIfExists('idempotency_key', $data ?? [], null);
     }
 
     /**
@@ -619,6 +626,33 @@ class OrderRefundAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable is_online cannot be null');
         }
         $this->container['is_online'] = $is_online;
+
+        return $this;
+    }
+
+    /**
+     * Gets idempotency_key
+     *
+     * @return string|null
+     */
+    public function getIdempotencyKey()
+    {
+        return $this->container['idempotency_key'];
+    }
+
+    /**
+     * Sets idempotency_key
+     *
+     * @param string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
+     *
+     * @return self
+     */
+    public function setIdempotencyKey($idempotency_key)
+    {
+        if (is_null($idempotency_key)) {
+            throw new \InvalidArgumentException('non-nullable idempotency_key cannot be null');
+        }
+        $this->container['idempotency_key'] = $idempotency_key;
 
         return $this;
     }

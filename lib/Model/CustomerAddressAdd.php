@@ -78,7 +78,8 @@ class CustomerAddressAdd implements ModelInterface, ArrayAccess, \JsonSerializab
         'website' => 'string',
         'gender' => 'string',
         'tax_id' => 'string',
-        'alias' => 'string'
+        'alias' => 'string',
+        'idempotency_key' => 'string'
     ];
 
     /**
@@ -109,7 +110,8 @@ class CustomerAddressAdd implements ModelInterface, ArrayAccess, \JsonSerializab
         'website' => null,
         'gender' => null,
         'tax_id' => null,
-        'alias' => null
+        'alias' => null,
+        'idempotency_key' => null
     ];
 
     /**
@@ -138,7 +140,8 @@ class CustomerAddressAdd implements ModelInterface, ArrayAccess, \JsonSerializab
         'website' => false,
         'gender' => false,
         'tax_id' => false,
-        'alias' => false
+        'alias' => false,
+        'idempotency_key' => false
     ];
 
     /**
@@ -247,7 +250,8 @@ class CustomerAddressAdd implements ModelInterface, ArrayAccess, \JsonSerializab
         'website' => 'website',
         'gender' => 'gender',
         'tax_id' => 'tax_id',
-        'alias' => 'alias'
+        'alias' => 'alias',
+        'idempotency_key' => 'idempotency_key'
     ];
 
     /**
@@ -276,7 +280,8 @@ class CustomerAddressAdd implements ModelInterface, ArrayAccess, \JsonSerializab
         'website' => 'setWebsite',
         'gender' => 'setGender',
         'tax_id' => 'setTaxId',
-        'alias' => 'setAlias'
+        'alias' => 'setAlias',
+        'idempotency_key' => 'setIdempotencyKey'
     ];
 
     /**
@@ -305,7 +310,8 @@ class CustomerAddressAdd implements ModelInterface, ArrayAccess, \JsonSerializab
         'website' => 'getWebsite',
         'gender' => 'getGender',
         'tax_id' => 'getTaxId',
-        'alias' => 'getAlias'
+        'alias' => 'getAlias',
+        'idempotency_key' => 'getIdempotencyKey'
     ];
 
     /**
@@ -386,6 +392,7 @@ class CustomerAddressAdd implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->setIfExists('gender', $data ?? [], null);
         $this->setIfExists('tax_id', $data ?? [], null);
         $this->setIfExists('alias', $data ?? [], null);
+        $this->setIfExists('idempotency_key', $data ?? [], null);
     }
 
     /**
@@ -1008,6 +1015,33 @@ class CustomerAddressAdd implements ModelInterface, ArrayAccess, \JsonSerializab
             throw new \InvalidArgumentException('non-nullable alias cannot be null');
         }
         $this->container['alias'] = $alias;
+
+        return $this;
+    }
+
+    /**
+     * Gets idempotency_key
+     *
+     * @return string|null
+     */
+    public function getIdempotencyKey()
+    {
+        return $this->container['idempotency_key'];
+    }
+
+    /**
+     * Sets idempotency_key
+     *
+     * @param string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
+     *
+     * @return self
+     */
+    public function setIdempotencyKey($idempotency_key)
+    {
+        if (is_null($idempotency_key)) {
+            throw new \InvalidArgumentException('non-nullable idempotency_key cannot be null');
+        }
+        $this->container['idempotency_key'] = $idempotency_key;
 
         return $this;
     }

@@ -71,7 +71,8 @@ class ProductImageAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'label' => 'string',
         'mime' => 'string',
         'position' => 'int',
-        'use_latest_api_version' => 'bool'
+        'use_latest_api_version' => 'bool',
+        'idempotency_key' => 'string'
     ];
 
     /**
@@ -95,7 +96,8 @@ class ProductImageAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'label' => null,
         'mime' => null,
         'position' => null,
-        'use_latest_api_version' => null
+        'use_latest_api_version' => null,
+        'idempotency_key' => null
     ];
 
     /**
@@ -117,7 +119,8 @@ class ProductImageAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'label' => false,
         'mime' => false,
         'position' => false,
-        'use_latest_api_version' => false
+        'use_latest_api_version' => false,
+        'idempotency_key' => false
     ];
 
     /**
@@ -219,7 +222,8 @@ class ProductImageAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'label' => 'label',
         'mime' => 'mime',
         'position' => 'position',
-        'use_latest_api_version' => 'use_latest_api_version'
+        'use_latest_api_version' => 'use_latest_api_version',
+        'idempotency_key' => 'idempotency_key'
     ];
 
     /**
@@ -241,7 +245,8 @@ class ProductImageAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'label' => 'setLabel',
         'mime' => 'setMime',
         'position' => 'setPosition',
-        'use_latest_api_version' => 'setUseLatestApiVersion'
+        'use_latest_api_version' => 'setUseLatestApiVersion',
+        'idempotency_key' => 'setIdempotencyKey'
     ];
 
     /**
@@ -263,7 +268,8 @@ class ProductImageAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'label' => 'getLabel',
         'mime' => 'getMime',
         'position' => 'getPosition',
-        'use_latest_api_version' => 'getUseLatestApiVersion'
+        'use_latest_api_version' => 'getUseLatestApiVersion',
+        'idempotency_key' => 'getIdempotencyKey'
     ];
 
     /**
@@ -356,6 +362,7 @@ class ProductImageAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('mime', $data ?? [], null);
         $this->setIfExists('position', $data ?? [], 0);
         $this->setIfExists('use_latest_api_version', $data ?? [], false);
+        $this->setIfExists('idempotency_key', $data ?? [], null);
     }
 
     /**
@@ -799,6 +806,33 @@ class ProductImageAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable use_latest_api_version cannot be null');
         }
         $this->container['use_latest_api_version'] = $use_latest_api_version;
+
+        return $this;
+    }
+
+    /**
+     * Gets idempotency_key
+     *
+     * @return string|null
+     */
+    public function getIdempotencyKey()
+    {
+        return $this->container['idempotency_key'];
+    }
+
+    /**
+     * Sets idempotency_key
+     *
+     * @param string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
+     *
+     * @return self
+     */
+    public function setIdempotencyKey($idempotency_key)
+    {
+        if (is_null($idempotency_key)) {
+            throw new \InvalidArgumentException('non-nullable idempotency_key cannot be null');
+        }
+        $this->container['idempotency_key'] = $idempotency_key;
 
         return $this;
     }

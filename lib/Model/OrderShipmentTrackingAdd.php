@@ -65,7 +65,8 @@ class OrderShipmentTrackingAdd implements ModelInterface, ArrayAccess, \JsonSeri
         'tracking_provider' => 'string',
         'tracking_number' => 'string',
         'tracking_link' => 'string',
-        'send_notifications' => 'bool'
+        'send_notifications' => 'bool',
+        'idempotency_key' => 'string'
     ];
 
     /**
@@ -83,7 +84,8 @@ class OrderShipmentTrackingAdd implements ModelInterface, ArrayAccess, \JsonSeri
         'tracking_provider' => null,
         'tracking_number' => null,
         'tracking_link' => null,
-        'send_notifications' => null
+        'send_notifications' => null,
+        'idempotency_key' => null
     ];
 
     /**
@@ -99,7 +101,8 @@ class OrderShipmentTrackingAdd implements ModelInterface, ArrayAccess, \JsonSeri
         'tracking_provider' => false,
         'tracking_number' => false,
         'tracking_link' => false,
-        'send_notifications' => false
+        'send_notifications' => false,
+        'idempotency_key' => false
     ];
 
     /**
@@ -195,7 +198,8 @@ class OrderShipmentTrackingAdd implements ModelInterface, ArrayAccess, \JsonSeri
         'tracking_provider' => 'tracking_provider',
         'tracking_number' => 'tracking_number',
         'tracking_link' => 'tracking_link',
-        'send_notifications' => 'send_notifications'
+        'send_notifications' => 'send_notifications',
+        'idempotency_key' => 'idempotency_key'
     ];
 
     /**
@@ -211,7 +215,8 @@ class OrderShipmentTrackingAdd implements ModelInterface, ArrayAccess, \JsonSeri
         'tracking_provider' => 'setTrackingProvider',
         'tracking_number' => 'setTrackingNumber',
         'tracking_link' => 'setTrackingLink',
-        'send_notifications' => 'setSendNotifications'
+        'send_notifications' => 'setSendNotifications',
+        'idempotency_key' => 'setIdempotencyKey'
     ];
 
     /**
@@ -227,7 +232,8 @@ class OrderShipmentTrackingAdd implements ModelInterface, ArrayAccess, \JsonSeri
         'tracking_provider' => 'getTrackingProvider',
         'tracking_number' => 'getTrackingNumber',
         'tracking_link' => 'getTrackingLink',
-        'send_notifications' => 'getSendNotifications'
+        'send_notifications' => 'getSendNotifications',
+        'idempotency_key' => 'getIdempotencyKey'
     ];
 
     /**
@@ -295,6 +301,7 @@ class OrderShipmentTrackingAdd implements ModelInterface, ArrayAccess, \JsonSeri
         $this->setIfExists('tracking_number', $data ?? [], null);
         $this->setIfExists('tracking_link', $data ?? [], null);
         $this->setIfExists('send_notifications', $data ?? [], false);
+        $this->setIfExists('idempotency_key', $data ?? [], null);
     }
 
     /**
@@ -557,6 +564,33 @@ class OrderShipmentTrackingAdd implements ModelInterface, ArrayAccess, \JsonSeri
             throw new \InvalidArgumentException('non-nullable send_notifications cannot be null');
         }
         $this->container['send_notifications'] = $send_notifications;
+
+        return $this;
+    }
+
+    /**
+     * Gets idempotency_key
+     *
+     * @return string|null
+     */
+    public function getIdempotencyKey()
+    {
+        return $this->container['idempotency_key'];
+    }
+
+    /**
+     * Sets idempotency_key
+     *
+     * @param string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
+     *
+     * @return self
+     */
+    public function setIdempotencyKey($idempotency_key)
+    {
+        if (is_null($idempotency_key)) {
+            throw new \InvalidArgumentException('non-nullable idempotency_key cannot be null');
+        }
+        $this->container['idempotency_key'] = $idempotency_key;
 
         return $this;
     }

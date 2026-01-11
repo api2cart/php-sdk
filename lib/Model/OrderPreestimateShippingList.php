@@ -69,6 +69,7 @@ class OrderPreestimateShippingList implements ModelInterface, ArrayAccess, \Json
         'shipp_country' => 'string',
         'params' => 'string',
         'exclude' => 'string',
+        'idempotency_key' => 'string',
         'order_item' => '\OpenAPI\Client\Model\OrderPreestimateShippingListOrderItemInner[]'
     ];
 
@@ -91,6 +92,7 @@ class OrderPreestimateShippingList implements ModelInterface, ArrayAccess, \Json
         'shipp_country' => null,
         'params' => null,
         'exclude' => null,
+        'idempotency_key' => null,
         'order_item' => null
     ];
 
@@ -111,6 +113,7 @@ class OrderPreestimateShippingList implements ModelInterface, ArrayAccess, \Json
         'shipp_country' => false,
         'params' => false,
         'exclude' => false,
+        'idempotency_key' => false,
         'order_item' => false
     ];
 
@@ -211,6 +214,7 @@ class OrderPreestimateShippingList implements ModelInterface, ArrayAccess, \Json
         'shipp_country' => 'shipp_country',
         'params' => 'params',
         'exclude' => 'exclude',
+        'idempotency_key' => 'idempotency_key',
         'order_item' => 'order_item'
     ];
 
@@ -231,6 +235,7 @@ class OrderPreestimateShippingList implements ModelInterface, ArrayAccess, \Json
         'shipp_country' => 'setShippCountry',
         'params' => 'setParams',
         'exclude' => 'setExclude',
+        'idempotency_key' => 'setIdempotencyKey',
         'order_item' => 'setOrderItem'
     ];
 
@@ -251,6 +256,7 @@ class OrderPreestimateShippingList implements ModelInterface, ArrayAccess, \Json
         'shipp_country' => 'getShippCountry',
         'params' => 'getParams',
         'exclude' => 'getExclude',
+        'idempotency_key' => 'getIdempotencyKey',
         'order_item' => 'getOrderItem'
     ];
 
@@ -322,6 +328,7 @@ class OrderPreestimateShippingList implements ModelInterface, ArrayAccess, \Json
         $this->setIfExists('shipp_country', $data ?? [], null);
         $this->setIfExists('params', $data ?? [], 'force_all');
         $this->setIfExists('exclude', $data ?? [], null);
+        $this->setIfExists('idempotency_key', $data ?? [], null);
         $this->setIfExists('order_item', $data ?? [], null);
     }
 
@@ -666,6 +673,33 @@ class OrderPreestimateShippingList implements ModelInterface, ArrayAccess, \Json
             throw new \InvalidArgumentException('non-nullable exclude cannot be null');
         }
         $this->container['exclude'] = $exclude;
+
+        return $this;
+    }
+
+    /**
+     * Gets idempotency_key
+     *
+     * @return string|null
+     */
+    public function getIdempotencyKey()
+    {
+        return $this->container['idempotency_key'];
+    }
+
+    /**
+     * Sets idempotency_key
+     *
+     * @param string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
+     *
+     * @return self
+     */
+    public function setIdempotencyKey($idempotency_key)
+    {
+        if (is_null($idempotency_key)) {
+            throw new \InvalidArgumentException('non-nullable idempotency_key cannot be null');
+        }
+        $this->container['idempotency_key'] = $idempotency_key;
 
         return $this;
     }

@@ -60,7 +60,8 @@ class ProductPriceAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'product_id' => 'string',
         'group_prices' => '\OpenAPI\Client\Model\ProductAddGroupPricesInner[]',
-        'store_id' => 'string'
+        'store_id' => 'string',
+        'idempotency_key' => 'string'
     ];
 
     /**
@@ -73,7 +74,8 @@ class ProductPriceAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'product_id' => null,
         'group_prices' => null,
-        'store_id' => null
+        'store_id' => null,
+        'idempotency_key' => null
     ];
 
     /**
@@ -84,7 +86,8 @@ class ProductPriceAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'product_id' => false,
         'group_prices' => false,
-        'store_id' => false
+        'store_id' => false,
+        'idempotency_key' => false
     ];
 
     /**
@@ -175,7 +178,8 @@ class ProductPriceAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'product_id' => 'product_id',
         'group_prices' => 'group_prices',
-        'store_id' => 'store_id'
+        'store_id' => 'store_id',
+        'idempotency_key' => 'idempotency_key'
     ];
 
     /**
@@ -186,7 +190,8 @@ class ProductPriceAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'product_id' => 'setProductId',
         'group_prices' => 'setGroupPrices',
-        'store_id' => 'setStoreId'
+        'store_id' => 'setStoreId',
+        'idempotency_key' => 'setIdempotencyKey'
     ];
 
     /**
@@ -197,7 +202,8 @@ class ProductPriceAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'product_id' => 'getProductId',
         'group_prices' => 'getGroupPrices',
-        'store_id' => 'getStoreId'
+        'store_id' => 'getStoreId',
+        'idempotency_key' => 'getIdempotencyKey'
     ];
 
     /**
@@ -260,6 +266,7 @@ class ProductPriceAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('product_id', $data ?? [], null);
         $this->setIfExists('group_prices', $data ?? [], null);
         $this->setIfExists('store_id', $data ?? [], null);
+        $this->setIfExists('idempotency_key', $data ?? [], null);
     }
 
     /**
@@ -381,6 +388,33 @@ class ProductPriceAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable store_id cannot be null');
         }
         $this->container['store_id'] = $store_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets idempotency_key
+     *
+     * @return string|null
+     */
+    public function getIdempotencyKey()
+    {
+        return $this->container['idempotency_key'];
+    }
+
+    /**
+     * Sets idempotency_key
+     *
+     * @param string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
+     *
+     * @return self
+     */
+    public function setIdempotencyKey($idempotency_key)
+    {
+        if (is_null($idempotency_key)) {
+            throw new \InvalidArgumentException('non-nullable idempotency_key cannot be null');
+        }
+        $this->container['idempotency_key'] = $idempotency_key;
 
         return $this;
     }

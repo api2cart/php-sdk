@@ -60,7 +60,8 @@ class ProductVariantAddBatch implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $openAPITypes = [
         'clear_cache' => 'bool',
         'reindex' => 'bool',
-        'payload' => '\OpenAPI\Client\Model\ProductVariantAddBatchPayloadInner[]'
+        'payload' => '\OpenAPI\Client\Model\ProductVariantAddBatchPayloadInner[]',
+        'idempotency_key' => 'string'
     ];
 
     /**
@@ -73,7 +74,8 @@ class ProductVariantAddBatch implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $openAPIFormats = [
         'clear_cache' => null,
         'reindex' => null,
-        'payload' => null
+        'payload' => null,
+        'idempotency_key' => null
     ];
 
     /**
@@ -84,7 +86,8 @@ class ProductVariantAddBatch implements ModelInterface, ArrayAccess, \JsonSerial
     protected static array $openAPINullables = [
         'clear_cache' => false,
         'reindex' => false,
-        'payload' => false
+        'payload' => false,
+        'idempotency_key' => false
     ];
 
     /**
@@ -175,7 +178,8 @@ class ProductVariantAddBatch implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $attributeMap = [
         'clear_cache' => 'clear_cache',
         'reindex' => 'reindex',
-        'payload' => 'payload'
+        'payload' => 'payload',
+        'idempotency_key' => 'idempotency_key'
     ];
 
     /**
@@ -186,7 +190,8 @@ class ProductVariantAddBatch implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $setters = [
         'clear_cache' => 'setClearCache',
         'reindex' => 'setReindex',
-        'payload' => 'setPayload'
+        'payload' => 'setPayload',
+        'idempotency_key' => 'setIdempotencyKey'
     ];
 
     /**
@@ -197,7 +202,8 @@ class ProductVariantAddBatch implements ModelInterface, ArrayAccess, \JsonSerial
     protected static $getters = [
         'clear_cache' => 'getClearCache',
         'reindex' => 'getReindex',
-        'payload' => 'getPayload'
+        'payload' => 'getPayload',
+        'idempotency_key' => 'getIdempotencyKey'
     ];
 
     /**
@@ -260,6 +266,7 @@ class ProductVariantAddBatch implements ModelInterface, ArrayAccess, \JsonSerial
         $this->setIfExists('clear_cache', $data ?? [], false);
         $this->setIfExists('reindex', $data ?? [], false);
         $this->setIfExists('payload', $data ?? [], null);
+        $this->setIfExists('idempotency_key', $data ?? [], null);
     }
 
     /**
@@ -399,6 +406,33 @@ class ProductVariantAddBatch implements ModelInterface, ArrayAccess, \JsonSerial
             throw new \InvalidArgumentException('invalid length for $payload when calling ProductVariantAddBatch., number of items must be greater than or equal to 1.');
         }
         $this->container['payload'] = $payload;
+
+        return $this;
+    }
+
+    /**
+     * Gets idempotency_key
+     *
+     * @return string|null
+     */
+    public function getIdempotencyKey()
+    {
+        return $this->container['idempotency_key'];
+    }
+
+    /**
+     * Sets idempotency_key
+     *
+     * @param string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
+     *
+     * @return self
+     */
+    public function setIdempotencyKey($idempotency_key)
+    {
+        if (is_null($idempotency_key)) {
+            throw new \InvalidArgumentException('non-nullable idempotency_key cannot be null');
+        }
+        $this->container['idempotency_key'] = $idempotency_key;
 
         return $this;
     }

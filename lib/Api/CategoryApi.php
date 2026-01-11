@@ -87,6 +87,9 @@ class CategoryApi
         'categoryDelete' => [
             'application/json',
         ],
+        'categoryDeleteBatch' => [
+            'application/json',
+        ],
         'categoryFind' => [
             'application/json',
         ],
@@ -176,15 +179,16 @@ class CategoryApi
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $stores_ids Create category in the stores that is specified by comma-separated stores&#39; id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryAdd'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CategoryAdd200Response
      */
-    public function categoryAdd($name, $description = null, $short_description = null, $parent_id = null, $avail = true, $created_time = null, $modified_time = null, $sort_order = 0, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, $store_id = null, $stores_ids = null, $lang_id = null, string $contentType = self::contentTypes['categoryAdd'][0])
+    public function categoryAdd($name, $description = null, $short_description = null, $parent_id = null, $avail = true, $created_time = null, $modified_time = null, $sort_order = 0, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, $store_id = null, $stores_ids = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['categoryAdd'][0])
     {
-        list($response) = $this->categoryAddWithHttpInfo($name, $description, $short_description, $parent_id, $avail, $created_time, $modified_time, $sort_order, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id, $contentType);
+        list($response) = $this->categoryAddWithHttpInfo($name, $description, $short_description, $parent_id, $avail, $created_time, $modified_time, $sort_order, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id, $idempotency_key, $contentType);
         return $response;
     }
 
@@ -208,15 +212,16 @@ class CategoryApi
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $stores_ids Create category in the stores that is specified by comma-separated stores&#39; id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryAdd'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CategoryAdd200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function categoryAddWithHttpInfo($name, $description = null, $short_description = null, $parent_id = null, $avail = true, $created_time = null, $modified_time = null, $sort_order = 0, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, $store_id = null, $stores_ids = null, $lang_id = null, string $contentType = self::contentTypes['categoryAdd'][0])
+    public function categoryAddWithHttpInfo($name, $description = null, $short_description = null, $parent_id = null, $avail = true, $created_time = null, $modified_time = null, $sort_order = 0, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, $store_id = null, $stores_ids = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['categoryAdd'][0])
     {
-        $request = $this->categoryAddRequest($name, $description, $short_description, $parent_id, $avail, $created_time, $modified_time, $sort_order, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id, $contentType);
+        $request = $this->categoryAddRequest($name, $description, $short_description, $parent_id, $avail, $created_time, $modified_time, $sort_order, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id, $idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -347,14 +352,15 @@ class CategoryApi
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $stores_ids Create category in the stores that is specified by comma-separated stores&#39; id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryAddAsync($name, $description = null, $short_description = null, $parent_id = null, $avail = true, $created_time = null, $modified_time = null, $sort_order = 0, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, $store_id = null, $stores_ids = null, $lang_id = null, string $contentType = self::contentTypes['categoryAdd'][0])
+    public function categoryAddAsync($name, $description = null, $short_description = null, $parent_id = null, $avail = true, $created_time = null, $modified_time = null, $sort_order = 0, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, $store_id = null, $stores_ids = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['categoryAdd'][0])
     {
-        return $this->categoryAddAsyncWithHttpInfo($name, $description, $short_description, $parent_id, $avail, $created_time, $modified_time, $sort_order, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id, $contentType)
+        return $this->categoryAddAsyncWithHttpInfo($name, $description, $short_description, $parent_id, $avail, $created_time, $modified_time, $sort_order, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id, $idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -382,15 +388,16 @@ class CategoryApi
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $stores_ids Create category in the stores that is specified by comma-separated stores&#39; id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryAddAsyncWithHttpInfo($name, $description = null, $short_description = null, $parent_id = null, $avail = true, $created_time = null, $modified_time = null, $sort_order = 0, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, $store_id = null, $stores_ids = null, $lang_id = null, string $contentType = self::contentTypes['categoryAdd'][0])
+    public function categoryAddAsyncWithHttpInfo($name, $description = null, $short_description = null, $parent_id = null, $avail = true, $created_time = null, $modified_time = null, $sort_order = 0, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, $store_id = null, $stores_ids = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['categoryAdd'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CategoryAdd200Response';
-        $request = $this->categoryAddRequest($name, $description, $short_description, $parent_id, $avail, $created_time, $modified_time, $sort_order, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id, $contentType);
+        $request = $this->categoryAddRequest($name, $description, $short_description, $parent_id, $avail, $created_time, $modified_time, $sort_order, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id, $idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -446,12 +453,13 @@ class CategoryApi
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $stores_ids Create category in the stores that is specified by comma-separated stores&#39; id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function categoryAddRequest($name, $description = null, $short_description = null, $parent_id = null, $avail = true, $created_time = null, $modified_time = null, $sort_order = 0, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, $store_id = null, $stores_ids = null, $lang_id = null, string $contentType = self::contentTypes['categoryAdd'][0])
+    public function categoryAddRequest($name, $description = null, $short_description = null, $parent_id = null, $avail = true, $created_time = null, $modified_time = null, $sort_order = 0, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, $store_id = null, $stores_ids = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['categoryAdd'][0])
     {
 
         // verify the required parameter 'name' is set
@@ -460,6 +468,7 @@ class CategoryApi
                 'Missing the required parameter $name when calling categoryAdd'
             );
         }
+
 
 
 
@@ -613,6 +622,15 @@ class CategoryApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $lang_id,
             'lang_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idempotency_key,
+            'idempotency_key', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -1010,15 +1028,16 @@ class CategoryApi
      * @param  string $category_id Defines category assign, specified by category id (required)
      * @param  string $product_id Defines category assign to the product, specified by product id (required)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryAssign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CategoryAssign200Response
      */
-    public function categoryAssign($category_id, $product_id, $store_id = null, string $contentType = self::contentTypes['categoryAssign'][0])
+    public function categoryAssign($category_id, $product_id, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['categoryAssign'][0])
     {
-        list($response) = $this->categoryAssignWithHttpInfo($category_id, $product_id, $store_id, $contentType);
+        list($response) = $this->categoryAssignWithHttpInfo($category_id, $product_id, $store_id, $idempotency_key, $contentType);
         return $response;
     }
 
@@ -1030,15 +1049,16 @@ class CategoryApi
      * @param  string $category_id Defines category assign, specified by category id (required)
      * @param  string $product_id Defines category assign to the product, specified by product id (required)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryAssign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CategoryAssign200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function categoryAssignWithHttpInfo($category_id, $product_id, $store_id = null, string $contentType = self::contentTypes['categoryAssign'][0])
+    public function categoryAssignWithHttpInfo($category_id, $product_id, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['categoryAssign'][0])
     {
-        $request = $this->categoryAssignRequest($category_id, $product_id, $store_id, $contentType);
+        $request = $this->categoryAssignRequest($category_id, $product_id, $store_id, $idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1157,14 +1177,15 @@ class CategoryApi
      * @param  string $category_id Defines category assign, specified by category id (required)
      * @param  string $product_id Defines category assign to the product, specified by product id (required)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryAssign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryAssignAsync($category_id, $product_id, $store_id = null, string $contentType = self::contentTypes['categoryAssign'][0])
+    public function categoryAssignAsync($category_id, $product_id, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['categoryAssign'][0])
     {
-        return $this->categoryAssignAsyncWithHttpInfo($category_id, $product_id, $store_id, $contentType)
+        return $this->categoryAssignAsyncWithHttpInfo($category_id, $product_id, $store_id, $idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1180,15 +1201,16 @@ class CategoryApi
      * @param  string $category_id Defines category assign, specified by category id (required)
      * @param  string $product_id Defines category assign to the product, specified by product id (required)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryAssign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryAssignAsyncWithHttpInfo($category_id, $product_id, $store_id = null, string $contentType = self::contentTypes['categoryAssign'][0])
+    public function categoryAssignAsyncWithHttpInfo($category_id, $product_id, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['categoryAssign'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CategoryAssign200Response';
-        $request = $this->categoryAssignRequest($category_id, $product_id, $store_id, $contentType);
+        $request = $this->categoryAssignRequest($category_id, $product_id, $store_id, $idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1232,12 +1254,13 @@ class CategoryApi
      * @param  string $category_id Defines category assign, specified by category id (required)
      * @param  string $product_id Defines category assign to the product, specified by product id (required)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryAssign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function categoryAssignRequest($category_id, $product_id, $store_id = null, string $contentType = self::contentTypes['categoryAssign'][0])
+    public function categoryAssignRequest($category_id, $product_id, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['categoryAssign'][0])
     {
 
         // verify the required parameter 'category_id' is set
@@ -1253,6 +1276,7 @@ class CategoryApi
                 'Missing the required parameter $product_id when calling categoryAssign'
             );
         }
+
 
 
 
@@ -1285,6 +1309,15 @@ class CategoryApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $store_id,
             'store_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idempotency_key,
+            'idempotency_key', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -2185,6 +2218,323 @@ class CategoryApi
     }
 
     /**
+     * Operation categoryDeleteBatch
+     *
+     * category.delete.batch
+     *
+     * @param  \OpenAPI\Client\Model\CategoryDeleteBatch $category_delete_batch category_delete_batch (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryDeleteBatch'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\CategoryAddBatch200Response
+     */
+    public function categoryDeleteBatch($category_delete_batch, string $contentType = self::contentTypes['categoryDeleteBatch'][0])
+    {
+        list($response) = $this->categoryDeleteBatchWithHttpInfo($category_delete_batch, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation categoryDeleteBatchWithHttpInfo
+     *
+     * category.delete.batch
+     *
+     * @param  \OpenAPI\Client\Model\CategoryDeleteBatch $category_delete_batch (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryDeleteBatch'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\CategoryAddBatch200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function categoryDeleteBatchWithHttpInfo($category_delete_batch, string $contentType = self::contentTypes['categoryDeleteBatch'][0])
+    {
+        $request = $this->categoryDeleteBatchRequest($category_delete_batch, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\OpenAPI\Client\Model\CategoryAddBatch200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\CategoryAddBatch200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\CategoryAddBatch200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\OpenAPI\Client\Model\CategoryAddBatch200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\CategoryAddBatch200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation categoryDeleteBatchAsync
+     *
+     * category.delete.batch
+     *
+     * @param  \OpenAPI\Client\Model\CategoryDeleteBatch $category_delete_batch (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryDeleteBatch'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function categoryDeleteBatchAsync($category_delete_batch, string $contentType = self::contentTypes['categoryDeleteBatch'][0])
+    {
+        return $this->categoryDeleteBatchAsyncWithHttpInfo($category_delete_batch, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation categoryDeleteBatchAsyncWithHttpInfo
+     *
+     * category.delete.batch
+     *
+     * @param  \OpenAPI\Client\Model\CategoryDeleteBatch $category_delete_batch (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryDeleteBatch'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function categoryDeleteBatchAsyncWithHttpInfo($category_delete_batch, string $contentType = self::contentTypes['categoryDeleteBatch'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\CategoryAddBatch200Response';
+        $request = $this->categoryDeleteBatchRequest($category_delete_batch, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'categoryDeleteBatch'
+     *
+     * @param  \OpenAPI\Client\Model\CategoryDeleteBatch $category_delete_batch (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryDeleteBatch'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function categoryDeleteBatchRequest($category_delete_batch, string $contentType = self::contentTypes['categoryDeleteBatch'][0])
+    {
+
+        // verify the required parameter 'category_delete_batch' is set
+        if ($category_delete_batch === null || (is_array($category_delete_batch) && count($category_delete_batch) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $category_delete_batch when calling categoryDeleteBatch'
+            );
+        }
+
+
+        $resourcePath = '/category.delete.batch.json';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($category_delete_batch)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($category_delete_batch));
+            } else {
+                $httpBody = $category_delete_batch;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-store-key');
+        if ($apiKey !== null) {
+            $headers['x-store-key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation categoryFind
      *
      * category.find
@@ -2576,15 +2926,16 @@ class CategoryApi
      * @param  string|null $label Defines alternative text that has to be attached to the picture (optional)
      * @param  string|null $mime Mime type of image http://en.wikipedia.org/wiki/Internet_media_type. (optional)
      * @param  int|null $position Defines image’s position in the list (optional, default to 0)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryImageAdd'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CategoryImageAdd200Response
      */
-    public function categoryImageAdd($category_id, $image_name, $url, $type, $store_id = null, $label = null, $mime = null, $position = 0, string $contentType = self::contentTypes['categoryImageAdd'][0])
+    public function categoryImageAdd($category_id, $image_name, $url, $type, $store_id = null, $label = null, $mime = null, $position = 0, $idempotency_key = null, string $contentType = self::contentTypes['categoryImageAdd'][0])
     {
-        list($response) = $this->categoryImageAddWithHttpInfo($category_id, $image_name, $url, $type, $store_id, $label, $mime, $position, $contentType);
+        list($response) = $this->categoryImageAddWithHttpInfo($category_id, $image_name, $url, $type, $store_id, $label, $mime, $position, $idempotency_key, $contentType);
         return $response;
     }
 
@@ -2601,15 +2952,16 @@ class CategoryApi
      * @param  string|null $label Defines alternative text that has to be attached to the picture (optional)
      * @param  string|null $mime Mime type of image http://en.wikipedia.org/wiki/Internet_media_type. (optional)
      * @param  int|null $position Defines image’s position in the list (optional, default to 0)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryImageAdd'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CategoryImageAdd200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function categoryImageAddWithHttpInfo($category_id, $image_name, $url, $type, $store_id = null, $label = null, $mime = null, $position = 0, string $contentType = self::contentTypes['categoryImageAdd'][0])
+    public function categoryImageAddWithHttpInfo($category_id, $image_name, $url, $type, $store_id = null, $label = null, $mime = null, $position = 0, $idempotency_key = null, string $contentType = self::contentTypes['categoryImageAdd'][0])
     {
-        $request = $this->categoryImageAddRequest($category_id, $image_name, $url, $type, $store_id, $label, $mime, $position, $contentType);
+        $request = $this->categoryImageAddRequest($category_id, $image_name, $url, $type, $store_id, $label, $mime, $position, $idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2733,14 +3085,15 @@ class CategoryApi
      * @param  string|null $label Defines alternative text that has to be attached to the picture (optional)
      * @param  string|null $mime Mime type of image http://en.wikipedia.org/wiki/Internet_media_type. (optional)
      * @param  int|null $position Defines image’s position in the list (optional, default to 0)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryImageAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryImageAddAsync($category_id, $image_name, $url, $type, $store_id = null, $label = null, $mime = null, $position = 0, string $contentType = self::contentTypes['categoryImageAdd'][0])
+    public function categoryImageAddAsync($category_id, $image_name, $url, $type, $store_id = null, $label = null, $mime = null, $position = 0, $idempotency_key = null, string $contentType = self::contentTypes['categoryImageAdd'][0])
     {
-        return $this->categoryImageAddAsyncWithHttpInfo($category_id, $image_name, $url, $type, $store_id, $label, $mime, $position, $contentType)
+        return $this->categoryImageAddAsyncWithHttpInfo($category_id, $image_name, $url, $type, $store_id, $label, $mime, $position, $idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2761,15 +3114,16 @@ class CategoryApi
      * @param  string|null $label Defines alternative text that has to be attached to the picture (optional)
      * @param  string|null $mime Mime type of image http://en.wikipedia.org/wiki/Internet_media_type. (optional)
      * @param  int|null $position Defines image’s position in the list (optional, default to 0)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryImageAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryImageAddAsyncWithHttpInfo($category_id, $image_name, $url, $type, $store_id = null, $label = null, $mime = null, $position = 0, string $contentType = self::contentTypes['categoryImageAdd'][0])
+    public function categoryImageAddAsyncWithHttpInfo($category_id, $image_name, $url, $type, $store_id = null, $label = null, $mime = null, $position = 0, $idempotency_key = null, string $contentType = self::contentTypes['categoryImageAdd'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CategoryImageAdd200Response';
-        $request = $this->categoryImageAddRequest($category_id, $image_name, $url, $type, $store_id, $label, $mime, $position, $contentType);
+        $request = $this->categoryImageAddRequest($category_id, $image_name, $url, $type, $store_id, $label, $mime, $position, $idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2818,12 +3172,13 @@ class CategoryApi
      * @param  string|null $label Defines alternative text that has to be attached to the picture (optional)
      * @param  string|null $mime Mime type of image http://en.wikipedia.org/wiki/Internet_media_type. (optional)
      * @param  int|null $position Defines image’s position in the list (optional, default to 0)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryImageAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function categoryImageAddRequest($category_id, $image_name, $url, $type, $store_id = null, $label = null, $mime = null, $position = 0, string $contentType = self::contentTypes['categoryImageAdd'][0])
+    public function categoryImageAddRequest($category_id, $image_name, $url, $type, $store_id = null, $label = null, $mime = null, $position = 0, $idempotency_key = null, string $contentType = self::contentTypes['categoryImageAdd'][0])
     {
 
         // verify the required parameter 'category_id' is set
@@ -2853,6 +3208,7 @@ class CategoryApi
                 'Missing the required parameter $type when calling categoryImageAdd'
             );
         }
+
 
 
 
@@ -2934,6 +3290,15 @@ class CategoryApi
             $position,
             'position', // param base name
             'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idempotency_key,
+            'idempotency_key', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -4405,15 +4770,16 @@ class CategoryApi
      * @param  string $category_id Defines category unassign, specified by category id (required)
      * @param  string $product_id Defines category unassign to the product, specified by product id (required)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryUnassign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CategoryAssign200Response
      */
-    public function categoryUnassign($category_id, $product_id, $store_id = null, string $contentType = self::contentTypes['categoryUnassign'][0])
+    public function categoryUnassign($category_id, $product_id, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['categoryUnassign'][0])
     {
-        list($response) = $this->categoryUnassignWithHttpInfo($category_id, $product_id, $store_id, $contentType);
+        list($response) = $this->categoryUnassignWithHttpInfo($category_id, $product_id, $store_id, $idempotency_key, $contentType);
         return $response;
     }
 
@@ -4425,15 +4791,16 @@ class CategoryApi
      * @param  string $category_id Defines category unassign, specified by category id (required)
      * @param  string $product_id Defines category unassign to the product, specified by product id (required)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryUnassign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CategoryAssign200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function categoryUnassignWithHttpInfo($category_id, $product_id, $store_id = null, string $contentType = self::contentTypes['categoryUnassign'][0])
+    public function categoryUnassignWithHttpInfo($category_id, $product_id, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['categoryUnassign'][0])
     {
-        $request = $this->categoryUnassignRequest($category_id, $product_id, $store_id, $contentType);
+        $request = $this->categoryUnassignRequest($category_id, $product_id, $store_id, $idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4552,14 +4919,15 @@ class CategoryApi
      * @param  string $category_id Defines category unassign, specified by category id (required)
      * @param  string $product_id Defines category unassign to the product, specified by product id (required)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryUnassign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryUnassignAsync($category_id, $product_id, $store_id = null, string $contentType = self::contentTypes['categoryUnassign'][0])
+    public function categoryUnassignAsync($category_id, $product_id, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['categoryUnassign'][0])
     {
-        return $this->categoryUnassignAsyncWithHttpInfo($category_id, $product_id, $store_id, $contentType)
+        return $this->categoryUnassignAsyncWithHttpInfo($category_id, $product_id, $store_id, $idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4575,15 +4943,16 @@ class CategoryApi
      * @param  string $category_id Defines category unassign, specified by category id (required)
      * @param  string $product_id Defines category unassign to the product, specified by product id (required)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryUnassign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryUnassignAsyncWithHttpInfo($category_id, $product_id, $store_id = null, string $contentType = self::contentTypes['categoryUnassign'][0])
+    public function categoryUnassignAsyncWithHttpInfo($category_id, $product_id, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['categoryUnassign'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CategoryAssign200Response';
-        $request = $this->categoryUnassignRequest($category_id, $product_id, $store_id, $contentType);
+        $request = $this->categoryUnassignRequest($category_id, $product_id, $store_id, $idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4627,12 +4996,13 @@ class CategoryApi
      * @param  string $category_id Defines category unassign, specified by category id (required)
      * @param  string $product_id Defines category unassign to the product, specified by product id (required)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryUnassign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function categoryUnassignRequest($category_id, $product_id, $store_id = null, string $contentType = self::contentTypes['categoryUnassign'][0])
+    public function categoryUnassignRequest($category_id, $product_id, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['categoryUnassign'][0])
     {
 
         // verify the required parameter 'category_id' is set
@@ -4648,6 +5018,7 @@ class CategoryApi
                 'Missing the required parameter $product_id when calling categoryUnassign'
             );
         }
+
 
 
 
@@ -4680,6 +5051,15 @@ class CategoryApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $store_id,
             'store_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idempotency_key,
+            'idempotency_key', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -4772,15 +5152,16 @@ class CategoryApi
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $stores_ids Update category in the stores that is specified by comma-separated stores&#39; id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryUpdate'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\AccountConfigUpdate200Response
      */
-    public function categoryUpdate($id, $name = null, $description = null, $short_description = null, $parent_id = null, $avail = null, $sort_order = null, $modified_time = null, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, $store_id = null, $stores_ids = null, $lang_id = null, string $contentType = self::contentTypes['categoryUpdate'][0])
+    public function categoryUpdate($id, $name = null, $description = null, $short_description = null, $parent_id = null, $avail = null, $sort_order = null, $modified_time = null, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, $store_id = null, $stores_ids = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['categoryUpdate'][0])
     {
-        list($response) = $this->categoryUpdateWithHttpInfo($id, $name, $description, $short_description, $parent_id, $avail, $sort_order, $modified_time, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id, $contentType);
+        list($response) = $this->categoryUpdateWithHttpInfo($id, $name, $description, $short_description, $parent_id, $avail, $sort_order, $modified_time, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id, $idempotency_key, $contentType);
         return $response;
     }
 
@@ -4804,15 +5185,16 @@ class CategoryApi
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $stores_ids Update category in the stores that is specified by comma-separated stores&#39; id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryUpdate'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\AccountConfigUpdate200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function categoryUpdateWithHttpInfo($id, $name = null, $description = null, $short_description = null, $parent_id = null, $avail = null, $sort_order = null, $modified_time = null, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, $store_id = null, $stores_ids = null, $lang_id = null, string $contentType = self::contentTypes['categoryUpdate'][0])
+    public function categoryUpdateWithHttpInfo($id, $name = null, $description = null, $short_description = null, $parent_id = null, $avail = null, $sort_order = null, $modified_time = null, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, $store_id = null, $stores_ids = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['categoryUpdate'][0])
     {
-        $request = $this->categoryUpdateRequest($id, $name, $description, $short_description, $parent_id, $avail, $sort_order, $modified_time, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id, $contentType);
+        $request = $this->categoryUpdateRequest($id, $name, $description, $short_description, $parent_id, $avail, $sort_order, $modified_time, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id, $idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4943,14 +5325,15 @@ class CategoryApi
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $stores_ids Update category in the stores that is specified by comma-separated stores&#39; id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryUpdateAsync($id, $name = null, $description = null, $short_description = null, $parent_id = null, $avail = null, $sort_order = null, $modified_time = null, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, $store_id = null, $stores_ids = null, $lang_id = null, string $contentType = self::contentTypes['categoryUpdate'][0])
+    public function categoryUpdateAsync($id, $name = null, $description = null, $short_description = null, $parent_id = null, $avail = null, $sort_order = null, $modified_time = null, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, $store_id = null, $stores_ids = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['categoryUpdate'][0])
     {
-        return $this->categoryUpdateAsyncWithHttpInfo($id, $name, $description, $short_description, $parent_id, $avail, $sort_order, $modified_time, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id, $contentType)
+        return $this->categoryUpdateAsyncWithHttpInfo($id, $name, $description, $short_description, $parent_id, $avail, $sort_order, $modified_time, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id, $idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4978,15 +5361,16 @@ class CategoryApi
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $stores_ids Update category in the stores that is specified by comma-separated stores&#39; id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryUpdateAsyncWithHttpInfo($id, $name = null, $description = null, $short_description = null, $parent_id = null, $avail = null, $sort_order = null, $modified_time = null, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, $store_id = null, $stores_ids = null, $lang_id = null, string $contentType = self::contentTypes['categoryUpdate'][0])
+    public function categoryUpdateAsyncWithHttpInfo($id, $name = null, $description = null, $short_description = null, $parent_id = null, $avail = null, $sort_order = null, $modified_time = null, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, $store_id = null, $stores_ids = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['categoryUpdate'][0])
     {
         $returnType = '\OpenAPI\Client\Model\AccountConfigUpdate200Response';
-        $request = $this->categoryUpdateRequest($id, $name, $description, $short_description, $parent_id, $avail, $sort_order, $modified_time, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id, $contentType);
+        $request = $this->categoryUpdateRequest($id, $name, $description, $short_description, $parent_id, $avail, $sort_order, $modified_time, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id, $idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5042,12 +5426,13 @@ class CategoryApi
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $stores_ids Update category in the stores that is specified by comma-separated stores&#39; id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function categoryUpdateRequest($id, $name = null, $description = null, $short_description = null, $parent_id = null, $avail = null, $sort_order = null, $modified_time = null, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, $store_id = null, $stores_ids = null, $lang_id = null, string $contentType = self::contentTypes['categoryUpdate'][0])
+    public function categoryUpdateRequest($id, $name = null, $description = null, $short_description = null, $parent_id = null, $avail = null, $sort_order = null, $modified_time = null, $meta_title = null, $meta_description = null, $meta_keywords = null, $seo_url = null, $store_id = null, $stores_ids = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['categoryUpdate'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -5056,6 +5441,7 @@ class CategoryApi
                 'Missing the required parameter $id when calling categoryUpdate'
             );
         }
+
 
 
 
@@ -5209,6 +5595,15 @@ class CategoryApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $lang_id,
             'lang_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idempotency_key,
+            'idempotency_key', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

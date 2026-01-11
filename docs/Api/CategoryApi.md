@@ -9,6 +9,7 @@ All URIs are relative to https://api.api2cart.local.com/v1.1, except if the oper
 | [**categoryAssign()**](CategoryApi.md#categoryAssign) | **POST** /category.assign.json | category.assign |
 | [**categoryCount()**](CategoryApi.md#categoryCount) | **GET** /category.count.json | category.count |
 | [**categoryDelete()**](CategoryApi.md#categoryDelete) | **DELETE** /category.delete.json | category.delete |
+| [**categoryDeleteBatch()**](CategoryApi.md#categoryDeleteBatch) | **POST** /category.delete.batch.json | category.delete.batch |
 | [**categoryFind()**](CategoryApi.md#categoryFind) | **GET** /category.find.json | category.find |
 | [**categoryImageAdd()**](CategoryApi.md#categoryImageAdd) | **POST** /category.image.add.json | category.image.add |
 | [**categoryImageDelete()**](CategoryApi.md#categoryImageDelete) | **DELETE** /category.image.delete.json | category.image.delete |
@@ -21,7 +22,7 @@ All URIs are relative to https://api.api2cart.local.com/v1.1, except if the oper
 ## `categoryAdd()`
 
 ```php
-categoryAdd($name, $description, $short_description, $parent_id, $avail, $created_time, $modified_time, $sort_order, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id): \OpenAPI\Client\Model\CategoryAdd200Response
+categoryAdd($name, $description, $short_description, $parent_id, $avail, $created_time, $modified_time, $sort_order, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id, $idempotency_key): \OpenAPI\Client\Model\CategoryAdd200Response
 ```
 
 category.add
@@ -67,9 +68,10 @@ $seo_url = category,test; // string | Defines unique category's URL for SEO
 $store_id = 1; // string | Store Id
 $stores_ids = 1,2; // string | Create category in the stores that is specified by comma-separated stores' id
 $lang_id = 3; // string | Language id
+$idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->categoryAdd($name, $description, $short_description, $parent_id, $avail, $created_time, $modified_time, $sort_order, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id);
+    $result = $apiInstance->categoryAdd($name, $description, $short_description, $parent_id, $avail, $created_time, $modified_time, $sort_order, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CategoryApi->categoryAdd: ', $e->getMessage(), PHP_EOL;
@@ -95,6 +97,7 @@ try {
 | **store_id** | **string**| Store Id | [optional] |
 | **stores_ids** | **string**| Create category in the stores that is specified by comma-separated stores&#39; id | [optional] |
 | **lang_id** | **string**| Language id | [optional] |
+| **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
 
@@ -183,7 +186,7 @@ try {
 ## `categoryAssign()`
 
 ```php
-categoryAssign($category_id, $product_id, $store_id): \OpenAPI\Client\Model\CategoryAssign200Response
+categoryAssign($category_id, $product_id, $store_id, $idempotency_key): \OpenAPI\Client\Model\CategoryAssign200Response
 ```
 
 category.assign
@@ -217,9 +220,10 @@ $apiInstance = new OpenAPI\Client\Api\CategoryApi(
 $category_id = 6; // string | Defines category assign, specified by category id
 $product_id = 10; // string | Defines category assign to the product, specified by product id
 $store_id = 1; // string | Store Id
+$idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->categoryAssign($category_id, $product_id, $store_id);
+    $result = $apiInstance->categoryAssign($category_id, $product_id, $store_id, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CategoryApi->categoryAssign: ', $e->getMessage(), PHP_EOL;
@@ -233,6 +237,7 @@ try {
 | **category_id** | **string**| Defines category assign, specified by category id | |
 | **product_id** | **string**| Defines category assign to the product, specified by product id | |
 | **store_id** | **string**| Store Id | [optional] |
+| **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
 
@@ -411,6 +416,73 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `categoryDeleteBatch()`
+
+```php
+categoryDeleteBatch($category_delete_batch): \OpenAPI\Client\Model\CategoryAddBatch200Response
+```
+
+category.delete.batch
+
+Delete categories from the store.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: StoreKeyAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-store-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-store-key', 'Bearer');
+
+// Configure API key authorization: ApiKeyAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+
+
+$apiInstance = new OpenAPI\Client\Api\CategoryApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$category_delete_batch = new \OpenAPI\Client\Model\CategoryDeleteBatch(); // \OpenAPI\Client\Model\CategoryDeleteBatch
+
+try {
+    $result = $apiInstance->categoryDeleteBatch($category_delete_batch);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CategoryApi->categoryDeleteBatch: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **category_delete_batch** | [**\OpenAPI\Client\Model\CategoryDeleteBatch**](../Model/CategoryDeleteBatch.md)|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\CategoryAddBatch200Response**](../Model/CategoryAddBatch200Response.md)
+
+### Authorization
+
+[StoreKeyAuth](../../README.md#StoreKeyAuth), [ApiKeyAuth](../../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `categoryFind()`
 
 ```php
@@ -489,7 +561,7 @@ try {
 ## `categoryImageAdd()`
 
 ```php
-categoryImageAdd($category_id, $image_name, $url, $type, $store_id, $label, $mime, $position): \OpenAPI\Client\Model\CategoryImageAdd200Response
+categoryImageAdd($category_id, $image_name, $url, $type, $store_id, $label, $mime, $position, $idempotency_key): \OpenAPI\Client\Model\CategoryImageAdd200Response
 ```
 
 category.image.add
@@ -528,9 +600,10 @@ $store_id = 1; // string | Store Id
 $label = This cool image; // string | Defines alternative text that has to be attached to the picture
 $mime = image/jpeg; // string | Mime type of image http://en.wikipedia.org/wiki/Internet_media_type.
 $position = 5; // int | Defines image’s position in the list
+$idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->categoryImageAdd($category_id, $image_name, $url, $type, $store_id, $label, $mime, $position);
+    $result = $apiInstance->categoryImageAdd($category_id, $image_name, $url, $type, $store_id, $label, $mime, $position, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CategoryApi->categoryImageAdd: ', $e->getMessage(), PHP_EOL;
@@ -549,6 +622,7 @@ try {
 | **label** | **string**| Defines alternative text that has to be attached to the picture | [optional] |
 | **mime** | **string**| Mime type of image http://en.wikipedia.org/wiki/Internet_media_type. | [optional] |
 | **position** | **int**| Defines image’s position in the list | [optional] [default to 0] |
+| **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
 
@@ -829,7 +903,7 @@ try {
 ## `categoryUnassign()`
 
 ```php
-categoryUnassign($category_id, $product_id, $store_id): \OpenAPI\Client\Model\CategoryAssign200Response
+categoryUnassign($category_id, $product_id, $store_id, $idempotency_key): \OpenAPI\Client\Model\CategoryAssign200Response
 ```
 
 category.unassign
@@ -863,9 +937,10 @@ $apiInstance = new OpenAPI\Client\Api\CategoryApi(
 $category_id = 6; // string | Defines category unassign, specified by category id
 $product_id = 10; // string | Defines category unassign to the product, specified by product id
 $store_id = 1; // string | Store Id
+$idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->categoryUnassign($category_id, $product_id, $store_id);
+    $result = $apiInstance->categoryUnassign($category_id, $product_id, $store_id, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CategoryApi->categoryUnassign: ', $e->getMessage(), PHP_EOL;
@@ -879,6 +954,7 @@ try {
 | **category_id** | **string**| Defines category unassign, specified by category id | |
 | **product_id** | **string**| Defines category unassign to the product, specified by product id | |
 | **store_id** | **string**| Store Id | [optional] |
+| **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
 
@@ -900,7 +976,7 @@ try {
 ## `categoryUpdate()`
 
 ```php
-categoryUpdate($id, $name, $description, $short_description, $parent_id, $avail, $sort_order, $modified_time, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id): \OpenAPI\Client\Model\AccountConfigUpdate200Response
+categoryUpdate($id, $name, $description, $short_description, $parent_id, $avail, $sort_order, $modified_time, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id, $idempotency_key): \OpenAPI\Client\Model\AccountConfigUpdate200Response
 ```
 
 category.update
@@ -946,9 +1022,10 @@ $seo_url = category,test; // string | Defines unique category's URL for SEO
 $store_id = 1; // string | Store Id
 $stores_ids = 1,2; // string | Update category in the stores that is specified by comma-separated stores' id
 $lang_id = 3; // string | Language id
+$idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->categoryUpdate($id, $name, $description, $short_description, $parent_id, $avail, $sort_order, $modified_time, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id);
+    $result = $apiInstance->categoryUpdate($id, $name, $description, $short_description, $parent_id, $avail, $sort_order, $modified_time, $meta_title, $meta_description, $meta_keywords, $seo_url, $store_id, $stores_ids, $lang_id, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CategoryApi->categoryUpdate: ', $e->getMessage(), PHP_EOL;
@@ -974,6 +1051,7 @@ try {
 | **store_id** | **string**| Store Id | [optional] |
 | **stores_ids** | **string**| Update category in the stores that is specified by comma-separated stores&#39; id | [optional] |
 | **lang_id** | **string**| Language id | [optional] |
+| **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
 

@@ -58,7 +58,8 @@ class OrderShipmentAddBatch implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payload' => '\OpenAPI\Client\Model\OrderShipmentAddBatchPayloadInner[]'
+        'payload' => '\OpenAPI\Client\Model\OrderShipmentAddBatchPayloadInner[]',
+        'idempotency_key' => 'string'
     ];
 
     /**
@@ -69,7 +70,8 @@ class OrderShipmentAddBatch implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'payload' => null
+        'payload' => null,
+        'idempotency_key' => null
     ];
 
     /**
@@ -78,7 +80,8 @@ class OrderShipmentAddBatch implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'payload' => false
+        'payload' => false,
+        'idempotency_key' => false
     ];
 
     /**
@@ -167,7 +170,8 @@ class OrderShipmentAddBatch implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'payload' => 'payload'
+        'payload' => 'payload',
+        'idempotency_key' => 'idempotency_key'
     ];
 
     /**
@@ -176,7 +180,8 @@ class OrderShipmentAddBatch implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'payload' => 'setPayload'
+        'payload' => 'setPayload',
+        'idempotency_key' => 'setIdempotencyKey'
     ];
 
     /**
@@ -185,7 +190,8 @@ class OrderShipmentAddBatch implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'payload' => 'getPayload'
+        'payload' => 'getPayload',
+        'idempotency_key' => 'getIdempotencyKey'
     ];
 
     /**
@@ -246,6 +252,7 @@ class OrderShipmentAddBatch implements ModelInterface, ArrayAccess, \JsonSeriali
     public function __construct(?array $data = null)
     {
         $this->setIfExists('payload', $data ?? [], null);
+        $this->setIfExists('idempotency_key', $data ?? [], null);
     }
 
     /**
@@ -331,6 +338,33 @@ class OrderShipmentAddBatch implements ModelInterface, ArrayAccess, \JsonSeriali
             throw new \InvalidArgumentException('invalid length for $payload when calling OrderShipmentAddBatch., number of items must be greater than or equal to 1.');
         }
         $this->container['payload'] = $payload;
+
+        return $this;
+    }
+
+    /**
+     * Gets idempotency_key
+     *
+     * @return string|null
+     */
+    public function getIdempotencyKey()
+    {
+        return $this->container['idempotency_key'];
+    }
+
+    /**
+     * Sets idempotency_key
+     *
+     * @param string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
+     *
+     * @return self
+     */
+    public function setIdempotencyKey($idempotency_key)
+    {
+        if (is_null($idempotency_key)) {
+            throw new \InvalidArgumentException('non-nullable idempotency_key cannot be null');
+        }
+        $this->container['idempotency_key'] = $idempotency_key;
 
         return $this;
     }

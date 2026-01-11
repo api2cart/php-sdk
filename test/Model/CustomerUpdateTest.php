@@ -225,6 +225,15 @@ class CustomerUpdateTest extends TestCase
     }
 
     /**
+     * Test attribute "idempotency_key"
+     */
+    public function testPropertyIdempotencyKey()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "address"
      */
     public function testPropertyAddress()

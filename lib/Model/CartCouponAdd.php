@@ -76,7 +76,8 @@ class CartCouponAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'include_tax' => 'bool',
         'store_id' => 'string',
         'free_cash_on_delivery' => 'bool',
-        'customer_id' => 'string'
+        'customer_id' => 'string',
+        'idempotency_key' => 'string'
     ];
 
     /**
@@ -105,7 +106,8 @@ class CartCouponAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'include_tax' => null,
         'store_id' => null,
         'free_cash_on_delivery' => null,
-        'customer_id' => null
+        'customer_id' => null,
+        'idempotency_key' => null
     ];
 
     /**
@@ -132,7 +134,8 @@ class CartCouponAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'include_tax' => false,
         'store_id' => false,
         'free_cash_on_delivery' => false,
-        'customer_id' => false
+        'customer_id' => false,
+        'idempotency_key' => false
     ];
 
     /**
@@ -239,7 +242,8 @@ class CartCouponAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'include_tax' => 'include_tax',
         'store_id' => 'store_id',
         'free_cash_on_delivery' => 'free_cash_on_delivery',
-        'customer_id' => 'customer_id'
+        'customer_id' => 'customer_id',
+        'idempotency_key' => 'idempotency_key'
     ];
 
     /**
@@ -266,7 +270,8 @@ class CartCouponAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'include_tax' => 'setIncludeTax',
         'store_id' => 'setStoreId',
         'free_cash_on_delivery' => 'setFreeCashOnDelivery',
-        'customer_id' => 'setCustomerId'
+        'customer_id' => 'setCustomerId',
+        'idempotency_key' => 'setIdempotencyKey'
     ];
 
     /**
@@ -293,7 +298,8 @@ class CartCouponAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'include_tax' => 'getIncludeTax',
         'store_id' => 'getStoreId',
         'free_cash_on_delivery' => 'getFreeCashOnDelivery',
-        'customer_id' => 'getCustomerId'
+        'customer_id' => 'getCustomerId',
+        'idempotency_key' => 'getIdempotencyKey'
     ];
 
     /**
@@ -419,6 +425,7 @@ class CartCouponAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('store_id', $data ?? [], null);
         $this->setIfExists('free_cash_on_delivery', $data ?? [], null);
         $this->setIfExists('customer_id', $data ?? [], null);
+        $this->setIfExists('idempotency_key', $data ?? [], null);
     }
 
     /**
@@ -1044,6 +1051,33 @@ class CartCouponAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable customer_id cannot be null');
         }
         $this->container['customer_id'] = $customer_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets idempotency_key
+     *
+     * @return string|null
+     */
+    public function getIdempotencyKey()
+    {
+        return $this->container['idempotency_key'];
+    }
+
+    /**
+     * Sets idempotency_key
+     *
+     * @param string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
+     *
+     * @return self
+     */
+    public function setIdempotencyKey($idempotency_key)
+    {
+        if (is_null($idempotency_key)) {
+            throw new \InvalidArgumentException('non-nullable idempotency_key cannot be null');
+        }
+        $this->container['idempotency_key'] = $idempotency_key;
 
         return $this;
     }

@@ -67,6 +67,7 @@ class OrderReturnUpdate implements ModelInterface, ArrayAccess, \JsonSerializabl
         'comment' => 'string',
         'send_notifications' => 'bool',
         'reject_reason' => 'string',
+        'idempotency_key' => 'string',
         'order_products' => '\OpenAPI\Client\Model\OrderReturnUpdateOrderProductsInner[]'
     ];
 
@@ -87,6 +88,7 @@ class OrderReturnUpdate implements ModelInterface, ArrayAccess, \JsonSerializabl
         'comment' => null,
         'send_notifications' => null,
         'reject_reason' => null,
+        'idempotency_key' => null,
         'order_products' => null
     ];
 
@@ -105,6 +107,7 @@ class OrderReturnUpdate implements ModelInterface, ArrayAccess, \JsonSerializabl
         'comment' => false,
         'send_notifications' => false,
         'reject_reason' => false,
+        'idempotency_key' => false,
         'order_products' => false
     ];
 
@@ -203,6 +206,7 @@ class OrderReturnUpdate implements ModelInterface, ArrayAccess, \JsonSerializabl
         'comment' => 'comment',
         'send_notifications' => 'send_notifications',
         'reject_reason' => 'reject_reason',
+        'idempotency_key' => 'idempotency_key',
         'order_products' => 'order_products'
     ];
 
@@ -221,6 +225,7 @@ class OrderReturnUpdate implements ModelInterface, ArrayAccess, \JsonSerializabl
         'comment' => 'setComment',
         'send_notifications' => 'setSendNotifications',
         'reject_reason' => 'setRejectReason',
+        'idempotency_key' => 'setIdempotencyKey',
         'order_products' => 'setOrderProducts'
     ];
 
@@ -239,6 +244,7 @@ class OrderReturnUpdate implements ModelInterface, ArrayAccess, \JsonSerializabl
         'comment' => 'getComment',
         'send_notifications' => 'getSendNotifications',
         'reject_reason' => 'getRejectReason',
+        'idempotency_key' => 'getIdempotencyKey',
         'order_products' => 'getOrderProducts'
     ];
 
@@ -308,6 +314,7 @@ class OrderReturnUpdate implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('comment', $data ?? [], null);
         $this->setIfExists('send_notifications', $data ?? [], false);
         $this->setIfExists('reject_reason', $data ?? [], null);
+        $this->setIfExists('idempotency_key', $data ?? [], null);
         $this->setIfExists('order_products', $data ?? [], null);
     }
 
@@ -598,6 +605,33 @@ class OrderReturnUpdate implements ModelInterface, ArrayAccess, \JsonSerializabl
             throw new \InvalidArgumentException('non-nullable reject_reason cannot be null');
         }
         $this->container['reject_reason'] = $reject_reason;
+
+        return $this;
+    }
+
+    /**
+     * Gets idempotency_key
+     *
+     * @return string|null
+     */
+    public function getIdempotencyKey()
+    {
+        return $this->container['idempotency_key'];
+    }
+
+    /**
+     * Sets idempotency_key
+     *
+     * @param string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
+     *
+     * @return self
+     */
+    public function setIdempotencyKey($idempotency_key)
+    {
+        if (is_null($idempotency_key)) {
+            throw new \InvalidArgumentException('non-nullable idempotency_key cannot be null');
+        }
+        $this->container['idempotency_key'] = $idempotency_key;
 
         return $this;
     }

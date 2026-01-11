@@ -1,6 +1,6 @@
 <?php
 /**
- * ProductVariantAddBatchTest
+ * CategoryDeleteBatchTest
  *
  * PHP version 7.4
  *
@@ -32,15 +32,15 @@ namespace OpenAPI\Client\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ProductVariantAddBatchTest Class Doc Comment
+ * CategoryDeleteBatchTest Class Doc Comment
  *
  * @category    Class
- * @description ProductVariantAddBatch
+ * @description CategoryDeleteBatch
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class ProductVariantAddBatchTest extends TestCase
+class CategoryDeleteBatchTest extends TestCase
 {
 
     /**
@@ -72,27 +72,9 @@ class ProductVariantAddBatchTest extends TestCase
     }
 
     /**
-     * Test "ProductVariantAddBatch"
+     * Test "CategoryDeleteBatch"
      */
-    public function testProductVariantAddBatch()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "clear_cache"
-     */
-    public function testPropertyClearCache()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "reindex"
-     */
-    public function testPropertyReindex()
+    public function testCategoryDeleteBatch()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -102,15 +84,6 @@ class ProductVariantAddBatchTest extends TestCase
      * Test attribute "payload"
      */
     public function testPropertyPayload()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "idempotency_key"
-     */
-    public function testPropertyIdempotencyKey()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

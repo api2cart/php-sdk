@@ -1221,15 +1221,16 @@ class CartApi
      * @param  bool|null $include_tax Indicates whether to apply a discount for taxes. (optional, default to false)
      * @param  bool|null $include_shipping Indicates whether to apply a discount for shipping. (optional, default to false)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartCouponConditionAdd'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\BasketLiveShippingServiceDelete200Response
      */
-    public function cartCouponConditionAdd($coupon_id, $entity, $key, $operator, $value, $target = 'coupon_prerequisite', $include_tax = false, $include_shipping = false, $store_id = null, string $contentType = self::contentTypes['cartCouponConditionAdd'][0])
+    public function cartCouponConditionAdd($coupon_id, $entity, $key, $operator, $value, $target = 'coupon_prerequisite', $include_tax = false, $include_shipping = false, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['cartCouponConditionAdd'][0])
     {
-        list($response) = $this->cartCouponConditionAddWithHttpInfo($coupon_id, $entity, $key, $operator, $value, $target, $include_tax, $include_shipping, $store_id, $contentType);
+        list($response) = $this->cartCouponConditionAddWithHttpInfo($coupon_id, $entity, $key, $operator, $value, $target, $include_tax, $include_shipping, $store_id, $idempotency_key, $contentType);
         return $response;
     }
 
@@ -1247,15 +1248,16 @@ class CartApi
      * @param  bool|null $include_tax Indicates whether to apply a discount for taxes. (optional, default to false)
      * @param  bool|null $include_shipping Indicates whether to apply a discount for shipping. (optional, default to false)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartCouponConditionAdd'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\BasketLiveShippingServiceDelete200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cartCouponConditionAddWithHttpInfo($coupon_id, $entity, $key, $operator, $value, $target = 'coupon_prerequisite', $include_tax = false, $include_shipping = false, $store_id = null, string $contentType = self::contentTypes['cartCouponConditionAdd'][0])
+    public function cartCouponConditionAddWithHttpInfo($coupon_id, $entity, $key, $operator, $value, $target = 'coupon_prerequisite', $include_tax = false, $include_shipping = false, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['cartCouponConditionAdd'][0])
     {
-        $request = $this->cartCouponConditionAddRequest($coupon_id, $entity, $key, $operator, $value, $target, $include_tax, $include_shipping, $store_id, $contentType);
+        $request = $this->cartCouponConditionAddRequest($coupon_id, $entity, $key, $operator, $value, $target, $include_tax, $include_shipping, $store_id, $idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1380,14 +1382,15 @@ class CartApi
      * @param  bool|null $include_tax Indicates whether to apply a discount for taxes. (optional, default to false)
      * @param  bool|null $include_shipping Indicates whether to apply a discount for shipping. (optional, default to false)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartCouponConditionAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartCouponConditionAddAsync($coupon_id, $entity, $key, $operator, $value, $target = 'coupon_prerequisite', $include_tax = false, $include_shipping = false, $store_id = null, string $contentType = self::contentTypes['cartCouponConditionAdd'][0])
+    public function cartCouponConditionAddAsync($coupon_id, $entity, $key, $operator, $value, $target = 'coupon_prerequisite', $include_tax = false, $include_shipping = false, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['cartCouponConditionAdd'][0])
     {
-        return $this->cartCouponConditionAddAsyncWithHttpInfo($coupon_id, $entity, $key, $operator, $value, $target, $include_tax, $include_shipping, $store_id, $contentType)
+        return $this->cartCouponConditionAddAsyncWithHttpInfo($coupon_id, $entity, $key, $operator, $value, $target, $include_tax, $include_shipping, $store_id, $idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1409,15 +1412,16 @@ class CartApi
      * @param  bool|null $include_tax Indicates whether to apply a discount for taxes. (optional, default to false)
      * @param  bool|null $include_shipping Indicates whether to apply a discount for shipping. (optional, default to false)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartCouponConditionAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartCouponConditionAddAsyncWithHttpInfo($coupon_id, $entity, $key, $operator, $value, $target = 'coupon_prerequisite', $include_tax = false, $include_shipping = false, $store_id = null, string $contentType = self::contentTypes['cartCouponConditionAdd'][0])
+    public function cartCouponConditionAddAsyncWithHttpInfo($coupon_id, $entity, $key, $operator, $value, $target = 'coupon_prerequisite', $include_tax = false, $include_shipping = false, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['cartCouponConditionAdd'][0])
     {
         $returnType = '\OpenAPI\Client\Model\BasketLiveShippingServiceDelete200Response';
-        $request = $this->cartCouponConditionAddRequest($coupon_id, $entity, $key, $operator, $value, $target, $include_tax, $include_shipping, $store_id, $contentType);
+        $request = $this->cartCouponConditionAddRequest($coupon_id, $entity, $key, $operator, $value, $target, $include_tax, $include_shipping, $store_id, $idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1467,12 +1471,13 @@ class CartApi
      * @param  bool|null $include_tax Indicates whether to apply a discount for taxes. (optional, default to false)
      * @param  bool|null $include_shipping Indicates whether to apply a discount for shipping. (optional, default to false)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartCouponConditionAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function cartCouponConditionAddRequest($coupon_id, $entity, $key, $operator, $value, $target = 'coupon_prerequisite', $include_tax = false, $include_shipping = false, $store_id = null, string $contentType = self::contentTypes['cartCouponConditionAdd'][0])
+    public function cartCouponConditionAddRequest($coupon_id, $entity, $key, $operator, $value, $target = 'coupon_prerequisite', $include_tax = false, $include_shipping = false, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['cartCouponConditionAdd'][0])
     {
 
         // verify the required parameter 'coupon_id' is set
@@ -1509,6 +1514,7 @@ class CartApi
                 'Missing the required parameter $value when calling cartCouponConditionAdd'
             );
         }
+
 
 
 
@@ -1598,6 +1604,15 @@ class CartApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $store_id,
             'store_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idempotency_key,
+            'idempotency_key', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -3239,15 +3254,16 @@ class CartApi
      * @param  string|null $recipient_email Gift card recipient email (optional)
      * @param  string|null $recipient_name Gift card recipient name (optional)
      * @param  string|null $owner_name Gift card owner name (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartGiftcardAdd'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CartGiftcardAdd200Response
      */
-    public function cartGiftcardAdd($amount, $code = null, $owner_email = null, $recipient_email = null, $recipient_name = null, $owner_name = null, string $contentType = self::contentTypes['cartGiftcardAdd'][0])
+    public function cartGiftcardAdd($amount, $code = null, $owner_email = null, $recipient_email = null, $recipient_name = null, $owner_name = null, $idempotency_key = null, string $contentType = self::contentTypes['cartGiftcardAdd'][0])
     {
-        list($response) = $this->cartGiftcardAddWithHttpInfo($amount, $code, $owner_email, $recipient_email, $recipient_name, $owner_name, $contentType);
+        list($response) = $this->cartGiftcardAddWithHttpInfo($amount, $code, $owner_email, $recipient_email, $recipient_name, $owner_name, $idempotency_key, $contentType);
         return $response;
     }
 
@@ -3262,15 +3278,16 @@ class CartApi
      * @param  string|null $recipient_email Gift card recipient email (optional)
      * @param  string|null $recipient_name Gift card recipient name (optional)
      * @param  string|null $owner_name Gift card owner name (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartGiftcardAdd'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CartGiftcardAdd200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cartGiftcardAddWithHttpInfo($amount, $code = null, $owner_email = null, $recipient_email = null, $recipient_name = null, $owner_name = null, string $contentType = self::contentTypes['cartGiftcardAdd'][0])
+    public function cartGiftcardAddWithHttpInfo($amount, $code = null, $owner_email = null, $recipient_email = null, $recipient_name = null, $owner_name = null, $idempotency_key = null, string $contentType = self::contentTypes['cartGiftcardAdd'][0])
     {
-        $request = $this->cartGiftcardAddRequest($amount, $code, $owner_email, $recipient_email, $recipient_name, $owner_name, $contentType);
+        $request = $this->cartGiftcardAddRequest($amount, $code, $owner_email, $recipient_email, $recipient_name, $owner_name, $idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3392,14 +3409,15 @@ class CartApi
      * @param  string|null $recipient_email Gift card recipient email (optional)
      * @param  string|null $recipient_name Gift card recipient name (optional)
      * @param  string|null $owner_name Gift card owner name (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartGiftcardAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartGiftcardAddAsync($amount, $code = null, $owner_email = null, $recipient_email = null, $recipient_name = null, $owner_name = null, string $contentType = self::contentTypes['cartGiftcardAdd'][0])
+    public function cartGiftcardAddAsync($amount, $code = null, $owner_email = null, $recipient_email = null, $recipient_name = null, $owner_name = null, $idempotency_key = null, string $contentType = self::contentTypes['cartGiftcardAdd'][0])
     {
-        return $this->cartGiftcardAddAsyncWithHttpInfo($amount, $code, $owner_email, $recipient_email, $recipient_name, $owner_name, $contentType)
+        return $this->cartGiftcardAddAsyncWithHttpInfo($amount, $code, $owner_email, $recipient_email, $recipient_name, $owner_name, $idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3418,15 +3436,16 @@ class CartApi
      * @param  string|null $recipient_email Gift card recipient email (optional)
      * @param  string|null $recipient_name Gift card recipient name (optional)
      * @param  string|null $owner_name Gift card owner name (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartGiftcardAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartGiftcardAddAsyncWithHttpInfo($amount, $code = null, $owner_email = null, $recipient_email = null, $recipient_name = null, $owner_name = null, string $contentType = self::contentTypes['cartGiftcardAdd'][0])
+    public function cartGiftcardAddAsyncWithHttpInfo($amount, $code = null, $owner_email = null, $recipient_email = null, $recipient_name = null, $owner_name = null, $idempotency_key = null, string $contentType = self::contentTypes['cartGiftcardAdd'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CartGiftcardAdd200Response';
-        $request = $this->cartGiftcardAddRequest($amount, $code, $owner_email, $recipient_email, $recipient_name, $owner_name, $contentType);
+        $request = $this->cartGiftcardAddRequest($amount, $code, $owner_email, $recipient_email, $recipient_name, $owner_name, $idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3473,12 +3492,13 @@ class CartApi
      * @param  string|null $recipient_email Gift card recipient email (optional)
      * @param  string|null $recipient_name Gift card recipient name (optional)
      * @param  string|null $owner_name Gift card owner name (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartGiftcardAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function cartGiftcardAddRequest($amount, $code = null, $owner_email = null, $recipient_email = null, $recipient_name = null, $owner_name = null, string $contentType = self::contentTypes['cartGiftcardAdd'][0])
+    public function cartGiftcardAddRequest($amount, $code = null, $owner_email = null, $recipient_email = null, $recipient_name = null, $owner_name = null, $idempotency_key = null, string $contentType = self::contentTypes['cartGiftcardAdd'][0])
     {
 
         // verify the required parameter 'amount' is set
@@ -3487,6 +3507,7 @@ class CartApi
                 'Missing the required parameter $amount when calling cartGiftcardAdd'
             );
         }
+
 
 
 
@@ -3550,6 +3571,15 @@ class CartApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $owner_name,
             'owner_name', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idempotency_key,
+            'idempotency_key', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -5481,15 +5511,16 @@ class CartApi
      * @param  string|null $entity Entity (optional, default to 'product')
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartMetaDataSet'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\AttributeAdd200Response
      */
-    public function cartMetaDataSet($entity_id, $key, $value, $namespace, $entity = 'product', $store_id = null, $lang_id = null, string $contentType = self::contentTypes['cartMetaDataSet'][0])
+    public function cartMetaDataSet($entity_id, $key, $value, $namespace, $entity = 'product', $store_id = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['cartMetaDataSet'][0])
     {
-        list($response) = $this->cartMetaDataSetWithHttpInfo($entity_id, $key, $value, $namespace, $entity, $store_id, $lang_id, $contentType);
+        list($response) = $this->cartMetaDataSetWithHttpInfo($entity_id, $key, $value, $namespace, $entity, $store_id, $lang_id, $idempotency_key, $contentType);
         return $response;
     }
 
@@ -5505,15 +5536,16 @@ class CartApi
      * @param  string|null $entity Entity (optional, default to 'product')
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartMetaDataSet'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\AttributeAdd200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cartMetaDataSetWithHttpInfo($entity_id, $key, $value, $namespace, $entity = 'product', $store_id = null, $lang_id = null, string $contentType = self::contentTypes['cartMetaDataSet'][0])
+    public function cartMetaDataSetWithHttpInfo($entity_id, $key, $value, $namespace, $entity = 'product', $store_id = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['cartMetaDataSet'][0])
     {
-        $request = $this->cartMetaDataSetRequest($entity_id, $key, $value, $namespace, $entity, $store_id, $lang_id, $contentType);
+        $request = $this->cartMetaDataSetRequest($entity_id, $key, $value, $namespace, $entity, $store_id, $lang_id, $idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5636,14 +5668,15 @@ class CartApi
      * @param  string|null $entity Entity (optional, default to 'product')
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartMetaDataSet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartMetaDataSetAsync($entity_id, $key, $value, $namespace, $entity = 'product', $store_id = null, $lang_id = null, string $contentType = self::contentTypes['cartMetaDataSet'][0])
+    public function cartMetaDataSetAsync($entity_id, $key, $value, $namespace, $entity = 'product', $store_id = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['cartMetaDataSet'][0])
     {
-        return $this->cartMetaDataSetAsyncWithHttpInfo($entity_id, $key, $value, $namespace, $entity, $store_id, $lang_id, $contentType)
+        return $this->cartMetaDataSetAsyncWithHttpInfo($entity_id, $key, $value, $namespace, $entity, $store_id, $lang_id, $idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5663,15 +5696,16 @@ class CartApi
      * @param  string|null $entity Entity (optional, default to 'product')
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartMetaDataSet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartMetaDataSetAsyncWithHttpInfo($entity_id, $key, $value, $namespace, $entity = 'product', $store_id = null, $lang_id = null, string $contentType = self::contentTypes['cartMetaDataSet'][0])
+    public function cartMetaDataSetAsyncWithHttpInfo($entity_id, $key, $value, $namespace, $entity = 'product', $store_id = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['cartMetaDataSet'][0])
     {
         $returnType = '\OpenAPI\Client\Model\AttributeAdd200Response';
-        $request = $this->cartMetaDataSetRequest($entity_id, $key, $value, $namespace, $entity, $store_id, $lang_id, $contentType);
+        $request = $this->cartMetaDataSetRequest($entity_id, $key, $value, $namespace, $entity, $store_id, $lang_id, $idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5719,12 +5753,13 @@ class CartApi
      * @param  string|null $entity Entity (optional, default to 'product')
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartMetaDataSet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function cartMetaDataSetRequest($entity_id, $key, $value, $namespace, $entity = 'product', $store_id = null, $lang_id = null, string $contentType = self::contentTypes['cartMetaDataSet'][0])
+    public function cartMetaDataSetRequest($entity_id, $key, $value, $namespace, $entity = 'product', $store_id = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['cartMetaDataSet'][0])
     {
 
         // verify the required parameter 'entity_id' is set
@@ -5754,6 +5789,7 @@ class CartApi
                 'Missing the required parameter $namespace when calling cartMetaDataSet'
             );
         }
+
 
 
 
@@ -5824,6 +5860,15 @@ class CartApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $lang_id,
             'lang_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idempotency_key,
+            'idempotency_key', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -6941,15 +6986,16 @@ class CartApi
      * @param  string|null $scope The page or pages on the online store where the script should be included (optional, default to 'storefront')
      * @param  string|null $events Event for run scripts (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartScriptAdd'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CartScriptAdd200Response
      */
-    public function cartScriptAdd($name = null, $description = null, $html = null, $src = null, $load_method = null, $scope = 'storefront', $events = null, $store_id = null, string $contentType = self::contentTypes['cartScriptAdd'][0])
+    public function cartScriptAdd($name = null, $description = null, $html = null, $src = null, $load_method = null, $scope = 'storefront', $events = null, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['cartScriptAdd'][0])
     {
-        list($response) = $this->cartScriptAddWithHttpInfo($name, $description, $html, $src, $load_method, $scope, $events, $store_id, $contentType);
+        list($response) = $this->cartScriptAddWithHttpInfo($name, $description, $html, $src, $load_method, $scope, $events, $store_id, $idempotency_key, $contentType);
         return $response;
     }
 
@@ -6966,15 +7012,16 @@ class CartApi
      * @param  string|null $scope The page or pages on the online store where the script should be included (optional, default to 'storefront')
      * @param  string|null $events Event for run scripts (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartScriptAdd'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CartScriptAdd200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cartScriptAddWithHttpInfo($name = null, $description = null, $html = null, $src = null, $load_method = null, $scope = 'storefront', $events = null, $store_id = null, string $contentType = self::contentTypes['cartScriptAdd'][0])
+    public function cartScriptAddWithHttpInfo($name = null, $description = null, $html = null, $src = null, $load_method = null, $scope = 'storefront', $events = null, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['cartScriptAdd'][0])
     {
-        $request = $this->cartScriptAddRequest($name, $description, $html, $src, $load_method, $scope, $events, $store_id, $contentType);
+        $request = $this->cartScriptAddRequest($name, $description, $html, $src, $load_method, $scope, $events, $store_id, $idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7098,14 +7145,15 @@ class CartApi
      * @param  string|null $scope The page or pages on the online store where the script should be included (optional, default to 'storefront')
      * @param  string|null $events Event for run scripts (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartScriptAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartScriptAddAsync($name = null, $description = null, $html = null, $src = null, $load_method = null, $scope = 'storefront', $events = null, $store_id = null, string $contentType = self::contentTypes['cartScriptAdd'][0])
+    public function cartScriptAddAsync($name = null, $description = null, $html = null, $src = null, $load_method = null, $scope = 'storefront', $events = null, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['cartScriptAdd'][0])
     {
-        return $this->cartScriptAddAsyncWithHttpInfo($name, $description, $html, $src, $load_method, $scope, $events, $store_id, $contentType)
+        return $this->cartScriptAddAsyncWithHttpInfo($name, $description, $html, $src, $load_method, $scope, $events, $store_id, $idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7126,15 +7174,16 @@ class CartApi
      * @param  string|null $scope The page or pages on the online store where the script should be included (optional, default to 'storefront')
      * @param  string|null $events Event for run scripts (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartScriptAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartScriptAddAsyncWithHttpInfo($name = null, $description = null, $html = null, $src = null, $load_method = null, $scope = 'storefront', $events = null, $store_id = null, string $contentType = self::contentTypes['cartScriptAdd'][0])
+    public function cartScriptAddAsyncWithHttpInfo($name = null, $description = null, $html = null, $src = null, $load_method = null, $scope = 'storefront', $events = null, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['cartScriptAdd'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CartScriptAdd200Response';
-        $request = $this->cartScriptAddRequest($name, $description, $html, $src, $load_method, $scope, $events, $store_id, $contentType);
+        $request = $this->cartScriptAddRequest($name, $description, $html, $src, $load_method, $scope, $events, $store_id, $idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7183,13 +7232,15 @@ class CartApi
      * @param  string|null $scope The page or pages on the online store where the script should be included (optional, default to 'storefront')
      * @param  string|null $events Event for run scripts (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartScriptAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function cartScriptAddRequest($name = null, $description = null, $html = null, $src = null, $load_method = null, $scope = 'storefront', $events = null, $store_id = null, string $contentType = self::contentTypes['cartScriptAdd'][0])
+    public function cartScriptAddRequest($name = null, $description = null, $html = null, $src = null, $load_method = null, $scope = 'storefront', $events = null, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['cartScriptAdd'][0])
     {
+
 
 
 
@@ -7274,6 +7325,15 @@ class CartApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $store_id,
             'store_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idempotency_key,
+            'idempotency_key', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

@@ -1320,6 +1320,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     public const CART_ID_PRESTASHOP_API = 'PrestashopApi';
     public const CART_ID_SS_PREMIUM = 'SSPremium';
     public const CART_ID_SALLA = 'Salla';
+    public const CART_ID_SCAPI = 'SCAPI';
     public const CART_ID_SHOPIFY = 'Shopify';
     public const CART_ID_SHOPEE = 'Shopee';
     public const CART_ID_SHOPLAZZA = 'Shoplazza';
@@ -1399,6 +1400,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             self::CART_ID_PRESTASHOP_API,
             self::CART_ID_SS_PREMIUM,
             self::CART_ID_SALLA,
+            self::CART_ID_SCAPI,
             self::CART_ID_SHOPIFY,
             self::CART_ID_SHOPEE,
             self::CART_ID_SHOPLAZZA,

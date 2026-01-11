@@ -1,6 +1,6 @@
 <?php
 /**
- * CategoryAddBatch
+ * CategoryDeleteBatch
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * CategoryAddBatch Class Doc Comment
+ * CategoryDeleteBatch Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -41,7 +41,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CategoryAddBatch implements ModelInterface, ArrayAccess, \JsonSerializable
+class CategoryDeleteBatch implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class CategoryAddBatch implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CategoryAddBatch';
+    protected static $openAPIModelName = 'CategoryDeleteBatch';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,7 @@ class CategoryAddBatch implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payload' => '\OpenAPI\Client\Model\CategoryAddBatchPayloadInner[]',
-        'idempotency_key' => 'string'
+        'payload' => '\OpenAPI\Client\Model\CategoryDeleteBatchPayloadInner[]'
     ];
 
     /**
@@ -70,8 +69,7 @@ class CategoryAddBatch implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'payload' => null,
-        'idempotency_key' => null
+        'payload' => null
     ];
 
     /**
@@ -80,8 +78,7 @@ class CategoryAddBatch implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'payload' => false,
-        'idempotency_key' => false
+        'payload' => false
     ];
 
     /**
@@ -170,8 +167,7 @@ class CategoryAddBatch implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'payload' => 'payload',
-        'idempotency_key' => 'idempotency_key'
+        'payload' => 'payload'
     ];
 
     /**
@@ -180,8 +176,7 @@ class CategoryAddBatch implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'payload' => 'setPayload',
-        'idempotency_key' => 'setIdempotencyKey'
+        'payload' => 'setPayload'
     ];
 
     /**
@@ -190,8 +185,7 @@ class CategoryAddBatch implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'payload' => 'getPayload',
-        'idempotency_key' => 'getIdempotencyKey'
+        'payload' => 'getPayload'
     ];
 
     /**
@@ -252,7 +246,6 @@ class CategoryAddBatch implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(?array $data = null)
     {
         $this->setIfExists('payload', $data ?? [], null);
-        $this->setIfExists('idempotency_key', $data ?? [], null);
     }
 
     /**
@@ -311,7 +304,7 @@ class CategoryAddBatch implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets payload
      *
-     * @return \OpenAPI\Client\Model\CategoryAddBatchPayloadInner[]
+     * @return \OpenAPI\Client\Model\CategoryDeleteBatchPayloadInner[]
      */
     public function getPayload()
     {
@@ -321,7 +314,7 @@ class CategoryAddBatch implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets payload
      *
-     * @param \OpenAPI\Client\Model\CategoryAddBatchPayloadInner[] $payload Contains an array of categories objects. The list of properties may vary depending on the specific platform.
+     * @param \OpenAPI\Client\Model\CategoryDeleteBatchPayloadInner[] $payload Contains an array of category IDs to delete.
      *
      * @return self
      */
@@ -332,39 +325,12 @@ class CategoryAddBatch implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         if ((count($payload) > 250)) {
-            throw new \InvalidArgumentException('invalid value for $payload when calling CategoryAddBatch., number of items must be less than or equal to 250.');
+            throw new \InvalidArgumentException('invalid value for $payload when calling CategoryDeleteBatch., number of items must be less than or equal to 250.');
         }
         if ((count($payload) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $payload when calling CategoryAddBatch., number of items must be greater than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $payload when calling CategoryDeleteBatch., number of items must be greater than or equal to 1.');
         }
         $this->container['payload'] = $payload;
-
-        return $this;
-    }
-
-    /**
-     * Gets idempotency_key
-     *
-     * @return string|null
-     */
-    public function getIdempotencyKey()
-    {
-        return $this->container['idempotency_key'];
-    }
-
-    /**
-     * Sets idempotency_key
-     *
-     * @param string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
-     *
-     * @return self
-     */
-    public function setIdempotencyKey($idempotency_key)
-    {
-        if (is_null($idempotency_key)) {
-            throw new \InvalidArgumentException('non-nullable idempotency_key cannot be null');
-        }
-        $this->container['idempotency_key'] = $idempotency_key;
 
         return $this;
     }

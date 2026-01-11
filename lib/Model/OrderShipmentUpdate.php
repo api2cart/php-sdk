@@ -69,7 +69,8 @@ class OrderShipmentUpdate implements ModelInterface, ArrayAccess, \JsonSerializa
         'replace' => 'bool',
         'send_notifications' => 'bool',
         'tracking_provider' => 'string',
-        'items' => '\OpenAPI\Client\Model\OrderShipmentAddItemsInner[]'
+        'items' => '\OpenAPI\Client\Model\OrderShipmentAddItemsInner[]',
+        'idempotency_key' => 'string'
     ];
 
     /**
@@ -91,7 +92,8 @@ class OrderShipmentUpdate implements ModelInterface, ArrayAccess, \JsonSerializa
         'replace' => null,
         'send_notifications' => null,
         'tracking_provider' => null,
-        'items' => null
+        'items' => null,
+        'idempotency_key' => null
     ];
 
     /**
@@ -111,7 +113,8 @@ class OrderShipmentUpdate implements ModelInterface, ArrayAccess, \JsonSerializa
         'replace' => false,
         'send_notifications' => false,
         'tracking_provider' => false,
-        'items' => false
+        'items' => false,
+        'idempotency_key' => false
     ];
 
     /**
@@ -211,7 +214,8 @@ class OrderShipmentUpdate implements ModelInterface, ArrayAccess, \JsonSerializa
         'replace' => 'replace',
         'send_notifications' => 'send_notifications',
         'tracking_provider' => 'tracking_provider',
-        'items' => 'items'
+        'items' => 'items',
+        'idempotency_key' => 'idempotency_key'
     ];
 
     /**
@@ -231,7 +235,8 @@ class OrderShipmentUpdate implements ModelInterface, ArrayAccess, \JsonSerializa
         'replace' => 'setReplace',
         'send_notifications' => 'setSendNotifications',
         'tracking_provider' => 'setTrackingProvider',
-        'items' => 'setItems'
+        'items' => 'setItems',
+        'idempotency_key' => 'setIdempotencyKey'
     ];
 
     /**
@@ -251,7 +256,8 @@ class OrderShipmentUpdate implements ModelInterface, ArrayAccess, \JsonSerializa
         'replace' => 'getReplace',
         'send_notifications' => 'getSendNotifications',
         'tracking_provider' => 'getTrackingProvider',
-        'items' => 'getItems'
+        'items' => 'getItems',
+        'idempotency_key' => 'getIdempotencyKey'
     ];
 
     /**
@@ -323,6 +329,7 @@ class OrderShipmentUpdate implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->setIfExists('send_notifications', $data ?? [], false);
         $this->setIfExists('tracking_provider', $data ?? [], null);
         $this->setIfExists('items', $data ?? [], null);
+        $this->setIfExists('idempotency_key', $data ?? [], null);
     }
 
     /**
@@ -690,6 +697,33 @@ class OrderShipmentUpdate implements ModelInterface, ArrayAccess, \JsonSerializa
             throw new \InvalidArgumentException('non-nullable items cannot be null');
         }
         $this->container['items'] = $items;
+
+        return $this;
+    }
+
+    /**
+     * Gets idempotency_key
+     *
+     * @return string|null
+     */
+    public function getIdempotencyKey()
+    {
+        return $this->container['idempotency_key'];
+    }
+
+    /**
+     * Sets idempotency_key
+     *
+     * @param string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
+     *
+     * @return self
+     */
+    public function setIdempotencyKey($idempotency_key)
+    {
+        if (is_null($idempotency_key)) {
+            throw new \InvalidArgumentException('non-nullable idempotency_key cannot be null');
+        }
+        $this->container['idempotency_key'] = $idempotency_key;
 
         return $this;
     }

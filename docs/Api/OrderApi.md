@@ -1723,7 +1723,7 @@ try {
 ## `orderUpdate()`
 
 ```php
-orderUpdate($order_id, $store_id, $order_status, $financial_status, $fulfillment_status, $cancellation_reason, $order_payment_method, $comment, $admin_comment, $admin_private_comment, $invoice_admin_comment, $date_modified, $date_finished, $send_notifications, $create_invoice, $origin, $tags): \OpenAPI\Client\Model\AccountConfigUpdate200Response
+orderUpdate($order_id, $store_id, $order_status, $financial_status, $fulfillment_status, $cancellation_reason, $order_payment_method, $comment, $admin_comment, $admin_private_comment, $invoice_admin_comment, $date_modified, $date_finished, $send_notifications, $create_invoice, $origin, $tags, $idempotency_key): \OpenAPI\Client\Model\AccountConfigUpdate200Response
 ```
 
 order.update
@@ -1771,9 +1771,10 @@ $send_notifications = true; // bool | Send notifications to customer after order
 $create_invoice = true; // bool | Determines whether an invoice should be created if it has not already been created
 $origin = newsletter; // string | The source of the order
 $tags = tag1,tag2; // string | Order tags
+$idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->orderUpdate($order_id, $store_id, $order_status, $financial_status, $fulfillment_status, $cancellation_reason, $order_payment_method, $comment, $admin_comment, $admin_private_comment, $invoice_admin_comment, $date_modified, $date_finished, $send_notifications, $create_invoice, $origin, $tags);
+    $result = $apiInstance->orderUpdate($order_id, $store_id, $order_status, $financial_status, $fulfillment_status, $cancellation_reason, $order_payment_method, $comment, $admin_comment, $admin_private_comment, $invoice_admin_comment, $date_modified, $date_finished, $send_notifications, $create_invoice, $origin, $tags, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderUpdate: ', $e->getMessage(), PHP_EOL;
@@ -1801,6 +1802,7 @@ try {
 | **create_invoice** | **bool**| Determines whether an invoice should be created if it has not already been created | [optional] |
 | **origin** | **string**| The source of the order | [optional] |
 | **tags** | **string**| Order tags | [optional] |
+| **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
 

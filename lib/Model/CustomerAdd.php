@@ -81,6 +81,7 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'note' => 'string',
         'country' => 'string',
         'store_id' => 'string',
+        'idempotency_key' => 'string',
         'address' => '\OpenAPI\Client\Model\CustomerAddAddressInner[]'
     ];
 
@@ -115,6 +116,7 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'note' => null,
         'country' => null,
         'store_id' => null,
+        'idempotency_key' => null,
         'address' => null
     ];
 
@@ -147,6 +149,7 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'note' => false,
         'country' => false,
         'store_id' => false,
+        'idempotency_key' => false,
         'address' => false
     ];
 
@@ -259,6 +262,7 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'note' => 'note',
         'country' => 'country',
         'store_id' => 'store_id',
+        'idempotency_key' => 'idempotency_key',
         'address' => 'address'
     ];
 
@@ -291,6 +295,7 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'note' => 'setNote',
         'country' => 'setCountry',
         'store_id' => 'setStoreId',
+        'idempotency_key' => 'setIdempotencyKey',
         'address' => 'setAddress'
     ];
 
@@ -323,6 +328,7 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'note' => 'getNote',
         'country' => 'getCountry',
         'store_id' => 'getStoreId',
+        'idempotency_key' => 'getIdempotencyKey',
         'address' => 'getAddress'
     ];
 
@@ -406,6 +412,7 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('note', $data ?? [], null);
         $this->setIfExists('country', $data ?? [], null);
         $this->setIfExists('store_id', $data ?? [], null);
+        $this->setIfExists('idempotency_key', $data ?? [], null);
         $this->setIfExists('address', $data ?? [], null);
     }
 
@@ -1080,6 +1087,33 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable store_id cannot be null');
         }
         $this->container['store_id'] = $store_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets idempotency_key
+     *
+     * @return string|null
+     */
+    public function getIdempotencyKey()
+    {
+        return $this->container['idempotency_key'];
+    }
+
+    /**
+     * Sets idempotency_key
+     *
+     * @param string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
+     *
+     * @return self
+     */
+    public function setIdempotencyKey($idempotency_key)
+    {
+        if (is_null($idempotency_key)) {
+            throw new \InvalidArgumentException('non-nullable idempotency_key cannot be null');
+        }
+        $this->container['idempotency_key'] = $idempotency_key;
 
         return $this;
     }

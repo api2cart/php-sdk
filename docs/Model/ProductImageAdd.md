@@ -18,5 +18,6 @@ Name | Type | Description | Notes
 **mime** | **string** | Mime type of image http://en.wikipedia.org/wiki/Internet_media_type. | [optional]
 **position** | **int** | Defines image’s position in the list | [optional] [default to 0]
 **use_latest_api_version** | **bool** | Use the latest platform API version | [optional] [default to false]
+**idempotency_key** | **string** | A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -84,6 +84,7 @@ class OrderCalculate implements ModelInterface, ArrayAccess, \JsonSerializable
         'bill_company' => 'string',
         'bill_phone' => 'string',
         'response_fields' => 'string',
+        'idempotency_key' => 'string',
         'order_item' => '\OpenAPI\Client\Model\OrderCalculateOrderItemInner[]'
     ];
 
@@ -121,6 +122,7 @@ class OrderCalculate implements ModelInterface, ArrayAccess, \JsonSerializable
         'bill_company' => null,
         'bill_phone' => null,
         'response_fields' => null,
+        'idempotency_key' => null,
         'order_item' => null
     ];
 
@@ -156,6 +158,7 @@ class OrderCalculate implements ModelInterface, ArrayAccess, \JsonSerializable
         'bill_company' => false,
         'bill_phone' => false,
         'response_fields' => false,
+        'idempotency_key' => false,
         'order_item' => false
     ];
 
@@ -271,6 +274,7 @@ class OrderCalculate implements ModelInterface, ArrayAccess, \JsonSerializable
         'bill_company' => 'bill_company',
         'bill_phone' => 'bill_phone',
         'response_fields' => 'response_fields',
+        'idempotency_key' => 'idempotency_key',
         'order_item' => 'order_item'
     ];
 
@@ -306,6 +310,7 @@ class OrderCalculate implements ModelInterface, ArrayAccess, \JsonSerializable
         'bill_company' => 'setBillCompany',
         'bill_phone' => 'setBillPhone',
         'response_fields' => 'setResponseFields',
+        'idempotency_key' => 'setIdempotencyKey',
         'order_item' => 'setOrderItem'
     ];
 
@@ -341,6 +346,7 @@ class OrderCalculate implements ModelInterface, ArrayAccess, \JsonSerializable
         'bill_company' => 'getBillCompany',
         'bill_phone' => 'getBillPhone',
         'response_fields' => 'getResponseFields',
+        'idempotency_key' => 'getIdempotencyKey',
         'order_item' => 'getOrderItem'
     ];
 
@@ -427,6 +433,7 @@ class OrderCalculate implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('bill_company', $data ?? [], null);
         $this->setIfExists('bill_phone', $data ?? [], null);
         $this->setIfExists('response_fields', $data ?? [], null);
+        $this->setIfExists('idempotency_key', $data ?? [], null);
         $this->setIfExists('order_item', $data ?? [], null);
     }
 
@@ -1203,6 +1210,33 @@ class OrderCalculate implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable response_fields cannot be null');
         }
         $this->container['response_fields'] = $response_fields;
+
+        return $this;
+    }
+
+    /**
+     * Gets idempotency_key
+     *
+     * @return string|null
+     */
+    public function getIdempotencyKey()
+    {
+        return $this->container['idempotency_key'];
+    }
+
+    /**
+     * Sets idempotency_key
+     *
+     * @param string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
+     *
+     * @return self
+     */
+    public function setIdempotencyKey($idempotency_key)
+    {
+        if (is_null($idempotency_key)) {
+            throw new \InvalidArgumentException('non-nullable idempotency_key cannot be null');
+        }
+        $this->container['idempotency_key'] = $idempotency_key;
 
         return $this;
     }

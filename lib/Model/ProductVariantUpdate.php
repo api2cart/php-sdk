@@ -115,7 +115,8 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'manufacturer' => 'string',
         'reindex' => 'bool',
         'clear_cache' => 'bool',
-        'processing_profile_id' => 'int'
+        'processing_profile_id' => 'int',
+        'idempotency_key' => 'string'
     ];
 
     /**
@@ -183,7 +184,8 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'manufacturer' => null,
         'reindex' => null,
         'clear_cache' => null,
-        'processing_profile_id' => null
+        'processing_profile_id' => null,
+        'idempotency_key' => null
     ];
 
     /**
@@ -249,7 +251,8 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'manufacturer' => false,
         'reindex' => false,
         'clear_cache' => false,
-        'processing_profile_id' => false
+        'processing_profile_id' => false,
+        'idempotency_key' => false
     ];
 
     /**
@@ -395,7 +398,8 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'manufacturer' => 'manufacturer',
         'reindex' => 'reindex',
         'clear_cache' => 'clear_cache',
-        'processing_profile_id' => 'processing_profile_id'
+        'processing_profile_id' => 'processing_profile_id',
+        'idempotency_key' => 'idempotency_key'
     ];
 
     /**
@@ -461,7 +465,8 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'manufacturer' => 'setManufacturer',
         'reindex' => 'setReindex',
         'clear_cache' => 'setClearCache',
-        'processing_profile_id' => 'setProcessingProfileId'
+        'processing_profile_id' => 'setProcessingProfileId',
+        'idempotency_key' => 'setIdempotencyKey'
     ];
 
     /**
@@ -527,7 +532,8 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'manufacturer' => 'getManufacturer',
         'reindex' => 'getReindex',
         'clear_cache' => 'getClearCache',
-        'processing_profile_id' => 'getProcessingProfileId'
+        'processing_profile_id' => 'getProcessingProfileId',
+        'idempotency_key' => 'getIdempotencyKey'
     ];
 
     /**
@@ -645,6 +651,7 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->setIfExists('reindex', $data ?? [], true);
         $this->setIfExists('clear_cache', $data ?? [], true);
         $this->setIfExists('processing_profile_id', $data ?? [], null);
+        $this->setIfExists('idempotency_key', $data ?? [], null);
     }
 
     /**
@@ -2251,6 +2258,33 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
             throw new \InvalidArgumentException('non-nullable processing_profile_id cannot be null');
         }
         $this->container['processing_profile_id'] = $processing_profile_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets idempotency_key
+     *
+     * @return string|null
+     */
+    public function getIdempotencyKey()
+    {
+        return $this->container['idempotency_key'];
+    }
+
+    /**
+     * Sets idempotency_key
+     *
+     * @param string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
+     *
+     * @return self
+     */
+    public function setIdempotencyKey($idempotency_key)
+    {
+        if (is_null($idempotency_key)) {
+            throw new \InvalidArgumentException('non-nullable idempotency_key cannot be null');
+        }
+        $this->container['idempotency_key'] = $idempotency_key;
 
         return $this;
     }

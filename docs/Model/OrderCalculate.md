@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **bill_company** | **string** | Specifies billing company | [optional]
 **bill_phone** | **string** | Specifies billing phone | [optional]
 **response_fields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional]
+**idempotency_key** | **string** | A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional]
 **order_item** | [**\OpenAPI\Client\Model\OrderCalculateOrderItemInner[]**](OrderCalculateOrderItemInner.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

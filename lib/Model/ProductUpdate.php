@@ -150,7 +150,8 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'personalization_details' => '\OpenAPI\Client\Model\ProductAddPersonalizationDetails',
         'external_product_link' => 'string',
         'marketplace_item_properties' => 'string',
-        'min_order_quantity' => 'float'
+        'min_order_quantity' => 'float',
+        'idempotency_key' => 'string'
     ];
 
     /**
@@ -253,7 +254,8 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'personalization_details' => null,
         'external_product_link' => null,
         'marketplace_item_properties' => null,
-        'min_order_quantity' => null
+        'min_order_quantity' => null,
+        'idempotency_key' => null
     ];
 
     /**
@@ -354,7 +356,8 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'personalization_details' => false,
         'external_product_link' => false,
         'marketplace_item_properties' => false,
-        'min_order_quantity' => false
+        'min_order_quantity' => false,
+        'idempotency_key' => false
     ];
 
     /**
@@ -535,7 +538,8 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'personalization_details' => 'personalization_details',
         'external_product_link' => 'external_product_link',
         'marketplace_item_properties' => 'marketplace_item_properties',
-        'min_order_quantity' => 'min_order_quantity'
+        'min_order_quantity' => 'min_order_quantity',
+        'idempotency_key' => 'idempotency_key'
     ];
 
     /**
@@ -636,7 +640,8 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'personalization_details' => 'setPersonalizationDetails',
         'external_product_link' => 'setExternalProductLink',
         'marketplace_item_properties' => 'setMarketplaceItemProperties',
-        'min_order_quantity' => 'setMinOrderQuantity'
+        'min_order_quantity' => 'setMinOrderQuantity',
+        'idempotency_key' => 'setIdempotencyKey'
     ];
 
     /**
@@ -737,7 +742,8 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'personalization_details' => 'getPersonalizationDetails',
         'external_product_link' => 'getExternalProductLink',
         'marketplace_item_properties' => 'getMarketplaceItemProperties',
-        'min_order_quantity' => 'getMinOrderQuantity'
+        'min_order_quantity' => 'getMinOrderQuantity',
+        'idempotency_key' => 'getIdempotencyKey'
     ];
 
     /**
@@ -890,6 +896,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('external_product_link', $data ?? [], null);
         $this->setIfExists('marketplace_item_properties', $data ?? [], null);
         $this->setIfExists('min_order_quantity', $data ?? [], null);
+        $this->setIfExists('idempotency_key', $data ?? [], null);
     }
 
     /**
@@ -3441,6 +3448,33 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable min_order_quantity cannot be null');
         }
         $this->container['min_order_quantity'] = $min_order_quantity;
+
+        return $this;
+    }
+
+    /**
+     * Gets idempotency_key
+     *
+     * @return string|null
+     */
+    public function getIdempotencyKey()
+    {
+        return $this->container['idempotency_key'];
+    }
+
+    /**
+     * Sets idempotency_key
+     *
+     * @param string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
+     *
+     * @return self
+     */
+    public function setIdempotencyKey($idempotency_key)
+    {
+        if (is_null($idempotency_key)) {
+            throw new \InvalidArgumentException('non-nullable idempotency_key cannot be null');
+        }
+        $this->container['idempotency_key'] = $idempotency_key;
 
         return $this;
     }

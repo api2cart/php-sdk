@@ -327,7 +327,7 @@ try {
 ## `customerDelete()`
 
 ```php
-customerDelete($id): \OpenAPI\Client\Model\CustomerDelete200Response
+customerDelete($id, $store_id): \OpenAPI\Client\Model\CustomerDelete200Response
 ```
 
 customer.delete
@@ -359,9 +359,10 @@ $apiInstance = new OpenAPI\Client\Api\CustomerApi(
     $config
 );
 $id = 10; // string | Identifies customer specified by the id
+$store_id = 1; // string | Store Id
 
 try {
-    $result = $apiInstance->customerDelete($id);
+    $result = $apiInstance->customerDelete($id, $store_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->customerDelete: ', $e->getMessage(), PHP_EOL;
@@ -373,6 +374,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| Identifies customer specified by the id | |
+| **store_id** | **string**| Store Id | [optional] |
 
 ### Return type
 
@@ -469,7 +471,7 @@ try {
 ## `customerGroupAdd()`
 
 ```php
-customerGroupAdd($name, $store_id, $stores_ids): \OpenAPI\Client\Model\CustomerGroupAdd200Response
+customerGroupAdd($name, $store_id, $stores_ids, $idempotency_key): \OpenAPI\Client\Model\CustomerGroupAdd200Response
 ```
 
 customer.group.add
@@ -503,9 +505,10 @@ $apiInstance = new OpenAPI\Client\Api\CustomerApi(
 $name = new_group; // string | Customer group name
 $store_id = 1; // string | Store Id
 $stores_ids = 1,2; // string | Assign customer group to the stores that is specified by comma-separated stores' id
+$idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->customerGroupAdd($name, $store_id, $stores_ids);
+    $result = $apiInstance->customerGroupAdd($name, $store_id, $stores_ids, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->customerGroupAdd: ', $e->getMessage(), PHP_EOL;
@@ -519,6 +522,7 @@ try {
 | **name** | **string**| Customer group name | |
 | **store_id** | **string**| Store Id | [optional] |
 | **stores_ids** | **string**| Assign customer group to the stores that is specified by comma-separated stores&#39; id | [optional] |
+| **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
 

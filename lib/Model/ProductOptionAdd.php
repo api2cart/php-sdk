@@ -68,7 +68,8 @@ class ProductOptionAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'sort_order' => 'int',
         'required' => 'bool',
         'values' => '\OpenAPI\Client\Model\ProductOptionAddValuesInner[]',
-        'clear_cache' => 'bool'
+        'clear_cache' => 'bool',
+        'idempotency_key' => 'string'
     ];
 
     /**
@@ -89,7 +90,8 @@ class ProductOptionAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'sort_order' => null,
         'required' => null,
         'values' => null,
-        'clear_cache' => null
+        'clear_cache' => null,
+        'idempotency_key' => null
     ];
 
     /**
@@ -108,7 +110,8 @@ class ProductOptionAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'sort_order' => false,
         'required' => false,
         'values' => false,
-        'clear_cache' => false
+        'clear_cache' => false,
+        'idempotency_key' => false
     ];
 
     /**
@@ -207,7 +210,8 @@ class ProductOptionAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'sort_order' => 'sort_order',
         'required' => 'required',
         'values' => 'values',
-        'clear_cache' => 'clear_cache'
+        'clear_cache' => 'clear_cache',
+        'idempotency_key' => 'idempotency_key'
     ];
 
     /**
@@ -226,7 +230,8 @@ class ProductOptionAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'sort_order' => 'setSortOrder',
         'required' => 'setRequired',
         'values' => 'setValues',
-        'clear_cache' => 'setClearCache'
+        'clear_cache' => 'setClearCache',
+        'idempotency_key' => 'setIdempotencyKey'
     ];
 
     /**
@@ -245,7 +250,8 @@ class ProductOptionAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'sort_order' => 'getSortOrder',
         'required' => 'getRequired',
         'values' => 'getValues',
-        'clear_cache' => 'getClearCache'
+        'clear_cache' => 'getClearCache',
+        'idempotency_key' => 'getIdempotencyKey'
     ];
 
     /**
@@ -351,6 +357,7 @@ class ProductOptionAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('required', $data ?? [], false);
         $this->setIfExists('values', $data ?? [], null);
         $this->setIfExists('clear_cache', $data ?? [], true);
+        $this->setIfExists('idempotency_key', $data ?? [], null);
     }
 
     /**
@@ -713,6 +720,33 @@ class ProductOptionAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable clear_cache cannot be null');
         }
         $this->container['clear_cache'] = $clear_cache;
+
+        return $this;
+    }
+
+    /**
+     * Gets idempotency_key
+     *
+     * @return string|null
+     */
+    public function getIdempotencyKey()
+    {
+        return $this->container['idempotency_key'];
+    }
+
+    /**
+     * Sets idempotency_key
+     *
+     * @param string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
+     *
+     * @return self
+     */
+    public function setIdempotencyKey($idempotency_key)
+    {
+        if (is_null($idempotency_key)) {
+            throw new \InvalidArgumentException('non-nullable idempotency_key cannot be null');
+        }
+        $this->container['idempotency_key'] = $idempotency_key;
 
         return $this;
     }

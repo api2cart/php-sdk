@@ -242,7 +242,7 @@ try {
 ## `cartCouponConditionAdd()`
 
 ```php
-cartCouponConditionAdd($coupon_id, $entity, $key, $operator, $value, $target, $include_tax, $include_shipping, $store_id): \OpenAPI\Client\Model\BasketLiveShippingServiceDelete200Response
+cartCouponConditionAdd($coupon_id, $entity, $key, $operator, $value, $target, $include_tax, $include_shipping, $store_id, $idempotency_key): \OpenAPI\Client\Model\BasketLiveShippingServiceDelete200Response
 ```
 
 cart.coupon.condition.add
@@ -282,9 +282,10 @@ $target = coupon_action; // string | Defines condition operator
 $include_tax = true; // bool | Indicates whether to apply a discount for taxes.
 $include_shipping = true; // bool | Indicates whether to apply a discount for shipping.
 $store_id = 1; // string | Store Id
+$idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->cartCouponConditionAdd($coupon_id, $entity, $key, $operator, $value, $target, $include_tax, $include_shipping, $store_id);
+    $result = $apiInstance->cartCouponConditionAdd($coupon_id, $entity, $key, $operator, $value, $target, $include_tax, $include_shipping, $store_id, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CartApi->cartCouponConditionAdd: ', $e->getMessage(), PHP_EOL;
@@ -304,6 +305,7 @@ try {
 | **include_tax** | **bool**| Indicates whether to apply a discount for taxes. | [optional] [default to false] |
 | **include_shipping** | **bool**| Indicates whether to apply a discount for shipping. | [optional] [default to false] |
 | **store_id** | **string**| Store Id | [optional] |
+| **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
 
@@ -633,7 +635,7 @@ try {
 ## `cartGiftcardAdd()`
 
 ```php
-cartGiftcardAdd($amount, $code, $owner_email, $recipient_email, $recipient_name, $owner_name): \OpenAPI\Client\Model\CartGiftcardAdd200Response
+cartGiftcardAdd($amount, $code, $owner_email, $recipient_email, $recipient_name, $owner_name, $idempotency_key): \OpenAPI\Client\Model\CartGiftcardAdd200Response
 ```
 
 cart.giftcard.add
@@ -670,9 +672,10 @@ $owner_email = jubari@hannsgroup.com; // string | Gift card owner email
 $recipient_email = jubari@hannsgroup.com; // string | Gift card recipient email
 $recipient_name = John Doe; // string | Gift card recipient name
 $owner_name = John Doe; // string | Gift card owner name
+$idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->cartGiftcardAdd($amount, $code, $owner_email, $recipient_email, $recipient_name, $owner_name);
+    $result = $apiInstance->cartGiftcardAdd($amount, $code, $owner_email, $recipient_email, $recipient_name, $owner_name, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CartApi->cartGiftcardAdd: ', $e->getMessage(), PHP_EOL;
@@ -689,6 +692,7 @@ try {
 | **recipient_email** | **string**| Gift card recipient email | [optional] |
 | **recipient_name** | **string**| Gift card recipient name | [optional] |
 | **owner_name** | **string**| Gift card owner name | [optional] |
+| **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
 
@@ -1081,7 +1085,7 @@ try {
 ## `cartMetaDataSet()`
 
 ```php
-cartMetaDataSet($entity_id, $key, $value, $namespace, $entity, $store_id, $lang_id): \OpenAPI\Client\Model\AttributeAdd200Response
+cartMetaDataSet($entity_id, $key, $value, $namespace, $entity, $store_id, $lang_id, $idempotency_key): \OpenAPI\Client\Model\AttributeAdd200Response
 ```
 
 cart.meta_data.set
@@ -1119,9 +1123,10 @@ $namespace = order; // string | Metafield namespace
 $entity = order; // string | Entity
 $store_id = 1; // string | Store Id
 $lang_id = 3; // string | Language id
+$idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->cartMetaDataSet($entity_id, $key, $value, $namespace, $entity, $store_id, $lang_id);
+    $result = $apiInstance->cartMetaDataSet($entity_id, $key, $value, $namespace, $entity, $store_id, $lang_id, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CartApi->cartMetaDataSet: ', $e->getMessage(), PHP_EOL;
@@ -1139,6 +1144,7 @@ try {
 | **entity** | **string**| Entity | [optional] [default to &#39;product&#39;] |
 | **store_id** | **string**| Store Id | [optional] |
 | **lang_id** | **string**| Language id | [optional] |
+| **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
 
@@ -1370,7 +1376,7 @@ try {
 ## `cartScriptAdd()`
 
 ```php
-cartScriptAdd($name, $description, $html, $src, $load_method, $scope, $events, $store_id): \OpenAPI\Client\Model\CartScriptAdd200Response
+cartScriptAdd($name, $description, $html, $src, $load_method, $scope, $events, $store_id, $idempotency_key): \OpenAPI\Client\Model\CartScriptAdd200Response
 ```
 
 cart.script.add
@@ -1409,9 +1415,10 @@ $load_method = async; // string | The load method to use for the script
 $scope = all; // string | The page or pages on the online store where the script should be included
 $events = purchase_event; // string | Event for run scripts
 $store_id = 1; // string | Store Id
+$idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->cartScriptAdd($name, $description, $html, $src, $load_method, $scope, $events, $store_id);
+    $result = $apiInstance->cartScriptAdd($name, $description, $html, $src, $load_method, $scope, $events, $store_id, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CartApi->cartScriptAdd: ', $e->getMessage(), PHP_EOL;
@@ -1430,6 +1437,7 @@ try {
 | **scope** | **string**| The page or pages on the online store where the script should be included | [optional] [default to &#39;storefront&#39;] |
 | **events** | **string**| Event for run scripts | [optional] |
 | **store_id** | **string**| Store Id | [optional] |
+| **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
 

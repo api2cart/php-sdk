@@ -86,7 +86,7 @@ try {
 ## `webhookCreate()`
 
 ```php
-webhookCreate($entity, $action, $callback, $label, $fields, $response_fields, $active, $lang_id, $store_id): \OpenAPI\Client\Model\BasketLiveShippingServiceCreate200Response
+webhookCreate($entity, $action, $callback, $label, $fields, $response_fields, $active, $lang_id, $store_id, $idempotency_key): \OpenAPI\Client\Model\BasketLiveShippingServiceCreate200Response
 ```
 
 webhook.create
@@ -126,9 +126,10 @@ $response_fields = {result}; // string | Set this parameter in order to choose w
 $active = true; // bool | Webhook status
 $lang_id = 3; // string | Language id
 $store_id = 1; // string | Defines store id where the webhook should be assigned
+$idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->webhookCreate($entity, $action, $callback, $label, $fields, $response_fields, $active, $lang_id, $store_id);
+    $result = $apiInstance->webhookCreate($entity, $action, $callback, $label, $fields, $response_fields, $active, $lang_id, $store_id, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhookApi->webhookCreate: ', $e->getMessage(), PHP_EOL;
@@ -148,6 +149,7 @@ try {
 | **active** | **bool**| Webhook status | [optional] [default to true] |
 | **lang_id** | **string**| Language id | [optional] |
 | **store_id** | **string**| Defines store id where the webhook should be assigned | [optional] |
+| **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
 
@@ -379,7 +381,7 @@ try {
 ## `webhookUpdate()`
 
 ```php
-webhookUpdate($id, $callback, $label, $fields, $response_fields, $active, $lang_id): \OpenAPI\Client\Model\ProductImageUpdate200Response
+webhookUpdate($id, $callback, $label, $fields, $response_fields, $active, $lang_id, $idempotency_key): \OpenAPI\Client\Model\ProductImageUpdate200Response
 ```
 
 webhook.update
@@ -417,9 +419,10 @@ $fields = id, name, description; // string | Fields the webhook should send
 $response_fields = {result}; // string | Set this parameter in order to choose which entity fields you want to retrieve
 $active = true; // bool | Webhook status
 $lang_id = 3; // string | Language id
+$idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->webhookUpdate($id, $callback, $label, $fields, $response_fields, $active, $lang_id);
+    $result = $apiInstance->webhookUpdate($id, $callback, $label, $fields, $response_fields, $active, $lang_id, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhookApi->webhookUpdate: ', $e->getMessage(), PHP_EOL;
@@ -437,6 +440,7 @@ try {
 | **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 | **active** | **bool**| Webhook status | [optional] |
 | **lang_id** | **string**| Language id | [optional] |
+| **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
 

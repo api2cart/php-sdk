@@ -68,7 +68,8 @@ class ProductVariantImageAdd implements ModelInterface, ArrayAccess, \JsonSerial
         'label' => 'string',
         'mime' => 'string',
         'position' => 'int',
-        'option_id' => 'string'
+        'option_id' => 'string',
+        'idempotency_key' => 'string'
     ];
 
     /**
@@ -89,7 +90,8 @@ class ProductVariantImageAdd implements ModelInterface, ArrayAccess, \JsonSerial
         'label' => null,
         'mime' => null,
         'position' => null,
-        'option_id' => null
+        'option_id' => null,
+        'idempotency_key' => null
     ];
 
     /**
@@ -108,7 +110,8 @@ class ProductVariantImageAdd implements ModelInterface, ArrayAccess, \JsonSerial
         'label' => false,
         'mime' => false,
         'position' => false,
-        'option_id' => false
+        'option_id' => false,
+        'idempotency_key' => false
     ];
 
     /**
@@ -207,7 +210,8 @@ class ProductVariantImageAdd implements ModelInterface, ArrayAccess, \JsonSerial
         'label' => 'label',
         'mime' => 'mime',
         'position' => 'position',
-        'option_id' => 'option_id'
+        'option_id' => 'option_id',
+        'idempotency_key' => 'idempotency_key'
     ];
 
     /**
@@ -226,7 +230,8 @@ class ProductVariantImageAdd implements ModelInterface, ArrayAccess, \JsonSerial
         'label' => 'setLabel',
         'mime' => 'setMime',
         'position' => 'setPosition',
-        'option_id' => 'setOptionId'
+        'option_id' => 'setOptionId',
+        'idempotency_key' => 'setIdempotencyKey'
     ];
 
     /**
@@ -245,7 +250,8 @@ class ProductVariantImageAdd implements ModelInterface, ArrayAccess, \JsonSerial
         'label' => 'getLabel',
         'mime' => 'getMime',
         'position' => 'getPosition',
-        'option_id' => 'getOptionId'
+        'option_id' => 'getOptionId',
+        'idempotency_key' => 'getIdempotencyKey'
     ];
 
     /**
@@ -335,6 +341,7 @@ class ProductVariantImageAdd implements ModelInterface, ArrayAccess, \JsonSerial
         $this->setIfExists('mime', $data ?? [], null);
         $this->setIfExists('position', $data ?? [], 0);
         $this->setIfExists('option_id', $data ?? [], null);
+        $this->setIfExists('idempotency_key', $data ?? [], null);
     }
 
     /**
@@ -700,6 +707,33 @@ class ProductVariantImageAdd implements ModelInterface, ArrayAccess, \JsonSerial
             throw new \InvalidArgumentException('non-nullable option_id cannot be null');
         }
         $this->container['option_id'] = $option_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets idempotency_key
+     *
+     * @return string|null
+     */
+    public function getIdempotencyKey()
+    {
+        return $this->container['idempotency_key'];
+    }
+
+    /**
+     * Sets idempotency_key
+     *
+     * @param string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
+     *
+     * @return self
+     */
+    public function setIdempotencyKey($idempotency_key)
+    {
+        if (is_null($idempotency_key)) {
+            throw new \InvalidArgumentException('non-nullable idempotency_key cannot be null');
+        }
+        $this->container['idempotency_key'] = $idempotency_key;
 
         return $this;
     }

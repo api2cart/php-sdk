@@ -25,7 +25,7 @@ All URIs are relative to https://api.api2cart.local.com/v1.1, except if the oper
 ## `attributeAdd()`
 
 ```php
-attributeAdd($type, $name, $code, $store_id, $lang_id, $visible, $required, $position, $attribute_group_id, $is_global, $is_searchable, $is_filterable, $is_comparable, $is_html_allowed_on_front, $is_filterable_in_search, $is_configurable, $is_visible_in_advanced_search, $is_used_for_promo_rules, $used_in_product_listing, $used_for_sort_by, $apply_to): \OpenAPI\Client\Model\AttributeAdd200Response
+attributeAdd($type, $name, $code, $store_id, $lang_id, $visible, $required, $position, $attribute_group_id, $is_global, $is_searchable, $is_filterable, $is_comparable, $is_html_allowed_on_front, $is_filterable_in_search, $is_configurable, $is_visible_in_advanced_search, $is_used_for_promo_rules, $used_in_product_listing, $used_for_sort_by, $apply_to, $idempotency_key): \OpenAPI\Client\Model\AttributeAdd200Response
 ```
 
 attribute.add
@@ -77,9 +77,10 @@ $is_used_for_promo_rules = true; // bool | Use for Promo Rule Conditions
 $used_in_product_listing = true; // bool | Used in Product Listing
 $used_for_sort_by = true; // bool | Used for Sorting in Product Listing
 $apply_to = Global; // string | Types of products which can have this attribute
+$idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->attributeAdd($type, $name, $code, $store_id, $lang_id, $visible, $required, $position, $attribute_group_id, $is_global, $is_searchable, $is_filterable, $is_comparable, $is_html_allowed_on_front, $is_filterable_in_search, $is_configurable, $is_visible_in_advanced_search, $is_used_for_promo_rules, $used_in_product_listing, $used_for_sort_by, $apply_to);
+    $result = $apiInstance->attributeAdd($type, $name, $code, $store_id, $lang_id, $visible, $required, $position, $attribute_group_id, $is_global, $is_searchable, $is_filterable, $is_comparable, $is_html_allowed_on_front, $is_filterable_in_search, $is_configurable, $is_visible_in_advanced_search, $is_used_for_promo_rules, $used_in_product_listing, $used_for_sort_by, $apply_to, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AttributeApi->attributeAdd: ', $e->getMessage(), PHP_EOL;
@@ -111,6 +112,7 @@ try {
 | **used_in_product_listing** | **bool**| Used in Product Listing | [optional] [default to false] |
 | **used_for_sort_by** | **bool**| Used for Sorting in Product Listing | [optional] [default to false] |
 | **apply_to** | **string**| Types of products which can have this attribute | [optional] [default to &#39;all_types&#39;] |
+| **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
 
@@ -132,7 +134,7 @@ try {
 ## `attributeAssignGroup()`
 
 ```php
-attributeAssignGroup($id, $group_id, $attribute_set_id): \OpenAPI\Client\Model\AttributeAssignGroup200Response
+attributeAssignGroup($id, $group_id, $attribute_set_id, $idempotency_key): \OpenAPI\Client\Model\AttributeAssignGroup200Response
 ```
 
 attribute.assign.group
@@ -166,9 +168,10 @@ $apiInstance = new OpenAPI\Client\Api\AttributeApi(
 $id = 10; // string | Entity id
 $group_id = 3; // string | Attribute group_id
 $attribute_set_id = 4; // string | Attribute set id
+$idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->attributeAssignGroup($id, $group_id, $attribute_set_id);
+    $result = $apiInstance->attributeAssignGroup($id, $group_id, $attribute_set_id, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AttributeApi->attributeAssignGroup: ', $e->getMessage(), PHP_EOL;
@@ -182,6 +185,7 @@ try {
 | **id** | **string**| Entity id | |
 | **group_id** | **string**| Attribute group_id | |
 | **attribute_set_id** | **string**| Attribute set id | [optional] |
+| **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
 
@@ -203,7 +207,7 @@ try {
 ## `attributeAssignSet()`
 
 ```php
-attributeAssignSet($id, $attribute_set_id, $group_id): \OpenAPI\Client\Model\AttributeAssignGroup200Response
+attributeAssignSet($id, $attribute_set_id, $group_id, $idempotency_key): \OpenAPI\Client\Model\AttributeAssignGroup200Response
 ```
 
 attribute.assign.set
@@ -237,9 +241,10 @@ $apiInstance = new OpenAPI\Client\Api\AttributeApi(
 $id = 10; // string | Entity id
 $attribute_set_id = 4; // string | Attribute set id
 $group_id = 3; // string | Attribute group_id
+$idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->attributeAssignSet($id, $attribute_set_id, $group_id);
+    $result = $apiInstance->attributeAssignSet($id, $attribute_set_id, $group_id, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AttributeApi->attributeAssignSet: ', $e->getMessage(), PHP_EOL;
@@ -253,6 +258,7 @@ try {
 | **id** | **string**| Entity id | |
 | **attribute_set_id** | **string**| Attribute set id | |
 | **group_id** | **string**| Attribute group_id | [optional] |
+| **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
 
@@ -810,7 +816,7 @@ This endpoint does not need any parameter.
 ## `attributeUnassignGroup()`
 
 ```php
-attributeUnassignGroup($id, $group_id): \OpenAPI\Client\Model\AttributeUnassignGroup200Response
+attributeUnassignGroup($id, $group_id, $idempotency_key): \OpenAPI\Client\Model\AttributeUnassignGroup200Response
 ```
 
 attribute.unassign.group
@@ -843,9 +849,10 @@ $apiInstance = new OpenAPI\Client\Api\AttributeApi(
 );
 $id = 10; // string | Entity id
 $group_id = 3; // string | Customer group_id
+$idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->attributeUnassignGroup($id, $group_id);
+    $result = $apiInstance->attributeUnassignGroup($id, $group_id, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AttributeApi->attributeUnassignGroup: ', $e->getMessage(), PHP_EOL;
@@ -858,6 +865,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| Entity id | |
 | **group_id** | **string**| Customer group_id | |
+| **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
 
@@ -879,7 +887,7 @@ try {
 ## `attributeUnassignSet()`
 
 ```php
-attributeUnassignSet($id, $attribute_set_id): \OpenAPI\Client\Model\AttributeUnassignGroup200Response
+attributeUnassignSet($id, $attribute_set_id, $idempotency_key): \OpenAPI\Client\Model\AttributeUnassignGroup200Response
 ```
 
 attribute.unassign.set
@@ -912,9 +920,10 @@ $apiInstance = new OpenAPI\Client\Api\AttributeApi(
 );
 $id = 10; // string | Entity id
 $attribute_set_id = 4; // string | Attribute set id
+$idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->attributeUnassignSet($id, $attribute_set_id);
+    $result = $apiInstance->attributeUnassignSet($id, $attribute_set_id, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AttributeApi->attributeUnassignSet: ', $e->getMessage(), PHP_EOL;
@@ -927,6 +936,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| Entity id | |
 | **attribute_set_id** | **string**| Attribute set id | |
+| **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
 
@@ -948,7 +958,7 @@ try {
 ## `attributeUpdate()`
 
 ```php
-attributeUpdate($id, $name, $store_id, $lang_id): \OpenAPI\Client\Model\AttributeUpdate200Response
+attributeUpdate($id, $name, $store_id, $lang_id, $idempotency_key): \OpenAPI\Client\Model\AttributeUpdate200Response
 ```
 
 attribute.update
@@ -983,9 +993,10 @@ $id = 10; // string | Entity id
 $name = Test name; // string | Defines new attributes's name
 $store_id = 1; // string | Store Id
 $lang_id = 3; // string | Language id
+$idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->attributeUpdate($id, $name, $store_id, $lang_id);
+    $result = $apiInstance->attributeUpdate($id, $name, $store_id, $lang_id, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AttributeApi->attributeUpdate: ', $e->getMessage(), PHP_EOL;
@@ -1000,6 +1011,7 @@ try {
 | **name** | **string**| Defines new attributes&#39;s name | |
 | **store_id** | **string**| Store Id | [optional] |
 | **lang_id** | **string**| Language id | [optional] |
+| **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
 
@@ -1021,7 +1033,7 @@ try {
 ## `attributeValueAdd()`
 
 ```php
-attributeValueAdd($attribute_id, $name, $code, $description, $store_id, $lang_id): \OpenAPI\Client\Model\AttributeAdd200Response
+attributeValueAdd($attribute_id, $name, $code, $description, $store_id, $lang_id, $idempotency_key): \OpenAPI\Client\Model\AttributeAdd200Response
 ```
 
 attribute.value.add
@@ -1058,9 +1070,10 @@ $code = code; // string | Entity code
 $description = Test value; // string | Defines attribute value's description
 $store_id = 1; // string | Store Id
 $lang_id = 3; // string | Language id
+$idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->attributeValueAdd($attribute_id, $name, $code, $description, $store_id, $lang_id);
+    $result = $apiInstance->attributeValueAdd($attribute_id, $name, $code, $description, $store_id, $lang_id, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AttributeApi->attributeValueAdd: ', $e->getMessage(), PHP_EOL;
@@ -1077,6 +1090,7 @@ try {
 | **description** | **string**| Defines attribute value&#39;s description | [optional] |
 | **store_id** | **string**| Store Id | [optional] |
 | **lang_id** | **string**| Language id | [optional] |
+| **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
 
@@ -1169,7 +1183,7 @@ try {
 ## `attributeValueUpdate()`
 
 ```php
-attributeValueUpdate($id, $attribute_id, $name, $description, $code, $store_id, $lang_id): \OpenAPI\Client\Model\AttributeUpdate200Response
+attributeValueUpdate($id, $attribute_id, $name, $description, $code, $store_id, $lang_id, $idempotency_key): \OpenAPI\Client\Model\AttributeUpdate200Response
 ```
 
 attribute.value.update
@@ -1207,9 +1221,10 @@ $description = Test value; // string | Defines new attribute value's description
 $code = code; // string | Entity code
 $store_id = 1; // string | Store Id
 $lang_id = 3; // string | Language id
+$idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->attributeValueUpdate($id, $attribute_id, $name, $description, $code, $store_id, $lang_id);
+    $result = $apiInstance->attributeValueUpdate($id, $attribute_id, $name, $description, $code, $store_id, $lang_id, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AttributeApi->attributeValueUpdate: ', $e->getMessage(), PHP_EOL;
@@ -1227,6 +1242,7 @@ try {
 | **code** | **string**| Entity code | [optional] |
 | **store_id** | **string**| Store Id | [optional] |
 | **lang_id** | **string**| Language id | [optional] |
+| **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
 

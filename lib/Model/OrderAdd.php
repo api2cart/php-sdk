@@ -129,6 +129,7 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'clear_cache' => 'bool',
         'origin' => 'string',
         'fee_price' => 'float',
+        'idempotency_key' => 'string',
         'order_item' => '\OpenAPI\Client\Model\OrderAddOrderItemInner[]'
     ];
 
@@ -211,6 +212,7 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'clear_cache' => null,
         'origin' => null,
         'fee_price' => null,
+        'idempotency_key' => null,
         'order_item' => null
     ];
 
@@ -291,6 +293,7 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'clear_cache' => false,
         'origin' => false,
         'fee_price' => false,
+        'idempotency_key' => false,
         'order_item' => false
     ];
 
@@ -451,6 +454,7 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'clear_cache' => 'clear_cache',
         'origin' => 'origin',
         'fee_price' => 'fee_price',
+        'idempotency_key' => 'idempotency_key',
         'order_item' => 'order_item'
     ];
 
@@ -531,6 +535,7 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'clear_cache' => 'setClearCache',
         'origin' => 'setOrigin',
         'fee_price' => 'setFeePrice',
+        'idempotency_key' => 'setIdempotencyKey',
         'order_item' => 'setOrderItem'
     ];
 
@@ -611,6 +616,7 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'clear_cache' => 'getClearCache',
         'origin' => 'getOrigin',
         'fee_price' => 'getFeePrice',
+        'idempotency_key' => 'getIdempotencyKey',
         'order_item' => 'getOrderItem'
     ];
 
@@ -742,6 +748,7 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('clear_cache', $data ?? [], true);
         $this->setIfExists('origin', $data ?? [], null);
         $this->setIfExists('fee_price', $data ?? [], null);
+        $this->setIfExists('idempotency_key', $data ?? [], null);
         $this->setIfExists('order_item', $data ?? [], null);
     }
 
@@ -2739,6 +2746,33 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable fee_price cannot be null');
         }
         $this->container['fee_price'] = $fee_price;
+
+        return $this;
+    }
+
+    /**
+     * Gets idempotency_key
+     *
+     * @return string|null
+     */
+    public function getIdempotencyKey()
+    {
+        return $this->container['idempotency_key'];
+    }
+
+    /**
+     * Sets idempotency_key
+     *
+     * @param string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
+     *
+     * @return self
+     */
+    public function setIdempotencyKey($idempotency_key)
+    {
+        if (is_null($idempotency_key)) {
+            throw new \InvalidArgumentException('non-nullable idempotency_key cannot be null');
+        }
+        $this->container['idempotency_key'] = $idempotency_key;
 
         return $this;
     }

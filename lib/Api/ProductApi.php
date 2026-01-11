@@ -1440,15 +1440,16 @@ class ProductApi
      * @param  int|null $value_id Define attribute value id (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productAttributeValueSet'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ProductAttributeValueSet200Response
      */
-    public function productAttributeValueSet($product_id, $attribute_id = null, $attribute_group_id = null, $attribute_name = null, $value = null, $value_id = null, $lang_id = null, $store_id = null, string $contentType = self::contentTypes['productAttributeValueSet'][0])
+    public function productAttributeValueSet($product_id, $attribute_id = null, $attribute_group_id = null, $attribute_name = null, $value = null, $value_id = null, $lang_id = null, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['productAttributeValueSet'][0])
     {
-        list($response) = $this->productAttributeValueSetWithHttpInfo($product_id, $attribute_id, $attribute_group_id, $attribute_name, $value, $value_id, $lang_id, $store_id, $contentType);
+        list($response) = $this->productAttributeValueSetWithHttpInfo($product_id, $attribute_id, $attribute_group_id, $attribute_name, $value, $value_id, $lang_id, $store_id, $idempotency_key, $contentType);
         return $response;
     }
 
@@ -1465,15 +1466,16 @@ class ProductApi
      * @param  int|null $value_id Define attribute value id (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productAttributeValueSet'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ProductAttributeValueSet200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productAttributeValueSetWithHttpInfo($product_id, $attribute_id = null, $attribute_group_id = null, $attribute_name = null, $value = null, $value_id = null, $lang_id = null, $store_id = null, string $contentType = self::contentTypes['productAttributeValueSet'][0])
+    public function productAttributeValueSetWithHttpInfo($product_id, $attribute_id = null, $attribute_group_id = null, $attribute_name = null, $value = null, $value_id = null, $lang_id = null, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['productAttributeValueSet'][0])
     {
-        $request = $this->productAttributeValueSetRequest($product_id, $attribute_id, $attribute_group_id, $attribute_name, $value, $value_id, $lang_id, $store_id, $contentType);
+        $request = $this->productAttributeValueSetRequest($product_id, $attribute_id, $attribute_group_id, $attribute_name, $value, $value_id, $lang_id, $store_id, $idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1597,14 +1599,15 @@ class ProductApi
      * @param  int|null $value_id Define attribute value id (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productAttributeValueSet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productAttributeValueSetAsync($product_id, $attribute_id = null, $attribute_group_id = null, $attribute_name = null, $value = null, $value_id = null, $lang_id = null, $store_id = null, string $contentType = self::contentTypes['productAttributeValueSet'][0])
+    public function productAttributeValueSetAsync($product_id, $attribute_id = null, $attribute_group_id = null, $attribute_name = null, $value = null, $value_id = null, $lang_id = null, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['productAttributeValueSet'][0])
     {
-        return $this->productAttributeValueSetAsyncWithHttpInfo($product_id, $attribute_id, $attribute_group_id, $attribute_name, $value, $value_id, $lang_id, $store_id, $contentType)
+        return $this->productAttributeValueSetAsyncWithHttpInfo($product_id, $attribute_id, $attribute_group_id, $attribute_name, $value, $value_id, $lang_id, $store_id, $idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1625,15 +1628,16 @@ class ProductApi
      * @param  int|null $value_id Define attribute value id (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productAttributeValueSet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productAttributeValueSetAsyncWithHttpInfo($product_id, $attribute_id = null, $attribute_group_id = null, $attribute_name = null, $value = null, $value_id = null, $lang_id = null, $store_id = null, string $contentType = self::contentTypes['productAttributeValueSet'][0])
+    public function productAttributeValueSetAsyncWithHttpInfo($product_id, $attribute_id = null, $attribute_group_id = null, $attribute_name = null, $value = null, $value_id = null, $lang_id = null, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['productAttributeValueSet'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ProductAttributeValueSet200Response';
-        $request = $this->productAttributeValueSetRequest($product_id, $attribute_id, $attribute_group_id, $attribute_name, $value, $value_id, $lang_id, $store_id, $contentType);
+        $request = $this->productAttributeValueSetRequest($product_id, $attribute_id, $attribute_group_id, $attribute_name, $value, $value_id, $lang_id, $store_id, $idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1682,12 +1686,13 @@ class ProductApi
      * @param  int|null $value_id Define attribute value id (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productAttributeValueSet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function productAttributeValueSetRequest($product_id, $attribute_id = null, $attribute_group_id = null, $attribute_name = null, $value = null, $value_id = null, $lang_id = null, $store_id = null, string $contentType = self::contentTypes['productAttributeValueSet'][0])
+    public function productAttributeValueSetRequest($product_id, $attribute_id = null, $attribute_group_id = null, $attribute_name = null, $value = null, $value_id = null, $lang_id = null, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['productAttributeValueSet'][0])
     {
 
         // verify the required parameter 'product_id' is set
@@ -1696,6 +1701,7 @@ class ProductApi
                 'Missing the required parameter $product_id when calling productAttributeValueSet'
             );
         }
+
 
 
 
@@ -1784,6 +1790,15 @@ class ProductApi
             true, // explode
             false // required
         ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idempotency_key,
+            'idempotency_key', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
 
 
 
@@ -1862,15 +1877,16 @@ class ProductApi
      * @param  bool|null $include_default Boolean, whether or not to unset default value of the attribute, if applicable (optional, default to false)
      * @param  bool|null $reindex Is reindex required (optional, default to true)
      * @param  bool|null $clear_cache Is cache clear required (optional, default to true)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productAttributeValueUnset'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ProductAttributeValueUnset200Response
      */
-    public function productAttributeValueUnset($product_id, $attribute_id, $store_id = null, $include_default = false, $reindex = true, $clear_cache = true, string $contentType = self::contentTypes['productAttributeValueUnset'][0])
+    public function productAttributeValueUnset($product_id, $attribute_id, $store_id = null, $include_default = false, $reindex = true, $clear_cache = true, $idempotency_key = null, string $contentType = self::contentTypes['productAttributeValueUnset'][0])
     {
-        list($response) = $this->productAttributeValueUnsetWithHttpInfo($product_id, $attribute_id, $store_id, $include_default, $reindex, $clear_cache, $contentType);
+        list($response) = $this->productAttributeValueUnsetWithHttpInfo($product_id, $attribute_id, $store_id, $include_default, $reindex, $clear_cache, $idempotency_key, $contentType);
         return $response;
     }
 
@@ -1885,15 +1901,16 @@ class ProductApi
      * @param  bool|null $include_default Boolean, whether or not to unset default value of the attribute, if applicable (optional, default to false)
      * @param  bool|null $reindex Is reindex required (optional, default to true)
      * @param  bool|null $clear_cache Is cache clear required (optional, default to true)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productAttributeValueUnset'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ProductAttributeValueUnset200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productAttributeValueUnsetWithHttpInfo($product_id, $attribute_id, $store_id = null, $include_default = false, $reindex = true, $clear_cache = true, string $contentType = self::contentTypes['productAttributeValueUnset'][0])
+    public function productAttributeValueUnsetWithHttpInfo($product_id, $attribute_id, $store_id = null, $include_default = false, $reindex = true, $clear_cache = true, $idempotency_key = null, string $contentType = self::contentTypes['productAttributeValueUnset'][0])
     {
-        $request = $this->productAttributeValueUnsetRequest($product_id, $attribute_id, $store_id, $include_default, $reindex, $clear_cache, $contentType);
+        $request = $this->productAttributeValueUnsetRequest($product_id, $attribute_id, $store_id, $include_default, $reindex, $clear_cache, $idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2015,14 +2032,15 @@ class ProductApi
      * @param  bool|null $include_default Boolean, whether or not to unset default value of the attribute, if applicable (optional, default to false)
      * @param  bool|null $reindex Is reindex required (optional, default to true)
      * @param  bool|null $clear_cache Is cache clear required (optional, default to true)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productAttributeValueUnset'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productAttributeValueUnsetAsync($product_id, $attribute_id, $store_id = null, $include_default = false, $reindex = true, $clear_cache = true, string $contentType = self::contentTypes['productAttributeValueUnset'][0])
+    public function productAttributeValueUnsetAsync($product_id, $attribute_id, $store_id = null, $include_default = false, $reindex = true, $clear_cache = true, $idempotency_key = null, string $contentType = self::contentTypes['productAttributeValueUnset'][0])
     {
-        return $this->productAttributeValueUnsetAsyncWithHttpInfo($product_id, $attribute_id, $store_id, $include_default, $reindex, $clear_cache, $contentType)
+        return $this->productAttributeValueUnsetAsyncWithHttpInfo($product_id, $attribute_id, $store_id, $include_default, $reindex, $clear_cache, $idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2041,15 +2059,16 @@ class ProductApi
      * @param  bool|null $include_default Boolean, whether or not to unset default value of the attribute, if applicable (optional, default to false)
      * @param  bool|null $reindex Is reindex required (optional, default to true)
      * @param  bool|null $clear_cache Is cache clear required (optional, default to true)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productAttributeValueUnset'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productAttributeValueUnsetAsyncWithHttpInfo($product_id, $attribute_id, $store_id = null, $include_default = false, $reindex = true, $clear_cache = true, string $contentType = self::contentTypes['productAttributeValueUnset'][0])
+    public function productAttributeValueUnsetAsyncWithHttpInfo($product_id, $attribute_id, $store_id = null, $include_default = false, $reindex = true, $clear_cache = true, $idempotency_key = null, string $contentType = self::contentTypes['productAttributeValueUnset'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ProductAttributeValueUnset200Response';
-        $request = $this->productAttributeValueUnsetRequest($product_id, $attribute_id, $store_id, $include_default, $reindex, $clear_cache, $contentType);
+        $request = $this->productAttributeValueUnsetRequest($product_id, $attribute_id, $store_id, $include_default, $reindex, $clear_cache, $idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2096,12 +2115,13 @@ class ProductApi
      * @param  bool|null $include_default Boolean, whether or not to unset default value of the attribute, if applicable (optional, default to false)
      * @param  bool|null $reindex Is reindex required (optional, default to true)
      * @param  bool|null $clear_cache Is cache clear required (optional, default to true)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productAttributeValueUnset'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function productAttributeValueUnsetRequest($product_id, $attribute_id, $store_id = null, $include_default = false, $reindex = true, $clear_cache = true, string $contentType = self::contentTypes['productAttributeValueUnset'][0])
+    public function productAttributeValueUnsetRequest($product_id, $attribute_id, $store_id = null, $include_default = false, $reindex = true, $clear_cache = true, $idempotency_key = null, string $contentType = self::contentTypes['productAttributeValueUnset'][0])
     {
 
         // verify the required parameter 'product_id' is set
@@ -2117,6 +2137,7 @@ class ProductApi
                 'Missing the required parameter $attribute_id when calling productAttributeValueUnset'
             );
         }
+
 
 
 
@@ -2180,6 +2201,15 @@ class ProductApi
             $clear_cache,
             'clear_cache', // param base name
             'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idempotency_key,
+            'idempotency_key', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -4935,15 +4965,16 @@ class ProductApi
      * @param  string|null $symbol_left Defines the symbol that is located before the currency (optional)
      * @param  string|null $symbol_right Defines the symbol that is located after the currency (optional)
      * @param  bool|null $default Specifies currency&#39;s default meaning (optional, default to false)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productCurrencyAdd'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ProductCurrencyAdd200Response
      */
-    public function productCurrencyAdd($iso3, $rate, $name = null, $avail = true, $symbol_left = null, $symbol_right = null, $default = false, string $contentType = self::contentTypes['productCurrencyAdd'][0])
+    public function productCurrencyAdd($iso3, $rate, $name = null, $avail = true, $symbol_left = null, $symbol_right = null, $default = false, $idempotency_key = null, string $contentType = self::contentTypes['productCurrencyAdd'][0])
     {
-        list($response) = $this->productCurrencyAddWithHttpInfo($iso3, $rate, $name, $avail, $symbol_left, $symbol_right, $default, $contentType);
+        list($response) = $this->productCurrencyAddWithHttpInfo($iso3, $rate, $name, $avail, $symbol_left, $symbol_right, $default, $idempotency_key, $contentType);
         return $response;
     }
 
@@ -4959,15 +4990,16 @@ class ProductApi
      * @param  string|null $symbol_left Defines the symbol that is located before the currency (optional)
      * @param  string|null $symbol_right Defines the symbol that is located after the currency (optional)
      * @param  bool|null $default Specifies currency&#39;s default meaning (optional, default to false)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productCurrencyAdd'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ProductCurrencyAdd200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productCurrencyAddWithHttpInfo($iso3, $rate, $name = null, $avail = true, $symbol_left = null, $symbol_right = null, $default = false, string $contentType = self::contentTypes['productCurrencyAdd'][0])
+    public function productCurrencyAddWithHttpInfo($iso3, $rate, $name = null, $avail = true, $symbol_left = null, $symbol_right = null, $default = false, $idempotency_key = null, string $contentType = self::contentTypes['productCurrencyAdd'][0])
     {
-        $request = $this->productCurrencyAddRequest($iso3, $rate, $name, $avail, $symbol_left, $symbol_right, $default, $contentType);
+        $request = $this->productCurrencyAddRequest($iso3, $rate, $name, $avail, $symbol_left, $symbol_right, $default, $idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5090,14 +5122,15 @@ class ProductApi
      * @param  string|null $symbol_left Defines the symbol that is located before the currency (optional)
      * @param  string|null $symbol_right Defines the symbol that is located after the currency (optional)
      * @param  bool|null $default Specifies currency&#39;s default meaning (optional, default to false)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productCurrencyAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productCurrencyAddAsync($iso3, $rate, $name = null, $avail = true, $symbol_left = null, $symbol_right = null, $default = false, string $contentType = self::contentTypes['productCurrencyAdd'][0])
+    public function productCurrencyAddAsync($iso3, $rate, $name = null, $avail = true, $symbol_left = null, $symbol_right = null, $default = false, $idempotency_key = null, string $contentType = self::contentTypes['productCurrencyAdd'][0])
     {
-        return $this->productCurrencyAddAsyncWithHttpInfo($iso3, $rate, $name, $avail, $symbol_left, $symbol_right, $default, $contentType)
+        return $this->productCurrencyAddAsyncWithHttpInfo($iso3, $rate, $name, $avail, $symbol_left, $symbol_right, $default, $idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5117,15 +5150,16 @@ class ProductApi
      * @param  string|null $symbol_left Defines the symbol that is located before the currency (optional)
      * @param  string|null $symbol_right Defines the symbol that is located after the currency (optional)
      * @param  bool|null $default Specifies currency&#39;s default meaning (optional, default to false)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productCurrencyAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productCurrencyAddAsyncWithHttpInfo($iso3, $rate, $name = null, $avail = true, $symbol_left = null, $symbol_right = null, $default = false, string $contentType = self::contentTypes['productCurrencyAdd'][0])
+    public function productCurrencyAddAsyncWithHttpInfo($iso3, $rate, $name = null, $avail = true, $symbol_left = null, $symbol_right = null, $default = false, $idempotency_key = null, string $contentType = self::contentTypes['productCurrencyAdd'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ProductCurrencyAdd200Response';
-        $request = $this->productCurrencyAddRequest($iso3, $rate, $name, $avail, $symbol_left, $symbol_right, $default, $contentType);
+        $request = $this->productCurrencyAddRequest($iso3, $rate, $name, $avail, $symbol_left, $symbol_right, $default, $idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5173,12 +5207,13 @@ class ProductApi
      * @param  string|null $symbol_left Defines the symbol that is located before the currency (optional)
      * @param  string|null $symbol_right Defines the symbol that is located after the currency (optional)
      * @param  bool|null $default Specifies currency&#39;s default meaning (optional, default to false)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productCurrencyAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function productCurrencyAddRequest($iso3, $rate, $name = null, $avail = true, $symbol_left = null, $symbol_right = null, $default = false, string $contentType = self::contentTypes['productCurrencyAdd'][0])
+    public function productCurrencyAddRequest($iso3, $rate, $name = null, $avail = true, $symbol_left = null, $symbol_right = null, $default = false, $idempotency_key = null, string $contentType = self::contentTypes['productCurrencyAdd'][0])
     {
 
         // verify the required parameter 'iso3' is set
@@ -5194,6 +5229,7 @@ class ProductApi
                 'Missing the required parameter $rate when calling productCurrencyAdd'
             );
         }
+
 
 
 
@@ -5267,6 +5303,15 @@ class ProductApi
             $default,
             'default', // param base name
             'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idempotency_key,
+            'idempotency_key', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -7488,15 +7533,16 @@ class ProductApi
      * @param  string|null $label Defines alternative text that has to be attached to the picture (optional)
      * @param  int|null $position Defines image’s position in the list (optional)
      * @param  bool|null $hidden Define is hide image (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productImageUpdate'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ProductImageUpdate200Response
      */
-    public function productImageUpdate($product_id, $id, $variant_ids = null, $store_id = null, $lang_id = null, $image_name = null, $type = 'additional', $label = null, $position = null, $hidden = null, string $contentType = self::contentTypes['productImageUpdate'][0])
+    public function productImageUpdate($product_id, $id, $variant_ids = null, $store_id = null, $lang_id = null, $image_name = null, $type = 'additional', $label = null, $position = null, $hidden = null, $idempotency_key = null, string $contentType = self::contentTypes['productImageUpdate'][0])
     {
-        list($response) = $this->productImageUpdateWithHttpInfo($product_id, $id, $variant_ids, $store_id, $lang_id, $image_name, $type, $label, $position, $hidden, $contentType);
+        list($response) = $this->productImageUpdateWithHttpInfo($product_id, $id, $variant_ids, $store_id, $lang_id, $image_name, $type, $label, $position, $hidden, $idempotency_key, $contentType);
         return $response;
     }
 
@@ -7515,15 +7561,16 @@ class ProductApi
      * @param  string|null $label Defines alternative text that has to be attached to the picture (optional)
      * @param  int|null $position Defines image’s position in the list (optional)
      * @param  bool|null $hidden Define is hide image (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productImageUpdate'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ProductImageUpdate200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productImageUpdateWithHttpInfo($product_id, $id, $variant_ids = null, $store_id = null, $lang_id = null, $image_name = null, $type = 'additional', $label = null, $position = null, $hidden = null, string $contentType = self::contentTypes['productImageUpdate'][0])
+    public function productImageUpdateWithHttpInfo($product_id, $id, $variant_ids = null, $store_id = null, $lang_id = null, $image_name = null, $type = 'additional', $label = null, $position = null, $hidden = null, $idempotency_key = null, string $contentType = self::contentTypes['productImageUpdate'][0])
     {
-        $request = $this->productImageUpdateRequest($product_id, $id, $variant_ids, $store_id, $lang_id, $image_name, $type, $label, $position, $hidden, $contentType);
+        $request = $this->productImageUpdateRequest($product_id, $id, $variant_ids, $store_id, $lang_id, $image_name, $type, $label, $position, $hidden, $idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7649,14 +7696,15 @@ class ProductApi
      * @param  string|null $label Defines alternative text that has to be attached to the picture (optional)
      * @param  int|null $position Defines image’s position in the list (optional)
      * @param  bool|null $hidden Define is hide image (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productImageUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productImageUpdateAsync($product_id, $id, $variant_ids = null, $store_id = null, $lang_id = null, $image_name = null, $type = 'additional', $label = null, $position = null, $hidden = null, string $contentType = self::contentTypes['productImageUpdate'][0])
+    public function productImageUpdateAsync($product_id, $id, $variant_ids = null, $store_id = null, $lang_id = null, $image_name = null, $type = 'additional', $label = null, $position = null, $hidden = null, $idempotency_key = null, string $contentType = self::contentTypes['productImageUpdate'][0])
     {
-        return $this->productImageUpdateAsyncWithHttpInfo($product_id, $id, $variant_ids, $store_id, $lang_id, $image_name, $type, $label, $position, $hidden, $contentType)
+        return $this->productImageUpdateAsyncWithHttpInfo($product_id, $id, $variant_ids, $store_id, $lang_id, $image_name, $type, $label, $position, $hidden, $idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7679,15 +7727,16 @@ class ProductApi
      * @param  string|null $label Defines alternative text that has to be attached to the picture (optional)
      * @param  int|null $position Defines image’s position in the list (optional)
      * @param  bool|null $hidden Define is hide image (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productImageUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productImageUpdateAsyncWithHttpInfo($product_id, $id, $variant_ids = null, $store_id = null, $lang_id = null, $image_name = null, $type = 'additional', $label = null, $position = null, $hidden = null, string $contentType = self::contentTypes['productImageUpdate'][0])
+    public function productImageUpdateAsyncWithHttpInfo($product_id, $id, $variant_ids = null, $store_id = null, $lang_id = null, $image_name = null, $type = 'additional', $label = null, $position = null, $hidden = null, $idempotency_key = null, string $contentType = self::contentTypes['productImageUpdate'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ProductImageUpdate200Response';
-        $request = $this->productImageUpdateRequest($product_id, $id, $variant_ids, $store_id, $lang_id, $image_name, $type, $label, $position, $hidden, $contentType);
+        $request = $this->productImageUpdateRequest($product_id, $id, $variant_ids, $store_id, $lang_id, $image_name, $type, $label, $position, $hidden, $idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7738,12 +7787,13 @@ class ProductApi
      * @param  string|null $label Defines alternative text that has to be attached to the picture (optional)
      * @param  int|null $position Defines image’s position in the list (optional)
      * @param  bool|null $hidden Define is hide image (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productImageUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function productImageUpdateRequest($product_id, $id, $variant_ids = null, $store_id = null, $lang_id = null, $image_name = null, $type = 'additional', $label = null, $position = null, $hidden = null, string $contentType = self::contentTypes['productImageUpdate'][0])
+    public function productImageUpdateRequest($product_id, $id, $variant_ids = null, $store_id = null, $lang_id = null, $image_name = null, $type = 'additional', $label = null, $position = null, $hidden = null, $idempotency_key = null, string $contentType = self::contentTypes['productImageUpdate'][0])
     {
 
         // verify the required parameter 'product_id' is set
@@ -7759,6 +7809,7 @@ class ProductApi
                 'Missing the required parameter $id when calling productImageUpdate'
             );
         }
+
 
 
 
@@ -7862,6 +7913,15 @@ class ProductApi
             $hidden,
             'hidden', // param base name
             'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idempotency_key,
+            'idempotency_key', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -9239,15 +9299,16 @@ class ProductApi
      * @param  string|null $search_keywords Defines unique search keywords (optional)
      * @param  string|null $image_url Image Url (optional)
      * @param  string|null $seo_url Defines unique URL for SEO (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productManufacturerAdd'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ProductManufacturerAdd200Response
      */
-    public function productManufacturerAdd($product_id, $manufacturer, $store_id = null, $meta_title = null, $meta_keywords = null, $meta_description = null, $search_keywords = null, $image_url = null, $seo_url = null, string $contentType = self::contentTypes['productManufacturerAdd'][0])
+    public function productManufacturerAdd($product_id, $manufacturer, $store_id = null, $meta_title = null, $meta_keywords = null, $meta_description = null, $search_keywords = null, $image_url = null, $seo_url = null, $idempotency_key = null, string $contentType = self::contentTypes['productManufacturerAdd'][0])
     {
-        list($response) = $this->productManufacturerAddWithHttpInfo($product_id, $manufacturer, $store_id, $meta_title, $meta_keywords, $meta_description, $search_keywords, $image_url, $seo_url, $contentType);
+        list($response) = $this->productManufacturerAddWithHttpInfo($product_id, $manufacturer, $store_id, $meta_title, $meta_keywords, $meta_description, $search_keywords, $image_url, $seo_url, $idempotency_key, $contentType);
         return $response;
     }
 
@@ -9265,15 +9326,16 @@ class ProductApi
      * @param  string|null $search_keywords Defines unique search keywords (optional)
      * @param  string|null $image_url Image Url (optional)
      * @param  string|null $seo_url Defines unique URL for SEO (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productManufacturerAdd'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ProductManufacturerAdd200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productManufacturerAddWithHttpInfo($product_id, $manufacturer, $store_id = null, $meta_title = null, $meta_keywords = null, $meta_description = null, $search_keywords = null, $image_url = null, $seo_url = null, string $contentType = self::contentTypes['productManufacturerAdd'][0])
+    public function productManufacturerAddWithHttpInfo($product_id, $manufacturer, $store_id = null, $meta_title = null, $meta_keywords = null, $meta_description = null, $search_keywords = null, $image_url = null, $seo_url = null, $idempotency_key = null, string $contentType = self::contentTypes['productManufacturerAdd'][0])
     {
-        $request = $this->productManufacturerAddRequest($product_id, $manufacturer, $store_id, $meta_title, $meta_keywords, $meta_description, $search_keywords, $image_url, $seo_url, $contentType);
+        $request = $this->productManufacturerAddRequest($product_id, $manufacturer, $store_id, $meta_title, $meta_keywords, $meta_description, $search_keywords, $image_url, $seo_url, $idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -9398,14 +9460,15 @@ class ProductApi
      * @param  string|null $search_keywords Defines unique search keywords (optional)
      * @param  string|null $image_url Image Url (optional)
      * @param  string|null $seo_url Defines unique URL for SEO (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productManufacturerAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productManufacturerAddAsync($product_id, $manufacturer, $store_id = null, $meta_title = null, $meta_keywords = null, $meta_description = null, $search_keywords = null, $image_url = null, $seo_url = null, string $contentType = self::contentTypes['productManufacturerAdd'][0])
+    public function productManufacturerAddAsync($product_id, $manufacturer, $store_id = null, $meta_title = null, $meta_keywords = null, $meta_description = null, $search_keywords = null, $image_url = null, $seo_url = null, $idempotency_key = null, string $contentType = self::contentTypes['productManufacturerAdd'][0])
     {
-        return $this->productManufacturerAddAsyncWithHttpInfo($product_id, $manufacturer, $store_id, $meta_title, $meta_keywords, $meta_description, $search_keywords, $image_url, $seo_url, $contentType)
+        return $this->productManufacturerAddAsyncWithHttpInfo($product_id, $manufacturer, $store_id, $meta_title, $meta_keywords, $meta_description, $search_keywords, $image_url, $seo_url, $idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -9427,15 +9490,16 @@ class ProductApi
      * @param  string|null $search_keywords Defines unique search keywords (optional)
      * @param  string|null $image_url Image Url (optional)
      * @param  string|null $seo_url Defines unique URL for SEO (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productManufacturerAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productManufacturerAddAsyncWithHttpInfo($product_id, $manufacturer, $store_id = null, $meta_title = null, $meta_keywords = null, $meta_description = null, $search_keywords = null, $image_url = null, $seo_url = null, string $contentType = self::contentTypes['productManufacturerAdd'][0])
+    public function productManufacturerAddAsyncWithHttpInfo($product_id, $manufacturer, $store_id = null, $meta_title = null, $meta_keywords = null, $meta_description = null, $search_keywords = null, $image_url = null, $seo_url = null, $idempotency_key = null, string $contentType = self::contentTypes['productManufacturerAdd'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ProductManufacturerAdd200Response';
-        $request = $this->productManufacturerAddRequest($product_id, $manufacturer, $store_id, $meta_title, $meta_keywords, $meta_description, $search_keywords, $image_url, $seo_url, $contentType);
+        $request = $this->productManufacturerAddRequest($product_id, $manufacturer, $store_id, $meta_title, $meta_keywords, $meta_description, $search_keywords, $image_url, $seo_url, $idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -9485,12 +9549,13 @@ class ProductApi
      * @param  string|null $search_keywords Defines unique search keywords (optional)
      * @param  string|null $image_url Image Url (optional)
      * @param  string|null $seo_url Defines unique URL for SEO (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productManufacturerAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function productManufacturerAddRequest($product_id, $manufacturer, $store_id = null, $meta_title = null, $meta_keywords = null, $meta_description = null, $search_keywords = null, $image_url = null, $seo_url = null, string $contentType = self::contentTypes['productManufacturerAdd'][0])
+    public function productManufacturerAddRequest($product_id, $manufacturer, $store_id = null, $meta_title = null, $meta_keywords = null, $meta_description = null, $search_keywords = null, $image_url = null, $seo_url = null, $idempotency_key = null, string $contentType = self::contentTypes['productManufacturerAdd'][0])
     {
 
         // verify the required parameter 'product_id' is set
@@ -9506,6 +9571,7 @@ class ProductApi
                 'Missing the required parameter $manufacturer when calling productManufacturerAdd'
             );
         }
+
 
 
 
@@ -9598,6 +9664,15 @@ class ProductApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $seo_url,
             'seo_url', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idempotency_key,
+            'idempotency_key', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -9998,15 +10073,16 @@ class ProductApi
      * @param  int|null $sort_order Sort number in the list (optional, default to 0)
      * @param  string|null $option_values Defines option values that has to be assigned (optional)
      * @param  bool|null $clear_cache Is cache clear required (optional, default to true)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productOptionAssign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ProductOptionAssign200Response
      */
-    public function productOptionAssign($product_id, $option_id, $required = false, $sort_order = 0, $option_values = null, $clear_cache = true, string $contentType = self::contentTypes['productOptionAssign'][0])
+    public function productOptionAssign($product_id, $option_id, $required = false, $sort_order = 0, $option_values = null, $clear_cache = true, $idempotency_key = null, string $contentType = self::contentTypes['productOptionAssign'][0])
     {
-        list($response) = $this->productOptionAssignWithHttpInfo($product_id, $option_id, $required, $sort_order, $option_values, $clear_cache, $contentType);
+        list($response) = $this->productOptionAssignWithHttpInfo($product_id, $option_id, $required, $sort_order, $option_values, $clear_cache, $idempotency_key, $contentType);
         return $response;
     }
 
@@ -10021,15 +10097,16 @@ class ProductApi
      * @param  int|null $sort_order Sort number in the list (optional, default to 0)
      * @param  string|null $option_values Defines option values that has to be assigned (optional)
      * @param  bool|null $clear_cache Is cache clear required (optional, default to true)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productOptionAssign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ProductOptionAssign200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productOptionAssignWithHttpInfo($product_id, $option_id, $required = false, $sort_order = 0, $option_values = null, $clear_cache = true, string $contentType = self::contentTypes['productOptionAssign'][0])
+    public function productOptionAssignWithHttpInfo($product_id, $option_id, $required = false, $sort_order = 0, $option_values = null, $clear_cache = true, $idempotency_key = null, string $contentType = self::contentTypes['productOptionAssign'][0])
     {
-        $request = $this->productOptionAssignRequest($product_id, $option_id, $required, $sort_order, $option_values, $clear_cache, $contentType);
+        $request = $this->productOptionAssignRequest($product_id, $option_id, $required, $sort_order, $option_values, $clear_cache, $idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -10151,14 +10228,15 @@ class ProductApi
      * @param  int|null $sort_order Sort number in the list (optional, default to 0)
      * @param  string|null $option_values Defines option values that has to be assigned (optional)
      * @param  bool|null $clear_cache Is cache clear required (optional, default to true)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productOptionAssign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productOptionAssignAsync($product_id, $option_id, $required = false, $sort_order = 0, $option_values = null, $clear_cache = true, string $contentType = self::contentTypes['productOptionAssign'][0])
+    public function productOptionAssignAsync($product_id, $option_id, $required = false, $sort_order = 0, $option_values = null, $clear_cache = true, $idempotency_key = null, string $contentType = self::contentTypes['productOptionAssign'][0])
     {
-        return $this->productOptionAssignAsyncWithHttpInfo($product_id, $option_id, $required, $sort_order, $option_values, $clear_cache, $contentType)
+        return $this->productOptionAssignAsyncWithHttpInfo($product_id, $option_id, $required, $sort_order, $option_values, $clear_cache, $idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -10177,15 +10255,16 @@ class ProductApi
      * @param  int|null $sort_order Sort number in the list (optional, default to 0)
      * @param  string|null $option_values Defines option values that has to be assigned (optional)
      * @param  bool|null $clear_cache Is cache clear required (optional, default to true)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productOptionAssign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productOptionAssignAsyncWithHttpInfo($product_id, $option_id, $required = false, $sort_order = 0, $option_values = null, $clear_cache = true, string $contentType = self::contentTypes['productOptionAssign'][0])
+    public function productOptionAssignAsyncWithHttpInfo($product_id, $option_id, $required = false, $sort_order = 0, $option_values = null, $clear_cache = true, $idempotency_key = null, string $contentType = self::contentTypes['productOptionAssign'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ProductOptionAssign200Response';
-        $request = $this->productOptionAssignRequest($product_id, $option_id, $required, $sort_order, $option_values, $clear_cache, $contentType);
+        $request = $this->productOptionAssignRequest($product_id, $option_id, $required, $sort_order, $option_values, $clear_cache, $idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -10232,12 +10311,13 @@ class ProductApi
      * @param  int|null $sort_order Sort number in the list (optional, default to 0)
      * @param  string|null $option_values Defines option values that has to be assigned (optional)
      * @param  bool|null $clear_cache Is cache clear required (optional, default to true)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productOptionAssign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function productOptionAssignRequest($product_id, $option_id, $required = false, $sort_order = 0, $option_values = null, $clear_cache = true, string $contentType = self::contentTypes['productOptionAssign'][0])
+    public function productOptionAssignRequest($product_id, $option_id, $required = false, $sort_order = 0, $option_values = null, $clear_cache = true, $idempotency_key = null, string $contentType = self::contentTypes['productOptionAssign'][0])
     {
 
         // verify the required parameter 'product_id' is set
@@ -10253,6 +10333,7 @@ class ProductApi
                 'Missing the required parameter $option_id when calling productOptionAssign'
             );
         }
+
 
 
 
@@ -10316,6 +10397,15 @@ class ProductApi
             $clear_cache,
             'clear_cache', // param base name
             'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idempotency_key,
+            'idempotency_key', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -11172,15 +11262,16 @@ class ProductApi
      * @param  string|null $display_value Defines the value that will be displayed for the option value (optional)
      * @param  bool|null $is_default Defines as a default (optional)
      * @param  bool|null $clear_cache Is cache clear required (optional, default to true)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productOptionValueAdd'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ProductOptionValueAdd200Response
      */
-    public function productOptionValueAdd($product_id, $option_id, $option_value = null, $sort_order = 0, $display_value = null, $is_default = null, $clear_cache = true, string $contentType = self::contentTypes['productOptionValueAdd'][0])
+    public function productOptionValueAdd($product_id, $option_id, $option_value = null, $sort_order = 0, $display_value = null, $is_default = null, $clear_cache = true, $idempotency_key = null, string $contentType = self::contentTypes['productOptionValueAdd'][0])
     {
-        list($response) = $this->productOptionValueAddWithHttpInfo($product_id, $option_id, $option_value, $sort_order, $display_value, $is_default, $clear_cache, $contentType);
+        list($response) = $this->productOptionValueAddWithHttpInfo($product_id, $option_id, $option_value, $sort_order, $display_value, $is_default, $clear_cache, $idempotency_key, $contentType);
         return $response;
     }
 
@@ -11196,15 +11287,16 @@ class ProductApi
      * @param  string|null $display_value Defines the value that will be displayed for the option value (optional)
      * @param  bool|null $is_default Defines as a default (optional)
      * @param  bool|null $clear_cache Is cache clear required (optional, default to true)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productOptionValueAdd'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ProductOptionValueAdd200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productOptionValueAddWithHttpInfo($product_id, $option_id, $option_value = null, $sort_order = 0, $display_value = null, $is_default = null, $clear_cache = true, string $contentType = self::contentTypes['productOptionValueAdd'][0])
+    public function productOptionValueAddWithHttpInfo($product_id, $option_id, $option_value = null, $sort_order = 0, $display_value = null, $is_default = null, $clear_cache = true, $idempotency_key = null, string $contentType = self::contentTypes['productOptionValueAdd'][0])
     {
-        $request = $this->productOptionValueAddRequest($product_id, $option_id, $option_value, $sort_order, $display_value, $is_default, $clear_cache, $contentType);
+        $request = $this->productOptionValueAddRequest($product_id, $option_id, $option_value, $sort_order, $display_value, $is_default, $clear_cache, $idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -11327,14 +11419,15 @@ class ProductApi
      * @param  string|null $display_value Defines the value that will be displayed for the option value (optional)
      * @param  bool|null $is_default Defines as a default (optional)
      * @param  bool|null $clear_cache Is cache clear required (optional, default to true)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productOptionValueAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productOptionValueAddAsync($product_id, $option_id, $option_value = null, $sort_order = 0, $display_value = null, $is_default = null, $clear_cache = true, string $contentType = self::contentTypes['productOptionValueAdd'][0])
+    public function productOptionValueAddAsync($product_id, $option_id, $option_value = null, $sort_order = 0, $display_value = null, $is_default = null, $clear_cache = true, $idempotency_key = null, string $contentType = self::contentTypes['productOptionValueAdd'][0])
     {
-        return $this->productOptionValueAddAsyncWithHttpInfo($product_id, $option_id, $option_value, $sort_order, $display_value, $is_default, $clear_cache, $contentType)
+        return $this->productOptionValueAddAsyncWithHttpInfo($product_id, $option_id, $option_value, $sort_order, $display_value, $is_default, $clear_cache, $idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -11354,15 +11447,16 @@ class ProductApi
      * @param  string|null $display_value Defines the value that will be displayed for the option value (optional)
      * @param  bool|null $is_default Defines as a default (optional)
      * @param  bool|null $clear_cache Is cache clear required (optional, default to true)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productOptionValueAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productOptionValueAddAsyncWithHttpInfo($product_id, $option_id, $option_value = null, $sort_order = 0, $display_value = null, $is_default = null, $clear_cache = true, string $contentType = self::contentTypes['productOptionValueAdd'][0])
+    public function productOptionValueAddAsyncWithHttpInfo($product_id, $option_id, $option_value = null, $sort_order = 0, $display_value = null, $is_default = null, $clear_cache = true, $idempotency_key = null, string $contentType = self::contentTypes['productOptionValueAdd'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ProductOptionValueAdd200Response';
-        $request = $this->productOptionValueAddRequest($product_id, $option_id, $option_value, $sort_order, $display_value, $is_default, $clear_cache, $contentType);
+        $request = $this->productOptionValueAddRequest($product_id, $option_id, $option_value, $sort_order, $display_value, $is_default, $clear_cache, $idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -11410,12 +11504,13 @@ class ProductApi
      * @param  string|null $display_value Defines the value that will be displayed for the option value (optional)
      * @param  bool|null $is_default Defines as a default (optional)
      * @param  bool|null $clear_cache Is cache clear required (optional, default to true)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productOptionValueAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function productOptionValueAddRequest($product_id, $option_id, $option_value = null, $sort_order = 0, $display_value = null, $is_default = null, $clear_cache = true, string $contentType = self::contentTypes['productOptionValueAdd'][0])
+    public function productOptionValueAddRequest($product_id, $option_id, $option_value = null, $sort_order = 0, $display_value = null, $is_default = null, $clear_cache = true, $idempotency_key = null, string $contentType = self::contentTypes['productOptionValueAdd'][0])
     {
 
         // verify the required parameter 'product_id' is set
@@ -11431,6 +11526,7 @@ class ProductApi
                 'Missing the required parameter $option_id when calling productOptionValueAdd'
             );
         }
+
 
 
 
@@ -11504,6 +11600,15 @@ class ProductApi
             $clear_cache,
             'clear_cache', // param base name
             'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idempotency_key,
+            'idempotency_key', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -11583,15 +11688,16 @@ class ProductApi
      * @param  int $product_option_id Defines product&#39;s option id where the value has to be assigned (required)
      * @param  string $option_value_id Defines value id that has to be assigned (required)
      * @param  bool|null $clear_cache Is cache clear required (optional, default to true)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productOptionValueAssign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ProductOptionValueAssign200Response
      */
-    public function productOptionValueAssign($product_option_id, $option_value_id, $clear_cache = true, string $contentType = self::contentTypes['productOptionValueAssign'][0])
+    public function productOptionValueAssign($product_option_id, $option_value_id, $clear_cache = true, $idempotency_key = null, string $contentType = self::contentTypes['productOptionValueAssign'][0])
     {
-        list($response) = $this->productOptionValueAssignWithHttpInfo($product_option_id, $option_value_id, $clear_cache, $contentType);
+        list($response) = $this->productOptionValueAssignWithHttpInfo($product_option_id, $option_value_id, $clear_cache, $idempotency_key, $contentType);
         return $response;
     }
 
@@ -11603,15 +11709,16 @@ class ProductApi
      * @param  int $product_option_id Defines product&#39;s option id where the value has to be assigned (required)
      * @param  string $option_value_id Defines value id that has to be assigned (required)
      * @param  bool|null $clear_cache Is cache clear required (optional, default to true)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productOptionValueAssign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ProductOptionValueAssign200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productOptionValueAssignWithHttpInfo($product_option_id, $option_value_id, $clear_cache = true, string $contentType = self::contentTypes['productOptionValueAssign'][0])
+    public function productOptionValueAssignWithHttpInfo($product_option_id, $option_value_id, $clear_cache = true, $idempotency_key = null, string $contentType = self::contentTypes['productOptionValueAssign'][0])
     {
-        $request = $this->productOptionValueAssignRequest($product_option_id, $option_value_id, $clear_cache, $contentType);
+        $request = $this->productOptionValueAssignRequest($product_option_id, $option_value_id, $clear_cache, $idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -11730,14 +11837,15 @@ class ProductApi
      * @param  int $product_option_id Defines product&#39;s option id where the value has to be assigned (required)
      * @param  string $option_value_id Defines value id that has to be assigned (required)
      * @param  bool|null $clear_cache Is cache clear required (optional, default to true)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productOptionValueAssign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productOptionValueAssignAsync($product_option_id, $option_value_id, $clear_cache = true, string $contentType = self::contentTypes['productOptionValueAssign'][0])
+    public function productOptionValueAssignAsync($product_option_id, $option_value_id, $clear_cache = true, $idempotency_key = null, string $contentType = self::contentTypes['productOptionValueAssign'][0])
     {
-        return $this->productOptionValueAssignAsyncWithHttpInfo($product_option_id, $option_value_id, $clear_cache, $contentType)
+        return $this->productOptionValueAssignAsyncWithHttpInfo($product_option_id, $option_value_id, $clear_cache, $idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -11753,15 +11861,16 @@ class ProductApi
      * @param  int $product_option_id Defines product&#39;s option id where the value has to be assigned (required)
      * @param  string $option_value_id Defines value id that has to be assigned (required)
      * @param  bool|null $clear_cache Is cache clear required (optional, default to true)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productOptionValueAssign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productOptionValueAssignAsyncWithHttpInfo($product_option_id, $option_value_id, $clear_cache = true, string $contentType = self::contentTypes['productOptionValueAssign'][0])
+    public function productOptionValueAssignAsyncWithHttpInfo($product_option_id, $option_value_id, $clear_cache = true, $idempotency_key = null, string $contentType = self::contentTypes['productOptionValueAssign'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ProductOptionValueAssign200Response';
-        $request = $this->productOptionValueAssignRequest($product_option_id, $option_value_id, $clear_cache, $contentType);
+        $request = $this->productOptionValueAssignRequest($product_option_id, $option_value_id, $clear_cache, $idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -11805,12 +11914,13 @@ class ProductApi
      * @param  int $product_option_id Defines product&#39;s option id where the value has to be assigned (required)
      * @param  string $option_value_id Defines value id that has to be assigned (required)
      * @param  bool|null $clear_cache Is cache clear required (optional, default to true)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productOptionValueAssign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function productOptionValueAssignRequest($product_option_id, $option_value_id, $clear_cache = true, string $contentType = self::contentTypes['productOptionValueAssign'][0])
+    public function productOptionValueAssignRequest($product_option_id, $option_value_id, $clear_cache = true, $idempotency_key = null, string $contentType = self::contentTypes['productOptionValueAssign'][0])
     {
 
         // verify the required parameter 'product_option_id' is set
@@ -11826,6 +11936,7 @@ class ProductApi
                 'Missing the required parameter $option_value_id when calling productOptionValueAssign'
             );
         }
+
 
 
 
@@ -11859,6 +11970,15 @@ class ProductApi
             $clear_cache,
             'clear_cache', // param base name
             'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idempotency_key,
+            'idempotency_key', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -12319,15 +12439,16 @@ class ProductApi
      * @param  float|null $quantity Defines new products&#39; options quantity (optional)
      * @param  string|null $display_value Defines the value that will be displayed for the option value (optional)
      * @param  bool|null $clear_cache Is cache clear required (optional, default to true)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productOptionValueUpdate'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\AccountConfigUpdate200Response
      */
-    public function productOptionValueUpdate($product_id, $option_id, $option_value_id, $option_value = null, $price = null, $quantity = null, $display_value = null, $clear_cache = true, string $contentType = self::contentTypes['productOptionValueUpdate'][0])
+    public function productOptionValueUpdate($product_id, $option_id, $option_value_id, $option_value = null, $price = null, $quantity = null, $display_value = null, $clear_cache = true, $idempotency_key = null, string $contentType = self::contentTypes['productOptionValueUpdate'][0])
     {
-        list($response) = $this->productOptionValueUpdateWithHttpInfo($product_id, $option_id, $option_value_id, $option_value, $price, $quantity, $display_value, $clear_cache, $contentType);
+        list($response) = $this->productOptionValueUpdateWithHttpInfo($product_id, $option_id, $option_value_id, $option_value, $price, $quantity, $display_value, $clear_cache, $idempotency_key, $contentType);
         return $response;
     }
 
@@ -12344,15 +12465,16 @@ class ProductApi
      * @param  float|null $quantity Defines new products&#39; options quantity (optional)
      * @param  string|null $display_value Defines the value that will be displayed for the option value (optional)
      * @param  bool|null $clear_cache Is cache clear required (optional, default to true)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productOptionValueUpdate'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\AccountConfigUpdate200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productOptionValueUpdateWithHttpInfo($product_id, $option_id, $option_value_id, $option_value = null, $price = null, $quantity = null, $display_value = null, $clear_cache = true, string $contentType = self::contentTypes['productOptionValueUpdate'][0])
+    public function productOptionValueUpdateWithHttpInfo($product_id, $option_id, $option_value_id, $option_value = null, $price = null, $quantity = null, $display_value = null, $clear_cache = true, $idempotency_key = null, string $contentType = self::contentTypes['productOptionValueUpdate'][0])
     {
-        $request = $this->productOptionValueUpdateRequest($product_id, $option_id, $option_value_id, $option_value, $price, $quantity, $display_value, $clear_cache, $contentType);
+        $request = $this->productOptionValueUpdateRequest($product_id, $option_id, $option_value_id, $option_value, $price, $quantity, $display_value, $clear_cache, $idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -12476,14 +12598,15 @@ class ProductApi
      * @param  float|null $quantity Defines new products&#39; options quantity (optional)
      * @param  string|null $display_value Defines the value that will be displayed for the option value (optional)
      * @param  bool|null $clear_cache Is cache clear required (optional, default to true)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productOptionValueUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productOptionValueUpdateAsync($product_id, $option_id, $option_value_id, $option_value = null, $price = null, $quantity = null, $display_value = null, $clear_cache = true, string $contentType = self::contentTypes['productOptionValueUpdate'][0])
+    public function productOptionValueUpdateAsync($product_id, $option_id, $option_value_id, $option_value = null, $price = null, $quantity = null, $display_value = null, $clear_cache = true, $idempotency_key = null, string $contentType = self::contentTypes['productOptionValueUpdate'][0])
     {
-        return $this->productOptionValueUpdateAsyncWithHttpInfo($product_id, $option_id, $option_value_id, $option_value, $price, $quantity, $display_value, $clear_cache, $contentType)
+        return $this->productOptionValueUpdateAsyncWithHttpInfo($product_id, $option_id, $option_value_id, $option_value, $price, $quantity, $display_value, $clear_cache, $idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -12504,15 +12627,16 @@ class ProductApi
      * @param  float|null $quantity Defines new products&#39; options quantity (optional)
      * @param  string|null $display_value Defines the value that will be displayed for the option value (optional)
      * @param  bool|null $clear_cache Is cache clear required (optional, default to true)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productOptionValueUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productOptionValueUpdateAsyncWithHttpInfo($product_id, $option_id, $option_value_id, $option_value = null, $price = null, $quantity = null, $display_value = null, $clear_cache = true, string $contentType = self::contentTypes['productOptionValueUpdate'][0])
+    public function productOptionValueUpdateAsyncWithHttpInfo($product_id, $option_id, $option_value_id, $option_value = null, $price = null, $quantity = null, $display_value = null, $clear_cache = true, $idempotency_key = null, string $contentType = self::contentTypes['productOptionValueUpdate'][0])
     {
         $returnType = '\OpenAPI\Client\Model\AccountConfigUpdate200Response';
-        $request = $this->productOptionValueUpdateRequest($product_id, $option_id, $option_value_id, $option_value, $price, $quantity, $display_value, $clear_cache, $contentType);
+        $request = $this->productOptionValueUpdateRequest($product_id, $option_id, $option_value_id, $option_value, $price, $quantity, $display_value, $clear_cache, $idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -12561,12 +12685,13 @@ class ProductApi
      * @param  float|null $quantity Defines new products&#39; options quantity (optional)
      * @param  string|null $display_value Defines the value that will be displayed for the option value (optional)
      * @param  bool|null $clear_cache Is cache clear required (optional, default to true)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productOptionValueUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function productOptionValueUpdateRequest($product_id, $option_id, $option_value_id, $option_value = null, $price = null, $quantity = null, $display_value = null, $clear_cache = true, string $contentType = self::contentTypes['productOptionValueUpdate'][0])
+    public function productOptionValueUpdateRequest($product_id, $option_id, $option_value_id, $option_value = null, $price = null, $quantity = null, $display_value = null, $clear_cache = true, $idempotency_key = null, string $contentType = self::contentTypes['productOptionValueUpdate'][0])
     {
 
         // verify the required parameter 'product_id' is set
@@ -12589,6 +12714,7 @@ class ProductApi
                 'Missing the required parameter $option_value_id when calling productOptionValueUpdate'
             );
         }
+
 
 
 
@@ -12671,6 +12797,15 @@ class ProductApi
             $clear_cache,
             'clear_cache', // param base name
             'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idempotency_key,
+            'idempotency_key', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -14276,15 +14411,16 @@ class ProductApi
      *
      * @param  string $product_id Defines id of the product which should be assigned to a store (required)
      * @param  string $store_id Defines id of the store product should be assigned to (required)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productStoreAssign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\AccountConfigUpdate200Response
      */
-    public function productStoreAssign($product_id, $store_id, string $contentType = self::contentTypes['productStoreAssign'][0])
+    public function productStoreAssign($product_id, $store_id, $idempotency_key = null, string $contentType = self::contentTypes['productStoreAssign'][0])
     {
-        list($response) = $this->productStoreAssignWithHttpInfo($product_id, $store_id, $contentType);
+        list($response) = $this->productStoreAssignWithHttpInfo($product_id, $store_id, $idempotency_key, $contentType);
         return $response;
     }
 
@@ -14295,15 +14431,16 @@ class ProductApi
      *
      * @param  string $product_id Defines id of the product which should be assigned to a store (required)
      * @param  string $store_id Defines id of the store product should be assigned to (required)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productStoreAssign'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\AccountConfigUpdate200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productStoreAssignWithHttpInfo($product_id, $store_id, string $contentType = self::contentTypes['productStoreAssign'][0])
+    public function productStoreAssignWithHttpInfo($product_id, $store_id, $idempotency_key = null, string $contentType = self::contentTypes['productStoreAssign'][0])
     {
-        $request = $this->productStoreAssignRequest($product_id, $store_id, $contentType);
+        $request = $this->productStoreAssignRequest($product_id, $store_id, $idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -14421,14 +14558,15 @@ class ProductApi
      *
      * @param  string $product_id Defines id of the product which should be assigned to a store (required)
      * @param  string $store_id Defines id of the store product should be assigned to (required)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productStoreAssign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productStoreAssignAsync($product_id, $store_id, string $contentType = self::contentTypes['productStoreAssign'][0])
+    public function productStoreAssignAsync($product_id, $store_id, $idempotency_key = null, string $contentType = self::contentTypes['productStoreAssign'][0])
     {
-        return $this->productStoreAssignAsyncWithHttpInfo($product_id, $store_id, $contentType)
+        return $this->productStoreAssignAsyncWithHttpInfo($product_id, $store_id, $idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -14443,15 +14581,16 @@ class ProductApi
      *
      * @param  string $product_id Defines id of the product which should be assigned to a store (required)
      * @param  string $store_id Defines id of the store product should be assigned to (required)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productStoreAssign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productStoreAssignAsyncWithHttpInfo($product_id, $store_id, string $contentType = self::contentTypes['productStoreAssign'][0])
+    public function productStoreAssignAsyncWithHttpInfo($product_id, $store_id, $idempotency_key = null, string $contentType = self::contentTypes['productStoreAssign'][0])
     {
         $returnType = '\OpenAPI\Client\Model\AccountConfigUpdate200Response';
-        $request = $this->productStoreAssignRequest($product_id, $store_id, $contentType);
+        $request = $this->productStoreAssignRequest($product_id, $store_id, $idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -14494,12 +14633,13 @@ class ProductApi
      *
      * @param  string $product_id Defines id of the product which should be assigned to a store (required)
      * @param  string $store_id Defines id of the store product should be assigned to (required)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productStoreAssign'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function productStoreAssignRequest($product_id, $store_id, string $contentType = self::contentTypes['productStoreAssign'][0])
+    public function productStoreAssignRequest($product_id, $store_id, $idempotency_key = null, string $contentType = self::contentTypes['productStoreAssign'][0])
     {
 
         // verify the required parameter 'product_id' is set
@@ -14515,6 +14655,7 @@ class ProductApi
                 'Missing the required parameter $store_id when calling productStoreAssign'
             );
         }
+
 
 
         $resourcePath = '/product.store.assign.json';
@@ -14541,6 +14682,15 @@ class ProductApi
             'form', // style
             true, // explode
             true // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idempotency_key,
+            'idempotency_key', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
         ) ?? []);
 
 

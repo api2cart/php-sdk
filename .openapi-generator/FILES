@@ -119,6 +119,8 @@ docs/Model/CategoryCount200Response.md
 docs/Model/CategoryCount200ResponseResult.md
 docs/Model/CategoryDelete200Response.md
 docs/Model/CategoryDelete200ResponseResult.md
+docs/Model/CategoryDeleteBatch.md
+docs/Model/CategoryDeleteBatchPayloadInner.md
 docs/Model/CategoryFind200Response.md
 docs/Model/CategoryFind200ResponseResult.md
 docs/Model/CategoryFind200ResponseResultCategoryInner.md
@@ -568,6 +570,8 @@ lib/Model/CategoryCount200Response.php
 lib/Model/CategoryCount200ResponseResult.php
 lib/Model/CategoryDelete200Response.php
 lib/Model/CategoryDelete200ResponseResult.php
+lib/Model/CategoryDeleteBatch.php
+lib/Model/CategoryDeleteBatchPayloadInner.php
 lib/Model/CategoryFind200Response.php
 lib/Model/CategoryFind200ResponseResult.php
 lib/Model/CategoryFind200ResponseResultCategoryInner.php
@@ -1015,6 +1019,8 @@ test/Model/CategoryCount200ResponseResultTest.php
 test/Model/CategoryCount200ResponseTest.php
 test/Model/CategoryDelete200ResponseResultTest.php
 test/Model/CategoryDelete200ResponseTest.php
+test/Model/CategoryDeleteBatchPayloadInnerTest.php
+test/Model/CategoryDeleteBatchTest.php
 test/Model/CategoryFind200ResponseResultCategoryInnerTest.php
 test/Model/CategoryFind200ResponseResultTest.php
 test/Model/CategoryFind200ResponseTest.php

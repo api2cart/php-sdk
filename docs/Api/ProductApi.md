@@ -286,7 +286,7 @@ try {
 ## `productAttributeValueSet()`
 
 ```php
-productAttributeValueSet($product_id, $attribute_id, $attribute_group_id, $attribute_name, $value, $value_id, $lang_id, $store_id): \OpenAPI\Client\Model\ProductAttributeValueSet200Response
+productAttributeValueSet($product_id, $attribute_id, $attribute_group_id, $attribute_name, $value, $value_id, $lang_id, $store_id, $idempotency_key): \OpenAPI\Client\Model\ProductAttributeValueSet200Response
 ```
 
 product.attribute.value.set
@@ -325,9 +325,10 @@ $value = Red; // string | Define attribute value
 $value_id = 22; // int | Define attribute value id
 $lang_id = 3; // string | Language id
 $store_id = 1; // string | Store Id
+$idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->productAttributeValueSet($product_id, $attribute_id, $attribute_group_id, $attribute_name, $value, $value_id, $lang_id, $store_id);
+    $result = $apiInstance->productAttributeValueSet($product_id, $attribute_id, $attribute_group_id, $attribute_name, $value, $value_id, $lang_id, $store_id, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productAttributeValueSet: ', $e->getMessage(), PHP_EOL;
@@ -346,6 +347,7 @@ try {
 | **value_id** | **int**| Define attribute value id | [optional] |
 | **lang_id** | **string**| Language id | [optional] |
 | **store_id** | **string**| Store Id | [optional] |
+| **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
 
@@ -367,7 +369,7 @@ try {
 ## `productAttributeValueUnset()`
 
 ```php
-productAttributeValueUnset($product_id, $attribute_id, $store_id, $include_default, $reindex, $clear_cache): \OpenAPI\Client\Model\ProductAttributeValueUnset200Response
+productAttributeValueUnset($product_id, $attribute_id, $store_id, $include_default, $reindex, $clear_cache, $idempotency_key): \OpenAPI\Client\Model\ProductAttributeValueUnset200Response
 ```
 
 product.attribute.value.unset
@@ -404,9 +406,10 @@ $store_id = 1; // string | Store Id
 $include_default = true; // bool | Boolean, whether or not to unset default value of the attribute, if applicable
 $reindex = false; // bool | Is reindex required
 $clear_cache = false; // bool | Is cache clear required
+$idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->productAttributeValueUnset($product_id, $attribute_id, $store_id, $include_default, $reindex, $clear_cache);
+    $result = $apiInstance->productAttributeValueUnset($product_id, $attribute_id, $store_id, $include_default, $reindex, $clear_cache, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productAttributeValueUnset: ', $e->getMessage(), PHP_EOL;
@@ -423,6 +426,7 @@ try {
 | **include_default** | **bool**| Boolean, whether or not to unset default value of the attribute, if applicable | [optional] [default to false] |
 | **reindex** | **bool**| Is reindex required | [optional] [default to true] |
 | **clear_cache** | **bool**| Is cache clear required | [optional] [default to true] |
+| **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
 
@@ -925,7 +929,7 @@ try {
 ## `productCurrencyAdd()`
 
 ```php
-productCurrencyAdd($iso3, $rate, $name, $avail, $symbol_left, $symbol_right, $default): \OpenAPI\Client\Model\ProductCurrencyAdd200Response
+productCurrencyAdd($iso3, $rate, $name, $avail, $symbol_left, $symbol_right, $default, $idempotency_key): \OpenAPI\Client\Model\ProductCurrencyAdd200Response
 ```
 
 product.currency.add
@@ -963,9 +967,10 @@ $avail = false; // bool | Specifies whether the currency is available
 $symbol_left = $; // string | Defines the symbol that is located before the currency
 $symbol_right = грн; // string | Defines the symbol that is located after the currency
 $default = true; // bool | Specifies currency's default meaning
+$idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->productCurrencyAdd($iso3, $rate, $name, $avail, $symbol_left, $symbol_right, $default);
+    $result = $apiInstance->productCurrencyAdd($iso3, $rate, $name, $avail, $symbol_left, $symbol_right, $default, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productCurrencyAdd: ', $e->getMessage(), PHP_EOL;
@@ -983,6 +988,7 @@ try {
 | **symbol_left** | **string**| Defines the symbol that is located before the currency | [optional] |
 | **symbol_right** | **string**| Defines the symbol that is located after the currency | [optional] |
 | **default** | **bool**| Specifies currency&#39;s default meaning | [optional] [default to false] |
+| **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
 
@@ -1436,7 +1442,7 @@ try {
 ## `productImageUpdate()`
 
 ```php
-productImageUpdate($product_id, $id, $variant_ids, $store_id, $lang_id, $image_name, $type, $label, $position, $hidden): \OpenAPI\Client\Model\ProductImageUpdate200Response
+productImageUpdate($product_id, $id, $variant_ids, $store_id, $lang_id, $image_name, $type, $label, $position, $hidden, $idempotency_key): \OpenAPI\Client\Model\ProductImageUpdate200Response
 ```
 
 product.image.update
@@ -1477,9 +1483,10 @@ $type = thumbnail; // string | Defines image's types that are specified by comma
 $label = This cool image; // string | Defines alternative text that has to be attached to the picture
 $position = 5; // int | Defines image’s position in the list
 $hidden = true; // bool | Define is hide image
+$idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->productImageUpdate($product_id, $id, $variant_ids, $store_id, $lang_id, $image_name, $type, $label, $position, $hidden);
+    $result = $apiInstance->productImageUpdate($product_id, $id, $variant_ids, $store_id, $lang_id, $image_name, $type, $label, $position, $hidden, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productImageUpdate: ', $e->getMessage(), PHP_EOL;
@@ -1500,6 +1507,7 @@ try {
 | **label** | **string**| Defines alternative text that has to be attached to the picture | [optional] |
 | **position** | **int**| Defines image’s position in the list | [optional] |
 | **hidden** | **bool**| Define is hide image | [optional] |
+| **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
 
@@ -1743,7 +1751,7 @@ try {
 ## `productManufacturerAdd()`
 
 ```php
-productManufacturerAdd($product_id, $manufacturer, $store_id, $meta_title, $meta_keywords, $meta_description, $search_keywords, $image_url, $seo_url): \OpenAPI\Client\Model\ProductManufacturerAdd200Response
+productManufacturerAdd($product_id, $manufacturer, $store_id, $meta_title, $meta_keywords, $meta_description, $search_keywords, $image_url, $seo_url, $idempotency_key): \OpenAPI\Client\Model\ProductManufacturerAdd200Response
 ```
 
 product.manufacturer.add
@@ -1783,9 +1791,10 @@ $meta_description = category,test; // string | Defines unique meta description o
 $search_keywords = key1,key2,key3; // string | Defines unique search keywords
 $image_url = https://docs.api2cart.com/img/logo.png; // string | Image Url
 $seo_url = some seo url; // string | Defines unique URL for SEO
+$idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->productManufacturerAdd($product_id, $manufacturer, $store_id, $meta_title, $meta_keywords, $meta_description, $search_keywords, $image_url, $seo_url);
+    $result = $apiInstance->productManufacturerAdd($product_id, $manufacturer, $store_id, $meta_title, $meta_keywords, $meta_description, $search_keywords, $image_url, $seo_url, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productManufacturerAdd: ', $e->getMessage(), PHP_EOL;
@@ -1805,6 +1814,7 @@ try {
 | **search_keywords** | **string**| Defines unique search keywords | [optional] |
 | **image_url** | **string**| Image Url | [optional] |
 | **seo_url** | **string**| Defines unique URL for SEO | [optional] |
+| **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
 
@@ -1893,7 +1903,7 @@ try {
 ## `productOptionAssign()`
 
 ```php
-productOptionAssign($product_id, $option_id, $required, $sort_order, $option_values, $clear_cache): \OpenAPI\Client\Model\ProductOptionAssign200Response
+productOptionAssign($product_id, $option_id, $required, $sort_order, $option_values, $clear_cache, $idempotency_key): \OpenAPI\Client\Model\ProductOptionAssign200Response
 ```
 
 product.option.assign
@@ -1930,9 +1940,10 @@ $required = true; // bool | Defines if the option is required
 $sort_order = 2; // int | Sort number in the list
 $option_values = green,black,yellow; // string | Defines option values that has to be assigned
 $clear_cache = false; // bool | Is cache clear required
+$idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->productOptionAssign($product_id, $option_id, $required, $sort_order, $option_values, $clear_cache);
+    $result = $apiInstance->productOptionAssign($product_id, $option_id, $required, $sort_order, $option_values, $clear_cache, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productOptionAssign: ', $e->getMessage(), PHP_EOL;
@@ -1949,6 +1960,7 @@ try {
 | **sort_order** | **int**| Sort number in the list | [optional] [default to 0] |
 | **option_values** | **string**| Defines option values that has to be assigned | [optional] |
 | **clear_cache** | **bool**| Is cache clear required | [optional] [default to true] |
+| **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
 
@@ -2122,7 +2134,7 @@ try {
 ## `productOptionValueAdd()`
 
 ```php
-productOptionValueAdd($product_id, $option_id, $option_value, $sort_order, $display_value, $is_default, $clear_cache): \OpenAPI\Client\Model\ProductOptionValueAdd200Response
+productOptionValueAdd($product_id, $option_id, $option_value, $sort_order, $display_value, $is_default, $clear_cache, $idempotency_key): \OpenAPI\Client\Model\ProductOptionValueAdd200Response
 ```
 
 product.option.value.add
@@ -2160,9 +2172,10 @@ $sort_order = 2; // int | Sort number in the list
 $display_value = value; // string | Defines the value that will be displayed for the option value
 $is_default = true; // bool | Defines as a default
 $clear_cache = false; // bool | Is cache clear required
+$idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->productOptionValueAdd($product_id, $option_id, $option_value, $sort_order, $display_value, $is_default, $clear_cache);
+    $result = $apiInstance->productOptionValueAdd($product_id, $option_id, $option_value, $sort_order, $display_value, $is_default, $clear_cache, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productOptionValueAdd: ', $e->getMessage(), PHP_EOL;
@@ -2180,6 +2193,7 @@ try {
 | **display_value** | **string**| Defines the value that will be displayed for the option value | [optional] |
 | **is_default** | **bool**| Defines as a default | [optional] |
 | **clear_cache** | **bool**| Is cache clear required | [optional] [default to true] |
+| **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
 
@@ -2201,7 +2215,7 @@ try {
 ## `productOptionValueAssign()`
 
 ```php
-productOptionValueAssign($product_option_id, $option_value_id, $clear_cache): \OpenAPI\Client\Model\ProductOptionValueAssign200Response
+productOptionValueAssign($product_option_id, $option_value_id, $clear_cache, $idempotency_key): \OpenAPI\Client\Model\ProductOptionValueAssign200Response
 ```
 
 product.option.value.assign
@@ -2235,9 +2249,10 @@ $apiInstance = new OpenAPI\Client\Api\ProductApi(
 $product_option_id = 5; // int | Defines product's option id where the value has to be assigned
 $option_value_id = 45; // string | Defines value id that has to be assigned
 $clear_cache = false; // bool | Is cache clear required
+$idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->productOptionValueAssign($product_option_id, $option_value_id, $clear_cache);
+    $result = $apiInstance->productOptionValueAssign($product_option_id, $option_value_id, $clear_cache, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productOptionValueAssign: ', $e->getMessage(), PHP_EOL;
@@ -2251,6 +2266,7 @@ try {
 | **product_option_id** | **int**| Defines product&#39;s option id where the value has to be assigned | |
 | **option_value_id** | **string**| Defines value id that has to be assigned | |
 | **clear_cache** | **bool**| Is cache clear required | [optional] [default to true] |
+| **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
 
@@ -2345,7 +2361,7 @@ try {
 ## `productOptionValueUpdate()`
 
 ```php
-productOptionValueUpdate($product_id, $option_id, $option_value_id, $option_value, $price, $quantity, $display_value, $clear_cache): \OpenAPI\Client\Model\AccountConfigUpdate200Response
+productOptionValueUpdate($product_id, $option_id, $option_value_id, $option_value, $price, $quantity, $display_value, $clear_cache, $idempotency_key): \OpenAPI\Client\Model\AccountConfigUpdate200Response
 ```
 
 product.option.value.update
@@ -2384,9 +2400,10 @@ $price = 99.9; // float | Defines new product option price
 $quantity = 6; // float | Defines new products' options quantity
 $display_value = value; // string | Defines the value that will be displayed for the option value
 $clear_cache = false; // bool | Is cache clear required
+$idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->productOptionValueUpdate($product_id, $option_id, $option_value_id, $option_value, $price, $quantity, $display_value, $clear_cache);
+    $result = $apiInstance->productOptionValueUpdate($product_id, $option_id, $option_value_id, $option_value, $price, $quantity, $display_value, $clear_cache, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productOptionValueUpdate: ', $e->getMessage(), PHP_EOL;
@@ -2405,6 +2422,7 @@ try {
 | **quantity** | **float**| Defines new products&#39; options quantity | [optional] |
 | **display_value** | **string**| Defines the value that will be displayed for the option value | [optional] |
 | **clear_cache** | **bool**| Is cache clear required | [optional] [default to true] |
+| **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
 
@@ -2728,7 +2746,7 @@ try {
 ## `productStoreAssign()`
 
 ```php
-productStoreAssign($product_id, $store_id): \OpenAPI\Client\Model\AccountConfigUpdate200Response
+productStoreAssign($product_id, $store_id, $idempotency_key): \OpenAPI\Client\Model\AccountConfigUpdate200Response
 ```
 
 product.store.assign
@@ -2761,9 +2779,10 @@ $apiInstance = new OpenAPI\Client\Api\ProductApi(
 );
 $product_id = 10; // string | Defines id of the product which should be assigned to a store
 $store_id = 1; // string | Defines id of the store product should be assigned to
+$idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->productStoreAssign($product_id, $store_id);
+    $result = $apiInstance->productStoreAssign($product_id, $store_id, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productStoreAssign: ', $e->getMessage(), PHP_EOL;
@@ -2776,6 +2795,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **product_id** | **string**| Defines id of the product which should be assigned to a store | |
 | **store_id** | **string**| Defines id of the store product should be assigned to | |
+| **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
 

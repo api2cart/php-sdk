@@ -16,5 +16,6 @@ Name | Type | Description | Notes
 **send_notifications** | **bool** | Send notifications to customer after order was created | [optional] [default to false]
 **tracking_provider** | **string** | Defines name of the company which provides shipment tracking | [optional]
 **items** | [**\OpenAPI\Client\Model\OrderShipmentAddItemsInner[]**](OrderShipmentAddItemsInner.md) | Defines items in the order that will be shipped | [optional]
+**idempotency_key** | **string** | A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -115,7 +115,8 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'harmonized_system_code' => 'string',
         'processing_profile_id' => 'int',
         'marketplace_item_properties' => 'string',
-        'clear_cache' => 'bool'
+        'clear_cache' => 'bool',
+        'idempotency_key' => 'string'
     ];
 
     /**
@@ -183,7 +184,8 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'harmonized_system_code' => null,
         'processing_profile_id' => null,
         'marketplace_item_properties' => null,
-        'clear_cache' => null
+        'clear_cache' => null,
+        'idempotency_key' => null
     ];
 
     /**
@@ -249,7 +251,8 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'harmonized_system_code' => false,
         'processing_profile_id' => false,
         'marketplace_item_properties' => false,
-        'clear_cache' => false
+        'clear_cache' => false,
+        'idempotency_key' => false
     ];
 
     /**
@@ -395,7 +398,8 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'harmonized_system_code' => 'harmonized_system_code',
         'processing_profile_id' => 'processing_profile_id',
         'marketplace_item_properties' => 'marketplace_item_properties',
-        'clear_cache' => 'clear_cache'
+        'clear_cache' => 'clear_cache',
+        'idempotency_key' => 'idempotency_key'
     ];
 
     /**
@@ -461,7 +465,8 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'harmonized_system_code' => 'setHarmonizedSystemCode',
         'processing_profile_id' => 'setProcessingProfileId',
         'marketplace_item_properties' => 'setMarketplaceItemProperties',
-        'clear_cache' => 'setClearCache'
+        'clear_cache' => 'setClearCache',
+        'idempotency_key' => 'setIdempotencyKey'
     ];
 
     /**
@@ -527,7 +532,8 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'harmonized_system_code' => 'getHarmonizedSystemCode',
         'processing_profile_id' => 'getProcessingProfileId',
         'marketplace_item_properties' => 'getMarketplaceItemProperties',
-        'clear_cache' => 'getClearCache'
+        'clear_cache' => 'getClearCache',
+        'idempotency_key' => 'getIdempotencyKey'
     ];
 
     /**
@@ -645,6 +651,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('processing_profile_id', $data ?? [], null);
         $this->setIfExists('marketplace_item_properties', $data ?? [], null);
         $this->setIfExists('clear_cache', $data ?? [], true);
+        $this->setIfExists('idempotency_key', $data ?? [], null);
     }
 
     /**
@@ -2254,6 +2261,33 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
             throw new \InvalidArgumentException('non-nullable clear_cache cannot be null');
         }
         $this->container['clear_cache'] = $clear_cache;
+
+        return $this;
+    }
+
+    /**
+     * Gets idempotency_key
+     *
+     * @return string|null
+     */
+    public function getIdempotencyKey()
+    {
+        return $this->container['idempotency_key'];
+    }
+
+    /**
+     * Sets idempotency_key
+     *
+     * @param string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
+     *
+     * @return self
+     */
+    public function setIdempotencyKey($idempotency_key)
+    {
+        if (is_null($idempotency_key)) {
+            throw new \InvalidArgumentException('non-nullable idempotency_key cannot be null');
+        }
+        $this->container['idempotency_key'] = $idempotency_key;
 
         return $this;
     }

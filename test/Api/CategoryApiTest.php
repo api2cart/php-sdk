@@ -133,6 +133,18 @@ class CategoryApiTest extends TestCase
     }
 
     /**
+     * Test case for categoryDeleteBatch
+     *
+     * category.delete.batch.
+     *
+     */
+    public function testCategoryDeleteBatch()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for categoryFind
      *
      * category.find.

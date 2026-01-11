@@ -187,4 +187,13 @@ class OrderShipmentUpdateTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "idempotency_key"
+     */
+    public function testPropertyIdempotencyKey()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

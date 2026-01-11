@@ -61,7 +61,8 @@ class ProductUpdateBatch implements ModelInterface, ArrayAccess, \JsonSerializab
         'nested_items_update_behaviour' => 'string',
         'clear_cache' => 'bool',
         'reindex' => 'bool',
-        'payload' => '\OpenAPI\Client\Model\ProductUpdateBatchPayloadInner[]'
+        'payload' => '\OpenAPI\Client\Model\ProductUpdateBatchPayloadInner[]',
+        'idempotency_key' => 'string'
     ];
 
     /**
@@ -75,7 +76,8 @@ class ProductUpdateBatch implements ModelInterface, ArrayAccess, \JsonSerializab
         'nested_items_update_behaviour' => null,
         'clear_cache' => null,
         'reindex' => null,
-        'payload' => null
+        'payload' => null,
+        'idempotency_key' => null
     ];
 
     /**
@@ -87,7 +89,8 @@ class ProductUpdateBatch implements ModelInterface, ArrayAccess, \JsonSerializab
         'nested_items_update_behaviour' => false,
         'clear_cache' => false,
         'reindex' => false,
-        'payload' => false
+        'payload' => false,
+        'idempotency_key' => false
     ];
 
     /**
@@ -179,7 +182,8 @@ class ProductUpdateBatch implements ModelInterface, ArrayAccess, \JsonSerializab
         'nested_items_update_behaviour' => 'nested_items_update_behaviour',
         'clear_cache' => 'clear_cache',
         'reindex' => 'reindex',
-        'payload' => 'payload'
+        'payload' => 'payload',
+        'idempotency_key' => 'idempotency_key'
     ];
 
     /**
@@ -191,7 +195,8 @@ class ProductUpdateBatch implements ModelInterface, ArrayAccess, \JsonSerializab
         'nested_items_update_behaviour' => 'setNestedItemsUpdateBehaviour',
         'clear_cache' => 'setClearCache',
         'reindex' => 'setReindex',
-        'payload' => 'setPayload'
+        'payload' => 'setPayload',
+        'idempotency_key' => 'setIdempotencyKey'
     ];
 
     /**
@@ -203,7 +208,8 @@ class ProductUpdateBatch implements ModelInterface, ArrayAccess, \JsonSerializab
         'nested_items_update_behaviour' => 'getNestedItemsUpdateBehaviour',
         'clear_cache' => 'getClearCache',
         'reindex' => 'getReindex',
-        'payload' => 'getPayload'
+        'payload' => 'getPayload',
+        'idempotency_key' => 'getIdempotencyKey'
     ];
 
     /**
@@ -282,6 +288,7 @@ class ProductUpdateBatch implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->setIfExists('clear_cache', $data ?? [], false);
         $this->setIfExists('reindex', $data ?? [], false);
         $this->setIfExists('payload', $data ?? [], null);
+        $this->setIfExists('idempotency_key', $data ?? [], null);
     }
 
     /**
@@ -467,6 +474,33 @@ class ProductUpdateBatch implements ModelInterface, ArrayAccess, \JsonSerializab
             throw new \InvalidArgumentException('invalid length for $payload when calling ProductUpdateBatch., number of items must be greater than or equal to 1.');
         }
         $this->container['payload'] = $payload;
+
+        return $this;
+    }
+
+    /**
+     * Gets idempotency_key
+     *
+     * @return string|null
+     */
+    public function getIdempotencyKey()
+    {
+        return $this->container['idempotency_key'];
+    }
+
+    /**
+     * Sets idempotency_key
+     *
+     * @param string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
+     *
+     * @return self
+     */
+    public function setIdempotencyKey($idempotency_key)
+    {
+        if (is_null($idempotency_key)) {
+            throw new \InvalidArgumentException('non-nullable idempotency_key cannot be null');
+        }
+        $this->container['idempotency_key'] = $idempotency_key;
 
         return $this;
     }

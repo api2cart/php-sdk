@@ -194,15 +194,16 @@ class AttributeApi
      * @param  bool|null $used_in_product_listing Used in Product Listing (optional, default to false)
      * @param  bool|null $used_for_sort_by Used for Sorting in Product Listing (optional, default to false)
      * @param  string|null $apply_to Types of products which can have this attribute (optional, default to 'all_types')
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeAdd'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\AttributeAdd200Response
      */
-    public function attributeAdd($type, $name, $code = null, $store_id = null, $lang_id = null, $visible = false, $required = false, $position = 0, $attribute_group_id = null, $is_global = 'Store', $is_searchable = false, $is_filterable = 'No', $is_comparable = false, $is_html_allowed_on_front = false, $is_filterable_in_search = false, $is_configurable = false, $is_visible_in_advanced_search = false, $is_used_for_promo_rules = false, $used_in_product_listing = false, $used_for_sort_by = false, $apply_to = 'all_types', string $contentType = self::contentTypes['attributeAdd'][0])
+    public function attributeAdd($type, $name, $code = null, $store_id = null, $lang_id = null, $visible = false, $required = false, $position = 0, $attribute_group_id = null, $is_global = 'Store', $is_searchable = false, $is_filterable = 'No', $is_comparable = false, $is_html_allowed_on_front = false, $is_filterable_in_search = false, $is_configurable = false, $is_visible_in_advanced_search = false, $is_used_for_promo_rules = false, $used_in_product_listing = false, $used_for_sort_by = false, $apply_to = 'all_types', $idempotency_key = null, string $contentType = self::contentTypes['attributeAdd'][0])
     {
-        list($response) = $this->attributeAddWithHttpInfo($type, $name, $code, $store_id, $lang_id, $visible, $required, $position, $attribute_group_id, $is_global, $is_searchable, $is_filterable, $is_comparable, $is_html_allowed_on_front, $is_filterable_in_search, $is_configurable, $is_visible_in_advanced_search, $is_used_for_promo_rules, $used_in_product_listing, $used_for_sort_by, $apply_to, $contentType);
+        list($response) = $this->attributeAddWithHttpInfo($type, $name, $code, $store_id, $lang_id, $visible, $required, $position, $attribute_group_id, $is_global, $is_searchable, $is_filterable, $is_comparable, $is_html_allowed_on_front, $is_filterable_in_search, $is_configurable, $is_visible_in_advanced_search, $is_used_for_promo_rules, $used_in_product_listing, $used_for_sort_by, $apply_to, $idempotency_key, $contentType);
         return $response;
     }
 
@@ -232,15 +233,16 @@ class AttributeApi
      * @param  bool|null $used_in_product_listing Used in Product Listing (optional, default to false)
      * @param  bool|null $used_for_sort_by Used for Sorting in Product Listing (optional, default to false)
      * @param  string|null $apply_to Types of products which can have this attribute (optional, default to 'all_types')
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeAdd'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\AttributeAdd200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function attributeAddWithHttpInfo($type, $name, $code = null, $store_id = null, $lang_id = null, $visible = false, $required = false, $position = 0, $attribute_group_id = null, $is_global = 'Store', $is_searchable = false, $is_filterable = 'No', $is_comparable = false, $is_html_allowed_on_front = false, $is_filterable_in_search = false, $is_configurable = false, $is_visible_in_advanced_search = false, $is_used_for_promo_rules = false, $used_in_product_listing = false, $used_for_sort_by = false, $apply_to = 'all_types', string $contentType = self::contentTypes['attributeAdd'][0])
+    public function attributeAddWithHttpInfo($type, $name, $code = null, $store_id = null, $lang_id = null, $visible = false, $required = false, $position = 0, $attribute_group_id = null, $is_global = 'Store', $is_searchable = false, $is_filterable = 'No', $is_comparable = false, $is_html_allowed_on_front = false, $is_filterable_in_search = false, $is_configurable = false, $is_visible_in_advanced_search = false, $is_used_for_promo_rules = false, $used_in_product_listing = false, $used_for_sort_by = false, $apply_to = 'all_types', $idempotency_key = null, string $contentType = self::contentTypes['attributeAdd'][0])
     {
-        $request = $this->attributeAddRequest($type, $name, $code, $store_id, $lang_id, $visible, $required, $position, $attribute_group_id, $is_global, $is_searchable, $is_filterable, $is_comparable, $is_html_allowed_on_front, $is_filterable_in_search, $is_configurable, $is_visible_in_advanced_search, $is_used_for_promo_rules, $used_in_product_listing, $used_for_sort_by, $apply_to, $contentType);
+        $request = $this->attributeAddRequest($type, $name, $code, $store_id, $lang_id, $visible, $required, $position, $attribute_group_id, $is_global, $is_searchable, $is_filterable, $is_comparable, $is_html_allowed_on_front, $is_filterable_in_search, $is_configurable, $is_visible_in_advanced_search, $is_used_for_promo_rules, $used_in_product_listing, $used_for_sort_by, $apply_to, $idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -377,14 +379,15 @@ class AttributeApi
      * @param  bool|null $used_in_product_listing Used in Product Listing (optional, default to false)
      * @param  bool|null $used_for_sort_by Used for Sorting in Product Listing (optional, default to false)
      * @param  string|null $apply_to Types of products which can have this attribute (optional, default to 'all_types')
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function attributeAddAsync($type, $name, $code = null, $store_id = null, $lang_id = null, $visible = false, $required = false, $position = 0, $attribute_group_id = null, $is_global = 'Store', $is_searchable = false, $is_filterable = 'No', $is_comparable = false, $is_html_allowed_on_front = false, $is_filterable_in_search = false, $is_configurable = false, $is_visible_in_advanced_search = false, $is_used_for_promo_rules = false, $used_in_product_listing = false, $used_for_sort_by = false, $apply_to = 'all_types', string $contentType = self::contentTypes['attributeAdd'][0])
+    public function attributeAddAsync($type, $name, $code = null, $store_id = null, $lang_id = null, $visible = false, $required = false, $position = 0, $attribute_group_id = null, $is_global = 'Store', $is_searchable = false, $is_filterable = 'No', $is_comparable = false, $is_html_allowed_on_front = false, $is_filterable_in_search = false, $is_configurable = false, $is_visible_in_advanced_search = false, $is_used_for_promo_rules = false, $used_in_product_listing = false, $used_for_sort_by = false, $apply_to = 'all_types', $idempotency_key = null, string $contentType = self::contentTypes['attributeAdd'][0])
     {
-        return $this->attributeAddAsyncWithHttpInfo($type, $name, $code, $store_id, $lang_id, $visible, $required, $position, $attribute_group_id, $is_global, $is_searchable, $is_filterable, $is_comparable, $is_html_allowed_on_front, $is_filterable_in_search, $is_configurable, $is_visible_in_advanced_search, $is_used_for_promo_rules, $used_in_product_listing, $used_for_sort_by, $apply_to, $contentType)
+        return $this->attributeAddAsyncWithHttpInfo($type, $name, $code, $store_id, $lang_id, $visible, $required, $position, $attribute_group_id, $is_global, $is_searchable, $is_filterable, $is_comparable, $is_html_allowed_on_front, $is_filterable_in_search, $is_configurable, $is_visible_in_advanced_search, $is_used_for_promo_rules, $used_in_product_listing, $used_for_sort_by, $apply_to, $idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -418,15 +421,16 @@ class AttributeApi
      * @param  bool|null $used_in_product_listing Used in Product Listing (optional, default to false)
      * @param  bool|null $used_for_sort_by Used for Sorting in Product Listing (optional, default to false)
      * @param  string|null $apply_to Types of products which can have this attribute (optional, default to 'all_types')
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function attributeAddAsyncWithHttpInfo($type, $name, $code = null, $store_id = null, $lang_id = null, $visible = false, $required = false, $position = 0, $attribute_group_id = null, $is_global = 'Store', $is_searchable = false, $is_filterable = 'No', $is_comparable = false, $is_html_allowed_on_front = false, $is_filterable_in_search = false, $is_configurable = false, $is_visible_in_advanced_search = false, $is_used_for_promo_rules = false, $used_in_product_listing = false, $used_for_sort_by = false, $apply_to = 'all_types', string $contentType = self::contentTypes['attributeAdd'][0])
+    public function attributeAddAsyncWithHttpInfo($type, $name, $code = null, $store_id = null, $lang_id = null, $visible = false, $required = false, $position = 0, $attribute_group_id = null, $is_global = 'Store', $is_searchable = false, $is_filterable = 'No', $is_comparable = false, $is_html_allowed_on_front = false, $is_filterable_in_search = false, $is_configurable = false, $is_visible_in_advanced_search = false, $is_used_for_promo_rules = false, $used_in_product_listing = false, $used_for_sort_by = false, $apply_to = 'all_types', $idempotency_key = null, string $contentType = self::contentTypes['attributeAdd'][0])
     {
         $returnType = '\OpenAPI\Client\Model\AttributeAdd200Response';
-        $request = $this->attributeAddRequest($type, $name, $code, $store_id, $lang_id, $visible, $required, $position, $attribute_group_id, $is_global, $is_searchable, $is_filterable, $is_comparable, $is_html_allowed_on_front, $is_filterable_in_search, $is_configurable, $is_visible_in_advanced_search, $is_used_for_promo_rules, $used_in_product_listing, $used_for_sort_by, $apply_to, $contentType);
+        $request = $this->attributeAddRequest($type, $name, $code, $store_id, $lang_id, $visible, $required, $position, $attribute_group_id, $is_global, $is_searchable, $is_filterable, $is_comparable, $is_html_allowed_on_front, $is_filterable_in_search, $is_configurable, $is_visible_in_advanced_search, $is_used_for_promo_rules, $used_in_product_listing, $used_for_sort_by, $apply_to, $idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -488,12 +492,13 @@ class AttributeApi
      * @param  bool|null $used_in_product_listing Used in Product Listing (optional, default to false)
      * @param  bool|null $used_for_sort_by Used for Sorting in Product Listing (optional, default to false)
      * @param  string|null $apply_to Types of products which can have this attribute (optional, default to 'all_types')
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function attributeAddRequest($type, $name, $code = null, $store_id = null, $lang_id = null, $visible = false, $required = false, $position = 0, $attribute_group_id = null, $is_global = 'Store', $is_searchable = false, $is_filterable = 'No', $is_comparable = false, $is_html_allowed_on_front = false, $is_filterable_in_search = false, $is_configurable = false, $is_visible_in_advanced_search = false, $is_used_for_promo_rules = false, $used_in_product_listing = false, $used_for_sort_by = false, $apply_to = 'all_types', string $contentType = self::contentTypes['attributeAdd'][0])
+    public function attributeAddRequest($type, $name, $code = null, $store_id = null, $lang_id = null, $visible = false, $required = false, $position = 0, $attribute_group_id = null, $is_global = 'Store', $is_searchable = false, $is_filterable = 'No', $is_comparable = false, $is_html_allowed_on_front = false, $is_filterable_in_search = false, $is_configurable = false, $is_visible_in_advanced_search = false, $is_used_for_promo_rules = false, $used_in_product_listing = false, $used_for_sort_by = false, $apply_to = 'all_types', $idempotency_key = null, string $contentType = self::contentTypes['attributeAdd'][0])
     {
 
         // verify the required parameter 'type' is set
@@ -509,6 +514,7 @@ class AttributeApi
                 'Missing the required parameter $name when calling attributeAdd'
             );
         }
+
 
 
 
@@ -726,6 +732,15 @@ class AttributeApi
             true, // explode
             false // required
         ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idempotency_key,
+            'idempotency_key', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
 
 
 
@@ -801,15 +816,16 @@ class AttributeApi
      * @param  string $id Entity id (required)
      * @param  string $group_id Attribute group_id (required)
      * @param  string|null $attribute_set_id Attribute set id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeAssignGroup'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\AttributeAssignGroup200Response
      */
-    public function attributeAssignGroup($id, $group_id, $attribute_set_id = null, string $contentType = self::contentTypes['attributeAssignGroup'][0])
+    public function attributeAssignGroup($id, $group_id, $attribute_set_id = null, $idempotency_key = null, string $contentType = self::contentTypes['attributeAssignGroup'][0])
     {
-        list($response) = $this->attributeAssignGroupWithHttpInfo($id, $group_id, $attribute_set_id, $contentType);
+        list($response) = $this->attributeAssignGroupWithHttpInfo($id, $group_id, $attribute_set_id, $idempotency_key, $contentType);
         return $response;
     }
 
@@ -821,15 +837,16 @@ class AttributeApi
      * @param  string $id Entity id (required)
      * @param  string $group_id Attribute group_id (required)
      * @param  string|null $attribute_set_id Attribute set id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeAssignGroup'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\AttributeAssignGroup200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function attributeAssignGroupWithHttpInfo($id, $group_id, $attribute_set_id = null, string $contentType = self::contentTypes['attributeAssignGroup'][0])
+    public function attributeAssignGroupWithHttpInfo($id, $group_id, $attribute_set_id = null, $idempotency_key = null, string $contentType = self::contentTypes['attributeAssignGroup'][0])
     {
-        $request = $this->attributeAssignGroupRequest($id, $group_id, $attribute_set_id, $contentType);
+        $request = $this->attributeAssignGroupRequest($id, $group_id, $attribute_set_id, $idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -948,14 +965,15 @@ class AttributeApi
      * @param  string $id Entity id (required)
      * @param  string $group_id Attribute group_id (required)
      * @param  string|null $attribute_set_id Attribute set id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeAssignGroup'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function attributeAssignGroupAsync($id, $group_id, $attribute_set_id = null, string $contentType = self::contentTypes['attributeAssignGroup'][0])
+    public function attributeAssignGroupAsync($id, $group_id, $attribute_set_id = null, $idempotency_key = null, string $contentType = self::contentTypes['attributeAssignGroup'][0])
     {
-        return $this->attributeAssignGroupAsyncWithHttpInfo($id, $group_id, $attribute_set_id, $contentType)
+        return $this->attributeAssignGroupAsyncWithHttpInfo($id, $group_id, $attribute_set_id, $idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -971,15 +989,16 @@ class AttributeApi
      * @param  string $id Entity id (required)
      * @param  string $group_id Attribute group_id (required)
      * @param  string|null $attribute_set_id Attribute set id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeAssignGroup'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function attributeAssignGroupAsyncWithHttpInfo($id, $group_id, $attribute_set_id = null, string $contentType = self::contentTypes['attributeAssignGroup'][0])
+    public function attributeAssignGroupAsyncWithHttpInfo($id, $group_id, $attribute_set_id = null, $idempotency_key = null, string $contentType = self::contentTypes['attributeAssignGroup'][0])
     {
         $returnType = '\OpenAPI\Client\Model\AttributeAssignGroup200Response';
-        $request = $this->attributeAssignGroupRequest($id, $group_id, $attribute_set_id, $contentType);
+        $request = $this->attributeAssignGroupRequest($id, $group_id, $attribute_set_id, $idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1023,12 +1042,13 @@ class AttributeApi
      * @param  string $id Entity id (required)
      * @param  string $group_id Attribute group_id (required)
      * @param  string|null $attribute_set_id Attribute set id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeAssignGroup'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function attributeAssignGroupRequest($id, $group_id, $attribute_set_id = null, string $contentType = self::contentTypes['attributeAssignGroup'][0])
+    public function attributeAssignGroupRequest($id, $group_id, $attribute_set_id = null, $idempotency_key = null, string $contentType = self::contentTypes['attributeAssignGroup'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -1044,6 +1064,7 @@ class AttributeApi
                 'Missing the required parameter $group_id when calling attributeAssignGroup'
             );
         }
+
 
 
 
@@ -1076,6 +1097,15 @@ class AttributeApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $attribute_set_id,
             'attribute_set_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idempotency_key,
+            'idempotency_key', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -1156,15 +1186,16 @@ class AttributeApi
      * @param  string $id Entity id (required)
      * @param  string $attribute_set_id Attribute set id (required)
      * @param  string|null $group_id Attribute group_id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeAssignSet'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\AttributeAssignGroup200Response
      */
-    public function attributeAssignSet($id, $attribute_set_id, $group_id = null, string $contentType = self::contentTypes['attributeAssignSet'][0])
+    public function attributeAssignSet($id, $attribute_set_id, $group_id = null, $idempotency_key = null, string $contentType = self::contentTypes['attributeAssignSet'][0])
     {
-        list($response) = $this->attributeAssignSetWithHttpInfo($id, $attribute_set_id, $group_id, $contentType);
+        list($response) = $this->attributeAssignSetWithHttpInfo($id, $attribute_set_id, $group_id, $idempotency_key, $contentType);
         return $response;
     }
 
@@ -1176,15 +1207,16 @@ class AttributeApi
      * @param  string $id Entity id (required)
      * @param  string $attribute_set_id Attribute set id (required)
      * @param  string|null $group_id Attribute group_id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeAssignSet'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\AttributeAssignGroup200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function attributeAssignSetWithHttpInfo($id, $attribute_set_id, $group_id = null, string $contentType = self::contentTypes['attributeAssignSet'][0])
+    public function attributeAssignSetWithHttpInfo($id, $attribute_set_id, $group_id = null, $idempotency_key = null, string $contentType = self::contentTypes['attributeAssignSet'][0])
     {
-        $request = $this->attributeAssignSetRequest($id, $attribute_set_id, $group_id, $contentType);
+        $request = $this->attributeAssignSetRequest($id, $attribute_set_id, $group_id, $idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1303,14 +1335,15 @@ class AttributeApi
      * @param  string $id Entity id (required)
      * @param  string $attribute_set_id Attribute set id (required)
      * @param  string|null $group_id Attribute group_id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeAssignSet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function attributeAssignSetAsync($id, $attribute_set_id, $group_id = null, string $contentType = self::contentTypes['attributeAssignSet'][0])
+    public function attributeAssignSetAsync($id, $attribute_set_id, $group_id = null, $idempotency_key = null, string $contentType = self::contentTypes['attributeAssignSet'][0])
     {
-        return $this->attributeAssignSetAsyncWithHttpInfo($id, $attribute_set_id, $group_id, $contentType)
+        return $this->attributeAssignSetAsyncWithHttpInfo($id, $attribute_set_id, $group_id, $idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1326,15 +1359,16 @@ class AttributeApi
      * @param  string $id Entity id (required)
      * @param  string $attribute_set_id Attribute set id (required)
      * @param  string|null $group_id Attribute group_id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeAssignSet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function attributeAssignSetAsyncWithHttpInfo($id, $attribute_set_id, $group_id = null, string $contentType = self::contentTypes['attributeAssignSet'][0])
+    public function attributeAssignSetAsyncWithHttpInfo($id, $attribute_set_id, $group_id = null, $idempotency_key = null, string $contentType = self::contentTypes['attributeAssignSet'][0])
     {
         $returnType = '\OpenAPI\Client\Model\AttributeAssignGroup200Response';
-        $request = $this->attributeAssignSetRequest($id, $attribute_set_id, $group_id, $contentType);
+        $request = $this->attributeAssignSetRequest($id, $attribute_set_id, $group_id, $idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1378,12 +1412,13 @@ class AttributeApi
      * @param  string $id Entity id (required)
      * @param  string $attribute_set_id Attribute set id (required)
      * @param  string|null $group_id Attribute group_id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeAssignSet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function attributeAssignSetRequest($id, $attribute_set_id, $group_id = null, string $contentType = self::contentTypes['attributeAssignSet'][0])
+    public function attributeAssignSetRequest($id, $attribute_set_id, $group_id = null, $idempotency_key = null, string $contentType = self::contentTypes['attributeAssignSet'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -1399,6 +1434,7 @@ class AttributeApi
                 'Missing the required parameter $attribute_set_id when calling attributeAssignSet'
             );
         }
+
 
 
 
@@ -1435,6 +1471,15 @@ class AttributeApi
             'form', // style
             true, // explode
             true // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idempotency_key,
+            'idempotency_key', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
         ) ?? []);
 
 
@@ -4223,15 +4268,16 @@ class AttributeApi
      *
      * @param  string $id Entity id (required)
      * @param  string $group_id Customer group_id (required)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeUnassignGroup'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\AttributeUnassignGroup200Response
      */
-    public function attributeUnassignGroup($id, $group_id, string $contentType = self::contentTypes['attributeUnassignGroup'][0])
+    public function attributeUnassignGroup($id, $group_id, $idempotency_key = null, string $contentType = self::contentTypes['attributeUnassignGroup'][0])
     {
-        list($response) = $this->attributeUnassignGroupWithHttpInfo($id, $group_id, $contentType);
+        list($response) = $this->attributeUnassignGroupWithHttpInfo($id, $group_id, $idempotency_key, $contentType);
         return $response;
     }
 
@@ -4242,15 +4288,16 @@ class AttributeApi
      *
      * @param  string $id Entity id (required)
      * @param  string $group_id Customer group_id (required)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeUnassignGroup'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\AttributeUnassignGroup200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function attributeUnassignGroupWithHttpInfo($id, $group_id, string $contentType = self::contentTypes['attributeUnassignGroup'][0])
+    public function attributeUnassignGroupWithHttpInfo($id, $group_id, $idempotency_key = null, string $contentType = self::contentTypes['attributeUnassignGroup'][0])
     {
-        $request = $this->attributeUnassignGroupRequest($id, $group_id, $contentType);
+        $request = $this->attributeUnassignGroupRequest($id, $group_id, $idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4368,14 +4415,15 @@ class AttributeApi
      *
      * @param  string $id Entity id (required)
      * @param  string $group_id Customer group_id (required)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeUnassignGroup'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function attributeUnassignGroupAsync($id, $group_id, string $contentType = self::contentTypes['attributeUnassignGroup'][0])
+    public function attributeUnassignGroupAsync($id, $group_id, $idempotency_key = null, string $contentType = self::contentTypes['attributeUnassignGroup'][0])
     {
-        return $this->attributeUnassignGroupAsyncWithHttpInfo($id, $group_id, $contentType)
+        return $this->attributeUnassignGroupAsyncWithHttpInfo($id, $group_id, $idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4390,15 +4438,16 @@ class AttributeApi
      *
      * @param  string $id Entity id (required)
      * @param  string $group_id Customer group_id (required)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeUnassignGroup'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function attributeUnassignGroupAsyncWithHttpInfo($id, $group_id, string $contentType = self::contentTypes['attributeUnassignGroup'][0])
+    public function attributeUnassignGroupAsyncWithHttpInfo($id, $group_id, $idempotency_key = null, string $contentType = self::contentTypes['attributeUnassignGroup'][0])
     {
         $returnType = '\OpenAPI\Client\Model\AttributeUnassignGroup200Response';
-        $request = $this->attributeUnassignGroupRequest($id, $group_id, $contentType);
+        $request = $this->attributeUnassignGroupRequest($id, $group_id, $idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4441,12 +4490,13 @@ class AttributeApi
      *
      * @param  string $id Entity id (required)
      * @param  string $group_id Customer group_id (required)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeUnassignGroup'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function attributeUnassignGroupRequest($id, $group_id, string $contentType = self::contentTypes['attributeUnassignGroup'][0])
+    public function attributeUnassignGroupRequest($id, $group_id, $idempotency_key = null, string $contentType = self::contentTypes['attributeUnassignGroup'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -4462,6 +4512,7 @@ class AttributeApi
                 'Missing the required parameter $group_id when calling attributeUnassignGroup'
             );
         }
+
 
 
         $resourcePath = '/attribute.unassign.group.json';
@@ -4488,6 +4539,15 @@ class AttributeApi
             'form', // style
             true, // explode
             true // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idempotency_key,
+            'idempotency_key', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
         ) ?? []);
 
 
@@ -4563,15 +4623,16 @@ class AttributeApi
      *
      * @param  string $id Entity id (required)
      * @param  string $attribute_set_id Attribute set id (required)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeUnassignSet'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\AttributeUnassignGroup200Response
      */
-    public function attributeUnassignSet($id, $attribute_set_id, string $contentType = self::contentTypes['attributeUnassignSet'][0])
+    public function attributeUnassignSet($id, $attribute_set_id, $idempotency_key = null, string $contentType = self::contentTypes['attributeUnassignSet'][0])
     {
-        list($response) = $this->attributeUnassignSetWithHttpInfo($id, $attribute_set_id, $contentType);
+        list($response) = $this->attributeUnassignSetWithHttpInfo($id, $attribute_set_id, $idempotency_key, $contentType);
         return $response;
     }
 
@@ -4582,15 +4643,16 @@ class AttributeApi
      *
      * @param  string $id Entity id (required)
      * @param  string $attribute_set_id Attribute set id (required)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeUnassignSet'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\AttributeUnassignGroup200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function attributeUnassignSetWithHttpInfo($id, $attribute_set_id, string $contentType = self::contentTypes['attributeUnassignSet'][0])
+    public function attributeUnassignSetWithHttpInfo($id, $attribute_set_id, $idempotency_key = null, string $contentType = self::contentTypes['attributeUnassignSet'][0])
     {
-        $request = $this->attributeUnassignSetRequest($id, $attribute_set_id, $contentType);
+        $request = $this->attributeUnassignSetRequest($id, $attribute_set_id, $idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4708,14 +4770,15 @@ class AttributeApi
      *
      * @param  string $id Entity id (required)
      * @param  string $attribute_set_id Attribute set id (required)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeUnassignSet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function attributeUnassignSetAsync($id, $attribute_set_id, string $contentType = self::contentTypes['attributeUnassignSet'][0])
+    public function attributeUnassignSetAsync($id, $attribute_set_id, $idempotency_key = null, string $contentType = self::contentTypes['attributeUnassignSet'][0])
     {
-        return $this->attributeUnassignSetAsyncWithHttpInfo($id, $attribute_set_id, $contentType)
+        return $this->attributeUnassignSetAsyncWithHttpInfo($id, $attribute_set_id, $idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4730,15 +4793,16 @@ class AttributeApi
      *
      * @param  string $id Entity id (required)
      * @param  string $attribute_set_id Attribute set id (required)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeUnassignSet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function attributeUnassignSetAsyncWithHttpInfo($id, $attribute_set_id, string $contentType = self::contentTypes['attributeUnassignSet'][0])
+    public function attributeUnassignSetAsyncWithHttpInfo($id, $attribute_set_id, $idempotency_key = null, string $contentType = self::contentTypes['attributeUnassignSet'][0])
     {
         $returnType = '\OpenAPI\Client\Model\AttributeUnassignGroup200Response';
-        $request = $this->attributeUnassignSetRequest($id, $attribute_set_id, $contentType);
+        $request = $this->attributeUnassignSetRequest($id, $attribute_set_id, $idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4781,12 +4845,13 @@ class AttributeApi
      *
      * @param  string $id Entity id (required)
      * @param  string $attribute_set_id Attribute set id (required)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeUnassignSet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function attributeUnassignSetRequest($id, $attribute_set_id, string $contentType = self::contentTypes['attributeUnassignSet'][0])
+    public function attributeUnassignSetRequest($id, $attribute_set_id, $idempotency_key = null, string $contentType = self::contentTypes['attributeUnassignSet'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -4802,6 +4867,7 @@ class AttributeApi
                 'Missing the required parameter $attribute_set_id when calling attributeUnassignSet'
             );
         }
+
 
 
         $resourcePath = '/attribute.unassign.set.json';
@@ -4828,6 +4894,15 @@ class AttributeApi
             'form', // style
             true, // explode
             true // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idempotency_key,
+            'idempotency_key', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
         ) ?? []);
 
 
@@ -4905,15 +4980,16 @@ class AttributeApi
      * @param  string $name Defines new attributes&#39;s name (required)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeUpdate'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\AttributeUpdate200Response
      */
-    public function attributeUpdate($id, $name, $store_id = null, $lang_id = null, string $contentType = self::contentTypes['attributeUpdate'][0])
+    public function attributeUpdate($id, $name, $store_id = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['attributeUpdate'][0])
     {
-        list($response) = $this->attributeUpdateWithHttpInfo($id, $name, $store_id, $lang_id, $contentType);
+        list($response) = $this->attributeUpdateWithHttpInfo($id, $name, $store_id, $lang_id, $idempotency_key, $contentType);
         return $response;
     }
 
@@ -4926,15 +5002,16 @@ class AttributeApi
      * @param  string $name Defines new attributes&#39;s name (required)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeUpdate'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\AttributeUpdate200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function attributeUpdateWithHttpInfo($id, $name, $store_id = null, $lang_id = null, string $contentType = self::contentTypes['attributeUpdate'][0])
+    public function attributeUpdateWithHttpInfo($id, $name, $store_id = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['attributeUpdate'][0])
     {
-        $request = $this->attributeUpdateRequest($id, $name, $store_id, $lang_id, $contentType);
+        $request = $this->attributeUpdateRequest($id, $name, $store_id, $lang_id, $idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5054,14 +5131,15 @@ class AttributeApi
      * @param  string $name Defines new attributes&#39;s name (required)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function attributeUpdateAsync($id, $name, $store_id = null, $lang_id = null, string $contentType = self::contentTypes['attributeUpdate'][0])
+    public function attributeUpdateAsync($id, $name, $store_id = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['attributeUpdate'][0])
     {
-        return $this->attributeUpdateAsyncWithHttpInfo($id, $name, $store_id, $lang_id, $contentType)
+        return $this->attributeUpdateAsyncWithHttpInfo($id, $name, $store_id, $lang_id, $idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5078,15 +5156,16 @@ class AttributeApi
      * @param  string $name Defines new attributes&#39;s name (required)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function attributeUpdateAsyncWithHttpInfo($id, $name, $store_id = null, $lang_id = null, string $contentType = self::contentTypes['attributeUpdate'][0])
+    public function attributeUpdateAsyncWithHttpInfo($id, $name, $store_id = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['attributeUpdate'][0])
     {
         $returnType = '\OpenAPI\Client\Model\AttributeUpdate200Response';
-        $request = $this->attributeUpdateRequest($id, $name, $store_id, $lang_id, $contentType);
+        $request = $this->attributeUpdateRequest($id, $name, $store_id, $lang_id, $idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5131,12 +5210,13 @@ class AttributeApi
      * @param  string $name Defines new attributes&#39;s name (required)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function attributeUpdateRequest($id, $name, $store_id = null, $lang_id = null, string $contentType = self::contentTypes['attributeUpdate'][0])
+    public function attributeUpdateRequest($id, $name, $store_id = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['attributeUpdate'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -5152,6 +5232,7 @@ class AttributeApi
                 'Missing the required parameter $name when calling attributeUpdate'
             );
         }
+
 
 
 
@@ -5194,6 +5275,15 @@ class AttributeApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $lang_id,
             'lang_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idempotency_key,
+            'idempotency_key', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -5277,15 +5367,16 @@ class AttributeApi
      * @param  string|null $description Defines attribute value&#39;s description (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeValueAdd'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\AttributeAdd200Response
      */
-    public function attributeValueAdd($attribute_id, $name, $code = null, $description = null, $store_id = null, $lang_id = null, string $contentType = self::contentTypes['attributeValueAdd'][0])
+    public function attributeValueAdd($attribute_id, $name, $code = null, $description = null, $store_id = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['attributeValueAdd'][0])
     {
-        list($response) = $this->attributeValueAddWithHttpInfo($attribute_id, $name, $code, $description, $store_id, $lang_id, $contentType);
+        list($response) = $this->attributeValueAddWithHttpInfo($attribute_id, $name, $code, $description, $store_id, $lang_id, $idempotency_key, $contentType);
         return $response;
     }
 
@@ -5300,15 +5391,16 @@ class AttributeApi
      * @param  string|null $description Defines attribute value&#39;s description (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeValueAdd'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\AttributeAdd200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function attributeValueAddWithHttpInfo($attribute_id, $name, $code = null, $description = null, $store_id = null, $lang_id = null, string $contentType = self::contentTypes['attributeValueAdd'][0])
+    public function attributeValueAddWithHttpInfo($attribute_id, $name, $code = null, $description = null, $store_id = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['attributeValueAdd'][0])
     {
-        $request = $this->attributeValueAddRequest($attribute_id, $name, $code, $description, $store_id, $lang_id, $contentType);
+        $request = $this->attributeValueAddRequest($attribute_id, $name, $code, $description, $store_id, $lang_id, $idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5430,14 +5522,15 @@ class AttributeApi
      * @param  string|null $description Defines attribute value&#39;s description (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeValueAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function attributeValueAddAsync($attribute_id, $name, $code = null, $description = null, $store_id = null, $lang_id = null, string $contentType = self::contentTypes['attributeValueAdd'][0])
+    public function attributeValueAddAsync($attribute_id, $name, $code = null, $description = null, $store_id = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['attributeValueAdd'][0])
     {
-        return $this->attributeValueAddAsyncWithHttpInfo($attribute_id, $name, $code, $description, $store_id, $lang_id, $contentType)
+        return $this->attributeValueAddAsyncWithHttpInfo($attribute_id, $name, $code, $description, $store_id, $lang_id, $idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5456,15 +5549,16 @@ class AttributeApi
      * @param  string|null $description Defines attribute value&#39;s description (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeValueAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function attributeValueAddAsyncWithHttpInfo($attribute_id, $name, $code = null, $description = null, $store_id = null, $lang_id = null, string $contentType = self::contentTypes['attributeValueAdd'][0])
+    public function attributeValueAddAsyncWithHttpInfo($attribute_id, $name, $code = null, $description = null, $store_id = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['attributeValueAdd'][0])
     {
         $returnType = '\OpenAPI\Client\Model\AttributeAdd200Response';
-        $request = $this->attributeValueAddRequest($attribute_id, $name, $code, $description, $store_id, $lang_id, $contentType);
+        $request = $this->attributeValueAddRequest($attribute_id, $name, $code, $description, $store_id, $lang_id, $idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5511,12 +5605,13 @@ class AttributeApi
      * @param  string|null $description Defines attribute value&#39;s description (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeValueAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function attributeValueAddRequest($attribute_id, $name, $code = null, $description = null, $store_id = null, $lang_id = null, string $contentType = self::contentTypes['attributeValueAdd'][0])
+    public function attributeValueAddRequest($attribute_id, $name, $code = null, $description = null, $store_id = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['attributeValueAdd'][0])
     {
 
         // verify the required parameter 'attribute_id' is set
@@ -5532,6 +5627,7 @@ class AttributeApi
                 'Missing the required parameter $name when calling attributeValueAdd'
             );
         }
+
 
 
 
@@ -5594,6 +5690,15 @@ class AttributeApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $lang_id,
             'lang_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idempotency_key,
+            'idempotency_key', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -6033,15 +6138,16 @@ class AttributeApi
      * @param  string|null $code Entity code (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeValueUpdate'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\AttributeUpdate200Response
      */
-    public function attributeValueUpdate($id, $attribute_id, $name = null, $description = null, $code = null, $store_id = null, $lang_id = null, string $contentType = self::contentTypes['attributeValueUpdate'][0])
+    public function attributeValueUpdate($id, $attribute_id, $name = null, $description = null, $code = null, $store_id = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['attributeValueUpdate'][0])
     {
-        list($response) = $this->attributeValueUpdateWithHttpInfo($id, $attribute_id, $name, $description, $code, $store_id, $lang_id, $contentType);
+        list($response) = $this->attributeValueUpdateWithHttpInfo($id, $attribute_id, $name, $description, $code, $store_id, $lang_id, $idempotency_key, $contentType);
         return $response;
     }
 
@@ -6057,15 +6163,16 @@ class AttributeApi
      * @param  string|null $code Entity code (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeValueUpdate'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\AttributeUpdate200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function attributeValueUpdateWithHttpInfo($id, $attribute_id, $name = null, $description = null, $code = null, $store_id = null, $lang_id = null, string $contentType = self::contentTypes['attributeValueUpdate'][0])
+    public function attributeValueUpdateWithHttpInfo($id, $attribute_id, $name = null, $description = null, $code = null, $store_id = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['attributeValueUpdate'][0])
     {
-        $request = $this->attributeValueUpdateRequest($id, $attribute_id, $name, $description, $code, $store_id, $lang_id, $contentType);
+        $request = $this->attributeValueUpdateRequest($id, $attribute_id, $name, $description, $code, $store_id, $lang_id, $idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6188,14 +6295,15 @@ class AttributeApi
      * @param  string|null $code Entity code (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeValueUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function attributeValueUpdateAsync($id, $attribute_id, $name = null, $description = null, $code = null, $store_id = null, $lang_id = null, string $contentType = self::contentTypes['attributeValueUpdate'][0])
+    public function attributeValueUpdateAsync($id, $attribute_id, $name = null, $description = null, $code = null, $store_id = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['attributeValueUpdate'][0])
     {
-        return $this->attributeValueUpdateAsyncWithHttpInfo($id, $attribute_id, $name, $description, $code, $store_id, $lang_id, $contentType)
+        return $this->attributeValueUpdateAsyncWithHttpInfo($id, $attribute_id, $name, $description, $code, $store_id, $lang_id, $idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6215,15 +6323,16 @@ class AttributeApi
      * @param  string|null $code Entity code (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeValueUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function attributeValueUpdateAsyncWithHttpInfo($id, $attribute_id, $name = null, $description = null, $code = null, $store_id = null, $lang_id = null, string $contentType = self::contentTypes['attributeValueUpdate'][0])
+    public function attributeValueUpdateAsyncWithHttpInfo($id, $attribute_id, $name = null, $description = null, $code = null, $store_id = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['attributeValueUpdate'][0])
     {
         $returnType = '\OpenAPI\Client\Model\AttributeUpdate200Response';
-        $request = $this->attributeValueUpdateRequest($id, $attribute_id, $name, $description, $code, $store_id, $lang_id, $contentType);
+        $request = $this->attributeValueUpdateRequest($id, $attribute_id, $name, $description, $code, $store_id, $lang_id, $idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6271,12 +6380,13 @@ class AttributeApi
      * @param  string|null $code Entity code (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['attributeValueUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function attributeValueUpdateRequest($id, $attribute_id, $name = null, $description = null, $code = null, $store_id = null, $lang_id = null, string $contentType = self::contentTypes['attributeValueUpdate'][0])
+    public function attributeValueUpdateRequest($id, $attribute_id, $name = null, $description = null, $code = null, $store_id = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['attributeValueUpdate'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -6292,6 +6402,7 @@ class AttributeApi
                 'Missing the required parameter $attribute_id when calling attributeValueUpdate'
             );
         }
+
 
 
 
@@ -6364,6 +6475,15 @@ class AttributeApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $lang_id,
             'lang_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idempotency_key,
+            'idempotency_key', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

@@ -23,5 +23,6 @@ Name | Type | Description | Notes
 **store_id** | **string** | Store Id | [optional]
 **free_cash_on_delivery** | **bool** | Defines whether the coupon provides free cash on delivery | [optional]
 **customer_id** | **string** | Retrieves orders specified by customer id | [optional]
+**idempotency_key** | **string** | A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -1713,15 +1713,16 @@ class CustomerApi
      * customer.delete
      *
      * @param  string $id Identifies customer specified by the id (required)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerDelete'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CustomerDelete200Response
      */
-    public function customerDelete($id, string $contentType = self::contentTypes['customerDelete'][0])
+    public function customerDelete($id, $store_id = null, string $contentType = self::contentTypes['customerDelete'][0])
     {
-        list($response) = $this->customerDeleteWithHttpInfo($id, $contentType);
+        list($response) = $this->customerDeleteWithHttpInfo($id, $store_id, $contentType);
         return $response;
     }
 
@@ -1731,15 +1732,16 @@ class CustomerApi
      * customer.delete
      *
      * @param  string $id Identifies customer specified by the id (required)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerDelete'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CustomerDelete200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function customerDeleteWithHttpInfo($id, string $contentType = self::contentTypes['customerDelete'][0])
+    public function customerDeleteWithHttpInfo($id, $store_id = null, string $contentType = self::contentTypes['customerDelete'][0])
     {
-        $request = $this->customerDeleteRequest($id, $contentType);
+        $request = $this->customerDeleteRequest($id, $store_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1856,14 +1858,15 @@ class CustomerApi
      * customer.delete
      *
      * @param  string $id Identifies customer specified by the id (required)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerDelete'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerDeleteAsync($id, string $contentType = self::contentTypes['customerDelete'][0])
+    public function customerDeleteAsync($id, $store_id = null, string $contentType = self::contentTypes['customerDelete'][0])
     {
-        return $this->customerDeleteAsyncWithHttpInfo($id, $contentType)
+        return $this->customerDeleteAsyncWithHttpInfo($id, $store_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1877,15 +1880,16 @@ class CustomerApi
      * customer.delete
      *
      * @param  string $id Identifies customer specified by the id (required)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerDelete'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerDeleteAsyncWithHttpInfo($id, string $contentType = self::contentTypes['customerDelete'][0])
+    public function customerDeleteAsyncWithHttpInfo($id, $store_id = null, string $contentType = self::contentTypes['customerDelete'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CustomerDelete200Response';
-        $request = $this->customerDeleteRequest($id, $contentType);
+        $request = $this->customerDeleteRequest($id, $store_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1927,12 +1931,13 @@ class CustomerApi
      * Create request for operation 'customerDelete'
      *
      * @param  string $id Identifies customer specified by the id (required)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerDelete'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function customerDeleteRequest($id, string $contentType = self::contentTypes['customerDelete'][0])
+    public function customerDeleteRequest($id, $store_id = null, string $contentType = self::contentTypes['customerDelete'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -1941,6 +1946,7 @@ class CustomerApi
                 'Missing the required parameter $id when calling customerDelete'
             );
         }
+
 
 
         $resourcePath = '/customer.delete.json';
@@ -1958,6 +1964,15 @@ class CustomerApi
             'form', // style
             true, // explode
             true // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $store_id,
+            'store_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
         ) ?? []);
 
 
@@ -2413,15 +2428,16 @@ class CustomerApi
      * @param  string $name Customer group name (required)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $stores_ids Assign customer group to the stores that is specified by comma-separated stores&#39; id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerGroupAdd'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CustomerGroupAdd200Response
      */
-    public function customerGroupAdd($name, $store_id = null, $stores_ids = null, string $contentType = self::contentTypes['customerGroupAdd'][0])
+    public function customerGroupAdd($name, $store_id = null, $stores_ids = null, $idempotency_key = null, string $contentType = self::contentTypes['customerGroupAdd'][0])
     {
-        list($response) = $this->customerGroupAddWithHttpInfo($name, $store_id, $stores_ids, $contentType);
+        list($response) = $this->customerGroupAddWithHttpInfo($name, $store_id, $stores_ids, $idempotency_key, $contentType);
         return $response;
     }
 
@@ -2433,15 +2449,16 @@ class CustomerApi
      * @param  string $name Customer group name (required)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $stores_ids Assign customer group to the stores that is specified by comma-separated stores&#39; id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerGroupAdd'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CustomerGroupAdd200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function customerGroupAddWithHttpInfo($name, $store_id = null, $stores_ids = null, string $contentType = self::contentTypes['customerGroupAdd'][0])
+    public function customerGroupAddWithHttpInfo($name, $store_id = null, $stores_ids = null, $idempotency_key = null, string $contentType = self::contentTypes['customerGroupAdd'][0])
     {
-        $request = $this->customerGroupAddRequest($name, $store_id, $stores_ids, $contentType);
+        $request = $this->customerGroupAddRequest($name, $store_id, $stores_ids, $idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2560,14 +2577,15 @@ class CustomerApi
      * @param  string $name Customer group name (required)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $stores_ids Assign customer group to the stores that is specified by comma-separated stores&#39; id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerGroupAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerGroupAddAsync($name, $store_id = null, $stores_ids = null, string $contentType = self::contentTypes['customerGroupAdd'][0])
+    public function customerGroupAddAsync($name, $store_id = null, $stores_ids = null, $idempotency_key = null, string $contentType = self::contentTypes['customerGroupAdd'][0])
     {
-        return $this->customerGroupAddAsyncWithHttpInfo($name, $store_id, $stores_ids, $contentType)
+        return $this->customerGroupAddAsyncWithHttpInfo($name, $store_id, $stores_ids, $idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2583,15 +2601,16 @@ class CustomerApi
      * @param  string $name Customer group name (required)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $stores_ids Assign customer group to the stores that is specified by comma-separated stores&#39; id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerGroupAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerGroupAddAsyncWithHttpInfo($name, $store_id = null, $stores_ids = null, string $contentType = self::contentTypes['customerGroupAdd'][0])
+    public function customerGroupAddAsyncWithHttpInfo($name, $store_id = null, $stores_ids = null, $idempotency_key = null, string $contentType = self::contentTypes['customerGroupAdd'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CustomerGroupAdd200Response';
-        $request = $this->customerGroupAddRequest($name, $store_id, $stores_ids, $contentType);
+        $request = $this->customerGroupAddRequest($name, $store_id, $stores_ids, $idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2635,12 +2654,13 @@ class CustomerApi
      * @param  string $name Customer group name (required)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $stores_ids Assign customer group to the stores that is specified by comma-separated stores&#39; id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customerGroupAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function customerGroupAddRequest($name, $store_id = null, $stores_ids = null, string $contentType = self::contentTypes['customerGroupAdd'][0])
+    public function customerGroupAddRequest($name, $store_id = null, $stores_ids = null, $idempotency_key = null, string $contentType = self::contentTypes['customerGroupAdd'][0])
     {
 
         // verify the required parameter 'name' is set
@@ -2649,6 +2669,7 @@ class CustomerApi
                 'Missing the required parameter $name when calling customerGroupAdd'
             );
         }
+
 
 
 
@@ -2682,6 +2703,15 @@ class CustomerApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $stores_ids,
             'stores_ids', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idempotency_key,
+            'idempotency_key', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

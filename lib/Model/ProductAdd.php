@@ -178,7 +178,8 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'ordered_count' => 'int',
         'shop_section_id' => 'int',
         'return_policy_id' => 'int',
-        'personalization_details' => '\OpenAPI\Client\Model\ProductAddPersonalizationDetails'
+        'personalization_details' => '\OpenAPI\Client\Model\ProductAddPersonalizationDetails',
+        'idempotency_key' => 'string'
     ];
 
     /**
@@ -309,7 +310,8 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'ordered_count' => null,
         'shop_section_id' => null,
         'return_policy_id' => null,
-        'personalization_details' => null
+        'personalization_details' => null,
+        'idempotency_key' => null
     ];
 
     /**
@@ -438,7 +440,8 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'ordered_count' => false,
         'shop_section_id' => false,
         'return_policy_id' => false,
-        'personalization_details' => false
+        'personalization_details' => false,
+        'idempotency_key' => false
     ];
 
     /**
@@ -647,7 +650,8 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'ordered_count' => 'ordered_count',
         'shop_section_id' => 'shop_section_id',
         'return_policy_id' => 'return_policy_id',
-        'personalization_details' => 'personalization_details'
+        'personalization_details' => 'personalization_details',
+        'idempotency_key' => 'idempotency_key'
     ];
 
     /**
@@ -776,7 +780,8 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'ordered_count' => 'setOrderedCount',
         'shop_section_id' => 'setShopSectionId',
         'return_policy_id' => 'setReturnPolicyId',
-        'personalization_details' => 'setPersonalizationDetails'
+        'personalization_details' => 'setPersonalizationDetails',
+        'idempotency_key' => 'setIdempotencyKey'
     ];
 
     /**
@@ -905,7 +910,8 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'ordered_count' => 'getOrderedCount',
         'shop_section_id' => 'getShopSectionId',
         'return_policy_id' => 'getReturnPolicyId',
-        'personalization_details' => 'getPersonalizationDetails'
+        'personalization_details' => 'getPersonalizationDetails',
+        'idempotency_key' => 'getIdempotencyKey'
     ];
 
     /**
@@ -1086,6 +1092,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('shop_section_id', $data ?? [], null);
         $this->setIfExists('return_policy_id', $data ?? [], null);
         $this->setIfExists('personalization_details', $data ?? [], null);
+        $this->setIfExists('idempotency_key', $data ?? [], null);
     }
 
     /**
@@ -4405,6 +4412,33 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable personalization_details cannot be null');
         }
         $this->container['personalization_details'] = $personalization_details;
+
+        return $this;
+    }
+
+    /**
+     * Gets idempotency_key
+     *
+     * @return string|null
+     */
+    public function getIdempotencyKey()
+    {
+        return $this->container['idempotency_key'];
+    }
+
+    /**
+     * Sets idempotency_key
+     *
+     * @param string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
+     *
+     * @return self
+     */
+    public function setIdempotencyKey($idempotency_key)
+    {
+        if (is_null($idempotency_key)) {
+            throw new \InvalidArgumentException('non-nullable idempotency_key cannot be null');
+        }
+        $this->container['idempotency_key'] = $idempotency_key;
 
         return $this;
     }

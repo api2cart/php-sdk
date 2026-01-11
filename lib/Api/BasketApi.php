@@ -524,15 +524,16 @@ class BasketApi
      * @param  string|null $variant_id Defines product&#39;s variants specified by variant id (optional)
      * @param  float|null $quantity Defines new items quantity (optional, default to 0)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['basketItemAdd'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\BasketItemAdd200Response
      */
-    public function basketItemAdd($customer_id, $product_id, $variant_id = null, $quantity = 0, $store_id = null, string $contentType = self::contentTypes['basketItemAdd'][0])
+    public function basketItemAdd($customer_id, $product_id, $variant_id = null, $quantity = 0, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['basketItemAdd'][0])
     {
-        list($response) = $this->basketItemAddWithHttpInfo($customer_id, $product_id, $variant_id, $quantity, $store_id, $contentType);
+        list($response) = $this->basketItemAddWithHttpInfo($customer_id, $product_id, $variant_id, $quantity, $store_id, $idempotency_key, $contentType);
         return $response;
     }
 
@@ -546,15 +547,16 @@ class BasketApi
      * @param  string|null $variant_id Defines product&#39;s variants specified by variant id (optional)
      * @param  float|null $quantity Defines new items quantity (optional, default to 0)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['basketItemAdd'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\BasketItemAdd200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function basketItemAddWithHttpInfo($customer_id, $product_id, $variant_id = null, $quantity = 0, $store_id = null, string $contentType = self::contentTypes['basketItemAdd'][0])
+    public function basketItemAddWithHttpInfo($customer_id, $product_id, $variant_id = null, $quantity = 0, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['basketItemAdd'][0])
     {
-        $request = $this->basketItemAddRequest($customer_id, $product_id, $variant_id, $quantity, $store_id, $contentType);
+        $request = $this->basketItemAddRequest($customer_id, $product_id, $variant_id, $quantity, $store_id, $idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -675,14 +677,15 @@ class BasketApi
      * @param  string|null $variant_id Defines product&#39;s variants specified by variant id (optional)
      * @param  float|null $quantity Defines new items quantity (optional, default to 0)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['basketItemAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function basketItemAddAsync($customer_id, $product_id, $variant_id = null, $quantity = 0, $store_id = null, string $contentType = self::contentTypes['basketItemAdd'][0])
+    public function basketItemAddAsync($customer_id, $product_id, $variant_id = null, $quantity = 0, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['basketItemAdd'][0])
     {
-        return $this->basketItemAddAsyncWithHttpInfo($customer_id, $product_id, $variant_id, $quantity, $store_id, $contentType)
+        return $this->basketItemAddAsyncWithHttpInfo($customer_id, $product_id, $variant_id, $quantity, $store_id, $idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -700,15 +703,16 @@ class BasketApi
      * @param  string|null $variant_id Defines product&#39;s variants specified by variant id (optional)
      * @param  float|null $quantity Defines new items quantity (optional, default to 0)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['basketItemAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function basketItemAddAsyncWithHttpInfo($customer_id, $product_id, $variant_id = null, $quantity = 0, $store_id = null, string $contentType = self::contentTypes['basketItemAdd'][0])
+    public function basketItemAddAsyncWithHttpInfo($customer_id, $product_id, $variant_id = null, $quantity = 0, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['basketItemAdd'][0])
     {
         $returnType = '\OpenAPI\Client\Model\BasketItemAdd200Response';
-        $request = $this->basketItemAddRequest($customer_id, $product_id, $variant_id, $quantity, $store_id, $contentType);
+        $request = $this->basketItemAddRequest($customer_id, $product_id, $variant_id, $quantity, $store_id, $idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -754,12 +758,13 @@ class BasketApi
      * @param  string|null $variant_id Defines product&#39;s variants specified by variant id (optional)
      * @param  float|null $quantity Defines new items quantity (optional, default to 0)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['basketItemAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function basketItemAddRequest($customer_id, $product_id, $variant_id = null, $quantity = 0, $store_id = null, string $contentType = self::contentTypes['basketItemAdd'][0])
+    public function basketItemAddRequest($customer_id, $product_id, $variant_id = null, $quantity = 0, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['basketItemAdd'][0])
     {
 
         // verify the required parameter 'customer_id' is set
@@ -775,6 +780,7 @@ class BasketApi
                 'Missing the required parameter $product_id when calling basketItemAdd'
             );
         }
+
 
 
 
@@ -827,6 +833,15 @@ class BasketApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $store_id,
             'store_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idempotency_key,
+            'idempotency_key', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -907,15 +922,16 @@ class BasketApi
      * @param  string $name Shipping Service Name (required)
      * @param  string $callback Callback url that returns shipping rates. It should be able to accept POST requests with json data. (required)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['basketLiveShippingServiceCreate'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\BasketLiveShippingServiceCreate200Response
      */
-    public function basketLiveShippingServiceCreate($name, $callback, $store_id = null, string $contentType = self::contentTypes['basketLiveShippingServiceCreate'][0])
+    public function basketLiveShippingServiceCreate($name, $callback, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['basketLiveShippingServiceCreate'][0])
     {
-        list($response) = $this->basketLiveShippingServiceCreateWithHttpInfo($name, $callback, $store_id, $contentType);
+        list($response) = $this->basketLiveShippingServiceCreateWithHttpInfo($name, $callback, $store_id, $idempotency_key, $contentType);
         return $response;
     }
 
@@ -927,15 +943,16 @@ class BasketApi
      * @param  string $name Shipping Service Name (required)
      * @param  string $callback Callback url that returns shipping rates. It should be able to accept POST requests with json data. (required)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['basketLiveShippingServiceCreate'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\BasketLiveShippingServiceCreate200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function basketLiveShippingServiceCreateWithHttpInfo($name, $callback, $store_id = null, string $contentType = self::contentTypes['basketLiveShippingServiceCreate'][0])
+    public function basketLiveShippingServiceCreateWithHttpInfo($name, $callback, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['basketLiveShippingServiceCreate'][0])
     {
-        $request = $this->basketLiveShippingServiceCreateRequest($name, $callback, $store_id, $contentType);
+        $request = $this->basketLiveShippingServiceCreateRequest($name, $callback, $store_id, $idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1054,14 +1071,15 @@ class BasketApi
      * @param  string $name Shipping Service Name (required)
      * @param  string $callback Callback url that returns shipping rates. It should be able to accept POST requests with json data. (required)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['basketLiveShippingServiceCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function basketLiveShippingServiceCreateAsync($name, $callback, $store_id = null, string $contentType = self::contentTypes['basketLiveShippingServiceCreate'][0])
+    public function basketLiveShippingServiceCreateAsync($name, $callback, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['basketLiveShippingServiceCreate'][0])
     {
-        return $this->basketLiveShippingServiceCreateAsyncWithHttpInfo($name, $callback, $store_id, $contentType)
+        return $this->basketLiveShippingServiceCreateAsyncWithHttpInfo($name, $callback, $store_id, $idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1077,15 +1095,16 @@ class BasketApi
      * @param  string $name Shipping Service Name (required)
      * @param  string $callback Callback url that returns shipping rates. It should be able to accept POST requests with json data. (required)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['basketLiveShippingServiceCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function basketLiveShippingServiceCreateAsyncWithHttpInfo($name, $callback, $store_id = null, string $contentType = self::contentTypes['basketLiveShippingServiceCreate'][0])
+    public function basketLiveShippingServiceCreateAsyncWithHttpInfo($name, $callback, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['basketLiveShippingServiceCreate'][0])
     {
         $returnType = '\OpenAPI\Client\Model\BasketLiveShippingServiceCreate200Response';
-        $request = $this->basketLiveShippingServiceCreateRequest($name, $callback, $store_id, $contentType);
+        $request = $this->basketLiveShippingServiceCreateRequest($name, $callback, $store_id, $idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1129,12 +1148,13 @@ class BasketApi
      * @param  string $name Shipping Service Name (required)
      * @param  string $callback Callback url that returns shipping rates. It should be able to accept POST requests with json data. (required)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['basketLiveShippingServiceCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function basketLiveShippingServiceCreateRequest($name, $callback, $store_id = null, string $contentType = self::contentTypes['basketLiveShippingServiceCreate'][0])
+    public function basketLiveShippingServiceCreateRequest($name, $callback, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['basketLiveShippingServiceCreate'][0])
     {
 
         // verify the required parameter 'name' is set
@@ -1150,6 +1170,7 @@ class BasketApi
                 'Missing the required parameter $callback when calling basketLiveShippingServiceCreate'
             );
         }
+
 
 
 
@@ -1182,6 +1203,15 @@ class BasketApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $store_id,
             'store_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idempotency_key,
+            'idempotency_key', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
