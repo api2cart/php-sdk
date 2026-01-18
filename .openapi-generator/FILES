@@ -92,6 +92,7 @@ docs/Model/CartInfo200Response.md
 docs/Model/CartMetaData.md
 docs/Model/CartMethods200Response.md
 docs/Model/CartMethods200ResponseResult.md
+docs/Model/CartPickupLocation.md
 docs/Model/CartPluginList200Response.md
 docs/Model/CartPluginList200ResponseResult.md
 docs/Model/CartScriptAdd200Response.md
@@ -543,6 +544,7 @@ lib/Model/CartInfo200Response.php
 lib/Model/CartMetaData.php
 lib/Model/CartMethods200Response.php
 lib/Model/CartMethods200ResponseResult.php
+lib/Model/CartPickupLocation.php
 lib/Model/CartPluginList200Response.php
 lib/Model/CartPluginList200ResponseResult.php
 lib/Model/CartScriptAdd200Response.php
@@ -992,6 +994,7 @@ test/Model/CartInfo200ResponseTest.php
 test/Model/CartMetaDataTest.php
 test/Model/CartMethods200ResponseResultTest.php
 test/Model/CartMethods200ResponseTest.php
+test/Model/CartPickupLocationTest.php
 test/Model/CartPluginList200ResponseResultTest.php
 test/Model/CartPluginList200ResponseTest.php
 test/Model/CartScriptAdd200ResponseResultTest.php

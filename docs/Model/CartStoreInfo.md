@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **store_owner_info** | [**\OpenAPI\Client\Model\Info**](Info.md) |  | [optional]
 **default_warehouse_id** | **string** |  | [optional]
 **channels** | [**\OpenAPI\Client\Model\CartChannel[]**](CartChannel.md) |  | [optional]
+**pickup_locations** | [**\OpenAPI\Client\Model\CartPickupLocation[]**](CartPickupLocation.md) |  | [optional]
 **additional_fields** | **object** |  | [optional]
 **custom_fields** | **object** |  | [optional]
 

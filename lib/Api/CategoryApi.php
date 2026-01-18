@@ -3739,15 +3739,16 @@ class CategoryApi
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $report_request_id Report request id (optional)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
+     * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryInfo'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CategoryInfo200Response
      */
-    public function categoryInfo($id, $store_id = null, $lang_id = null, $schema_type = null, $response_fields = null, $params = 'id,parent_id,name,description', $exclude = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['categoryInfo'][0])
+    public function categoryInfo($id, $store_id = null, $lang_id = null, $schema_type = null, $response_fields = null, $params = 'id,parent_id,name,description', $exclude = null, $report_request_id = null, $disable_report_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['categoryInfo'][0])
     {
-        list($response) = $this->categoryInfoWithHttpInfo($id, $store_id, $lang_id, $schema_type, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $contentType);
+        list($response) = $this->categoryInfoWithHttpInfo($id, $store_id, $lang_id, $schema_type, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $use_latest_api_version, $contentType);
         return $response;
     }
 
@@ -3765,15 +3766,16 @@ class CategoryApi
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $report_request_id Report request id (optional)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
+     * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryInfo'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CategoryInfo200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function categoryInfoWithHttpInfo($id, $store_id = null, $lang_id = null, $schema_type = null, $response_fields = null, $params = 'id,parent_id,name,description', $exclude = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['categoryInfo'][0])
+    public function categoryInfoWithHttpInfo($id, $store_id = null, $lang_id = null, $schema_type = null, $response_fields = null, $params = 'id,parent_id,name,description', $exclude = null, $report_request_id = null, $disable_report_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['categoryInfo'][0])
     {
-        $request = $this->categoryInfoRequest($id, $store_id, $lang_id, $schema_type, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $contentType);
+        $request = $this->categoryInfoRequest($id, $store_id, $lang_id, $schema_type, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $use_latest_api_version, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3898,14 +3900,15 @@ class CategoryApi
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $report_request_id Report request id (optional)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
+     * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryInfoAsync($id, $store_id = null, $lang_id = null, $schema_type = null, $response_fields = null, $params = 'id,parent_id,name,description', $exclude = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['categoryInfo'][0])
+    public function categoryInfoAsync($id, $store_id = null, $lang_id = null, $schema_type = null, $response_fields = null, $params = 'id,parent_id,name,description', $exclude = null, $report_request_id = null, $disable_report_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['categoryInfo'][0])
     {
-        return $this->categoryInfoAsyncWithHttpInfo($id, $store_id, $lang_id, $schema_type, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $contentType)
+        return $this->categoryInfoAsyncWithHttpInfo($id, $store_id, $lang_id, $schema_type, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $use_latest_api_version, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3927,15 +3930,16 @@ class CategoryApi
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $report_request_id Report request id (optional)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
+     * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryInfoAsyncWithHttpInfo($id, $store_id = null, $lang_id = null, $schema_type = null, $response_fields = null, $params = 'id,parent_id,name,description', $exclude = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['categoryInfo'][0])
+    public function categoryInfoAsyncWithHttpInfo($id, $store_id = null, $lang_id = null, $schema_type = null, $response_fields = null, $params = 'id,parent_id,name,description', $exclude = null, $report_request_id = null, $disable_report_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['categoryInfo'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CategoryInfo200Response';
-        $request = $this->categoryInfoRequest($id, $store_id, $lang_id, $schema_type, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $contentType);
+        $request = $this->categoryInfoRequest($id, $store_id, $lang_id, $schema_type, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $use_latest_api_version, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3985,12 +3989,13 @@ class CategoryApi
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $report_request_id Report request id (optional)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
+     * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function categoryInfoRequest($id, $store_id = null, $lang_id = null, $schema_type = null, $response_fields = null, $params = 'id,parent_id,name,description', $exclude = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['categoryInfo'][0])
+    public function categoryInfoRequest($id, $store_id = null, $lang_id = null, $schema_type = null, $response_fields = null, $params = 'id,parent_id,name,description', $exclude = null, $report_request_id = null, $disable_report_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['categoryInfo'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -3999,6 +4004,7 @@ class CategoryApi
                 'Missing the required parameter $id when calling categoryInfo'
             );
         }
+
 
 
 
@@ -4097,6 +4103,15 @@ class CategoryApi
             true, // explode
             false // required
         ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $use_latest_api_version,
+            'use_latest_api_version', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
 
 
 
@@ -4189,15 +4204,16 @@ class CategoryApi
      * @param  string|null $report_request_id Report request id (optional)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
      * @param  bool|null $disable_cache Disable cache for current request (optional, default to false)
+     * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseCategoryList
      */
-    public function categoryList($start = 0, $count = 10, $page_cursor = null, $store_id = null, $lang_id = null, $parent_id = null, $avail = true, $product_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $find_value = null, $find_where = null, $response_fields = null, $params = 'id,parent_id,name,description', $exclude = null, $report_request_id = null, $disable_report_cache = false, $disable_cache = false, string $contentType = self::contentTypes['categoryList'][0])
+    public function categoryList($start = 0, $count = 10, $page_cursor = null, $store_id = null, $lang_id = null, $parent_id = null, $avail = true, $product_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $find_value = null, $find_where = null, $response_fields = null, $params = 'id,parent_id,name,description', $exclude = null, $report_request_id = null, $disable_report_cache = false, $disable_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['categoryList'][0])
     {
-        list($response) = $this->categoryListWithHttpInfo($start, $count, $page_cursor, $store_id, $lang_id, $parent_id, $avail, $product_type, $created_from, $created_to, $modified_from, $modified_to, $find_value, $find_where, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $disable_cache, $contentType);
+        list($response) = $this->categoryListWithHttpInfo($start, $count, $page_cursor, $store_id, $lang_id, $parent_id, $avail, $product_type, $created_from, $created_to, $modified_from, $modified_to, $find_value, $find_where, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $disable_cache, $use_latest_api_version, $contentType);
         return $response;
     }
 
@@ -4226,15 +4242,16 @@ class CategoryApi
      * @param  string|null $report_request_id Report request id (optional)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
      * @param  bool|null $disable_cache Disable cache for current request (optional, default to false)
+     * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseCategoryList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function categoryListWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $store_id = null, $lang_id = null, $parent_id = null, $avail = true, $product_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $find_value = null, $find_where = null, $response_fields = null, $params = 'id,parent_id,name,description', $exclude = null, $report_request_id = null, $disable_report_cache = false, $disable_cache = false, string $contentType = self::contentTypes['categoryList'][0])
+    public function categoryListWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $store_id = null, $lang_id = null, $parent_id = null, $avail = true, $product_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $find_value = null, $find_where = null, $response_fields = null, $params = 'id,parent_id,name,description', $exclude = null, $report_request_id = null, $disable_report_cache = false, $disable_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['categoryList'][0])
     {
-        $request = $this->categoryListRequest($start, $count, $page_cursor, $store_id, $lang_id, $parent_id, $avail, $product_type, $created_from, $created_to, $modified_from, $modified_to, $find_value, $find_where, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $disable_cache, $contentType);
+        $request = $this->categoryListRequest($start, $count, $page_cursor, $store_id, $lang_id, $parent_id, $avail, $product_type, $created_from, $created_to, $modified_from, $modified_to, $find_value, $find_where, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $disable_cache, $use_latest_api_version, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4370,14 +4387,15 @@ class CategoryApi
      * @param  string|null $report_request_id Report request id (optional)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
      * @param  bool|null $disable_cache Disable cache for current request (optional, default to false)
+     * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryListAsync($start = 0, $count = 10, $page_cursor = null, $store_id = null, $lang_id = null, $parent_id = null, $avail = true, $product_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $find_value = null, $find_where = null, $response_fields = null, $params = 'id,parent_id,name,description', $exclude = null, $report_request_id = null, $disable_report_cache = false, $disable_cache = false, string $contentType = self::contentTypes['categoryList'][0])
+    public function categoryListAsync($start = 0, $count = 10, $page_cursor = null, $store_id = null, $lang_id = null, $parent_id = null, $avail = true, $product_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $find_value = null, $find_where = null, $response_fields = null, $params = 'id,parent_id,name,description', $exclude = null, $report_request_id = null, $disable_report_cache = false, $disable_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['categoryList'][0])
     {
-        return $this->categoryListAsyncWithHttpInfo($start, $count, $page_cursor, $store_id, $lang_id, $parent_id, $avail, $product_type, $created_from, $created_to, $modified_from, $modified_to, $find_value, $find_where, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $disable_cache, $contentType)
+        return $this->categoryListAsyncWithHttpInfo($start, $count, $page_cursor, $store_id, $lang_id, $parent_id, $avail, $product_type, $created_from, $created_to, $modified_from, $modified_to, $find_value, $find_where, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $disable_cache, $use_latest_api_version, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4410,15 +4428,16 @@ class CategoryApi
      * @param  string|null $report_request_id Report request id (optional)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
      * @param  bool|null $disable_cache Disable cache for current request (optional, default to false)
+     * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryListAsyncWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $store_id = null, $lang_id = null, $parent_id = null, $avail = true, $product_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $find_value = null, $find_where = null, $response_fields = null, $params = 'id,parent_id,name,description', $exclude = null, $report_request_id = null, $disable_report_cache = false, $disable_cache = false, string $contentType = self::contentTypes['categoryList'][0])
+    public function categoryListAsyncWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $store_id = null, $lang_id = null, $parent_id = null, $avail = true, $product_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $find_value = null, $find_where = null, $response_fields = null, $params = 'id,parent_id,name,description', $exclude = null, $report_request_id = null, $disable_report_cache = false, $disable_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['categoryList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseCategoryList';
-        $request = $this->categoryListRequest($start, $count, $page_cursor, $store_id, $lang_id, $parent_id, $avail, $product_type, $created_from, $created_to, $modified_from, $modified_to, $find_value, $find_where, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $disable_cache, $contentType);
+        $request = $this->categoryListRequest($start, $count, $page_cursor, $store_id, $lang_id, $parent_id, $avail, $product_type, $created_from, $created_to, $modified_from, $modified_to, $find_value, $find_where, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $disable_cache, $use_latest_api_version, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4479,13 +4498,15 @@ class CategoryApi
      * @param  string|null $report_request_id Report request id (optional)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
      * @param  bool|null $disable_cache Disable cache for current request (optional, default to false)
+     * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function categoryListRequest($start = 0, $count = 10, $page_cursor = null, $store_id = null, $lang_id = null, $parent_id = null, $avail = true, $product_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $find_value = null, $find_where = null, $response_fields = null, $params = 'id,parent_id,name,description', $exclude = null, $report_request_id = null, $disable_report_cache = false, $disable_cache = false, string $contentType = self::contentTypes['categoryList'][0])
+    public function categoryListRequest($start = 0, $count = 10, $page_cursor = null, $store_id = null, $lang_id = null, $parent_id = null, $avail = true, $product_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $find_value = null, $find_where = null, $response_fields = null, $params = 'id,parent_id,name,description', $exclude = null, $report_request_id = null, $disable_report_cache = false, $disable_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['categoryList'][0])
     {
+
 
 
 
@@ -4690,6 +4711,15 @@ class CategoryApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $disable_cache,
             'disable_cache', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $use_latest_api_version,
+            'use_latest_api_version', // param base name
             'boolean', // openApiType
             'form', // style
             true, // explode

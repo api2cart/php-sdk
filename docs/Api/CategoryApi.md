@@ -715,7 +715,7 @@ try {
 ## `categoryInfo()`
 
 ```php
-categoryInfo($id, $store_id, $lang_id, $schema_type, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache): \OpenAPI\Client\Model\CategoryInfo200Response
+categoryInfo($id, $store_id, $lang_id, $schema_type, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $use_latest_api_version): \OpenAPI\Client\Model\CategoryInfo200Response
 ```
 
 category.info
@@ -755,9 +755,10 @@ $params = id,parent_id,name; // string | Set this parameter in order to choose w
 $exclude = id,parent_id,name; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 $report_request_id = 105245017661; // string | Report request id
 $disable_report_cache = false; // bool | Disable report cache for current request
+$use_latest_api_version = true; // bool | Use the latest platform API version
 
 try {
-    $result = $apiInstance->categoryInfo($id, $store_id, $lang_id, $schema_type, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache);
+    $result = $apiInstance->categoryInfo($id, $store_id, $lang_id, $schema_type, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $use_latest_api_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CategoryApi->categoryInfo: ', $e->getMessage(), PHP_EOL;
@@ -777,6 +778,7 @@ try {
 | **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 | **report_request_id** | **string**| Report request id | [optional] |
 | **disable_report_cache** | **bool**| Disable report cache for current request | [optional] [default to false] |
+| **use_latest_api_version** | **bool**| Use the latest platform API version | [optional] [default to false] |
 
 ### Return type
 
@@ -798,7 +800,7 @@ try {
 ## `categoryList()`
 
 ```php
-categoryList($start, $count, $page_cursor, $store_id, $lang_id, $parent_id, $avail, $product_type, $created_from, $created_to, $modified_from, $modified_to, $find_value, $find_where, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $disable_cache): \OpenAPI\Client\Model\ModelResponseCategoryList
+categoryList($start, $count, $page_cursor, $store_id, $lang_id, $parent_id, $avail, $product_type, $created_from, $created_to, $modified_from, $modified_to, $find_value, $find_where, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $disable_cache, $use_latest_api_version): \OpenAPI\Client\Model\ModelResponseCategoryList
 ```
 
 category.list
@@ -849,9 +851,10 @@ $exclude = id,parent_id,name; // string | Set this parameter in order to choose 
 $report_request_id = 105245017661; // string | Report request id
 $disable_report_cache = false; // bool | Disable report cache for current request
 $disable_cache = false; // bool | Disable cache for current request
+$use_latest_api_version = true; // bool | Use the latest platform API version
 
 try {
-    $result = $apiInstance->categoryList($start, $count, $page_cursor, $store_id, $lang_id, $parent_id, $avail, $product_type, $created_from, $created_to, $modified_from, $modified_to, $find_value, $find_where, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $disable_cache);
+    $result = $apiInstance->categoryList($start, $count, $page_cursor, $store_id, $lang_id, $parent_id, $avail, $product_type, $created_from, $created_to, $modified_from, $modified_to, $find_value, $find_where, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $disable_cache, $use_latest_api_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CategoryApi->categoryList: ', $e->getMessage(), PHP_EOL;
@@ -882,6 +885,7 @@ try {
 | **report_request_id** | **string**| Report request id | [optional] |
 | **disable_report_cache** | **bool**| Disable report cache for current request | [optional] [default to false] |
 | **disable_cache** | **bool**| Disable cache for current request | [optional] [default to false] |
+| **use_latest_api_version** | **bool**| Use the latest platform API version | [optional] [default to false] |
 
 ### Return type
 

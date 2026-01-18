@@ -76,6 +76,7 @@ class CartStoreInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         'store_owner_info' => '\OpenAPI\Client\Model\Info',
         'default_warehouse_id' => 'string',
         'channels' => '\OpenAPI\Client\Model\CartChannel[]',
+        'pickup_locations' => '\OpenAPI\Client\Model\CartPickupLocation[]',
         'additional_fields' => 'object',
         'custom_fields' => 'object'
     ];
@@ -106,6 +107,7 @@ class CartStoreInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         'store_owner_info' => null,
         'default_warehouse_id' => null,
         'channels' => null,
+        'pickup_locations' => null,
         'additional_fields' => null,
         'custom_fields' => null
     ];
@@ -134,6 +136,7 @@ class CartStoreInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         'store_owner_info' => true,
         'default_warehouse_id' => true,
         'channels' => false,
+        'pickup_locations' => false,
         'additional_fields' => true,
         'custom_fields' => true
     ];
@@ -242,6 +245,7 @@ class CartStoreInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         'store_owner_info' => 'store_owner_info',
         'default_warehouse_id' => 'default_warehouse_id',
         'channels' => 'channels',
+        'pickup_locations' => 'pickup_locations',
         'additional_fields' => 'additional_fields',
         'custom_fields' => 'custom_fields'
     ];
@@ -270,6 +274,7 @@ class CartStoreInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         'store_owner_info' => 'setStoreOwnerInfo',
         'default_warehouse_id' => 'setDefaultWarehouseId',
         'channels' => 'setChannels',
+        'pickup_locations' => 'setPickupLocations',
         'additional_fields' => 'setAdditionalFields',
         'custom_fields' => 'setCustomFields'
     ];
@@ -298,6 +303,7 @@ class CartStoreInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         'store_owner_info' => 'getStoreOwnerInfo',
         'default_warehouse_id' => 'getDefaultWarehouseId',
         'channels' => 'getChannels',
+        'pickup_locations' => 'getPickupLocations',
         'additional_fields' => 'getAdditionalFields',
         'custom_fields' => 'getCustomFields'
     ];
@@ -377,6 +383,7 @@ class CartStoreInfo implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('store_owner_info', $data ?? [], null);
         $this->setIfExists('default_warehouse_id', $data ?? [], null);
         $this->setIfExists('channels', $data ?? [], null);
+        $this->setIfExists('pickup_locations', $data ?? [], null);
         $this->setIfExists('additional_fields', $data ?? [], null);
         $this->setIfExists('custom_fields', $data ?? [], null);
     }
@@ -989,6 +996,33 @@ class CartStoreInfo implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable channels cannot be null');
         }
         $this->container['channels'] = $channels;
+
+        return $this;
+    }
+
+    /**
+     * Gets pickup_locations
+     *
+     * @return \OpenAPI\Client\Model\CartPickupLocation[]|null
+     */
+    public function getPickupLocations()
+    {
+        return $this->container['pickup_locations'];
+    }
+
+    /**
+     * Sets pickup_locations
+     *
+     * @param \OpenAPI\Client\Model\CartPickupLocation[]|null $pickup_locations pickup_locations
+     *
+     * @return self
+     */
+    public function setPickupLocations($pickup_locations)
+    {
+        if (is_null($pickup_locations)) {
+            throw new \InvalidArgumentException('non-nullable pickup_locations cannot be null');
+        }
+        $this->container['pickup_locations'] = $pickup_locations;
 
         return $this;
     }

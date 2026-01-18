@@ -243,6 +243,15 @@ class CartStoreInfoTest extends TestCase
     }
 
     /**
+     * Test attribute "pickup_locations"
+     */
+    public function testPropertyPickupLocations()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "additional_fields"
      */
     public function testPropertyAdditionalFields()
