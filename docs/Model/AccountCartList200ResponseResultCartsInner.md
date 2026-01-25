@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **url** | **string** |  | [optional]
 **store_key** | **string** |  | [optional]
 **cart_id** | **string** |  | [optional]
+**custom_label** | **string** |  | [optional]
+**bridge_version** | **string** |  | [optional]
 **total_calls** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

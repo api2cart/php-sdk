@@ -62,6 +62,8 @@ class AccountCartList200ResponseResultCartsInner implements ModelInterface, Arra
         'url' => 'string',
         'store_key' => 'string',
         'cart_id' => 'string',
+        'custom_label' => 'string',
+        'bridge_version' => 'string',
         'total_calls' => 'string'
     ];
 
@@ -77,6 +79,8 @@ class AccountCartList200ResponseResultCartsInner implements ModelInterface, Arra
         'url' => null,
         'store_key' => null,
         'cart_id' => null,
+        'custom_label' => null,
+        'bridge_version' => null,
         'total_calls' => null
     ];
 
@@ -90,6 +94,8 @@ class AccountCartList200ResponseResultCartsInner implements ModelInterface, Arra
         'url' => false,
         'store_key' => false,
         'cart_id' => false,
+        'custom_label' => false,
+        'bridge_version' => false,
         'total_calls' => false
     ];
 
@@ -183,6 +189,8 @@ class AccountCartList200ResponseResultCartsInner implements ModelInterface, Arra
         'url' => 'url',
         'store_key' => 'store_key',
         'cart_id' => 'cart_id',
+        'custom_label' => 'custom_label',
+        'bridge_version' => 'bridge_version',
         'total_calls' => 'total_calls'
     ];
 
@@ -196,6 +204,8 @@ class AccountCartList200ResponseResultCartsInner implements ModelInterface, Arra
         'url' => 'setUrl',
         'store_key' => 'setStoreKey',
         'cart_id' => 'setCartId',
+        'custom_label' => 'setCustomLabel',
+        'bridge_version' => 'setBridgeVersion',
         'total_calls' => 'setTotalCalls'
     ];
 
@@ -209,6 +219,8 @@ class AccountCartList200ResponseResultCartsInner implements ModelInterface, Arra
         'url' => 'getUrl',
         'store_key' => 'getStoreKey',
         'cart_id' => 'getCartId',
+        'custom_label' => 'getCustomLabel',
+        'bridge_version' => 'getBridgeVersion',
         'total_calls' => 'getTotalCalls'
     ];
 
@@ -273,6 +285,8 @@ class AccountCartList200ResponseResultCartsInner implements ModelInterface, Arra
         $this->setIfExists('url', $data ?? [], null);
         $this->setIfExists('store_key', $data ?? [], null);
         $this->setIfExists('cart_id', $data ?? [], null);
+        $this->setIfExists('custom_label', $data ?? [], null);
+        $this->setIfExists('bridge_version', $data ?? [], null);
         $this->setIfExists('total_calls', $data ?? [], null);
     }
 
@@ -422,6 +436,60 @@ class AccountCartList200ResponseResultCartsInner implements ModelInterface, Arra
             throw new \InvalidArgumentException('non-nullable cart_id cannot be null');
         }
         $this->container['cart_id'] = $cart_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets custom_label
+     *
+     * @return string|null
+     */
+    public function getCustomLabel()
+    {
+        return $this->container['custom_label'];
+    }
+
+    /**
+     * Sets custom_label
+     *
+     * @param string|null $custom_label custom_label
+     *
+     * @return self
+     */
+    public function setCustomLabel($custom_label)
+    {
+        if (is_null($custom_label)) {
+            throw new \InvalidArgumentException('non-nullable custom_label cannot be null');
+        }
+        $this->container['custom_label'] = $custom_label;
+
+        return $this;
+    }
+
+    /**
+     * Gets bridge_version
+     *
+     * @return string|null
+     */
+    public function getBridgeVersion()
+    {
+        return $this->container['bridge_version'];
+    }
+
+    /**
+     * Sets bridge_version
+     *
+     * @param string|null $bridge_version bridge_version
+     *
+     * @return self
+     */
+    public function setBridgeVersion($bridge_version)
+    {
+        if (is_null($bridge_version)) {
+            throw new \InvalidArgumentException('non-nullable bridge_version cannot be null');
+        }
+        $this->container['bridge_version'] = $bridge_version;
 
         return $this;
     }

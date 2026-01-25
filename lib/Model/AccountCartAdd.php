@@ -63,6 +63,8 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'bridge_url' => 'string',
         'store_root' => 'string',
         'store_key' => 'string',
+        'label' => 'string',
+        'custom_label' => 'string',
         'validate_version' => 'bool',
         'verify' => 'bool',
         'db_tables_prefix' => 'string',
@@ -200,6 +202,11 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'zid_access_token' => 'string',
         'zid_authorization' => 'string',
         'zid_refresh_token' => 'string',
+        'jumpseller_client_id' => 'string',
+        'jumpseller_client_secret' => 'string',
+        'jumpseller_refresh_token' => 'string',
+        'jumpseller_login' => 'string',
+        'jumpseller_authtoken' => 'string',
         'flipkart_client_id' => 'string',
         'flipkart_client_secret' => 'string',
         'allegro_client_id' => 'string',
@@ -249,6 +256,8 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'bridge_url' => null,
         'store_root' => null,
         'store_key' => null,
+        'label' => null,
+        'custom_label' => null,
         'validate_version' => null,
         'verify' => null,
         'db_tables_prefix' => null,
@@ -386,6 +395,11 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'zid_access_token' => null,
         'zid_authorization' => null,
         'zid_refresh_token' => null,
+        'jumpseller_client_id' => null,
+        'jumpseller_client_secret' => null,
+        'jumpseller_refresh_token' => null,
+        'jumpseller_login' => null,
+        'jumpseller_authtoken' => null,
         'flipkart_client_id' => null,
         'flipkart_client_secret' => null,
         'allegro_client_id' => null,
@@ -433,6 +447,8 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'bridge_url' => false,
         'store_root' => false,
         'store_key' => false,
+        'label' => false,
+        'custom_label' => false,
         'validate_version' => false,
         'verify' => false,
         'db_tables_prefix' => false,
@@ -570,6 +586,11 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'zid_access_token' => false,
         'zid_authorization' => false,
         'zid_refresh_token' => false,
+        'jumpseller_client_id' => false,
+        'jumpseller_client_secret' => false,
+        'jumpseller_refresh_token' => false,
+        'jumpseller_login' => false,
+        'jumpseller_authtoken' => false,
         'flipkart_client_id' => false,
         'flipkart_client_secret' => false,
         'allegro_client_id' => false,
@@ -697,6 +718,8 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'bridge_url' => 'bridge_url',
         'store_root' => 'store_root',
         'store_key' => 'store_key',
+        'label' => 'label',
+        'custom_label' => 'custom_label',
         'validate_version' => 'validate_version',
         'verify' => 'verify',
         'db_tables_prefix' => 'db_tables_prefix',
@@ -834,6 +857,11 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'zid_access_token' => 'zid_access_token',
         'zid_authorization' => 'zid_authorization',
         'zid_refresh_token' => 'zid_refresh_token',
+        'jumpseller_client_id' => 'jumpseller_client_id',
+        'jumpseller_client_secret' => 'jumpseller_client_secret',
+        'jumpseller_refresh_token' => 'jumpseller_refresh_token',
+        'jumpseller_login' => 'jumpseller_login',
+        'jumpseller_authtoken' => 'jumpseller_authtoken',
         'flipkart_client_id' => 'flipkart_client_id',
         'flipkart_client_secret' => 'flipkart_client_secret',
         'allegro_client_id' => 'allegro_client_id',
@@ -881,6 +909,8 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'bridge_url' => 'setBridgeUrl',
         'store_root' => 'setStoreRoot',
         'store_key' => 'setStoreKey',
+        'label' => 'setLabel',
+        'custom_label' => 'setCustomLabel',
         'validate_version' => 'setValidateVersion',
         'verify' => 'setVerify',
         'db_tables_prefix' => 'setDbTablesPrefix',
@@ -1018,6 +1048,11 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'zid_access_token' => 'setZidAccessToken',
         'zid_authorization' => 'setZidAuthorization',
         'zid_refresh_token' => 'setZidRefreshToken',
+        'jumpseller_client_id' => 'setJumpsellerClientId',
+        'jumpseller_client_secret' => 'setJumpsellerClientSecret',
+        'jumpseller_refresh_token' => 'setJumpsellerRefreshToken',
+        'jumpseller_login' => 'setJumpsellerLogin',
+        'jumpseller_authtoken' => 'setJumpsellerAuthtoken',
         'flipkart_client_id' => 'setFlipkartClientId',
         'flipkart_client_secret' => 'setFlipkartClientSecret',
         'allegro_client_id' => 'setAllegroClientId',
@@ -1065,6 +1100,8 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'bridge_url' => 'getBridgeUrl',
         'store_root' => 'getStoreRoot',
         'store_key' => 'getStoreKey',
+        'label' => 'getLabel',
+        'custom_label' => 'getCustomLabel',
         'validate_version' => 'getValidateVersion',
         'verify' => 'getVerify',
         'db_tables_prefix' => 'getDbTablesPrefix',
@@ -1202,6 +1239,11 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'zid_access_token' => 'getZidAccessToken',
         'zid_authorization' => 'getZidAuthorization',
         'zid_refresh_token' => 'getZidRefreshToken',
+        'jumpseller_client_id' => 'getJumpsellerClientId',
+        'jumpseller_client_secret' => 'getJumpsellerClientSecret',
+        'jumpseller_refresh_token' => 'getJumpsellerRefreshToken',
+        'jumpseller_login' => 'getJumpsellerLogin',
+        'jumpseller_authtoken' => 'getJumpsellerAuthtoken',
         'flipkart_client_id' => 'getFlipkartClientId',
         'flipkart_client_secret' => 'getFlipkartClientSecret',
         'allegro_client_id' => 'getAllegroClientId',
@@ -1453,6 +1495,8 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('bridge_url', $data ?? [], null);
         $this->setIfExists('store_root', $data ?? [], null);
         $this->setIfExists('store_key', $data ?? [], null);
+        $this->setIfExists('label', $data ?? [], null);
+        $this->setIfExists('custom_label', $data ?? [], null);
         $this->setIfExists('validate_version', $data ?? [], false);
         $this->setIfExists('verify', $data ?? [], true);
         $this->setIfExists('db_tables_prefix', $data ?? [], null);
@@ -1590,6 +1634,11 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('zid_access_token', $data ?? [], null);
         $this->setIfExists('zid_authorization', $data ?? [], null);
         $this->setIfExists('zid_refresh_token', $data ?? [], null);
+        $this->setIfExists('jumpseller_client_id', $data ?? [], null);
+        $this->setIfExists('jumpseller_client_secret', $data ?? [], null);
+        $this->setIfExists('jumpseller_refresh_token', $data ?? [], null);
+        $this->setIfExists('jumpseller_login', $data ?? [], null);
+        $this->setIfExists('jumpseller_authtoken', $data ?? [], null);
         $this->setIfExists('flipkart_client_id', $data ?? [], null);
         $this->setIfExists('flipkart_client_secret', $data ?? [], null);
         $this->setIfExists('allegro_client_id', $data ?? [], null);
@@ -1825,6 +1874,60 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable store_key cannot be null');
         }
         $this->container['store_key'] = $store_key;
+
+        return $this;
+    }
+
+    /**
+     * Gets label
+     *
+     * @return string|null
+     */
+    public function getLabel()
+    {
+        return $this->container['label'];
+    }
+
+    /**
+     * Sets label
+     *
+     * @param string|null $label Defines alternative text that has to be attached to the picture
+     *
+     * @return self
+     */
+    public function setLabel($label)
+    {
+        if (is_null($label)) {
+            throw new \InvalidArgumentException('non-nullable label cannot be null');
+        }
+        $this->container['label'] = $label;
+
+        return $this;
+    }
+
+    /**
+     * Gets custom_label
+     *
+     * @return string|null
+     */
+    public function getCustomLabel()
+    {
+        return $this->container['custom_label'];
+    }
+
+    /**
+     * Sets custom_label
+     *
+     * @param string|null $custom_label Defines a custom label for the store in the app
+     *
+     * @return self
+     */
+    public function setCustomLabel($custom_label)
+    {
+        if (is_null($custom_label)) {
+            throw new \InvalidArgumentException('non-nullable custom_label cannot be null');
+        }
+        $this->container['custom_label'] = $custom_label;
 
         return $this;
     }
@@ -5529,6 +5632,141 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable zid_refresh_token cannot be null');
         }
         $this->container['zid_refresh_token'] = $zid_refresh_token;
+
+        return $this;
+    }
+
+    /**
+     * Gets jumpseller_client_id
+     *
+     * @return string|null
+     */
+    public function getJumpsellerClientId()
+    {
+        return $this->container['jumpseller_client_id'];
+    }
+
+    /**
+     * Sets jumpseller_client_id
+     *
+     * @param string|null $jumpseller_client_id Jumpseller OAuth2 Client ID
+     *
+     * @return self
+     */
+    public function setJumpsellerClientId($jumpseller_client_id)
+    {
+        if (is_null($jumpseller_client_id)) {
+            throw new \InvalidArgumentException('non-nullable jumpseller_client_id cannot be null');
+        }
+        $this->container['jumpseller_client_id'] = $jumpseller_client_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets jumpseller_client_secret
+     *
+     * @return string|null
+     */
+    public function getJumpsellerClientSecret()
+    {
+        return $this->container['jumpseller_client_secret'];
+    }
+
+    /**
+     * Sets jumpseller_client_secret
+     *
+     * @param string|null $jumpseller_client_secret Jumpseller OAuth2 Client Secret
+     *
+     * @return self
+     */
+    public function setJumpsellerClientSecret($jumpseller_client_secret)
+    {
+        if (is_null($jumpseller_client_secret)) {
+            throw new \InvalidArgumentException('non-nullable jumpseller_client_secret cannot be null');
+        }
+        $this->container['jumpseller_client_secret'] = $jumpseller_client_secret;
+
+        return $this;
+    }
+
+    /**
+     * Gets jumpseller_refresh_token
+     *
+     * @return string|null
+     */
+    public function getJumpsellerRefreshToken()
+    {
+        return $this->container['jumpseller_refresh_token'];
+    }
+
+    /**
+     * Sets jumpseller_refresh_token
+     *
+     * @param string|null $jumpseller_refresh_token Jumpseller OAuth2 refresh token
+     *
+     * @return self
+     */
+    public function setJumpsellerRefreshToken($jumpseller_refresh_token)
+    {
+        if (is_null($jumpseller_refresh_token)) {
+            throw new \InvalidArgumentException('non-nullable jumpseller_refresh_token cannot be null');
+        }
+        $this->container['jumpseller_refresh_token'] = $jumpseller_refresh_token;
+
+        return $this;
+    }
+
+    /**
+     * Gets jumpseller_login
+     *
+     * @return string|null
+     */
+    public function getJumpsellerLogin()
+    {
+        return $this->container['jumpseller_login'];
+    }
+
+    /**
+     * Sets jumpseller_login
+     *
+     * @param string|null $jumpseller_login Jumpseller API login
+     *
+     * @return self
+     */
+    public function setJumpsellerLogin($jumpseller_login)
+    {
+        if (is_null($jumpseller_login)) {
+            throw new \InvalidArgumentException('non-nullable jumpseller_login cannot be null');
+        }
+        $this->container['jumpseller_login'] = $jumpseller_login;
+
+        return $this;
+    }
+
+    /**
+     * Gets jumpseller_authtoken
+     *
+     * @return string|null
+     */
+    public function getJumpsellerAuthtoken()
+    {
+        return $this->container['jumpseller_authtoken'];
+    }
+
+    /**
+     * Sets jumpseller_authtoken
+     *
+     * @param string|null $jumpseller_authtoken Jumpseller API auth token
+     *
+     * @return self
+     */
+    public function setJumpsellerAuthtoken($jumpseller_authtoken)
+    {
+        if (is_null($jumpseller_authtoken)) {
+            throw new \InvalidArgumentException('non-nullable jumpseller_authtoken cannot be null');
+        }
+        $this->container['jumpseller_authtoken'] = $jumpseller_authtoken;
 
         return $this;
     }

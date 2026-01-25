@@ -117,6 +117,24 @@ class AccountCartList200ResponseResultCartsInnerTest extends TestCase
     }
 
     /**
+     * Test attribute "custom_label"
+     */
+    public function testPropertyCustomLabel()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "bridge_version"
+     */
+    public function testPropertyBridgeVersion()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "total_calls"
      */
     public function testPropertyTotalCalls()

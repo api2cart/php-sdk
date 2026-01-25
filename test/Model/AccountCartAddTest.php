@@ -126,6 +126,24 @@ class AccountCartAddTest extends TestCase
     }
 
     /**
+     * Test attribute "label"
+     */
+    public function testPropertyLabel()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "custom_label"
+     */
+    public function testPropertyCustomLabel()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "validate_version"
      */
     public function testPropertyValidateVersion()
@@ -1353,6 +1371,51 @@ class AccountCartAddTest extends TestCase
      * Test attribute "zid_refresh_token"
      */
     public function testPropertyZidRefreshToken()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "jumpseller_client_id"
+     */
+    public function testPropertyJumpsellerClientId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "jumpseller_client_secret"
+     */
+    public function testPropertyJumpsellerClientSecret()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "jumpseller_refresh_token"
+     */
+    public function testPropertyJumpsellerRefreshToken()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "jumpseller_login"
+     */
+    public function testPropertyJumpsellerLogin()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "jumpseller_authtoken"
+     */
+    public function testPropertyJumpsellerAuthtoken()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
