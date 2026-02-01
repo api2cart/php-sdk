@@ -63,6 +63,7 @@ class OrderReturnAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'return_status_id' => 'string',
         'return_action_id' => 'string',
         'return_reason_id' => 'string',
+        'return_action' => 'string',
         'return_reason' => 'string',
         'item_restock' => 'bool',
         'staff_note' => 'string',
@@ -86,6 +87,7 @@ class OrderReturnAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'return_status_id' => null,
         'return_action_id' => null,
         'return_reason_id' => null,
+        'return_action' => null,
         'return_reason' => null,
         'item_restock' => null,
         'staff_note' => null,
@@ -107,6 +109,7 @@ class OrderReturnAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'return_status_id' => false,
         'return_action_id' => false,
         'return_reason_id' => false,
+        'return_action' => false,
         'return_reason' => false,
         'item_restock' => false,
         'staff_note' => false,
@@ -208,6 +211,7 @@ class OrderReturnAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'return_status_id' => 'return_status_id',
         'return_action_id' => 'return_action_id',
         'return_reason_id' => 'return_reason_id',
+        'return_action' => 'return_action',
         'return_reason' => 'return_reason',
         'item_restock' => 'item_restock',
         'staff_note' => 'staff_note',
@@ -229,6 +233,7 @@ class OrderReturnAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'return_status_id' => 'setReturnStatusId',
         'return_action_id' => 'setReturnActionId',
         'return_reason_id' => 'setReturnReasonId',
+        'return_action' => 'setReturnAction',
         'return_reason' => 'setReturnReason',
         'item_restock' => 'setItemRestock',
         'staff_note' => 'setStaffNote',
@@ -250,6 +255,7 @@ class OrderReturnAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'return_status_id' => 'getReturnStatusId',
         'return_action_id' => 'getReturnActionId',
         'return_reason_id' => 'getReturnReasonId',
+        'return_action' => 'getReturnAction',
         'return_reason' => 'getReturnReason',
         'item_restock' => 'getItemRestock',
         'staff_note' => 'getStaffNote',
@@ -322,6 +328,7 @@ class OrderReturnAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('return_status_id', $data ?? [], null);
         $this->setIfExists('return_action_id', $data ?? [], null);
         $this->setIfExists('return_reason_id', $data ?? [], null);
+        $this->setIfExists('return_action', $data ?? [], null);
         $this->setIfExists('return_reason', $data ?? [], null);
         $this->setIfExists('item_restock', $data ?? [], false);
         $this->setIfExists('staff_note', $data ?? [], null);
@@ -517,6 +524,33 @@ class OrderReturnAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable return_reason_id cannot be null');
         }
         $this->container['return_reason_id'] = $return_reason_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets return_action
+     *
+     * @return string|null
+     */
+    public function getReturnAction()
+    {
+        return $this->container['return_action'];
+    }
+
+    /**
+     * Sets return_action
+     *
+     * @param string|null $return_action Defines return request action
+     *
+     * @return self
+     */
+    public function setReturnAction($return_action)
+    {
+        if (is_null($return_action)) {
+            throw new \InvalidArgumentException('non-nullable return_action cannot be null');
+        }
+        $this->container['return_action'] = $return_action;
 
         return $this;
     }

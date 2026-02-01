@@ -67,6 +67,8 @@ class OrderReturnUpdate implements ModelInterface, ArrayAccess, \JsonSerializabl
         'comment' => 'string',
         'send_notifications' => 'bool',
         'reject_reason' => 'string',
+        'return_action' => 'string',
+        'return_reason' => 'string',
         'idempotency_key' => 'string',
         'order_products' => '\OpenAPI\Client\Model\OrderReturnUpdateOrderProductsInner[]'
     ];
@@ -88,6 +90,8 @@ class OrderReturnUpdate implements ModelInterface, ArrayAccess, \JsonSerializabl
         'comment' => null,
         'send_notifications' => null,
         'reject_reason' => null,
+        'return_action' => null,
+        'return_reason' => null,
         'idempotency_key' => null,
         'order_products' => null
     ];
@@ -107,6 +111,8 @@ class OrderReturnUpdate implements ModelInterface, ArrayAccess, \JsonSerializabl
         'comment' => false,
         'send_notifications' => false,
         'reject_reason' => false,
+        'return_action' => false,
+        'return_reason' => false,
         'idempotency_key' => false,
         'order_products' => false
     ];
@@ -206,6 +212,8 @@ class OrderReturnUpdate implements ModelInterface, ArrayAccess, \JsonSerializabl
         'comment' => 'comment',
         'send_notifications' => 'send_notifications',
         'reject_reason' => 'reject_reason',
+        'return_action' => 'return_action',
+        'return_reason' => 'return_reason',
         'idempotency_key' => 'idempotency_key',
         'order_products' => 'order_products'
     ];
@@ -225,6 +233,8 @@ class OrderReturnUpdate implements ModelInterface, ArrayAccess, \JsonSerializabl
         'comment' => 'setComment',
         'send_notifications' => 'setSendNotifications',
         'reject_reason' => 'setRejectReason',
+        'return_action' => 'setReturnAction',
+        'return_reason' => 'setReturnReason',
         'idempotency_key' => 'setIdempotencyKey',
         'order_products' => 'setOrderProducts'
     ];
@@ -244,6 +254,8 @@ class OrderReturnUpdate implements ModelInterface, ArrayAccess, \JsonSerializabl
         'comment' => 'getComment',
         'send_notifications' => 'getSendNotifications',
         'reject_reason' => 'getRejectReason',
+        'return_action' => 'getReturnAction',
+        'return_reason' => 'getReturnReason',
         'idempotency_key' => 'getIdempotencyKey',
         'order_products' => 'getOrderProducts'
     ];
@@ -314,6 +326,8 @@ class OrderReturnUpdate implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('comment', $data ?? [], null);
         $this->setIfExists('send_notifications', $data ?? [], false);
         $this->setIfExists('reject_reason', $data ?? [], null);
+        $this->setIfExists('return_action', $data ?? [], null);
+        $this->setIfExists('return_reason', $data ?? [], null);
         $this->setIfExists('idempotency_key', $data ?? [], null);
         $this->setIfExists('order_products', $data ?? [], null);
     }
@@ -605,6 +619,60 @@ class OrderReturnUpdate implements ModelInterface, ArrayAccess, \JsonSerializabl
             throw new \InvalidArgumentException('non-nullable reject_reason cannot be null');
         }
         $this->container['reject_reason'] = $reject_reason;
+
+        return $this;
+    }
+
+    /**
+     * Gets return_action
+     *
+     * @return string|null
+     */
+    public function getReturnAction()
+    {
+        return $this->container['return_action'];
+    }
+
+    /**
+     * Sets return_action
+     *
+     * @param string|null $return_action Defines return request action
+     *
+     * @return self
+     */
+    public function setReturnAction($return_action)
+    {
+        if (is_null($return_action)) {
+            throw new \InvalidArgumentException('non-nullable return_action cannot be null');
+        }
+        $this->container['return_action'] = $return_action;
+
+        return $this;
+    }
+
+    /**
+     * Gets return_reason
+     *
+     * @return string|null
+     */
+    public function getReturnReason()
+    {
+        return $this->container['return_reason'];
+    }
+
+    /**
+     * Sets return_reason
+     *
+     * @param string|null $return_reason Defines return request reason
+     *
+     * @return self
+     */
+    public function setReturnReason($return_reason)
+    {
+        if (is_null($return_reason)) {
+            throw new \InvalidArgumentException('non-nullable return_reason cannot be null');
+        }
+        $this->container['return_reason'] = $return_reason;
 
         return $this;
     }

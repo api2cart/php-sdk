@@ -58,7 +58,7 @@ class CartCatalogPriceRulesCount200ResponseResult implements ModelInterface, Arr
       * @var string[]
       */
     protected static $openAPITypes = [
-        'catalog_price_rules_count' => 'string'
+        'catalog_price_rules_count' => 'int'
     ];
 
     /**
@@ -293,7 +293,7 @@ class CartCatalogPriceRulesCount200ResponseResult implements ModelInterface, Arr
     /**
      * Gets catalog_price_rules_count
      *
-     * @return string|null
+     * @return int|null
      */
     public function getCatalogPriceRulesCount()
     {
@@ -303,7 +303,7 @@ class CartCatalogPriceRulesCount200ResponseResult implements ModelInterface, Arr
     /**
      * Sets catalog_price_rules_count
      *
-     * @param string|null $catalog_price_rules_count catalog_price_rules_count
+     * @param int|null $catalog_price_rules_count catalog_price_rules_count
      *
      * @return self
      */

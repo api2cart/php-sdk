@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **comment** | **string** | Specifies return comment | [optional]
 **send_notifications** | **bool** | Send notifications to customer after order was created | [optional] [default to false]
 **reject_reason** | **string** | Defines return reject reason | [optional]
+**return_action** | **string** | Defines return request action | [optional]
+**return_reason** | **string** | Defines return request reason | [optional]
 **idempotency_key** | **string** | A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional]
 **order_products** | [**\OpenAPI\Client\Model\OrderReturnUpdateOrderProductsInner[]**](OrderReturnUpdateOrderProductsInner.md) |  |
 

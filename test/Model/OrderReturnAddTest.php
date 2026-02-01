@@ -126,6 +126,15 @@ class OrderReturnAddTest extends TestCase
     }
 
     /**
+     * Test attribute "return_action"
+     */
+    public function testPropertyReturnAction()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "return_reason"
      */
     public function testPropertyReturnReason()

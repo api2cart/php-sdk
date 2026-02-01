@@ -58,7 +58,7 @@ class CartCouponCount200ResponseResult implements ModelInterface, ArrayAccess, \
       * @var string[]
       */
     protected static $openAPITypes = [
-        'coupons_count' => 'string'
+        'coupons_count' => 'int'
     ];
 
     /**
@@ -293,7 +293,7 @@ class CartCouponCount200ResponseResult implements ModelInterface, ArrayAccess, \
     /**
      * Gets coupons_count
      *
-     * @return string|null
+     * @return int|null
      */
     public function getCouponsCount()
     {
@@ -303,7 +303,7 @@ class CartCouponCount200ResponseResult implements ModelInterface, ArrayAccess, \
     /**
      * Sets coupons_count
      *
-     * @param string|null $coupons_count coupons_count
+     * @param int|null $coupons_count coupons_count
      *
      * @return self
      */

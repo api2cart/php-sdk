@@ -58,7 +58,7 @@ class CartGiftcardCount200ResponseResult implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'gift_cards_count' => 'string'
+        'gift_cards_count' => 'int'
     ];
 
     /**
@@ -293,7 +293,7 @@ class CartGiftcardCount200ResponseResult implements ModelInterface, ArrayAccess,
     /**
      * Gets gift_cards_count
      *
-     * @return string|null
+     * @return int|null
      */
     public function getGiftCardsCount()
     {
@@ -303,7 +303,7 @@ class CartGiftcardCount200ResponseResult implements ModelInterface, ArrayAccess,
     /**
      * Sets gift_cards_count
      *
-     * @param string|null $gift_cards_count gift_cards_count
+     * @param int|null $gift_cards_count gift_cards_count
      *
      * @return self
      */

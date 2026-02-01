@@ -162,6 +162,24 @@ class OrderReturnUpdateTest extends TestCase
     }
 
     /**
+     * Test attribute "return_action"
+     */
+    public function testPropertyReturnAction()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "return_reason"
+     */
+    public function testPropertyReturnReason()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "idempotency_key"
      */
     public function testPropertyIdempotencyKey()
