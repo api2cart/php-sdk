@@ -82,6 +82,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'tier_prices' => '\OpenAPI\Client\Model\ProductAddTierPricesInner[]',
         'measure_unit' => 'string',
         'unit_price' => 'float',
+        'prices_inc_tax' => 'bool',
         'quantity' => 'float',
         'warehouse_id' => 'string',
         'in_stock' => 'bool',
@@ -151,6 +152,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'tier_prices' => null,
         'measure_unit' => null,
         'unit_price' => null,
+        'prices_inc_tax' => null,
         'quantity' => null,
         'warehouse_id' => null,
         'in_stock' => null,
@@ -218,6 +220,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'tier_prices' => false,
         'measure_unit' => false,
         'unit_price' => false,
+        'prices_inc_tax' => false,
         'quantity' => false,
         'warehouse_id' => false,
         'in_stock' => false,
@@ -365,6 +368,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'tier_prices' => 'tier_prices',
         'measure_unit' => 'measure_unit',
         'unit_price' => 'unit_price',
+        'prices_inc_tax' => 'prices_inc_tax',
         'quantity' => 'quantity',
         'warehouse_id' => 'warehouse_id',
         'in_stock' => 'in_stock',
@@ -432,6 +436,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'tier_prices' => 'setTierPrices',
         'measure_unit' => 'setMeasureUnit',
         'unit_price' => 'setUnitPrice',
+        'prices_inc_tax' => 'setPricesIncTax',
         'quantity' => 'setQuantity',
         'warehouse_id' => 'setWarehouseId',
         'in_stock' => 'setInStock',
@@ -499,6 +504,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         'tier_prices' => 'getTierPrices',
         'measure_unit' => 'getMeasureUnit',
         'unit_price' => 'getUnitPrice',
+        'prices_inc_tax' => 'getPricesIncTax',
         'quantity' => 'getQuantity',
         'warehouse_id' => 'getWarehouseId',
         'in_stock' => 'getInStock',
@@ -617,6 +623,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('tier_prices', $data ?? [], null);
         $this->setIfExists('measure_unit', $data ?? [], null);
         $this->setIfExists('unit_price', $data ?? [], null);
+        $this->setIfExists('prices_inc_tax', $data ?? [], false);
         $this->setIfExists('quantity', $data ?? [], 0);
         $this->setIfExists('warehouse_id', $data ?? [], null);
         $this->setIfExists('in_stock', $data ?? [], null);
@@ -1343,6 +1350,33 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
             throw new \InvalidArgumentException('non-nullable unit_price cannot be null');
         }
         $this->container['unit_price'] = $unit_price;
+
+        return $this;
+    }
+
+    /**
+     * Gets prices_inc_tax
+     *
+     * @return bool|null
+     */
+    public function getPricesIncTax()
+    {
+        return $this->container['prices_inc_tax'];
+    }
+
+    /**
+     * Sets prices_inc_tax
+     *
+     * @param bool|null $prices_inc_tax Indicates whether prices include tax.
+     *
+     * @return self
+     */
+    public function setPricesIncTax($prices_inc_tax)
+    {
+        if (is_null($prices_inc_tax)) {
+            throw new \InvalidArgumentException('non-nullable prices_inc_tax cannot be null');
+        }
+        $this->container['prices_inc_tax'] = $prices_inc_tax;
 
         return $this;
     }

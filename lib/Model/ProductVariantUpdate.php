@@ -86,6 +86,7 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'quantity' => 'float',
         'increase_quantity' => 'float',
         'reduce_quantity' => 'float',
+        'prices_inc_tax' => 'bool',
         'price' => 'float',
         'special_price' => 'float',
         'retail_price' => 'float',
@@ -155,6 +156,7 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'quantity' => null,
         'increase_quantity' => null,
         'reduce_quantity' => null,
+        'prices_inc_tax' => null,
         'price' => null,
         'special_price' => null,
         'retail_price' => null,
@@ -222,6 +224,7 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'quantity' => false,
         'increase_quantity' => false,
         'reduce_quantity' => false,
+        'prices_inc_tax' => false,
         'price' => false,
         'special_price' => false,
         'retail_price' => false,
@@ -369,6 +372,7 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'quantity' => 'quantity',
         'increase_quantity' => 'increase_quantity',
         'reduce_quantity' => 'reduce_quantity',
+        'prices_inc_tax' => 'prices_inc_tax',
         'price' => 'price',
         'special_price' => 'special_price',
         'retail_price' => 'retail_price',
@@ -436,6 +440,7 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'quantity' => 'setQuantity',
         'increase_quantity' => 'setIncreaseQuantity',
         'reduce_quantity' => 'setReduceQuantity',
+        'prices_inc_tax' => 'setPricesIncTax',
         'price' => 'setPrice',
         'special_price' => 'setSpecialPrice',
         'retail_price' => 'setRetailPrice',
@@ -503,6 +508,7 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         'quantity' => 'getQuantity',
         'increase_quantity' => 'getIncreaseQuantity',
         'reduce_quantity' => 'getReduceQuantity',
+        'prices_inc_tax' => 'getPricesIncTax',
         'price' => 'getPrice',
         'special_price' => 'getSpecialPrice',
         'retail_price' => 'getRetailPrice',
@@ -621,6 +627,7 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->setIfExists('quantity', $data ?? [], null);
         $this->setIfExists('increase_quantity', $data ?? [], 0);
         $this->setIfExists('reduce_quantity', $data ?? [], 0);
+        $this->setIfExists('prices_inc_tax', $data ?? [], false);
         $this->setIfExists('price', $data ?? [], null);
         $this->setIfExists('special_price', $data ?? [], null);
         $this->setIfExists('retail_price', $data ?? [], null);
@@ -1448,6 +1455,33 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
             throw new \InvalidArgumentException('non-nullable reduce_quantity cannot be null');
         }
         $this->container['reduce_quantity'] = $reduce_quantity;
+
+        return $this;
+    }
+
+    /**
+     * Gets prices_inc_tax
+     *
+     * @return bool|null
+     */
+    public function getPricesIncTax()
+    {
+        return $this->container['prices_inc_tax'];
+    }
+
+    /**
+     * Sets prices_inc_tax
+     *
+     * @param bool|null $prices_inc_tax Indicates whether prices include tax.
+     *
+     * @return self
+     */
+    public function setPricesIncTax($prices_inc_tax)
+    {
+        if (is_null($prices_inc_tax)) {
+            throw new \InvalidArgumentException('non-nullable prices_inc_tax cannot be null');
+        }
+        $this->container['prices_inc_tax'] = $prices_inc_tax;
 
         return $this;
     }

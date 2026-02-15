@@ -32,6 +32,7 @@ Name | Type | Description | Notes
 **quantity** | **float** | Defines new products&#39; variants quantity | [optional]
 **increase_quantity** | **float** | Defines the incremental changes in product quantity | [optional] [default to 0]
 **reduce_quantity** | **float** | Defines the decrement changes in product quantity | [optional] [default to 0]
+**prices_inc_tax** | **bool** | Indicates whether prices include tax. | [optional] [default to false]
 **price** | **float** | Defines new product&#39;s variant price | [optional]
 **special_price** | **float** | Defines new product&#39;s variant special price | [optional]
 **retail_price** | **float** | Defines new product&#39;s retail price | [optional]

@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **tier_prices** | [**\OpenAPI\Client\Model\ProductAddTierPricesInner[]**](ProductAddTierPricesInner.md) | Defines product&#39;s tier prices | [optional]
 **measure_unit** | **string** | Unit for the price per unit. Must be in allowed list | [optional]
 **unit_price** | **float** | Defines new product&#39;s unit price | [optional]
+**prices_inc_tax** | **bool** | Indicates whether prices include tax. | [optional] [default to false]
 **quantity** | **float** | Defines product variant&#39;s quantity that has to be added | [optional] [default to 0]
 **warehouse_id** | **string** | This parameter is used for selecting a warehouse where you need to set/modify a product quantity. | [optional]
 **in_stock** | **bool** | Set stock status | [optional]

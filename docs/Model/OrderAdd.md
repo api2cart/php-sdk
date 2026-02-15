@@ -52,7 +52,7 @@ Name | Type | Description | Notes
 **total_price** | **float** | Defines order&#39;s total price | [optional]
 **total_paid** | **float** | Defines total paid amount for the order | [optional]
 **total_weight** | **int** | Defines the sum of all line item weights in grams for the order | [optional]
-**prices_inc_tax** | **bool** | Indicates whether prices and subtotal includes tax. | [optional] [default to false]
+**prices_inc_tax** | **bool** | Indicates whether prices and subtotal include tax. | [optional] [default to false]
 **shipping_price** | **float** | Specifies order&#39;s shipping price | [optional] [default to 0]
 **shipping_tax** | **float** | Specifies order&#39;s shipping price tax | [optional]
 **discount** | **float** | Specifies order&#39;s discount | [optional]

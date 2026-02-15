@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **name** | **string** | Defines product&#39;s name that has to be updated | [optional]
 **description** | **string** | Defines new product&#39;s description | [optional]
 **short_description** | **string** | Defines short description | [optional]
+**prices_inc_tax** | **bool** | Indicates whether prices include tax. | [optional] [default to false]
 **price** | **float** | Defines new product&#39;s price | [optional]
 **old_price** | **float** | Defines product&#39;s old price | [optional]
 **special_price** | **float** | Defines new product&#39;s special price | [optional]

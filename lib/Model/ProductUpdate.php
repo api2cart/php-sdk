@@ -64,6 +64,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'string',
         'description' => 'string',
         'short_description' => 'string',
+        'prices_inc_tax' => 'bool',
         'price' => 'float',
         'old_price' => 'float',
         'special_price' => 'float',
@@ -168,6 +169,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => null,
         'description' => null,
         'short_description' => null,
+        'prices_inc_tax' => null,
         'price' => null,
         'old_price' => null,
         'special_price' => null,
@@ -270,6 +272,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => false,
         'description' => false,
         'short_description' => false,
+        'prices_inc_tax' => false,
         'price' => false,
         'old_price' => false,
         'special_price' => false,
@@ -452,6 +455,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'name',
         'description' => 'description',
         'short_description' => 'short_description',
+        'prices_inc_tax' => 'prices_inc_tax',
         'price' => 'price',
         'old_price' => 'old_price',
         'special_price' => 'special_price',
@@ -554,6 +558,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'setName',
         'description' => 'setDescription',
         'short_description' => 'setShortDescription',
+        'prices_inc_tax' => 'setPricesIncTax',
         'price' => 'setPrice',
         'old_price' => 'setOldPrice',
         'special_price' => 'setSpecialPrice',
@@ -656,6 +661,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'getName',
         'description' => 'getDescription',
         'short_description' => 'getShortDescription',
+        'prices_inc_tax' => 'getPricesIncTax',
         'price' => 'getPrice',
         'old_price' => 'getOldPrice',
         'special_price' => 'getSpecialPrice',
@@ -809,6 +815,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
         $this->setIfExists('short_description', $data ?? [], null);
+        $this->setIfExists('prices_inc_tax', $data ?? [], false);
         $this->setIfExists('price', $data ?? [], null);
         $this->setIfExists('old_price', $data ?? [], null);
         $this->setIfExists('special_price', $data ?? [], null);
@@ -1099,6 +1106,33 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable short_description cannot be null');
         }
         $this->container['short_description'] = $short_description;
+
+        return $this;
+    }
+
+    /**
+     * Gets prices_inc_tax
+     *
+     * @return bool|null
+     */
+    public function getPricesIncTax()
+    {
+        return $this->container['prices_inc_tax'];
+    }
+
+    /**
+     * Sets prices_inc_tax
+     *
+     * @param bool|null $prices_inc_tax Indicates whether prices include tax.
+     *
+     * @return self
+     */
+    public function setPricesIncTax($prices_inc_tax)
+    {
+        if (is_null($prices_inc_tax)) {
+            throw new \InvalidArgumentException('non-nullable prices_inc_tax cannot be null');
+        }
+        $this->container['prices_inc_tax'] = $prices_inc_tax;
 
         return $this;
     }

@@ -135,6 +135,15 @@ class ProductUpdateTest extends TestCase
     }
 
     /**
+     * Test attribute "prices_inc_tax"
+     */
+    public function testPropertyPricesIncTax()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "price"
      */
     public function testPropertyPrice()

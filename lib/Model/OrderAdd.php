@@ -2137,7 +2137,7 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets prices_inc_tax
      *
-     * @param bool|null $prices_inc_tax Indicates whether prices and subtotal includes tax.
+     * @param bool|null $prices_inc_tax Indicates whether prices and subtotal include tax.
      *
      * @return self
      */

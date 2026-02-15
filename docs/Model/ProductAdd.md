@@ -36,6 +36,7 @@ Name | Type | Description | Notes
 **reserve_price** | **float** | Defines reserve price value | [optional]
 **measure_unit** | **string** | Unit for the price per unit. Must be in allowed list | [optional]
 **unit_price** | **float** | Defines new product&#39;s unit price | [optional]
+**prices_inc_tax** | **bool** | Indicates whether prices include tax. | [optional] [default to false]
 **quantity** | **float** | Defines product&#39;s quantity that has to be added | [optional] [default to 0]
 **in_stock** | **bool** | Set stock status | [optional]
 **manage_stock** | **bool** | Defines inventory tracking for product | [optional]
