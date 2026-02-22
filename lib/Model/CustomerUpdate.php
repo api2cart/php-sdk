@@ -73,6 +73,7 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'gender' => 'string',
         'note' => 'string',
         'status' => 'string',
+        'password' => 'string',
         'store_id' => 'string',
         'idempotency_key' => 'string',
         'address' => '\OpenAPI\Client\Model\CustomerUpdateAddressInner[]'
@@ -101,6 +102,7 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'gender' => null,
         'note' => null,
         'status' => null,
+        'password' => null,
         'store_id' => null,
         'idempotency_key' => null,
         'address' => null
@@ -127,6 +129,7 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'gender' => false,
         'note' => false,
         'status' => false,
+        'password' => false,
         'store_id' => false,
         'idempotency_key' => false,
         'address' => false
@@ -233,6 +236,7 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'gender' => 'gender',
         'note' => 'note',
         'status' => 'status',
+        'password' => 'password',
         'store_id' => 'store_id',
         'idempotency_key' => 'idempotency_key',
         'address' => 'address'
@@ -259,6 +263,7 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'gender' => 'setGender',
         'note' => 'setNote',
         'status' => 'setStatus',
+        'password' => 'setPassword',
         'store_id' => 'setStoreId',
         'idempotency_key' => 'setIdempotencyKey',
         'address' => 'setAddress'
@@ -285,6 +290,7 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'gender' => 'getGender',
         'note' => 'getNote',
         'status' => 'getStatus',
+        'password' => 'getPassword',
         'store_id' => 'getStoreId',
         'idempotency_key' => 'getIdempotencyKey',
         'address' => 'getAddress'
@@ -362,6 +368,7 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('gender', $data ?? [], null);
         $this->setIfExists('note', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
+        $this->setIfExists('password', $data ?? [], null);
         $this->setIfExists('store_id', $data ?? [], null);
         $this->setIfExists('idempotency_key', $data ?? [], null);
         $this->setIfExists('address', $data ?? [], null);
@@ -819,6 +826,33 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable status cannot be null');
         }
         $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets password
+     *
+     * @return string|null
+     */
+    public function getPassword()
+    {
+        return $this->container['password'];
+    }
+
+    /**
+     * Sets password
+     *
+     * @param string|null $password Defines customer's unique password
+     *
+     * @return self
+     */
+    public function setPassword($password)
+    {
+        if (is_null($password)) {
+            throw new \InvalidArgumentException('non-nullable password cannot be null');
+        }
+        $this->container['password'] = $password;
 
         return $this;
     }

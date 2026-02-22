@@ -2926,6 +2926,7 @@ class CategoryApi
      * @param  string|null $label Defines alternative text that has to be attached to the picture (optional)
      * @param  string|null $mime Mime type of image http://en.wikipedia.org/wiki/Internet_media_type. (optional)
      * @param  int|null $position Defines image’s position in the list (optional, default to 0)
+     * @param  bool|null $apply_to_translations Defines whether to add image to all category translations (optional, default to true)
      * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryImageAdd'] to see the possible values for this operation
      *
@@ -2933,9 +2934,9 @@ class CategoryApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CategoryImageAdd200Response
      */
-    public function categoryImageAdd($category_id, $image_name, $url, $type, $store_id = null, $label = null, $mime = null, $position = 0, $idempotency_key = null, string $contentType = self::contentTypes['categoryImageAdd'][0])
+    public function categoryImageAdd($category_id, $image_name, $url, $type, $store_id = null, $label = null, $mime = null, $position = 0, $apply_to_translations = true, $idempotency_key = null, string $contentType = self::contentTypes['categoryImageAdd'][0])
     {
-        list($response) = $this->categoryImageAddWithHttpInfo($category_id, $image_name, $url, $type, $store_id, $label, $mime, $position, $idempotency_key, $contentType);
+        list($response) = $this->categoryImageAddWithHttpInfo($category_id, $image_name, $url, $type, $store_id, $label, $mime, $position, $apply_to_translations, $idempotency_key, $contentType);
         return $response;
     }
 
@@ -2952,6 +2953,7 @@ class CategoryApi
      * @param  string|null $label Defines alternative text that has to be attached to the picture (optional)
      * @param  string|null $mime Mime type of image http://en.wikipedia.org/wiki/Internet_media_type. (optional)
      * @param  int|null $position Defines image’s position in the list (optional, default to 0)
+     * @param  bool|null $apply_to_translations Defines whether to add image to all category translations (optional, default to true)
      * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryImageAdd'] to see the possible values for this operation
      *
@@ -2959,9 +2961,9 @@ class CategoryApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CategoryImageAdd200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function categoryImageAddWithHttpInfo($category_id, $image_name, $url, $type, $store_id = null, $label = null, $mime = null, $position = 0, $idempotency_key = null, string $contentType = self::contentTypes['categoryImageAdd'][0])
+    public function categoryImageAddWithHttpInfo($category_id, $image_name, $url, $type, $store_id = null, $label = null, $mime = null, $position = 0, $apply_to_translations = true, $idempotency_key = null, string $contentType = self::contentTypes['categoryImageAdd'][0])
     {
-        $request = $this->categoryImageAddRequest($category_id, $image_name, $url, $type, $store_id, $label, $mime, $position, $idempotency_key, $contentType);
+        $request = $this->categoryImageAddRequest($category_id, $image_name, $url, $type, $store_id, $label, $mime, $position, $apply_to_translations, $idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3085,15 +3087,16 @@ class CategoryApi
      * @param  string|null $label Defines alternative text that has to be attached to the picture (optional)
      * @param  string|null $mime Mime type of image http://en.wikipedia.org/wiki/Internet_media_type. (optional)
      * @param  int|null $position Defines image’s position in the list (optional, default to 0)
+     * @param  bool|null $apply_to_translations Defines whether to add image to all category translations (optional, default to true)
      * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryImageAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryImageAddAsync($category_id, $image_name, $url, $type, $store_id = null, $label = null, $mime = null, $position = 0, $idempotency_key = null, string $contentType = self::contentTypes['categoryImageAdd'][0])
+    public function categoryImageAddAsync($category_id, $image_name, $url, $type, $store_id = null, $label = null, $mime = null, $position = 0, $apply_to_translations = true, $idempotency_key = null, string $contentType = self::contentTypes['categoryImageAdd'][0])
     {
-        return $this->categoryImageAddAsyncWithHttpInfo($category_id, $image_name, $url, $type, $store_id, $label, $mime, $position, $idempotency_key, $contentType)
+        return $this->categoryImageAddAsyncWithHttpInfo($category_id, $image_name, $url, $type, $store_id, $label, $mime, $position, $apply_to_translations, $idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3114,16 +3117,17 @@ class CategoryApi
      * @param  string|null $label Defines alternative text that has to be attached to the picture (optional)
      * @param  string|null $mime Mime type of image http://en.wikipedia.org/wiki/Internet_media_type. (optional)
      * @param  int|null $position Defines image’s position in the list (optional, default to 0)
+     * @param  bool|null $apply_to_translations Defines whether to add image to all category translations (optional, default to true)
      * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryImageAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryImageAddAsyncWithHttpInfo($category_id, $image_name, $url, $type, $store_id = null, $label = null, $mime = null, $position = 0, $idempotency_key = null, string $contentType = self::contentTypes['categoryImageAdd'][0])
+    public function categoryImageAddAsyncWithHttpInfo($category_id, $image_name, $url, $type, $store_id = null, $label = null, $mime = null, $position = 0, $apply_to_translations = true, $idempotency_key = null, string $contentType = self::contentTypes['categoryImageAdd'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CategoryImageAdd200Response';
-        $request = $this->categoryImageAddRequest($category_id, $image_name, $url, $type, $store_id, $label, $mime, $position, $idempotency_key, $contentType);
+        $request = $this->categoryImageAddRequest($category_id, $image_name, $url, $type, $store_id, $label, $mime, $position, $apply_to_translations, $idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3172,13 +3176,14 @@ class CategoryApi
      * @param  string|null $label Defines alternative text that has to be attached to the picture (optional)
      * @param  string|null $mime Mime type of image http://en.wikipedia.org/wiki/Internet_media_type. (optional)
      * @param  int|null $position Defines image’s position in the list (optional, default to 0)
+     * @param  bool|null $apply_to_translations Defines whether to add image to all category translations (optional, default to true)
      * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryImageAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function categoryImageAddRequest($category_id, $image_name, $url, $type, $store_id = null, $label = null, $mime = null, $position = 0, $idempotency_key = null, string $contentType = self::contentTypes['categoryImageAdd'][0])
+    public function categoryImageAddRequest($category_id, $image_name, $url, $type, $store_id = null, $label = null, $mime = null, $position = 0, $apply_to_translations = true, $idempotency_key = null, string $contentType = self::contentTypes['categoryImageAdd'][0])
     {
 
         // verify the required parameter 'category_id' is set
@@ -3208,6 +3213,7 @@ class CategoryApi
                 'Missing the required parameter $type when calling categoryImageAdd'
             );
         }
+
 
 
 
@@ -3296,6 +3302,15 @@ class CategoryApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $apply_to_translations,
+            'apply_to_translations', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $idempotency_key,
             'idempotency_key', // param base name
             'string', // openApiType
@@ -3378,15 +3393,16 @@ class CategoryApi
      * @param  string $category_id Defines category id where the image should be deleted (required)
      * @param  string $image_id Define image id (required)
      * @param  string|null $store_id Store Id (optional)
+     * @param  bool|null $apply_to_translations Defines whether to delete image from all category translations (optional, default to true)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryImageDelete'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\AttributeDelete200Response
      */
-    public function categoryImageDelete($category_id, $image_id, $store_id = null, string $contentType = self::contentTypes['categoryImageDelete'][0])
+    public function categoryImageDelete($category_id, $image_id, $store_id = null, $apply_to_translations = true, string $contentType = self::contentTypes['categoryImageDelete'][0])
     {
-        list($response) = $this->categoryImageDeleteWithHttpInfo($category_id, $image_id, $store_id, $contentType);
+        list($response) = $this->categoryImageDeleteWithHttpInfo($category_id, $image_id, $store_id, $apply_to_translations, $contentType);
         return $response;
     }
 
@@ -3398,15 +3414,16 @@ class CategoryApi
      * @param  string $category_id Defines category id where the image should be deleted (required)
      * @param  string $image_id Define image id (required)
      * @param  string|null $store_id Store Id (optional)
+     * @param  bool|null $apply_to_translations Defines whether to delete image from all category translations (optional, default to true)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryImageDelete'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\AttributeDelete200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function categoryImageDeleteWithHttpInfo($category_id, $image_id, $store_id = null, string $contentType = self::contentTypes['categoryImageDelete'][0])
+    public function categoryImageDeleteWithHttpInfo($category_id, $image_id, $store_id = null, $apply_to_translations = true, string $contentType = self::contentTypes['categoryImageDelete'][0])
     {
-        $request = $this->categoryImageDeleteRequest($category_id, $image_id, $store_id, $contentType);
+        $request = $this->categoryImageDeleteRequest($category_id, $image_id, $store_id, $apply_to_translations, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3525,14 +3542,15 @@ class CategoryApi
      * @param  string $category_id Defines category id where the image should be deleted (required)
      * @param  string $image_id Define image id (required)
      * @param  string|null $store_id Store Id (optional)
+     * @param  bool|null $apply_to_translations Defines whether to delete image from all category translations (optional, default to true)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryImageDelete'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryImageDeleteAsync($category_id, $image_id, $store_id = null, string $contentType = self::contentTypes['categoryImageDelete'][0])
+    public function categoryImageDeleteAsync($category_id, $image_id, $store_id = null, $apply_to_translations = true, string $contentType = self::contentTypes['categoryImageDelete'][0])
     {
-        return $this->categoryImageDeleteAsyncWithHttpInfo($category_id, $image_id, $store_id, $contentType)
+        return $this->categoryImageDeleteAsyncWithHttpInfo($category_id, $image_id, $store_id, $apply_to_translations, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3548,15 +3566,16 @@ class CategoryApi
      * @param  string $category_id Defines category id where the image should be deleted (required)
      * @param  string $image_id Define image id (required)
      * @param  string|null $store_id Store Id (optional)
+     * @param  bool|null $apply_to_translations Defines whether to delete image from all category translations (optional, default to true)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryImageDelete'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function categoryImageDeleteAsyncWithHttpInfo($category_id, $image_id, $store_id = null, string $contentType = self::contentTypes['categoryImageDelete'][0])
+    public function categoryImageDeleteAsyncWithHttpInfo($category_id, $image_id, $store_id = null, $apply_to_translations = true, string $contentType = self::contentTypes['categoryImageDelete'][0])
     {
         $returnType = '\OpenAPI\Client\Model\AttributeDelete200Response';
-        $request = $this->categoryImageDeleteRequest($category_id, $image_id, $store_id, $contentType);
+        $request = $this->categoryImageDeleteRequest($category_id, $image_id, $store_id, $apply_to_translations, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3600,12 +3619,13 @@ class CategoryApi
      * @param  string $category_id Defines category id where the image should be deleted (required)
      * @param  string $image_id Define image id (required)
      * @param  string|null $store_id Store Id (optional)
+     * @param  bool|null $apply_to_translations Defines whether to delete image from all category translations (optional, default to true)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['categoryImageDelete'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function categoryImageDeleteRequest($category_id, $image_id, $store_id = null, string $contentType = self::contentTypes['categoryImageDelete'][0])
+    public function categoryImageDeleteRequest($category_id, $image_id, $store_id = null, $apply_to_translations = true, string $contentType = self::contentTypes['categoryImageDelete'][0])
     {
 
         // verify the required parameter 'category_id' is set
@@ -3621,6 +3641,7 @@ class CategoryApi
                 'Missing the required parameter $image_id when calling categoryImageDelete'
             );
         }
+
 
 
 
@@ -3654,6 +3675,15 @@ class CategoryApi
             $store_id,
             'store_id', // param base name
             'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $apply_to_translations,
+            'apply_to_translations', // param base name
+            'boolean', // openApiType
             'form', // style
             true, // explode
             false // required

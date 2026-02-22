@@ -1344,6 +1344,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     public const CART_ID_GAMBIO = 'Gambio';
     public const CART_ID_HYBRIS = 'Hybris';
     public const CART_ID_JOO_CART = 'JooCart';
+    public const CART_ID_JUMPSELLER = 'Jumpseller';
     public const CART_ID_LAZADA = 'Lazada';
     public const CART_ID_LIGHT_SPEED = 'LightSpeed';
     public const CART_ID_MAGENTO1212 = 'Magento1212';
@@ -1424,6 +1425,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             self::CART_ID_GAMBIO,
             self::CART_ID_HYBRIS,
             self::CART_ID_JOO_CART,
+            self::CART_ID_JUMPSELLER,
             self::CART_ID_LAZADA,
             self::CART_ID_LIGHT_SPEED,
             self::CART_ID_MAGENTO1212,

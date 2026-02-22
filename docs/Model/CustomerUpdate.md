@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **gender** | **string** | Defines customer&#39;s gender | [optional]
 **note** | **string** | The customer note. | [optional]
 **status** | **string** | Defines customer&#39;s status | [optional]
+**password** | **string** | Defines customer&#39;s unique password | [optional]
 **store_id** | **string** | Store Id | [optional]
 **idempotency_key** | **string** | A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional]
 **address** | [**\OpenAPI\Client\Model\CustomerUpdateAddressInner[]**](CustomerUpdateAddressInner.md) |  | [optional]

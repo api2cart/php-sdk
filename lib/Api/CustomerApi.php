@@ -796,6 +796,7 @@ class CustomerApi
      * customer.attribute.list
      *
      * @param  string $customer_id Retrieves orders specified by customer id (required)
+     * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $store_id Store Id (optional)
@@ -809,9 +810,9 @@ class CustomerApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseCustomerAttributeList
      */
-    public function customerAttributeList($customer_id, $count = 10, $page_cursor = null, $store_id = null, $lang_id = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['customerAttributeList'][0])
+    public function customerAttributeList($customer_id, $start = 0, $count = 10, $page_cursor = null, $store_id = null, $lang_id = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['customerAttributeList'][0])
     {
-        list($response) = $this->customerAttributeListWithHttpInfo($customer_id, $count, $page_cursor, $store_id, $lang_id, $response_fields, $params, $exclude, $contentType);
+        list($response) = $this->customerAttributeListWithHttpInfo($customer_id, $start, $count, $page_cursor, $store_id, $lang_id, $response_fields, $params, $exclude, $contentType);
         return $response;
     }
 
@@ -821,6 +822,7 @@ class CustomerApi
      * customer.attribute.list
      *
      * @param  string $customer_id Retrieves orders specified by customer id (required)
+     * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $store_id Store Id (optional)
@@ -834,9 +836,9 @@ class CustomerApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseCustomerAttributeList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function customerAttributeListWithHttpInfo($customer_id, $count = 10, $page_cursor = null, $store_id = null, $lang_id = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['customerAttributeList'][0])
+    public function customerAttributeListWithHttpInfo($customer_id, $start = 0, $count = 10, $page_cursor = null, $store_id = null, $lang_id = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['customerAttributeList'][0])
     {
-        $request = $this->customerAttributeListRequest($customer_id, $count, $page_cursor, $store_id, $lang_id, $response_fields, $params, $exclude, $contentType);
+        $request = $this->customerAttributeListRequest($customer_id, $start, $count, $page_cursor, $store_id, $lang_id, $response_fields, $params, $exclude, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -953,6 +955,7 @@ class CustomerApi
      * customer.attribute.list
      *
      * @param  string $customer_id Retrieves orders specified by customer id (required)
+     * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $store_id Store Id (optional)
@@ -965,9 +968,9 @@ class CustomerApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerAttributeListAsync($customer_id, $count = 10, $page_cursor = null, $store_id = null, $lang_id = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['customerAttributeList'][0])
+    public function customerAttributeListAsync($customer_id, $start = 0, $count = 10, $page_cursor = null, $store_id = null, $lang_id = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['customerAttributeList'][0])
     {
-        return $this->customerAttributeListAsyncWithHttpInfo($customer_id, $count, $page_cursor, $store_id, $lang_id, $response_fields, $params, $exclude, $contentType)
+        return $this->customerAttributeListAsyncWithHttpInfo($customer_id, $start, $count, $page_cursor, $store_id, $lang_id, $response_fields, $params, $exclude, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -981,6 +984,7 @@ class CustomerApi
      * customer.attribute.list
      *
      * @param  string $customer_id Retrieves orders specified by customer id (required)
+     * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $store_id Store Id (optional)
@@ -993,10 +997,10 @@ class CustomerApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerAttributeListAsyncWithHttpInfo($customer_id, $count = 10, $page_cursor = null, $store_id = null, $lang_id = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['customerAttributeList'][0])
+    public function customerAttributeListAsyncWithHttpInfo($customer_id, $start = 0, $count = 10, $page_cursor = null, $store_id = null, $lang_id = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['customerAttributeList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseCustomerAttributeList';
-        $request = $this->customerAttributeListRequest($customer_id, $count, $page_cursor, $store_id, $lang_id, $response_fields, $params, $exclude, $contentType);
+        $request = $this->customerAttributeListRequest($customer_id, $start, $count, $page_cursor, $store_id, $lang_id, $response_fields, $params, $exclude, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1038,6 +1042,7 @@ class CustomerApi
      * Create request for operation 'customerAttributeList'
      *
      * @param  string $customer_id Retrieves orders specified by customer id (required)
+     * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $store_id Store Id (optional)
@@ -1050,7 +1055,7 @@ class CustomerApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function customerAttributeListRequest($customer_id, $count = 10, $page_cursor = null, $store_id = null, $lang_id = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['customerAttributeList'][0])
+    public function customerAttributeListRequest($customer_id, $start = 0, $count = 10, $page_cursor = null, $store_id = null, $lang_id = null, $response_fields = null, $params = 'force_all', $exclude = null, string $contentType = self::contentTypes['customerAttributeList'][0])
     {
 
         // verify the required parameter 'customer_id' is set
@@ -1068,6 +1073,7 @@ class CustomerApi
 
 
 
+
         $resourcePath = '/customer.attribute.list.json';
         $formParams = [];
         $queryParams = [];
@@ -1075,6 +1081,15 @@ class CustomerApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $start,
+            'start', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $count,

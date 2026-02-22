@@ -526,6 +526,7 @@ class TaxApi
      * tax.class.list
      *
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $find_value Entity search that is specified by some value (optional)
@@ -541,9 +542,9 @@ class TaxApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseTaxClassList
      */
-    public function taxClassList($count = 10, $page_cursor = null, $store_id = null, $find_value = null, $find_where = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['taxClassList'][0])
+    public function taxClassList($count = 10, $start = 0, $page_cursor = null, $store_id = null, $find_value = null, $find_where = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['taxClassList'][0])
     {
-        list($response) = $this->taxClassListWithHttpInfo($count, $page_cursor, $store_id, $find_value, $find_where, $created_to, $created_from, $modified_to, $modified_from, $response_fields, $contentType);
+        list($response) = $this->taxClassListWithHttpInfo($count, $start, $page_cursor, $store_id, $find_value, $find_where, $created_to, $created_from, $modified_to, $modified_from, $response_fields, $contentType);
         return $response;
     }
 
@@ -553,6 +554,7 @@ class TaxApi
      * tax.class.list
      *
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $find_value Entity search that is specified by some value (optional)
@@ -568,9 +570,9 @@ class TaxApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseTaxClassList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function taxClassListWithHttpInfo($count = 10, $page_cursor = null, $store_id = null, $find_value = null, $find_where = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['taxClassList'][0])
+    public function taxClassListWithHttpInfo($count = 10, $start = 0, $page_cursor = null, $store_id = null, $find_value = null, $find_where = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['taxClassList'][0])
     {
-        $request = $this->taxClassListRequest($count, $page_cursor, $store_id, $find_value, $find_where, $created_to, $created_from, $modified_to, $modified_from, $response_fields, $contentType);
+        $request = $this->taxClassListRequest($count, $start, $page_cursor, $store_id, $find_value, $find_where, $created_to, $created_from, $modified_to, $modified_from, $response_fields, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -687,6 +689,7 @@ class TaxApi
      * tax.class.list
      *
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $find_value Entity search that is specified by some value (optional)
@@ -701,9 +704,9 @@ class TaxApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function taxClassListAsync($count = 10, $page_cursor = null, $store_id = null, $find_value = null, $find_where = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['taxClassList'][0])
+    public function taxClassListAsync($count = 10, $start = 0, $page_cursor = null, $store_id = null, $find_value = null, $find_where = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['taxClassList'][0])
     {
-        return $this->taxClassListAsyncWithHttpInfo($count, $page_cursor, $store_id, $find_value, $find_where, $created_to, $created_from, $modified_to, $modified_from, $response_fields, $contentType)
+        return $this->taxClassListAsyncWithHttpInfo($count, $start, $page_cursor, $store_id, $find_value, $find_where, $created_to, $created_from, $modified_to, $modified_from, $response_fields, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -717,6 +720,7 @@ class TaxApi
      * tax.class.list
      *
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $find_value Entity search that is specified by some value (optional)
@@ -731,10 +735,10 @@ class TaxApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function taxClassListAsyncWithHttpInfo($count = 10, $page_cursor = null, $store_id = null, $find_value = null, $find_where = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['taxClassList'][0])
+    public function taxClassListAsyncWithHttpInfo($count = 10, $start = 0, $page_cursor = null, $store_id = null, $find_value = null, $find_where = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['taxClassList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseTaxClassList';
-        $request = $this->taxClassListRequest($count, $page_cursor, $store_id, $find_value, $find_where, $created_to, $created_from, $modified_to, $modified_from, $response_fields, $contentType);
+        $request = $this->taxClassListRequest($count, $start, $page_cursor, $store_id, $find_value, $find_where, $created_to, $created_from, $modified_to, $modified_from, $response_fields, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -776,6 +780,7 @@ class TaxApi
      * Create request for operation 'taxClassList'
      *
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $find_value Entity search that is specified by some value (optional)
@@ -790,8 +795,9 @@ class TaxApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function taxClassListRequest($count = 10, $page_cursor = null, $store_id = null, $find_value = null, $find_where = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['taxClassList'][0])
+    public function taxClassListRequest($count = 10, $start = 0, $page_cursor = null, $store_id = null, $find_value = null, $find_where = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $response_fields = '{return_code,return_message,pagination,result}', string $contentType = self::contentTypes['taxClassList'][0])
     {
+
 
 
 
@@ -815,6 +821,15 @@ class TaxApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $count,
             'count', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $start,
+            'start', // param base name
             'integer', // openApiType
             'form', // style
             true, // explode

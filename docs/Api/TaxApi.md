@@ -88,7 +88,7 @@ try {
 ## `taxClassList()`
 
 ```php
-taxClassList($count, $page_cursor, $store_id, $find_value, $find_where, $created_to, $created_from, $modified_to, $modified_from, $response_fields): \OpenAPI\Client\Model\ModelResponseTaxClassList
+taxClassList($count, $start, $page_cursor, $store_id, $find_value, $find_where, $created_to, $created_from, $modified_to, $modified_from, $response_fields): \OpenAPI\Client\Model\ModelResponseTaxClassList
 ```
 
 tax.class.list
@@ -120,6 +120,7 @@ $apiInstance = new OpenAPI\Client\Api\TaxApi(
     $config
 );
 $count = 20; // int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+$start = 0; // int | This parameter sets the number from which you want to get entities
 $page_cursor = ; // string | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
 $store_id = 1; // string | Store Id
 $find_value = tax; // string | Entity search that is specified by some value
@@ -131,7 +132,7 @@ $modified_from = 2010-07-29 13:45:52; // string | Retrieve entities from their m
 $response_fields = {result}; // string | Set this parameter in order to choose which entity fields you want to retrieve
 
 try {
-    $result = $apiInstance->taxClassList($count, $page_cursor, $store_id, $find_value, $find_where, $created_to, $created_from, $modified_to, $modified_from, $response_fields);
+    $result = $apiInstance->taxClassList($count, $start, $page_cursor, $store_id, $find_value, $find_where, $created_to, $created_from, $modified_to, $modified_from, $response_fields);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TaxApi->taxClassList: ', $e->getMessage(), PHP_EOL;
@@ -143,6 +144,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **count** | **int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
+| **start** | **int**| This parameter sets the number from which you want to get entities | [optional] [default to 0] |
 | **page_cursor** | **string**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
 | **store_id** | **string**| Store Id | [optional] |
 | **find_value** | **string**| Entity search that is specified by some value | [optional] |

@@ -561,7 +561,7 @@ try {
 ## `categoryImageAdd()`
 
 ```php
-categoryImageAdd($category_id, $image_name, $url, $type, $store_id, $label, $mime, $position, $idempotency_key): \OpenAPI\Client\Model\CategoryImageAdd200Response
+categoryImageAdd($category_id, $image_name, $url, $type, $store_id, $label, $mime, $position, $apply_to_translations, $idempotency_key): \OpenAPI\Client\Model\CategoryImageAdd200Response
 ```
 
 category.image.add
@@ -600,10 +600,11 @@ $store_id = 1; // string | Store Id
 $label = This cool image; // string | Defines alternative text that has to be attached to the picture
 $mime = image/jpeg; // string | Mime type of image http://en.wikipedia.org/wiki/Internet_media_type.
 $position = 5; // int | Defines image’s position in the list
+$apply_to_translations = true; // bool | Defines whether to add image to all category translations
 $idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->categoryImageAdd($category_id, $image_name, $url, $type, $store_id, $label, $mime, $position, $idempotency_key);
+    $result = $apiInstance->categoryImageAdd($category_id, $image_name, $url, $type, $store_id, $label, $mime, $position, $apply_to_translations, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CategoryApi->categoryImageAdd: ', $e->getMessage(), PHP_EOL;
@@ -622,6 +623,7 @@ try {
 | **label** | **string**| Defines alternative text that has to be attached to the picture | [optional] |
 | **mime** | **string**| Mime type of image http://en.wikipedia.org/wiki/Internet_media_type. | [optional] |
 | **position** | **int**| Defines image’s position in the list | [optional] [default to 0] |
+| **apply_to_translations** | **bool**| Defines whether to add image to all category translations | [optional] [default to true] |
 | **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
@@ -644,7 +646,7 @@ try {
 ## `categoryImageDelete()`
 
 ```php
-categoryImageDelete($category_id, $image_id, $store_id): \OpenAPI\Client\Model\AttributeDelete200Response
+categoryImageDelete($category_id, $image_id, $store_id, $apply_to_translations): \OpenAPI\Client\Model\AttributeDelete200Response
 ```
 
 category.image.delete
@@ -678,9 +680,10 @@ $apiInstance = new OpenAPI\Client\Api\CategoryApi(
 $category_id = 6; // string | Defines category id where the image should be deleted
 $image_id = 82950b84f468edff480680f99cedbe0d; // string | Define image id
 $store_id = 1; // string | Store Id
+$apply_to_translations = false; // bool | Defines whether to delete image from all category translations
 
 try {
-    $result = $apiInstance->categoryImageDelete($category_id, $image_id, $store_id);
+    $result = $apiInstance->categoryImageDelete($category_id, $image_id, $store_id, $apply_to_translations);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CategoryApi->categoryImageDelete: ', $e->getMessage(), PHP_EOL;
@@ -694,6 +697,7 @@ try {
 | **category_id** | **string**| Defines category id where the image should be deleted | |
 | **image_id** | **string**| Define image id | |
 | **store_id** | **string**| Store Id | [optional] |
+| **apply_to_translations** | **bool**| Defines whether to delete image from all category translations | [optional] [default to true] |
 
 ### Return type
 

@@ -155,7 +155,7 @@ try {
 ## `customerAttributeList()`
 
 ```php
-customerAttributeList($customer_id, $count, $page_cursor, $store_id, $lang_id, $response_fields, $params, $exclude): \OpenAPI\Client\Model\ModelResponseCustomerAttributeList
+customerAttributeList($customer_id, $start, $count, $page_cursor, $store_id, $lang_id, $response_fields, $params, $exclude): \OpenAPI\Client\Model\ModelResponseCustomerAttributeList
 ```
 
 customer.attribute.list
@@ -187,6 +187,7 @@ $apiInstance = new OpenAPI\Client\Api\CustomerApi(
     $config
 );
 $customer_id = 5; // string | Retrieves orders specified by customer id
+$start = 0; // int | This parameter sets the number from which you want to get entities
 $count = 20; // int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
 $page_cursor = ; // string | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
 $store_id = 1; // string | Store Id
@@ -196,7 +197,7 @@ $params = id,model,price,images; // string | Set this parameter in order to choo
 $exclude = false; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 
 try {
-    $result = $apiInstance->customerAttributeList($customer_id, $count, $page_cursor, $store_id, $lang_id, $response_fields, $params, $exclude);
+    $result = $apiInstance->customerAttributeList($customer_id, $start, $count, $page_cursor, $store_id, $lang_id, $response_fields, $params, $exclude);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->customerAttributeList: ', $e->getMessage(), PHP_EOL;
@@ -208,6 +209,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **customer_id** | **string**| Retrieves orders specified by customer id | |
+| **start** | **int**| This parameter sets the number from which you want to get entities | [optional] [default to 0] |
 | **count** | **int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
 | **page_cursor** | **string**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
 | **store_id** | **string**| Store Id | [optional] |
