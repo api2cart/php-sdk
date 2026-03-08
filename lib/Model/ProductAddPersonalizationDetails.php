@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * ProductAddPersonalizationDetails Class Doc Comment
  *
  * @category Class
- * @description Defines personalization settings for the listing. To enable personalization, is_personalizable must be set to true. When enabled, additional fields may be used to configure the personalization experience, including whether it is required (personalization_is_required), the maximum character limit (personalization_char_count_max), and buyer instructions (personalization_instructions). All related fields are only applicable if personalization is enabled.
+ * @description &lt;strong&gt;Deprecated.&lt;/strong&gt; Use &lt;strong&gt;personalization_questions&lt;/strong&gt; instead for setting personalization questions. Defines legacy personalization settings for the listing. To enable personalization, is_personalizable must be set to true. When enabled, additional fields may be used to configure the personalization experience, including whether it is required (personalization_is_required), the maximum character limit (personalization_char_count_max), and buyer instructions (personalization_instructions). All related fields are only applicable if personalization is enabled.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -300,6 +300,14 @@ class ProductAddPersonalizationDetails implements ModelInterface, ArrayAccess, \
         if ($this->container['is_personalizable'] === null) {
             $invalidProperties[] = "'is_personalizable' can't be null";
         }
+        if (!is_null($this->container['personalization_instructions']) && (mb_strlen($this->container['personalization_instructions']) > 256)) {
+            $invalidProperties[] = "invalid value for 'personalization_instructions', the character length must be smaller than or equal to 256.";
+        }
+
+        if (!is_null($this->container['personalization_instructions']) && (mb_strlen($this->container['personalization_instructions']) < 1)) {
+            $invalidProperties[] = "invalid value for 'personalization_instructions', the character length must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -418,6 +426,13 @@ class ProductAddPersonalizationDetails implements ModelInterface, ArrayAccess, \
         if (is_null($personalization_instructions)) {
             throw new \InvalidArgumentException('non-nullable personalization_instructions cannot be null');
         }
+        if ((mb_strlen($personalization_instructions) > 256)) {
+            throw new \InvalidArgumentException('invalid length for $personalization_instructions when calling ProductAddPersonalizationDetails., must be smaller than or equal to 256.');
+        }
+        if ((mb_strlen($personalization_instructions) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $personalization_instructions when calling ProductAddPersonalizationDetails., must be bigger than or equal to 1.');
+        }
+
         $this->container['personalization_instructions'] = $personalization_instructions;
 
         return $this;

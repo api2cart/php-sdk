@@ -180,6 +180,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shop_section_id' => 'int',
         'return_policy_id' => 'int',
         'personalization_details' => '\OpenAPI\Client\Model\ProductAddPersonalizationDetails',
+        'personalization_questions' => '\OpenAPI\Client\Model\ProductAddPersonalizationQuestionsInner[]',
         'idempotency_key' => 'string'
     ];
 
@@ -313,6 +314,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shop_section_id' => null,
         'return_policy_id' => null,
         'personalization_details' => null,
+        'personalization_questions' => null,
         'idempotency_key' => null
     ];
 
@@ -444,6 +446,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shop_section_id' => false,
         'return_policy_id' => false,
         'personalization_details' => false,
+        'personalization_questions' => false,
         'idempotency_key' => false
     ];
 
@@ -655,6 +658,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shop_section_id' => 'shop_section_id',
         'return_policy_id' => 'return_policy_id',
         'personalization_details' => 'personalization_details',
+        'personalization_questions' => 'personalization_questions',
         'idempotency_key' => 'idempotency_key'
     ];
 
@@ -786,6 +790,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shop_section_id' => 'setShopSectionId',
         'return_policy_id' => 'setReturnPolicyId',
         'personalization_details' => 'setPersonalizationDetails',
+        'personalization_questions' => 'setPersonalizationQuestions',
         'idempotency_key' => 'setIdempotencyKey'
     ];
 
@@ -917,6 +922,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shop_section_id' => 'getShopSectionId',
         'return_policy_id' => 'getReturnPolicyId',
         'personalization_details' => 'getPersonalizationDetails',
+        'personalization_questions' => 'getPersonalizationQuestions',
         'idempotency_key' => 'getIdempotencyKey'
     ];
 
@@ -1099,6 +1105,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('shop_section_id', $data ?? [], null);
         $this->setIfExists('return_policy_id', $data ?? [], null);
         $this->setIfExists('personalization_details', $data ?? [], null);
+        $this->setIfExists('personalization_questions', $data ?? [], null);
         $this->setIfExists('idempotency_key', $data ?? [], null);
     }
 
@@ -1141,6 +1148,14 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['price'] === null) {
             $invalidProperties[] = "'price' can't be null";
         }
+        if (!is_null($this->container['personalization_questions']) && (count($this->container['personalization_questions']) > 5)) {
+            $invalidProperties[] = "invalid value for 'personalization_questions', number of items must be less than or equal to 5.";
+        }
+
+        if (!is_null($this->container['personalization_questions']) && (count($this->container['personalization_questions']) < 1)) {
+            $invalidProperties[] = "invalid value for 'personalization_questions', number of items must be greater than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -4446,6 +4461,40 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable personalization_details cannot be null');
         }
         $this->container['personalization_details'] = $personalization_details;
+
+        return $this;
+    }
+
+    /**
+     * Gets personalization_questions
+     *
+     * @return \OpenAPI\Client\Model\ProductAddPersonalizationQuestionsInner[]|null
+     */
+    public function getPersonalizationQuestions()
+    {
+        return $this->container['personalization_questions'];
+    }
+
+    /**
+     * Sets personalization_questions
+     *
+     * @param \OpenAPI\Client\Model\ProductAddPersonalizationQuestionsInner[]|null $personalization_questions Defines personalization questions for the listing as an array of question objects. Each question object supports the following fields: question_id (integer, nullable), question_text (string, 1-45 chars), instructions (string, nullable), question_type (string), required (boolean), max_allowed_characters (integer, nullable), max_allowed_files (integer, nullable), options (array, nullable). Cannot be used together with <strong>personalization_details</strong>.
+     *
+     * @return self
+     */
+    public function setPersonalizationQuestions($personalization_questions)
+    {
+        if (is_null($personalization_questions)) {
+            throw new \InvalidArgumentException('non-nullable personalization_questions cannot be null');
+        }
+
+        if ((count($personalization_questions) > 5)) {
+            throw new \InvalidArgumentException('invalid value for $personalization_questions when calling ProductAdd., number of items must be less than or equal to 5.');
+        }
+        if ((count($personalization_questions) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $personalization_questions when calling ProductAdd., number of items must be greater than or equal to 1.');
+        }
+        $this->container['personalization_questions'] = $personalization_questions;
 
         return $this;
     }

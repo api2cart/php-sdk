@@ -521,6 +521,7 @@ Class | Method | HTTP request | Description
 - [ProductAddManufacturerInfo](docs/Model/ProductAddManufacturerInfo.md)
 - [ProductAddPackageDetails](docs/Model/ProductAddPackageDetails.md)
 - [ProductAddPersonalizationDetails](docs/Model/ProductAddPersonalizationDetails.md)
+- [ProductAddPersonalizationQuestionsInner](docs/Model/ProductAddPersonalizationQuestionsInner.md)
 - [ProductAddSalesTax](docs/Model/ProductAddSalesTax.md)
 - [ProductAddSellerProfiles](docs/Model/ProductAddSellerProfiles.md)
 - [ProductAddShippingDetailsInner](docs/Model/ProductAddShippingDetailsInner.md)

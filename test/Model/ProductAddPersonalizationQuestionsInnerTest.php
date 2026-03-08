@@ -1,6 +1,6 @@
 <?php
 /**
- * ProductAddPersonalizationDetailsTest
+ * ProductAddPersonalizationQuestionsInnerTest
  *
  * PHP version 7.4
  *
@@ -32,15 +32,15 @@ namespace OpenAPI\Client\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ProductAddPersonalizationDetailsTest Class Doc Comment
+ * ProductAddPersonalizationQuestionsInnerTest Class Doc Comment
  *
  * @category    Class
- * @description &lt;strong&gt;Deprecated.&lt;/strong&gt; Use &lt;strong&gt;personalization_questions&lt;/strong&gt; instead for setting personalization questions. Defines legacy personalization settings for the listing. To enable personalization, is_personalizable must be set to true. When enabled, additional fields may be used to configure the personalization experience, including whether it is required (personalization_is_required), the maximum character limit (personalization_char_count_max), and buyer instructions (personalization_instructions). All related fields are only applicable if personalization is enabled.
+ * @description ProductAddPersonalizationQuestionsInner
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class ProductAddPersonalizationDetailsTest extends TestCase
+class ProductAddPersonalizationQuestionsInnerTest extends TestCase
 {
 
     /**
@@ -72,45 +72,72 @@ class ProductAddPersonalizationDetailsTest extends TestCase
     }
 
     /**
-     * Test "ProductAddPersonalizationDetails"
+     * Test "ProductAddPersonalizationQuestionsInner"
      */
-    public function testProductAddPersonalizationDetails()
+    public function testProductAddPersonalizationQuestionsInner()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "is_personalizable"
+     * Test attribute "question_text"
      */
-    public function testPropertyIsPersonalizable()
+    public function testPropertyQuestionText()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "personalization_is_required"
+     * Test attribute "instructions"
      */
-    public function testPropertyPersonalizationIsRequired()
+    public function testPropertyInstructions()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "personalization_char_count_max"
+     * Test attribute "question_type"
      */
-    public function testPropertyPersonalizationCharCountMax()
+    public function testPropertyQuestionType()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "personalization_instructions"
+     * Test attribute "required"
      */
-    public function testPropertyPersonalizationInstructions()
+    public function testPropertyRequired()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "max_allowed_characters"
+     */
+    public function testPropertyMaxAllowedCharacters()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "max_allowed_files"
+     */
+    public function testPropertyMaxAllowedFiles()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "options"
+     */
+    public function testPropertyOptions()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

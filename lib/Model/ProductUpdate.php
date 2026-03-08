@@ -149,6 +149,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'specifics' => '\OpenAPI\Client\Model\ProductAddSpecificsInner[]',
         'shop_section_id' => 'int',
         'personalization_details' => '\OpenAPI\Client\Model\ProductAddPersonalizationDetails',
+        'personalization_questions' => '\OpenAPI\Client\Model\ProductAddPersonalizationQuestionsInner[]',
         'external_product_link' => 'string',
         'marketplace_item_properties' => 'string',
         'min_order_quantity' => 'float',
@@ -254,6 +255,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'specifics' => null,
         'shop_section_id' => null,
         'personalization_details' => null,
+        'personalization_questions' => null,
         'external_product_link' => null,
         'marketplace_item_properties' => null,
         'min_order_quantity' => null,
@@ -357,6 +359,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'specifics' => false,
         'shop_section_id' => false,
         'personalization_details' => false,
+        'personalization_questions' => false,
         'external_product_link' => false,
         'marketplace_item_properties' => false,
         'min_order_quantity' => false,
@@ -540,6 +543,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'specifics' => 'specifics',
         'shop_section_id' => 'shop_section_id',
         'personalization_details' => 'personalization_details',
+        'personalization_questions' => 'personalization_questions',
         'external_product_link' => 'external_product_link',
         'marketplace_item_properties' => 'marketplace_item_properties',
         'min_order_quantity' => 'min_order_quantity',
@@ -643,6 +647,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'specifics' => 'setSpecifics',
         'shop_section_id' => 'setShopSectionId',
         'personalization_details' => 'setPersonalizationDetails',
+        'personalization_questions' => 'setPersonalizationQuestions',
         'external_product_link' => 'setExternalProductLink',
         'marketplace_item_properties' => 'setMarketplaceItemProperties',
         'min_order_quantity' => 'setMinOrderQuantity',
@@ -746,6 +751,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'specifics' => 'getSpecifics',
         'shop_section_id' => 'getShopSectionId',
         'personalization_details' => 'getPersonalizationDetails',
+        'personalization_questions' => 'getPersonalizationQuestions',
         'external_product_link' => 'getExternalProductLink',
         'marketplace_item_properties' => 'getMarketplaceItemProperties',
         'min_order_quantity' => 'getMinOrderQuantity',
@@ -900,6 +906,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('specifics', $data ?? [], null);
         $this->setIfExists('shop_section_id', $data ?? [], null);
         $this->setIfExists('personalization_details', $data ?? [], null);
+        $this->setIfExists('personalization_questions', $data ?? [], null);
         $this->setIfExists('external_product_link', $data ?? [], null);
         $this->setIfExists('marketplace_item_properties', $data ?? [], null);
         $this->setIfExists('min_order_quantity', $data ?? [], null);
@@ -932,6 +939,14 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if (!is_null($this->container['personalization_questions']) && (count($this->container['personalization_questions']) > 5)) {
+            $invalidProperties[] = "invalid value for 'personalization_questions', number of items must be less than or equal to 5.";
+        }
+
+        if (!is_null($this->container['personalization_questions']) && (count($this->container['personalization_questions']) < 1)) {
+            $invalidProperties[] = "invalid value for 'personalization_questions', number of items must be greater than or equal to 1.";
+        }
 
         return $invalidProperties;
     }
@@ -3401,6 +3416,40 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable personalization_details cannot be null');
         }
         $this->container['personalization_details'] = $personalization_details;
+
+        return $this;
+    }
+
+    /**
+     * Gets personalization_questions
+     *
+     * @return \OpenAPI\Client\Model\ProductAddPersonalizationQuestionsInner[]|null
+     */
+    public function getPersonalizationQuestions()
+    {
+        return $this->container['personalization_questions'];
+    }
+
+    /**
+     * Sets personalization_questions
+     *
+     * @param \OpenAPI\Client\Model\ProductAddPersonalizationQuestionsInner[]|null $personalization_questions Defines personalization questions for the listing as an array of question objects. Each question object supports the following fields: question_id (integer, nullable), question_text (string, 1-45 chars), instructions (string, nullable), question_type (string), required (boolean), max_allowed_characters (integer, nullable), max_allowed_files (integer, nullable), options (array, nullable). Cannot be used together with <strong>personalization_details</strong>.
+     *
+     * @return self
+     */
+    public function setPersonalizationQuestions($personalization_questions)
+    {
+        if (is_null($personalization_questions)) {
+            throw new \InvalidArgumentException('non-nullable personalization_questions cannot be null');
+        }
+
+        if ((count($personalization_questions) > 5)) {
+            throw new \InvalidArgumentException('invalid value for $personalization_questions when calling ProductUpdate., number of items must be less than or equal to 5.');
+        }
+        if ((count($personalization_questions) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $personalization_questions when calling ProductUpdate., number of items must be greater than or equal to 1.');
+        }
+        $this->container['personalization_questions'] = $personalization_questions;
 
         return $this;
     }

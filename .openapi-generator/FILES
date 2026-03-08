@@ -293,6 +293,7 @@ docs/Model/ProductAddLogisticInfoInner.md
 docs/Model/ProductAddManufacturerInfo.md
 docs/Model/ProductAddPackageDetails.md
 docs/Model/ProductAddPersonalizationDetails.md
+docs/Model/ProductAddPersonalizationQuestionsInner.md
 docs/Model/ProductAddSalesTax.md
 docs/Model/ProductAddSellerProfiles.md
 docs/Model/ProductAddShippingDetailsInner.md
@@ -746,6 +747,7 @@ lib/Model/ProductAddLogisticInfoInner.php
 lib/Model/ProductAddManufacturerInfo.php
 lib/Model/ProductAddPackageDetails.php
 lib/Model/ProductAddPersonalizationDetails.php
+lib/Model/ProductAddPersonalizationQuestionsInner.php
 lib/Model/ProductAddSalesTax.php
 lib/Model/ProductAddSellerProfiles.php
 lib/Model/ProductAddShippingDetailsInner.php
@@ -1194,6 +1196,7 @@ test/Model/ProductAddLogisticInfoInnerTest.php
 test/Model/ProductAddManufacturerInfoTest.php
 test/Model/ProductAddPackageDetailsTest.php
 test/Model/ProductAddPersonalizationDetailsTest.php
+test/Model/ProductAddPersonalizationQuestionsInnerTest.php
 test/Model/ProductAddSalesTaxTest.php
 test/Model/ProductAddSellerProfilesTest.php
 test/Model/ProductAddShippingDetailsInnerTest.php

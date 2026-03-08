@@ -900,6 +900,15 @@ class ProductUpdateTest extends TestCase
     }
 
     /**
+     * Test attribute "personalization_questions"
+     */
+    public function testPropertyPersonalizationQuestions()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "external_product_link"
      */
     public function testPropertyExternalProductLink()
