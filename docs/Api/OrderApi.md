@@ -259,7 +259,7 @@ try {
 ## `orderCount()`
 
 ```php
-orderCount($order_ids, $ids, $customer_id, $store_id, $customer_email, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $created_from, $created_to, $modified_from, $modified_to): \OpenAPI\Client\Model\OrderCount200Response
+orderCount($order_ids, $ids, $customer_id, $store_id, $customer_email, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $created_from, $created_to, $modified_from, $modified_to, $use_latest_api_version): \OpenAPI\Client\Model\OrderCount200Response
 ```
 
 order.count
@@ -310,9 +310,10 @@ $created_from = 2010-07-29 13:45:52; // string | Retrieve entities from their cr
 $created_to = 2100-08-29 13:45:52; // string | Retrieve entities to their creation date
 $modified_from = 2010-07-29 13:45:52; // string | Retrieve entities from their modification date
 $modified_to = 2100-08-29 13:45:52; // string | Retrieve entities to their modification date
+$use_latest_api_version = true; // bool | Use the latest platform API version
 
 try {
-    $result = $apiInstance->orderCount($order_ids, $ids, $customer_id, $store_id, $customer_email, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $created_from, $created_to, $modified_from, $modified_to);
+    $result = $apiInstance->orderCount($order_ids, $ids, $customer_id, $store_id, $customer_email, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $created_from, $created_to, $modified_from, $modified_to, $use_latest_api_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderCount: ', $e->getMessage(), PHP_EOL;
@@ -343,6 +344,7 @@ try {
 | **created_to** | **string**| Retrieve entities to their creation date | [optional] |
 | **modified_from** | **string**| Retrieve entities from their modification date | [optional] |
 | **modified_to** | **string**| Retrieve entities to their modification date | [optional] |
+| **use_latest_api_version** | **bool**| Use the latest platform API version | [optional] [default to false] |
 
 ### Return type
 

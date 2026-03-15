@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin
+ * ParamDefinitionFilteringConditionsFilterCondition
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * Plugin Class Doc Comment
+ * ParamDefinitionFilteringConditionsFilterCondition Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -41,7 +41,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Plugin implements ModelInterface, ArrayAccess, \JsonSerializable
+class ParamDefinitionFilteringConditionsFilterCondition implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class Plugin implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Plugin';
+    protected static $openAPIModelName = 'ParamDefinition_FilteringConditions_FilterCondition';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,11 +58,12 @@ class Plugin implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'name' => 'string',
-        'code' => 'string',
-        'active' => 'bool',
-        'additional_fields' => 'object',
-        'custom_fields' => 'object'
+        'and' => 'object[]',
+        'or' => 'object[]',
+        'not' => 'object',
+        'field' => 'string',
+        'operator' => 'string',
+        'value' => '\OpenAPI\Client\Model\ParamDefinitionFilteringConditionsFilterRuleValue'
     ];
 
     /**
@@ -73,11 +74,12 @@ class Plugin implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'name' => null,
-        'code' => null,
-        'active' => null,
-        'additional_fields' => null,
-        'custom_fields' => null
+        'and' => null,
+        'or' => null,
+        'not' => null,
+        'field' => null,
+        'operator' => null,
+        'value' => null
     ];
 
     /**
@@ -86,11 +88,12 @@ class Plugin implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'name' => false,
-        'code' => true,
-        'active' => true,
-        'additional_fields' => true,
-        'custom_fields' => true
+        'and' => false,
+        'or' => false,
+        'not' => false,
+        'field' => false,
+        'operator' => false,
+        'value' => false
     ];
 
     /**
@@ -179,11 +182,12 @@ class Plugin implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'code' => 'code',
-        'active' => 'active',
-        'additional_fields' => 'additional_fields',
-        'custom_fields' => 'custom_fields'
+        'and' => 'and',
+        'or' => 'or',
+        'not' => 'not',
+        'field' => 'field',
+        'operator' => 'operator',
+        'value' => 'value'
     ];
 
     /**
@@ -192,11 +196,12 @@ class Plugin implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'code' => 'setCode',
-        'active' => 'setActive',
-        'additional_fields' => 'setAdditionalFields',
-        'custom_fields' => 'setCustomFields'
+        'and' => 'setAnd',
+        'or' => 'setOr',
+        'not' => 'setNot',
+        'field' => 'setField',
+        'operator' => 'setOperator',
+        'value' => 'setValue'
     ];
 
     /**
@@ -205,11 +210,12 @@ class Plugin implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'code' => 'getCode',
-        'active' => 'getActive',
-        'additional_fields' => 'getAdditionalFields',
-        'custom_fields' => 'getCustomFields'
+        'and' => 'getAnd',
+        'or' => 'getOr',
+        'not' => 'getNot',
+        'field' => 'getField',
+        'operator' => 'getOperator',
+        'value' => 'getValue'
     ];
 
     /**
@@ -269,11 +275,12 @@ class Plugin implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('code', $data ?? [], null);
-        $this->setIfExists('active', $data ?? [], null);
-        $this->setIfExists('additional_fields', $data ?? [], null);
-        $this->setIfExists('custom_fields', $data ?? [], null);
+        $this->setIfExists('and', $data ?? [], null);
+        $this->setIfExists('or', $data ?? [], null);
+        $this->setIfExists('not', $data ?? [], null);
+        $this->setIfExists('field', $data ?? [], null);
+        $this->setIfExists('operator', $data ?? [], null);
+        $this->setIfExists('value', $data ?? [], null);
     }
 
     /**
@@ -319,164 +326,163 @@ class Plugin implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets name
+     * Gets and
      *
-     * @return string|null
+     * @return object[]|null
      */
-    public function getName()
+    public function getAnd()
     {
-        return $this->container['name'];
+        return $this->container['and'];
     }
 
     /**
-     * Sets name
+     * Sets and
      *
-     * @param string|null $name name
+     * @param object[]|null $and and
      *
      * @return self
      */
-    public function setName($name)
+    public function setAnd($and)
     {
-        if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
+        if (is_null($and)) {
+            throw new \InvalidArgumentException('non-nullable and cannot be null');
         }
-        $this->container['name'] = $name;
+        $this->container['and'] = $and;
 
         return $this;
     }
 
     /**
-     * Gets code
+     * Gets or
      *
-     * @return string|null
+     * @return object[]|null
      */
-    public function getCode()
+    public function getOr()
     {
-        return $this->container['code'];
+        return $this->container['or'];
     }
 
     /**
-     * Sets code
+     * Sets or
      *
-     * @param string|null $code code
+     * @param object[]|null $or or
      *
      * @return self
      */
-    public function setCode($code)
+    public function setOr($or)
     {
-        if (is_null($code)) {
-            array_push($this->openAPINullablesSetToNull, 'code');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('code', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($or)) {
+            throw new \InvalidArgumentException('non-nullable or cannot be null');
         }
-        $this->container['code'] = $code;
+        $this->container['or'] = $or;
 
         return $this;
     }
 
     /**
-     * Gets active
-     *
-     * @return bool|null
-     */
-    public function getActive()
-    {
-        return $this->container['active'];
-    }
-
-    /**
-     * Sets active
-     *
-     * @param bool|null $active active
-     *
-     * @return self
-     */
-    public function setActive($active)
-    {
-        if (is_null($active)) {
-            array_push($this->openAPINullablesSetToNull, 'active');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('active', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['active'] = $active;
-
-        return $this;
-    }
-
-    /**
-     * Gets additional_fields
+     * Gets not
      *
      * @return object|null
      */
-    public function getAdditionalFields()
+    public function getNot()
     {
-        return $this->container['additional_fields'];
+        return $this->container['not'];
     }
 
     /**
-     * Sets additional_fields
+     * Sets not
      *
-     * @param object|null $additional_fields additional_fields
+     * @param object|null $not not
      *
      * @return self
      */
-    public function setAdditionalFields($additional_fields)
+    public function setNot($not)
     {
-        if (is_null($additional_fields)) {
-            array_push($this->openAPINullablesSetToNull, 'additional_fields');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('additional_fields', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($not)) {
+            throw new \InvalidArgumentException('non-nullable not cannot be null');
         }
-        $this->container['additional_fields'] = $additional_fields;
+        $this->container['not'] = $not;
 
         return $this;
     }
 
     /**
-     * Gets custom_fields
+     * Gets field
      *
-     * @return object|null
+     * @return string|null
      */
-    public function getCustomFields()
+    public function getField()
     {
-        return $this->container['custom_fields'];
+        return $this->container['field'];
     }
 
     /**
-     * Sets custom_fields
+     * Sets field
      *
-     * @param object|null $custom_fields custom_fields
+     * @param string|null $field field
      *
      * @return self
      */
-    public function setCustomFields($custom_fields)
+    public function setField($field)
     {
-        if (is_null($custom_fields)) {
-            array_push($this->openAPINullablesSetToNull, 'custom_fields');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('custom_fields', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($field)) {
+            throw new \InvalidArgumentException('non-nullable field cannot be null');
         }
-        $this->container['custom_fields'] = $custom_fields;
+        $this->container['field'] = $field;
+
+        return $this;
+    }
+
+    /**
+     * Gets operator
+     *
+     * @return string|null
+     */
+    public function getOperator()
+    {
+        return $this->container['operator'];
+    }
+
+    /**
+     * Sets operator
+     *
+     * @param string|null $operator operator
+     *
+     * @return self
+     */
+    public function setOperator($operator)
+    {
+        if (is_null($operator)) {
+            throw new \InvalidArgumentException('non-nullable operator cannot be null');
+        }
+        $this->container['operator'] = $operator;
+
+        return $this;
+    }
+
+    /**
+     * Gets value
+     *
+     * @return \OpenAPI\Client\Model\ParamDefinitionFilteringConditionsFilterRuleValue|null
+     */
+    public function getValue()
+    {
+        return $this->container['value'];
+    }
+
+    /**
+     * Sets value
+     *
+     * @param \OpenAPI\Client\Model\ParamDefinitionFilteringConditionsFilterRuleValue|null $value value
+     *
+     * @return self
+     */
+    public function setValue($value)
+    {
+        if (is_null($value)) {
+            throw new \InvalidArgumentException('non-nullable value cannot be null');
+        }
+        $this->container['value'] = $value;
 
         return $this;
     }

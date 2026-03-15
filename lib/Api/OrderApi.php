@@ -1356,15 +1356,16 @@ class OrderApi
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
+     * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderCount'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\OrderCount200Response
      */
-    public function orderCount($order_ids = null, $ids = null, $customer_id = null, $store_id = null, $customer_email = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_channel = null, $fulfillment_status = null, $shipping_method = null, $delivery_method = null, $tags = null, $ship_node_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, string $contentType = self::contentTypes['orderCount'][0])
+    public function orderCount($order_ids = null, $ids = null, $customer_id = null, $store_id = null, $customer_email = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_channel = null, $fulfillment_status = null, $shipping_method = null, $delivery_method = null, $tags = null, $ship_node_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $use_latest_api_version = false, string $contentType = self::contentTypes['orderCount'][0])
     {
-        list($response) = $this->orderCountWithHttpInfo($order_ids, $ids, $customer_id, $store_id, $customer_email, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $created_from, $created_to, $modified_from, $modified_to, $contentType);
+        list($response) = $this->orderCountWithHttpInfo($order_ids, $ids, $customer_id, $store_id, $customer_email, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $created_from, $created_to, $modified_from, $modified_to, $use_latest_api_version, $contentType);
         return $response;
     }
 
@@ -1393,15 +1394,16 @@ class OrderApi
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
+     * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderCount'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\OrderCount200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderCountWithHttpInfo($order_ids = null, $ids = null, $customer_id = null, $store_id = null, $customer_email = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_channel = null, $fulfillment_status = null, $shipping_method = null, $delivery_method = null, $tags = null, $ship_node_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, string $contentType = self::contentTypes['orderCount'][0])
+    public function orderCountWithHttpInfo($order_ids = null, $ids = null, $customer_id = null, $store_id = null, $customer_email = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_channel = null, $fulfillment_status = null, $shipping_method = null, $delivery_method = null, $tags = null, $ship_node_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $use_latest_api_version = false, string $contentType = self::contentTypes['orderCount'][0])
     {
-        $request = $this->orderCountRequest($order_ids, $ids, $customer_id, $store_id, $customer_email, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $created_from, $created_to, $modified_from, $modified_to, $contentType);
+        $request = $this->orderCountRequest($order_ids, $ids, $customer_id, $store_id, $customer_email, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $created_from, $created_to, $modified_from, $modified_to, $use_latest_api_version, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1537,14 +1539,15 @@ class OrderApi
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
+     * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderCount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderCountAsync($order_ids = null, $ids = null, $customer_id = null, $store_id = null, $customer_email = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_channel = null, $fulfillment_status = null, $shipping_method = null, $delivery_method = null, $tags = null, $ship_node_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, string $contentType = self::contentTypes['orderCount'][0])
+    public function orderCountAsync($order_ids = null, $ids = null, $customer_id = null, $store_id = null, $customer_email = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_channel = null, $fulfillment_status = null, $shipping_method = null, $delivery_method = null, $tags = null, $ship_node_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $use_latest_api_version = false, string $contentType = self::contentTypes['orderCount'][0])
     {
-        return $this->orderCountAsyncWithHttpInfo($order_ids, $ids, $customer_id, $store_id, $customer_email, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $created_from, $created_to, $modified_from, $modified_to, $contentType)
+        return $this->orderCountAsyncWithHttpInfo($order_ids, $ids, $customer_id, $store_id, $customer_email, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $created_from, $created_to, $modified_from, $modified_to, $use_latest_api_version, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1577,15 +1580,16 @@ class OrderApi
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
+     * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderCount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderCountAsyncWithHttpInfo($order_ids = null, $ids = null, $customer_id = null, $store_id = null, $customer_email = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_channel = null, $fulfillment_status = null, $shipping_method = null, $delivery_method = null, $tags = null, $ship_node_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, string $contentType = self::contentTypes['orderCount'][0])
+    public function orderCountAsyncWithHttpInfo($order_ids = null, $ids = null, $customer_id = null, $store_id = null, $customer_email = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_channel = null, $fulfillment_status = null, $shipping_method = null, $delivery_method = null, $tags = null, $ship_node_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $use_latest_api_version = false, string $contentType = self::contentTypes['orderCount'][0])
     {
         $returnType = '\OpenAPI\Client\Model\OrderCount200Response';
-        $request = $this->orderCountRequest($order_ids, $ids, $customer_id, $store_id, $customer_email, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $created_from, $created_to, $modified_from, $modified_to, $contentType);
+        $request = $this->orderCountRequest($order_ids, $ids, $customer_id, $store_id, $customer_email, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $created_from, $created_to, $modified_from, $modified_to, $use_latest_api_version, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1646,13 +1650,15 @@ class OrderApi
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
+     * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderCount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function orderCountRequest($order_ids = null, $ids = null, $customer_id = null, $store_id = null, $customer_email = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_channel = null, $fulfillment_status = null, $shipping_method = null, $delivery_method = null, $tags = null, $ship_node_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, string $contentType = self::contentTypes['orderCount'][0])
+    public function orderCountRequest($order_ids = null, $ids = null, $customer_id = null, $store_id = null, $customer_email = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_channel = null, $fulfillment_status = null, $shipping_method = null, $delivery_method = null, $tags = null, $ship_node_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $use_latest_api_version = false, string $contentType = self::contentTypes['orderCount'][0])
     {
+
 
 
 
@@ -1858,6 +1864,15 @@ class OrderApi
             $modified_to,
             'modified_to', // param base name
             'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $use_latest_api_version,
+            'use_latest_api_version', // param base name
+            'boolean', // openApiType
             'form', // style
             true, // explode
             false // required

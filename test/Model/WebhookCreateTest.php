@@ -1,6 +1,6 @@
 <?php
 /**
- * PluginTest
+ * WebhookCreateTest
  *
  * PHP version 7.4
  *
@@ -32,15 +32,15 @@ namespace OpenAPI\Client\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * PluginTest Class Doc Comment
+ * WebhookCreateTest Class Doc Comment
  *
  * @category    Class
- * @description Plugin
+ * @description WebhookCreate
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class PluginTest extends TestCase
+class WebhookCreateTest extends TestCase
 {
 
     /**
@@ -72,27 +72,63 @@ class PluginTest extends TestCase
     }
 
     /**
-     * Test "Plugin"
+     * Test "WebhookCreate"
      */
-    public function testPlugin()
+    public function testWebhookCreate()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "entity"
      */
-    public function testPropertyName()
+    public function testPropertyEntity()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "code"
+     * Test attribute "action"
      */
-    public function testPropertyCode()
+    public function testPropertyAction()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "callback"
+     */
+    public function testPropertyCallback()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "label"
+     */
+    public function testPropertyLabel()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "fields"
+     */
+    public function testPropertyFields()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "response_fields"
+     */
+    public function testPropertyResponseFields()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -108,18 +144,36 @@ class PluginTest extends TestCase
     }
 
     /**
-     * Test attribute "additional_fields"
+     * Test attribute "lang_id"
      */
-    public function testPropertyAdditionalFields()
+    public function testPropertyLangId()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "custom_fields"
+     * Test attribute "store_id"
      */
-    public function testPropertyCustomFields()
+    public function testPropertyStoreId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "filtering_conditions"
+     */
+    public function testPropertyFilteringConditions()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "idempotency_key"
+     */
+    public function testPropertyIdempotencyKey()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

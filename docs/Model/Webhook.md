@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **updated_at** | **string** |  | [optional]
 **entity** | **string** |  | [optional]
 **action** | **string** |  | [optional]
+**filtering_conditions** | **object** |  | [optional]
 **additional_fields** | **object** |  | [optional]
 **custom_fields** | **object** |  | [optional]
 

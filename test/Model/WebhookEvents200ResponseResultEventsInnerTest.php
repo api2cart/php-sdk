@@ -106,4 +106,13 @@ class WebhookEvents200ResponseResultEventsInnerTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "filterable_fields"
+     */
+    public function testPropertyFilterableFields()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

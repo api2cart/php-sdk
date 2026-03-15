@@ -486,25 +486,16 @@ class WebhookApi
      *
      * webhook.create
      *
-     * @param  string $entity Specify the entity that you want to enable webhooks for (e.g product, order, customer, category) (required)
-     * @param  string $action Specify what action (event) will trigger the webhook (e.g add, delete, or update) (required)
-     * @param  string|null $callback Callback url that returns shipping rates. It should be able to accept POST requests with json data. (optional)
-     * @param  string|null $label The name you give to the webhook (optional)
-     * @param  string|null $fields Fields the webhook should send (optional, default to 'force_all')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  bool|null $active Webhook status (optional, default to true)
-     * @param  string|null $lang_id Language id (optional)
-     * @param  string|null $store_id Defines store id where the webhook should be assigned (optional)
-     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
+     * @param  \OpenAPI\Client\Model\WebhookCreate $webhook_create webhook_create (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookCreate'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\BasketLiveShippingServiceCreate200Response
      */
-    public function webhookCreate($entity, $action, $callback = null, $label = null, $fields = 'force_all', $response_fields = null, $active = true, $lang_id = null, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['webhookCreate'][0])
+    public function webhookCreate($webhook_create, string $contentType = self::contentTypes['webhookCreate'][0])
     {
-        list($response) = $this->webhookCreateWithHttpInfo($entity, $action, $callback, $label, $fields, $response_fields, $active, $lang_id, $store_id, $idempotency_key, $contentType);
+        list($response) = $this->webhookCreateWithHttpInfo($webhook_create, $contentType);
         return $response;
     }
 
@@ -513,25 +504,16 @@ class WebhookApi
      *
      * webhook.create
      *
-     * @param  string $entity Specify the entity that you want to enable webhooks for (e.g product, order, customer, category) (required)
-     * @param  string $action Specify what action (event) will trigger the webhook (e.g add, delete, or update) (required)
-     * @param  string|null $callback Callback url that returns shipping rates. It should be able to accept POST requests with json data. (optional)
-     * @param  string|null $label The name you give to the webhook (optional)
-     * @param  string|null $fields Fields the webhook should send (optional, default to 'force_all')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  bool|null $active Webhook status (optional, default to true)
-     * @param  string|null $lang_id Language id (optional)
-     * @param  string|null $store_id Defines store id where the webhook should be assigned (optional)
-     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
+     * @param  \OpenAPI\Client\Model\WebhookCreate $webhook_create (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookCreate'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\BasketLiveShippingServiceCreate200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function webhookCreateWithHttpInfo($entity, $action, $callback = null, $label = null, $fields = 'force_all', $response_fields = null, $active = true, $lang_id = null, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['webhookCreate'][0])
+    public function webhookCreateWithHttpInfo($webhook_create, string $contentType = self::contentTypes['webhookCreate'][0])
     {
-        $request = $this->webhookCreateRequest($entity, $action, $callback, $label, $fields, $response_fields, $active, $lang_id, $store_id, $idempotency_key, $contentType);
+        $request = $this->webhookCreateRequest($webhook_create, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -647,24 +629,15 @@ class WebhookApi
      *
      * webhook.create
      *
-     * @param  string $entity Specify the entity that you want to enable webhooks for (e.g product, order, customer, category) (required)
-     * @param  string $action Specify what action (event) will trigger the webhook (e.g add, delete, or update) (required)
-     * @param  string|null $callback Callback url that returns shipping rates. It should be able to accept POST requests with json data. (optional)
-     * @param  string|null $label The name you give to the webhook (optional)
-     * @param  string|null $fields Fields the webhook should send (optional, default to 'force_all')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  bool|null $active Webhook status (optional, default to true)
-     * @param  string|null $lang_id Language id (optional)
-     * @param  string|null $store_id Defines store id where the webhook should be assigned (optional)
-     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
+     * @param  \OpenAPI\Client\Model\WebhookCreate $webhook_create (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function webhookCreateAsync($entity, $action, $callback = null, $label = null, $fields = 'force_all', $response_fields = null, $active = true, $lang_id = null, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['webhookCreate'][0])
+    public function webhookCreateAsync($webhook_create, string $contentType = self::contentTypes['webhookCreate'][0])
     {
-        return $this->webhookCreateAsyncWithHttpInfo($entity, $action, $callback, $label, $fields, $response_fields, $active, $lang_id, $store_id, $idempotency_key, $contentType)
+        return $this->webhookCreateAsyncWithHttpInfo($webhook_create, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -677,25 +650,16 @@ class WebhookApi
      *
      * webhook.create
      *
-     * @param  string $entity Specify the entity that you want to enable webhooks for (e.g product, order, customer, category) (required)
-     * @param  string $action Specify what action (event) will trigger the webhook (e.g add, delete, or update) (required)
-     * @param  string|null $callback Callback url that returns shipping rates. It should be able to accept POST requests with json data. (optional)
-     * @param  string|null $label The name you give to the webhook (optional)
-     * @param  string|null $fields Fields the webhook should send (optional, default to 'force_all')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  bool|null $active Webhook status (optional, default to true)
-     * @param  string|null $lang_id Language id (optional)
-     * @param  string|null $store_id Defines store id where the webhook should be assigned (optional)
-     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
+     * @param  \OpenAPI\Client\Model\WebhookCreate $webhook_create (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function webhookCreateAsyncWithHttpInfo($entity, $action, $callback = null, $label = null, $fields = 'force_all', $response_fields = null, $active = true, $lang_id = null, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['webhookCreate'][0])
+    public function webhookCreateAsyncWithHttpInfo($webhook_create, string $contentType = self::contentTypes['webhookCreate'][0])
     {
         $returnType = '\OpenAPI\Client\Model\BasketLiveShippingServiceCreate200Response';
-        $request = $this->webhookCreateRequest($entity, $action, $callback, $label, $fields, $response_fields, $active, $lang_id, $store_id, $idempotency_key, $contentType);
+        $request = $this->webhookCreateRequest($webhook_create, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -736,45 +700,21 @@ class WebhookApi
     /**
      * Create request for operation 'webhookCreate'
      *
-     * @param  string $entity Specify the entity that you want to enable webhooks for (e.g product, order, customer, category) (required)
-     * @param  string $action Specify what action (event) will trigger the webhook (e.g add, delete, or update) (required)
-     * @param  string|null $callback Callback url that returns shipping rates. It should be able to accept POST requests with json data. (optional)
-     * @param  string|null $label The name you give to the webhook (optional)
-     * @param  string|null $fields Fields the webhook should send (optional, default to 'force_all')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  bool|null $active Webhook status (optional, default to true)
-     * @param  string|null $lang_id Language id (optional)
-     * @param  string|null $store_id Defines store id where the webhook should be assigned (optional)
-     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
+     * @param  \OpenAPI\Client\Model\WebhookCreate $webhook_create (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookCreate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function webhookCreateRequest($entity, $action, $callback = null, $label = null, $fields = 'force_all', $response_fields = null, $active = true, $lang_id = null, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['webhookCreate'][0])
+    public function webhookCreateRequest($webhook_create, string $contentType = self::contentTypes['webhookCreate'][0])
     {
 
-        // verify the required parameter 'entity' is set
-        if ($entity === null || (is_array($entity) && count($entity) === 0)) {
+        // verify the required parameter 'webhook_create' is set
+        if ($webhook_create === null || (is_array($webhook_create) && count($webhook_create) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $entity when calling webhookCreate'
+                'Missing the required parameter $webhook_create when calling webhookCreate'
             );
         }
-
-        // verify the required parameter 'action' is set
-        if ($action === null || (is_array($action) && count($action) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $action when calling webhookCreate'
-            );
-        }
-
-
-
-
-
-
-
-
 
 
         $resourcePath = '/webhook.create.json';
@@ -784,96 +724,6 @@ class WebhookApi
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $entity,
-            'entity', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            true // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $action,
-            'action', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            true // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $callback,
-            'callback', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $label,
-            'label', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $fields,
-            'fields', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $response_fields,
-            'response_fields', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $active,
-            'active', // param base name
-            'boolean', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $lang_id,
-            'lang_id', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $store_id,
-            'store_id', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $idempotency_key,
-            'idempotency_key', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
 
 
 
@@ -885,7 +735,14 @@ class WebhookApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($webhook_create)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($webhook_create));
+            } else {
+                $httpBody = $webhook_create;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -1966,23 +1823,16 @@ class WebhookApi
      *
      * webhook.update
      *
-     * @param  string $id Webhook id (required)
-     * @param  string|null $callback Callback url that returns shipping rates. It should be able to accept POST requests with json data. (optional)
-     * @param  string|null $label The name you give to the webhook (optional)
-     * @param  string|null $fields Fields the webhook should send (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  bool|null $active Webhook status (optional)
-     * @param  string|null $lang_id Language id (optional)
-     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
+     * @param  \OpenAPI\Client\Model\WebhookUpdate $webhook_update webhook_update (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookUpdate'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ProductImageUpdate200Response
      */
-    public function webhookUpdate($id, $callback = null, $label = null, $fields = null, $response_fields = null, $active = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['webhookUpdate'][0])
+    public function webhookUpdate($webhook_update, string $contentType = self::contentTypes['webhookUpdate'][0])
     {
-        list($response) = $this->webhookUpdateWithHttpInfo($id, $callback, $label, $fields, $response_fields, $active, $lang_id, $idempotency_key, $contentType);
+        list($response) = $this->webhookUpdateWithHttpInfo($webhook_update, $contentType);
         return $response;
     }
 
@@ -1991,23 +1841,16 @@ class WebhookApi
      *
      * webhook.update
      *
-     * @param  string $id Webhook id (required)
-     * @param  string|null $callback Callback url that returns shipping rates. It should be able to accept POST requests with json data. (optional)
-     * @param  string|null $label The name you give to the webhook (optional)
-     * @param  string|null $fields Fields the webhook should send (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  bool|null $active Webhook status (optional)
-     * @param  string|null $lang_id Language id (optional)
-     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
+     * @param  \OpenAPI\Client\Model\WebhookUpdate $webhook_update (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookUpdate'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ProductImageUpdate200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function webhookUpdateWithHttpInfo($id, $callback = null, $label = null, $fields = null, $response_fields = null, $active = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['webhookUpdate'][0])
+    public function webhookUpdateWithHttpInfo($webhook_update, string $contentType = self::contentTypes['webhookUpdate'][0])
     {
-        $request = $this->webhookUpdateRequest($id, $callback, $label, $fields, $response_fields, $active, $lang_id, $idempotency_key, $contentType);
+        $request = $this->webhookUpdateRequest($webhook_update, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2123,22 +1966,15 @@ class WebhookApi
      *
      * webhook.update
      *
-     * @param  string $id Webhook id (required)
-     * @param  string|null $callback Callback url that returns shipping rates. It should be able to accept POST requests with json data. (optional)
-     * @param  string|null $label The name you give to the webhook (optional)
-     * @param  string|null $fields Fields the webhook should send (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  bool|null $active Webhook status (optional)
-     * @param  string|null $lang_id Language id (optional)
-     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
+     * @param  \OpenAPI\Client\Model\WebhookUpdate $webhook_update (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function webhookUpdateAsync($id, $callback = null, $label = null, $fields = null, $response_fields = null, $active = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['webhookUpdate'][0])
+    public function webhookUpdateAsync($webhook_update, string $contentType = self::contentTypes['webhookUpdate'][0])
     {
-        return $this->webhookUpdateAsyncWithHttpInfo($id, $callback, $label, $fields, $response_fields, $active, $lang_id, $idempotency_key, $contentType)
+        return $this->webhookUpdateAsyncWithHttpInfo($webhook_update, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2151,23 +1987,16 @@ class WebhookApi
      *
      * webhook.update
      *
-     * @param  string $id Webhook id (required)
-     * @param  string|null $callback Callback url that returns shipping rates. It should be able to accept POST requests with json data. (optional)
-     * @param  string|null $label The name you give to the webhook (optional)
-     * @param  string|null $fields Fields the webhook should send (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  bool|null $active Webhook status (optional)
-     * @param  string|null $lang_id Language id (optional)
-     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
+     * @param  \OpenAPI\Client\Model\WebhookUpdate $webhook_update (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function webhookUpdateAsyncWithHttpInfo($id, $callback = null, $label = null, $fields = null, $response_fields = null, $active = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['webhookUpdate'][0])
+    public function webhookUpdateAsyncWithHttpInfo($webhook_update, string $contentType = self::contentTypes['webhookUpdate'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ProductImageUpdate200Response';
-        $request = $this->webhookUpdateRequest($id, $callback, $label, $fields, $response_fields, $active, $lang_id, $idempotency_key, $contentType);
+        $request = $this->webhookUpdateRequest($webhook_update, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2208,35 +2037,21 @@ class WebhookApi
     /**
      * Create request for operation 'webhookUpdate'
      *
-     * @param  string $id Webhook id (required)
-     * @param  string|null $callback Callback url that returns shipping rates. It should be able to accept POST requests with json data. (optional)
-     * @param  string|null $label The name you give to the webhook (optional)
-     * @param  string|null $fields Fields the webhook should send (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  bool|null $active Webhook status (optional)
-     * @param  string|null $lang_id Language id (optional)
-     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
+     * @param  \OpenAPI\Client\Model\WebhookUpdate $webhook_update (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function webhookUpdateRequest($id, $callback = null, $label = null, $fields = null, $response_fields = null, $active = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['webhookUpdate'][0])
+    public function webhookUpdateRequest($webhook_update, string $contentType = self::contentTypes['webhookUpdate'][0])
     {
 
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
+        // verify the required parameter 'webhook_update' is set
+        if ($webhook_update === null || (is_array($webhook_update) && count($webhook_update) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling webhookUpdate'
+                'Missing the required parameter $webhook_update when calling webhookUpdate'
             );
         }
-
-
-
-
-
-
-
 
 
         $resourcePath = '/webhook.update.json';
@@ -2246,78 +2061,6 @@ class WebhookApi
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $id,
-            'id', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            true // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $callback,
-            'callback', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $label,
-            'label', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $fields,
-            'fields', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $response_fields,
-            'response_fields', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $active,
-            'active', // param base name
-            'boolean', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $lang_id,
-            'lang_id', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $idempotency_key,
-            'idempotency_key', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
 
 
 
@@ -2329,7 +2072,14 @@ class WebhookApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($webhook_update)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($webhook_update));
+            } else {
+                $httpBody = $webhook_update;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {

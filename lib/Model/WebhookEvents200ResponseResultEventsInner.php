@@ -60,7 +60,8 @@ class WebhookEvents200ResponseResultEventsInner implements ModelInterface, Array
     protected static $openAPITypes = [
         'webhook_name' => 'string',
         'entity' => 'string',
-        'action' => 'string'
+        'action' => 'string',
+        'filterable_fields' => 'object'
     ];
 
     /**
@@ -73,7 +74,8 @@ class WebhookEvents200ResponseResultEventsInner implements ModelInterface, Array
     protected static $openAPIFormats = [
         'webhook_name' => null,
         'entity' => null,
-        'action' => null
+        'action' => null,
+        'filterable_fields' => null
     ];
 
     /**
@@ -84,7 +86,8 @@ class WebhookEvents200ResponseResultEventsInner implements ModelInterface, Array
     protected static array $openAPINullables = [
         'webhook_name' => false,
         'entity' => false,
-        'action' => false
+        'action' => false,
+        'filterable_fields' => false
     ];
 
     /**
@@ -175,7 +178,8 @@ class WebhookEvents200ResponseResultEventsInner implements ModelInterface, Array
     protected static $attributeMap = [
         'webhook_name' => 'webhook_name',
         'entity' => 'entity',
-        'action' => 'action'
+        'action' => 'action',
+        'filterable_fields' => 'filterable_fields'
     ];
 
     /**
@@ -186,7 +190,8 @@ class WebhookEvents200ResponseResultEventsInner implements ModelInterface, Array
     protected static $setters = [
         'webhook_name' => 'setWebhookName',
         'entity' => 'setEntity',
-        'action' => 'setAction'
+        'action' => 'setAction',
+        'filterable_fields' => 'setFilterableFields'
     ];
 
     /**
@@ -197,7 +202,8 @@ class WebhookEvents200ResponseResultEventsInner implements ModelInterface, Array
     protected static $getters = [
         'webhook_name' => 'getWebhookName',
         'entity' => 'getEntity',
-        'action' => 'getAction'
+        'action' => 'getAction',
+        'filterable_fields' => 'getFilterableFields'
     ];
 
     /**
@@ -260,6 +266,7 @@ class WebhookEvents200ResponseResultEventsInner implements ModelInterface, Array
         $this->setIfExists('webhook_name', $data ?? [], null);
         $this->setIfExists('entity', $data ?? [], null);
         $this->setIfExists('action', $data ?? [], null);
+        $this->setIfExists('filterable_fields', $data ?? [], null);
     }
 
     /**
@@ -381,6 +388,33 @@ class WebhookEvents200ResponseResultEventsInner implements ModelInterface, Array
             throw new \InvalidArgumentException('non-nullable action cannot be null');
         }
         $this->container['action'] = $action;
+
+        return $this;
+    }
+
+    /**
+     * Gets filterable_fields
+     *
+     * @return object|null
+     */
+    public function getFilterableFields()
+    {
+        return $this->container['filterable_fields'];
+    }
+
+    /**
+     * Sets filterable_fields
+     *
+     * @param object|null $filterable_fields filterable_fields
+     *
+     * @return self
+     */
+    public function setFilterableFields($filterable_fields)
+    {
+        if (is_null($filterable_fields)) {
+            throw new \InvalidArgumentException('non-nullable filterable_fields cannot be null');
+        }
+        $this->container['filterable_fields'] = $filterable_fields;
 
         return $this;
     }

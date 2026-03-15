@@ -1,6 +1,6 @@
 <?php
 /**
- * PluginTest
+ * ParamDefinitionFilteringConditionsFilterRuleValueTest
  *
  * PHP version 7.4
  *
@@ -32,15 +32,15 @@ namespace OpenAPI\Client\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * PluginTest Class Doc Comment
+ * ParamDefinitionFilteringConditionsFilterRuleValueTest Class Doc Comment
  *
  * @category    Class
- * @description Plugin
+ * @description ParamDefinitionFilteringConditionsFilterRuleValue
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class PluginTest extends TestCase
+class ParamDefinitionFilteringConditionsFilterRuleValueTest extends TestCase
 {
 
     /**
@@ -72,54 +72,9 @@ class PluginTest extends TestCase
     }
 
     /**
-     * Test "Plugin"
+     * Test "ParamDefinitionFilteringConditionsFilterRuleValue"
      */
-    public function testPlugin()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "name"
-     */
-    public function testPropertyName()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "code"
-     */
-    public function testPropertyCode()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "active"
-     */
-    public function testPropertyActive()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "additional_fields"
-     */
-    public function testPropertyAdditionalFields()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "custom_fields"
-     */
-    public function testPropertyCustomFields()
+    public function testParamDefinitionFilteringConditionsFilterRuleValue()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

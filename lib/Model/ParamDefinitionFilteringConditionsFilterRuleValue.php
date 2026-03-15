@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin
+ * ParamDefinitionFilteringConditionsFilterRuleValue
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * Plugin Class Doc Comment
+ * ParamDefinitionFilteringConditionsFilterRuleValue Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -41,7 +41,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Plugin implements ModelInterface, ArrayAccess, \JsonSerializable
+class ParamDefinitionFilteringConditionsFilterRuleValue implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class Plugin implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Plugin';
+    protected static $openAPIModelName = 'ParamDefinition_FilteringConditions_FilterRule_value';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,11 +58,7 @@ class Plugin implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'name' => 'string',
-        'code' => 'string',
-        'active' => 'bool',
-        'additional_fields' => 'object',
-        'custom_fields' => 'object'
+        
     ];
 
     /**
@@ -73,11 +69,7 @@ class Plugin implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'name' => null,
-        'code' => null,
-        'active' => null,
-        'additional_fields' => null,
-        'custom_fields' => null
+        
     ];
 
     /**
@@ -86,11 +78,7 @@ class Plugin implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'name' => false,
-        'code' => true,
-        'active' => true,
-        'additional_fields' => true,
-        'custom_fields' => true
+        
     ];
 
     /**
@@ -179,11 +167,7 @@ class Plugin implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'code' => 'code',
-        'active' => 'active',
-        'additional_fields' => 'additional_fields',
-        'custom_fields' => 'custom_fields'
+        
     ];
 
     /**
@@ -192,11 +176,7 @@ class Plugin implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'code' => 'setCode',
-        'active' => 'setActive',
-        'additional_fields' => 'setAdditionalFields',
-        'custom_fields' => 'setCustomFields'
+        
     ];
 
     /**
@@ -205,11 +185,7 @@ class Plugin implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'code' => 'getCode',
-        'active' => 'getActive',
-        'additional_fields' => 'getAdditionalFields',
-        'custom_fields' => 'getCustomFields'
+        
     ];
 
     /**
@@ -269,11 +245,6 @@ class Plugin implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('code', $data ?? [], null);
-        $this->setIfExists('active', $data ?? [], null);
-        $this->setIfExists('additional_fields', $data ?? [], null);
-        $this->setIfExists('custom_fields', $data ?? [], null);
     }
 
     /**
@@ -317,169 +288,6 @@ class Plugin implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string|null $name name
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
-        }
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets code
-     *
-     * @return string|null
-     */
-    public function getCode()
-    {
-        return $this->container['code'];
-    }
-
-    /**
-     * Sets code
-     *
-     * @param string|null $code code
-     *
-     * @return self
-     */
-    public function setCode($code)
-    {
-        if (is_null($code)) {
-            array_push($this->openAPINullablesSetToNull, 'code');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('code', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['code'] = $code;
-
-        return $this;
-    }
-
-    /**
-     * Gets active
-     *
-     * @return bool|null
-     */
-    public function getActive()
-    {
-        return $this->container['active'];
-    }
-
-    /**
-     * Sets active
-     *
-     * @param bool|null $active active
-     *
-     * @return self
-     */
-    public function setActive($active)
-    {
-        if (is_null($active)) {
-            array_push($this->openAPINullablesSetToNull, 'active');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('active', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['active'] = $active;
-
-        return $this;
-    }
-
-    /**
-     * Gets additional_fields
-     *
-     * @return object|null
-     */
-    public function getAdditionalFields()
-    {
-        return $this->container['additional_fields'];
-    }
-
-    /**
-     * Sets additional_fields
-     *
-     * @param object|null $additional_fields additional_fields
-     *
-     * @return self
-     */
-    public function setAdditionalFields($additional_fields)
-    {
-        if (is_null($additional_fields)) {
-            array_push($this->openAPINullablesSetToNull, 'additional_fields');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('additional_fields', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['additional_fields'] = $additional_fields;
-
-        return $this;
-    }
-
-    /**
-     * Gets custom_fields
-     *
-     * @return object|null
-     */
-    public function getCustomFields()
-    {
-        return $this->container['custom_fields'];
-    }
-
-    /**
-     * Sets custom_fields
-     *
-     * @param object|null $custom_fields custom_fields
-     *
-     * @return self
-     */
-    public function setCustomFields($custom_fields)
-    {
-        if (is_null($custom_fields)) {
-            array_push($this->openAPINullablesSetToNull, 'custom_fields');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('custom_fields', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['custom_fields'] = $custom_fields;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

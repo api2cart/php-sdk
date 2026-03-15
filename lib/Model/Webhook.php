@@ -70,6 +70,7 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
         'updated_at' => 'string',
         'entity' => 'string',
         'action' => 'string',
+        'filtering_conditions' => 'object',
         'additional_fields' => 'object',
         'custom_fields' => 'object'
     ];
@@ -94,6 +95,7 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
         'updated_at' => null,
         'entity' => null,
         'action' => null,
+        'filtering_conditions' => null,
         'additional_fields' => null,
         'custom_fields' => null
     ];
@@ -116,6 +118,7 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
         'updated_at' => true,
         'entity' => true,
         'action' => true,
+        'filtering_conditions' => true,
         'additional_fields' => true,
         'custom_fields' => true
     ];
@@ -218,6 +221,7 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
         'updated_at' => 'updated_at',
         'entity' => 'entity',
         'action' => 'action',
+        'filtering_conditions' => 'filtering_conditions',
         'additional_fields' => 'additional_fields',
         'custom_fields' => 'custom_fields'
     ];
@@ -240,6 +244,7 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
         'updated_at' => 'setUpdatedAt',
         'entity' => 'setEntity',
         'action' => 'setAction',
+        'filtering_conditions' => 'setFilteringConditions',
         'additional_fields' => 'setAdditionalFields',
         'custom_fields' => 'setCustomFields'
     ];
@@ -262,6 +267,7 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
         'updated_at' => 'getUpdatedAt',
         'entity' => 'getEntity',
         'action' => 'getAction',
+        'filtering_conditions' => 'getFilteringConditions',
         'additional_fields' => 'getAdditionalFields',
         'custom_fields' => 'getCustomFields'
     ];
@@ -335,6 +341,7 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('updated_at', $data ?? [], null);
         $this->setIfExists('entity', $data ?? [], null);
         $this->setIfExists('action', $data ?? [], null);
+        $this->setIfExists('filtering_conditions', $data ?? [], null);
         $this->setIfExists('additional_fields', $data ?? [], null);
         $this->setIfExists('custom_fields', $data ?? [], null);
     }
@@ -785,6 +792,40 @@ class Webhook implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['action'] = $action;
+
+        return $this;
+    }
+
+    /**
+     * Gets filtering_conditions
+     *
+     * @return object|null
+     */
+    public function getFilteringConditions()
+    {
+        return $this->container['filtering_conditions'];
+    }
+
+    /**
+     * Sets filtering_conditions
+     *
+     * @param object|null $filtering_conditions filtering_conditions
+     *
+     * @return self
+     */
+    public function setFilteringConditions($filtering_conditions)
+    {
+        if (is_null($filtering_conditions)) {
+            array_push($this->openAPINullablesSetToNull, 'filtering_conditions');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('filtering_conditions', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['filtering_conditions'] = $filtering_conditions;
 
         return $this;
     }

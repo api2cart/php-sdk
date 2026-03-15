@@ -1,6 +1,6 @@
 <?php
 /**
- * PluginTest
+ * ParamDefinitionFilteringConditionsFilterConditionTest
  *
  * PHP version 7.4
  *
@@ -32,15 +32,15 @@ namespace OpenAPI\Client\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * PluginTest Class Doc Comment
+ * ParamDefinitionFilteringConditionsFilterConditionTest Class Doc Comment
  *
  * @category    Class
- * @description Plugin
+ * @description ParamDefinitionFilteringConditionsFilterCondition
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class PluginTest extends TestCase
+class ParamDefinitionFilteringConditionsFilterConditionTest extends TestCase
 {
 
     /**
@@ -72,54 +72,63 @@ class PluginTest extends TestCase
     }
 
     /**
-     * Test "Plugin"
+     * Test "ParamDefinitionFilteringConditionsFilterCondition"
      */
-    public function testPlugin()
+    public function testParamDefinitionFilteringConditionsFilterCondition()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "and"
      */
-    public function testPropertyName()
+    public function testPropertyAnd()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "code"
+     * Test attribute "or"
      */
-    public function testPropertyCode()
+    public function testPropertyOr()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "active"
+     * Test attribute "not"
      */
-    public function testPropertyActive()
+    public function testPropertyNot()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "additional_fields"
+     * Test attribute "field"
      */
-    public function testPropertyAdditionalFields()
+    public function testPropertyField()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "custom_fields"
+     * Test attribute "operator"
      */
-    public function testPropertyCustomFields()
+    public function testPropertyOperator()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "value"
+     */
+    public function testPropertyValue()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
