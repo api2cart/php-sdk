@@ -495,6 +495,15 @@ class AccountCartAddTest extends TestCase
     }
 
     /**
+     * Test attribute "nopcommerce_token"
+     */
+    public function testPropertyNopcommerceToken()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "demandware_client_id"
      */
     public function testPropertyDemandwareClientId()

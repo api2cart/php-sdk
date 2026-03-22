@@ -104,6 +104,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'bricklink_consumer_secret' => 'string',
         'bricklink_token' => 'string',
         'bricklink_token_secret' => 'string',
+        'nopcommerce_token' => 'string',
         'demandware_client_id' => 'string',
         'demandware_api_password' => 'string',
         'demandware_user_name' => 'string',
@@ -297,6 +298,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'bricklink_consumer_secret' => null,
         'bricklink_token' => null,
         'bricklink_token_secret' => null,
+        'nopcommerce_token' => null,
         'demandware_client_id' => null,
         'demandware_api_password' => null,
         'demandware_user_name' => null,
@@ -488,6 +490,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'bricklink_consumer_secret' => false,
         'bricklink_token' => false,
         'bricklink_token_secret' => false,
+        'nopcommerce_token' => false,
         'demandware_client_id' => false,
         'demandware_api_password' => false,
         'demandware_user_name' => false,
@@ -759,6 +762,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'bricklink_consumer_secret' => 'bricklink_consumer_secret',
         'bricklink_token' => 'bricklink_token',
         'bricklink_token_secret' => 'bricklink_token_secret',
+        'nopcommerce_token' => 'nopcommerce_token',
         'demandware_client_id' => 'demandware_client_id',
         'demandware_api_password' => 'demandware_api_password',
         'demandware_user_name' => 'demandware_user_name',
@@ -950,6 +954,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'bricklink_consumer_secret' => 'setBricklinkConsumerSecret',
         'bricklink_token' => 'setBricklinkToken',
         'bricklink_token_secret' => 'setBricklinkTokenSecret',
+        'nopcommerce_token' => 'setNopcommerceToken',
         'demandware_client_id' => 'setDemandwareClientId',
         'demandware_api_password' => 'setDemandwareApiPassword',
         'demandware_user_name' => 'setDemandwareUserName',
@@ -1141,6 +1146,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'bricklink_consumer_secret' => 'getBricklinkConsumerSecret',
         'bricklink_token' => 'getBricklinkToken',
         'bricklink_token_secret' => 'getBricklinkTokenSecret',
+        'nopcommerce_token' => 'getNopcommerceToken',
         'demandware_client_id' => 'getDemandwareClientId',
         'demandware_api_password' => 'getDemandwareApiPassword',
         'demandware_user_name' => 'getDemandwareUserName',
@@ -1538,6 +1544,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('bricklink_consumer_secret', $data ?? [], null);
         $this->setIfExists('bricklink_token', $data ?? [], null);
         $this->setIfExists('bricklink_token_secret', $data ?? [], null);
+        $this->setIfExists('nopcommerce_token', $data ?? [], null);
         $this->setIfExists('demandware_client_id', $data ?? [], null);
         $this->setIfExists('demandware_api_password', $data ?? [], null);
         $this->setIfExists('demandware_user_name', $data ?? [], null);
@@ -2983,6 +2990,33 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable bricklink_token_secret cannot be null');
         }
         $this->container['bricklink_token_secret'] = $bricklink_token_secret;
+
+        return $this;
+    }
+
+    /**
+     * Gets nopcommerce_token
+     *
+     * @return string|null
+     */
+    public function getNopcommerceToken()
+    {
+        return $this->container['nopcommerce_token'];
+    }
+
+    /**
+     * Sets nopcommerce_token
+     *
+     * @param string|null $nopcommerce_token Access token authorizing the app to access resources on behalf of a user
+     *
+     * @return self
+     */
+    public function setNopcommerceToken($nopcommerce_token)
+    {
+        if (is_null($nopcommerce_token)) {
+            throw new \InvalidArgumentException('non-nullable nopcommerce_token cannot be null');
+        }
+        $this->container['nopcommerce_token'] = $nopcommerce_token;
 
         return $this;
     }

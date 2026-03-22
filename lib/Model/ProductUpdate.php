@@ -153,6 +153,8 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'external_product_link' => 'string',
         'marketplace_item_properties' => 'string',
         'min_order_quantity' => 'float',
+        'manufacturer_ids' => 'string',
+        'responsible_person_ids' => 'string',
         'idempotency_key' => 'string'
     ];
 
@@ -259,6 +261,8 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'external_product_link' => null,
         'marketplace_item_properties' => null,
         'min_order_quantity' => null,
+        'manufacturer_ids' => null,
+        'responsible_person_ids' => null,
         'idempotency_key' => null
     ];
 
@@ -363,6 +367,8 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'external_product_link' => false,
         'marketplace_item_properties' => false,
         'min_order_quantity' => false,
+        'manufacturer_ids' => false,
+        'responsible_person_ids' => false,
         'idempotency_key' => false
     ];
 
@@ -547,6 +553,8 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'external_product_link' => 'external_product_link',
         'marketplace_item_properties' => 'marketplace_item_properties',
         'min_order_quantity' => 'min_order_quantity',
+        'manufacturer_ids' => 'manufacturer_ids',
+        'responsible_person_ids' => 'responsible_person_ids',
         'idempotency_key' => 'idempotency_key'
     ];
 
@@ -651,6 +659,8 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'external_product_link' => 'setExternalProductLink',
         'marketplace_item_properties' => 'setMarketplaceItemProperties',
         'min_order_quantity' => 'setMinOrderQuantity',
+        'manufacturer_ids' => 'setManufacturerIds',
+        'responsible_person_ids' => 'setResponsiblePersonIds',
         'idempotency_key' => 'setIdempotencyKey'
     ];
 
@@ -755,6 +765,8 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'external_product_link' => 'getExternalProductLink',
         'marketplace_item_properties' => 'getMarketplaceItemProperties',
         'min_order_quantity' => 'getMinOrderQuantity',
+        'manufacturer_ids' => 'getManufacturerIds',
+        'responsible_person_ids' => 'getResponsiblePersonIds',
         'idempotency_key' => 'getIdempotencyKey'
     ];
 
@@ -910,6 +922,8 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('external_product_link', $data ?? [], null);
         $this->setIfExists('marketplace_item_properties', $data ?? [], null);
         $this->setIfExists('min_order_quantity', $data ?? [], null);
+        $this->setIfExists('manufacturer_ids', $data ?? [], null);
+        $this->setIfExists('responsible_person_ids', $data ?? [], null);
         $this->setIfExists('idempotency_key', $data ?? [], null);
     }
 
@@ -3531,6 +3545,60 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable min_order_quantity cannot be null');
         }
         $this->container['min_order_quantity'] = $min_order_quantity;
+
+        return $this;
+    }
+
+    /**
+     * Gets manufacturer_ids
+     *
+     * @return string|null
+     */
+    public function getManufacturerIds()
+    {
+        return $this->container['manufacturer_ids'];
+    }
+
+    /**
+     * Sets manufacturer_ids
+     *
+     * @param string|null $manufacturer_ids A comma-separated list of manufacturer IDs. Retrieve the IDs from the cart.info method.
+     *
+     * @return self
+     */
+    public function setManufacturerIds($manufacturer_ids)
+    {
+        if (is_null($manufacturer_ids)) {
+            throw new \InvalidArgumentException('non-nullable manufacturer_ids cannot be null');
+        }
+        $this->container['manufacturer_ids'] = $manufacturer_ids;
+
+        return $this;
+    }
+
+    /**
+     * Gets responsible_person_ids
+     *
+     * @return string|null
+     */
+    public function getResponsiblePersonIds()
+    {
+        return $this->container['responsible_person_ids'];
+    }
+
+    /**
+     * Sets responsible_person_ids
+     *
+     * @param string|null $responsible_person_ids A comma-separated list of responsible person IDs. Retrieve the IDs from the cart.info method.
+     *
+     * @return self
+     */
+    public function setResponsiblePersonIds($responsible_person_ids)
+    {
+        if (is_null($responsible_person_ids)) {
+            throw new \InvalidArgumentException('non-nullable responsible_person_ids cannot be null');
+        }
+        $this->container['responsible_person_ids'] = $responsible_person_ids;
 
         return $this;
     }

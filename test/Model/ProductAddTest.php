@@ -1188,6 +1188,24 @@ class ProductAddTest extends TestCase
     }
 
     /**
+     * Test attribute "manufacturer_ids"
+     */
+    public function testPropertyManufacturerIds()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "responsible_person_ids"
+     */
+    public function testPropertyResponsiblePersonIds()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "idempotency_key"
      */
     public function testPropertyIdempotencyKey()

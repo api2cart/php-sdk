@@ -181,6 +181,8 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'return_policy_id' => 'int',
         'personalization_details' => '\OpenAPI\Client\Model\ProductAddPersonalizationDetails',
         'personalization_questions' => '\OpenAPI\Client\Model\ProductAddPersonalizationQuestionsInner[]',
+        'manufacturer_ids' => 'string',
+        'responsible_person_ids' => 'string',
         'idempotency_key' => 'string'
     ];
 
@@ -315,6 +317,8 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'return_policy_id' => null,
         'personalization_details' => null,
         'personalization_questions' => null,
+        'manufacturer_ids' => null,
+        'responsible_person_ids' => null,
         'idempotency_key' => null
     ];
 
@@ -447,6 +451,8 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'return_policy_id' => false,
         'personalization_details' => false,
         'personalization_questions' => false,
+        'manufacturer_ids' => false,
+        'responsible_person_ids' => false,
         'idempotency_key' => false
     ];
 
@@ -659,6 +665,8 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'return_policy_id' => 'return_policy_id',
         'personalization_details' => 'personalization_details',
         'personalization_questions' => 'personalization_questions',
+        'manufacturer_ids' => 'manufacturer_ids',
+        'responsible_person_ids' => 'responsible_person_ids',
         'idempotency_key' => 'idempotency_key'
     ];
 
@@ -791,6 +799,8 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'return_policy_id' => 'setReturnPolicyId',
         'personalization_details' => 'setPersonalizationDetails',
         'personalization_questions' => 'setPersonalizationQuestions',
+        'manufacturer_ids' => 'setManufacturerIds',
+        'responsible_person_ids' => 'setResponsiblePersonIds',
         'idempotency_key' => 'setIdempotencyKey'
     ];
 
@@ -923,6 +933,8 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'return_policy_id' => 'getReturnPolicyId',
         'personalization_details' => 'getPersonalizationDetails',
         'personalization_questions' => 'getPersonalizationQuestions',
+        'manufacturer_ids' => 'getManufacturerIds',
+        'responsible_person_ids' => 'getResponsiblePersonIds',
         'idempotency_key' => 'getIdempotencyKey'
     ];
 
@@ -1106,6 +1118,8 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('return_policy_id', $data ?? [], null);
         $this->setIfExists('personalization_details', $data ?? [], null);
         $this->setIfExists('personalization_questions', $data ?? [], null);
+        $this->setIfExists('manufacturer_ids', $data ?? [], null);
+        $this->setIfExists('responsible_person_ids', $data ?? [], null);
         $this->setIfExists('idempotency_key', $data ?? [], null);
     }
 
@@ -4495,6 +4509,60 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('invalid length for $personalization_questions when calling ProductAdd., number of items must be greater than or equal to 1.');
         }
         $this->container['personalization_questions'] = $personalization_questions;
+
+        return $this;
+    }
+
+    /**
+     * Gets manufacturer_ids
+     *
+     * @return string|null
+     */
+    public function getManufacturerIds()
+    {
+        return $this->container['manufacturer_ids'];
+    }
+
+    /**
+     * Sets manufacturer_ids
+     *
+     * @param string|null $manufacturer_ids A comma-separated list of manufacturer IDs. Retrieve the IDs from the cart.info method.
+     *
+     * @return self
+     */
+    public function setManufacturerIds($manufacturer_ids)
+    {
+        if (is_null($manufacturer_ids)) {
+            throw new \InvalidArgumentException('non-nullable manufacturer_ids cannot be null');
+        }
+        $this->container['manufacturer_ids'] = $manufacturer_ids;
+
+        return $this;
+    }
+
+    /**
+     * Gets responsible_person_ids
+     *
+     * @return string|null
+     */
+    public function getResponsiblePersonIds()
+    {
+        return $this->container['responsible_person_ids'];
+    }
+
+    /**
+     * Sets responsible_person_ids
+     *
+     * @param string|null $responsible_person_ids A comma-separated list of responsible person IDs. Retrieve the IDs from the cart.info method.
+     *
+     * @return self
+     */
+    public function setResponsiblePersonIds($responsible_person_ids)
+    {
+        if (is_null($responsible_person_ids)) {
+            throw new \InvalidArgumentException('non-nullable responsible_person_ids cannot be null');
+        }
+        $this->container['responsible_person_ids'] = $responsible_person_ids;
 
         return $this;
     }
