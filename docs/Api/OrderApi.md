@@ -32,7 +32,7 @@ All URIs are relative to https://api.api2cart.local.com/v1.1, except if the oper
 ## `orderAbandonedList()`
 
 ```php
-orderAbandonedList($start, $count, $page_cursor, $customer_id, $customer_email, $store_id, $created_from, $created_to, $modified_from, $modified_to, $skip_empty_email, $response_fields, $params, $exclude): \OpenAPI\Client\Model\ModelResponseOrderAbandonedList
+orderAbandonedList($start, $count, $page_cursor, $customer_id, $customer_email, $store_id, $created_from, $created_to, $modified_from, $modified_to, $skip_empty_email, $rounding_precision, $response_fields, $params, $exclude): \OpenAPI\Client\Model\ModelResponseOrderAbandonedList
 ```
 
 order.abandoned.list
@@ -74,12 +74,13 @@ $created_to = 2100-08-29 13:45:52; // string | Retrieve entities to their creati
 $modified_from = 2010-07-29 13:45:52; // string | Retrieve entities from their modification date
 $modified_to = 2100-08-29 13:45:52; // string | Retrieve entities to their modification date
 $skip_empty_email = true; // bool | Filter empty emails
+$rounding_precision = 3; // int | <p>Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).</p> <p>Supported values range from <b>1</b> to <b>6</b>.</p> <p>The default rounding precision may vary depending on the platform. You can retrieve the default value using the <strong>cart.info</strong> method in the <code>default_rounding_precision</code> field. </p><p>Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.</p>
 $response_fields = {return_code,pagination,result{order{id,customer{email},created_at,totals{total},order_products}}}; // string | Set this parameter in order to choose which entity fields you want to retrieve
 $params = force_all; // string | Set this parameter in order to choose which entity fields you want to retrieve
 $exclude = customer; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 
 try {
-    $result = $apiInstance->orderAbandonedList($start, $count, $page_cursor, $customer_id, $customer_email, $store_id, $created_from, $created_to, $modified_from, $modified_to, $skip_empty_email, $response_fields, $params, $exclude);
+    $result = $apiInstance->orderAbandonedList($start, $count, $page_cursor, $customer_id, $customer_email, $store_id, $created_from, $created_to, $modified_from, $modified_to, $skip_empty_email, $rounding_precision, $response_fields, $params, $exclude);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderAbandonedList: ', $e->getMessage(), PHP_EOL;
@@ -101,6 +102,7 @@ try {
 | **modified_from** | **string**| Retrieve entities from their modification date | [optional] |
 | **modified_to** | **string**| Retrieve entities to their modification date | [optional] |
 | **skip_empty_email** | **bool**| Filter empty emails | [optional] [default to false] |
+| **rounding_precision** | **int**| &lt;p&gt;Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).&lt;/p&gt; &lt;p&gt;Supported values range from &lt;b&gt;1&lt;/b&gt; to &lt;b&gt;6&lt;/b&gt;.&lt;/p&gt; &lt;p&gt;The default rounding precision may vary depending on the platform. You can retrieve the default value using the &lt;strong&gt;cart.info&lt;/strong&gt; method in the &lt;code&gt;default_rounding_precision&lt;/code&gt; field. &lt;/p&gt;&lt;p&gt;Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.&lt;/p&gt; | [optional] |
 | **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 | **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;customer,totals,items&#39;] |
 | **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |

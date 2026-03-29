@@ -91,6 +91,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'measure_unit' => 'string',
         'unit_price' => 'float',
         'prices_inc_tax' => 'bool',
+        'retail_price' => 'float',
         'quantity' => 'float',
         'in_stock' => 'bool',
         'manage_stock' => 'bool',
@@ -227,6 +228,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'measure_unit' => null,
         'unit_price' => null,
         'prices_inc_tax' => null,
+        'retail_price' => null,
         'quantity' => null,
         'in_stock' => null,
         'manage_stock' => null,
@@ -361,6 +363,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'measure_unit' => false,
         'unit_price' => false,
         'prices_inc_tax' => false,
+        'retail_price' => false,
         'quantity' => false,
         'in_stock' => false,
         'manage_stock' => false,
@@ -575,6 +578,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'measure_unit' => 'measure_unit',
         'unit_price' => 'unit_price',
         'prices_inc_tax' => 'prices_inc_tax',
+        'retail_price' => 'retail_price',
         'quantity' => 'quantity',
         'in_stock' => 'in_stock',
         'manage_stock' => 'manage_stock',
@@ -709,6 +713,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'measure_unit' => 'setMeasureUnit',
         'unit_price' => 'setUnitPrice',
         'prices_inc_tax' => 'setPricesIncTax',
+        'retail_price' => 'setRetailPrice',
         'quantity' => 'setQuantity',
         'in_stock' => 'setInStock',
         'manage_stock' => 'setManageStock',
@@ -843,6 +848,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'measure_unit' => 'getMeasureUnit',
         'unit_price' => 'getUnitPrice',
         'prices_inc_tax' => 'getPricesIncTax',
+        'retail_price' => 'getRetailPrice',
         'quantity' => 'getQuantity',
         'in_stock' => 'getInStock',
         'manage_stock' => 'getManageStock',
@@ -1028,6 +1034,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('measure_unit', $data ?? [], null);
         $this->setIfExists('unit_price', $data ?? [], null);
         $this->setIfExists('prices_inc_tax', $data ?? [], false);
+        $this->setIfExists('retail_price', $data ?? [], null);
         $this->setIfExists('quantity', $data ?? [], 0);
         $this->setIfExists('in_stock', $data ?? [], null);
         $this->setIfExists('manage_stock', $data ?? [], null);
@@ -2072,6 +2079,33 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable prices_inc_tax cannot be null');
         }
         $this->container['prices_inc_tax'] = $prices_inc_tax;
+
+        return $this;
+    }
+
+    /**
+     * Gets retail_price
+     *
+     * @return float|null
+     */
+    public function getRetailPrice()
+    {
+        return $this->container['retail_price'];
+    }
+
+    /**
+     * Sets retail_price
+     *
+     * @param float|null $retail_price Defines new product's retail price
+     *
+     * @return self
+     */
+    public function setRetailPrice($retail_price)
+    {
+        if (is_null($retail_price)) {
+            throw new \InvalidArgumentException('non-nullable retail_price cannot be null');
+        }
+        $this->container['retail_price'] = $retail_price;
 
         return $this;
     }

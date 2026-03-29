@@ -205,6 +205,7 @@ class OrderApi
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  bool|null $skip_empty_email Filter empty emails (optional, default to false)
+     * @param  int|null $rounding_precision &lt;p&gt;Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).&lt;/p&gt; &lt;p&gt;Supported values range from &lt;b&gt;1&lt;/b&gt; to &lt;b&gt;6&lt;/b&gt;.&lt;/p&gt; &lt;p&gt;The default rounding precision may vary depending on the platform. You can retrieve the default value using the &lt;strong&gt;cart.info&lt;/strong&gt; method in the &lt;code&gt;default_rounding_precision&lt;/code&gt; field. &lt;/p&gt;&lt;p&gt;Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.&lt;/p&gt; (optional)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'customer,totals,items')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
@@ -214,9 +215,9 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseOrderAbandonedList
      */
-    public function orderAbandonedList($start = 0, $count = 10, $page_cursor = null, $customer_id = null, $customer_email = null, $store_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $skip_empty_email = false, $response_fields = null, $params = 'customer,totals,items', $exclude = null, string $contentType = self::contentTypes['orderAbandonedList'][0])
+    public function orderAbandonedList($start = 0, $count = 10, $page_cursor = null, $customer_id = null, $customer_email = null, $store_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $skip_empty_email = false, $rounding_precision = null, $response_fields = null, $params = 'customer,totals,items', $exclude = null, string $contentType = self::contentTypes['orderAbandonedList'][0])
     {
-        list($response) = $this->orderAbandonedListWithHttpInfo($start, $count, $page_cursor, $customer_id, $customer_email, $store_id, $created_from, $created_to, $modified_from, $modified_to, $skip_empty_email, $response_fields, $params, $exclude, $contentType);
+        list($response) = $this->orderAbandonedListWithHttpInfo($start, $count, $page_cursor, $customer_id, $customer_email, $store_id, $created_from, $created_to, $modified_from, $modified_to, $skip_empty_email, $rounding_precision, $response_fields, $params, $exclude, $contentType);
         return $response;
     }
 
@@ -236,6 +237,7 @@ class OrderApi
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  bool|null $skip_empty_email Filter empty emails (optional, default to false)
+     * @param  int|null $rounding_precision &lt;p&gt;Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).&lt;/p&gt; &lt;p&gt;Supported values range from &lt;b&gt;1&lt;/b&gt; to &lt;b&gt;6&lt;/b&gt;.&lt;/p&gt; &lt;p&gt;The default rounding precision may vary depending on the platform. You can retrieve the default value using the &lt;strong&gt;cart.info&lt;/strong&gt; method in the &lt;code&gt;default_rounding_precision&lt;/code&gt; field. &lt;/p&gt;&lt;p&gt;Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.&lt;/p&gt; (optional)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'customer,totals,items')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
@@ -245,9 +247,9 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseOrderAbandonedList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderAbandonedListWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $customer_id = null, $customer_email = null, $store_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $skip_empty_email = false, $response_fields = null, $params = 'customer,totals,items', $exclude = null, string $contentType = self::contentTypes['orderAbandonedList'][0])
+    public function orderAbandonedListWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $customer_id = null, $customer_email = null, $store_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $skip_empty_email = false, $rounding_precision = null, $response_fields = null, $params = 'customer,totals,items', $exclude = null, string $contentType = self::contentTypes['orderAbandonedList'][0])
     {
-        $request = $this->orderAbandonedListRequest($start, $count, $page_cursor, $customer_id, $customer_email, $store_id, $created_from, $created_to, $modified_from, $modified_to, $skip_empty_email, $response_fields, $params, $exclude, $contentType);
+        $request = $this->orderAbandonedListRequest($start, $count, $page_cursor, $customer_id, $customer_email, $store_id, $created_from, $created_to, $modified_from, $modified_to, $skip_empty_email, $rounding_precision, $response_fields, $params, $exclude, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -374,6 +376,7 @@ class OrderApi
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  bool|null $skip_empty_email Filter empty emails (optional, default to false)
+     * @param  int|null $rounding_precision &lt;p&gt;Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).&lt;/p&gt; &lt;p&gt;Supported values range from &lt;b&gt;1&lt;/b&gt; to &lt;b&gt;6&lt;/b&gt;.&lt;/p&gt; &lt;p&gt;The default rounding precision may vary depending on the platform. You can retrieve the default value using the &lt;strong&gt;cart.info&lt;/strong&gt; method in the &lt;code&gt;default_rounding_precision&lt;/code&gt; field. &lt;/p&gt;&lt;p&gt;Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.&lt;/p&gt; (optional)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'customer,totals,items')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
@@ -382,9 +385,9 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderAbandonedListAsync($start = 0, $count = 10, $page_cursor = null, $customer_id = null, $customer_email = null, $store_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $skip_empty_email = false, $response_fields = null, $params = 'customer,totals,items', $exclude = null, string $contentType = self::contentTypes['orderAbandonedList'][0])
+    public function orderAbandonedListAsync($start = 0, $count = 10, $page_cursor = null, $customer_id = null, $customer_email = null, $store_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $skip_empty_email = false, $rounding_precision = null, $response_fields = null, $params = 'customer,totals,items', $exclude = null, string $contentType = self::contentTypes['orderAbandonedList'][0])
     {
-        return $this->orderAbandonedListAsyncWithHttpInfo($start, $count, $page_cursor, $customer_id, $customer_email, $store_id, $created_from, $created_to, $modified_from, $modified_to, $skip_empty_email, $response_fields, $params, $exclude, $contentType)
+        return $this->orderAbandonedListAsyncWithHttpInfo($start, $count, $page_cursor, $customer_id, $customer_email, $store_id, $created_from, $created_to, $modified_from, $modified_to, $skip_empty_email, $rounding_precision, $response_fields, $params, $exclude, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -408,6 +411,7 @@ class OrderApi
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  bool|null $skip_empty_email Filter empty emails (optional, default to false)
+     * @param  int|null $rounding_precision &lt;p&gt;Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).&lt;/p&gt; &lt;p&gt;Supported values range from &lt;b&gt;1&lt;/b&gt; to &lt;b&gt;6&lt;/b&gt;.&lt;/p&gt; &lt;p&gt;The default rounding precision may vary depending on the platform. You can retrieve the default value using the &lt;strong&gt;cart.info&lt;/strong&gt; method in the &lt;code&gt;default_rounding_precision&lt;/code&gt; field. &lt;/p&gt;&lt;p&gt;Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.&lt;/p&gt; (optional)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'customer,totals,items')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
@@ -416,10 +420,10 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderAbandonedListAsyncWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $customer_id = null, $customer_email = null, $store_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $skip_empty_email = false, $response_fields = null, $params = 'customer,totals,items', $exclude = null, string $contentType = self::contentTypes['orderAbandonedList'][0])
+    public function orderAbandonedListAsyncWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $customer_id = null, $customer_email = null, $store_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $skip_empty_email = false, $rounding_precision = null, $response_fields = null, $params = 'customer,totals,items', $exclude = null, string $contentType = self::contentTypes['orderAbandonedList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseOrderAbandonedList';
-        $request = $this->orderAbandonedListRequest($start, $count, $page_cursor, $customer_id, $customer_email, $store_id, $created_from, $created_to, $modified_from, $modified_to, $skip_empty_email, $response_fields, $params, $exclude, $contentType);
+        $request = $this->orderAbandonedListRequest($start, $count, $page_cursor, $customer_id, $customer_email, $store_id, $created_from, $created_to, $modified_from, $modified_to, $skip_empty_email, $rounding_precision, $response_fields, $params, $exclude, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -471,6 +475,7 @@ class OrderApi
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  bool|null $skip_empty_email Filter empty emails (optional, default to false)
+     * @param  int|null $rounding_precision &lt;p&gt;Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).&lt;/p&gt; &lt;p&gt;Supported values range from &lt;b&gt;1&lt;/b&gt; to &lt;b&gt;6&lt;/b&gt;.&lt;/p&gt; &lt;p&gt;The default rounding precision may vary depending on the platform. You can retrieve the default value using the &lt;strong&gt;cart.info&lt;/strong&gt; method in the &lt;code&gt;default_rounding_precision&lt;/code&gt; field. &lt;/p&gt;&lt;p&gt;Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.&lt;/p&gt; (optional)
      * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'customer,totals,items')
      * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
@@ -479,8 +484,9 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function orderAbandonedListRequest($start = 0, $count = 10, $page_cursor = null, $customer_id = null, $customer_email = null, $store_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $skip_empty_email = false, $response_fields = null, $params = 'customer,totals,items', $exclude = null, string $contentType = self::contentTypes['orderAbandonedList'][0])
+    public function orderAbandonedListRequest($start = 0, $count = 10, $page_cursor = null, $customer_id = null, $customer_email = null, $store_id = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $skip_empty_email = false, $rounding_precision = null, $response_fields = null, $params = 'customer,totals,items', $exclude = null, string $contentType = self::contentTypes['orderAbandonedList'][0])
     {
+
 
 
 
@@ -599,6 +605,15 @@ class OrderApi
             $skip_empty_email,
             'skip_empty_email', // param base name
             'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $rounding_precision,
+            'rounding_precision', // param base name
+            'integer', // openApiType
             'form', // style
             true, // explode
             false // required

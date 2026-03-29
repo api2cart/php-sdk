@@ -378,6 +378,15 @@ class ProductAddTest extends TestCase
     }
 
     /**
+     * Test attribute "retail_price"
+     */
+    public function testPropertyRetailPrice()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "quantity"
      */
     public function testPropertyQuantity()
