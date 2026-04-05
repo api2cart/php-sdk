@@ -1372,15 +1372,16 @@ class OrderApi
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
+     * @param  string|null $vendor_id Counts orders specified by vendor id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderCount'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\OrderCount200Response
      */
-    public function orderCount($order_ids = null, $ids = null, $customer_id = null, $store_id = null, $customer_email = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_channel = null, $fulfillment_status = null, $shipping_method = null, $delivery_method = null, $tags = null, $ship_node_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $use_latest_api_version = false, string $contentType = self::contentTypes['orderCount'][0])
+    public function orderCount($order_ids = null, $ids = null, $customer_id = null, $store_id = null, $customer_email = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_channel = null, $fulfillment_status = null, $shipping_method = null, $delivery_method = null, $tags = null, $ship_node_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $use_latest_api_version = false, $vendor_id = null, string $contentType = self::contentTypes['orderCount'][0])
     {
-        list($response) = $this->orderCountWithHttpInfo($order_ids, $ids, $customer_id, $store_id, $customer_email, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $created_from, $created_to, $modified_from, $modified_to, $use_latest_api_version, $contentType);
+        list($response) = $this->orderCountWithHttpInfo($order_ids, $ids, $customer_id, $store_id, $customer_email, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $created_from, $created_to, $modified_from, $modified_to, $use_latest_api_version, $vendor_id, $contentType);
         return $response;
     }
 
@@ -1410,15 +1411,16 @@ class OrderApi
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
+     * @param  string|null $vendor_id Counts orders specified by vendor id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderCount'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\OrderCount200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderCountWithHttpInfo($order_ids = null, $ids = null, $customer_id = null, $store_id = null, $customer_email = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_channel = null, $fulfillment_status = null, $shipping_method = null, $delivery_method = null, $tags = null, $ship_node_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $use_latest_api_version = false, string $contentType = self::contentTypes['orderCount'][0])
+    public function orderCountWithHttpInfo($order_ids = null, $ids = null, $customer_id = null, $store_id = null, $customer_email = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_channel = null, $fulfillment_status = null, $shipping_method = null, $delivery_method = null, $tags = null, $ship_node_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $use_latest_api_version = false, $vendor_id = null, string $contentType = self::contentTypes['orderCount'][0])
     {
-        $request = $this->orderCountRequest($order_ids, $ids, $customer_id, $store_id, $customer_email, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $created_from, $created_to, $modified_from, $modified_to, $use_latest_api_version, $contentType);
+        $request = $this->orderCountRequest($order_ids, $ids, $customer_id, $store_id, $customer_email, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $created_from, $created_to, $modified_from, $modified_to, $use_latest_api_version, $vendor_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1555,14 +1557,15 @@ class OrderApi
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
+     * @param  string|null $vendor_id Counts orders specified by vendor id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderCount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderCountAsync($order_ids = null, $ids = null, $customer_id = null, $store_id = null, $customer_email = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_channel = null, $fulfillment_status = null, $shipping_method = null, $delivery_method = null, $tags = null, $ship_node_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $use_latest_api_version = false, string $contentType = self::contentTypes['orderCount'][0])
+    public function orderCountAsync($order_ids = null, $ids = null, $customer_id = null, $store_id = null, $customer_email = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_channel = null, $fulfillment_status = null, $shipping_method = null, $delivery_method = null, $tags = null, $ship_node_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $use_latest_api_version = false, $vendor_id = null, string $contentType = self::contentTypes['orderCount'][0])
     {
-        return $this->orderCountAsyncWithHttpInfo($order_ids, $ids, $customer_id, $store_id, $customer_email, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $created_from, $created_to, $modified_from, $modified_to, $use_latest_api_version, $contentType)
+        return $this->orderCountAsyncWithHttpInfo($order_ids, $ids, $customer_id, $store_id, $customer_email, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $created_from, $created_to, $modified_from, $modified_to, $use_latest_api_version, $vendor_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1596,15 +1599,16 @@ class OrderApi
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
+     * @param  string|null $vendor_id Counts orders specified by vendor id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderCount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderCountAsyncWithHttpInfo($order_ids = null, $ids = null, $customer_id = null, $store_id = null, $customer_email = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_channel = null, $fulfillment_status = null, $shipping_method = null, $delivery_method = null, $tags = null, $ship_node_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $use_latest_api_version = false, string $contentType = self::contentTypes['orderCount'][0])
+    public function orderCountAsyncWithHttpInfo($order_ids = null, $ids = null, $customer_id = null, $store_id = null, $customer_email = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_channel = null, $fulfillment_status = null, $shipping_method = null, $delivery_method = null, $tags = null, $ship_node_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $use_latest_api_version = false, $vendor_id = null, string $contentType = self::contentTypes['orderCount'][0])
     {
         $returnType = '\OpenAPI\Client\Model\OrderCount200Response';
-        $request = $this->orderCountRequest($order_ids, $ids, $customer_id, $store_id, $customer_email, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $created_from, $created_to, $modified_from, $modified_to, $use_latest_api_version, $contentType);
+        $request = $this->orderCountRequest($order_ids, $ids, $customer_id, $store_id, $customer_email, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $created_from, $created_to, $modified_from, $modified_to, $use_latest_api_version, $vendor_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1666,13 +1670,15 @@ class OrderApi
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
+     * @param  string|null $vendor_id Counts orders specified by vendor id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderCount'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function orderCountRequest($order_ids = null, $ids = null, $customer_id = null, $store_id = null, $customer_email = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_channel = null, $fulfillment_status = null, $shipping_method = null, $delivery_method = null, $tags = null, $ship_node_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $use_latest_api_version = false, string $contentType = self::contentTypes['orderCount'][0])
+    public function orderCountRequest($order_ids = null, $ids = null, $customer_id = null, $store_id = null, $customer_email = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_channel = null, $fulfillment_status = null, $shipping_method = null, $delivery_method = null, $tags = null, $ship_node_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $use_latest_api_version = false, $vendor_id = null, string $contentType = self::contentTypes['orderCount'][0])
     {
+
 
 
 
@@ -1888,6 +1894,15 @@ class OrderApi
             $use_latest_api_version,
             'use_latest_api_version', // param base name
             'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $vendor_id,
+            'vendor_id', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -3030,6 +3045,7 @@ class OrderApi
      * @param  string|null $order_ids Retrieves orders specified by order ids (optional)
      * @param  string|null $since_id Retrieve entities starting from the specified id. (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $vendor_id Retrieves orders specified by vendor id (optional)
      * @param  string|null $customer_id Retrieves orders specified by customer id (optional)
      * @param  string|null $customer_email Retrieves orders specified by customer email (optional)
      * @param  string|null $basket_id Retrieves order’s info specified by basket id. (optional)
@@ -3069,9 +3085,9 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseOrderList
      */
-    public function orderList($start = 0, $count = 10, $page_cursor = null, $ids = null, $order_ids = null, $since_id = null, $store_id = null, $customer_id = null, $customer_email = null, $basket_id = null, $currency_id = null, $phone = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_status = null, $return_status = null, $fulfillment_channel = null, $shipping_method = null, $skip_order_ids = null, $is_deleted = null, $shipping_country_iso3 = null, $delivery_method = null, $ship_node_type = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $tags = null, $sort_by = 'order_id', $sort_direction = 'asc', $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, $rounding_precision = null, $allow_user_defined_order_statuses = false, string $contentType = self::contentTypes['orderList'][0])
+    public function orderList($start = 0, $count = 10, $page_cursor = null, $ids = null, $order_ids = null, $since_id = null, $store_id = null, $vendor_id = null, $customer_id = null, $customer_email = null, $basket_id = null, $currency_id = null, $phone = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_status = null, $return_status = null, $fulfillment_channel = null, $shipping_method = null, $skip_order_ids = null, $is_deleted = null, $shipping_country_iso3 = null, $delivery_method = null, $ship_node_type = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $tags = null, $sort_by = 'order_id', $sort_direction = 'asc', $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, $rounding_precision = null, $allow_user_defined_order_statuses = false, string $contentType = self::contentTypes['orderList'][0])
     {
-        list($response) = $this->orderListWithHttpInfo($start, $count, $page_cursor, $ids, $order_ids, $since_id, $store_id, $customer_id, $customer_email, $basket_id, $currency_id, $phone, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_status, $return_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $is_deleted, $shipping_country_iso3, $delivery_method, $ship_node_type, $created_to, $created_from, $modified_to, $modified_from, $tags, $sort_by, $sort_direction, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $rounding_precision, $allow_user_defined_order_statuses, $contentType);
+        list($response) = $this->orderListWithHttpInfo($start, $count, $page_cursor, $ids, $order_ids, $since_id, $store_id, $vendor_id, $customer_id, $customer_email, $basket_id, $currency_id, $phone, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_status, $return_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $is_deleted, $shipping_country_iso3, $delivery_method, $ship_node_type, $created_to, $created_from, $modified_to, $modified_from, $tags, $sort_by, $sort_direction, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $rounding_precision, $allow_user_defined_order_statuses, $contentType);
         return $response;
     }
 
@@ -3087,6 +3103,7 @@ class OrderApi
      * @param  string|null $order_ids Retrieves orders specified by order ids (optional)
      * @param  string|null $since_id Retrieve entities starting from the specified id. (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $vendor_id Retrieves orders specified by vendor id (optional)
      * @param  string|null $customer_id Retrieves orders specified by customer id (optional)
      * @param  string|null $customer_email Retrieves orders specified by customer email (optional)
      * @param  string|null $basket_id Retrieves order’s info specified by basket id. (optional)
@@ -3126,9 +3143,9 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseOrderList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderListWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $ids = null, $order_ids = null, $since_id = null, $store_id = null, $customer_id = null, $customer_email = null, $basket_id = null, $currency_id = null, $phone = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_status = null, $return_status = null, $fulfillment_channel = null, $shipping_method = null, $skip_order_ids = null, $is_deleted = null, $shipping_country_iso3 = null, $delivery_method = null, $ship_node_type = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $tags = null, $sort_by = 'order_id', $sort_direction = 'asc', $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, $rounding_precision = null, $allow_user_defined_order_statuses = false, string $contentType = self::contentTypes['orderList'][0])
+    public function orderListWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $ids = null, $order_ids = null, $since_id = null, $store_id = null, $vendor_id = null, $customer_id = null, $customer_email = null, $basket_id = null, $currency_id = null, $phone = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_status = null, $return_status = null, $fulfillment_channel = null, $shipping_method = null, $skip_order_ids = null, $is_deleted = null, $shipping_country_iso3 = null, $delivery_method = null, $ship_node_type = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $tags = null, $sort_by = 'order_id', $sort_direction = 'asc', $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, $rounding_precision = null, $allow_user_defined_order_statuses = false, string $contentType = self::contentTypes['orderList'][0])
     {
-        $request = $this->orderListRequest($start, $count, $page_cursor, $ids, $order_ids, $since_id, $store_id, $customer_id, $customer_email, $basket_id, $currency_id, $phone, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_status, $return_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $is_deleted, $shipping_country_iso3, $delivery_method, $ship_node_type, $created_to, $created_from, $modified_to, $modified_from, $tags, $sort_by, $sort_direction, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $rounding_precision, $allow_user_defined_order_statuses, $contentType);
+        $request = $this->orderListRequest($start, $count, $page_cursor, $ids, $order_ids, $since_id, $store_id, $vendor_id, $customer_id, $customer_email, $basket_id, $currency_id, $phone, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_status, $return_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $is_deleted, $shipping_country_iso3, $delivery_method, $ship_node_type, $created_to, $created_from, $modified_to, $modified_from, $tags, $sort_by, $sort_direction, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $rounding_precision, $allow_user_defined_order_statuses, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3251,6 +3268,7 @@ class OrderApi
      * @param  string|null $order_ids Retrieves orders specified by order ids (optional)
      * @param  string|null $since_id Retrieve entities starting from the specified id. (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $vendor_id Retrieves orders specified by vendor id (optional)
      * @param  string|null $customer_id Retrieves orders specified by customer id (optional)
      * @param  string|null $customer_email Retrieves orders specified by customer email (optional)
      * @param  string|null $basket_id Retrieves order’s info specified by basket id. (optional)
@@ -3289,9 +3307,9 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderListAsync($start = 0, $count = 10, $page_cursor = null, $ids = null, $order_ids = null, $since_id = null, $store_id = null, $customer_id = null, $customer_email = null, $basket_id = null, $currency_id = null, $phone = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_status = null, $return_status = null, $fulfillment_channel = null, $shipping_method = null, $skip_order_ids = null, $is_deleted = null, $shipping_country_iso3 = null, $delivery_method = null, $ship_node_type = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $tags = null, $sort_by = 'order_id', $sort_direction = 'asc', $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, $rounding_precision = null, $allow_user_defined_order_statuses = false, string $contentType = self::contentTypes['orderList'][0])
+    public function orderListAsync($start = 0, $count = 10, $page_cursor = null, $ids = null, $order_ids = null, $since_id = null, $store_id = null, $vendor_id = null, $customer_id = null, $customer_email = null, $basket_id = null, $currency_id = null, $phone = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_status = null, $return_status = null, $fulfillment_channel = null, $shipping_method = null, $skip_order_ids = null, $is_deleted = null, $shipping_country_iso3 = null, $delivery_method = null, $ship_node_type = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $tags = null, $sort_by = 'order_id', $sort_direction = 'asc', $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, $rounding_precision = null, $allow_user_defined_order_statuses = false, string $contentType = self::contentTypes['orderList'][0])
     {
-        return $this->orderListAsyncWithHttpInfo($start, $count, $page_cursor, $ids, $order_ids, $since_id, $store_id, $customer_id, $customer_email, $basket_id, $currency_id, $phone, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_status, $return_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $is_deleted, $shipping_country_iso3, $delivery_method, $ship_node_type, $created_to, $created_from, $modified_to, $modified_from, $tags, $sort_by, $sort_direction, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $rounding_precision, $allow_user_defined_order_statuses, $contentType)
+        return $this->orderListAsyncWithHttpInfo($start, $count, $page_cursor, $ids, $order_ids, $since_id, $store_id, $vendor_id, $customer_id, $customer_email, $basket_id, $currency_id, $phone, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_status, $return_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $is_deleted, $shipping_country_iso3, $delivery_method, $ship_node_type, $created_to, $created_from, $modified_to, $modified_from, $tags, $sort_by, $sort_direction, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $rounding_precision, $allow_user_defined_order_statuses, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3311,6 +3329,7 @@ class OrderApi
      * @param  string|null $order_ids Retrieves orders specified by order ids (optional)
      * @param  string|null $since_id Retrieve entities starting from the specified id. (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $vendor_id Retrieves orders specified by vendor id (optional)
      * @param  string|null $customer_id Retrieves orders specified by customer id (optional)
      * @param  string|null $customer_email Retrieves orders specified by customer email (optional)
      * @param  string|null $basket_id Retrieves order’s info specified by basket id. (optional)
@@ -3349,10 +3368,10 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderListAsyncWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $ids = null, $order_ids = null, $since_id = null, $store_id = null, $customer_id = null, $customer_email = null, $basket_id = null, $currency_id = null, $phone = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_status = null, $return_status = null, $fulfillment_channel = null, $shipping_method = null, $skip_order_ids = null, $is_deleted = null, $shipping_country_iso3 = null, $delivery_method = null, $ship_node_type = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $tags = null, $sort_by = 'order_id', $sort_direction = 'asc', $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, $rounding_precision = null, $allow_user_defined_order_statuses = false, string $contentType = self::contentTypes['orderList'][0])
+    public function orderListAsyncWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $ids = null, $order_ids = null, $since_id = null, $store_id = null, $vendor_id = null, $customer_id = null, $customer_email = null, $basket_id = null, $currency_id = null, $phone = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_status = null, $return_status = null, $fulfillment_channel = null, $shipping_method = null, $skip_order_ids = null, $is_deleted = null, $shipping_country_iso3 = null, $delivery_method = null, $ship_node_type = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $tags = null, $sort_by = 'order_id', $sort_direction = 'asc', $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, $rounding_precision = null, $allow_user_defined_order_statuses = false, string $contentType = self::contentTypes['orderList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseOrderList';
-        $request = $this->orderListRequest($start, $count, $page_cursor, $ids, $order_ids, $since_id, $store_id, $customer_id, $customer_email, $basket_id, $currency_id, $phone, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_status, $return_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $is_deleted, $shipping_country_iso3, $delivery_method, $ship_node_type, $created_to, $created_from, $modified_to, $modified_from, $tags, $sort_by, $sort_direction, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $rounding_precision, $allow_user_defined_order_statuses, $contentType);
+        $request = $this->orderListRequest($start, $count, $page_cursor, $ids, $order_ids, $since_id, $store_id, $vendor_id, $customer_id, $customer_email, $basket_id, $currency_id, $phone, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_status, $return_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $is_deleted, $shipping_country_iso3, $delivery_method, $ship_node_type, $created_to, $created_from, $modified_to, $modified_from, $tags, $sort_by, $sort_direction, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $rounding_precision, $allow_user_defined_order_statuses, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3400,6 +3419,7 @@ class OrderApi
      * @param  string|null $order_ids Retrieves orders specified by order ids (optional)
      * @param  string|null $since_id Retrieve entities starting from the specified id. (optional)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $vendor_id Retrieves orders specified by vendor id (optional)
      * @param  string|null $customer_id Retrieves orders specified by customer id (optional)
      * @param  string|null $customer_email Retrieves orders specified by customer email (optional)
      * @param  string|null $basket_id Retrieves order’s info specified by basket id. (optional)
@@ -3438,8 +3458,9 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function orderListRequest($start = 0, $count = 10, $page_cursor = null, $ids = null, $order_ids = null, $since_id = null, $store_id = null, $customer_id = null, $customer_email = null, $basket_id = null, $currency_id = null, $phone = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_status = null, $return_status = null, $fulfillment_channel = null, $shipping_method = null, $skip_order_ids = null, $is_deleted = null, $shipping_country_iso3 = null, $delivery_method = null, $ship_node_type = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $tags = null, $sort_by = 'order_id', $sort_direction = 'asc', $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, $rounding_precision = null, $allow_user_defined_order_statuses = false, string $contentType = self::contentTypes['orderList'][0])
+    public function orderListRequest($start = 0, $count = 10, $page_cursor = null, $ids = null, $order_ids = null, $since_id = null, $store_id = null, $vendor_id = null, $customer_id = null, $customer_email = null, $basket_id = null, $currency_id = null, $phone = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_status = null, $return_status = null, $fulfillment_channel = null, $shipping_method = null, $skip_order_ids = null, $is_deleted = null, $shipping_country_iso3 = null, $delivery_method = null, $ship_node_type = null, $created_to = null, $created_from = null, $modified_to = null, $modified_from = null, $tags = null, $sort_by = 'order_id', $sort_direction = 'asc', $params = 'order_id,customer,totals,address,items,bundles,status', $response_fields = null, $exclude = null, $enable_cache = false, $use_latest_api_version = false, $rounding_precision = null, $allow_user_defined_order_statuses = false, string $contentType = self::contentTypes['orderList'][0])
     {
+
 
 
 
@@ -3547,6 +3568,15 @@ class OrderApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $store_id,
             'store_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $vendor_id,
+            'vendor_id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

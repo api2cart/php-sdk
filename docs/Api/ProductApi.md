@@ -448,7 +448,7 @@ try {
 ## `productBrandList()`
 
 ```php
-productBrandList($start, $count, $page_cursor, $brand_ids, $category_id, $parent_id, $store_id, $lang_id, $find_where, $find_value, $created_from, $created_to, $modified_from, $modified_to, $response_fields, $params, $exclude): \OpenAPI\Client\Model\ModelResponseProductBrandList
+productBrandList($start, $count, $page_cursor, $brand_ids, $category_id, $parent_id, $store_id, $lang_id, $find_where, $find_value, $created_from, $created_to, $modified_from, $modified_to, $avail, $response_fields, $params, $exclude): \OpenAPI\Client\Model\ModelResponseProductBrandList
 ```
 
 product.brand.list
@@ -493,12 +493,13 @@ $created_from = 2010-07-29 13:45:52; // string | Retrieve entities from their cr
 $created_to = 2100-08-29 13:45:52; // string | Retrieve entities to their creation date
 $modified_from = 2010-07-29 13:45:52; // string | Retrieve entities from their modification date
 $modified_to = 2100-08-29 13:45:52; // string | Retrieve entities to their modification date
+$avail = false; // bool | Defines category's visibility status
 $response_fields = {return_code,return_message,pagination,result}; // string | Set this parameter in order to choose which entity fields you want to retrieve
 $params = id,model,price,images; // string | Set this parameter in order to choose which entity fields you want to retrieve
 $exclude = false; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 
 try {
-    $result = $apiInstance->productBrandList($start, $count, $page_cursor, $brand_ids, $category_id, $parent_id, $store_id, $lang_id, $find_where, $find_value, $created_from, $created_to, $modified_from, $modified_to, $response_fields, $params, $exclude);
+    $result = $apiInstance->productBrandList($start, $count, $page_cursor, $brand_ids, $category_id, $parent_id, $store_id, $lang_id, $find_where, $find_value, $created_from, $created_to, $modified_from, $modified_to, $avail, $response_fields, $params, $exclude);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productBrandList: ', $e->getMessage(), PHP_EOL;
@@ -523,6 +524,7 @@ try {
 | **created_to** | **string**| Retrieve entities to their creation date | [optional] |
 | **modified_from** | **string**| Retrieve entities from their modification date | [optional] |
 | **modified_to** | **string**| Retrieve entities to their modification date | [optional] |
+| **avail** | **bool**| Defines category&#39;s visibility status | [optional] [default to true] |
 | **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 | **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,name,short_description,active,url&#39;] |
 | **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
@@ -814,7 +816,7 @@ try {
 ## `productCount()`
 
 ```php
-productCount($sku, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $lang_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $brand_name, $manufacturer_id, $product_attributes, $status, $type, $visible, $find_value, $find_where, $report_request_id, $return_global, $disable_report_cache, $use_latest_api_version): \OpenAPI\Client\Model\ProductCount200Response
+productCount($sku, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $vendor_id, $lang_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $brand_name, $manufacturer_id, $product_attributes, $status, $type, $visible, $find_value, $find_where, $report_request_id, $return_global, $disable_report_cache, $use_latest_api_version): \OpenAPI\Client\Model\ProductCount200Response
 ```
 
 product.count
@@ -851,6 +853,7 @@ $since_id = 56; // string | Retrieve entities starting from the specified id.
 $categories_ids = 23,56; // string | Defines product add that is specified by comma-separated categories id
 $category_id = 6; // string | Counts products specified by category id
 $store_id = 1; // string | Counts products specified by store id
+$vendor_id = 1; // string | Counts products specified by vendor id
 $lang_id = 3; // string | Counts products specified by language id
 $avail_view = true; // bool | Specifies the set of visible/invisible products
 $avail_sale = false; // bool | Specifies the set of available/not available products for sale
@@ -872,7 +875,7 @@ $disable_report_cache = false; // bool | Disable report cache for current reques
 $use_latest_api_version = true; // bool | Use the latest platform API version
 
 try {
-    $result = $apiInstance->productCount($sku, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $lang_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $brand_name, $manufacturer_id, $product_attributes, $status, $type, $visible, $find_value, $find_where, $report_request_id, $return_global, $disable_report_cache, $use_latest_api_version);
+    $result = $apiInstance->productCount($sku, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $vendor_id, $lang_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $brand_name, $manufacturer_id, $product_attributes, $status, $type, $visible, $find_value, $find_where, $report_request_id, $return_global, $disable_report_cache, $use_latest_api_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productCount: ', $e->getMessage(), PHP_EOL;
@@ -889,6 +892,7 @@ try {
 | **categories_ids** | **string**| Defines product add that is specified by comma-separated categories id | [optional] |
 | **category_id** | **string**| Counts products specified by category id | [optional] |
 | **store_id** | **string**| Counts products specified by store id | [optional] |
+| **vendor_id** | **string**| Counts products specified by vendor id | [optional] |
 | **lang_id** | **string**| Counts products specified by language id | [optional] |
 | **avail_view** | **bool**| Specifies the set of visible/invisible products | [optional] |
 | **avail_sale** | **bool**| Specifies the set of available/not available products for sale | [optional] |
@@ -1529,7 +1533,7 @@ try {
 ## `productInfo()`
 
 ```php
-productInfo($id, $store_id, $lang_id, $currency_id, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $use_latest_api_version): \OpenAPI\Client\Model\ProductInfo200Response
+productInfo($id, $store_id, $vendor_id, $lang_id, $currency_id, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $use_latest_api_version): \OpenAPI\Client\Model\ProductInfo200Response
 ```
 
 product.info
@@ -1562,6 +1566,7 @@ $apiInstance = new OpenAPI\Client\Api\ProductApi(
 );
 $id = 10; // string | Retrieves product's info specified by product id
 $store_id = 1; // string | Retrieves product info specified by store id
+$vendor_id = 1; // string | Vendor Id
 $lang_id = 3; // string | Retrieves product info specified by language id
 $currency_id = usd; // string | Currency Id
 $response_fields = {result{id,name,price,images}}; // string | Set this parameter in order to choose which entity fields you want to retrieve
@@ -1572,7 +1577,7 @@ $disable_report_cache = false; // bool | Disable report cache for current reques
 $use_latest_api_version = true; // bool | Use the latest platform API version
 
 try {
-    $result = $apiInstance->productInfo($id, $store_id, $lang_id, $currency_id, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $use_latest_api_version);
+    $result = $apiInstance->productInfo($id, $store_id, $vendor_id, $lang_id, $currency_id, $response_fields, $params, $exclude, $report_request_id, $disable_report_cache, $use_latest_api_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productInfo: ', $e->getMessage(), PHP_EOL;
@@ -1585,6 +1590,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| Retrieves product&#39;s info specified by product id | |
 | **store_id** | **string**| Retrieves product info specified by store id | [optional] |
+| **vendor_id** | **string**| Vendor Id | [optional] |
 | **lang_id** | **string**| Retrieves product info specified by language id | [optional] |
 | **currency_id** | **string**| Currency Id | [optional] |
 | **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
@@ -1614,7 +1620,7 @@ try {
 ## `productList()`
 
 ```php
-productList($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $lang_id, $currency_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $manufacturer_id, $status, $type, $visible, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version, $product_type): \OpenAPI\Client\Model\ModelResponseProductList
+productList($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $vendor_id, $lang_id, $currency_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $manufacturer_id, $status, $type, $visible, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version, $product_type): \OpenAPI\Client\Model\ModelResponseProductList
 ```
 
 product.list
@@ -1653,6 +1659,7 @@ $since_id = 56; // string | Retrieve entities starting from the specified id.
 $categories_ids = 23,56; // string | Retrieves products specified by categories ids
 $category_id = 6; // string | Retrieves products specified by category id
 $store_id = 1; // string | Retrieves products specified by store id
+$vendor_id = 1; // string | Retrieves products specified by vendor id
 $lang_id = 3; // string | Retrieves products specified by language id
 $currency_id = usd; // string | Currency Id
 $avail_view = true; // bool | Specifies the set of visible/invisible products
@@ -1683,7 +1690,7 @@ $use_latest_api_version = true; // bool | Use the latest platform API version
 $product_type = BICYCLE; // string | A categorization for the product
 
 try {
-    $result = $apiInstance->productList($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $lang_id, $currency_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $manufacturer_id, $status, $type, $visible, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version, $product_type);
+    $result = $apiInstance->productList($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $vendor_id, $lang_id, $currency_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $manufacturer_id, $status, $type, $visible, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version, $product_type);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productList: ', $e->getMessage(), PHP_EOL;
@@ -1702,6 +1709,7 @@ try {
 | **categories_ids** | **string**| Retrieves products specified by categories ids | [optional] |
 | **category_id** | **string**| Retrieves products specified by category id | [optional] |
 | **store_id** | **string**| Retrieves products specified by store id | [optional] |
+| **vendor_id** | **string**| Retrieves products specified by vendor id | [optional] |
 | **lang_id** | **string**| Retrieves products specified by language id | [optional] |
 | **currency_id** | **string**| Currency Id | [optional] |
 | **avail_view** | **bool**| Specifies the set of visible/invisible products | [optional] |

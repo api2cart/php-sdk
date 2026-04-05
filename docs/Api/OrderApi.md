@@ -261,7 +261,7 @@ try {
 ## `orderCount()`
 
 ```php
-orderCount($order_ids, $ids, $customer_id, $store_id, $customer_email, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $created_from, $created_to, $modified_from, $modified_to, $use_latest_api_version): \OpenAPI\Client\Model\OrderCount200Response
+orderCount($order_ids, $ids, $customer_id, $store_id, $customer_email, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $created_from, $created_to, $modified_from, $modified_to, $use_latest_api_version, $vendor_id): \OpenAPI\Client\Model\OrderCount200Response
 ```
 
 order.count
@@ -313,9 +313,10 @@ $created_to = 2100-08-29 13:45:52; // string | Retrieve entities to their creati
 $modified_from = 2010-07-29 13:45:52; // string | Retrieve entities from their modification date
 $modified_to = 2100-08-29 13:45:52; // string | Retrieve entities to their modification date
 $use_latest_api_version = true; // bool | Use the latest platform API version
+$vendor_id = 1; // string | Counts orders specified by vendor id
 
 try {
-    $result = $apiInstance->orderCount($order_ids, $ids, $customer_id, $store_id, $customer_email, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $created_from, $created_to, $modified_from, $modified_to, $use_latest_api_version);
+    $result = $apiInstance->orderCount($order_ids, $ids, $customer_id, $store_id, $customer_email, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $created_from, $created_to, $modified_from, $modified_to, $use_latest_api_version, $vendor_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderCount: ', $e->getMessage(), PHP_EOL;
@@ -347,6 +348,7 @@ try {
 | **modified_from** | **string**| Retrieve entities from their modification date | [optional] |
 | **modified_to** | **string**| Retrieve entities to their modification date | [optional] |
 | **use_latest_api_version** | **bool**| Use the latest platform API version | [optional] [default to false] |
+| **vendor_id** | **string**| Counts orders specified by vendor id | [optional] |
 
 ### Return type
 
@@ -584,7 +586,7 @@ try {
 ## `orderList()`
 
 ```php
-orderList($start, $count, $page_cursor, $ids, $order_ids, $since_id, $store_id, $customer_id, $customer_email, $basket_id, $currency_id, $phone, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_status, $return_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $is_deleted, $shipping_country_iso3, $delivery_method, $ship_node_type, $created_to, $created_from, $modified_to, $modified_from, $tags, $sort_by, $sort_direction, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $rounding_precision, $allow_user_defined_order_statuses): \OpenAPI\Client\Model\ModelResponseOrderList
+orderList($start, $count, $page_cursor, $ids, $order_ids, $since_id, $store_id, $vendor_id, $customer_id, $customer_email, $basket_id, $currency_id, $phone, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_status, $return_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $is_deleted, $shipping_country_iso3, $delivery_method, $ship_node_type, $created_to, $created_from, $modified_to, $modified_from, $tags, $sort_by, $sort_direction, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $rounding_precision, $allow_user_defined_order_statuses): \OpenAPI\Client\Model\ModelResponseOrderList
 ```
 
 order.list
@@ -622,6 +624,7 @@ $ids = 24,25; // string | Retrieves orders specified by ids
 $order_ids = 24,25; // string | Retrieves orders specified by order ids
 $since_id = 56; // string | Retrieve entities starting from the specified id.
 $store_id = 1; // string | Store Id
+$vendor_id = 1; // string | Retrieves orders specified by vendor id
 $customer_id = 5; // string | Retrieves orders specified by customer id
 $customer_email = jubari@hannsgroup.com; // string | Retrieves orders specified by customer email
 $basket_id = 1; // string | Retrieves order’s info specified by basket id.
@@ -657,7 +660,7 @@ $rounding_precision = 3; // int | <p>Specifies the rounding precision for fracti
 $allow_user_defined_order_statuses = true; // bool | Indicates whether custom (user-defined) order statuses should be included in the response.
 
 try {
-    $result = $apiInstance->orderList($start, $count, $page_cursor, $ids, $order_ids, $since_id, $store_id, $customer_id, $customer_email, $basket_id, $currency_id, $phone, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_status, $return_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $is_deleted, $shipping_country_iso3, $delivery_method, $ship_node_type, $created_to, $created_from, $modified_to, $modified_from, $tags, $sort_by, $sort_direction, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $rounding_precision, $allow_user_defined_order_statuses);
+    $result = $apiInstance->orderList($start, $count, $page_cursor, $ids, $order_ids, $since_id, $store_id, $vendor_id, $customer_id, $customer_email, $basket_id, $currency_id, $phone, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_status, $return_status, $fulfillment_channel, $shipping_method, $skip_order_ids, $is_deleted, $shipping_country_iso3, $delivery_method, $ship_node_type, $created_to, $created_from, $modified_to, $modified_from, $tags, $sort_by, $sort_direction, $params, $response_fields, $exclude, $enable_cache, $use_latest_api_version, $rounding_precision, $allow_user_defined_order_statuses);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderList: ', $e->getMessage(), PHP_EOL;
@@ -675,6 +678,7 @@ try {
 | **order_ids** | **string**| Retrieves orders specified by order ids | [optional] |
 | **since_id** | **string**| Retrieve entities starting from the specified id. | [optional] |
 | **store_id** | **string**| Store Id | [optional] |
+| **vendor_id** | **string**| Retrieves orders specified by vendor id | [optional] |
 | **customer_id** | **string**| Retrieves orders specified by customer id | [optional] |
 | **customer_email** | **string**| Retrieves orders specified by customer email | [optional] |
 | **basket_id** | **string**| Retrieves order’s info specified by basket id. | [optional] |
