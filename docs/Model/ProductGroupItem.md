@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **child_item_id** | **string** |  | [optional]
 **product_id** | **string** |  | [optional]
-**default_qty_in_pack** | **string** |  | [optional]
+**default_qty_in_pack** | **float** |  | [optional]
 **is_qty_in_pack_fixed** | **bool** |  | [optional]
 **price** | **float** |  | [optional]
 **additional_fields** | **object** |  | [optional]

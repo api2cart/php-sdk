@@ -164,6 +164,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shopware_api_secret' => 'string',
         'miva_access_token' => 'string',
         'miva_signature' => 'string',
+        'mirakl_api_key' => 'string',
         'tiendanube_user_id' => 'int',
         'tiendanube_access_token' => 'string',
         'tiendanube_client_secret' => 'string',
@@ -358,6 +359,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shopware_api_secret' => null,
         'miva_access_token' => null,
         'miva_signature' => null,
+        'mirakl_api_key' => null,
         'tiendanube_user_id' => null,
         'tiendanube_access_token' => null,
         'tiendanube_client_secret' => null,
@@ -550,6 +552,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shopware_api_secret' => false,
         'miva_access_token' => false,
         'miva_signature' => false,
+        'mirakl_api_key' => false,
         'tiendanube_user_id' => false,
         'tiendanube_access_token' => false,
         'tiendanube_client_secret' => false,
@@ -822,6 +825,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shopware_api_secret' => 'shopware_api_secret',
         'miva_access_token' => 'miva_access_token',
         'miva_signature' => 'miva_signature',
+        'mirakl_api_key' => 'mirakl_api_key',
         'tiendanube_user_id' => 'tiendanube_user_id',
         'tiendanube_access_token' => 'tiendanube_access_token',
         'tiendanube_client_secret' => 'tiendanube_client_secret',
@@ -1014,6 +1018,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shopware_api_secret' => 'setShopwareApiSecret',
         'miva_access_token' => 'setMivaAccessToken',
         'miva_signature' => 'setMivaSignature',
+        'mirakl_api_key' => 'setMiraklApiKey',
         'tiendanube_user_id' => 'setTiendanubeUserId',
         'tiendanube_access_token' => 'setTiendanubeAccessToken',
         'tiendanube_client_secret' => 'setTiendanubeClientSecret',
@@ -1206,6 +1211,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'shopware_api_secret' => 'getShopwareApiSecret',
         'miva_access_token' => 'getMivaAccessToken',
         'miva_signature' => 'getMivaSignature',
+        'mirakl_api_key' => 'getMiraklApiKey',
         'tiendanube_user_id' => 'getTiendanubeUserId',
         'tiendanube_access_token' => 'getTiendanubeAccessToken',
         'tiendanube_client_secret' => 'getTiendanubeClientSecret',
@@ -1367,7 +1373,6 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     public const CART_ID_PINNACLE = 'Pinnacle';
     public const CART_ID_PRESTASHOP = 'Prestashop';
     public const CART_ID_PRESTASHOP_API = 'PrestashopApi';
-    public const CART_ID_SS_PREMIUM = 'SSPremium';
     public const CART_ID_SALLA = 'Salla';
     public const CART_ID_SCAPI = 'SCAPI';
     public const CART_ID_SHOPIFY = 'Shopify';
@@ -1388,7 +1393,6 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     public const CART_ID_VOLUSION = 'Volusion';
     public const CART_ID_W_PECOMMERCE = 'WPecommerce';
     public const CART_ID_WALMART = 'Walmart';
-    public const CART_ID_WEB_ASYST = 'WebAsyst';
     public const CART_ID_WIX = 'Wix';
     public const CART_ID_WOOCOMMERCE = 'Woocommerce';
     public const CART_ID_WOOCOMMERCE_API = 'WoocommerceApi';
@@ -1448,7 +1452,6 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             self::CART_ID_PINNACLE,
             self::CART_ID_PRESTASHOP,
             self::CART_ID_PRESTASHOP_API,
-            self::CART_ID_SS_PREMIUM,
             self::CART_ID_SALLA,
             self::CART_ID_SCAPI,
             self::CART_ID_SHOPIFY,
@@ -1469,7 +1472,6 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             self::CART_ID_VOLUSION,
             self::CART_ID_W_PECOMMERCE,
             self::CART_ID_WALMART,
-            self::CART_ID_WEB_ASYST,
             self::CART_ID_WIX,
             self::CART_ID_WOOCOMMERCE,
             self::CART_ID_WOOCOMMERCE_API,
@@ -1604,6 +1606,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('shopware_api_secret', $data ?? [], null);
         $this->setIfExists('miva_access_token', $data ?? [], null);
         $this->setIfExists('miva_signature', $data ?? [], null);
+        $this->setIfExists('mirakl_api_key', $data ?? [], null);
         $this->setIfExists('tiendanube_user_id', $data ?? [], null);
         $this->setIfExists('tiendanube_access_token', $data ?? [], null);
         $this->setIfExists('tiendanube_client_secret', $data ?? [], null);
@@ -4610,6 +4613,33 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable miva_signature cannot be null');
         }
         $this->container['miva_signature'] = $miva_signature;
+
+        return $this;
+    }
+
+    /**
+     * Gets mirakl_api_key
+     *
+     * @return string|null
+     */
+    public function getMiraklApiKey()
+    {
+        return $this->container['mirakl_api_key'];
+    }
+
+    /**
+     * Sets mirakl_api_key
+     *
+     * @param string|null $mirakl_api_key Mirakl API Key
+     *
+     * @return self
+     */
+    public function setMiraklApiKey($mirakl_api_key)
+    {
+        if (is_null($mirakl_api_key)) {
+            throw new \InvalidArgumentException('non-nullable mirakl_api_key cannot be null');
+        }
+        $this->container['mirakl_api_key'] = $mirakl_api_key;
 
         return $this;
     }

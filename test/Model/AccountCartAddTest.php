@@ -1035,6 +1035,15 @@ class AccountCartAddTest extends TestCase
     }
 
     /**
+     * Test attribute "mirakl_api_key"
+     */
+    public function testPropertyMiraklApiKey()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "tiendanube_user_id"
      */
     public function testPropertyTiendanubeUserId()

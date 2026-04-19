@@ -60,7 +60,7 @@ class ProductGroupItem implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'child_item_id' => 'string',
         'product_id' => 'string',
-        'default_qty_in_pack' => 'string',
+        'default_qty_in_pack' => 'float',
         'is_qty_in_pack_fixed' => 'bool',
         'price' => 'float',
         'additional_fields' => 'object',
@@ -396,7 +396,7 @@ class ProductGroupItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets default_qty_in_pack
      *
-     * @return string|null
+     * @return float|null
      */
     public function getDefaultQtyInPack()
     {
@@ -406,7 +406,7 @@ class ProductGroupItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets default_qty_in_pack
      *
-     * @param string|null $default_qty_in_pack default_qty_in_pack
+     * @param float|null $default_qty_in_pack default_qty_in_pack
      *
      * @return self
      */

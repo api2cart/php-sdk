@@ -62,8 +62,8 @@ class ProductOptionItem implements ModelInterface, ArrayAccess, \JsonSerializabl
         'product_option_item_id' => 'string',
         'name' => 'string',
         'sort_order' => 'int',
-        'price' => 'string',
-        'weight' => 'string',
+        'price' => 'float',
+        'weight' => 'float',
         'quantity' => 'int',
         'type_price' => 'string',
         'sku' => 'string',
@@ -492,7 +492,7 @@ class ProductOptionItem implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets price
      *
-     * @return string|null
+     * @return float|null
      */
     public function getPrice()
     {
@@ -502,7 +502,7 @@ class ProductOptionItem implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets price
      *
-     * @param string|null $price price
+     * @param float|null $price price
      *
      * @return self
      */
@@ -526,7 +526,7 @@ class ProductOptionItem implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets weight
      *
-     * @return string|null
+     * @return float|null
      */
     public function getWeight()
     {
@@ -536,7 +536,7 @@ class ProductOptionItem implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets weight
      *
-     * @param string|null $weight weight
+     * @param float|null $weight weight
      *
      * @return self
      */
