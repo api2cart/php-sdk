@@ -279,6 +279,33 @@ class CustomerAddTest extends TestCase
     }
 
     /**
+     * Test attribute "currency_id"
+     */
+    public function testPropertyCurrencyId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "is_tax_exempt"
+     */
+    public function testPropertyIsTaxExempt()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "vendor_id"
+     */
+    public function testPropertyVendorId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "store_id"
      */
     public function testPropertyStoreId()

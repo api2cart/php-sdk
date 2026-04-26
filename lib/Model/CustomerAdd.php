@@ -80,6 +80,9 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'phone' => 'string',
         'note' => 'string',
         'country' => 'string',
+        'currency_id' => 'string',
+        'is_tax_exempt' => 'bool',
+        'vendor_id' => 'string',
         'store_id' => 'string',
         'idempotency_key' => 'string',
         'address' => '\OpenAPI\Client\Model\CustomerAddAddressInner[]'
@@ -115,6 +118,9 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'phone' => null,
         'note' => null,
         'country' => null,
+        'currency_id' => null,
+        'is_tax_exempt' => null,
+        'vendor_id' => null,
         'store_id' => null,
         'idempotency_key' => null,
         'address' => null
@@ -148,6 +154,9 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'phone' => false,
         'note' => false,
         'country' => false,
+        'currency_id' => false,
+        'is_tax_exempt' => false,
+        'vendor_id' => false,
         'store_id' => false,
         'idempotency_key' => false,
         'address' => false
@@ -261,6 +270,9 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'phone' => 'phone',
         'note' => 'note',
         'country' => 'country',
+        'currency_id' => 'currency_id',
+        'is_tax_exempt' => 'is_tax_exempt',
+        'vendor_id' => 'vendor_id',
         'store_id' => 'store_id',
         'idempotency_key' => 'idempotency_key',
         'address' => 'address'
@@ -294,6 +306,9 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'phone' => 'setPhone',
         'note' => 'setNote',
         'country' => 'setCountry',
+        'currency_id' => 'setCurrencyId',
+        'is_tax_exempt' => 'setIsTaxExempt',
+        'vendor_id' => 'setVendorId',
         'store_id' => 'setStoreId',
         'idempotency_key' => 'setIdempotencyKey',
         'address' => 'setAddress'
@@ -327,6 +342,9 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'phone' => 'getPhone',
         'note' => 'getNote',
         'country' => 'getCountry',
+        'currency_id' => 'getCurrencyId',
+        'is_tax_exempt' => 'getIsTaxExempt',
+        'vendor_id' => 'getVendorId',
         'store_id' => 'getStoreId',
         'idempotency_key' => 'getIdempotencyKey',
         'address' => 'getAddress'
@@ -411,6 +429,9 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('phone', $data ?? [], null);
         $this->setIfExists('note', $data ?? [], null);
         $this->setIfExists('country', $data ?? [], null);
+        $this->setIfExists('currency_id', $data ?? [], null);
+        $this->setIfExists('is_tax_exempt', $data ?? [], null);
+        $this->setIfExists('vendor_id', $data ?? [], null);
         $this->setIfExists('store_id', $data ?? [], null);
         $this->setIfExists('idempotency_key', $data ?? [], null);
         $this->setIfExists('address', $data ?? [], null);
@@ -1060,6 +1081,87 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable country cannot be null');
         }
         $this->container['country'] = $country;
+
+        return $this;
+    }
+
+    /**
+     * Gets currency_id
+     *
+     * @return string|null
+     */
+    public function getCurrencyId()
+    {
+        return $this->container['currency_id'];
+    }
+
+    /**
+     * Sets currency_id
+     *
+     * @param string|null $currency_id Currency Id
+     *
+     * @return self
+     */
+    public function setCurrencyId($currency_id)
+    {
+        if (is_null($currency_id)) {
+            throw new \InvalidArgumentException('non-nullable currency_id cannot be null');
+        }
+        $this->container['currency_id'] = $currency_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_tax_exempt
+     *
+     * @return bool|null
+     */
+    public function getIsTaxExempt()
+    {
+        return $this->container['is_tax_exempt'];
+    }
+
+    /**
+     * Sets is_tax_exempt
+     *
+     * @param bool|null $is_tax_exempt Marks a customer as tax-exempt (B2B/wholesale).
+     *
+     * @return self
+     */
+    public function setIsTaxExempt($is_tax_exempt)
+    {
+        if (is_null($is_tax_exempt)) {
+            throw new \InvalidArgumentException('non-nullable is_tax_exempt cannot be null');
+        }
+        $this->container['is_tax_exempt'] = $is_tax_exempt;
+
+        return $this;
+    }
+
+    /**
+     * Gets vendor_id
+     *
+     * @return string|null
+     */
+    public function getVendorId()
+    {
+        return $this->container['vendor_id'];
+    }
+
+    /**
+     * Sets vendor_id
+     *
+     * @param string|null $vendor_id Vendor Id
+     *
+     * @return self
+     */
+    public function setVendorId($vendor_id)
+    {
+        if (is_null($vendor_id)) {
+            throw new \InvalidArgumentException('non-nullable vendor_id cannot be null');
+        }
+        $this->container['vendor_id'] = $vendor_id;
 
         return $this;
     }
