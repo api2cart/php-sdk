@@ -100,6 +100,8 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'increase_quantity' => 'float',
         'reduce_quantity' => 'float',
         'low_stock_threshold' => 'float',
+        'min_order_quantity' => 'float',
+        'max_order_quantity' => 'float',
         'warehouse_id' => 'string',
         'weight' => 'float',
         'weight_unit' => 'string',
@@ -117,6 +119,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'barcode' => 'string',
         'manufacturer' => 'string',
         'manufacturer_id' => 'string',
+        'vendor_id' => 'string',
         'categories_ids' => 'string',
         'related_products_ids' => 'string',
         'up_sell_products_ids' => 'string',
@@ -152,7 +155,6 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'personalization_questions' => '\OpenAPI\Client\Model\ProductAddPersonalizationQuestionsInner[]',
         'external_product_link' => 'string',
         'marketplace_item_properties' => 'string',
-        'min_order_quantity' => 'float',
         'manufacturer_ids' => 'string',
         'responsible_person_ids' => 'string',
         'idempotency_key' => 'string'
@@ -208,6 +210,8 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'increase_quantity' => null,
         'reduce_quantity' => null,
         'low_stock_threshold' => null,
+        'min_order_quantity' => null,
+        'max_order_quantity' => null,
         'warehouse_id' => null,
         'weight' => null,
         'weight_unit' => null,
@@ -225,6 +229,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'barcode' => null,
         'manufacturer' => null,
         'manufacturer_id' => null,
+        'vendor_id' => null,
         'categories_ids' => null,
         'related_products_ids' => null,
         'up_sell_products_ids' => null,
@@ -260,7 +265,6 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'personalization_questions' => null,
         'external_product_link' => null,
         'marketplace_item_properties' => null,
-        'min_order_quantity' => null,
         'manufacturer_ids' => null,
         'responsible_person_ids' => null,
         'idempotency_key' => null
@@ -314,6 +318,8 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'increase_quantity' => false,
         'reduce_quantity' => false,
         'low_stock_threshold' => false,
+        'min_order_quantity' => false,
+        'max_order_quantity' => false,
         'warehouse_id' => false,
         'weight' => false,
         'weight_unit' => false,
@@ -331,6 +337,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'barcode' => false,
         'manufacturer' => false,
         'manufacturer_id' => false,
+        'vendor_id' => false,
         'categories_ids' => false,
         'related_products_ids' => false,
         'up_sell_products_ids' => false,
@@ -366,7 +373,6 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'personalization_questions' => false,
         'external_product_link' => false,
         'marketplace_item_properties' => false,
-        'min_order_quantity' => false,
         'manufacturer_ids' => false,
         'responsible_person_ids' => false,
         'idempotency_key' => false
@@ -500,6 +506,8 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'increase_quantity' => 'increase_quantity',
         'reduce_quantity' => 'reduce_quantity',
         'low_stock_threshold' => 'low_stock_threshold',
+        'min_order_quantity' => 'min_order_quantity',
+        'max_order_quantity' => 'max_order_quantity',
         'warehouse_id' => 'warehouse_id',
         'weight' => 'weight',
         'weight_unit' => 'weight_unit',
@@ -517,6 +525,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'barcode' => 'barcode',
         'manufacturer' => 'manufacturer',
         'manufacturer_id' => 'manufacturer_id',
+        'vendor_id' => 'vendor_id',
         'categories_ids' => 'categories_ids',
         'related_products_ids' => 'related_products_ids',
         'up_sell_products_ids' => 'up_sell_products_ids',
@@ -552,7 +561,6 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'personalization_questions' => 'personalization_questions',
         'external_product_link' => 'external_product_link',
         'marketplace_item_properties' => 'marketplace_item_properties',
-        'min_order_quantity' => 'min_order_quantity',
         'manufacturer_ids' => 'manufacturer_ids',
         'responsible_person_ids' => 'responsible_person_ids',
         'idempotency_key' => 'idempotency_key'
@@ -606,6 +614,8 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'increase_quantity' => 'setIncreaseQuantity',
         'reduce_quantity' => 'setReduceQuantity',
         'low_stock_threshold' => 'setLowStockThreshold',
+        'min_order_quantity' => 'setMinOrderQuantity',
+        'max_order_quantity' => 'setMaxOrderQuantity',
         'warehouse_id' => 'setWarehouseId',
         'weight' => 'setWeight',
         'weight_unit' => 'setWeightUnit',
@@ -623,6 +633,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'barcode' => 'setBarcode',
         'manufacturer' => 'setManufacturer',
         'manufacturer_id' => 'setManufacturerId',
+        'vendor_id' => 'setVendorId',
         'categories_ids' => 'setCategoriesIds',
         'related_products_ids' => 'setRelatedProductsIds',
         'up_sell_products_ids' => 'setUpSellProductsIds',
@@ -658,7 +669,6 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'personalization_questions' => 'setPersonalizationQuestions',
         'external_product_link' => 'setExternalProductLink',
         'marketplace_item_properties' => 'setMarketplaceItemProperties',
-        'min_order_quantity' => 'setMinOrderQuantity',
         'manufacturer_ids' => 'setManufacturerIds',
         'responsible_person_ids' => 'setResponsiblePersonIds',
         'idempotency_key' => 'setIdempotencyKey'
@@ -712,6 +722,8 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'increase_quantity' => 'getIncreaseQuantity',
         'reduce_quantity' => 'getReduceQuantity',
         'low_stock_threshold' => 'getLowStockThreshold',
+        'min_order_quantity' => 'getMinOrderQuantity',
+        'max_order_quantity' => 'getMaxOrderQuantity',
         'warehouse_id' => 'getWarehouseId',
         'weight' => 'getWeight',
         'weight_unit' => 'getWeightUnit',
@@ -729,6 +741,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'barcode' => 'getBarcode',
         'manufacturer' => 'getManufacturer',
         'manufacturer_id' => 'getManufacturerId',
+        'vendor_id' => 'getVendorId',
         'categories_ids' => 'getCategoriesIds',
         'related_products_ids' => 'getRelatedProductsIds',
         'up_sell_products_ids' => 'getUpSellProductsIds',
@@ -764,7 +777,6 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'personalization_questions' => 'getPersonalizationQuestions',
         'external_product_link' => 'getExternalProductLink',
         'marketplace_item_properties' => 'getMarketplaceItemProperties',
-        'min_order_quantity' => 'getMinOrderQuantity',
         'manufacturer_ids' => 'getManufacturerIds',
         'responsible_person_ids' => 'getResponsiblePersonIds',
         'idempotency_key' => 'getIdempotencyKey'
@@ -869,6 +881,8 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('increase_quantity', $data ?? [], null);
         $this->setIfExists('reduce_quantity', $data ?? [], null);
         $this->setIfExists('low_stock_threshold', $data ?? [], null);
+        $this->setIfExists('min_order_quantity', $data ?? [], null);
+        $this->setIfExists('max_order_quantity', $data ?? [], null);
         $this->setIfExists('warehouse_id', $data ?? [], null);
         $this->setIfExists('weight', $data ?? [], null);
         $this->setIfExists('weight_unit', $data ?? [], null);
@@ -886,6 +900,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('barcode', $data ?? [], null);
         $this->setIfExists('manufacturer', $data ?? [], null);
         $this->setIfExists('manufacturer_id', $data ?? [], null);
+        $this->setIfExists('vendor_id', $data ?? [], null);
         $this->setIfExists('categories_ids', $data ?? [], null);
         $this->setIfExists('related_products_ids', $data ?? [], null);
         $this->setIfExists('up_sell_products_ids', $data ?? [], null);
@@ -921,7 +936,6 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('personalization_questions', $data ?? [], null);
         $this->setIfExists('external_product_link', $data ?? [], null);
         $this->setIfExists('marketplace_item_properties', $data ?? [], null);
-        $this->setIfExists('min_order_quantity', $data ?? [], null);
         $this->setIfExists('manufacturer_ids', $data ?? [], null);
         $this->setIfExists('responsible_person_ids', $data ?? [], null);
         $this->setIfExists('idempotency_key', $data ?? [], null);
@@ -2112,6 +2126,60 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets min_order_quantity
+     *
+     * @return float|null
+     */
+    public function getMinOrderQuantity()
+    {
+        return $this->container['min_order_quantity'];
+    }
+
+    /**
+     * Sets min_order_quantity
+     *
+     * @param float|null $min_order_quantity The minimum quantity an order must contain, to be eligible to purchase this product.
+     *
+     * @return self
+     */
+    public function setMinOrderQuantity($min_order_quantity)
+    {
+        if (is_null($min_order_quantity)) {
+            throw new \InvalidArgumentException('non-nullable min_order_quantity cannot be null');
+        }
+        $this->container['min_order_quantity'] = $min_order_quantity;
+
+        return $this;
+    }
+
+    /**
+     * Gets max_order_quantity
+     *
+     * @return float|null
+     */
+    public function getMaxOrderQuantity()
+    {
+        return $this->container['max_order_quantity'];
+    }
+
+    /**
+     * Sets max_order_quantity
+     *
+     * @param float|null $max_order_quantity The maximum quantity an order can contain when purchasing the product.
+     *
+     * @return self
+     */
+    public function setMaxOrderQuantity($max_order_quantity)
+    {
+        if (is_null($max_order_quantity)) {
+            throw new \InvalidArgumentException('non-nullable max_order_quantity cannot be null');
+        }
+        $this->container['max_order_quantity'] = $max_order_quantity;
+
+        return $this;
+    }
+
+    /**
      * Gets warehouse_id
      *
      * @return string|null
@@ -2566,6 +2634,33 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable manufacturer_id cannot be null');
         }
         $this->container['manufacturer_id'] = $manufacturer_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets vendor_id
+     *
+     * @return string|null
+     */
+    public function getVendorId()
+    {
+        return $this->container['vendor_id'];
+    }
+
+    /**
+     * Sets vendor_id
+     *
+     * @param string|null $vendor_id Vendor Id
+     *
+     * @return self
+     */
+    public function setVendorId($vendor_id)
+    {
+        if (is_null($vendor_id)) {
+            throw new \InvalidArgumentException('non-nullable vendor_id cannot be null');
+        }
+        $this->container['vendor_id'] = $vendor_id;
 
         return $this;
     }
@@ -3518,33 +3613,6 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable marketplace_item_properties cannot be null');
         }
         $this->container['marketplace_item_properties'] = $marketplace_item_properties;
-
-        return $this;
-    }
-
-    /**
-     * Gets min_order_quantity
-     *
-     * @return float|null
-     */
-    public function getMinOrderQuantity()
-    {
-        return $this->container['min_order_quantity'];
-    }
-
-    /**
-     * Sets min_order_quantity
-     *
-     * @param float|null $min_order_quantity The minimum quantity an order must contain, to be eligible to purchase this product.
-     *
-     * @return self
-     */
-    public function setMinOrderQuantity($min_order_quantity)
-    {
-        if (is_null($min_order_quantity)) {
-            throw new \InvalidArgumentException('non-nullable min_order_quantity cannot be null');
-        }
-        $this->container['min_order_quantity'] = $min_order_quantity;
 
         return $this;
     }

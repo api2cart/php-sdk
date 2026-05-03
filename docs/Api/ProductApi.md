@@ -1759,7 +1759,7 @@ try {
 ## `productManufacturerAdd()`
 
 ```php
-productManufacturerAdd($product_id, $manufacturer, $store_id, $meta_title, $meta_keywords, $meta_description, $search_keywords, $image_url, $seo_url, $idempotency_key): \OpenAPI\Client\Model\ProductManufacturerAdd200Response
+productManufacturerAdd($product_id, $manufacturer, $store_id, $description, $meta_title, $meta_keywords, $meta_description, $search_keywords, $image_url, $seo_url, $idempotency_key): \OpenAPI\Client\Model\ProductManufacturerAdd200Response
 ```
 
 product.manufacturer.add
@@ -1793,6 +1793,7 @@ $apiInstance = new OpenAPI\Client\Api\ProductApi(
 $product_id = 10; // string | Defines products specified by product id
 $manufacturer = Samsung; // string | Defines product’s manufacturer's name
 $store_id = 1; // string | Store Id
+$description = Acme Corporation — premium tools brand; // string | Defines manufacturer's description
 $meta_title = category,test; // string | Defines unique meta title for each entity
 $meta_keywords = category,test; // string | Defines unique meta keywords for each entity
 $meta_description = category,test; // string | Defines unique meta description of a entity
@@ -1802,7 +1803,7 @@ $seo_url = some seo url; // string | Defines unique URL for SEO
 $idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->productManufacturerAdd($product_id, $manufacturer, $store_id, $meta_title, $meta_keywords, $meta_description, $search_keywords, $image_url, $seo_url, $idempotency_key);
+    $result = $apiInstance->productManufacturerAdd($product_id, $manufacturer, $store_id, $description, $meta_title, $meta_keywords, $meta_description, $search_keywords, $image_url, $seo_url, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productManufacturerAdd: ', $e->getMessage(), PHP_EOL;
@@ -1816,6 +1817,7 @@ try {
 | **product_id** | **string**| Defines products specified by product id | |
 | **manufacturer** | **string**| Defines product’s manufacturer&#39;s name | |
 | **store_id** | **string**| Store Id | [optional] |
+| **description** | **string**| Defines manufacturer&#39;s description | [optional] |
 | **meta_title** | **string**| Defines unique meta title for each entity | [optional] |
 | **meta_keywords** | **string**| Defines unique meta keywords for each entity | [optional] |
 | **meta_description** | **string**| Defines unique meta description of a entity | [optional] |

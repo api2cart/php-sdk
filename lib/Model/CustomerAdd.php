@@ -1152,7 +1152,7 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets vendor_id
      *
-     * @param string|null $vendor_id Vendor Id
+     * @param string|null $vendor_id Assigns vendor id to the customer
      *
      * @return self
      */

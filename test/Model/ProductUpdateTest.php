@@ -459,6 +459,24 @@ class ProductUpdateTest extends TestCase
     }
 
     /**
+     * Test attribute "min_order_quantity"
+     */
+    public function testPropertyMinOrderQuantity()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "max_order_quantity"
+     */
+    public function testPropertyMaxOrderQuantity()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "warehouse_id"
      */
     public function testPropertyWarehouseId()
@@ -606,6 +624,15 @@ class ProductUpdateTest extends TestCase
      * Test attribute "manufacturer_id"
      */
     public function testPropertyManufacturerId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "vendor_id"
+     */
+    public function testPropertyVendorId()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -921,15 +948,6 @@ class ProductUpdateTest extends TestCase
      * Test attribute "marketplace_item_properties"
      */
     public function testPropertyMarketplaceItemProperties()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "min_order_quantity"
-     */
-    public function testPropertyMinOrderQuantity()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

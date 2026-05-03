@@ -746,7 +746,7 @@ class ProductVariantAdd implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets attributes
      *
-     * @param \OpenAPI\Client\Model\ProductVariantAddAttributesInner[]|null $attributes Defines variant's attributes list
+     * @param \OpenAPI\Client\Model\ProductVariantAddAttributesInner[]|null $attributes Defines variant's attributes list with optional per-option price and weight modifiers
      *
      * @return self
      */

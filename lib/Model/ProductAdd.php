@@ -178,6 +178,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'clear_cache' => 'bool',
         'viewed_count' => 'int',
         'ordered_count' => 'int',
+        'vendor_id' => 'string',
         'shop_section_id' => 'int',
         'return_policy_id' => 'int',
         'personalization_details' => '\OpenAPI\Client\Model\ProductAddPersonalizationDetails',
@@ -315,6 +316,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'clear_cache' => null,
         'viewed_count' => null,
         'ordered_count' => null,
+        'vendor_id' => null,
         'shop_section_id' => null,
         'return_policy_id' => null,
         'personalization_details' => null,
@@ -450,6 +452,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'clear_cache' => false,
         'viewed_count' => false,
         'ordered_count' => false,
+        'vendor_id' => false,
         'shop_section_id' => false,
         'return_policy_id' => false,
         'personalization_details' => false,
@@ -665,6 +668,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'clear_cache' => 'clear_cache',
         'viewed_count' => 'viewed_count',
         'ordered_count' => 'ordered_count',
+        'vendor_id' => 'vendor_id',
         'shop_section_id' => 'shop_section_id',
         'return_policy_id' => 'return_policy_id',
         'personalization_details' => 'personalization_details',
@@ -800,6 +804,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'clear_cache' => 'setClearCache',
         'viewed_count' => 'setViewedCount',
         'ordered_count' => 'setOrderedCount',
+        'vendor_id' => 'setVendorId',
         'shop_section_id' => 'setShopSectionId',
         'return_policy_id' => 'setReturnPolicyId',
         'personalization_details' => 'setPersonalizationDetails',
@@ -935,6 +940,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'clear_cache' => 'getClearCache',
         'viewed_count' => 'getViewedCount',
         'ordered_count' => 'getOrderedCount',
+        'vendor_id' => 'getVendorId',
         'shop_section_id' => 'getShopSectionId',
         'return_policy_id' => 'getReturnPolicyId',
         'personalization_details' => 'getPersonalizationDetails',
@@ -1121,6 +1127,7 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('clear_cache', $data ?? [], true);
         $this->setIfExists('viewed_count', $data ?? [], 0);
         $this->setIfExists('ordered_count', $data ?? [], 0);
+        $this->setIfExists('vendor_id', $data ?? [], null);
         $this->setIfExists('shop_section_id', $data ?? [], null);
         $this->setIfExists('return_policy_id', $data ?? [], null);
         $this->setIfExists('personalization_details', $data ?? [], null);
@@ -4428,6 +4435,33 @@ class ProductAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable ordered_count cannot be null');
         }
         $this->container['ordered_count'] = $ordered_count;
+
+        return $this;
+    }
+
+    /**
+     * Gets vendor_id
+     *
+     * @return string|null
+     */
+    public function getVendorId()
+    {
+        return $this->container['vendor_id'];
+    }
+
+    /**
+     * Sets vendor_id
+     *
+     * @param string|null $vendor_id Vendor Id
+     *
+     * @return self
+     */
+    public function setVendorId($vendor_id)
+    {
+        if (is_null($vendor_id)) {
+            throw new \InvalidArgumentException('non-nullable vendor_id cannot be null');
+        }
+        $this->container['vendor_id'] = $vendor_id;
 
         return $this;
     }

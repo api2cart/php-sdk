@@ -74,6 +74,7 @@ class CustomerUpdateAddressInner implements ModelInterface, ArrayAccess, \JsonSe
         'address_book_tax_id' => 'string',
         'address_book_identification_number' => 'string',
         'address_book_gender' => 'string',
+        'address_book_region' => 'string',
         'address_book_alias' => 'string',
         'address_book_type' => 'string',
         'address_book_default' => 'bool'
@@ -103,6 +104,7 @@ class CustomerUpdateAddressInner implements ModelInterface, ArrayAccess, \JsonSe
         'address_book_tax_id' => null,
         'address_book_identification_number' => null,
         'address_book_gender' => null,
+        'address_book_region' => null,
         'address_book_alias' => null,
         'address_book_type' => null,
         'address_book_default' => null
@@ -130,6 +132,7 @@ class CustomerUpdateAddressInner implements ModelInterface, ArrayAccess, \JsonSe
         'address_book_tax_id' => false,
         'address_book_identification_number' => false,
         'address_book_gender' => false,
+        'address_book_region' => false,
         'address_book_alias' => false,
         'address_book_type' => false,
         'address_book_default' => false
@@ -237,6 +240,7 @@ class CustomerUpdateAddressInner implements ModelInterface, ArrayAccess, \JsonSe
         'address_book_tax_id' => 'address_book_tax_id',
         'address_book_identification_number' => 'address_book_identification_number',
         'address_book_gender' => 'address_book_gender',
+        'address_book_region' => 'address_book_region',
         'address_book_alias' => 'address_book_alias',
         'address_book_type' => 'address_book_type',
         'address_book_default' => 'address_book_default'
@@ -264,6 +268,7 @@ class CustomerUpdateAddressInner implements ModelInterface, ArrayAccess, \JsonSe
         'address_book_tax_id' => 'setAddressBookTaxId',
         'address_book_identification_number' => 'setAddressBookIdentificationNumber',
         'address_book_gender' => 'setAddressBookGender',
+        'address_book_region' => 'setAddressBookRegion',
         'address_book_alias' => 'setAddressBookAlias',
         'address_book_type' => 'setAddressBookType',
         'address_book_default' => 'setAddressBookDefault'
@@ -291,6 +296,7 @@ class CustomerUpdateAddressInner implements ModelInterface, ArrayAccess, \JsonSe
         'address_book_tax_id' => 'getAddressBookTaxId',
         'address_book_identification_number' => 'getAddressBookIdentificationNumber',
         'address_book_gender' => 'getAddressBookGender',
+        'address_book_region' => 'getAddressBookRegion',
         'address_book_alias' => 'getAddressBookAlias',
         'address_book_type' => 'getAddressBookType',
         'address_book_default' => 'getAddressBookDefault'
@@ -369,6 +375,7 @@ class CustomerUpdateAddressInner implements ModelInterface, ArrayAccess, \JsonSe
         $this->setIfExists('address_book_tax_id', $data ?? [], null);
         $this->setIfExists('address_book_identification_number', $data ?? [], null);
         $this->setIfExists('address_book_gender', $data ?? [], null);
+        $this->setIfExists('address_book_region', $data ?? [], null);
         $this->setIfExists('address_book_alias', $data ?? [], null);
         $this->setIfExists('address_book_type', $data ?? [], null);
         $this->setIfExists('address_book_default', $data ?? [], null);
@@ -844,6 +851,33 @@ class CustomerUpdateAddressInner implements ModelInterface, ArrayAccess, \JsonSe
             throw new \InvalidArgumentException('non-nullable address_book_gender cannot be null');
         }
         $this->container['address_book_gender'] = $address_book_gender;
+
+        return $this;
+    }
+
+    /**
+     * Gets address_book_region
+     *
+     * @return string|null
+     */
+    public function getAddressBookRegion()
+    {
+        return $this->container['address_book_region'];
+    }
+
+    /**
+     * Sets address_book_region
+     *
+     * @param string|null $address_book_region Specifies customer's region
+     *
+     * @return self
+     */
+    public function setAddressBookRegion($address_book_region)
+    {
+        if (is_null($address_book_region)) {
+            throw new \InvalidArgumentException('non-nullable address_book_region cannot be null');
+        }
+        $this->container['address_book_region'] = $address_book_region;
 
         return $this;
     }

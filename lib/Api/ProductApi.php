@@ -9353,6 +9353,7 @@ class ProductApi
      * @param  string $product_id Defines products specified by product id (required)
      * @param  string $manufacturer Defines product’s manufacturer&#39;s name (required)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $description Defines manufacturer&#39;s description (optional)
      * @param  string|null $meta_title Defines unique meta title for each entity (optional)
      * @param  string|null $meta_keywords Defines unique meta keywords for each entity (optional)
      * @param  string|null $meta_description Defines unique meta description of a entity (optional)
@@ -9366,9 +9367,9 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ProductManufacturerAdd200Response
      */
-    public function productManufacturerAdd($product_id, $manufacturer, $store_id = null, $meta_title = null, $meta_keywords = null, $meta_description = null, $search_keywords = null, $image_url = null, $seo_url = null, $idempotency_key = null, string $contentType = self::contentTypes['productManufacturerAdd'][0])
+    public function productManufacturerAdd($product_id, $manufacturer, $store_id = null, $description = null, $meta_title = null, $meta_keywords = null, $meta_description = null, $search_keywords = null, $image_url = null, $seo_url = null, $idempotency_key = null, string $contentType = self::contentTypes['productManufacturerAdd'][0])
     {
-        list($response) = $this->productManufacturerAddWithHttpInfo($product_id, $manufacturer, $store_id, $meta_title, $meta_keywords, $meta_description, $search_keywords, $image_url, $seo_url, $idempotency_key, $contentType);
+        list($response) = $this->productManufacturerAddWithHttpInfo($product_id, $manufacturer, $store_id, $description, $meta_title, $meta_keywords, $meta_description, $search_keywords, $image_url, $seo_url, $idempotency_key, $contentType);
         return $response;
     }
 
@@ -9380,6 +9381,7 @@ class ProductApi
      * @param  string $product_id Defines products specified by product id (required)
      * @param  string $manufacturer Defines product’s manufacturer&#39;s name (required)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $description Defines manufacturer&#39;s description (optional)
      * @param  string|null $meta_title Defines unique meta title for each entity (optional)
      * @param  string|null $meta_keywords Defines unique meta keywords for each entity (optional)
      * @param  string|null $meta_description Defines unique meta description of a entity (optional)
@@ -9393,9 +9395,9 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ProductManufacturerAdd200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productManufacturerAddWithHttpInfo($product_id, $manufacturer, $store_id = null, $meta_title = null, $meta_keywords = null, $meta_description = null, $search_keywords = null, $image_url = null, $seo_url = null, $idempotency_key = null, string $contentType = self::contentTypes['productManufacturerAdd'][0])
+    public function productManufacturerAddWithHttpInfo($product_id, $manufacturer, $store_id = null, $description = null, $meta_title = null, $meta_keywords = null, $meta_description = null, $search_keywords = null, $image_url = null, $seo_url = null, $idempotency_key = null, string $contentType = self::contentTypes['productManufacturerAdd'][0])
     {
-        $request = $this->productManufacturerAddRequest($product_id, $manufacturer, $store_id, $meta_title, $meta_keywords, $meta_description, $search_keywords, $image_url, $seo_url, $idempotency_key, $contentType);
+        $request = $this->productManufacturerAddRequest($product_id, $manufacturer, $store_id, $description, $meta_title, $meta_keywords, $meta_description, $search_keywords, $image_url, $seo_url, $idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -9514,6 +9516,7 @@ class ProductApi
      * @param  string $product_id Defines products specified by product id (required)
      * @param  string $manufacturer Defines product’s manufacturer&#39;s name (required)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $description Defines manufacturer&#39;s description (optional)
      * @param  string|null $meta_title Defines unique meta title for each entity (optional)
      * @param  string|null $meta_keywords Defines unique meta keywords for each entity (optional)
      * @param  string|null $meta_description Defines unique meta description of a entity (optional)
@@ -9526,9 +9529,9 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productManufacturerAddAsync($product_id, $manufacturer, $store_id = null, $meta_title = null, $meta_keywords = null, $meta_description = null, $search_keywords = null, $image_url = null, $seo_url = null, $idempotency_key = null, string $contentType = self::contentTypes['productManufacturerAdd'][0])
+    public function productManufacturerAddAsync($product_id, $manufacturer, $store_id = null, $description = null, $meta_title = null, $meta_keywords = null, $meta_description = null, $search_keywords = null, $image_url = null, $seo_url = null, $idempotency_key = null, string $contentType = self::contentTypes['productManufacturerAdd'][0])
     {
-        return $this->productManufacturerAddAsyncWithHttpInfo($product_id, $manufacturer, $store_id, $meta_title, $meta_keywords, $meta_description, $search_keywords, $image_url, $seo_url, $idempotency_key, $contentType)
+        return $this->productManufacturerAddAsyncWithHttpInfo($product_id, $manufacturer, $store_id, $description, $meta_title, $meta_keywords, $meta_description, $search_keywords, $image_url, $seo_url, $idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -9544,6 +9547,7 @@ class ProductApi
      * @param  string $product_id Defines products specified by product id (required)
      * @param  string $manufacturer Defines product’s manufacturer&#39;s name (required)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $description Defines manufacturer&#39;s description (optional)
      * @param  string|null $meta_title Defines unique meta title for each entity (optional)
      * @param  string|null $meta_keywords Defines unique meta keywords for each entity (optional)
      * @param  string|null $meta_description Defines unique meta description of a entity (optional)
@@ -9556,10 +9560,10 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productManufacturerAddAsyncWithHttpInfo($product_id, $manufacturer, $store_id = null, $meta_title = null, $meta_keywords = null, $meta_description = null, $search_keywords = null, $image_url = null, $seo_url = null, $idempotency_key = null, string $contentType = self::contentTypes['productManufacturerAdd'][0])
+    public function productManufacturerAddAsyncWithHttpInfo($product_id, $manufacturer, $store_id = null, $description = null, $meta_title = null, $meta_keywords = null, $meta_description = null, $search_keywords = null, $image_url = null, $seo_url = null, $idempotency_key = null, string $contentType = self::contentTypes['productManufacturerAdd'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ProductManufacturerAdd200Response';
-        $request = $this->productManufacturerAddRequest($product_id, $manufacturer, $store_id, $meta_title, $meta_keywords, $meta_description, $search_keywords, $image_url, $seo_url, $idempotency_key, $contentType);
+        $request = $this->productManufacturerAddRequest($product_id, $manufacturer, $store_id, $description, $meta_title, $meta_keywords, $meta_description, $search_keywords, $image_url, $seo_url, $idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -9603,6 +9607,7 @@ class ProductApi
      * @param  string $product_id Defines products specified by product id (required)
      * @param  string $manufacturer Defines product’s manufacturer&#39;s name (required)
      * @param  string|null $store_id Store Id (optional)
+     * @param  string|null $description Defines manufacturer&#39;s description (optional)
      * @param  string|null $meta_title Defines unique meta title for each entity (optional)
      * @param  string|null $meta_keywords Defines unique meta keywords for each entity (optional)
      * @param  string|null $meta_description Defines unique meta description of a entity (optional)
@@ -9615,7 +9620,7 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function productManufacturerAddRequest($product_id, $manufacturer, $store_id = null, $meta_title = null, $meta_keywords = null, $meta_description = null, $search_keywords = null, $image_url = null, $seo_url = null, $idempotency_key = null, string $contentType = self::contentTypes['productManufacturerAdd'][0])
+    public function productManufacturerAddRequest($product_id, $manufacturer, $store_id = null, $description = null, $meta_title = null, $meta_keywords = null, $meta_description = null, $search_keywords = null, $image_url = null, $seo_url = null, $idempotency_key = null, string $contentType = self::contentTypes['productManufacturerAdd'][0])
     {
 
         // verify the required parameter 'product_id' is set
@@ -9631,6 +9636,7 @@ class ProductApi
                 'Missing the required parameter $manufacturer when calling productManufacturerAdd'
             );
         }
+
 
 
 
@@ -9670,6 +9676,15 @@ class ProductApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $store_id,
             'store_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $description,
+            'description', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

@@ -106,4 +106,13 @@ class ProductVariantAddAttributesInnerTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "attribute_weight"
+     */
+    public function testPropertyAttributeWeight()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

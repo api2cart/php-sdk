@@ -3477,6 +3477,7 @@ class AttributeApi
      *
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $attribute_ids Filter attributes by ids (optional)
      * @param  string|null $attribute_set_id Filter items by attribute set id (optional)
      * @param  string|null $store_id Store Id (optional)
@@ -3494,9 +3495,9 @@ class AttributeApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseAttributeList
      */
-    public function attributeList($start = 0, $count = 10, $attribute_ids = null, $attribute_set_id = null, $store_id = null, $lang_id = null, $type = null, $visible = null, $required = null, $system = null, $response_fields = null, $params = 'id,name,code,type', $exclude = null, string $contentType = self::contentTypes['attributeList'][0])
+    public function attributeList($start = 0, $count = 10, $page_cursor = null, $attribute_ids = null, $attribute_set_id = null, $store_id = null, $lang_id = null, $type = null, $visible = null, $required = null, $system = null, $response_fields = null, $params = 'id,name,code,type', $exclude = null, string $contentType = self::contentTypes['attributeList'][0])
     {
-        list($response) = $this->attributeListWithHttpInfo($start, $count, $attribute_ids, $attribute_set_id, $store_id, $lang_id, $type, $visible, $required, $system, $response_fields, $params, $exclude, $contentType);
+        list($response) = $this->attributeListWithHttpInfo($start, $count, $page_cursor, $attribute_ids, $attribute_set_id, $store_id, $lang_id, $type, $visible, $required, $system, $response_fields, $params, $exclude, $contentType);
         return $response;
     }
 
@@ -3507,6 +3508,7 @@ class AttributeApi
      *
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $attribute_ids Filter attributes by ids (optional)
      * @param  string|null $attribute_set_id Filter items by attribute set id (optional)
      * @param  string|null $store_id Store Id (optional)
@@ -3524,9 +3526,9 @@ class AttributeApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseAttributeList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function attributeListWithHttpInfo($start = 0, $count = 10, $attribute_ids = null, $attribute_set_id = null, $store_id = null, $lang_id = null, $type = null, $visible = null, $required = null, $system = null, $response_fields = null, $params = 'id,name,code,type', $exclude = null, string $contentType = self::contentTypes['attributeList'][0])
+    public function attributeListWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $attribute_ids = null, $attribute_set_id = null, $store_id = null, $lang_id = null, $type = null, $visible = null, $required = null, $system = null, $response_fields = null, $params = 'id,name,code,type', $exclude = null, string $contentType = self::contentTypes['attributeList'][0])
     {
-        $request = $this->attributeListRequest($start, $count, $attribute_ids, $attribute_set_id, $store_id, $lang_id, $type, $visible, $required, $system, $response_fields, $params, $exclude, $contentType);
+        $request = $this->attributeListRequest($start, $count, $page_cursor, $attribute_ids, $attribute_set_id, $store_id, $lang_id, $type, $visible, $required, $system, $response_fields, $params, $exclude, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3644,6 +3646,7 @@ class AttributeApi
      *
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $attribute_ids Filter attributes by ids (optional)
      * @param  string|null $attribute_set_id Filter items by attribute set id (optional)
      * @param  string|null $store_id Store Id (optional)
@@ -3660,9 +3663,9 @@ class AttributeApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function attributeListAsync($start = 0, $count = 10, $attribute_ids = null, $attribute_set_id = null, $store_id = null, $lang_id = null, $type = null, $visible = null, $required = null, $system = null, $response_fields = null, $params = 'id,name,code,type', $exclude = null, string $contentType = self::contentTypes['attributeList'][0])
+    public function attributeListAsync($start = 0, $count = 10, $page_cursor = null, $attribute_ids = null, $attribute_set_id = null, $store_id = null, $lang_id = null, $type = null, $visible = null, $required = null, $system = null, $response_fields = null, $params = 'id,name,code,type', $exclude = null, string $contentType = self::contentTypes['attributeList'][0])
     {
-        return $this->attributeListAsyncWithHttpInfo($start, $count, $attribute_ids, $attribute_set_id, $store_id, $lang_id, $type, $visible, $required, $system, $response_fields, $params, $exclude, $contentType)
+        return $this->attributeListAsyncWithHttpInfo($start, $count, $page_cursor, $attribute_ids, $attribute_set_id, $store_id, $lang_id, $type, $visible, $required, $system, $response_fields, $params, $exclude, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3677,6 +3680,7 @@ class AttributeApi
      *
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $attribute_ids Filter attributes by ids (optional)
      * @param  string|null $attribute_set_id Filter items by attribute set id (optional)
      * @param  string|null $store_id Store Id (optional)
@@ -3693,10 +3697,10 @@ class AttributeApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function attributeListAsyncWithHttpInfo($start = 0, $count = 10, $attribute_ids = null, $attribute_set_id = null, $store_id = null, $lang_id = null, $type = null, $visible = null, $required = null, $system = null, $response_fields = null, $params = 'id,name,code,type', $exclude = null, string $contentType = self::contentTypes['attributeList'][0])
+    public function attributeListAsyncWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $attribute_ids = null, $attribute_set_id = null, $store_id = null, $lang_id = null, $type = null, $visible = null, $required = null, $system = null, $response_fields = null, $params = 'id,name,code,type', $exclude = null, string $contentType = self::contentTypes['attributeList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseAttributeList';
-        $request = $this->attributeListRequest($start, $count, $attribute_ids, $attribute_set_id, $store_id, $lang_id, $type, $visible, $required, $system, $response_fields, $params, $exclude, $contentType);
+        $request = $this->attributeListRequest($start, $count, $page_cursor, $attribute_ids, $attribute_set_id, $store_id, $lang_id, $type, $visible, $required, $system, $response_fields, $params, $exclude, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3739,6 +3743,7 @@ class AttributeApi
      *
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  string|null $attribute_ids Filter attributes by ids (optional)
      * @param  string|null $attribute_set_id Filter items by attribute set id (optional)
      * @param  string|null $store_id Store Id (optional)
@@ -3755,8 +3760,9 @@ class AttributeApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function attributeListRequest($start = 0, $count = 10, $attribute_ids = null, $attribute_set_id = null, $store_id = null, $lang_id = null, $type = null, $visible = null, $required = null, $system = null, $response_fields = null, $params = 'id,name,code,type', $exclude = null, string $contentType = self::contentTypes['attributeList'][0])
+    public function attributeListRequest($start = 0, $count = 10, $page_cursor = null, $attribute_ids = null, $attribute_set_id = null, $store_id = null, $lang_id = null, $type = null, $visible = null, $required = null, $system = null, $response_fields = null, $params = 'id,name,code,type', $exclude = null, string $contentType = self::contentTypes['attributeList'][0])
     {
+
 
 
 
@@ -3793,6 +3799,15 @@ class AttributeApi
             $count,
             'count', // param base name
             'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_cursor,
+            'page_cursor', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -4977,7 +4992,9 @@ class AttributeApi
      * attribute.update
      *
      * @param  string $id Entity id (required)
-     * @param  string $name Defines new attributes&#39;s name (required)
+     * @param  string|null $name Defines new attributes&#39;s name (optional)
+     * @param  bool|null $visible Set visibility status (optional)
+     * @param  int|null $position Attribute&#x60;s position (optional, default to 0)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
@@ -4987,9 +5004,9 @@ class AttributeApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\AttributeUpdate200Response
      */
-    public function attributeUpdate($id, $name, $store_id = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['attributeUpdate'][0])
+    public function attributeUpdate($id, $name = null, $visible = null, $position = 0, $store_id = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['attributeUpdate'][0])
     {
-        list($response) = $this->attributeUpdateWithHttpInfo($id, $name, $store_id, $lang_id, $idempotency_key, $contentType);
+        list($response) = $this->attributeUpdateWithHttpInfo($id, $name, $visible, $position, $store_id, $lang_id, $idempotency_key, $contentType);
         return $response;
     }
 
@@ -4999,7 +5016,9 @@ class AttributeApi
      * attribute.update
      *
      * @param  string $id Entity id (required)
-     * @param  string $name Defines new attributes&#39;s name (required)
+     * @param  string|null $name Defines new attributes&#39;s name (optional)
+     * @param  bool|null $visible Set visibility status (optional)
+     * @param  int|null $position Attribute&#x60;s position (optional, default to 0)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
@@ -5009,9 +5028,9 @@ class AttributeApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\AttributeUpdate200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function attributeUpdateWithHttpInfo($id, $name, $store_id = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['attributeUpdate'][0])
+    public function attributeUpdateWithHttpInfo($id, $name = null, $visible = null, $position = 0, $store_id = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['attributeUpdate'][0])
     {
-        $request = $this->attributeUpdateRequest($id, $name, $store_id, $lang_id, $idempotency_key, $contentType);
+        $request = $this->attributeUpdateRequest($id, $name, $visible, $position, $store_id, $lang_id, $idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5128,7 +5147,9 @@ class AttributeApi
      * attribute.update
      *
      * @param  string $id Entity id (required)
-     * @param  string $name Defines new attributes&#39;s name (required)
+     * @param  string|null $name Defines new attributes&#39;s name (optional)
+     * @param  bool|null $visible Set visibility status (optional)
+     * @param  int|null $position Attribute&#x60;s position (optional, default to 0)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
@@ -5137,9 +5158,9 @@ class AttributeApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function attributeUpdateAsync($id, $name, $store_id = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['attributeUpdate'][0])
+    public function attributeUpdateAsync($id, $name = null, $visible = null, $position = 0, $store_id = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['attributeUpdate'][0])
     {
-        return $this->attributeUpdateAsyncWithHttpInfo($id, $name, $store_id, $lang_id, $idempotency_key, $contentType)
+        return $this->attributeUpdateAsyncWithHttpInfo($id, $name, $visible, $position, $store_id, $lang_id, $idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5153,7 +5174,9 @@ class AttributeApi
      * attribute.update
      *
      * @param  string $id Entity id (required)
-     * @param  string $name Defines new attributes&#39;s name (required)
+     * @param  string|null $name Defines new attributes&#39;s name (optional)
+     * @param  bool|null $visible Set visibility status (optional)
+     * @param  int|null $position Attribute&#x60;s position (optional, default to 0)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
@@ -5162,10 +5185,10 @@ class AttributeApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function attributeUpdateAsyncWithHttpInfo($id, $name, $store_id = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['attributeUpdate'][0])
+    public function attributeUpdateAsyncWithHttpInfo($id, $name = null, $visible = null, $position = 0, $store_id = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['attributeUpdate'][0])
     {
         $returnType = '\OpenAPI\Client\Model\AttributeUpdate200Response';
-        $request = $this->attributeUpdateRequest($id, $name, $store_id, $lang_id, $idempotency_key, $contentType);
+        $request = $this->attributeUpdateRequest($id, $name, $visible, $position, $store_id, $lang_id, $idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5207,7 +5230,9 @@ class AttributeApi
      * Create request for operation 'attributeUpdate'
      *
      * @param  string $id Entity id (required)
-     * @param  string $name Defines new attributes&#39;s name (required)
+     * @param  string|null $name Defines new attributes&#39;s name (optional)
+     * @param  bool|null $visible Set visibility status (optional)
+     * @param  int|null $position Attribute&#x60;s position (optional, default to 0)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
@@ -5216,7 +5241,7 @@ class AttributeApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function attributeUpdateRequest($id, $name, $store_id = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['attributeUpdate'][0])
+    public function attributeUpdateRequest($id, $name = null, $visible = null, $position = 0, $store_id = null, $lang_id = null, $idempotency_key = null, string $contentType = self::contentTypes['attributeUpdate'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -5226,12 +5251,8 @@ class AttributeApi
             );
         }
 
-        // verify the required parameter 'name' is set
-        if ($name === null || (is_array($name) && count($name) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $name when calling attributeUpdate'
-            );
-        }
+
+
 
 
 
@@ -5260,7 +5281,25 @@ class AttributeApi
             'string', // openApiType
             'form', // style
             true, // explode
-            true // required
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $visible,
+            'visible', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $position,
+            'position', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(

@@ -225,6 +225,15 @@ class CustomerUpdateAddressInnerTest extends TestCase
     }
 
     /**
+     * Test attribute "address_book_region"
+     */
+    public function testPropertyAddressBookRegion()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "address_book_alias"
      */
     public function testPropertyAddressBookAlias()

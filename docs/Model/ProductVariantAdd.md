@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **product_id** | **string** | Defines product&#39;s id where the variant has to be added | [optional]
-**attributes** | [**\OpenAPI\Client\Model\ProductVariantAddAttributesInner[]**](ProductVariantAddAttributesInner.md) | Defines variant&#39;s attributes list | [optional]
+**attributes** | [**\OpenAPI\Client\Model\ProductVariantAddAttributesInner[]**](ProductVariantAddAttributesInner.md) | Defines variant&#39;s attributes list with optional per-option price and weight modifiers | [optional]
 **name** | **string** | Defines variant&#39;s name that has to be added | [optional]
 **model** | **string** | Specifies variant&#39;s model that has to be added |
 **description** | **string** | Specifies variant&#39;s description | [optional]

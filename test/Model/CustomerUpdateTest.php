@@ -234,6 +234,42 @@ class CustomerUpdateTest extends TestCase
     }
 
     /**
+     * Test attribute "company"
+     */
+    public function testPropertyCompany()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "country"
+     */
+    public function testPropertyCountry()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "fax"
+     */
+    public function testPropertyFax()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "tax_id"
+     */
+    public function testPropertyTaxId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "is_tax_exempt"
      */
     public function testPropertyIsTaxExempt()

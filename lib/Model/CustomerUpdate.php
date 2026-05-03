@@ -75,6 +75,10 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'status' => 'string',
         'password' => 'string',
         'currency_id' => 'string',
+        'company' => 'string',
+        'country' => 'string',
+        'fax' => 'string',
+        'tax_id' => 'string',
         'is_tax_exempt' => 'bool',
         'vendor_id' => 'string',
         'store_id' => 'string',
@@ -107,6 +111,10 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'status' => null,
         'password' => null,
         'currency_id' => null,
+        'company' => null,
+        'country' => null,
+        'fax' => null,
+        'tax_id' => null,
         'is_tax_exempt' => null,
         'vendor_id' => null,
         'store_id' => null,
@@ -137,6 +145,10 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'status' => false,
         'password' => false,
         'currency_id' => false,
+        'company' => false,
+        'country' => false,
+        'fax' => false,
+        'tax_id' => false,
         'is_tax_exempt' => false,
         'vendor_id' => false,
         'store_id' => false,
@@ -247,6 +259,10 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'status' => 'status',
         'password' => 'password',
         'currency_id' => 'currency_id',
+        'company' => 'company',
+        'country' => 'country',
+        'fax' => 'fax',
+        'tax_id' => 'tax_id',
         'is_tax_exempt' => 'is_tax_exempt',
         'vendor_id' => 'vendor_id',
         'store_id' => 'store_id',
@@ -277,6 +293,10 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'status' => 'setStatus',
         'password' => 'setPassword',
         'currency_id' => 'setCurrencyId',
+        'company' => 'setCompany',
+        'country' => 'setCountry',
+        'fax' => 'setFax',
+        'tax_id' => 'setTaxId',
         'is_tax_exempt' => 'setIsTaxExempt',
         'vendor_id' => 'setVendorId',
         'store_id' => 'setStoreId',
@@ -307,6 +327,10 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'status' => 'getStatus',
         'password' => 'getPassword',
         'currency_id' => 'getCurrencyId',
+        'company' => 'getCompany',
+        'country' => 'getCountry',
+        'fax' => 'getFax',
+        'tax_id' => 'getTaxId',
         'is_tax_exempt' => 'getIsTaxExempt',
         'vendor_id' => 'getVendorId',
         'store_id' => 'getStoreId',
@@ -388,6 +412,10 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('password', $data ?? [], null);
         $this->setIfExists('currency_id', $data ?? [], null);
+        $this->setIfExists('company', $data ?? [], null);
+        $this->setIfExists('country', $data ?? [], null);
+        $this->setIfExists('fax', $data ?? [], null);
+        $this->setIfExists('tax_id', $data ?? [], null);
         $this->setIfExists('is_tax_exempt', $data ?? [], null);
         $this->setIfExists('vendor_id', $data ?? [], null);
         $this->setIfExists('store_id', $data ?? [], null);
@@ -906,6 +934,114 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets company
+     *
+     * @return string|null
+     */
+    public function getCompany()
+    {
+        return $this->container['company'];
+    }
+
+    /**
+     * Sets company
+     *
+     * @param string|null $company Defines customer's company
+     *
+     * @return self
+     */
+    public function setCompany($company)
+    {
+        if (is_null($company)) {
+            throw new \InvalidArgumentException('non-nullable company cannot be null');
+        }
+        $this->container['company'] = $company;
+
+        return $this;
+    }
+
+    /**
+     * Gets country
+     *
+     * @return string|null
+     */
+    public function getCountry()
+    {
+        return $this->container['country'];
+    }
+
+    /**
+     * Sets country
+     *
+     * @param string|null $country Specifies ISO code or name of country
+     *
+     * @return self
+     */
+    public function setCountry($country)
+    {
+        if (is_null($country)) {
+            throw new \InvalidArgumentException('non-nullable country cannot be null');
+        }
+        $this->container['country'] = $country;
+
+        return $this;
+    }
+
+    /**
+     * Gets fax
+     *
+     * @return string|null
+     */
+    public function getFax()
+    {
+        return $this->container['fax'];
+    }
+
+    /**
+     * Sets fax
+     *
+     * @param string|null $fax Defines customer's fax
+     *
+     * @return self
+     */
+    public function setFax($fax)
+    {
+        if (is_null($fax)) {
+            throw new \InvalidArgumentException('non-nullable fax cannot be null');
+        }
+        $this->container['fax'] = $fax;
+
+        return $this;
+    }
+
+    /**
+     * Gets tax_id
+     *
+     * @return string|null
+     */
+    public function getTaxId()
+    {
+        return $this->container['tax_id'];
+    }
+
+    /**
+     * Sets tax_id
+     *
+     * @param string|null $tax_id Add Tax Id
+     *
+     * @return self
+     */
+    public function setTaxId($tax_id)
+    {
+        if (is_null($tax_id)) {
+            throw new \InvalidArgumentException('non-nullable tax_id cannot be null');
+        }
+        $this->container['tax_id'] = $tax_id;
+
+        return $this;
+    }
+
+    /**
      * Gets is_tax_exempt
      *
      * @return bool|null
@@ -945,7 +1081,7 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets vendor_id
      *
-     * @param string|null $vendor_id Vendor Id
+     * @param string|null $vendor_id Updates vendor id of the customer
      *
      * @return self
      */

@@ -1161,6 +1161,15 @@ class ProductAddTest extends TestCase
     }
 
     /**
+     * Test attribute "vendor_id"
+     */
+    public function testPropertyVendorId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "shop_section_id"
      */
     public function testPropertyShopSectionId()
