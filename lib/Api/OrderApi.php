@@ -120,6 +120,12 @@ class OrderApi
         'orderShipmentDelete' => [
             'application/json',
         ],
+        'orderShipmentEventAdd' => [
+            'application/json',
+        ],
+        'orderShipmentEventList' => [
+            'application/json',
+        ],
         'orderShipmentInfo' => [
             'application/json',
         ],
@@ -6552,6 +6558,732 @@ class OrderApi
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'DELETE',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation orderShipmentEventAdd
+     *
+     * order.shipment.event.add
+     *
+     * @param  \OpenAPI\Client\Model\OrderShipmentEventAdd $order_shipment_event_add order_shipment_event_add (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderShipmentEventAdd'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\AttributeAdd200Response
+     */
+    public function orderShipmentEventAdd($order_shipment_event_add, string $contentType = self::contentTypes['orderShipmentEventAdd'][0])
+    {
+        list($response) = $this->orderShipmentEventAddWithHttpInfo($order_shipment_event_add, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation orderShipmentEventAddWithHttpInfo
+     *
+     * order.shipment.event.add
+     *
+     * @param  \OpenAPI\Client\Model\OrderShipmentEventAdd $order_shipment_event_add (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderShipmentEventAdd'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\AttributeAdd200Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function orderShipmentEventAddWithHttpInfo($order_shipment_event_add, string $contentType = self::contentTypes['orderShipmentEventAdd'][0])
+    {
+        $request = $this->orderShipmentEventAddRequest($order_shipment_event_add, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\OpenAPI\Client\Model\AttributeAdd200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\AttributeAdd200Response' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AttributeAdd200Response', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\OpenAPI\Client\Model\AttributeAdd200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\AttributeAdd200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation orderShipmentEventAddAsync
+     *
+     * order.shipment.event.add
+     *
+     * @param  \OpenAPI\Client\Model\OrderShipmentEventAdd $order_shipment_event_add (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderShipmentEventAdd'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function orderShipmentEventAddAsync($order_shipment_event_add, string $contentType = self::contentTypes['orderShipmentEventAdd'][0])
+    {
+        return $this->orderShipmentEventAddAsyncWithHttpInfo($order_shipment_event_add, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation orderShipmentEventAddAsyncWithHttpInfo
+     *
+     * order.shipment.event.add
+     *
+     * @param  \OpenAPI\Client\Model\OrderShipmentEventAdd $order_shipment_event_add (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderShipmentEventAdd'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function orderShipmentEventAddAsyncWithHttpInfo($order_shipment_event_add, string $contentType = self::contentTypes['orderShipmentEventAdd'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\AttributeAdd200Response';
+        $request = $this->orderShipmentEventAddRequest($order_shipment_event_add, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'orderShipmentEventAdd'
+     *
+     * @param  \OpenAPI\Client\Model\OrderShipmentEventAdd $order_shipment_event_add (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderShipmentEventAdd'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function orderShipmentEventAddRequest($order_shipment_event_add, string $contentType = self::contentTypes['orderShipmentEventAdd'][0])
+    {
+
+        // verify the required parameter 'order_shipment_event_add' is set
+        if ($order_shipment_event_add === null || (is_array($order_shipment_event_add) && count($order_shipment_event_add) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $order_shipment_event_add when calling orderShipmentEventAdd'
+            );
+        }
+
+
+        $resourcePath = '/order.shipment.event.add.json';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($order_shipment_event_add)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($order_shipment_event_add));
+            } else {
+                $httpBody = $order_shipment_event_add;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-store-key');
+        if ($apiKey !== null) {
+            $headers['x-store-key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation orderShipmentEventList
+     *
+     * order.shipment.event.list
+     *
+     * @param  string $shipment_id Defines the shipment for which tracking events will be retrieved (required)
+     * @param  string|null $order_id Defines the order to which the shipment belongs (optional)
+     * @param  string|null $store_id Store Id (optional)
+     * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
+     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderShipmentEventList'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\ModelResponseOrderShipmentEventList
+     */
+    public function orderShipmentEventList($shipment_id, $order_id = null, $store_id = null, $start = 0, $count = 10, $page_cursor = null, $response_fields = null, string $contentType = self::contentTypes['orderShipmentEventList'][0])
+    {
+        list($response) = $this->orderShipmentEventListWithHttpInfo($shipment_id, $order_id, $store_id, $start, $count, $page_cursor, $response_fields, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation orderShipmentEventListWithHttpInfo
+     *
+     * order.shipment.event.list
+     *
+     * @param  string $shipment_id Defines the shipment for which tracking events will be retrieved (required)
+     * @param  string|null $order_id Defines the order to which the shipment belongs (optional)
+     * @param  string|null $store_id Store Id (optional)
+     * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
+     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderShipmentEventList'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\ModelResponseOrderShipmentEventList, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function orderShipmentEventListWithHttpInfo($shipment_id, $order_id = null, $store_id = null, $start = 0, $count = 10, $page_cursor = null, $response_fields = null, string $contentType = self::contentTypes['orderShipmentEventList'][0])
+    {
+        $request = $this->orderShipmentEventListRequest($shipment_id, $order_id, $store_id, $start, $count, $page_cursor, $response_fields, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    if ('\OpenAPI\Client\Model\ModelResponseOrderShipmentEventList' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\ModelResponseOrderShipmentEventList' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ModelResponseOrderShipmentEventList', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            $returnType = '\OpenAPI\Client\Model\ModelResponseOrderShipmentEventList';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\ModelResponseOrderShipmentEventList',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation orderShipmentEventListAsync
+     *
+     * order.shipment.event.list
+     *
+     * @param  string $shipment_id Defines the shipment for which tracking events will be retrieved (required)
+     * @param  string|null $order_id Defines the order to which the shipment belongs (optional)
+     * @param  string|null $store_id Store Id (optional)
+     * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
+     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderShipmentEventList'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function orderShipmentEventListAsync($shipment_id, $order_id = null, $store_id = null, $start = 0, $count = 10, $page_cursor = null, $response_fields = null, string $contentType = self::contentTypes['orderShipmentEventList'][0])
+    {
+        return $this->orderShipmentEventListAsyncWithHttpInfo($shipment_id, $order_id, $store_id, $start, $count, $page_cursor, $response_fields, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation orderShipmentEventListAsyncWithHttpInfo
+     *
+     * order.shipment.event.list
+     *
+     * @param  string $shipment_id Defines the shipment for which tracking events will be retrieved (required)
+     * @param  string|null $order_id Defines the order to which the shipment belongs (optional)
+     * @param  string|null $store_id Store Id (optional)
+     * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
+     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderShipmentEventList'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function orderShipmentEventListAsyncWithHttpInfo($shipment_id, $order_id = null, $store_id = null, $start = 0, $count = 10, $page_cursor = null, $response_fields = null, string $contentType = self::contentTypes['orderShipmentEventList'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\ModelResponseOrderShipmentEventList';
+        $request = $this->orderShipmentEventListRequest($shipment_id, $order_id, $store_id, $start, $count, $page_cursor, $response_fields, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'orderShipmentEventList'
+     *
+     * @param  string $shipment_id Defines the shipment for which tracking events will be retrieved (required)
+     * @param  string|null $order_id Defines the order to which the shipment belongs (optional)
+     * @param  string|null $store_id Store Id (optional)
+     * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
+     * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['orderShipmentEventList'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function orderShipmentEventListRequest($shipment_id, $order_id = null, $store_id = null, $start = 0, $count = 10, $page_cursor = null, $response_fields = null, string $contentType = self::contentTypes['orderShipmentEventList'][0])
+    {
+
+        // verify the required parameter 'shipment_id' is set
+        if ($shipment_id === null || (is_array($shipment_id) && count($shipment_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $shipment_id when calling orderShipmentEventList'
+            );
+        }
+
+
+
+
+
+
+
+
+        $resourcePath = '/order.shipment.event.list.json';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $shipment_id,
+            'shipment_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            true // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $order_id,
+            'order_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $store_id,
+            'store_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $start,
+            'start', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $count,
+            'count', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page_cursor,
+            'page_cursor', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $response_fields,
+            'response_fields', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-store-key');
+        if ($apiKey !== null) {
+            $headers['x-store-key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

@@ -187,6 +187,7 @@ docs/Model/ModelResponseMarketplaceProductFind.md
 docs/Model/ModelResponseOrderAbandonedList.md
 docs/Model/ModelResponseOrderList.md
 docs/Model/ModelResponseOrderPreestimateShippingList.md
+docs/Model/ModelResponseOrderShipmentEventList.md
 docs/Model/ModelResponseOrderShipmentList.md
 docs/Model/ModelResponseOrderStatusList.md
 docs/Model/ModelResponseOrderTransactionList.md
@@ -257,6 +258,7 @@ docs/Model/OrderShipmentAddItemsInner.md
 docs/Model/OrderShipmentAddTrackingNumbersInner.md
 docs/Model/OrderShipmentDelete200Response.md
 docs/Model/OrderShipmentDelete200ResponseResult.md
+docs/Model/OrderShipmentEventAdd.md
 docs/Model/OrderShipmentInfo200Response.md
 docs/Model/OrderShipmentTrackingAdd.md
 docs/Model/OrderShipmentTrackingAdd200Response.md
@@ -405,6 +407,7 @@ docs/Model/ResponseMarketplaceProductFindResult.md
 docs/Model/ResponseOrderAbandonedListResult.md
 docs/Model/ResponseOrderListResult.md
 docs/Model/ResponseOrderPreestimateShippingListResult.md
+docs/Model/ResponseOrderShipmentEventListResult.md
 docs/Model/ResponseOrderShipmentListResult.md
 docs/Model/ResponseOrderStatusListResult.md
 docs/Model/ResponseOrderTransactionListResult.md
@@ -434,6 +437,7 @@ docs/Model/ReturnStatusList200Response.md
 docs/Model/ReturnStatusList200ResponseResult.md
 docs/Model/Script.md
 docs/Model/Shipment.md
+docs/Model/ShipmentEvent.md
 docs/Model/ShipmentItem.md
 docs/Model/ShipmentTrackingNumber.md
 docs/Model/SpecialPrice.md
@@ -647,6 +651,7 @@ lib/Model/ModelResponseMarketplaceProductFind.php
 lib/Model/ModelResponseOrderAbandonedList.php
 lib/Model/ModelResponseOrderList.php
 lib/Model/ModelResponseOrderPreestimateShippingList.php
+lib/Model/ModelResponseOrderShipmentEventList.php
 lib/Model/ModelResponseOrderShipmentList.php
 lib/Model/ModelResponseOrderStatusList.php
 lib/Model/ModelResponseOrderTransactionList.php
@@ -717,6 +722,7 @@ lib/Model/OrderShipmentAddItemsInner.php
 lib/Model/OrderShipmentAddTrackingNumbersInner.php
 lib/Model/OrderShipmentDelete200Response.php
 lib/Model/OrderShipmentDelete200ResponseResult.php
+lib/Model/OrderShipmentEventAdd.php
 lib/Model/OrderShipmentInfo200Response.php
 lib/Model/OrderShipmentTrackingAdd.php
 lib/Model/OrderShipmentTrackingAdd200Response.php
@@ -865,6 +871,7 @@ lib/Model/ResponseMarketplaceProductFindResult.php
 lib/Model/ResponseOrderAbandonedListResult.php
 lib/Model/ResponseOrderListResult.php
 lib/Model/ResponseOrderPreestimateShippingListResult.php
+lib/Model/ResponseOrderShipmentEventListResult.php
 lib/Model/ResponseOrderShipmentListResult.php
 lib/Model/ResponseOrderStatusListResult.php
 lib/Model/ResponseOrderTransactionListResult.php
@@ -894,6 +901,7 @@ lib/Model/ReturnStatusList200Response.php
 lib/Model/ReturnStatusList200ResponseResult.php
 lib/Model/Script.php
 lib/Model/Shipment.php
+lib/Model/ShipmentEvent.php
 lib/Model/ShipmentItem.php
 lib/Model/ShipmentTrackingNumber.php
 lib/Model/SpecialPrice.php
@@ -1104,6 +1112,7 @@ test/Model/ModelResponseMarketplaceProductFindTest.php
 test/Model/ModelResponseOrderAbandonedListTest.php
 test/Model/ModelResponseOrderListTest.php
 test/Model/ModelResponseOrderPreestimateShippingListTest.php
+test/Model/ModelResponseOrderShipmentEventListTest.php
 test/Model/ModelResponseOrderShipmentListTest.php
 test/Model/ModelResponseOrderStatusListTest.php
 test/Model/ModelResponseOrderTransactionListTest.php
@@ -1173,6 +1182,7 @@ test/Model/OrderShipmentAddTest.php
 test/Model/OrderShipmentAddTrackingNumbersInnerTest.php
 test/Model/OrderShipmentDelete200ResponseResultTest.php
 test/Model/OrderShipmentDelete200ResponseTest.php
+test/Model/OrderShipmentEventAddTest.php
 test/Model/OrderShipmentInfo200ResponseTest.php
 test/Model/OrderShipmentTrackingAdd200ResponseResultTest.php
 test/Model/OrderShipmentTrackingAdd200ResponseTest.php
@@ -1322,6 +1332,7 @@ test/Model/ResponseMarketplaceProductFindResultTest.php
 test/Model/ResponseOrderAbandonedListResultTest.php
 test/Model/ResponseOrderListResultTest.php
 test/Model/ResponseOrderPreestimateShippingListResultTest.php
+test/Model/ResponseOrderShipmentEventListResultTest.php
 test/Model/ResponseOrderShipmentListResultTest.php
 test/Model/ResponseOrderStatusListResultTest.php
 test/Model/ResponseOrderTransactionListResultTest.php
@@ -1350,6 +1361,7 @@ test/Model/ReturnStatusList200ResponseResultTest.php
 test/Model/ReturnStatusList200ResponseTest.php
 test/Model/ReturnStatusTest.php
 test/Model/ScriptTest.php
+test/Model/ShipmentEventTest.php
 test/Model/ShipmentItemTest.php
 test/Model/ShipmentTest.php
 test/Model/ShipmentTrackingNumberTest.php

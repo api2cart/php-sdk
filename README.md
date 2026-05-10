@@ -174,6 +174,8 @@ Class | Method | HTTP request | Description
 *OrderApi* | [**orderShipmentAdd**](docs/Api/OrderApi.md#ordershipmentadd) | **POST** /order.shipment.add.json | order.shipment.add
 *OrderApi* | [**orderShipmentAddBatch**](docs/Api/OrderApi.md#ordershipmentaddbatch) | **POST** /order.shipment.add.batch.json | order.shipment.add.batch
 *OrderApi* | [**orderShipmentDelete**](docs/Api/OrderApi.md#ordershipmentdelete) | **DELETE** /order.shipment.delete.json | order.shipment.delete
+*OrderApi* | [**orderShipmentEventAdd**](docs/Api/OrderApi.md#ordershipmenteventadd) | **POST** /order.shipment.event.add.json | order.shipment.event.add
+*OrderApi* | [**orderShipmentEventList**](docs/Api/OrderApi.md#ordershipmenteventlist) | **GET** /order.shipment.event.list.json | order.shipment.event.list
 *OrderApi* | [**orderShipmentInfo**](docs/Api/OrderApi.md#ordershipmentinfo) | **GET** /order.shipment.info.json | order.shipment.info
 *OrderApi* | [**orderShipmentList**](docs/Api/OrderApi.md#ordershipmentlist) | **GET** /order.shipment.list.json | order.shipment.list
 *OrderApi* | [**orderShipmentTrackingAdd**](docs/Api/OrderApi.md#ordershipmenttrackingadd) | **POST** /order.shipment.tracking.add.json | order.shipment.tracking.add
@@ -415,6 +417,7 @@ Class | Method | HTTP request | Description
 - [ModelResponseOrderAbandonedList](docs/Model/ModelResponseOrderAbandonedList.md)
 - [ModelResponseOrderList](docs/Model/ModelResponseOrderList.md)
 - [ModelResponseOrderPreestimateShippingList](docs/Model/ModelResponseOrderPreestimateShippingList.md)
+- [ModelResponseOrderShipmentEventList](docs/Model/ModelResponseOrderShipmentEventList.md)
 - [ModelResponseOrderShipmentList](docs/Model/ModelResponseOrderShipmentList.md)
 - [ModelResponseOrderStatusList](docs/Model/ModelResponseOrderStatusList.md)
 - [ModelResponseOrderTransactionList](docs/Model/ModelResponseOrderTransactionList.md)
@@ -485,6 +488,7 @@ Class | Method | HTTP request | Description
 - [OrderShipmentAddTrackingNumbersInner](docs/Model/OrderShipmentAddTrackingNumbersInner.md)
 - [OrderShipmentDelete200Response](docs/Model/OrderShipmentDelete200Response.md)
 - [OrderShipmentDelete200ResponseResult](docs/Model/OrderShipmentDelete200ResponseResult.md)
+- [OrderShipmentEventAdd](docs/Model/OrderShipmentEventAdd.md)
 - [OrderShipmentInfo200Response](docs/Model/OrderShipmentInfo200Response.md)
 - [OrderShipmentTrackingAdd](docs/Model/OrderShipmentTrackingAdd.md)
 - [OrderShipmentTrackingAdd200Response](docs/Model/OrderShipmentTrackingAdd200Response.md)
@@ -633,6 +637,7 @@ Class | Method | HTTP request | Description
 - [ResponseOrderAbandonedListResult](docs/Model/ResponseOrderAbandonedListResult.md)
 - [ResponseOrderListResult](docs/Model/ResponseOrderListResult.md)
 - [ResponseOrderPreestimateShippingListResult](docs/Model/ResponseOrderPreestimateShippingListResult.md)
+- [ResponseOrderShipmentEventListResult](docs/Model/ResponseOrderShipmentEventListResult.md)
 - [ResponseOrderShipmentListResult](docs/Model/ResponseOrderShipmentListResult.md)
 - [ResponseOrderStatusListResult](docs/Model/ResponseOrderStatusListResult.md)
 - [ResponseOrderTransactionListResult](docs/Model/ResponseOrderTransactionListResult.md)
@@ -662,6 +667,7 @@ Class | Method | HTTP request | Description
 - [ReturnStatusList200ResponseResult](docs/Model/ReturnStatusList200ResponseResult.md)
 - [Script](docs/Model/Script.md)
 - [Shipment](docs/Model/Shipment.md)
+- [ShipmentEvent](docs/Model/ShipmentEvent.md)
 - [ShipmentItem](docs/Model/ShipmentItem.md)
 - [ShipmentTrackingNumber](docs/Model/ShipmentTrackingNumber.md)
 - [SpecialPrice](docs/Model/SpecialPrice.md)

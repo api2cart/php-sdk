@@ -265,6 +265,30 @@ class OrderApiTest extends TestCase
     }
 
     /**
+     * Test case for orderShipmentEventAdd
+     *
+     * order.shipment.event.add.
+     *
+     */
+    public function testOrderShipmentEventAdd()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for orderShipmentEventList
+     *
+     * order.shipment.event.list.
+     *
+     */
+    public function testOrderShipmentEventList()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for orderShipmentInfo
      *
      * order.shipment.info.
