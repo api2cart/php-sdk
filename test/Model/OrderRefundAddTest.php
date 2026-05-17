@@ -162,6 +162,15 @@ class OrderRefundAddTest extends TestCase
     }
 
     /**
+     * Test attribute "store_id"
+     */
+    public function testPropertyStoreId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "is_online"
      */
     public function testPropertyIsOnline()

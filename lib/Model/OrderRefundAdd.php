@@ -67,6 +67,7 @@ class OrderRefundAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'item_restock' => 'bool',
         'send_notifications' => 'bool',
         'date' => 'string',
+        'store_id' => 'string',
         'is_online' => 'bool',
         'idempotency_key' => 'string'
     ];
@@ -88,6 +89,7 @@ class OrderRefundAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'item_restock' => null,
         'send_notifications' => null,
         'date' => null,
+        'store_id' => null,
         'is_online' => null,
         'idempotency_key' => null
     ];
@@ -107,6 +109,7 @@ class OrderRefundAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'item_restock' => false,
         'send_notifications' => false,
         'date' => false,
+        'store_id' => false,
         'is_online' => false,
         'idempotency_key' => false
     ];
@@ -206,6 +209,7 @@ class OrderRefundAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'item_restock' => 'item_restock',
         'send_notifications' => 'send_notifications',
         'date' => 'date',
+        'store_id' => 'store_id',
         'is_online' => 'is_online',
         'idempotency_key' => 'idempotency_key'
     ];
@@ -225,6 +229,7 @@ class OrderRefundAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'item_restock' => 'setItemRestock',
         'send_notifications' => 'setSendNotifications',
         'date' => 'setDate',
+        'store_id' => 'setStoreId',
         'is_online' => 'setIsOnline',
         'idempotency_key' => 'setIdempotencyKey'
     ];
@@ -244,6 +249,7 @@ class OrderRefundAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'item_restock' => 'getItemRestock',
         'send_notifications' => 'getSendNotifications',
         'date' => 'getDate',
+        'store_id' => 'getStoreId',
         'is_online' => 'getIsOnline',
         'idempotency_key' => 'getIdempotencyKey'
     ];
@@ -314,6 +320,7 @@ class OrderRefundAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('item_restock', $data ?? [], false);
         $this->setIfExists('send_notifications', $data ?? [], false);
         $this->setIfExists('date', $data ?? [], null);
+        $this->setIfExists('store_id', $data ?? [], null);
         $this->setIfExists('is_online', $data ?? [], false);
         $this->setIfExists('idempotency_key', $data ?? [], null);
     }
@@ -599,6 +606,33 @@ class OrderRefundAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable date cannot be null');
         }
         $this->container['date'] = $date;
+
+        return $this;
+    }
+
+    /**
+     * Gets store_id
+     *
+     * @return string|null
+     */
+    public function getStoreId()
+    {
+        return $this->container['store_id'];
+    }
+
+    /**
+     * Sets store_id
+     *
+     * @param string|null $store_id Store Id
+     *
+     * @return self
+     */
+    public function setStoreId($store_id)
+    {
+        if (is_null($store_id)) {
+            throw new \InvalidArgumentException('non-nullable store_id cannot be null');
+        }
+        $this->container['store_id'] = $store_id;
 
         return $this;
     }
