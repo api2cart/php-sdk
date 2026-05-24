@@ -1365,6 +1365,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     public const CART_ID_MIJO_SHOP = 'MijoShop';
     public const CART_ID_MIVA = 'Miva';
     public const CART_ID_NETO = 'Neto';
+    public const CART_ID_NOPCOMMERCE = 'Nopcommerce';
     public const CART_ID_OPENCART14 = 'Opencart14';
     public const CART_ID_OSCMAX2 = 'Oscmax2';
     public const CART_ID_OSCOMMERCE22MS2 = 'Oscommerce22ms2';
@@ -1444,6 +1445,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             self::CART_ID_MIJO_SHOP,
             self::CART_ID_MIVA,
             self::CART_ID_NETO,
+            self::CART_ID_NOPCOMMERCE,
             self::CART_ID_OPENCART14,
             self::CART_ID_OSCMAX2,
             self::CART_ID_OSCOMMERCE22MS2,

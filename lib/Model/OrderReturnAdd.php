@@ -68,8 +68,12 @@ class OrderReturnAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'item_restock' => 'bool',
         'staff_note' => 'string',
         'comment' => 'string',
+        'message' => 'string',
         'send_notifications' => 'bool',
         'reject_reason' => 'string',
+        'is_online' => 'bool',
+        'fee_price' => 'float',
+        'shipping_price' => 'float',
         'idempotency_key' => 'string',
         'order_products' => '\OpenAPI\Client\Model\OrderReturnAddOrderProductsInner[]'
     ];
@@ -92,8 +96,12 @@ class OrderReturnAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'item_restock' => null,
         'staff_note' => null,
         'comment' => null,
+        'message' => null,
         'send_notifications' => null,
         'reject_reason' => null,
+        'is_online' => null,
+        'fee_price' => null,
+        'shipping_price' => null,
         'idempotency_key' => null,
         'order_products' => null
     ];
@@ -114,8 +122,12 @@ class OrderReturnAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'item_restock' => false,
         'staff_note' => false,
         'comment' => false,
+        'message' => false,
         'send_notifications' => false,
         'reject_reason' => false,
+        'is_online' => false,
+        'fee_price' => false,
+        'shipping_price' => false,
         'idempotency_key' => false,
         'order_products' => false
     ];
@@ -216,8 +228,12 @@ class OrderReturnAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'item_restock' => 'item_restock',
         'staff_note' => 'staff_note',
         'comment' => 'comment',
+        'message' => 'message',
         'send_notifications' => 'send_notifications',
         'reject_reason' => 'reject_reason',
+        'is_online' => 'is_online',
+        'fee_price' => 'fee_price',
+        'shipping_price' => 'shipping_price',
         'idempotency_key' => 'idempotency_key',
         'order_products' => 'order_products'
     ];
@@ -238,8 +254,12 @@ class OrderReturnAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'item_restock' => 'setItemRestock',
         'staff_note' => 'setStaffNote',
         'comment' => 'setComment',
+        'message' => 'setMessage',
         'send_notifications' => 'setSendNotifications',
         'reject_reason' => 'setRejectReason',
+        'is_online' => 'setIsOnline',
+        'fee_price' => 'setFeePrice',
+        'shipping_price' => 'setShippingPrice',
         'idempotency_key' => 'setIdempotencyKey',
         'order_products' => 'setOrderProducts'
     ];
@@ -260,8 +280,12 @@ class OrderReturnAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'item_restock' => 'getItemRestock',
         'staff_note' => 'getStaffNote',
         'comment' => 'getComment',
+        'message' => 'getMessage',
         'send_notifications' => 'getSendNotifications',
         'reject_reason' => 'getRejectReason',
+        'is_online' => 'getIsOnline',
+        'fee_price' => 'getFeePrice',
+        'shipping_price' => 'getShippingPrice',
         'idempotency_key' => 'getIdempotencyKey',
         'order_products' => 'getOrderProducts'
     ];
@@ -333,8 +357,12 @@ class OrderReturnAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('item_restock', $data ?? [], false);
         $this->setIfExists('staff_note', $data ?? [], null);
         $this->setIfExists('comment', $data ?? [], null);
+        $this->setIfExists('message', $data ?? [], null);
         $this->setIfExists('send_notifications', $data ?? [], false);
         $this->setIfExists('reject_reason', $data ?? [], null);
+        $this->setIfExists('is_online', $data ?? [], false);
+        $this->setIfExists('fee_price', $data ?? [], null);
+        $this->setIfExists('shipping_price', $data ?? [], 0);
         $this->setIfExists('idempotency_key', $data ?? [], null);
         $this->setIfExists('order_products', $data ?? [], null);
     }
@@ -664,6 +692,33 @@ class OrderReturnAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets message
+     *
+     * @return string|null
+     */
+    public function getMessage()
+    {
+        return $this->container['message'];
+    }
+
+    /**
+     * Sets message
+     *
+     * @param string|null $message Customer-visible message attached to the return request.
+     *
+     * @return self
+     */
+    public function setMessage($message)
+    {
+        if (is_null($message)) {
+            throw new \InvalidArgumentException('non-nullable message cannot be null');
+        }
+        $this->container['message'] = $message;
+
+        return $this;
+    }
+
+    /**
      * Gets send_notifications
      *
      * @return bool|null
@@ -713,6 +768,87 @@ class OrderReturnAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable reject_reason cannot be null');
         }
         $this->container['reject_reason'] = $reject_reason;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_online
+     *
+     * @return bool|null
+     */
+    public function getIsOnline()
+    {
+        return $this->container['is_online'];
+    }
+
+    /**
+     * Sets is_online
+     *
+     * @param bool|null $is_online Indicates whether refund type is online
+     *
+     * @return self
+     */
+    public function setIsOnline($is_online)
+    {
+        if (is_null($is_online)) {
+            throw new \InvalidArgumentException('non-nullable is_online cannot be null');
+        }
+        $this->container['is_online'] = $is_online;
+
+        return $this;
+    }
+
+    /**
+     * Gets fee_price
+     *
+     * @return float|null
+     */
+    public function getFeePrice()
+    {
+        return $this->container['fee_price'];
+    }
+
+    /**
+     * Sets fee_price
+     *
+     * @param float|null $fee_price Specifies refund's fee price
+     *
+     * @return self
+     */
+    public function setFeePrice($fee_price)
+    {
+        if (is_null($fee_price)) {
+            throw new \InvalidArgumentException('non-nullable fee_price cannot be null');
+        }
+        $this->container['fee_price'] = $fee_price;
+
+        return $this;
+    }
+
+    /**
+     * Gets shipping_price
+     *
+     * @return float|null
+     */
+    public function getShippingPrice()
+    {
+        return $this->container['shipping_price'];
+    }
+
+    /**
+     * Sets shipping_price
+     *
+     * @param float|null $shipping_price Specifies order's shipping price
+     *
+     * @return self
+     */
+    public function setShippingPrice($shipping_price)
+    {
+        if (is_null($shipping_price)) {
+            throw new \InvalidArgumentException('non-nullable shipping_price cannot be null');
+        }
+        $this->container['shipping_price'] = $shipping_price;
 
         return $this;
     }

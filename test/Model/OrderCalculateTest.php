@@ -90,6 +90,15 @@ class OrderCalculateTest extends TestCase
     }
 
     /**
+     * Test attribute "currency"
+     */
+    public function testPropertyCurrency()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "currency_id"
      */
     public function testPropertyCurrencyId()

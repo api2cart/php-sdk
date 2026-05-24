@@ -684,6 +684,15 @@ class OrderAddTest extends TestCase
     }
 
     /**
+     * Test attribute "invoice_admin_comment"
+     */
+    public function testPropertyInvoiceAdminComment()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "note_attributes"
      */
     public function testPropertyNoteAttributes()

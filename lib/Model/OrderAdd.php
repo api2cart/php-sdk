@@ -125,6 +125,7 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'external_source' => 'string',
         'inventory_behaviour' => 'string',
         'create_invoice' => 'bool',
+        'invoice_admin_comment' => 'string',
         'note_attributes' => '\OpenAPI\Client\Model\OrderAddNoteAttributesInner[]',
         'clear_cache' => 'bool',
         'origin' => 'string',
@@ -208,6 +209,7 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'external_source' => null,
         'inventory_behaviour' => null,
         'create_invoice' => null,
+        'invoice_admin_comment' => null,
         'note_attributes' => null,
         'clear_cache' => null,
         'origin' => null,
@@ -289,6 +291,7 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'external_source' => false,
         'inventory_behaviour' => false,
         'create_invoice' => false,
+        'invoice_admin_comment' => false,
         'note_attributes' => false,
         'clear_cache' => false,
         'origin' => false,
@@ -450,6 +453,7 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'external_source' => 'external_source',
         'inventory_behaviour' => 'inventory_behaviour',
         'create_invoice' => 'create_invoice',
+        'invoice_admin_comment' => 'invoice_admin_comment',
         'note_attributes' => 'note_attributes',
         'clear_cache' => 'clear_cache',
         'origin' => 'origin',
@@ -531,6 +535,7 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'external_source' => 'setExternalSource',
         'inventory_behaviour' => 'setInventoryBehaviour',
         'create_invoice' => 'setCreateInvoice',
+        'invoice_admin_comment' => 'setInvoiceAdminComment',
         'note_attributes' => 'setNoteAttributes',
         'clear_cache' => 'setClearCache',
         'origin' => 'setOrigin',
@@ -612,6 +617,7 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'external_source' => 'getExternalSource',
         'inventory_behaviour' => 'getInventoryBehaviour',
         'create_invoice' => 'getCreateInvoice',
+        'invoice_admin_comment' => 'getInvoiceAdminComment',
         'note_attributes' => 'getNoteAttributes',
         'clear_cache' => 'getClearCache',
         'origin' => 'getOrigin',
@@ -744,6 +750,7 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('external_source', $data ?? [], null);
         $this->setIfExists('inventory_behaviour', $data ?? [], 'bypass');
         $this->setIfExists('create_invoice', $data ?? [], false);
+        $this->setIfExists('invoice_admin_comment', $data ?? [], null);
         $this->setIfExists('note_attributes', $data ?? [], null);
         $this->setIfExists('clear_cache', $data ?? [], true);
         $this->setIfExists('origin', $data ?? [], null);
@@ -2638,6 +2645,33 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable create_invoice cannot be null');
         }
         $this->container['create_invoice'] = $create_invoice;
+
+        return $this;
+    }
+
+    /**
+     * Gets invoice_admin_comment
+     *
+     * @return string|null
+     */
+    public function getInvoiceAdminComment()
+    {
+        return $this->container['invoice_admin_comment'];
+    }
+
+    /**
+     * Sets invoice_admin_comment
+     *
+     * @param string|null $invoice_admin_comment Specifies admin's order invoice comment
+     *
+     * @return self
+     */
+    public function setInvoiceAdminComment($invoice_admin_comment)
+    {
+        if (is_null($invoice_admin_comment)) {
+            throw new \InvalidArgumentException('non-nullable invoice_admin_comment cannot be null');
+        }
+        $this->container['invoice_admin_comment'] = $invoice_admin_comment;
 
         return $this;
     }

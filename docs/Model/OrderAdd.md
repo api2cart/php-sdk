@@ -71,6 +71,7 @@ Name | Type | Description | Notes
 **external_source** | **string** | Identifying the system used to generate the order | [optional]
 **inventory_behaviour** | **string** | The behaviour to use when updating inventory.&lt;hr&gt;&lt;div style&#x3D;\&quot;font-style:normal\&quot;&gt;Values description:&lt;div style&#x3D;\&quot;margin-left: 2%; padding-top: 2%\&quot;&gt;&lt;div style&#x3D;\&quot;font-size:85%\&quot;&gt;&lt;b&gt;bypass&lt;/b&gt; &#x3D; Do not claim inventory &lt;/br&gt;&lt;/br&gt;&lt;b&gt;decrement_ignoring_policy&lt;/b&gt; &#x3D; Ignore the product&#39;s &lt;/br&gt; inventory policy and claim amounts&lt;/br&gt;&lt;/br&gt;&lt;b&gt;decrement_obeying_policy&lt;/b&gt; &#x3D;  Obey the product&#39;s &lt;/br&gt; inventory policy.&lt;/br&gt;&lt;/br&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; | [optional] [default to 'bypass']
 **create_invoice** | **bool** | Defines whether the invoice is created automatically along with the order | [optional] [default to false]
+**invoice_admin_comment** | **string** | Specifies admin&#39;s order invoice comment | [optional]
 **note_attributes** | [**\OpenAPI\Client\Model\OrderAddNoteAttributesInner[]**](OrderAddNoteAttributesInner.md) | Defines note attributes | [optional]
 **clear_cache** | **bool** | Is cache clear required | [optional] [default to true]
 **origin** | **string** | The source of the order | [optional]

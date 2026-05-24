@@ -60,8 +60,7 @@ class ProductVariantAddAttributesInner implements ModelInterface, ArrayAccess, \
     protected static $openAPITypes = [
         'attribute_name' => 'string',
         'attribute_value' => 'string',
-        'attribute_price' => 'float',
-        'attribute_weight' => 'float'
+        'attribute_price' => 'float'
     ];
 
     /**
@@ -74,8 +73,7 @@ class ProductVariantAddAttributesInner implements ModelInterface, ArrayAccess, \
     protected static $openAPIFormats = [
         'attribute_name' => null,
         'attribute_value' => null,
-        'attribute_price' => null,
-        'attribute_weight' => null
+        'attribute_price' => null
     ];
 
     /**
@@ -86,8 +84,7 @@ class ProductVariantAddAttributesInner implements ModelInterface, ArrayAccess, \
     protected static array $openAPINullables = [
         'attribute_name' => false,
         'attribute_value' => false,
-        'attribute_price' => false,
-        'attribute_weight' => false
+        'attribute_price' => false
     ];
 
     /**
@@ -178,8 +175,7 @@ class ProductVariantAddAttributesInner implements ModelInterface, ArrayAccess, \
     protected static $attributeMap = [
         'attribute_name' => 'attribute_name',
         'attribute_value' => 'attribute_value',
-        'attribute_price' => 'attribute_price',
-        'attribute_weight' => 'attribute_weight'
+        'attribute_price' => 'attribute_price'
     ];
 
     /**
@@ -190,8 +186,7 @@ class ProductVariantAddAttributesInner implements ModelInterface, ArrayAccess, \
     protected static $setters = [
         'attribute_name' => 'setAttributeName',
         'attribute_value' => 'setAttributeValue',
-        'attribute_price' => 'setAttributePrice',
-        'attribute_weight' => 'setAttributeWeight'
+        'attribute_price' => 'setAttributePrice'
     ];
 
     /**
@@ -202,8 +197,7 @@ class ProductVariantAddAttributesInner implements ModelInterface, ArrayAccess, \
     protected static $getters = [
         'attribute_name' => 'getAttributeName',
         'attribute_value' => 'getAttributeValue',
-        'attribute_price' => 'getAttributePrice',
-        'attribute_weight' => 'getAttributeWeight'
+        'attribute_price' => 'getAttributePrice'
     ];
 
     /**
@@ -266,7 +260,6 @@ class ProductVariantAddAttributesInner implements ModelInterface, ArrayAccess, \
         $this->setIfExists('attribute_name', $data ?? [], null);
         $this->setIfExists('attribute_value', $data ?? [], null);
         $this->setIfExists('attribute_price', $data ?? [], null);
-        $this->setIfExists('attribute_weight', $data ?? [], null);
     }
 
     /**
@@ -388,33 +381,6 @@ class ProductVariantAddAttributesInner implements ModelInterface, ArrayAccess, \
             throw new \InvalidArgumentException('non-nullable attribute_price cannot be null');
         }
         $this->container['attribute_price'] = $attribute_price;
-
-        return $this;
-    }
-
-    /**
-     * Gets attribute_weight
-     *
-     * @return float|null
-     */
-    public function getAttributeWeight()
-    {
-        return $this->container['attribute_weight'];
-    }
-
-    /**
-     * Sets attribute_weight
-     *
-     * @param float|null $attribute_weight attribute_weight
-     *
-     * @return self
-     */
-    public function setAttributeWeight($attribute_weight)
-    {
-        if (is_null($attribute_weight)) {
-            throw new \InvalidArgumentException('non-nullable attribute_weight cannot be null');
-        }
-        $this->container['attribute_weight'] = $attribute_weight;
 
         return $this;
     }

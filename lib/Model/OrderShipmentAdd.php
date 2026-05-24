@@ -73,6 +73,7 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'check_process_status' => 'bool',
         'tracking_provider' => 'string',
         'use_latest_api_version' => 'bool',
+        'admin_comment' => 'string',
         'idempotency_key' => 'string'
     ];
 
@@ -99,6 +100,7 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'check_process_status' => null,
         'tracking_provider' => null,
         'use_latest_api_version' => null,
+        'admin_comment' => null,
         'idempotency_key' => null
     ];
 
@@ -123,6 +125,7 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'check_process_status' => false,
         'tracking_provider' => false,
         'use_latest_api_version' => false,
+        'admin_comment' => false,
         'idempotency_key' => false
     ];
 
@@ -227,6 +230,7 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'check_process_status' => 'check_process_status',
         'tracking_provider' => 'tracking_provider',
         'use_latest_api_version' => 'use_latest_api_version',
+        'admin_comment' => 'admin_comment',
         'idempotency_key' => 'idempotency_key'
     ];
 
@@ -251,6 +255,7 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'check_process_status' => 'setCheckProcessStatus',
         'tracking_provider' => 'setTrackingProvider',
         'use_latest_api_version' => 'setUseLatestApiVersion',
+        'admin_comment' => 'setAdminComment',
         'idempotency_key' => 'setIdempotencyKey'
     ];
 
@@ -275,6 +280,7 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'check_process_status' => 'getCheckProcessStatus',
         'tracking_provider' => 'getTrackingProvider',
         'use_latest_api_version' => 'getUseLatestApiVersion',
+        'admin_comment' => 'getAdminComment',
         'idempotency_key' => 'getIdempotencyKey'
     ];
 
@@ -350,6 +356,7 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('check_process_status', $data ?? [], false);
         $this->setIfExists('tracking_provider', $data ?? [], null);
         $this->setIfExists('use_latest_api_version', $data ?? [], false);
+        $this->setIfExists('admin_comment', $data ?? [], null);
         $this->setIfExists('idempotency_key', $data ?? [], null);
     }
 
@@ -796,6 +803,33 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable use_latest_api_version cannot be null');
         }
         $this->container['use_latest_api_version'] = $use_latest_api_version;
+
+        return $this;
+    }
+
+    /**
+     * Gets admin_comment
+     *
+     * @return string|null
+     */
+    public function getAdminComment()
+    {
+        return $this->container['admin_comment'];
+    }
+
+    /**
+     * Sets admin_comment
+     *
+     * @param string|null $admin_comment Specifies admin's order comment
+     *
+     * @return self
+     */
+    public function setAdminComment($admin_comment)
+    {
+        if (is_null($admin_comment)) {
+            throw new \InvalidArgumentException('non-nullable admin_comment cannot be null');
+        }
+        $this->container['admin_comment'] = $admin_comment;
 
         return $this;
     }

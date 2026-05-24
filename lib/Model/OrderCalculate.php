@@ -59,6 +59,7 @@ class OrderCalculate implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'customer_email' => 'string',
+        'currency' => 'string',
         'currency_id' => 'string',
         'store_id' => 'string',
         'coupons' => 'string[]',
@@ -97,6 +98,7 @@ class OrderCalculate implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'customer_email' => null,
+        'currency' => null,
         'currency_id' => null,
         'store_id' => null,
         'coupons' => null,
@@ -133,6 +135,7 @@ class OrderCalculate implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'customer_email' => false,
+        'currency' => false,
         'currency_id' => false,
         'store_id' => false,
         'coupons' => false,
@@ -249,6 +252,7 @@ class OrderCalculate implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'customer_email' => 'customer_email',
+        'currency' => 'currency',
         'currency_id' => 'currency_id',
         'store_id' => 'store_id',
         'coupons' => 'coupons',
@@ -285,6 +289,7 @@ class OrderCalculate implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'customer_email' => 'setCustomerEmail',
+        'currency' => 'setCurrency',
         'currency_id' => 'setCurrencyId',
         'store_id' => 'setStoreId',
         'coupons' => 'setCoupons',
@@ -321,6 +326,7 @@ class OrderCalculate implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'customer_email' => 'getCustomerEmail',
+        'currency' => 'getCurrency',
         'currency_id' => 'getCurrencyId',
         'store_id' => 'getStoreId',
         'coupons' => 'getCoupons',
@@ -408,6 +414,7 @@ class OrderCalculate implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(?array $data = null)
     {
         $this->setIfExists('customer_email', $data ?? [], null);
+        $this->setIfExists('currency', $data ?? [], null);
         $this->setIfExists('currency_id', $data ?? [], null);
         $this->setIfExists('store_id', $data ?? [], null);
         $this->setIfExists('coupons', $data ?? [], null);
@@ -530,6 +537,33 @@ class OrderCalculate implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable customer_email cannot be null');
         }
         $this->container['customer_email'] = $customer_email;
+
+        return $this;
+    }
+
+    /**
+     * Gets currency
+     *
+     * @return string|null
+     */
+    public function getCurrency()
+    {
+        return $this->container['currency'];
+    }
+
+    /**
+     * Sets currency
+     *
+     * @param string|null $currency Currency code of order
+     *
+     * @return self
+     */
+    public function setCurrency($currency)
+    {
+        if (is_null($currency)) {
+            throw new \InvalidArgumentException('non-nullable currency cannot be null');
+        }
+        $this->container['currency'] = $currency;
 
         return $this;
     }

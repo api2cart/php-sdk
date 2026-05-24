@@ -171,6 +171,15 @@ class OrderReturnAddTest extends TestCase
     }
 
     /**
+     * Test attribute "message"
+     */
+    public function testPropertyMessage()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "send_notifications"
      */
     public function testPropertySendNotifications()
@@ -183,6 +192,33 @@ class OrderReturnAddTest extends TestCase
      * Test attribute "reject_reason"
      */
     public function testPropertyRejectReason()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "is_online"
+     */
+    public function testPropertyIsOnline()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "fee_price"
+     */
+    public function testPropertyFeePrice()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "shipping_price"
+     */
+    public function testPropertyShippingPrice()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

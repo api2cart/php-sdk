@@ -216,6 +216,15 @@ class OrderShipmentAddTest extends TestCase
     }
 
     /**
+     * Test attribute "admin_comment"
+     */
+    public function testPropertyAdminComment()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "idempotency_key"
      */
     public function testPropertyIdempotencyKey()

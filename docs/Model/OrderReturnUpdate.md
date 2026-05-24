@@ -9,12 +9,18 @@ Name | Type | Description | Notes
 **store_id** | **string** | Store Id | [optional]
 **item_restock** | **bool** | Boolean, whether or not to add the line items back to the store inventory. | [optional] [default to false]
 **return_status_id** | **string** | Defines return request status | [optional]
+**return_reason_id** | **string** | Defines return request reason | [optional]
+**return_action_id** | **string** | Defines return request action | [optional]
 **staff_note** | **string** | Specifies staff note | [optional]
 **comment** | **string** | Specifies return comment | [optional]
+**message** | **string** | Customer-visible message attached to the return request (updated). | [optional]
 **send_notifications** | **bool** | Send notifications to customer after order was created | [optional] [default to false]
 **reject_reason** | **string** | Defines return reject reason | [optional]
 **return_action** | **string** | Defines return request action | [optional]
 **return_reason** | **string** | Defines return request reason | [optional]
+**is_online** | **bool** | Indicates whether refund type is online | [optional] [default to false]
+**fee_price** | **float** | Specifies refund&#39;s fee price | [optional]
+**shipping_price** | **float** | Specifies order&#39;s shipping price | [optional] [default to 0]
 **idempotency_key** | **string** | A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional]
 **order_products** | [**\OpenAPI\Client\Model\OrderReturnUpdateOrderProductsInner[]**](OrderReturnUpdateOrderProductsInner.md) |  |
 

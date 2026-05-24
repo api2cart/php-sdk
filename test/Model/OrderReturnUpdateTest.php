@@ -126,6 +126,24 @@ class OrderReturnUpdateTest extends TestCase
     }
 
     /**
+     * Test attribute "return_reason_id"
+     */
+    public function testPropertyReturnReasonId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "return_action_id"
+     */
+    public function testPropertyReturnActionId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "staff_note"
      */
     public function testPropertyStaffNote()
@@ -138,6 +156,15 @@ class OrderReturnUpdateTest extends TestCase
      * Test attribute "comment"
      */
     public function testPropertyComment()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "message"
+     */
+    public function testPropertyMessage()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -174,6 +201,33 @@ class OrderReturnUpdateTest extends TestCase
      * Test attribute "return_reason"
      */
     public function testPropertyReturnReason()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "is_online"
+     */
+    public function testPropertyIsOnline()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "fee_price"
+     */
+    public function testPropertyFeePrice()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "shipping_price"
+     */
+    public function testPropertyShippingPrice()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
