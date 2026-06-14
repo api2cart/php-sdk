@@ -72,6 +72,7 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_login' => 'string',
         'birth_day' => 'string',
         'news_letter_subscription' => 'bool',
+        'partner_offers_subscription' => 'bool',
         'consents' => '\OpenAPI\Client\Model\CustomerAddConsentsInner[]',
         'gender' => 'string',
         'website' => 'string',
@@ -110,6 +111,7 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_login' => null,
         'birth_day' => null,
         'news_letter_subscription' => null,
+        'partner_offers_subscription' => null,
         'consents' => null,
         'gender' => null,
         'website' => null,
@@ -146,6 +148,7 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_login' => false,
         'birth_day' => false,
         'news_letter_subscription' => false,
+        'partner_offers_subscription' => false,
         'consents' => false,
         'gender' => false,
         'website' => false,
@@ -262,6 +265,7 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_login' => 'last_login',
         'birth_day' => 'birth_day',
         'news_letter_subscription' => 'news_letter_subscription',
+        'partner_offers_subscription' => 'partner_offers_subscription',
         'consents' => 'consents',
         'gender' => 'gender',
         'website' => 'website',
@@ -298,6 +302,7 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_login' => 'setLastLogin',
         'birth_day' => 'setBirthDay',
         'news_letter_subscription' => 'setNewsLetterSubscription',
+        'partner_offers_subscription' => 'setPartnerOffersSubscription',
         'consents' => 'setConsents',
         'gender' => 'setGender',
         'website' => 'setWebsite',
@@ -334,6 +339,7 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_login' => 'getLastLogin',
         'birth_day' => 'getBirthDay',
         'news_letter_subscription' => 'getNewsLetterSubscription',
+        'partner_offers_subscription' => 'getPartnerOffersSubscription',
         'consents' => 'getConsents',
         'gender' => 'getGender',
         'website' => 'getWebsite',
@@ -421,6 +427,7 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('last_login', $data ?? [], null);
         $this->setIfExists('birth_day', $data ?? [], null);
         $this->setIfExists('news_letter_subscription', $data ?? [], null);
+        $this->setIfExists('partner_offers_subscription', $data ?? [], null);
         $this->setIfExists('consents', $data ?? [], null);
         $this->setIfExists('gender', $data ?? [], null);
         $this->setIfExists('website', $data ?? [], null);
@@ -860,6 +867,33 @@ class CustomerAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable news_letter_subscription cannot be null');
         }
         $this->container['news_letter_subscription'] = $news_letter_subscription;
+
+        return $this;
+    }
+
+    /**
+     * Gets partner_offers_subscription
+     *
+     * @return bool|null
+     */
+    public function getPartnerOffersSubscription()
+    {
+        return $this->container['partner_offers_subscription'];
+    }
+
+    /**
+     * Sets partner_offers_subscription
+     *
+     * @param bool|null $partner_offers_subscription Defines whether the customer agreed to receive offers from partners
+     *
+     * @return self
+     */
+    public function setPartnerOffersSubscription($partner_offers_subscription)
+    {
+        if (is_null($partner_offers_subscription)) {
+            throw new \InvalidArgumentException('non-nullable partner_offers_subscription cannot be null');
+        }
+        $this->container['partner_offers_subscription'] = $partner_offers_subscription;
 
         return $this;
     }

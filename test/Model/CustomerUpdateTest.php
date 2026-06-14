@@ -171,6 +171,15 @@ class CustomerUpdateTest extends TestCase
     }
 
     /**
+     * Test attribute "partner_offers_subscription"
+     */
+    public function testPropertyPartnerOffersSubscription()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "consents"
      */
     public function testPropertyConsents()
@@ -237,6 +246,15 @@ class CustomerUpdateTest extends TestCase
      * Test attribute "company"
      */
     public function testPropertyCompany()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "website"
+     */
+    public function testPropertyWebsite()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

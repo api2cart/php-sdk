@@ -68,6 +68,7 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_name' => 'string',
         'birth_day' => 'string',
         'news_letter_subscription' => 'bool',
+        'partner_offers_subscription' => 'bool',
         'consents' => '\OpenAPI\Client\Model\CustomerAddConsentsInner[]',
         'tags' => 'string',
         'gender' => 'string',
@@ -76,6 +77,7 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'password' => 'string',
         'currency_id' => 'string',
         'company' => 'string',
+        'website' => 'string',
         'country' => 'string',
         'fax' => 'string',
         'tax_id' => 'string',
@@ -104,6 +106,7 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_name' => null,
         'birth_day' => null,
         'news_letter_subscription' => null,
+        'partner_offers_subscription' => null,
         'consents' => null,
         'tags' => null,
         'gender' => null,
@@ -112,6 +115,7 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'password' => null,
         'currency_id' => null,
         'company' => null,
+        'website' => null,
         'country' => null,
         'fax' => null,
         'tax_id' => null,
@@ -138,6 +142,7 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_name' => false,
         'birth_day' => false,
         'news_letter_subscription' => false,
+        'partner_offers_subscription' => false,
         'consents' => false,
         'tags' => false,
         'gender' => false,
@@ -146,6 +151,7 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'password' => false,
         'currency_id' => false,
         'company' => false,
+        'website' => false,
         'country' => false,
         'fax' => false,
         'tax_id' => false,
@@ -252,6 +258,7 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_name' => 'last_name',
         'birth_day' => 'birth_day',
         'news_letter_subscription' => 'news_letter_subscription',
+        'partner_offers_subscription' => 'partner_offers_subscription',
         'consents' => 'consents',
         'tags' => 'tags',
         'gender' => 'gender',
@@ -260,6 +267,7 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'password' => 'password',
         'currency_id' => 'currency_id',
         'company' => 'company',
+        'website' => 'website',
         'country' => 'country',
         'fax' => 'fax',
         'tax_id' => 'tax_id',
@@ -286,6 +294,7 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_name' => 'setLastName',
         'birth_day' => 'setBirthDay',
         'news_letter_subscription' => 'setNewsLetterSubscription',
+        'partner_offers_subscription' => 'setPartnerOffersSubscription',
         'consents' => 'setConsents',
         'tags' => 'setTags',
         'gender' => 'setGender',
@@ -294,6 +303,7 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'password' => 'setPassword',
         'currency_id' => 'setCurrencyId',
         'company' => 'setCompany',
+        'website' => 'setWebsite',
         'country' => 'setCountry',
         'fax' => 'setFax',
         'tax_id' => 'setTaxId',
@@ -320,6 +330,7 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'last_name' => 'getLastName',
         'birth_day' => 'getBirthDay',
         'news_letter_subscription' => 'getNewsLetterSubscription',
+        'partner_offers_subscription' => 'getPartnerOffersSubscription',
         'consents' => 'getConsents',
         'tags' => 'getTags',
         'gender' => 'getGender',
@@ -328,6 +339,7 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'password' => 'getPassword',
         'currency_id' => 'getCurrencyId',
         'company' => 'getCompany',
+        'website' => 'getWebsite',
         'country' => 'getCountry',
         'fax' => 'getFax',
         'tax_id' => 'getTaxId',
@@ -405,6 +417,7 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('last_name', $data ?? [], null);
         $this->setIfExists('birth_day', $data ?? [], null);
         $this->setIfExists('news_letter_subscription', $data ?? [], null);
+        $this->setIfExists('partner_offers_subscription', $data ?? [], null);
         $this->setIfExists('consents', $data ?? [], null);
         $this->setIfExists('tags', $data ?? [], null);
         $this->setIfExists('gender', $data ?? [], null);
@@ -413,6 +426,7 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('password', $data ?? [], null);
         $this->setIfExists('currency_id', $data ?? [], null);
         $this->setIfExists('company', $data ?? [], null);
+        $this->setIfExists('website', $data ?? [], null);
         $this->setIfExists('country', $data ?? [], null);
         $this->setIfExists('fax', $data ?? [], null);
         $this->setIfExists('tax_id', $data ?? [], null);
@@ -740,6 +754,33 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets partner_offers_subscription
+     *
+     * @return bool|null
+     */
+    public function getPartnerOffersSubscription()
+    {
+        return $this->container['partner_offers_subscription'];
+    }
+
+    /**
+     * Sets partner_offers_subscription
+     *
+     * @param bool|null $partner_offers_subscription Defines whether the customer agreed to receive offers from partners
+     *
+     * @return self
+     */
+    public function setPartnerOffersSubscription($partner_offers_subscription)
+    {
+        if (is_null($partner_offers_subscription)) {
+            throw new \InvalidArgumentException('non-nullable partner_offers_subscription cannot be null');
+        }
+        $this->container['partner_offers_subscription'] = $partner_offers_subscription;
+
+        return $this;
+    }
+
+    /**
      * Gets consents
      *
      * @return \OpenAPI\Client\Model\CustomerAddConsentsInner[]|null
@@ -956,6 +997,33 @@ class CustomerUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable company cannot be null');
         }
         $this->container['company'] = $company;
+
+        return $this;
+    }
+
+    /**
+     * Gets website
+     *
+     * @return string|null
+     */
+    public function getWebsite()
+    {
+        return $this->container['website'];
+    }
+
+    /**
+     * Sets website
+     *
+     * @param string|null $website Link to customer website
+     *
+     * @return self
+     */
+    public function setWebsite($website)
+    {
+        if (is_null($website)) {
+            throw new \InvalidArgumentException('non-nullable website cannot be null');
+        }
+        $this->container['website'] = $website;
 
         return $this;
     }

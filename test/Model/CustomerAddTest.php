@@ -207,6 +207,15 @@ class CustomerAddTest extends TestCase
     }
 
     /**
+     * Test attribute "partner_offers_subscription"
+     */
+    public function testPropertyPartnerOffersSubscription()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "consents"
      */
     public function testPropertyConsents()

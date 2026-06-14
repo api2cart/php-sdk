@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **last_login** | **string** | Defines customer&#39;s last login time | [optional]
 **birth_day** | **string** | Defines customer&#39;s birthday | [optional]
 **news_letter_subscription** | **bool** | Defines whether the newsletter subscription is available for the user | [optional]
+**partner_offers_subscription** | **bool** | Defines whether the customer agreed to receive offers from partners | [optional]
 **consents** | [**\OpenAPI\Client\Model\CustomerAddConsentsInner[]**](CustomerAddConsentsInner.md) | Defines consents to notifications | [optional]
 **gender** | **string** | Defines customer&#39;s gender | [optional]
 **website** | **string** | Link to customer website | [optional]
