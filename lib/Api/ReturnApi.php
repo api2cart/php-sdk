@@ -147,7 +147,7 @@ class ReturnApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\ReturnActionList200Response
+     * @return \OpenAPI\Client\Model\ModelResponseReturnActionList
      */
     public function returnActionList(string $contentType = self::contentTypes['returnActionList'][0])
     {
@@ -164,7 +164,7 @@ class ReturnApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\ReturnActionList200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ModelResponseReturnActionList, HTTP status code, HTTP response headers (array of strings)
      */
     public function returnActionListWithHttpInfo(string $contentType = self::contentTypes['returnActionList'][0])
     {
@@ -195,11 +195,11 @@ class ReturnApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\ReturnActionList200Response' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ModelResponseReturnActionList' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ReturnActionList200Response' !== 'string') {
+                        if ('\OpenAPI\Client\Model\ModelResponseReturnActionList' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -217,7 +217,7 @@ class ReturnApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ReturnActionList200Response', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ModelResponseReturnActionList', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -236,7 +236,7 @@ class ReturnApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\ReturnActionList200Response';
+            $returnType = '\OpenAPI\Client\Model\ModelResponseReturnActionList';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -269,7 +269,7 @@ class ReturnApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ReturnActionList200Response',
+                        '\OpenAPI\Client\Model\ModelResponseReturnActionList',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -311,7 +311,7 @@ class ReturnApi
      */
     public function returnActionListAsyncWithHttpInfo(string $contentType = self::contentTypes['returnActionList'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\ReturnActionList200Response';
+        $returnType = '\OpenAPI\Client\Model\ModelResponseReturnActionList';
         $request = $this->returnActionListRequest($contentType);
 
         return $this->client
@@ -456,7 +456,7 @@ class ReturnApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\ReturnCount200Response
+     * @return \OpenAPI\Client\Model\ModelResponseReturnCount
      */
     public function returnCount($order_ids = null, $customer_id = null, $store_id = null, $status = null, $return_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['returnCount'][0])
     {
@@ -484,7 +484,7 @@ class ReturnApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\ReturnCount200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ModelResponseReturnCount, HTTP status code, HTTP response headers (array of strings)
      */
     public function returnCountWithHttpInfo($order_ids = null, $customer_id = null, $store_id = null, $status = null, $return_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['returnCount'][0])
     {
@@ -515,11 +515,11 @@ class ReturnApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\ReturnCount200Response' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ModelResponseReturnCount' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ReturnCount200Response' !== 'string') {
+                        if ('\OpenAPI\Client\Model\ModelResponseReturnCount' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -537,7 +537,7 @@ class ReturnApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ReturnCount200Response', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ModelResponseReturnCount', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -556,7 +556,7 @@ class ReturnApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\ReturnCount200Response';
+            $returnType = '\OpenAPI\Client\Model\ModelResponseReturnCount';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -589,7 +589,7 @@ class ReturnApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ReturnCount200Response',
+                        '\OpenAPI\Client\Model\ModelResponseReturnCount',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -653,7 +653,7 @@ class ReturnApi
      */
     public function returnCountAsyncWithHttpInfo($order_ids = null, $customer_id = null, $store_id = null, $status = null, $return_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['returnCount'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\ReturnCount200Response';
+        $returnType = '\OpenAPI\Client\Model\ModelResponseReturnCount';
         $request = $this->returnCountRequest($order_ids, $customer_id, $store_id, $status, $return_type, $created_from, $created_to, $modified_from, $modified_to, $report_request_id, $disable_report_cache, $contentType);
 
         return $this->client
@@ -1871,7 +1871,7 @@ class ReturnApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\ReturnReasonList200Response
+     * @return \OpenAPI\Client\Model\ModelResponseReturnReasonList
      */
     public function returnReasonList($store_id = null, string $contentType = self::contentTypes['returnReasonList'][0])
     {
@@ -1889,7 +1889,7 @@ class ReturnApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\ReturnReasonList200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ModelResponseReturnReasonList, HTTP status code, HTTP response headers (array of strings)
      */
     public function returnReasonListWithHttpInfo($store_id = null, string $contentType = self::contentTypes['returnReasonList'][0])
     {
@@ -1920,11 +1920,11 @@ class ReturnApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\ReturnReasonList200Response' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ModelResponseReturnReasonList' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ReturnReasonList200Response' !== 'string') {
+                        if ('\OpenAPI\Client\Model\ModelResponseReturnReasonList' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1942,7 +1942,7 @@ class ReturnApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ReturnReasonList200Response', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ModelResponseReturnReasonList', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1961,7 +1961,7 @@ class ReturnApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\ReturnReasonList200Response';
+            $returnType = '\OpenAPI\Client\Model\ModelResponseReturnReasonList';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1994,7 +1994,7 @@ class ReturnApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ReturnReasonList200Response',
+                        '\OpenAPI\Client\Model\ModelResponseReturnReasonList',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2038,7 +2038,7 @@ class ReturnApi
      */
     public function returnReasonListAsyncWithHttpInfo($store_id = null, string $contentType = self::contentTypes['returnReasonList'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\ReturnReasonList200Response';
+        $returnType = '\OpenAPI\Client\Model\ModelResponseReturnReasonList';
         $request = $this->returnReasonListRequest($store_id, $contentType);
 
         return $this->client
@@ -2183,7 +2183,7 @@ class ReturnApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\ReturnStatusList200Response
+     * @return \OpenAPI\Client\Model\ModelResponseReturnStatusList
      */
     public function returnStatusList(string $contentType = self::contentTypes['returnStatusList'][0])
     {
@@ -2200,7 +2200,7 @@ class ReturnApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\ReturnStatusList200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ModelResponseReturnStatusList, HTTP status code, HTTP response headers (array of strings)
      */
     public function returnStatusListWithHttpInfo(string $contentType = self::contentTypes['returnStatusList'][0])
     {
@@ -2231,11 +2231,11 @@ class ReturnApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\ReturnStatusList200Response' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ModelResponseReturnStatusList' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ReturnStatusList200Response' !== 'string') {
+                        if ('\OpenAPI\Client\Model\ModelResponseReturnStatusList' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2253,7 +2253,7 @@ class ReturnApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ReturnStatusList200Response', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ModelResponseReturnStatusList', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -2272,7 +2272,7 @@ class ReturnApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\ReturnStatusList200Response';
+            $returnType = '\OpenAPI\Client\Model\ModelResponseReturnStatusList';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2305,7 +2305,7 @@ class ReturnApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ReturnStatusList200Response',
+                        '\OpenAPI\Client\Model\ModelResponseReturnStatusList',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2347,7 +2347,7 @@ class ReturnApi
      */
     public function returnStatusListAsyncWithHttpInfo(string $contentType = self::contentTypes['returnStatusList'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\ReturnStatusList200Response';
+        $returnType = '\OpenAPI\Client\Model\ModelResponseReturnStatusList';
         $request = $this->returnStatusListRequest($contentType);
 
         return $this->client

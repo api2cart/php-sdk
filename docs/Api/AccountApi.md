@@ -644,7 +644,7 @@ try {
 ## `accountSupportedPlatforms()`
 
 ```php
-accountSupportedPlatforms(): \OpenAPI\Client\Model\AccountSupportedPlatforms200Response
+accountSupportedPlatforms(): \OpenAPI\Client\Model\ModelResponseAccountSupportedPlatforms
 ```
 
 account.supported_platforms
@@ -685,7 +685,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\AccountSupportedPlatforms200Response**](../Model/AccountSupportedPlatforms200Response.md)
+[**\OpenAPI\Client\Model\ModelResponseAccountSupportedPlatforms**](../Model/ModelResponseAccountSupportedPlatforms.md)
 
 ### Authorization
 

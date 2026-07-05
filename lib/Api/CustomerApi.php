@@ -1251,7 +1251,7 @@ class CustomerApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\CustomerCount200Response
+     * @return \OpenAPI\Client\Model\ModelResponseCustomerCount
      */
     public function customerCount($ids = null, $since_id = null, $customer_list_id = null, $group_id = null, $store_id = null, $avail = true, $include_guests = false, $find_value = null, $find_where = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, string $contentType = self::contentTypes['customerCount'][0])
     {
@@ -1281,7 +1281,7 @@ class CustomerApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\CustomerCount200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ModelResponseCustomerCount, HTTP status code, HTTP response headers (array of strings)
      */
     public function customerCountWithHttpInfo($ids = null, $since_id = null, $customer_list_id = null, $group_id = null, $store_id = null, $avail = true, $include_guests = false, $find_value = null, $find_where = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, string $contentType = self::contentTypes['customerCount'][0])
     {
@@ -1312,11 +1312,11 @@ class CustomerApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\CustomerCount200Response' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ModelResponseCustomerCount' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\CustomerCount200Response' !== 'string') {
+                        if ('\OpenAPI\Client\Model\ModelResponseCustomerCount' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1334,7 +1334,7 @@ class CustomerApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\CustomerCount200Response', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ModelResponseCustomerCount', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1353,7 +1353,7 @@ class CustomerApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\CustomerCount200Response';
+            $returnType = '\OpenAPI\Client\Model\ModelResponseCustomerCount';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1386,7 +1386,7 @@ class CustomerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\CustomerCount200Response',
+                        '\OpenAPI\Client\Model\ModelResponseCustomerCount',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1454,7 +1454,7 @@ class CustomerApi
      */
     public function customerCountAsyncWithHttpInfo($ids = null, $since_id = null, $customer_list_id = null, $group_id = null, $store_id = null, $avail = true, $include_guests = false, $find_value = null, $find_where = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, string $contentType = self::contentTypes['customerCount'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\CustomerCount200Response';
+        $returnType = '\OpenAPI\Client\Model\ModelResponseCustomerCount';
         $request = $this->customerCountRequest($ids, $since_id, $customer_list_id, $group_id, $store_id, $avail, $include_guests, $find_value, $find_where, $created_from, $created_to, $modified_from, $modified_to, $contentType);
 
         return $this->client
@@ -2070,7 +2070,7 @@ class CustomerApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\CustomerFind200Response
+     * @return \OpenAPI\Client\Model\ModelResponseCustomerFind
      */
     public function customerFind($find_value, $find_where = 'email', $find_params = 'whole_words', $store_id = null, $include_guests = false, string $contentType = self::contentTypes['customerFind'][0])
     {
@@ -2092,7 +2092,7 @@ class CustomerApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\CustomerFind200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ModelResponseCustomerFind, HTTP status code, HTTP response headers (array of strings)
      */
     public function customerFindWithHttpInfo($find_value, $find_where = 'email', $find_params = 'whole_words', $store_id = null, $include_guests = false, string $contentType = self::contentTypes['customerFind'][0])
     {
@@ -2123,11 +2123,11 @@ class CustomerApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\CustomerFind200Response' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ModelResponseCustomerFind' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\CustomerFind200Response' !== 'string') {
+                        if ('\OpenAPI\Client\Model\ModelResponseCustomerFind' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2145,7 +2145,7 @@ class CustomerApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\CustomerFind200Response', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ModelResponseCustomerFind', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -2164,7 +2164,7 @@ class CustomerApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\CustomerFind200Response';
+            $returnType = '\OpenAPI\Client\Model\ModelResponseCustomerFind';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2197,7 +2197,7 @@ class CustomerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\CustomerFind200Response',
+                        '\OpenAPI\Client\Model\ModelResponseCustomerFind',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2249,7 +2249,7 @@ class CustomerApi
      */
     public function customerFindAsyncWithHttpInfo($find_value, $find_where = 'email', $find_params = 'whole_words', $store_id = null, $include_guests = false, string $contentType = self::contentTypes['customerFind'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\CustomerFind200Response';
+        $returnType = '\OpenAPI\Client\Model\ModelResponseCustomerFind';
         $request = $this->customerFindRequest($find_value, $find_where, $find_params, $store_id, $include_guests, $contentType);
 
         return $this->client

@@ -4175,7 +4175,7 @@ class AccountApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\AccountSupportedPlatforms200Response
+     * @return \OpenAPI\Client\Model\ModelResponseAccountSupportedPlatforms
      */
     public function accountSupportedPlatforms(string $contentType = self::contentTypes['accountSupportedPlatforms'][0])
     {
@@ -4192,7 +4192,7 @@ class AccountApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\AccountSupportedPlatforms200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ModelResponseAccountSupportedPlatforms, HTTP status code, HTTP response headers (array of strings)
      */
     public function accountSupportedPlatformsWithHttpInfo(string $contentType = self::contentTypes['accountSupportedPlatforms'][0])
     {
@@ -4223,11 +4223,11 @@ class AccountApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\AccountSupportedPlatforms200Response' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ModelResponseAccountSupportedPlatforms' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\AccountSupportedPlatforms200Response' !== 'string') {
+                        if ('\OpenAPI\Client\Model\ModelResponseAccountSupportedPlatforms' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -4245,7 +4245,7 @@ class AccountApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AccountSupportedPlatforms200Response', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ModelResponseAccountSupportedPlatforms', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -4264,7 +4264,7 @@ class AccountApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\AccountSupportedPlatforms200Response';
+            $returnType = '\OpenAPI\Client\Model\ModelResponseAccountSupportedPlatforms';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -4297,7 +4297,7 @@ class AccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\AccountSupportedPlatforms200Response',
+                        '\OpenAPI\Client\Model\ModelResponseAccountSupportedPlatforms',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4339,7 +4339,7 @@ class AccountApi
      */
     public function accountSupportedPlatformsAsyncWithHttpInfo(string $contentType = self::contentTypes['accountSupportedPlatforms'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\AccountSupportedPlatforms200Response';
+        $returnType = '\OpenAPI\Client\Model\ModelResponseAccountSupportedPlatforms';
         $request = $this->accountSupportedPlatformsRequest($contentType);
 
         return $this->client

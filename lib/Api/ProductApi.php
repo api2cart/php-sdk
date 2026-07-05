@@ -2862,7 +2862,7 @@ class ProductApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\ProductChildItemFind200Response
+     * @return \OpenAPI\Client\Model\ModelResponseProductChildItemFind
      */
     public function productChildItemFind($find_value = null, $find_where = null, $find_params = 'whole_words', $store_id = null, string $contentType = self::contentTypes['productChildItemFind'][0])
     {
@@ -2883,7 +2883,7 @@ class ProductApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\ProductChildItemFind200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ModelResponseProductChildItemFind, HTTP status code, HTTP response headers (array of strings)
      */
     public function productChildItemFindWithHttpInfo($find_value = null, $find_where = null, $find_params = 'whole_words', $store_id = null, string $contentType = self::contentTypes['productChildItemFind'][0])
     {
@@ -2914,11 +2914,11 @@ class ProductApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\ProductChildItemFind200Response' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ModelResponseProductChildItemFind' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ProductChildItemFind200Response' !== 'string') {
+                        if ('\OpenAPI\Client\Model\ModelResponseProductChildItemFind' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2936,7 +2936,7 @@ class ProductApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ProductChildItemFind200Response', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ModelResponseProductChildItemFind', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -2955,7 +2955,7 @@ class ProductApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\ProductChildItemFind200Response';
+            $returnType = '\OpenAPI\Client\Model\ModelResponseProductChildItemFind';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2988,7 +2988,7 @@ class ProductApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ProductChildItemFind200Response',
+                        '\OpenAPI\Client\Model\ModelResponseProductChildItemFind',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3038,7 +3038,7 @@ class ProductApi
      */
     public function productChildItemFindAsyncWithHttpInfo($find_value = null, $find_where = null, $find_params = 'whole_words', $store_id = null, string $contentType = self::contentTypes['productChildItemFind'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\ProductChildItemFind200Response';
+        $returnType = '\OpenAPI\Client\Model\ModelResponseProductChildItemFind';
         $request = $this->productChildItemFindRequest($find_value, $find_where, $find_params, $store_id, $contentType);
 
         return $this->client
@@ -4330,7 +4330,7 @@ class ProductApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\ProductCount200Response
+     * @return \OpenAPI\Client\Model\ModelResponseProductCount
      */
     public function productCount($sku = null, $product_ids = null, $since_id = null, $categories_ids = null, $category_id = null, $store_id = null, $vendor_id = null, $lang_id = null, $avail_view = null, $avail_sale = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $brand_name = null, $manufacturer_id = null, $product_attributes = null, $status = null, $type = null, $visible = 'everywhere', $find_value = null, $find_where = null, $report_request_id = null, $return_global = false, $disable_report_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['productCount'][0])
     {
@@ -4373,7 +4373,7 @@ class ProductApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\ProductCount200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ModelResponseProductCount, HTTP status code, HTTP response headers (array of strings)
      */
     public function productCountWithHttpInfo($sku = null, $product_ids = null, $since_id = null, $categories_ids = null, $category_id = null, $store_id = null, $vendor_id = null, $lang_id = null, $avail_view = null, $avail_sale = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $brand_name = null, $manufacturer_id = null, $product_attributes = null, $status = null, $type = null, $visible = 'everywhere', $find_value = null, $find_where = null, $report_request_id = null, $return_global = false, $disable_report_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['productCount'][0])
     {
@@ -4404,11 +4404,11 @@ class ProductApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\ProductCount200Response' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ModelResponseProductCount' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ProductCount200Response' !== 'string') {
+                        if ('\OpenAPI\Client\Model\ModelResponseProductCount' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -4426,7 +4426,7 @@ class ProductApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ProductCount200Response', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ModelResponseProductCount', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -4445,7 +4445,7 @@ class ProductApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\ProductCount200Response';
+            $returnType = '\OpenAPI\Client\Model\ModelResponseProductCount';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -4478,7 +4478,7 @@ class ProductApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ProductCount200Response',
+                        '\OpenAPI\Client\Model\ModelResponseProductCount',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4572,7 +4572,7 @@ class ProductApi
      */
     public function productCountAsyncWithHttpInfo($sku = null, $product_ids = null, $since_id = null, $categories_ids = null, $category_id = null, $store_id = null, $vendor_id = null, $lang_id = null, $avail_view = null, $avail_sale = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $brand_name = null, $manufacturer_id = null, $product_attributes = null, $status = null, $type = null, $visible = 'everywhere', $find_value = null, $find_where = null, $report_request_id = null, $return_global = false, $disable_report_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['productCount'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\ProductCount200Response';
+        $returnType = '\OpenAPI\Client\Model\ModelResponseProductCount';
         $request = $this->productCountRequest($sku, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $vendor_id, $lang_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $brand_name, $manufacturer_id, $product_attributes, $status, $type, $visible, $find_value, $find_where, $report_request_id, $return_global, $disable_report_cache, $use_latest_api_version, $contentType);
 
         return $this->client
@@ -6497,7 +6497,7 @@ class ProductApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\ProductFind200Response
+     * @return \OpenAPI\Client\Model\ModelResponseProductFind
      */
     public function productFind($find_value, $find_where = 'name', $find_params = 'whole_words', $find_what = 'product', $lang_id = null, $store_id = null, string $contentType = self::contentTypes['productFind'][0])
     {
@@ -6520,7 +6520,7 @@ class ProductApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\ProductFind200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ModelResponseProductFind, HTTP status code, HTTP response headers (array of strings)
      */
     public function productFindWithHttpInfo($find_value, $find_where = 'name', $find_params = 'whole_words', $find_what = 'product', $lang_id = null, $store_id = null, string $contentType = self::contentTypes['productFind'][0])
     {
@@ -6551,11 +6551,11 @@ class ProductApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\ProductFind200Response' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ModelResponseProductFind' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ProductFind200Response' !== 'string') {
+                        if ('\OpenAPI\Client\Model\ModelResponseProductFind' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -6573,7 +6573,7 @@ class ProductApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ProductFind200Response', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ModelResponseProductFind', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -6592,7 +6592,7 @@ class ProductApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\ProductFind200Response';
+            $returnType = '\OpenAPI\Client\Model\ModelResponseProductFind';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -6625,7 +6625,7 @@ class ProductApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ProductFind200Response',
+                        '\OpenAPI\Client\Model\ModelResponseProductFind',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6679,7 +6679,7 @@ class ProductApi
      */
     public function productFindAsyncWithHttpInfo($find_value, $find_where = 'name', $find_params = 'whole_words', $find_what = 'product', $lang_id = null, $store_id = null, string $contentType = self::contentTypes['productFind'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\ProductFind200Response';
+        $returnType = '\OpenAPI\Client\Model\ModelResponseProductFind';
         $request = $this->productFindRequest($find_value, $find_where, $find_params, $find_what, $lang_id, $store_id, $contentType);
 
         return $this->client

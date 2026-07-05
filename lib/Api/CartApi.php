@@ -198,7 +198,7 @@ class CartApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\CartCatalogPriceRulesCount200Response
+     * @return \OpenAPI\Client\Model\ModelResponseCartCatalogPriceRulesCount
      */
     public function cartCatalogPriceRulesCount(string $contentType = self::contentTypes['cartCatalogPriceRulesCount'][0])
     {
@@ -215,7 +215,7 @@ class CartApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\CartCatalogPriceRulesCount200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ModelResponseCartCatalogPriceRulesCount, HTTP status code, HTTP response headers (array of strings)
      */
     public function cartCatalogPriceRulesCountWithHttpInfo(string $contentType = self::contentTypes['cartCatalogPriceRulesCount'][0])
     {
@@ -246,11 +246,11 @@ class CartApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\CartCatalogPriceRulesCount200Response' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ModelResponseCartCatalogPriceRulesCount' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\CartCatalogPriceRulesCount200Response' !== 'string') {
+                        if ('\OpenAPI\Client\Model\ModelResponseCartCatalogPriceRulesCount' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -268,7 +268,7 @@ class CartApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\CartCatalogPriceRulesCount200Response', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ModelResponseCartCatalogPriceRulesCount', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -287,7 +287,7 @@ class CartApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\CartCatalogPriceRulesCount200Response';
+            $returnType = '\OpenAPI\Client\Model\ModelResponseCartCatalogPriceRulesCount';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -320,7 +320,7 @@ class CartApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\CartCatalogPriceRulesCount200Response',
+                        '\OpenAPI\Client\Model\ModelResponseCartCatalogPriceRulesCount',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -362,7 +362,7 @@ class CartApi
      */
     public function cartCatalogPriceRulesCountAsyncWithHttpInfo(string $contentType = self::contentTypes['cartCatalogPriceRulesCount'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\CartCatalogPriceRulesCount200Response';
+        $returnType = '\OpenAPI\Client\Model\ModelResponseCartCatalogPriceRulesCount';
         $request = $this->cartCatalogPriceRulesCountRequest($contentType);
 
         return $this->client
@@ -1700,7 +1700,7 @@ class CartApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\CartCouponCount200Response
+     * @return \OpenAPI\Client\Model\ModelResponseCartCouponCount
      */
     public function cartCouponCount($store_id = null, $avail = true, $date_start_from = null, $date_start_to = null, $date_end_from = null, $date_end_to = null, string $contentType = self::contentTypes['cartCouponCount'][0])
     {
@@ -1723,7 +1723,7 @@ class CartApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\CartCouponCount200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ModelResponseCartCouponCount, HTTP status code, HTTP response headers (array of strings)
      */
     public function cartCouponCountWithHttpInfo($store_id = null, $avail = true, $date_start_from = null, $date_start_to = null, $date_end_from = null, $date_end_to = null, string $contentType = self::contentTypes['cartCouponCount'][0])
     {
@@ -1754,11 +1754,11 @@ class CartApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\CartCouponCount200Response' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ModelResponseCartCouponCount' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\CartCouponCount200Response' !== 'string') {
+                        if ('\OpenAPI\Client\Model\ModelResponseCartCouponCount' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1776,7 +1776,7 @@ class CartApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\CartCouponCount200Response', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ModelResponseCartCouponCount', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1795,7 +1795,7 @@ class CartApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\CartCouponCount200Response';
+            $returnType = '\OpenAPI\Client\Model\ModelResponseCartCouponCount';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1828,7 +1828,7 @@ class CartApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\CartCouponCount200Response',
+                        '\OpenAPI\Client\Model\ModelResponseCartCouponCount',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1882,7 +1882,7 @@ class CartApi
      */
     public function cartCouponCountAsyncWithHttpInfo($store_id = null, $avail = true, $date_start_from = null, $date_start_to = null, $date_end_from = null, $date_end_to = null, string $contentType = self::contentTypes['cartCouponCount'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\CartCouponCount200Response';
+        $returnType = '\OpenAPI\Client\Model\ModelResponseCartCouponCount';
         $request = $this->cartCouponCountRequest($store_id, $avail, $date_start_from, $date_start_to, $date_end_from, $date_end_to, $contentType);
 
         return $this->client
@@ -3249,11 +3249,15 @@ class CartApi
      * cart.giftcard.add
      *
      * @param  float $amount Defines the gift card amount value. (required)
+     * @param  string|null $currency Defines currency code (optional)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $code Gift card code (optional)
+     * @param  string|null $name Entity name (optional)
      * @param  string|null $owner_email Gift card owner email (optional)
+     * @param  string|null $owner_name Gift card owner name (optional)
      * @param  string|null $recipient_email Gift card recipient email (optional)
      * @param  string|null $recipient_name Gift card recipient name (optional)
-     * @param  string|null $owner_name Gift card owner name (optional)
+     * @param  string|null $message Free-form message attached to the entity. (optional)
      * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartGiftcardAdd'] to see the possible values for this operation
      *
@@ -3261,9 +3265,9 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CartGiftcardAdd200Response
      */
-    public function cartGiftcardAdd($amount, $code = null, $owner_email = null, $recipient_email = null, $recipient_name = null, $owner_name = null, $idempotency_key = null, string $contentType = self::contentTypes['cartGiftcardAdd'][0])
+    public function cartGiftcardAdd($amount, $currency = null, $store_id = null, $code = null, $name = null, $owner_email = null, $owner_name = null, $recipient_email = null, $recipient_name = null, $message = null, $idempotency_key = null, string $contentType = self::contentTypes['cartGiftcardAdd'][0])
     {
-        list($response) = $this->cartGiftcardAddWithHttpInfo($amount, $code, $owner_email, $recipient_email, $recipient_name, $owner_name, $idempotency_key, $contentType);
+        list($response) = $this->cartGiftcardAddWithHttpInfo($amount, $currency, $store_id, $code, $name, $owner_email, $owner_name, $recipient_email, $recipient_name, $message, $idempotency_key, $contentType);
         return $response;
     }
 
@@ -3273,11 +3277,15 @@ class CartApi
      * cart.giftcard.add
      *
      * @param  float $amount Defines the gift card amount value. (required)
+     * @param  string|null $currency Defines currency code (optional)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $code Gift card code (optional)
+     * @param  string|null $name Entity name (optional)
      * @param  string|null $owner_email Gift card owner email (optional)
+     * @param  string|null $owner_name Gift card owner name (optional)
      * @param  string|null $recipient_email Gift card recipient email (optional)
      * @param  string|null $recipient_name Gift card recipient name (optional)
-     * @param  string|null $owner_name Gift card owner name (optional)
+     * @param  string|null $message Free-form message attached to the entity. (optional)
      * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartGiftcardAdd'] to see the possible values for this operation
      *
@@ -3285,9 +3293,9 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CartGiftcardAdd200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cartGiftcardAddWithHttpInfo($amount, $code = null, $owner_email = null, $recipient_email = null, $recipient_name = null, $owner_name = null, $idempotency_key = null, string $contentType = self::contentTypes['cartGiftcardAdd'][0])
+    public function cartGiftcardAddWithHttpInfo($amount, $currency = null, $store_id = null, $code = null, $name = null, $owner_email = null, $owner_name = null, $recipient_email = null, $recipient_name = null, $message = null, $idempotency_key = null, string $contentType = self::contentTypes['cartGiftcardAdd'][0])
     {
-        $request = $this->cartGiftcardAddRequest($amount, $code, $owner_email, $recipient_email, $recipient_name, $owner_name, $idempotency_key, $contentType);
+        $request = $this->cartGiftcardAddRequest($amount, $currency, $store_id, $code, $name, $owner_email, $owner_name, $recipient_email, $recipient_name, $message, $idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3404,20 +3412,24 @@ class CartApi
      * cart.giftcard.add
      *
      * @param  float $amount Defines the gift card amount value. (required)
+     * @param  string|null $currency Defines currency code (optional)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $code Gift card code (optional)
+     * @param  string|null $name Entity name (optional)
      * @param  string|null $owner_email Gift card owner email (optional)
+     * @param  string|null $owner_name Gift card owner name (optional)
      * @param  string|null $recipient_email Gift card recipient email (optional)
      * @param  string|null $recipient_name Gift card recipient name (optional)
-     * @param  string|null $owner_name Gift card owner name (optional)
+     * @param  string|null $message Free-form message attached to the entity. (optional)
      * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartGiftcardAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartGiftcardAddAsync($amount, $code = null, $owner_email = null, $recipient_email = null, $recipient_name = null, $owner_name = null, $idempotency_key = null, string $contentType = self::contentTypes['cartGiftcardAdd'][0])
+    public function cartGiftcardAddAsync($amount, $currency = null, $store_id = null, $code = null, $name = null, $owner_email = null, $owner_name = null, $recipient_email = null, $recipient_name = null, $message = null, $idempotency_key = null, string $contentType = self::contentTypes['cartGiftcardAdd'][0])
     {
-        return $this->cartGiftcardAddAsyncWithHttpInfo($amount, $code, $owner_email, $recipient_email, $recipient_name, $owner_name, $idempotency_key, $contentType)
+        return $this->cartGiftcardAddAsyncWithHttpInfo($amount, $currency, $store_id, $code, $name, $owner_email, $owner_name, $recipient_email, $recipient_name, $message, $idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3431,21 +3443,25 @@ class CartApi
      * cart.giftcard.add
      *
      * @param  float $amount Defines the gift card amount value. (required)
+     * @param  string|null $currency Defines currency code (optional)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $code Gift card code (optional)
+     * @param  string|null $name Entity name (optional)
      * @param  string|null $owner_email Gift card owner email (optional)
+     * @param  string|null $owner_name Gift card owner name (optional)
      * @param  string|null $recipient_email Gift card recipient email (optional)
      * @param  string|null $recipient_name Gift card recipient name (optional)
-     * @param  string|null $owner_name Gift card owner name (optional)
+     * @param  string|null $message Free-form message attached to the entity. (optional)
      * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartGiftcardAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartGiftcardAddAsyncWithHttpInfo($amount, $code = null, $owner_email = null, $recipient_email = null, $recipient_name = null, $owner_name = null, $idempotency_key = null, string $contentType = self::contentTypes['cartGiftcardAdd'][0])
+    public function cartGiftcardAddAsyncWithHttpInfo($amount, $currency = null, $store_id = null, $code = null, $name = null, $owner_email = null, $owner_name = null, $recipient_email = null, $recipient_name = null, $message = null, $idempotency_key = null, string $contentType = self::contentTypes['cartGiftcardAdd'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CartGiftcardAdd200Response';
-        $request = $this->cartGiftcardAddRequest($amount, $code, $owner_email, $recipient_email, $recipient_name, $owner_name, $idempotency_key, $contentType);
+        $request = $this->cartGiftcardAddRequest($amount, $currency, $store_id, $code, $name, $owner_email, $owner_name, $recipient_email, $recipient_name, $message, $idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3487,18 +3503,22 @@ class CartApi
      * Create request for operation 'cartGiftcardAdd'
      *
      * @param  float $amount Defines the gift card amount value. (required)
+     * @param  string|null $currency Defines currency code (optional)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string|null $code Gift card code (optional)
+     * @param  string|null $name Entity name (optional)
      * @param  string|null $owner_email Gift card owner email (optional)
+     * @param  string|null $owner_name Gift card owner name (optional)
      * @param  string|null $recipient_email Gift card recipient email (optional)
      * @param  string|null $recipient_name Gift card recipient name (optional)
-     * @param  string|null $owner_name Gift card owner name (optional)
+     * @param  string|null $message Free-form message attached to the entity. (optional)
      * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartGiftcardAdd'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function cartGiftcardAddRequest($amount, $code = null, $owner_email = null, $recipient_email = null, $recipient_name = null, $owner_name = null, $idempotency_key = null, string $contentType = self::contentTypes['cartGiftcardAdd'][0])
+    public function cartGiftcardAddRequest($amount, $currency = null, $store_id = null, $code = null, $name = null, $owner_email = null, $owner_name = null, $recipient_email = null, $recipient_name = null, $message = null, $idempotency_key = null, string $contentType = self::contentTypes['cartGiftcardAdd'][0])
     {
 
         // verify the required parameter 'amount' is set
@@ -3507,6 +3527,10 @@ class CartApi
                 'Missing the required parameter $amount when calling cartGiftcardAdd'
             );
         }
+
+
+
+
 
 
 
@@ -3533,6 +3557,24 @@ class CartApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $currency,
+            'currency', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $store_id,
+            'store_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $code,
             'code', // param base name
             'string', // openApiType
@@ -3542,8 +3584,26 @@ class CartApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $name,
+            'name', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $owner_email,
             'owner_email', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $owner_name,
+            'owner_name', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -3569,8 +3629,8 @@ class CartApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $owner_name,
-            'owner_name', // param base name
+            $message,
+            'message', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -3662,7 +3722,7 @@ class CartApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\CartGiftcardCount200Response
+     * @return \OpenAPI\Client\Model\ModelResponseCartGiftcardCount
      */
     public function cartGiftcardCount($store_id = null, string $contentType = self::contentTypes['cartGiftcardCount'][0])
     {
@@ -3680,7 +3740,7 @@ class CartApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\CartGiftcardCount200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ModelResponseCartGiftcardCount, HTTP status code, HTTP response headers (array of strings)
      */
     public function cartGiftcardCountWithHttpInfo($store_id = null, string $contentType = self::contentTypes['cartGiftcardCount'][0])
     {
@@ -3711,11 +3771,11 @@ class CartApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\CartGiftcardCount200Response' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ModelResponseCartGiftcardCount' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\CartGiftcardCount200Response' !== 'string') {
+                        if ('\OpenAPI\Client\Model\ModelResponseCartGiftcardCount' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -3733,7 +3793,7 @@ class CartApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\CartGiftcardCount200Response', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ModelResponseCartGiftcardCount', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -3752,7 +3812,7 @@ class CartApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\CartGiftcardCount200Response';
+            $returnType = '\OpenAPI\Client\Model\ModelResponseCartGiftcardCount';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3785,7 +3845,7 @@ class CartApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\CartGiftcardCount200Response',
+                        '\OpenAPI\Client\Model\ModelResponseCartGiftcardCount',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3829,7 +3889,7 @@ class CartApi
      */
     public function cartGiftcardCountAsyncWithHttpInfo($store_id = null, string $contentType = self::contentTypes['cartGiftcardCount'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\CartGiftcardCount200Response';
+        $returnType = '\OpenAPI\Client\Model\ModelResponseCartGiftcardCount';
         $request = $this->cartGiftcardCountRequest($store_id, $contentType);
 
         return $this->client
@@ -3971,15 +4031,16 @@ class CartApi
      * cart.giftcard.delete
      *
      * @param  string $id Entity id (required)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartGiftcardDelete'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\AttributeDelete200Response
      */
-    public function cartGiftcardDelete($id, string $contentType = self::contentTypes['cartGiftcardDelete'][0])
+    public function cartGiftcardDelete($id, $store_id = null, string $contentType = self::contentTypes['cartGiftcardDelete'][0])
     {
-        list($response) = $this->cartGiftcardDeleteWithHttpInfo($id, $contentType);
+        list($response) = $this->cartGiftcardDeleteWithHttpInfo($id, $store_id, $contentType);
         return $response;
     }
 
@@ -3989,15 +4050,16 @@ class CartApi
      * cart.giftcard.delete
      *
      * @param  string $id Entity id (required)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartGiftcardDelete'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\AttributeDelete200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cartGiftcardDeleteWithHttpInfo($id, string $contentType = self::contentTypes['cartGiftcardDelete'][0])
+    public function cartGiftcardDeleteWithHttpInfo($id, $store_id = null, string $contentType = self::contentTypes['cartGiftcardDelete'][0])
     {
-        $request = $this->cartGiftcardDeleteRequest($id, $contentType);
+        $request = $this->cartGiftcardDeleteRequest($id, $store_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4114,14 +4176,15 @@ class CartApi
      * cart.giftcard.delete
      *
      * @param  string $id Entity id (required)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartGiftcardDelete'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartGiftcardDeleteAsync($id, string $contentType = self::contentTypes['cartGiftcardDelete'][0])
+    public function cartGiftcardDeleteAsync($id, $store_id = null, string $contentType = self::contentTypes['cartGiftcardDelete'][0])
     {
-        return $this->cartGiftcardDeleteAsyncWithHttpInfo($id, $contentType)
+        return $this->cartGiftcardDeleteAsyncWithHttpInfo($id, $store_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4135,15 +4198,16 @@ class CartApi
      * cart.giftcard.delete
      *
      * @param  string $id Entity id (required)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartGiftcardDelete'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartGiftcardDeleteAsyncWithHttpInfo($id, string $contentType = self::contentTypes['cartGiftcardDelete'][0])
+    public function cartGiftcardDeleteAsyncWithHttpInfo($id, $store_id = null, string $contentType = self::contentTypes['cartGiftcardDelete'][0])
     {
         $returnType = '\OpenAPI\Client\Model\AttributeDelete200Response';
-        $request = $this->cartGiftcardDeleteRequest($id, $contentType);
+        $request = $this->cartGiftcardDeleteRequest($id, $store_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4185,12 +4249,13 @@ class CartApi
      * Create request for operation 'cartGiftcardDelete'
      *
      * @param  string $id Entity id (required)
+     * @param  string|null $store_id Store Id (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartGiftcardDelete'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function cartGiftcardDeleteRequest($id, string $contentType = self::contentTypes['cartGiftcardDelete'][0])
+    public function cartGiftcardDeleteRequest($id, $store_id = null, string $contentType = self::contentTypes['cartGiftcardDelete'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -4199,6 +4264,7 @@ class CartApi
                 'Missing the required parameter $id when calling cartGiftcardDelete'
             );
         }
+
 
 
         $resourcePath = '/cart.giftcard.delete.json';
@@ -4216,6 +4282,15 @@ class CartApi
             'form', // style
             true, // explode
             true // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $store_id,
+            'store_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
         ) ?? []);
 
 
@@ -4289,6 +4364,7 @@ class CartApi
      *
      * cart.giftcard.list
      *
+     * @param  string|null $ids Retrieves gift cards specified by ids (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
@@ -4302,9 +4378,9 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseCartGiftCardList
      */
-    public function cartGiftcardList($start = 0, $count = 10, $page_cursor = null, $store_id = null, $response_fields = null, $params = 'id,code,name', $exclude = null, string $contentType = self::contentTypes['cartGiftcardList'][0])
+    public function cartGiftcardList($ids = null, $start = 0, $count = 10, $page_cursor = null, $store_id = null, $response_fields = null, $params = 'id,code,name', $exclude = null, string $contentType = self::contentTypes['cartGiftcardList'][0])
     {
-        list($response) = $this->cartGiftcardListWithHttpInfo($start, $count, $page_cursor, $store_id, $response_fields, $params, $exclude, $contentType);
+        list($response) = $this->cartGiftcardListWithHttpInfo($ids, $start, $count, $page_cursor, $store_id, $response_fields, $params, $exclude, $contentType);
         return $response;
     }
 
@@ -4313,6 +4389,7 @@ class CartApi
      *
      * cart.giftcard.list
      *
+     * @param  string|null $ids Retrieves gift cards specified by ids (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
@@ -4326,9 +4403,9 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseCartGiftCardList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cartGiftcardListWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $store_id = null, $response_fields = null, $params = 'id,code,name', $exclude = null, string $contentType = self::contentTypes['cartGiftcardList'][0])
+    public function cartGiftcardListWithHttpInfo($ids = null, $start = 0, $count = 10, $page_cursor = null, $store_id = null, $response_fields = null, $params = 'id,code,name', $exclude = null, string $contentType = self::contentTypes['cartGiftcardList'][0])
     {
-        $request = $this->cartGiftcardListRequest($start, $count, $page_cursor, $store_id, $response_fields, $params, $exclude, $contentType);
+        $request = $this->cartGiftcardListRequest($ids, $start, $count, $page_cursor, $store_id, $response_fields, $params, $exclude, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4444,6 +4521,7 @@ class CartApi
      *
      * cart.giftcard.list
      *
+     * @param  string|null $ids Retrieves gift cards specified by ids (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
@@ -4456,9 +4534,9 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartGiftcardListAsync($start = 0, $count = 10, $page_cursor = null, $store_id = null, $response_fields = null, $params = 'id,code,name', $exclude = null, string $contentType = self::contentTypes['cartGiftcardList'][0])
+    public function cartGiftcardListAsync($ids = null, $start = 0, $count = 10, $page_cursor = null, $store_id = null, $response_fields = null, $params = 'id,code,name', $exclude = null, string $contentType = self::contentTypes['cartGiftcardList'][0])
     {
-        return $this->cartGiftcardListAsyncWithHttpInfo($start, $count, $page_cursor, $store_id, $response_fields, $params, $exclude, $contentType)
+        return $this->cartGiftcardListAsyncWithHttpInfo($ids, $start, $count, $page_cursor, $store_id, $response_fields, $params, $exclude, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4471,6 +4549,7 @@ class CartApi
      *
      * cart.giftcard.list
      *
+     * @param  string|null $ids Retrieves gift cards specified by ids (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
@@ -4483,10 +4562,10 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartGiftcardListAsyncWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $store_id = null, $response_fields = null, $params = 'id,code,name', $exclude = null, string $contentType = self::contentTypes['cartGiftcardList'][0])
+    public function cartGiftcardListAsyncWithHttpInfo($ids = null, $start = 0, $count = 10, $page_cursor = null, $store_id = null, $response_fields = null, $params = 'id,code,name', $exclude = null, string $contentType = self::contentTypes['cartGiftcardList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseCartGiftCardList';
-        $request = $this->cartGiftcardListRequest($start, $count, $page_cursor, $store_id, $response_fields, $params, $exclude, $contentType);
+        $request = $this->cartGiftcardListRequest($ids, $start, $count, $page_cursor, $store_id, $response_fields, $params, $exclude, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4527,6 +4606,7 @@ class CartApi
     /**
      * Create request for operation 'cartGiftcardList'
      *
+     * @param  string|null $ids Retrieves gift cards specified by ids (optional)
      * @param  int|null $start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param  int|null $count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
@@ -4539,8 +4619,9 @@ class CartApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function cartGiftcardListRequest($start = 0, $count = 10, $page_cursor = null, $store_id = null, $response_fields = null, $params = 'id,code,name', $exclude = null, string $contentType = self::contentTypes['cartGiftcardList'][0])
+    public function cartGiftcardListRequest($ids = null, $start = 0, $count = 10, $page_cursor = null, $store_id = null, $response_fields = null, $params = 'id,code,name', $exclude = null, string $contentType = self::contentTypes['cartGiftcardList'][0])
     {
+
 
 
 
@@ -4557,6 +4638,15 @@ class CartApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $ids,
+            'ids', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $start,
@@ -6341,7 +6431,7 @@ class CartApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\CartMethods200Response
+     * @return \OpenAPI\Client\Model\ModelResponseCartMethods
      */
     public function cartMethods(string $contentType = self::contentTypes['cartMethods'][0])
     {
@@ -6358,7 +6448,7 @@ class CartApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\CartMethods200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ModelResponseCartMethods, HTTP status code, HTTP response headers (array of strings)
      */
     public function cartMethodsWithHttpInfo(string $contentType = self::contentTypes['cartMethods'][0])
     {
@@ -6389,11 +6479,11 @@ class CartApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\CartMethods200Response' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ModelResponseCartMethods' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\CartMethods200Response' !== 'string') {
+                        if ('\OpenAPI\Client\Model\ModelResponseCartMethods' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -6411,7 +6501,7 @@ class CartApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\CartMethods200Response', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ModelResponseCartMethods', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -6430,7 +6520,7 @@ class CartApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\CartMethods200Response';
+            $returnType = '\OpenAPI\Client\Model\ModelResponseCartMethods';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -6463,7 +6553,7 @@ class CartApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\CartMethods200Response',
+                        '\OpenAPI\Client\Model\ModelResponseCartMethods',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6505,7 +6595,7 @@ class CartApi
      */
     public function cartMethodsAsyncWithHttpInfo(string $contentType = self::contentTypes['cartMethods'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\CartMethods200Response';
+        $returnType = '\OpenAPI\Client\Model\ModelResponseCartMethods';
         $request = $this->cartMethodsRequest($contentType);
 
         return $this->client

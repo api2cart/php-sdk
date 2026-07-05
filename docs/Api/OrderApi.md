@@ -263,7 +263,7 @@ try {
 ## `orderCount()`
 
 ```php
-orderCount($order_ids, $ids, $customer_id, $store_id, $customer_email, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $created_from, $created_to, $modified_from, $modified_to, $use_latest_api_version, $vendor_id): \OpenAPI\Client\Model\OrderCount200Response
+orderCount($order_ids, $ids, $customer_id, $store_id, $customer_email, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $created_from, $created_to, $modified_from, $modified_to, $use_latest_api_version, $vendor_id): \OpenAPI\Client\Model\ModelResponseOrderCount
 ```
 
 order.count
@@ -354,7 +354,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\OrderCount200Response**](../Model/OrderCount200Response.md)
+[**\OpenAPI\Client\Model\ModelResponseOrderCount**](../Model/ModelResponseOrderCount.md)
 
 ### Authorization
 
@@ -372,7 +372,7 @@ try {
 ## `orderFinancialStatusList()`
 
 ```php
-orderFinancialStatusList(): \OpenAPI\Client\Model\OrderFinancialStatusList200Response
+orderFinancialStatusList(): \OpenAPI\Client\Model\ModelResponseOrderFinancialStatusList
 ```
 
 order.financial_status.list
@@ -418,7 +418,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\OrderFinancialStatusList200Response**](../Model/OrderFinancialStatusList200Response.md)
+[**\OpenAPI\Client\Model\ModelResponseOrderFinancialStatusList**](../Model/ModelResponseOrderFinancialStatusList.md)
 
 ### Authorization
 
@@ -436,7 +436,7 @@ This endpoint does not need any parameter.
 ## `orderFulfillmentStatusList()`
 
 ```php
-orderFulfillmentStatusList($action): \OpenAPI\Client\Model\OrderFulfillmentStatusList200Response
+orderFulfillmentStatusList($action): \OpenAPI\Client\Model\ModelResponseOrderFulfillmentStatusList
 ```
 
 order.fulfillment_status.list
@@ -485,7 +485,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\OrderFulfillmentStatusList200Response**](../Model/OrderFulfillmentStatusList200Response.md)
+[**\OpenAPI\Client\Model\ModelResponseOrderFulfillmentStatusList**](../Model/ModelResponseOrderFulfillmentStatusList.md)
 
 ### Authorization
 

@@ -1033,7 +1033,7 @@ class CategoryApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\CategoryAssign200Response
+     * @return \OpenAPI\Client\Model\ModelResponseCategoryAssign
      */
     public function categoryAssign($category_id, $product_id, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['categoryAssign'][0])
     {
@@ -1054,7 +1054,7 @@ class CategoryApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\CategoryAssign200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ModelResponseCategoryAssign, HTTP status code, HTTP response headers (array of strings)
      */
     public function categoryAssignWithHttpInfo($category_id, $product_id, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['categoryAssign'][0])
     {
@@ -1085,11 +1085,11 @@ class CategoryApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\CategoryAssign200Response' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ModelResponseCategoryAssign' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\CategoryAssign200Response' !== 'string') {
+                        if ('\OpenAPI\Client\Model\ModelResponseCategoryAssign' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1107,7 +1107,7 @@ class CategoryApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\CategoryAssign200Response', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ModelResponseCategoryAssign', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1126,7 +1126,7 @@ class CategoryApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\CategoryAssign200Response';
+            $returnType = '\OpenAPI\Client\Model\ModelResponseCategoryAssign';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1159,7 +1159,7 @@ class CategoryApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\CategoryAssign200Response',
+                        '\OpenAPI\Client\Model\ModelResponseCategoryAssign',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1209,7 +1209,7 @@ class CategoryApi
      */
     public function categoryAssignAsyncWithHttpInfo($category_id, $product_id, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['categoryAssign'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\CategoryAssign200Response';
+        $returnType = '\OpenAPI\Client\Model\ModelResponseCategoryAssign';
         $request = $this->categoryAssignRequest($category_id, $product_id, $store_id, $idempotency_key, $contentType);
 
         return $this->client
@@ -1412,7 +1412,7 @@ class CategoryApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\CategoryCount200Response
+     * @return \OpenAPI\Client\Model\ModelResponseCategoryCount
      */
     public function categoryCount($parent_id = null, $store_id = null, $lang_id = null, $avail = true, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $product_type = null, $find_value = null, $find_where = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['categoryCount'][0])
     {
@@ -1442,7 +1442,7 @@ class CategoryApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\CategoryCount200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ModelResponseCategoryCount, HTTP status code, HTTP response headers (array of strings)
      */
     public function categoryCountWithHttpInfo($parent_id = null, $store_id = null, $lang_id = null, $avail = true, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $product_type = null, $find_value = null, $find_where = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['categoryCount'][0])
     {
@@ -1473,11 +1473,11 @@ class CategoryApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\CategoryCount200Response' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ModelResponseCategoryCount' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\CategoryCount200Response' !== 'string') {
+                        if ('\OpenAPI\Client\Model\ModelResponseCategoryCount' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1495,7 +1495,7 @@ class CategoryApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\CategoryCount200Response', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ModelResponseCategoryCount', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1514,7 +1514,7 @@ class CategoryApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\CategoryCount200Response';
+            $returnType = '\OpenAPI\Client\Model\ModelResponseCategoryCount';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1547,7 +1547,7 @@ class CategoryApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\CategoryCount200Response',
+                        '\OpenAPI\Client\Model\ModelResponseCategoryCount',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1615,7 +1615,7 @@ class CategoryApi
      */
     public function categoryCountAsyncWithHttpInfo($parent_id = null, $store_id = null, $lang_id = null, $avail = true, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $product_type = null, $find_value = null, $find_where = null, $report_request_id = null, $disable_report_cache = false, string $contentType = self::contentTypes['categoryCount'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\CategoryCount200Response';
+        $returnType = '\OpenAPI\Client\Model\ModelResponseCategoryCount';
         $request = $this->categoryCountRequest($parent_id, $store_id, $lang_id, $avail, $created_from, $created_to, $modified_from, $modified_to, $product_type, $find_value, $find_where, $report_request_id, $disable_report_cache, $contentType);
 
         return $this->client
@@ -2548,7 +2548,7 @@ class CategoryApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\CategoryFind200Response
+     * @return \OpenAPI\Client\Model\ModelResponseCategoryFind
      */
     public function categoryFind($find_value, $find_where = 'name', $find_params = 'whole_words', $store_id = null, $lang_id = null, string $contentType = self::contentTypes['categoryFind'][0])
     {
@@ -2570,7 +2570,7 @@ class CategoryApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\CategoryFind200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ModelResponseCategoryFind, HTTP status code, HTTP response headers (array of strings)
      */
     public function categoryFindWithHttpInfo($find_value, $find_where = 'name', $find_params = 'whole_words', $store_id = null, $lang_id = null, string $contentType = self::contentTypes['categoryFind'][0])
     {
@@ -2601,11 +2601,11 @@ class CategoryApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\CategoryFind200Response' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ModelResponseCategoryFind' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\CategoryFind200Response' !== 'string') {
+                        if ('\OpenAPI\Client\Model\ModelResponseCategoryFind' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2623,7 +2623,7 @@ class CategoryApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\CategoryFind200Response', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ModelResponseCategoryFind', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -2642,7 +2642,7 @@ class CategoryApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\CategoryFind200Response';
+            $returnType = '\OpenAPI\Client\Model\ModelResponseCategoryFind';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2675,7 +2675,7 @@ class CategoryApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\CategoryFind200Response',
+                        '\OpenAPI\Client\Model\ModelResponseCategoryFind',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2727,7 +2727,7 @@ class CategoryApi
      */
     public function categoryFindAsyncWithHttpInfo($find_value, $find_where = 'name', $find_params = 'whole_words', $store_id = null, $lang_id = null, string $contentType = self::contentTypes['categoryFind'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\CategoryFind200Response';
+        $returnType = '\OpenAPI\Client\Model\ModelResponseCategoryFind';
         $request = $this->categoryFindRequest($find_value, $find_where, $find_params, $store_id, $lang_id, $contentType);
 
         return $this->client
@@ -4835,7 +4835,7 @@ class CategoryApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\CategoryAssign200Response
+     * @return \OpenAPI\Client\Model\ModelResponseCategoryUnassign
      */
     public function categoryUnassign($category_id, $product_id, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['categoryUnassign'][0])
     {
@@ -4856,7 +4856,7 @@ class CategoryApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\CategoryAssign200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ModelResponseCategoryUnassign, HTTP status code, HTTP response headers (array of strings)
      */
     public function categoryUnassignWithHttpInfo($category_id, $product_id, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['categoryUnassign'][0])
     {
@@ -4887,11 +4887,11 @@ class CategoryApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\CategoryAssign200Response' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ModelResponseCategoryUnassign' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\CategoryAssign200Response' !== 'string') {
+                        if ('\OpenAPI\Client\Model\ModelResponseCategoryUnassign' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -4909,7 +4909,7 @@ class CategoryApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\CategoryAssign200Response', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ModelResponseCategoryUnassign', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -4928,7 +4928,7 @@ class CategoryApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\CategoryAssign200Response';
+            $returnType = '\OpenAPI\Client\Model\ModelResponseCategoryUnassign';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -4961,7 +4961,7 @@ class CategoryApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\CategoryAssign200Response',
+                        '\OpenAPI\Client\Model\ModelResponseCategoryUnassign',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5011,7 +5011,7 @@ class CategoryApi
      */
     public function categoryUnassignAsyncWithHttpInfo($category_id, $product_id, $store_id = null, $idempotency_key = null, string $contentType = self::contentTypes['categoryUnassign'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\CategoryAssign200Response';
+        $returnType = '\OpenAPI\Client\Model\ModelResponseCategoryUnassign';
         $request = $this->categoryUnassignRequest($category_id, $product_id, $store_id, $idempotency_key, $contentType);
 
         return $this->client

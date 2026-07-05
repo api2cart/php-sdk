@@ -554,7 +554,7 @@ class OrderCalculate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets currency
      *
-     * @param string|null $currency Currency code of order
+     * @param string|null $currency Defines currency code
      *
      * @return self
      */

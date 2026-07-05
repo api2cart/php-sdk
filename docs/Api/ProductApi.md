@@ -549,7 +549,7 @@ try {
 ## `productChildItemFind()`
 
 ```php
-productChildItemFind($find_value, $find_where, $find_params, $store_id): \OpenAPI\Client\Model\ProductChildItemFind200Response
+productChildItemFind($find_value, $find_where, $find_params, $store_id): \OpenAPI\Client\Model\ModelResponseProductChildItemFind
 ```
 
 product.child_item.find
@@ -604,7 +604,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ProductChildItemFind200Response**](../Model/ProductChildItemFind200Response.md)
+[**\OpenAPI\Client\Model\ModelResponseProductChildItemFind**](../Model/ModelResponseProductChildItemFind.md)
 
 ### Authorization
 
@@ -816,7 +816,7 @@ try {
 ## `productCount()`
 
 ```php
-productCount($sku, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $vendor_id, $lang_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $brand_name, $manufacturer_id, $product_attributes, $status, $type, $visible, $find_value, $find_where, $report_request_id, $return_global, $disable_report_cache, $use_latest_api_version): \OpenAPI\Client\Model\ProductCount200Response
+productCount($sku, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $vendor_id, $lang_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $brand_name, $manufacturer_id, $product_attributes, $status, $type, $visible, $find_value, $find_where, $report_request_id, $return_global, $disable_report_cache, $use_latest_api_version): \OpenAPI\Client\Model\ModelResponseProductCount
 ```
 
 product.count
@@ -915,7 +915,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ProductCount200Response**](../Model/ProductCount200Response.md)
+[**\OpenAPI\Client\Model\ModelResponseProductCount**](../Model/ModelResponseProductCount.md)
 
 ### Authorization
 
@@ -1231,7 +1231,7 @@ try {
 ## `productFind()`
 
 ```php
-productFind($find_value, $find_where, $find_params, $find_what, $lang_id, $store_id): \OpenAPI\Client\Model\ProductFind200Response
+productFind($find_value, $find_where, $find_params, $find_what, $lang_id, $store_id): \OpenAPI\Client\Model\ModelResponseProductFind
 ```
 
 product.find
@@ -1290,7 +1290,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ProductFind200Response**](../Model/ProductFind200Response.md)
+[**\OpenAPI\Client\Model\ModelResponseProductFind**](../Model/ModelResponseProductFind.md)
 
 ### Authorization
 

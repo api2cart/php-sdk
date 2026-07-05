@@ -15,7 +15,7 @@ All URIs are relative to https://api.api2cart.local.com/v1.1, except if the oper
 ## `returnActionList()`
 
 ```php
-returnActionList(): \OpenAPI\Client\Model\ReturnActionList200Response
+returnActionList(): \OpenAPI\Client\Model\ModelResponseReturnActionList
 ```
 
 return.action.list
@@ -61,7 +61,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ReturnActionList200Response**](../Model/ReturnActionList200Response.md)
+[**\OpenAPI\Client\Model\ModelResponseReturnActionList**](../Model/ModelResponseReturnActionList.md)
 
 ### Authorization
 
@@ -79,7 +79,7 @@ This endpoint does not need any parameter.
 ## `returnCount()`
 
 ```php
-returnCount($order_ids, $customer_id, $store_id, $status, $return_type, $created_from, $created_to, $modified_from, $modified_to, $report_request_id, $disable_report_cache): \OpenAPI\Client\Model\ReturnCount200Response
+returnCount($order_ids, $customer_id, $store_id, $status, $return_type, $created_from, $created_to, $modified_from, $modified_to, $report_request_id, $disable_report_cache): \OpenAPI\Client\Model\ModelResponseReturnCount
 ```
 
 return.count
@@ -148,7 +148,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ReturnCount200Response**](../Model/ReturnCount200Response.md)
+[**\OpenAPI\Client\Model\ModelResponseReturnCount**](../Model/ModelResponseReturnCount.md)
 
 ### Authorization
 
@@ -344,7 +344,7 @@ try {
 ## `returnReasonList()`
 
 ```php
-returnReasonList($store_id): \OpenAPI\Client\Model\ReturnReasonList200Response
+returnReasonList($store_id): \OpenAPI\Client\Model\ModelResponseReturnReasonList
 ```
 
 return.reason.list
@@ -393,7 +393,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ReturnReasonList200Response**](../Model/ReturnReasonList200Response.md)
+[**\OpenAPI\Client\Model\ModelResponseReturnReasonList**](../Model/ModelResponseReturnReasonList.md)
 
 ### Authorization
 
@@ -411,7 +411,7 @@ try {
 ## `returnStatusList()`
 
 ```php
-returnStatusList(): \OpenAPI\Client\Model\ReturnStatusList200Response
+returnStatusList(): \OpenAPI\Client\Model\ModelResponseReturnStatusList
 ```
 
 return.status.list
@@ -457,7 +457,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\ReturnStatusList200Response**](../Model/ReturnStatusList200Response.md)
+[**\OpenAPI\Client\Model\ModelResponseReturnStatusList**](../Model/ModelResponseReturnStatusList.md)
 
 ### Authorization
 

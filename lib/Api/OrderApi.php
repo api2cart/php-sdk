@@ -1383,7 +1383,7 @@ class OrderApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\OrderCount200Response
+     * @return \OpenAPI\Client\Model\ModelResponseOrderCount
      */
     public function orderCount($order_ids = null, $ids = null, $customer_id = null, $store_id = null, $customer_email = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_channel = null, $fulfillment_status = null, $shipping_method = null, $delivery_method = null, $tags = null, $ship_node_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $use_latest_api_version = false, $vendor_id = null, string $contentType = self::contentTypes['orderCount'][0])
     {
@@ -1422,7 +1422,7 @@ class OrderApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\OrderCount200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ModelResponseOrderCount, HTTP status code, HTTP response headers (array of strings)
      */
     public function orderCountWithHttpInfo($order_ids = null, $ids = null, $customer_id = null, $store_id = null, $customer_email = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_channel = null, $fulfillment_status = null, $shipping_method = null, $delivery_method = null, $tags = null, $ship_node_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $use_latest_api_version = false, $vendor_id = null, string $contentType = self::contentTypes['orderCount'][0])
     {
@@ -1453,11 +1453,11 @@ class OrderApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\OrderCount200Response' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ModelResponseOrderCount' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\OrderCount200Response' !== 'string') {
+                        if ('\OpenAPI\Client\Model\ModelResponseOrderCount' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1475,7 +1475,7 @@ class OrderApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\OrderCount200Response', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ModelResponseOrderCount', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1494,7 +1494,7 @@ class OrderApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\OrderCount200Response';
+            $returnType = '\OpenAPI\Client\Model\ModelResponseOrderCount';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1527,7 +1527,7 @@ class OrderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\OrderCount200Response',
+                        '\OpenAPI\Client\Model\ModelResponseOrderCount',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1613,7 +1613,7 @@ class OrderApi
      */
     public function orderCountAsyncWithHttpInfo($order_ids = null, $ids = null, $customer_id = null, $store_id = null, $customer_email = null, $order_status = null, $order_status_ids = null, $ebay_order_status = null, $financial_status = null, $financial_status_ids = null, $fulfillment_channel = null, $fulfillment_status = null, $shipping_method = null, $delivery_method = null, $tags = null, $ship_node_type = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $use_latest_api_version = false, $vendor_id = null, string $contentType = self::contentTypes['orderCount'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\OrderCount200Response';
+        $returnType = '\OpenAPI\Client\Model\ModelResponseOrderCount';
         $request = $this->orderCountRequest($order_ids, $ids, $customer_id, $store_id, $customer_email, $order_status, $order_status_ids, $ebay_order_status, $financial_status, $financial_status_ids, $fulfillment_channel, $fulfillment_status, $shipping_method, $delivery_method, $tags, $ship_node_type, $created_from, $created_to, $modified_from, $modified_to, $use_latest_api_version, $vendor_id, $contentType);
 
         return $this->client
@@ -1989,7 +1989,7 @@ class OrderApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\OrderFinancialStatusList200Response
+     * @return \OpenAPI\Client\Model\ModelResponseOrderFinancialStatusList
      */
     public function orderFinancialStatusList(string $contentType = self::contentTypes['orderFinancialStatusList'][0])
     {
@@ -2006,7 +2006,7 @@ class OrderApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\OrderFinancialStatusList200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ModelResponseOrderFinancialStatusList, HTTP status code, HTTP response headers (array of strings)
      */
     public function orderFinancialStatusListWithHttpInfo(string $contentType = self::contentTypes['orderFinancialStatusList'][0])
     {
@@ -2037,11 +2037,11 @@ class OrderApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\OrderFinancialStatusList200Response' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ModelResponseOrderFinancialStatusList' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\OrderFinancialStatusList200Response' !== 'string') {
+                        if ('\OpenAPI\Client\Model\ModelResponseOrderFinancialStatusList' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2059,7 +2059,7 @@ class OrderApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\OrderFinancialStatusList200Response', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ModelResponseOrderFinancialStatusList', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -2078,7 +2078,7 @@ class OrderApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\OrderFinancialStatusList200Response';
+            $returnType = '\OpenAPI\Client\Model\ModelResponseOrderFinancialStatusList';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2111,7 +2111,7 @@ class OrderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\OrderFinancialStatusList200Response',
+                        '\OpenAPI\Client\Model\ModelResponseOrderFinancialStatusList',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2153,7 +2153,7 @@ class OrderApi
      */
     public function orderFinancialStatusListAsyncWithHttpInfo(string $contentType = self::contentTypes['orderFinancialStatusList'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\OrderFinancialStatusList200Response';
+        $returnType = '\OpenAPI\Client\Model\ModelResponseOrderFinancialStatusList';
         $request = $this->orderFinancialStatusListRequest($contentType);
 
         return $this->client
@@ -2288,7 +2288,7 @@ class OrderApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\OrderFulfillmentStatusList200Response
+     * @return \OpenAPI\Client\Model\ModelResponseOrderFulfillmentStatusList
      */
     public function orderFulfillmentStatusList($action = null, string $contentType = self::contentTypes['orderFulfillmentStatusList'][0])
     {
@@ -2306,7 +2306,7 @@ class OrderApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\OrderFulfillmentStatusList200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ModelResponseOrderFulfillmentStatusList, HTTP status code, HTTP response headers (array of strings)
      */
     public function orderFulfillmentStatusListWithHttpInfo($action = null, string $contentType = self::contentTypes['orderFulfillmentStatusList'][0])
     {
@@ -2337,11 +2337,11 @@ class OrderApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\OrderFulfillmentStatusList200Response' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ModelResponseOrderFulfillmentStatusList' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\OrderFulfillmentStatusList200Response' !== 'string') {
+                        if ('\OpenAPI\Client\Model\ModelResponseOrderFulfillmentStatusList' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2359,7 +2359,7 @@ class OrderApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\OrderFulfillmentStatusList200Response', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ModelResponseOrderFulfillmentStatusList', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -2378,7 +2378,7 @@ class OrderApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\OrderFulfillmentStatusList200Response';
+            $returnType = '\OpenAPI\Client\Model\ModelResponseOrderFulfillmentStatusList';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2411,7 +2411,7 @@ class OrderApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\OrderFulfillmentStatusList200Response',
+                        '\OpenAPI\Client\Model\ModelResponseOrderFulfillmentStatusList',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2455,7 +2455,7 @@ class OrderApi
      */
     public function orderFulfillmentStatusListAsyncWithHttpInfo($action = null, string $contentType = self::contentTypes['orderFulfillmentStatusList'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\OrderFulfillmentStatusList200Response';
+        $returnType = '\OpenAPI\Client\Model\ModelResponseOrderFulfillmentStatusList';
         $request = $this->orderFulfillmentStatusListRequest($action, $contentType);
 
         return $this->client

@@ -238,7 +238,7 @@ try {
 ## `customerCount()`
 
 ```php
-customerCount($ids, $since_id, $customer_list_id, $group_id, $store_id, $avail, $include_guests, $find_value, $find_where, $created_from, $created_to, $modified_from, $modified_to): \OpenAPI\Client\Model\CustomerCount200Response
+customerCount($ids, $since_id, $customer_list_id, $group_id, $store_id, $avail, $include_guests, $find_value, $find_where, $created_from, $created_to, $modified_from, $modified_to): \OpenAPI\Client\Model\ModelResponseCustomerCount
 ```
 
 customer.count
@@ -311,7 +311,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\CustomerCount200Response**](../Model/CustomerCount200Response.md)
+[**\OpenAPI\Client\Model\ModelResponseCustomerCount**](../Model/ModelResponseCustomerCount.md)
 
 ### Authorization
 
@@ -398,7 +398,7 @@ try {
 ## `customerFind()`
 
 ```php
-customerFind($find_value, $find_where, $find_params, $store_id, $include_guests): \OpenAPI\Client\Model\CustomerFind200Response
+customerFind($find_value, $find_where, $find_params, $store_id, $include_guests): \OpenAPI\Client\Model\ModelResponseCustomerFind
 ```
 
 customer.find
@@ -455,7 +455,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\CustomerFind200Response**](../Model/CustomerFind200Response.md)
+[**\OpenAPI\Client\Model\ModelResponseCustomerFind**](../Model/ModelResponseCustomerFind.md)
 
 ### Authorization
 

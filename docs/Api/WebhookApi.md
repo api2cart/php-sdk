@@ -15,7 +15,7 @@ All URIs are relative to https://api.api2cart.local.com/v1.1, except if the oper
 ## `webhookCount()`
 
 ```php
-webhookCount($entity, $action, $active): \OpenAPI\Client\Model\WebhookCount200Response
+webhookCount($entity, $action, $active): \OpenAPI\Client\Model\ModelResponseWebhookCount
 ```
 
 webhook.count
@@ -68,7 +68,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\WebhookCount200Response**](../Model/WebhookCount200Response.md)
+[**\OpenAPI\Client\Model\ModelResponseWebhookCount**](../Model/ModelResponseWebhookCount.md)
 
 ### Authorization
 
@@ -220,7 +220,7 @@ try {
 ## `webhookEvents()`
 
 ```php
-webhookEvents(): \OpenAPI\Client\Model\WebhookEvents200Response
+webhookEvents(): \OpenAPI\Client\Model\ModelResponseWebhookEvents
 ```
 
 webhook.events
@@ -266,7 +266,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\WebhookEvents200Response**](../Model/WebhookEvents200Response.md)
+[**\OpenAPI\Client\Model\ModelResponseWebhookEvents**](../Model/ModelResponseWebhookEvents.md)
 
 ### Authorization
 

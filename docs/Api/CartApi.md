@@ -32,7 +32,7 @@ All URIs are relative to https://api.api2cart.local.com/v1.1, except if the oper
 ## `cartCatalogPriceRulesCount()`
 
 ```php
-cartCatalogPriceRulesCount(): \OpenAPI\Client\Model\CartCatalogPriceRulesCount200Response
+cartCatalogPriceRulesCount(): \OpenAPI\Client\Model\ModelResponseCartCatalogPriceRulesCount
 ```
 
 cart.catalog_price_rules.count
@@ -78,7 +78,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\CartCatalogPriceRulesCount200Response**](../Model/CartCatalogPriceRulesCount200Response.md)
+[**\OpenAPI\Client\Model\ModelResponseCartCatalogPriceRulesCount**](../Model/ModelResponseCartCatalogPriceRulesCount.md)
 
 ### Authorization
 
@@ -327,7 +327,7 @@ try {
 ## `cartCouponCount()`
 
 ```php
-cartCouponCount($store_id, $avail, $date_start_from, $date_start_to, $date_end_from, $date_end_to): \OpenAPI\Client\Model\CartCouponCount200Response
+cartCouponCount($store_id, $avail, $date_start_from, $date_start_to, $date_end_from, $date_end_to): \OpenAPI\Client\Model\ModelResponseCartCouponCount
 ```
 
 cart.coupon.count
@@ -386,7 +386,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\CartCouponCount200Response**](../Model/CartCouponCount200Response.md)
+[**\OpenAPI\Client\Model\ModelResponseCartCouponCount**](../Model/ModelResponseCartCouponCount.md)
 
 ### Authorization
 
@@ -635,7 +635,7 @@ try {
 ## `cartGiftcardAdd()`
 
 ```php
-cartGiftcardAdd($amount, $code, $owner_email, $recipient_email, $recipient_name, $owner_name, $idempotency_key): \OpenAPI\Client\Model\CartGiftcardAdd200Response
+cartGiftcardAdd($amount, $currency, $store_id, $code, $name, $owner_email, $owner_name, $recipient_email, $recipient_name, $message, $idempotency_key): \OpenAPI\Client\Model\CartGiftcardAdd200Response
 ```
 
 cart.giftcard.add
@@ -667,15 +667,19 @@ $apiInstance = new OpenAPI\Client\Api\CartApi(
     $config
 );
 $amount = 15.5; // float | Defines the gift card amount value.
+$currency = USD; // string | Defines currency code
+$store_id = 1; // string | Store Id
 $code = GFT1 A4S5 AA11 RD61; // string | Gift card code
+$name = Test name; // string | Entity name
 $owner_email = jubari@hannsgroup.com; // string | Gift card owner email
+$owner_name = John Doe; // string | Gift card owner name
 $recipient_email = jubari@hannsgroup.com; // string | Gift card recipient email
 $recipient_name = John Doe; // string | Gift card recipient name
-$owner_name = John Doe; // string | Gift card owner name
+$message = Received item is not like in the photo, get my money back.; // string | Free-form message attached to the entity.
 $idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->cartGiftcardAdd($amount, $code, $owner_email, $recipient_email, $recipient_name, $owner_name, $idempotency_key);
+    $result = $apiInstance->cartGiftcardAdd($amount, $currency, $store_id, $code, $name, $owner_email, $owner_name, $recipient_email, $recipient_name, $message, $idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CartApi->cartGiftcardAdd: ', $e->getMessage(), PHP_EOL;
@@ -687,11 +691,15 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **amount** | **float**| Defines the gift card amount value. | |
+| **currency** | **string**| Defines currency code | [optional] |
+| **store_id** | **string**| Store Id | [optional] |
 | **code** | **string**| Gift card code | [optional] |
+| **name** | **string**| Entity name | [optional] |
 | **owner_email** | **string**| Gift card owner email | [optional] |
+| **owner_name** | **string**| Gift card owner name | [optional] |
 | **recipient_email** | **string**| Gift card recipient email | [optional] |
 | **recipient_name** | **string**| Gift card recipient name | [optional] |
-| **owner_name** | **string**| Gift card owner name | [optional] |
+| **message** | **string**| Free-form message attached to the entity. | [optional] |
 | **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
@@ -714,7 +722,7 @@ try {
 ## `cartGiftcardCount()`
 
 ```php
-cartGiftcardCount($store_id): \OpenAPI\Client\Model\CartGiftcardCount200Response
+cartGiftcardCount($store_id): \OpenAPI\Client\Model\ModelResponseCartGiftcardCount
 ```
 
 cart.giftcard.count
@@ -763,7 +771,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\CartGiftcardCount200Response**](../Model/CartGiftcardCount200Response.md)
+[**\OpenAPI\Client\Model\ModelResponseCartGiftcardCount**](../Model/ModelResponseCartGiftcardCount.md)
 
 ### Authorization
 
@@ -781,7 +789,7 @@ try {
 ## `cartGiftcardDelete()`
 
 ```php
-cartGiftcardDelete($id): \OpenAPI\Client\Model\AttributeDelete200Response
+cartGiftcardDelete($id, $store_id): \OpenAPI\Client\Model\AttributeDelete200Response
 ```
 
 cart.giftcard.delete
@@ -813,9 +821,10 @@ $apiInstance = new OpenAPI\Client\Api\CartApi(
     $config
 );
 $id = 10; // string | Entity id
+$store_id = 1; // string | Store Id
 
 try {
-    $result = $apiInstance->cartGiftcardDelete($id);
+    $result = $apiInstance->cartGiftcardDelete($id, $store_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CartApi->cartGiftcardDelete: ', $e->getMessage(), PHP_EOL;
@@ -827,6 +836,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| Entity id | |
+| **store_id** | **string**| Store Id | [optional] |
 
 ### Return type
 
@@ -848,7 +858,7 @@ try {
 ## `cartGiftcardList()`
 
 ```php
-cartGiftcardList($start, $count, $page_cursor, $store_id, $response_fields, $params, $exclude): \OpenAPI\Client\Model\ModelResponseCartGiftCardList
+cartGiftcardList($ids, $start, $count, $page_cursor, $store_id, $response_fields, $params, $exclude): \OpenAPI\Client\Model\ModelResponseCartGiftCardList
 ```
 
 cart.giftcard.list
@@ -879,6 +889,7 @@ $apiInstance = new OpenAPI\Client\Api\CartApi(
     new GuzzleHttp\Client(),
     $config
 );
+$ids = 24,25; // string | Retrieves gift cards specified by ids
 $start = 0; // int | This parameter sets the number from which you want to get entities
 $count = 20; // int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
 $page_cursor = ; // string | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
@@ -888,7 +899,7 @@ $params = id,model,price,images; // string | Set this parameter in order to choo
 $exclude = false; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 
 try {
-    $result = $apiInstance->cartGiftcardList($start, $count, $page_cursor, $store_id, $response_fields, $params, $exclude);
+    $result = $apiInstance->cartGiftcardList($ids, $start, $count, $page_cursor, $store_id, $response_fields, $params, $exclude);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CartApi->cartGiftcardList: ', $e->getMessage(), PHP_EOL;
@@ -899,6 +910,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **ids** | **string**| Retrieves gift cards specified by ids | [optional] |
 | **start** | **int**| This parameter sets the number from which you want to get entities | [optional] [default to 0] |
 | **count** | **int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
 | **page_cursor** | **string**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
@@ -1005,7 +1017,7 @@ cartMetaDataList($entity_id, $count, $page_cursor, $entity, $store_id, $lang_id,
 
 cart.meta_data.list
 
-Using this method, you can get a list of metadata for various entities (products, options, customers, orders). Usually this is data created by third-party plugins.
+Using this method, you can get a list of metadata for various entities. Entities supported may differ across platforms. To get the list of supported entities, pass an invalid value in the <code>entity</code> parameter. The response will contain the list of entities supported by the specific platform. Usually this is data created by third-party plugins.
 
 ### Example
 
@@ -1090,7 +1102,7 @@ cartMetaDataSet($entity_id, $key, $value, $namespace, $entity, $store_id, $lang_
 
 cart.meta_data.set
 
-Set meta data for a specific entity
+Set metadata for a specific entity. Entities supported may differ across platforms. To get the list of supported entities, pass an invalid value in the <code>entity</code> parameter. The response will contain the list of entities supported by the specific platform. Usually this is data created by third-party plugins.
 
 ### Example
 
@@ -1241,7 +1253,7 @@ try {
 ## `cartMethods()`
 
 ```php
-cartMethods(): \OpenAPI\Client\Model\CartMethods200Response
+cartMethods(): \OpenAPI\Client\Model\ModelResponseCartMethods
 ```
 
 cart.methods
@@ -1287,7 +1299,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\CartMethods200Response**](../Model/CartMethods200Response.md)
+[**\OpenAPI\Client\Model\ModelResponseCartMethods**](../Model/ModelResponseCartMethods.md)
 
 ### Authorization
 

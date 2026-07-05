@@ -150,7 +150,7 @@ class WebhookApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\WebhookCount200Response
+     * @return \OpenAPI\Client\Model\ModelResponseWebhookCount
      */
     public function webhookCount($entity = null, $action = null, $active = null, string $contentType = self::contentTypes['webhookCount'][0])
     {
@@ -170,7 +170,7 @@ class WebhookApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\WebhookCount200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ModelResponseWebhookCount, HTTP status code, HTTP response headers (array of strings)
      */
     public function webhookCountWithHttpInfo($entity = null, $action = null, $active = null, string $contentType = self::contentTypes['webhookCount'][0])
     {
@@ -201,11 +201,11 @@ class WebhookApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\WebhookCount200Response' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ModelResponseWebhookCount' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\WebhookCount200Response' !== 'string') {
+                        if ('\OpenAPI\Client\Model\ModelResponseWebhookCount' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -223,7 +223,7 @@ class WebhookApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\WebhookCount200Response', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ModelResponseWebhookCount', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -242,7 +242,7 @@ class WebhookApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\WebhookCount200Response';
+            $returnType = '\OpenAPI\Client\Model\ModelResponseWebhookCount';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -275,7 +275,7 @@ class WebhookApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\WebhookCount200Response',
+                        '\OpenAPI\Client\Model\ModelResponseWebhookCount',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -323,7 +323,7 @@ class WebhookApi
      */
     public function webhookCountAsyncWithHttpInfo($entity = null, $action = null, $active = null, string $contentType = self::contentTypes['webhookCount'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\WebhookCount200Response';
+        $returnType = '\OpenAPI\Client\Model\ModelResponseWebhookCount';
         $request = $this->webhookCountRequest($entity, $action, $active, $contentType);
 
         return $this->client
@@ -1126,7 +1126,7 @@ class WebhookApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\WebhookEvents200Response
+     * @return \OpenAPI\Client\Model\ModelResponseWebhookEvents
      */
     public function webhookEvents(string $contentType = self::contentTypes['webhookEvents'][0])
     {
@@ -1143,7 +1143,7 @@ class WebhookApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\WebhookEvents200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ModelResponseWebhookEvents, HTTP status code, HTTP response headers (array of strings)
      */
     public function webhookEventsWithHttpInfo(string $contentType = self::contentTypes['webhookEvents'][0])
     {
@@ -1174,11 +1174,11 @@ class WebhookApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\WebhookEvents200Response' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ModelResponseWebhookEvents' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\WebhookEvents200Response' !== 'string') {
+                        if ('\OpenAPI\Client\Model\ModelResponseWebhookEvents' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1196,7 +1196,7 @@ class WebhookApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\WebhookEvents200Response', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ModelResponseWebhookEvents', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1215,7 +1215,7 @@ class WebhookApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\WebhookEvents200Response';
+            $returnType = '\OpenAPI\Client\Model\ModelResponseWebhookEvents';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1248,7 +1248,7 @@ class WebhookApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\WebhookEvents200Response',
+                        '\OpenAPI\Client\Model\ModelResponseWebhookEvents',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1290,7 +1290,7 @@ class WebhookApi
      */
     public function webhookEventsAsyncWithHttpInfo(string $contentType = self::contentTypes['webhookEvents'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\WebhookEvents200Response';
+        $returnType = '\OpenAPI\Client\Model\ModelResponseWebhookEvents';
         $request = $this->webhookEventsRequest($contentType);
 
         return $this->client

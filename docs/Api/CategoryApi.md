@@ -186,7 +186,7 @@ try {
 ## `categoryAssign()`
 
 ```php
-categoryAssign($category_id, $product_id, $store_id, $idempotency_key): \OpenAPI\Client\Model\CategoryAssign200Response
+categoryAssign($category_id, $product_id, $store_id, $idempotency_key): \OpenAPI\Client\Model\ModelResponseCategoryAssign
 ```
 
 category.assign
@@ -241,7 +241,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\CategoryAssign200Response**](../Model/CategoryAssign200Response.md)
+[**\OpenAPI\Client\Model\ModelResponseCategoryAssign**](../Model/ModelResponseCategoryAssign.md)
 
 ### Authorization
 
@@ -259,7 +259,7 @@ try {
 ## `categoryCount()`
 
 ```php
-categoryCount($parent_id, $store_id, $lang_id, $avail, $created_from, $created_to, $modified_from, $modified_to, $product_type, $find_value, $find_where, $report_request_id, $disable_report_cache): \OpenAPI\Client\Model\CategoryCount200Response
+categoryCount($parent_id, $store_id, $lang_id, $avail, $created_from, $created_to, $modified_from, $modified_to, $product_type, $find_value, $find_where, $report_request_id, $disable_report_cache): \OpenAPI\Client\Model\ModelResponseCategoryCount
 ```
 
 category.count
@@ -332,7 +332,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\CategoryCount200Response**](../Model/CategoryCount200Response.md)
+[**\OpenAPI\Client\Model\ModelResponseCategoryCount**](../Model/ModelResponseCategoryCount.md)
 
 ### Authorization
 
@@ -486,7 +486,7 @@ try {
 ## `categoryFind()`
 
 ```php
-categoryFind($find_value, $find_where, $find_params, $store_id, $lang_id): \OpenAPI\Client\Model\CategoryFind200Response
+categoryFind($find_value, $find_where, $find_params, $store_id, $lang_id): \OpenAPI\Client\Model\ModelResponseCategoryFind
 ```
 
 category.find
@@ -543,7 +543,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\CategoryFind200Response**](../Model/CategoryFind200Response.md)
+[**\OpenAPI\Client\Model\ModelResponseCategoryFind**](../Model/ModelResponseCategoryFind.md)
 
 ### Authorization
 
@@ -911,7 +911,7 @@ try {
 ## `categoryUnassign()`
 
 ```php
-categoryUnassign($category_id, $product_id, $store_id, $idempotency_key): \OpenAPI\Client\Model\CategoryAssign200Response
+categoryUnassign($category_id, $product_id, $store_id, $idempotency_key): \OpenAPI\Client\Model\ModelResponseCategoryUnassign
 ```
 
 category.unassign
@@ -966,7 +966,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\CategoryAssign200Response**](../Model/CategoryAssign200Response.md)
+[**\OpenAPI\Client\Model\ModelResponseCategoryUnassign**](../Model/ModelResponseCategoryUnassign.md)
 
 ### Authorization
 

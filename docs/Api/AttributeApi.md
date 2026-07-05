@@ -355,7 +355,7 @@ try {
 ## `attributeCount()`
 
 ```php
-attributeCount($type, $attribute_set_id, $store_id, $lang_id, $visible, $required, $system): \OpenAPI\Client\Model\AttributeCount200Response
+attributeCount($type, $attribute_set_id, $store_id, $lang_id, $visible, $required, $system): \OpenAPI\Client\Model\ModelResponseAttributeCount
 ```
 
 attribute.count
@@ -416,7 +416,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\AttributeCount200Response**](../Model/AttributeCount200Response.md)
+[**\OpenAPI\Client\Model\ModelResponseAttributeCount**](../Model/ModelResponseAttributeCount.md)
 
 ### Authorization
 
@@ -754,7 +754,7 @@ try {
 ## `attributeTypeList()`
 
 ```php
-attributeTypeList(): \OpenAPI\Client\Model\AttributeTypeList200Response
+attributeTypeList(): \OpenAPI\Client\Model\ModelResponseAttributeTypeList
 ```
 
 attribute.type.list
@@ -800,7 +800,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\AttributeTypeList200Response**](../Model/AttributeTypeList200Response.md)
+[**\OpenAPI\Client\Model\ModelResponseAttributeTypeList**](../Model/ModelResponseAttributeTypeList.md)
 
 ### Authorization
 

@@ -1937,7 +1937,7 @@ class AttributeApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\AttributeCount200Response
+     * @return \OpenAPI\Client\Model\ModelResponseAttributeCount
      */
     public function attributeCount($type = null, $attribute_set_id = null, $store_id = null, $lang_id = null, $visible = null, $required = null, $system = null, string $contentType = self::contentTypes['attributeCount'][0])
     {
@@ -1961,7 +1961,7 @@ class AttributeApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\AttributeCount200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ModelResponseAttributeCount, HTTP status code, HTTP response headers (array of strings)
      */
     public function attributeCountWithHttpInfo($type = null, $attribute_set_id = null, $store_id = null, $lang_id = null, $visible = null, $required = null, $system = null, string $contentType = self::contentTypes['attributeCount'][0])
     {
@@ -1992,11 +1992,11 @@ class AttributeApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\AttributeCount200Response' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ModelResponseAttributeCount' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\AttributeCount200Response' !== 'string') {
+                        if ('\OpenAPI\Client\Model\ModelResponseAttributeCount' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2014,7 +2014,7 @@ class AttributeApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AttributeCount200Response', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ModelResponseAttributeCount', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -2033,7 +2033,7 @@ class AttributeApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\AttributeCount200Response';
+            $returnType = '\OpenAPI\Client\Model\ModelResponseAttributeCount';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2066,7 +2066,7 @@ class AttributeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\AttributeCount200Response',
+                        '\OpenAPI\Client\Model\ModelResponseAttributeCount',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2122,7 +2122,7 @@ class AttributeApi
      */
     public function attributeCountAsyncWithHttpInfo($type = null, $attribute_set_id = null, $store_id = null, $lang_id = null, $visible = null, $required = null, $system = null, string $contentType = self::contentTypes['attributeCount'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\AttributeCount200Response';
+        $returnType = '\OpenAPI\Client\Model\ModelResponseAttributeCount';
         $request = $this->attributeCountRequest($type, $attribute_set_id, $store_id, $lang_id, $visible, $required, $system, $contentType);
 
         return $this->client
@@ -3987,7 +3987,7 @@ class AttributeApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\AttributeTypeList200Response
+     * @return \OpenAPI\Client\Model\ModelResponseAttributeTypeList
      */
     public function attributeTypeList(string $contentType = self::contentTypes['attributeTypeList'][0])
     {
@@ -4004,7 +4004,7 @@ class AttributeApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\AttributeTypeList200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ModelResponseAttributeTypeList, HTTP status code, HTTP response headers (array of strings)
      */
     public function attributeTypeListWithHttpInfo(string $contentType = self::contentTypes['attributeTypeList'][0])
     {
@@ -4035,11 +4035,11 @@ class AttributeApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\OpenAPI\Client\Model\AttributeTypeList200Response' === '\SplFileObject') {
+                    if ('\OpenAPI\Client\Model\ModelResponseAttributeTypeList' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\AttributeTypeList200Response' !== 'string') {
+                        if ('\OpenAPI\Client\Model\ModelResponseAttributeTypeList' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -4057,7 +4057,7 @@ class AttributeApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\AttributeTypeList200Response', []),
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ModelResponseAttributeTypeList', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -4076,7 +4076,7 @@ class AttributeApi
                 );
             }
 
-            $returnType = '\OpenAPI\Client\Model\AttributeTypeList200Response';
+            $returnType = '\OpenAPI\Client\Model\ModelResponseAttributeTypeList';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -4109,7 +4109,7 @@ class AttributeApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\AttributeTypeList200Response',
+                        '\OpenAPI\Client\Model\ModelResponseAttributeTypeList',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4151,7 +4151,7 @@ class AttributeApi
      */
     public function attributeTypeListAsyncWithHttpInfo(string $contentType = self::contentTypes['attributeTypeList'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\AttributeTypeList200Response';
+        $returnType = '\OpenAPI\Client\Model\ModelResponseAttributeTypeList';
         $request = $this->attributeTypeListRequest($contentType);
 
         return $this->client
