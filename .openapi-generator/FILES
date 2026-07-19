@@ -5,6 +5,7 @@
 README.md
 composer.json
 docs/Api/AccountApi.md
+docs/Api/AnalyticsApi.md
 docs/Api/AttributeApi.md
 docs/Api/BasketApi.md
 docs/Api/BatchApi.md
@@ -35,6 +36,13 @@ docs/Model/AccountFailedWebhooks200ResponseResultWebhookInner.md
 docs/Model/AccountSupportedPlatform.md
 docs/Model/AccountSupportedPlatformParams.md
 docs/Model/AccountSupportedPlatformParamsRequiredInnerInner.md
+docs/Model/AnalyticsCustomer.md
+docs/Model/AnalyticsCustomerMetric.md
+docs/Model/AnalyticsInterval.md
+docs/Model/AnalyticsMetric.md
+docs/Model/AnalyticsPeriod.md
+docs/Model/AnalyticsProduct.md
+docs/Model/AnalyticsProductMetric.md
 docs/Model/AttributeAdd200Response.md
 docs/Model/AttributeAdd200ResponseResult.md
 docs/Model/AttributeAssignGroup200Response.md
@@ -375,6 +383,9 @@ docs/Model/ProductVariantUpdateBatch.md
 docs/Model/ProductVariantUpdateBatchPayloadInner.md
 docs/Model/ProductVariantUpdateOptionsInner.md
 docs/Model/ResponseAccountSupportedPlatformsResult.md
+docs/Model/ResponseAnalyticsCustomerReportResult.md
+docs/Model/ResponseAnalyticsProductReportResult.md
+docs/Model/ResponseAnalyticsReportResult.md
 docs/Model/ResponseAttributeAttributesetListResult.md
 docs/Model/ResponseAttributeCountResult.md
 docs/Model/ResponseAttributeGroupListResult.md
@@ -465,6 +476,7 @@ docs/Model/WebhookList200ResponseResult.md
 docs/Model/WebhookUpdate.md
 git_push.sh
 lib/Api/AccountApi.php
+lib/Api/AnalyticsApi.php
 lib/Api/AttributeApi.php
 lib/Api/BasketApi.php
 lib/Api/BatchApi.php
@@ -498,6 +510,13 @@ lib/Model/AccountFailedWebhooks200ResponseResultWebhookInner.php
 lib/Model/AccountSupportedPlatform.php
 lib/Model/AccountSupportedPlatformParams.php
 lib/Model/AccountSupportedPlatformParamsRequiredInnerInner.php
+lib/Model/AnalyticsCustomer.php
+lib/Model/AnalyticsCustomerMetric.php
+lib/Model/AnalyticsInterval.php
+lib/Model/AnalyticsMetric.php
+lib/Model/AnalyticsPeriod.php
+lib/Model/AnalyticsProduct.php
+lib/Model/AnalyticsProductMetric.php
 lib/Model/AttributeAdd200Response.php
 lib/Model/AttributeAdd200ResponseResult.php
 lib/Model/AttributeAssignGroup200Response.php
@@ -839,6 +858,9 @@ lib/Model/ProductVariantUpdateBatch.php
 lib/Model/ProductVariantUpdateBatchPayloadInner.php
 lib/Model/ProductVariantUpdateOptionsInner.php
 lib/Model/ResponseAccountSupportedPlatformsResult.php
+lib/Model/ResponseAnalyticsCustomerReportResult.php
+lib/Model/ResponseAnalyticsProductReportResult.php
+lib/Model/ResponseAnalyticsReportResult.php
 lib/Model/ResponseAttributeAttributesetListResult.php
 lib/Model/ResponseAttributeCountResult.php
 lib/Model/ResponseAttributeGroupListResult.php
@@ -930,6 +952,7 @@ lib/Model/WebhookUpdate.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
 test/Api/AccountApiTest.php
+test/Api/AnalyticsApiTest.php
 test/Api/AttributeApiTest.php
 test/Api/BasketApiTest.php
 test/Api/BatchApiTest.php
@@ -960,6 +983,13 @@ test/Model/AccountFailedWebhooks200ResponseTest.php
 test/Model/AccountSupportedPlatformParamsRequiredInnerInnerTest.php
 test/Model/AccountSupportedPlatformParamsTest.php
 test/Model/AccountSupportedPlatformTest.php
+test/Model/AnalyticsCustomerMetricTest.php
+test/Model/AnalyticsCustomerTest.php
+test/Model/AnalyticsIntervalTest.php
+test/Model/AnalyticsMetricTest.php
+test/Model/AnalyticsPeriodTest.php
+test/Model/AnalyticsProductMetricTest.php
+test/Model/AnalyticsProductTest.php
 test/Model/AttributeAdd200ResponseResultTest.php
 test/Model/AttributeAdd200ResponseTest.php
 test/Model/AttributeAssignGroup200ResponseResultTest.php
@@ -1300,6 +1330,9 @@ test/Model/ProductVariantUpdateBatchTest.php
 test/Model/ProductVariantUpdateOptionsInnerTest.php
 test/Model/ProductVariantUpdateTest.php
 test/Model/ResponseAccountSupportedPlatformsResultTest.php
+test/Model/ResponseAnalyticsCustomerReportResultTest.php
+test/Model/ResponseAnalyticsProductReportResultTest.php
+test/Model/ResponseAnalyticsReportResultTest.php
 test/Model/ResponseAttributeAttributesetListResultTest.php
 test/Model/ResponseAttributeCountResultTest.php
 test/Model/ResponseAttributeGroupListResultTest.php
