@@ -351,6 +351,9 @@ class WebhookCreate implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['action'] === null) {
             $invalidProperties[] = "'action' can't be null";
         }
+        if ($this->container['callback'] === null) {
+            $invalidProperties[] = "'callback' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -423,7 +426,7 @@ class WebhookCreate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets callback
      *
-     * @return string|null
+     * @return string
      */
     public function getCallback()
     {
@@ -433,7 +436,7 @@ class WebhookCreate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets callback
      *
-     * @param string|null $callback Callback url that returns shipping rates. It should be able to accept POST requests with json data.
+     * @param string $callback Callback where the webhook should send the POST request when the event occurs
      *
      * @return self
      */
@@ -514,7 +517,7 @@ class WebhookCreate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets response_fields
      *
-     * @param string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve
+     * @param string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.
      *
      * @return self
      */

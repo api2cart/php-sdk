@@ -915,9 +915,9 @@ class ProductApi
      * @param  string|null $set_name Retrieves attributes specified by set_name in Magento (optional)
      * @param  string|null $sort_by Set field to sort by (optional, default to 'attribute_id')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'asc')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'attribute_id,name')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'attribute_id,name')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productAttributeList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -947,9 +947,9 @@ class ProductApi
      * @param  string|null $set_name Retrieves attributes specified by set_name in Magento (optional)
      * @param  string|null $sort_by Set field to sort by (optional, default to 'attribute_id')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'asc')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'attribute_id,name')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'attribute_id,name')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productAttributeList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1086,9 +1086,9 @@ class ProductApi
      * @param  string|null $set_name Retrieves attributes specified by set_name in Magento (optional)
      * @param  string|null $sort_by Set field to sort by (optional, default to 'attribute_id')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'asc')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'attribute_id,name')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'attribute_id,name')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productAttributeList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1121,9 +1121,9 @@ class ProductApi
      * @param  string|null $set_name Retrieves attributes specified by set_name in Magento (optional)
      * @param  string|null $sort_by Set field to sort by (optional, default to 'attribute_id')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'asc')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'attribute_id,name')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'attribute_id,name')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productAttributeList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1185,9 +1185,9 @@ class ProductApi
      * @param  string|null $set_name Retrieves attributes specified by set_name in Magento (optional)
      * @param  string|null $sort_by Set field to sort by (optional, default to 'attribute_id')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'asc')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'attribute_id,name')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'attribute_id,name')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productAttributeList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2301,9 +2301,9 @@ class ProductApi
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,short_description,active,url')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,short_description,active,url')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productBrandList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2336,9 +2336,9 @@ class ProductApi
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,short_description,active,url')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,short_description,active,url')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productBrandList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2478,9 +2478,9 @@ class ProductApi
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,short_description,active,url')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,short_description,active,url')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productBrandList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2516,9 +2516,9 @@ class ProductApi
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,short_description,active,url')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,short_description,active,url')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productBrandList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2583,9 +2583,9 @@ class ProductApi
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  bool|null $avail Defines category&#39;s visibility status (optional, default to true)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,short_description,active,url')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,short_description,active,url')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productBrandList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3217,9 +3217,9 @@ class ProductApi
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  string|null $currency_id Currency Id (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productChildItemInfo'] to see the possible values for this operation
      *
@@ -3243,9 +3243,9 @@ class ProductApi
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  string|null $currency_id Currency Id (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productChildItemInfo'] to see the possible values for this operation
      *
@@ -3376,9 +3376,9 @@ class ProductApi
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  string|null $currency_id Currency Id (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productChildItemInfo'] to see the possible values for this operation
      *
@@ -3405,9 +3405,9 @@ class ProductApi
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  string|null $currency_id Currency Id (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productChildItemInfo'] to see the possible values for this operation
      *
@@ -3463,9 +3463,9 @@ class ProductApi
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  string|null $currency_id Currency Id (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productChildItemInfo'] to see the possible values for this operation
      *
@@ -3674,9 +3674,9 @@ class ProductApi
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  bool|null $return_global Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. (optional, default to false)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $report_request_id Report request id (optional)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
@@ -3714,9 +3714,9 @@ class ProductApi
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  bool|null $return_global Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. (optional, default to false)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $report_request_id Report request id (optional)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
@@ -3861,9 +3861,9 @@ class ProductApi
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  bool|null $return_global Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. (optional, default to false)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $report_request_id Report request id (optional)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
@@ -3904,9 +3904,9 @@ class ProductApi
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  bool|null $return_global Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. (optional, default to false)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $report_request_id Report request id (optional)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
@@ -3976,9 +3976,9 @@ class ProductApi
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  bool|null $return_global Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. (optional, default to false)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $report_request_id Report request id (optional)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
@@ -5423,9 +5423,9 @@ class ProductApi
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  bool|null $default Specifies the set of default/not default currencies (optional)
      * @param  bool|null $avail Specifies the set of available/not available currencies (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'name,iso3,default,avail')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'name,iso3,default,avail')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productCurrencyList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -5448,9 +5448,9 @@ class ProductApi
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  bool|null $default Specifies the set of default/not default currencies (optional)
      * @param  bool|null $avail Specifies the set of available/not available currencies (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'name,iso3,default,avail')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'name,iso3,default,avail')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productCurrencyList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -5580,9 +5580,9 @@ class ProductApi
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  bool|null $default Specifies the set of default/not default currencies (optional)
      * @param  bool|null $avail Specifies the set of available/not available currencies (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'name,iso3,default,avail')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'name,iso3,default,avail')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productCurrencyList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5608,9 +5608,9 @@ class ProductApi
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  bool|null $default Specifies the set of default/not default currencies (optional)
      * @param  bool|null $avail Specifies the set of available/not available currencies (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'name,iso3,default,avail')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'name,iso3,default,avail')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productCurrencyList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5665,9 +5665,9 @@ class ProductApi
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param  bool|null $default Specifies the set of default/not default currencies (optional)
      * @param  bool|null $avail Specifies the set of available/not available currencies (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'name,iso3,default,avail')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'name,iso3,default,avail')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productCurrencyList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -8033,9 +8033,9 @@ class ProductApi
      * @param  string|null $vendor_id Vendor Id (optional)
      * @param  string|null $lang_id Retrieves product info specified by language id (optional)
      * @param  string|null $currency_id Currency Id (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description,price,categories_ids')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description,price,categories_ids')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $report_request_id Report request id (optional)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
@@ -8061,9 +8061,9 @@ class ProductApi
      * @param  string|null $vendor_id Vendor Id (optional)
      * @param  string|null $lang_id Retrieves product info specified by language id (optional)
      * @param  string|null $currency_id Currency Id (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description,price,categories_ids')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description,price,categories_ids')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $report_request_id Report request id (optional)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
@@ -8196,9 +8196,9 @@ class ProductApi
      * @param  string|null $vendor_id Vendor Id (optional)
      * @param  string|null $lang_id Retrieves product info specified by language id (optional)
      * @param  string|null $currency_id Currency Id (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description,price,categories_ids')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description,price,categories_ids')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $report_request_id Report request id (optional)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
@@ -8227,9 +8227,9 @@ class ProductApi
      * @param  string|null $vendor_id Vendor Id (optional)
      * @param  string|null $lang_id Retrieves product info specified by language id (optional)
      * @param  string|null $currency_id Currency Id (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description,price,categories_ids')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description,price,categories_ids')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $report_request_id Report request id (optional)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
@@ -8287,9 +8287,9 @@ class ProductApi
      * @param  string|null $vendor_id Vendor Id (optional)
      * @param  string|null $lang_id Retrieves product info specified by language id (optional)
      * @param  string|null $currency_id Currency Id (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description,price,categories_ids')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description,price,categories_ids')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $report_request_id Report request id (optional)
      * @param  bool|null $disable_report_cache Disable report cache for current request (optional, default to false)
      * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
@@ -8524,9 +8524,9 @@ class ProductApi
      * @param  string|null $find_value Entity search that is specified by some value (optional)
      * @param  string|null $find_where Product search that is specified by field (optional)
      * @param  bool|null $return_global Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. (optional, default to false)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description,price,categories_ids')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description,price,categories_ids')
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $sort_by Set field to sort by (optional, default to 'id')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'asc')
      * @param  string|null $report_request_id Report request id (optional)
@@ -8578,9 +8578,9 @@ class ProductApi
      * @param  string|null $find_value Entity search that is specified by some value (optional)
      * @param  string|null $find_where Product search that is specified by field (optional)
      * @param  bool|null $return_global Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. (optional, default to false)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description,price,categories_ids')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description,price,categories_ids')
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $sort_by Set field to sort by (optional, default to 'id')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'asc')
      * @param  string|null $report_request_id Report request id (optional)
@@ -8739,9 +8739,9 @@ class ProductApi
      * @param  string|null $find_value Entity search that is specified by some value (optional)
      * @param  string|null $find_where Product search that is specified by field (optional)
      * @param  bool|null $return_global Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. (optional, default to false)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description,price,categories_ids')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description,price,categories_ids')
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $sort_by Set field to sort by (optional, default to 'id')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'asc')
      * @param  string|null $report_request_id Report request id (optional)
@@ -8796,9 +8796,9 @@ class ProductApi
      * @param  string|null $find_value Entity search that is specified by some value (optional)
      * @param  string|null $find_where Product search that is specified by field (optional)
      * @param  bool|null $return_global Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. (optional, default to false)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description,price,categories_ids')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description,price,categories_ids')
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $sort_by Set field to sort by (optional, default to 'id')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'asc')
      * @param  string|null $report_request_id Report request id (optional)
@@ -8882,9 +8882,9 @@ class ProductApi
      * @param  string|null $find_value Entity search that is specified by some value (optional)
      * @param  string|null $find_where Product search that is specified by field (optional)
      * @param  bool|null $return_global Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. (optional, default to false)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description,price,categories_ids')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description,price,categories_ids')
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string|null $sort_by Set field to sort by (optional, default to 'id')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'asc')
      * @param  string|null $report_request_id Report request id (optional)
@@ -10917,9 +10917,9 @@ class ProductApi
      * @param  string|null $product_id Retrieves products&#39; options specified by product id (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  string|null $store_id Store Id (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productOptionList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -10942,9 +10942,9 @@ class ProductApi
      * @param  string|null $product_id Retrieves products&#39; options specified by product id (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  string|null $store_id Store Id (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productOptionList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -11074,9 +11074,9 @@ class ProductApi
      * @param  string|null $product_id Retrieves products&#39; options specified by product id (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  string|null $store_id Store Id (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productOptionList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -11102,9 +11102,9 @@ class ProductApi
      * @param  string|null $product_id Retrieves products&#39; options specified by product id (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  string|null $store_id Store Id (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productOptionList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -11159,9 +11159,9 @@ class ProductApi
      * @param  string|null $product_id Retrieves products&#39; options specified by product id (optional)
      * @param  string|null $lang_id Language id (optional)
      * @param  string|null $store_id Store Id (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,name,description')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productOptionList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -13953,9 +13953,9 @@ class ProductApi
      * @param  string|null $customer_id Retrieves orders specified by customer id (optional)
      * @param  string|null $sort_by Set field to sort by (optional, default to 'id')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'asc')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productReviewList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -13986,9 +13986,9 @@ class ProductApi
      * @param  string|null $customer_id Retrieves orders specified by customer id (optional)
      * @param  string|null $sort_by Set field to sort by (optional, default to 'id')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'asc')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productReviewList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -14126,9 +14126,9 @@ class ProductApi
      * @param  string|null $customer_id Retrieves orders specified by customer id (optional)
      * @param  string|null $sort_by Set field to sort by (optional, default to 'id')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'asc')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productReviewList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -14162,9 +14162,9 @@ class ProductApi
      * @param  string|null $customer_id Retrieves orders specified by customer id (optional)
      * @param  string|null $sort_by Set field to sort by (optional, default to 'id')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'asc')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productReviewList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -14227,9 +14227,9 @@ class ProductApi
      * @param  string|null $customer_id Retrieves orders specified by customer id (optional)
      * @param  string|null $sort_by Set field to sort by (optional, default to 'id')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'asc')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['productReviewList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

@@ -453,12 +453,12 @@ class AccountApi
      * account.cart.list
      *
      * @param  string|null $store_url A web address of a store (optional)
-     * @param  string|null $store_key Find store by store key (optional)
-     * @param  string|null $request_from_date Retrieve entities from their creation date (optional)
-     * @param  string|null $request_to_date Retrieve entities to their creation date (optional)
+     * @param  string|null $store_key Optional filter: return only the connected store whose store key matches this value. A store key is the unique 32-character identifier of a connected store, returned as store_key here and by account.cart.add. (optional)
+     * @param  string|null $request_from_date Start date of the period for counting API requests made to each connection. Set together with request_to_date to include each store&#39;s total_calls (number of API requests in that period) in the response. (optional)
+     * @param  string|null $request_to_date End date of the period for counting API requests made to each connection. Set together with request_from_date to include each store&#39;s total_calls (number of API requests in that period) in the response. (optional)
      * @param  string|null $custom_label Defines a custom label for the store in the app (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['accountCartList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -477,12 +477,12 @@ class AccountApi
      * account.cart.list
      *
      * @param  string|null $store_url A web address of a store (optional)
-     * @param  string|null $store_key Find store by store key (optional)
-     * @param  string|null $request_from_date Retrieve entities from their creation date (optional)
-     * @param  string|null $request_to_date Retrieve entities to their creation date (optional)
+     * @param  string|null $store_key Optional filter: return only the connected store whose store key matches this value. A store key is the unique 32-character identifier of a connected store, returned as store_key here and by account.cart.add. (optional)
+     * @param  string|null $request_from_date Start date of the period for counting API requests made to each connection. Set together with request_to_date to include each store&#39;s total_calls (number of API requests in that period) in the response. (optional)
+     * @param  string|null $request_to_date End date of the period for counting API requests made to each connection. Set together with request_from_date to include each store&#39;s total_calls (number of API requests in that period) in the response. (optional)
      * @param  string|null $custom_label Defines a custom label for the store in the app (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['accountCartList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -608,12 +608,12 @@ class AccountApi
      * account.cart.list
      *
      * @param  string|null $store_url A web address of a store (optional)
-     * @param  string|null $store_key Find store by store key (optional)
-     * @param  string|null $request_from_date Retrieve entities from their creation date (optional)
-     * @param  string|null $request_to_date Retrieve entities to their creation date (optional)
+     * @param  string|null $store_key Optional filter: return only the connected store whose store key matches this value. A store key is the unique 32-character identifier of a connected store, returned as store_key here and by account.cart.add. (optional)
+     * @param  string|null $request_from_date Start date of the period for counting API requests made to each connection. Set together with request_to_date to include each store&#39;s total_calls (number of API requests in that period) in the response. (optional)
+     * @param  string|null $request_to_date End date of the period for counting API requests made to each connection. Set together with request_from_date to include each store&#39;s total_calls (number of API requests in that period) in the response. (optional)
      * @param  string|null $custom_label Defines a custom label for the store in the app (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['accountCartList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -635,12 +635,12 @@ class AccountApi
      * account.cart.list
      *
      * @param  string|null $store_url A web address of a store (optional)
-     * @param  string|null $store_key Find store by store key (optional)
-     * @param  string|null $request_from_date Retrieve entities from their creation date (optional)
-     * @param  string|null $request_to_date Retrieve entities to their creation date (optional)
+     * @param  string|null $store_key Optional filter: return only the connected store whose store key matches this value. A store key is the unique 32-character identifier of a connected store, returned as store_key here and by account.cart.add. (optional)
+     * @param  string|null $request_from_date Start date of the period for counting API requests made to each connection. Set together with request_to_date to include each store&#39;s total_calls (number of API requests in that period) in the response. (optional)
+     * @param  string|null $request_to_date End date of the period for counting API requests made to each connection. Set together with request_from_date to include each store&#39;s total_calls (number of API requests in that period) in the response. (optional)
      * @param  string|null $custom_label Defines a custom label for the store in the app (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['accountCartList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -691,12 +691,12 @@ class AccountApi
      * Create request for operation 'accountCartList'
      *
      * @param  string|null $store_url A web address of a store (optional)
-     * @param  string|null $store_key Find store by store key (optional)
-     * @param  string|null $request_from_date Retrieve entities from their creation date (optional)
-     * @param  string|null $request_to_date Retrieve entities to their creation date (optional)
+     * @param  string|null $store_key Optional filter: return only the connected store whose store key matches this value. A store key is the unique 32-character identifier of a connected store, returned as store_key here and by account.cart.add. (optional)
+     * @param  string|null $request_from_date Start date of the period for counting API requests made to each connection. Set together with request_to_date to include each store&#39;s total_calls (number of API requests in that period) in the response. (optional)
+     * @param  string|null $request_to_date End date of the period for counting API requests made to each connection. Set together with request_from_date to include each store&#39;s total_calls (number of API requests in that period) in the response. (optional)
      * @param  string|null $custom_label Defines a custom label for the store in the app (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['accountCartList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4171,15 +4171,16 @@ class AccountApi
      *
      * account.supported_platforms
      *
+     * @param  string|null $cart_id Filter by integration identifier (e.g. &#39;Shopify&#39;). If omitted, the method returns all integrations. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['accountSupportedPlatforms'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseAccountSupportedPlatforms
      */
-    public function accountSupportedPlatforms(string $contentType = self::contentTypes['accountSupportedPlatforms'][0])
+    public function accountSupportedPlatforms($cart_id = null, string $contentType = self::contentTypes['accountSupportedPlatforms'][0])
     {
-        list($response) = $this->accountSupportedPlatformsWithHttpInfo($contentType);
+        list($response) = $this->accountSupportedPlatformsWithHttpInfo($cart_id, $contentType);
         return $response;
     }
 
@@ -4188,15 +4189,16 @@ class AccountApi
      *
      * account.supported_platforms
      *
+     * @param  string|null $cart_id Filter by integration identifier (e.g. &#39;Shopify&#39;). If omitted, the method returns all integrations. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['accountSupportedPlatforms'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseAccountSupportedPlatforms, HTTP status code, HTTP response headers (array of strings)
      */
-    public function accountSupportedPlatformsWithHttpInfo(string $contentType = self::contentTypes['accountSupportedPlatforms'][0])
+    public function accountSupportedPlatformsWithHttpInfo($cart_id = null, string $contentType = self::contentTypes['accountSupportedPlatforms'][0])
     {
-        $request = $this->accountSupportedPlatformsRequest($contentType);
+        $request = $this->accountSupportedPlatformsRequest($cart_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4312,14 +4314,15 @@ class AccountApi
      *
      * account.supported_platforms
      *
+     * @param  string|null $cart_id Filter by integration identifier (e.g. &#39;Shopify&#39;). If omitted, the method returns all integrations. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['accountSupportedPlatforms'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function accountSupportedPlatformsAsync(string $contentType = self::contentTypes['accountSupportedPlatforms'][0])
+    public function accountSupportedPlatformsAsync($cart_id = null, string $contentType = self::contentTypes['accountSupportedPlatforms'][0])
     {
-        return $this->accountSupportedPlatformsAsyncWithHttpInfo($contentType)
+        return $this->accountSupportedPlatformsAsyncWithHttpInfo($cart_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4332,15 +4335,16 @@ class AccountApi
      *
      * account.supported_platforms
      *
+     * @param  string|null $cart_id Filter by integration identifier (e.g. &#39;Shopify&#39;). If omitted, the method returns all integrations. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['accountSupportedPlatforms'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function accountSupportedPlatformsAsyncWithHttpInfo(string $contentType = self::contentTypes['accountSupportedPlatforms'][0])
+    public function accountSupportedPlatformsAsyncWithHttpInfo($cart_id = null, string $contentType = self::contentTypes['accountSupportedPlatforms'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseAccountSupportedPlatforms';
-        $request = $this->accountSupportedPlatformsRequest($contentType);
+        $request = $this->accountSupportedPlatformsRequest($cart_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4381,13 +4385,15 @@ class AccountApi
     /**
      * Create request for operation 'accountSupportedPlatforms'
      *
+     * @param  string|null $cart_id Filter by integration identifier (e.g. &#39;Shopify&#39;). If omitted, the method returns all integrations. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['accountSupportedPlatforms'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function accountSupportedPlatformsRequest(string $contentType = self::contentTypes['accountSupportedPlatforms'][0])
+    public function accountSupportedPlatformsRequest($cart_id = null, string $contentType = self::contentTypes['accountSupportedPlatforms'][0])
     {
+
 
 
         $resourcePath = '/account.supported_platforms.json';
@@ -4397,6 +4403,15 @@ class AccountApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $cart_id,
+            'cart_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
 
 
 

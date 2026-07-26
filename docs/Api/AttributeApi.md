@@ -313,9 +313,9 @@ $apiInstance = new OpenAPI\Client\Api\AttributeApi(
 );
 $start = 0; // int | This parameter sets the number from which you want to get entities
 $count = 20; // int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-$response_fields = {result}; // string | Set this parameter in order to choose which entity fields you want to retrieve
-$params = id,name; // string | Set this parameter in order to choose which entity fields you want to retrieve
-$exclude = id,name; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+$response_fields = {result}; // string | Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.
+$params = id,name; // string | Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve
+$exclude = id,name; // string | Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 
 try {
     $result = $apiInstance->attributeAttributesetList($start, $count, $response_fields, $params, $exclude);
@@ -331,9 +331,9 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **start** | **int**| This parameter sets the number from which you want to get entities | [optional] [default to 0] |
 | **count** | **int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
-| **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
-| **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,name&#39;] |
-| **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
+| **response_fields** | **string**| Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. | [optional] |
+| **params** | **string**| Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,name&#39;] |
+| **exclude** | **string**| Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 
 ### Return type
 
@@ -538,9 +538,9 @@ $start = 0; // int | This parameter sets the number from which you want to get e
 $count = 20; // int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
 $attribute_set_id = 4; // string | Attribute set id
 $lang_id = 3; // string | Language id
-$response_fields = {result}; // string | Set this parameter in order to choose which entity fields you want to retrieve
-$params = id,name; // string | Set this parameter in order to choose which entity fields you want to retrieve
-$exclude = id,name; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+$response_fields = {result}; // string | Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.
+$params = id,name; // string | Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve
+$exclude = id,name; // string | Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 
 try {
     $result = $apiInstance->attributeGroupList($start, $count, $attribute_set_id, $lang_id, $response_fields, $params, $exclude);
@@ -558,9 +558,9 @@ try {
 | **count** | **int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
 | **attribute_set_id** | **string**| Attribute set id | [optional] |
 | **lang_id** | **string**| Language id | [optional] |
-| **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
-| **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,name&#39;] |
-| **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
+| **response_fields** | **string**| Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. | [optional] |
+| **params** | **string**| Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,name&#39;] |
+| **exclude** | **string**| Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 
 ### Return type
 
@@ -617,9 +617,9 @@ $id = 10; // string | Entity id
 $attribute_set_id = 4; // string | Attribute set id
 $store_id = 1; // string | Store Id
 $lang_id = 3; // string | Language id
-$response_fields = {result}; // string | Set this parameter in order to choose which entity fields you want to retrieve
-$params = force_all; // string | Set this parameter in order to choose which entity fields you want to retrieve
-$exclude = name; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+$response_fields = {result}; // string | Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.
+$params = force_all; // string | Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve
+$exclude = name; // string | Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 
 try {
     $result = $apiInstance->attributeInfo($id, $attribute_set_id, $store_id, $lang_id, $response_fields, $params, $exclude);
@@ -637,9 +637,9 @@ try {
 | **attribute_set_id** | **string**| Attribute set id | [optional] |
 | **store_id** | **string**| Store Id | [optional] |
 | **lang_id** | **string**| Language id | [optional] |
-| **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
-| **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;force_all&#39;] |
-| **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
+| **response_fields** | **string**| Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. | [optional] |
+| **params** | **string**| Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;force_all&#39;] |
+| **exclude** | **string**| Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 
 ### Return type
 
@@ -703,9 +703,9 @@ $type = text; // string | Defines attribute's type
 $visible = true; // bool | Filter items by visibility status
 $required = true; // bool | Defines if the option is required
 $system = false; // bool | True if attribute is system
-$response_fields = {return_code,return_message,pagination,result}; // string | Set this parameter in order to choose which entity fields you want to retrieve
-$params = id,name; // string | Set this parameter in order to choose which entity fields you want to retrieve
-$exclude = id,name; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+$response_fields = {return_code,return_message,pagination,result}; // string | Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.
+$params = id,name; // string | Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve
+$exclude = id,name; // string | Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 
 try {
     $result = $apiInstance->attributeList($start, $count, $page_cursor, $attribute_ids, $attribute_set_id, $store_id, $lang_id, $type, $visible, $required, $system, $response_fields, $params, $exclude);
@@ -730,9 +730,9 @@ try {
 | **visible** | **bool**| Filter items by visibility status | [optional] |
 | **required** | **bool**| Defines if the option is required | [optional] |
 | **system** | **bool**| True if attribute is system | [optional] |
-| **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
-| **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,name,code,type&#39;] |
-| **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
+| **response_fields** | **string**| Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. | [optional] |
+| **params** | **string**| Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,name,code,type&#39;] |
+| **exclude** | **string**| Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 
 ### Return type
 

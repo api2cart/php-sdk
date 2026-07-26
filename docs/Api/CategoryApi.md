@@ -754,9 +754,9 @@ $id = 10; // string | Retrieves category's info specified by category id
 $store_id = 1; // string | Retrieves category info  specified by store id
 $lang_id = 3; // string | Retrieves category info  specified by language id
 $schema_type = LISTING; // string | The name of the requirements set for the provided schema.
-$response_fields = {result{id,name,parent_id,modified_at{value},images}}; // string | Set this parameter in order to choose which entity fields you want to retrieve
-$params = id,parent_id,name; // string | Set this parameter in order to choose which entity fields you want to retrieve
-$exclude = id,parent_id,name; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+$response_fields = {result{id,name,parent_id,modified_at{value},images}}; // string | Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.
+$params = id,parent_id,name; // string | Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve
+$exclude = id,parent_id,name; // string | Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 $report_request_id = 105245017661; // string | Report request id
 $disable_report_cache = false; // bool | Disable report cache for current request
 $use_latest_api_version = true; // bool | Use the latest platform API version
@@ -777,9 +777,9 @@ try {
 | **store_id** | **string**| Retrieves category info  specified by store id | [optional] |
 | **lang_id** | **string**| Retrieves category info  specified by language id | [optional] |
 | **schema_type** | **string**| The name of the requirements set for the provided schema. | [optional] |
-| **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
-| **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,parent_id,name,description&#39;] |
-| **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
+| **response_fields** | **string**| Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. | [optional] |
+| **params** | **string**| Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,parent_id,name,description&#39;] |
+| **exclude** | **string**| Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 | **report_request_id** | **string**| Report request id | [optional] |
 | **disable_report_cache** | **bool**| Disable report cache for current request | [optional] [default to false] |
 | **use_latest_api_version** | **bool**| Use the latest platform API version | [optional] [default to false] |
@@ -849,9 +849,9 @@ $modified_from = 2010-07-29 13:45:52; // string | Retrieve entities from their m
 $modified_to = 2100-08-29 13:45:52; // string | Retrieve entities to their modification date
 $find_value = Demo category 1; // string | Entity search that is specified by some value
 $find_where = name; // string | Category search that is specified by field
-$response_fields = {result{categories_count,category{id,parent_id,modified_at{value},images}}}; // string | Set this parameter in order to choose which entity fields you want to retrieve
-$params = id,parent_id,name; // string | Set this parameter in order to choose which entity fields you want to retrieve
-$exclude = id,parent_id,name; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+$response_fields = {result{categories_count,category{id,parent_id,modified_at{value},images}}}; // string | Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.
+$params = id,parent_id,name; // string | Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve
+$exclude = id,parent_id,name; // string | Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 $report_request_id = 105245017661; // string | Report request id
 $disable_report_cache = false; // bool | Disable report cache for current request
 $disable_cache = false; // bool | Disable cache for current request
@@ -883,9 +883,9 @@ try {
 | **modified_to** | **string**| Retrieve entities to their modification date | [optional] |
 | **find_value** | **string**| Entity search that is specified by some value | [optional] |
 | **find_where** | **string**| Category search that is specified by field | [optional] |
-| **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
-| **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,parent_id,name,description&#39;] |
-| **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
+| **response_fields** | **string**| Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. | [optional] |
+| **params** | **string**| Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,parent_id,name,description&#39;] |
+| **exclude** | **string**| Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 | **report_request_id** | **string**| Report request id | [optional] |
 | **disable_report_cache** | **bool**| Disable report cache for current request | [optional] [default to false] |
 | **disable_cache** | **bool**| Disable cache for current request | [optional] [default to false] |

@@ -49,7 +49,7 @@ $created_from = 2010-07-29 13:45:52; // string | Retrieve entities from their cr
 $created_to = 2100-08-29 13:45:52; // string | Retrieve entities to their creation date
 $processed_from = 2100-08-29 13:45:52; // string | Retrieve entities according to their processing datetime
 $processed_to = 2100-08-29 13:45:52; // string | Retrieve entities according to their processing datetime
-$response_fields = {result}; // string | Set this parameter in order to choose which entity fields you want to retrieve
+$response_fields = {result}; // string | Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.
 
 try {
     $result = $apiInstance->batchJobList($count, $page_cursor, $ids, $created_from, $created_to, $processed_from, $processed_to, $response_fields);
@@ -70,7 +70,7 @@ try {
 | **created_to** | **string**| Retrieve entities to their creation date | [optional] |
 | **processed_from** | **string**| Retrieve entities according to their processing datetime | [optional] |
 | **processed_to** | **string**| Retrieve entities according to their processing datetime | [optional] |
-| **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;{return_code,return_message,pagination,result}&#39;] |
+| **response_fields** | **string**| Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. | [optional] [default to &#39;{return_code,return_message,pagination,result}&#39;] |
 
 ### Return type
 

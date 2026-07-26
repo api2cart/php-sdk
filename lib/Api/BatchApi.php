@@ -138,7 +138,7 @@ class BatchApi
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $processed_from Retrieve entities according to their processing datetime (optional)
      * @param  string|null $processed_to Retrieve entities according to their processing datetime (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional, default to '{return_code,return_message,pagination,result}')
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional, default to '{return_code,return_message,pagination,result}')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['batchJobList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -163,7 +163,7 @@ class BatchApi
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $processed_from Retrieve entities according to their processing datetime (optional)
      * @param  string|null $processed_to Retrieve entities according to their processing datetime (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional, default to '{return_code,return_message,pagination,result}')
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional, default to '{return_code,return_message,pagination,result}')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['batchJobList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -295,7 +295,7 @@ class BatchApi
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $processed_from Retrieve entities according to their processing datetime (optional)
      * @param  string|null $processed_to Retrieve entities according to their processing datetime (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional, default to '{return_code,return_message,pagination,result}')
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional, default to '{return_code,return_message,pagination,result}')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['batchJobList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -323,7 +323,7 @@ class BatchApi
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $processed_from Retrieve entities according to their processing datetime (optional)
      * @param  string|null $processed_to Retrieve entities according to their processing datetime (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional, default to '{return_code,return_message,pagination,result}')
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional, default to '{return_code,return_message,pagination,result}')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['batchJobList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -380,7 +380,7 @@ class BatchApi
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $processed_from Retrieve entities according to their processing datetime (optional)
      * @param  string|null $processed_to Retrieve entities according to their processing datetime (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional, default to '{return_code,return_message,pagination,result}')
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional, default to '{return_code,return_message,pagination,result}')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['batchJobList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

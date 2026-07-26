@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cart_id** | **string** | Store’s identifier which you can get from cart_list method |
+**cart_id** | **string** | Integration identifier |
 **store_url** | **string** | A web address of a store that you would like to connect to API2Cart | [optional]
 **bridge_url** | **string** | This parameter allows to set up store with custom bridge url (also you must use store_root parameter if a bridge folder is not in the root folder of the store) | [optional]
 **store_root** | **string** | Absolute path to the store root directory (used with \&quot;bridge_url\&quot; parameter) | [optional]
-**store_key** | **string** | Set this parameter if bridge is already uploaded to store | [optional]
+**store_key** | **string** | If a bridge connector is already installed on the store, you MUST pass here the store key it generated during installation, to connect via the bridge-based integration. Omit it only when connecting via an API-based integration, which uses API credentials instead. | [optional]
 **label** | **string** | Defines alternative text that has to be attached to the picture | [optional]
 **custom_label** | **string** | Defines a custom label for the store in the app | [optional]
 **validate_version** | **bool** | Specify if api2cart should validate cart version | [optional] [default to false]

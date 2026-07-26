@@ -1767,7 +1767,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cart_id
      *
-     * @param string $cart_id Store’s identifier which you can get from cart_list method
+     * @param string $cart_id Integration identifier
      *
      * @return self
      */
@@ -1885,7 +1885,7 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets store_key
      *
-     * @param string|null $store_key Set this parameter if bridge is already uploaded to store
+     * @param string|null $store_key If a bridge connector is already installed on the store, you MUST pass here the store key it generated during installation, to connect via the bridge-based integration. Omit it only when connecting via an API-based integration, which uses API credentials instead.
      *
      * @return self
      */

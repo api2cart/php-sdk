@@ -1283,7 +1283,7 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets manage_stock
      *
-     * @param bool|null $manage_stock Defines inventory tracking for product variant
+     * @param bool|null $manage_stock Defines inventory tracking for product variant. When true, quantity sets the stock level and the stock status is derived from it; when false, quantity is ignored and in_stock sets the status directly.
      *
      * @return self
      */
@@ -1310,7 +1310,7 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets in_stock
      *
-     * @param bool|null $in_stock Set stock status
+     * @param bool|null $in_stock Set stock status. Effective only when manage_stock is false — when stock is managed, the status is derived from quantity automatically and this parameter is ignored.
      *
      * @return self
      */
@@ -1391,7 +1391,7 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets quantity
      *
-     * @param float|null $quantity Defines new products' variants quantity
+     * @param float|null $quantity Defines new products' variants quantity. Effective only when manage_stock is true — otherwise the value is ignored. To enable stock tracking and set a quantity in one call, pass manage_stock=true together with quantity.
      *
      * @return self
      */
@@ -1418,7 +1418,7 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets increase_quantity
      *
-     * @param float|null $increase_quantity Defines the incremental changes in product quantity
+     * @param float|null $increase_quantity Defines the incremental changes in product quantity. Effective only when manage_stock is true — otherwise the value is ignored.
      *
      * @return self
      */
@@ -1445,7 +1445,7 @@ class ProductVariantUpdate implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets reduce_quantity
      *
-     * @param float|null $reduce_quantity Defines the decrement changes in product quantity
+     * @param float|null $reduce_quantity Defines the decrement changes in product quantity. Effective only when manage_stock is true — otherwise the value is ignored.
      *
      * @return self
      */

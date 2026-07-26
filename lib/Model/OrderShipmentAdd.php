@@ -69,11 +69,27 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_shipped' => 'bool',
         'send_notifications' => 'bool',
         'adjust_stock' => 'bool',
-        'enable_cache' => 'bool',
         'check_process_status' => 'bool',
         'tracking_provider' => 'string',
-        'use_latest_api_version' => 'bool',
         'admin_comment' => 'string',
+        'mail_class' => 'string',
+        'ship_date' => 'string',
+        'weight' => 'float',
+        'weight_unit' => 'string',
+        'length' => 'float',
+        'width' => 'float',
+        'height' => 'float',
+        'dimensions_unit' => 'string',
+        'shipping_label_cost' => 'float',
+        'shipping_label_currency' => 'string',
+        'revenue_eligibility' => 'bool',
+        'ship_from_country' => 'string',
+        'ship_to_country' => 'string',
+        'incoterm' => 'string',
+        'duty_amount' => 'float',
+        'duty_currency' => 'string',
+        'enable_cache' => 'bool',
+        'use_latest_api_version' => 'bool',
         'idempotency_key' => 'string'
     ];
 
@@ -96,11 +112,27 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_shipped' => null,
         'send_notifications' => null,
         'adjust_stock' => null,
-        'enable_cache' => null,
         'check_process_status' => null,
         'tracking_provider' => null,
-        'use_latest_api_version' => null,
         'admin_comment' => null,
+        'mail_class' => null,
+        'ship_date' => null,
+        'weight' => null,
+        'weight_unit' => null,
+        'length' => null,
+        'width' => null,
+        'height' => null,
+        'dimensions_unit' => null,
+        'shipping_label_cost' => null,
+        'shipping_label_currency' => null,
+        'revenue_eligibility' => null,
+        'ship_from_country' => null,
+        'ship_to_country' => null,
+        'incoterm' => null,
+        'duty_amount' => null,
+        'duty_currency' => null,
+        'enable_cache' => null,
+        'use_latest_api_version' => null,
         'idempotency_key' => null
     ];
 
@@ -121,11 +153,27 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_shipped' => false,
         'send_notifications' => false,
         'adjust_stock' => false,
-        'enable_cache' => false,
         'check_process_status' => false,
         'tracking_provider' => false,
-        'use_latest_api_version' => false,
         'admin_comment' => false,
+        'mail_class' => false,
+        'ship_date' => false,
+        'weight' => false,
+        'weight_unit' => false,
+        'length' => false,
+        'width' => false,
+        'height' => false,
+        'dimensions_unit' => false,
+        'shipping_label_cost' => false,
+        'shipping_label_currency' => false,
+        'revenue_eligibility' => false,
+        'ship_from_country' => false,
+        'ship_to_country' => false,
+        'incoterm' => false,
+        'duty_amount' => false,
+        'duty_currency' => false,
+        'enable_cache' => false,
+        'use_latest_api_version' => false,
         'idempotency_key' => false
     ];
 
@@ -226,11 +274,27 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_shipped' => 'is_shipped',
         'send_notifications' => 'send_notifications',
         'adjust_stock' => 'adjust_stock',
-        'enable_cache' => 'enable_cache',
         'check_process_status' => 'check_process_status',
         'tracking_provider' => 'tracking_provider',
-        'use_latest_api_version' => 'use_latest_api_version',
         'admin_comment' => 'admin_comment',
+        'mail_class' => 'mail_class',
+        'ship_date' => 'ship_date',
+        'weight' => 'weight',
+        'weight_unit' => 'weight_unit',
+        'length' => 'length',
+        'width' => 'width',
+        'height' => 'height',
+        'dimensions_unit' => 'dimensions_unit',
+        'shipping_label_cost' => 'shipping_label_cost',
+        'shipping_label_currency' => 'shipping_label_currency',
+        'revenue_eligibility' => 'revenue_eligibility',
+        'ship_from_country' => 'ship_from_country',
+        'ship_to_country' => 'ship_to_country',
+        'incoterm' => 'incoterm',
+        'duty_amount' => 'duty_amount',
+        'duty_currency' => 'duty_currency',
+        'enable_cache' => 'enable_cache',
+        'use_latest_api_version' => 'use_latest_api_version',
         'idempotency_key' => 'idempotency_key'
     ];
 
@@ -251,11 +315,27 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_shipped' => 'setIsShipped',
         'send_notifications' => 'setSendNotifications',
         'adjust_stock' => 'setAdjustStock',
-        'enable_cache' => 'setEnableCache',
         'check_process_status' => 'setCheckProcessStatus',
         'tracking_provider' => 'setTrackingProvider',
-        'use_latest_api_version' => 'setUseLatestApiVersion',
         'admin_comment' => 'setAdminComment',
+        'mail_class' => 'setMailClass',
+        'ship_date' => 'setShipDate',
+        'weight' => 'setWeight',
+        'weight_unit' => 'setWeightUnit',
+        'length' => 'setLength',
+        'width' => 'setWidth',
+        'height' => 'setHeight',
+        'dimensions_unit' => 'setDimensionsUnit',
+        'shipping_label_cost' => 'setShippingLabelCost',
+        'shipping_label_currency' => 'setShippingLabelCurrency',
+        'revenue_eligibility' => 'setRevenueEligibility',
+        'ship_from_country' => 'setShipFromCountry',
+        'ship_to_country' => 'setShipToCountry',
+        'incoterm' => 'setIncoterm',
+        'duty_amount' => 'setDutyAmount',
+        'duty_currency' => 'setDutyCurrency',
+        'enable_cache' => 'setEnableCache',
+        'use_latest_api_version' => 'setUseLatestApiVersion',
         'idempotency_key' => 'setIdempotencyKey'
     ];
 
@@ -276,11 +356,27 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_shipped' => 'getIsShipped',
         'send_notifications' => 'getSendNotifications',
         'adjust_stock' => 'getAdjustStock',
-        'enable_cache' => 'getEnableCache',
         'check_process_status' => 'getCheckProcessStatus',
         'tracking_provider' => 'getTrackingProvider',
-        'use_latest_api_version' => 'getUseLatestApiVersion',
         'admin_comment' => 'getAdminComment',
+        'mail_class' => 'getMailClass',
+        'ship_date' => 'getShipDate',
+        'weight' => 'getWeight',
+        'weight_unit' => 'getWeightUnit',
+        'length' => 'getLength',
+        'width' => 'getWidth',
+        'height' => 'getHeight',
+        'dimensions_unit' => 'getDimensionsUnit',
+        'shipping_label_cost' => 'getShippingLabelCost',
+        'shipping_label_currency' => 'getShippingLabelCurrency',
+        'revenue_eligibility' => 'getRevenueEligibility',
+        'ship_from_country' => 'getShipFromCountry',
+        'ship_to_country' => 'getShipToCountry',
+        'incoterm' => 'getIncoterm',
+        'duty_amount' => 'getDutyAmount',
+        'duty_currency' => 'getDutyCurrency',
+        'enable_cache' => 'getEnableCache',
+        'use_latest_api_version' => 'getUseLatestApiVersion',
         'idempotency_key' => 'getIdempotencyKey'
     ];
 
@@ -352,11 +448,27 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('is_shipped', $data ?? [], true);
         $this->setIfExists('send_notifications', $data ?? [], false);
         $this->setIfExists('adjust_stock', $data ?? [], false);
-        $this->setIfExists('enable_cache', $data ?? [], false);
         $this->setIfExists('check_process_status', $data ?? [], false);
         $this->setIfExists('tracking_provider', $data ?? [], null);
-        $this->setIfExists('use_latest_api_version', $data ?? [], false);
         $this->setIfExists('admin_comment', $data ?? [], null);
+        $this->setIfExists('mail_class', $data ?? [], null);
+        $this->setIfExists('ship_date', $data ?? [], null);
+        $this->setIfExists('weight', $data ?? [], null);
+        $this->setIfExists('weight_unit', $data ?? [], null);
+        $this->setIfExists('length', $data ?? [], null);
+        $this->setIfExists('width', $data ?? [], null);
+        $this->setIfExists('height', $data ?? [], null);
+        $this->setIfExists('dimensions_unit', $data ?? [], null);
+        $this->setIfExists('shipping_label_cost', $data ?? [], null);
+        $this->setIfExists('shipping_label_currency', $data ?? [], null);
+        $this->setIfExists('revenue_eligibility', $data ?? [], null);
+        $this->setIfExists('ship_from_country', $data ?? [], null);
+        $this->setIfExists('ship_to_country', $data ?? [], null);
+        $this->setIfExists('incoterm', $data ?? [], null);
+        $this->setIfExists('duty_amount', $data ?? [], null);
+        $this->setIfExists('duty_currency', $data ?? [], null);
+        $this->setIfExists('enable_cache', $data ?? [], false);
+        $this->setIfExists('use_latest_api_version', $data ?? [], false);
         $this->setIfExists('idempotency_key', $data ?? [], null);
     }
 
@@ -700,33 +812,6 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets enable_cache
-     *
-     * @return bool|null
-     */
-    public function getEnableCache()
-    {
-        return $this->container['enable_cache'];
-    }
-
-    /**
-     * Sets enable_cache
-     *
-     * @param bool|null $enable_cache If the value is 'true' and order exist in our cache, we will use order.info from cache to prepare shipment items.
-     *
-     * @return self
-     */
-    public function setEnableCache($enable_cache)
-    {
-        if (is_null($enable_cache)) {
-            throw new \InvalidArgumentException('non-nullable enable_cache cannot be null');
-        }
-        $this->container['enable_cache'] = $enable_cache;
-
-        return $this;
-    }
-
-    /**
      * Gets check_process_status
      *
      * @return bool|null
@@ -781,33 +866,6 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets use_latest_api_version
-     *
-     * @return bool|null
-     */
-    public function getUseLatestApiVersion()
-    {
-        return $this->container['use_latest_api_version'];
-    }
-
-    /**
-     * Sets use_latest_api_version
-     *
-     * @param bool|null $use_latest_api_version Use the latest platform API version
-     *
-     * @return self
-     */
-    public function setUseLatestApiVersion($use_latest_api_version)
-    {
-        if (is_null($use_latest_api_version)) {
-            throw new \InvalidArgumentException('non-nullable use_latest_api_version cannot be null');
-        }
-        $this->container['use_latest_api_version'] = $use_latest_api_version;
-
-        return $this;
-    }
-
-    /**
      * Gets admin_comment
      *
      * @return string|null
@@ -830,6 +888,492 @@ class OrderShipmentAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable admin_comment cannot be null');
         }
         $this->container['admin_comment'] = $admin_comment;
+
+        return $this;
+    }
+
+    /**
+     * Gets mail_class
+     *
+     * @return string|null
+     */
+    public function getMailClass()
+    {
+        return $this->container['mail_class'];
+    }
+
+    /**
+     * Sets mail_class
+     *
+     * @param string|null $mail_class Mail class for the shipment (e.g., priority, express).
+     *
+     * @return self
+     */
+    public function setMailClass($mail_class)
+    {
+        if (is_null($mail_class)) {
+            throw new \InvalidArgumentException('non-nullable mail_class cannot be null');
+        }
+        $this->container['mail_class'] = $mail_class;
+
+        return $this;
+    }
+
+    /**
+     * Gets ship_date
+     *
+     * @return string|null
+     */
+    public function getShipDate()
+    {
+        return $this->container['ship_date'];
+    }
+
+    /**
+     * Sets ship_date
+     *
+     * @param string|null $ship_date Ship date.
+     *
+     * @return self
+     */
+    public function setShipDate($ship_date)
+    {
+        if (is_null($ship_date)) {
+            throw new \InvalidArgumentException('non-nullable ship_date cannot be null');
+        }
+        $this->container['ship_date'] = $ship_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets weight
+     *
+     * @return float|null
+     */
+    public function getWeight()
+    {
+        return $this->container['weight'];
+    }
+
+    /**
+     * Sets weight
+     *
+     * @param float|null $weight Weight
+     *
+     * @return self
+     */
+    public function setWeight($weight)
+    {
+        if (is_null($weight)) {
+            throw new \InvalidArgumentException('non-nullable weight cannot be null');
+        }
+        $this->container['weight'] = $weight;
+
+        return $this;
+    }
+
+    /**
+     * Gets weight_unit
+     *
+     * @return string|null
+     */
+    public function getWeightUnit()
+    {
+        return $this->container['weight_unit'];
+    }
+
+    /**
+     * Sets weight_unit
+     *
+     * @param string|null $weight_unit Weight Unit
+     *
+     * @return self
+     */
+    public function setWeightUnit($weight_unit)
+    {
+        if (is_null($weight_unit)) {
+            throw new \InvalidArgumentException('non-nullable weight_unit cannot be null');
+        }
+        $this->container['weight_unit'] = $weight_unit;
+
+        return $this;
+    }
+
+    /**
+     * Gets length
+     *
+     * @return float|null
+     */
+    public function getLength()
+    {
+        return $this->container['length'];
+    }
+
+    /**
+     * Sets length
+     *
+     * @param float|null $length Defines product's length
+     *
+     * @return self
+     */
+    public function setLength($length)
+    {
+        if (is_null($length)) {
+            throw new \InvalidArgumentException('non-nullable length cannot be null');
+        }
+        $this->container['length'] = $length;
+
+        return $this;
+    }
+
+    /**
+     * Gets width
+     *
+     * @return float|null
+     */
+    public function getWidth()
+    {
+        return $this->container['width'];
+    }
+
+    /**
+     * Sets width
+     *
+     * @param float|null $width Defines product's width
+     *
+     * @return self
+     */
+    public function setWidth($width)
+    {
+        if (is_null($width)) {
+            throw new \InvalidArgumentException('non-nullable width cannot be null');
+        }
+        $this->container['width'] = $width;
+
+        return $this;
+    }
+
+    /**
+     * Gets height
+     *
+     * @return float|null
+     */
+    public function getHeight()
+    {
+        return $this->container['height'];
+    }
+
+    /**
+     * Sets height
+     *
+     * @param float|null $height Defines product's height
+     *
+     * @return self
+     */
+    public function setHeight($height)
+    {
+        if (is_null($height)) {
+            throw new \InvalidArgumentException('non-nullable height cannot be null');
+        }
+        $this->container['height'] = $height;
+
+        return $this;
+    }
+
+    /**
+     * Gets dimensions_unit
+     *
+     * @return string|null
+     */
+    public function getDimensionsUnit()
+    {
+        return $this->container['dimensions_unit'];
+    }
+
+    /**
+     * Sets dimensions_unit
+     *
+     * @param string|null $dimensions_unit Weight Unit
+     *
+     * @return self
+     */
+    public function setDimensionsUnit($dimensions_unit)
+    {
+        if (is_null($dimensions_unit)) {
+            throw new \InvalidArgumentException('non-nullable dimensions_unit cannot be null');
+        }
+        $this->container['dimensions_unit'] = $dimensions_unit;
+
+        return $this;
+    }
+
+    /**
+     * Gets shipping_label_cost
+     *
+     * @return float|null
+     */
+    public function getShippingLabelCost()
+    {
+        return $this->container['shipping_label_cost'];
+    }
+
+    /**
+     * Sets shipping_label_cost
+     *
+     * @param float|null $shipping_label_cost Cost of the shipping label.
+     *
+     * @return self
+     */
+    public function setShippingLabelCost($shipping_label_cost)
+    {
+        if (is_null($shipping_label_cost)) {
+            throw new \InvalidArgumentException('non-nullable shipping_label_cost cannot be null');
+        }
+        $this->container['shipping_label_cost'] = $shipping_label_cost;
+
+        return $this;
+    }
+
+    /**
+     * Gets shipping_label_currency
+     *
+     * @return string|null
+     */
+    public function getShippingLabelCurrency()
+    {
+        return $this->container['shipping_label_currency'];
+    }
+
+    /**
+     * Sets shipping_label_currency
+     *
+     * @param string|null $shipping_label_currency Currency code for the shipping label cost (3-letter ISO code).
+     *
+     * @return self
+     */
+    public function setShippingLabelCurrency($shipping_label_currency)
+    {
+        if (is_null($shipping_label_currency)) {
+            throw new \InvalidArgumentException('non-nullable shipping_label_currency cannot be null');
+        }
+        $this->container['shipping_label_currency'] = $shipping_label_currency;
+
+        return $this;
+    }
+
+    /**
+     * Gets revenue_eligibility
+     *
+     * @return bool|null
+     */
+    public function getRevenueEligibility()
+    {
+        return $this->container['revenue_eligibility'];
+    }
+
+    /**
+     * Sets revenue_eligibility
+     *
+     * @param bool|null $revenue_eligibility Revenue eligibility flag.
+     *
+     * @return self
+     */
+    public function setRevenueEligibility($revenue_eligibility)
+    {
+        if (is_null($revenue_eligibility)) {
+            throw new \InvalidArgumentException('non-nullable revenue_eligibility cannot be null');
+        }
+        $this->container['revenue_eligibility'] = $revenue_eligibility;
+
+        return $this;
+    }
+
+    /**
+     * Gets ship_from_country
+     *
+     * @return string|null
+     */
+    public function getShipFromCountry()
+    {
+        return $this->container['ship_from_country'];
+    }
+
+    /**
+     * Sets ship_from_country
+     *
+     * @param string|null $ship_from_country Country code the shipment is sent from (2-letter ISO code).
+     *
+     * @return self
+     */
+    public function setShipFromCountry($ship_from_country)
+    {
+        if (is_null($ship_from_country)) {
+            throw new \InvalidArgumentException('non-nullable ship_from_country cannot be null');
+        }
+        $this->container['ship_from_country'] = $ship_from_country;
+
+        return $this;
+    }
+
+    /**
+     * Gets ship_to_country
+     *
+     * @return string|null
+     */
+    public function getShipToCountry()
+    {
+        return $this->container['ship_to_country'];
+    }
+
+    /**
+     * Sets ship_to_country
+     *
+     * @param string|null $ship_to_country Country code the shipment is sent to (2-letter ISO code).
+     *
+     * @return self
+     */
+    public function setShipToCountry($ship_to_country)
+    {
+        if (is_null($ship_to_country)) {
+            throw new \InvalidArgumentException('non-nullable ship_to_country cannot be null');
+        }
+        $this->container['ship_to_country'] = $ship_to_country;
+
+        return $this;
+    }
+
+    /**
+     * Gets incoterm
+     *
+     * @return string|null
+     */
+    public function getIncoterm()
+    {
+        return $this->container['incoterm'];
+    }
+
+    /**
+     * Sets incoterm
+     *
+     * @param string|null $incoterm International commercial term for the shipment (e.g., DAP, DDP).
+     *
+     * @return self
+     */
+    public function setIncoterm($incoterm)
+    {
+        if (is_null($incoterm)) {
+            throw new \InvalidArgumentException('non-nullable incoterm cannot be null');
+        }
+        $this->container['incoterm'] = $incoterm;
+
+        return $this;
+    }
+
+    /**
+     * Gets duty_amount
+     *
+     * @return float|null
+     */
+    public function getDutyAmount()
+    {
+        return $this->container['duty_amount'];
+    }
+
+    /**
+     * Sets duty_amount
+     *
+     * @param float|null $duty_amount Duty amount for international shipment.
+     *
+     * @return self
+     */
+    public function setDutyAmount($duty_amount)
+    {
+        if (is_null($duty_amount)) {
+            throw new \InvalidArgumentException('non-nullable duty_amount cannot be null');
+        }
+        $this->container['duty_amount'] = $duty_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets duty_currency
+     *
+     * @return string|null
+     */
+    public function getDutyCurrency()
+    {
+        return $this->container['duty_currency'];
+    }
+
+    /**
+     * Sets duty_currency
+     *
+     * @param string|null $duty_currency Currency code for the duty amount (3-letter ISO code).
+     *
+     * @return self
+     */
+    public function setDutyCurrency($duty_currency)
+    {
+        if (is_null($duty_currency)) {
+            throw new \InvalidArgumentException('non-nullable duty_currency cannot be null');
+        }
+        $this->container['duty_currency'] = $duty_currency;
+
+        return $this;
+    }
+
+    /**
+     * Gets enable_cache
+     *
+     * @return bool|null
+     */
+    public function getEnableCache()
+    {
+        return $this->container['enable_cache'];
+    }
+
+    /**
+     * Sets enable_cache
+     *
+     * @param bool|null $enable_cache If the value is 'true' and order exist in our cache, we will use order.info from cache to prepare shipment items.
+     *
+     * @return self
+     */
+    public function setEnableCache($enable_cache)
+    {
+        if (is_null($enable_cache)) {
+            throw new \InvalidArgumentException('non-nullable enable_cache cannot be null');
+        }
+        $this->container['enable_cache'] = $enable_cache;
+
+        return $this;
+    }
+
+    /**
+     * Gets use_latest_api_version
+     *
+     * @return bool|null
+     */
+    public function getUseLatestApiVersion()
+    {
+        return $this->container['use_latest_api_version'];
+    }
+
+    /**
+     * Sets use_latest_api_version
+     *
+     * @param bool|null $use_latest_api_version Use the latest platform API version
+     *
+     * @return self
+     */
+    public function setUseLatestApiVersion($use_latest_api_version)
+    {
+        if (is_null($use_latest_api_version)) {
+            throw new \InvalidArgumentException('non-nullable use_latest_api_version cannot be null');
+        }
+        $this->container['use_latest_api_version'] = $use_latest_api_version;
 
         return $this;
     }

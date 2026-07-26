@@ -180,15 +180,6 @@ class OrderShipmentAddTest extends TestCase
     }
 
     /**
-     * Test attribute "enable_cache"
-     */
-    public function testPropertyEnableCache()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "check_process_status"
      */
     public function testPropertyCheckProcessStatus()
@@ -207,18 +198,171 @@ class OrderShipmentAddTest extends TestCase
     }
 
     /**
-     * Test attribute "use_latest_api_version"
+     * Test attribute "admin_comment"
      */
-    public function testPropertyUseLatestApiVersion()
+    public function testPropertyAdminComment()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "admin_comment"
+     * Test attribute "mail_class"
      */
-    public function testPropertyAdminComment()
+    public function testPropertyMailClass()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "ship_date"
+     */
+    public function testPropertyShipDate()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "weight"
+     */
+    public function testPropertyWeight()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "weight_unit"
+     */
+    public function testPropertyWeightUnit()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "length"
+     */
+    public function testPropertyLength()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "width"
+     */
+    public function testPropertyWidth()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "height"
+     */
+    public function testPropertyHeight()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "dimensions_unit"
+     */
+    public function testPropertyDimensionsUnit()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "shipping_label_cost"
+     */
+    public function testPropertyShippingLabelCost()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "shipping_label_currency"
+     */
+    public function testPropertyShippingLabelCurrency()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "revenue_eligibility"
+     */
+    public function testPropertyRevenueEligibility()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "ship_from_country"
+     */
+    public function testPropertyShipFromCountry()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "ship_to_country"
+     */
+    public function testPropertyShipToCountry()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "incoterm"
+     */
+    public function testPropertyIncoterm()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "duty_amount"
+     */
+    public function testPropertyDutyAmount()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "duty_currency"
+     */
+    public function testPropertyDutyCurrency()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "enable_cache"
+     */
+    public function testPropertyEnableCache()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "use_latest_api_version"
+     */
+    public function testPropertyUseLatestApiVersion()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

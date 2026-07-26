@@ -321,7 +321,7 @@ $entity = product; // string | The entity you want to filter webhooks by (e.g. o
 $action = add; // string | The action you want to filter webhooks by (e.g. add, update, or delete)
 $active = true; // bool | The webhook status you want to filter webhooks by
 $ids = 3,14,25; // string | List of сomma-separated webhook ids
-$params = id,entity,callback,fields; // string | Set this parameter in order to choose which entity fields you want to retrieve
+$params = id,entity,callback,fields; // string | Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve
 
 try {
     $result = $apiInstance->webhookList($start, $count, $entity, $action, $active, $ids, $params);
@@ -341,7 +341,7 @@ try {
 | **action** | **string**| The action you want to filter webhooks by (e.g. add, update, or delete) | [optional] |
 | **active** | **bool**| The webhook status you want to filter webhooks by | [optional] |
 | **ids** | **string**| List of сomma-separated webhook ids | [optional] |
-| **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,entity,action,callback&#39;] |
+| **params** | **string**| Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;id,entity,action,callback&#39;] |
 
 ### Return type
 

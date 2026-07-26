@@ -103,12 +103,12 @@ $apiInstance = new OpenAPI\Client\Api\AccountApi(
     $config
 );
 $store_url = http://mystore.com; // string | A web address of a store
-$store_key = ab37fc230bc5df63a5be1b11220949be; // string | Find store by store key
-$request_from_date = 2010-07-29; // string | Retrieve entities from their creation date
-$request_to_date = 2100-08-29; // string | Retrieve entities to their creation date
+$store_key = ab37fc230bc5df63a5be1b11220949be; // string | Optional filter: return only the connected store whose store key matches this value. A store key is the unique 32-character identifier of a connected store, returned as store_key here and by account.cart.add.
+$request_from_date = 2010-07-29; // string | Start date of the period for counting API requests made to each connection. Set together with request_to_date to include each store's total_calls (number of API requests in that period) in the response.
+$request_to_date = 2100-08-29; // string | End date of the period for counting API requests made to each connection. Set together with request_from_date to include each store's total_calls (number of API requests in that period) in the response.
 $custom_label = This is test store; // string | Defines a custom label for the store in the app
-$params = url,store_key; // string | Set this parameter in order to choose which entity fields you want to retrieve
-$exclude = url,store_key; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+$params = url,store_key; // string | Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve
+$exclude = url,store_key; // string | Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 
 try {
     $result = $apiInstance->accountCartList($store_url, $store_key, $request_from_date, $request_to_date, $custom_label, $params, $exclude);
@@ -123,12 +123,12 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **store_url** | **string**| A web address of a store | [optional] |
-| **store_key** | **string**| Find store by store key | [optional] |
-| **request_from_date** | **string**| Retrieve entities from their creation date | [optional] |
-| **request_to_date** | **string**| Retrieve entities to their creation date | [optional] |
+| **store_key** | **string**| Optional filter: return only the connected store whose store key matches this value. A store key is the unique 32-character identifier of a connected store, returned as store_key here and by account.cart.add. | [optional] |
+| **request_from_date** | **string**| Start date of the period for counting API requests made to each connection. Set together with request_to_date to include each store&#39;s total_calls (number of API requests in that period) in the response. | [optional] |
+| **request_to_date** | **string**| End date of the period for counting API requests made to each connection. Set together with request_from_date to include each store&#39;s total_calls (number of API requests in that period) in the response. | [optional] |
 | **custom_label** | **string**| Defines a custom label for the store in the app | [optional] |
-| **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;force_all&#39;] |
-| **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
+| **params** | **string**| Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;force_all&#39;] |
+| **exclude** | **string**| Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 
 ### Return type
 
@@ -644,7 +644,7 @@ try {
 ## `accountSupportedPlatforms()`
 
 ```php
-accountSupportedPlatforms(): \OpenAPI\Client\Model\ModelResponseAccountSupportedPlatforms
+accountSupportedPlatforms($cart_id): \OpenAPI\Client\Model\ModelResponseAccountSupportedPlatforms
 ```
 
 account.supported_platforms
@@ -670,9 +670,10 @@ $apiInstance = new OpenAPI\Client\Api\AccountApi(
     new GuzzleHttp\Client(),
     $config
 );
+$cart_id = Opencart14; // string | Filter by integration identifier (e.g. 'Shopify'). If omitted, the method returns all integrations.
 
 try {
-    $result = $apiInstance->accountSupportedPlatforms();
+    $result = $apiInstance->accountSupportedPlatforms($cart_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountApi->accountSupportedPlatforms: ', $e->getMessage(), PHP_EOL;
@@ -681,7 +682,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **cart_id** | **string**| Filter by integration identifier (e.g. &#39;Shopify&#39;). If omitted, the method returns all integrations. | [optional] |
 
 ### Return type
 

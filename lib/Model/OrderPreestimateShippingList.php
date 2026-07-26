@@ -636,7 +636,7 @@ class OrderPreestimateShippingList implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets params
      *
-     * @param string|null $params Set this parameter in order to choose which entity fields you want to retrieve
+     * @param string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve
      *
      * @return self
      */
@@ -663,7 +663,7 @@ class OrderPreestimateShippingList implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets exclude
      *
-     * @param string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+     * @param string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
      *
      * @return self
      */

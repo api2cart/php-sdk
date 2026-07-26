@@ -139,9 +139,9 @@ class MarketplaceApi
      * @param  string|null $upc Universal Product Code. A UPC (UPC-A) is a commonly used identifer for many different products. (optional)
      * @param  string|null $mpn Manufacturer Part Number. A MPN is an identifier of a particular part design or material used. (optional)
      * @param  string|null $isbn International Standard Book Number. An ISBN is a unique identifier for books. (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketplaceProductFind'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -170,9 +170,9 @@ class MarketplaceApi
      * @param  string|null $upc Universal Product Code. A UPC (UPC-A) is a commonly used identifer for many different products. (optional)
      * @param  string|null $mpn Manufacturer Part Number. A MPN is an identifier of a particular part design or material used. (optional)
      * @param  string|null $isbn International Standard Book Number. An ISBN is a unique identifier for books. (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketplaceProductFind'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -308,9 +308,9 @@ class MarketplaceApi
      * @param  string|null $upc Universal Product Code. A UPC (UPC-A) is a commonly used identifer for many different products. (optional)
      * @param  string|null $mpn Manufacturer Part Number. A MPN is an identifier of a particular part design or material used. (optional)
      * @param  string|null $isbn International Standard Book Number. An ISBN is a unique identifier for books. (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketplaceProductFind'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -342,9 +342,9 @@ class MarketplaceApi
      * @param  string|null $upc Universal Product Code. A UPC (UPC-A) is a commonly used identifer for many different products. (optional)
      * @param  string|null $mpn Manufacturer Part Number. A MPN is an identifier of a particular part design or material used. (optional)
      * @param  string|null $isbn International Standard Book Number. An ISBN is a unique identifier for books. (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketplaceProductFind'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -405,9 +405,9 @@ class MarketplaceApi
      * @param  string|null $upc Universal Product Code. A UPC (UPC-A) is a commonly used identifer for many different products. (optional)
      * @param  string|null $mpn Manufacturer Part Number. A MPN is an identifier of a particular part design or material used. (optional)
      * @param  string|null $isbn International Standard Book Number. An ISBN is a unique identifier for books. (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'force_all')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketplaceProductFind'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

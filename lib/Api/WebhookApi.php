@@ -1426,7 +1426,7 @@ class WebhookApi
      * @param  string|null $action The action you want to filter webhooks by (e.g. add, update, or delete) (optional)
      * @param  bool|null $active The webhook status you want to filter webhooks by (optional)
      * @param  string|null $ids List of сomma-separated webhook ids (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,entity,action,callback')
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,entity,action,callback')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1450,7 +1450,7 @@ class WebhookApi
      * @param  string|null $action The action you want to filter webhooks by (e.g. add, update, or delete) (optional)
      * @param  bool|null $active The webhook status you want to filter webhooks by (optional)
      * @param  string|null $ids List of сomma-separated webhook ids (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,entity,action,callback')
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,entity,action,callback')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1581,7 +1581,7 @@ class WebhookApi
      * @param  string|null $action The action you want to filter webhooks by (e.g. add, update, or delete) (optional)
      * @param  bool|null $active The webhook status you want to filter webhooks by (optional)
      * @param  string|null $ids List of сomma-separated webhook ids (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,entity,action,callback')
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,entity,action,callback')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1608,7 +1608,7 @@ class WebhookApi
      * @param  string|null $action The action you want to filter webhooks by (e.g. add, update, or delete) (optional)
      * @param  bool|null $active The webhook status you want to filter webhooks by (optional)
      * @param  string|null $ids List of сomma-separated webhook ids (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,entity,action,callback')
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,entity,action,callback')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1664,7 +1664,7 @@ class WebhookApi
      * @param  string|null $action The action you want to filter webhooks by (e.g. add, update, or delete) (optional)
      * @param  bool|null $active The webhook status you want to filter webhooks by (optional)
      * @param  string|null $ids List of сomma-separated webhook ids (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,entity,action,callback')
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'id,entity,action,callback')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['webhookList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

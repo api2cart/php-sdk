@@ -45,9 +45,9 @@ $apiInstance = new OpenAPI\Client\Api\TaxApi(
 $tax_class_id = 9; // string | Retrieves taxes specified by class id
 $store_id = 1; // string | Store Id
 $lang_id = 3; // string | Language id
-$response_fields = {result{id,name,tax,tax_rates{id,countries{id,name,states},cities,address,zip_codes{is_range,range,fields}}}}; // string | Set this parameter in order to choose which entity fields you want to retrieve
-$params = tax_class_id,tax; // string | Set this parameter in order to choose which entity fields you want to retrieve
-$exclude = tax_class_id,tax; // string | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+$response_fields = {result{id,name,tax,tax_rates{id,countries{id,name,states},cities,address,zip_codes{is_range,range,fields}}}}; // string | Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.
+$params = tax_class_id,tax; // string | Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve
+$exclude = tax_class_id,tax; // string | Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 
 try {
     $result = $apiInstance->taxClassInfo($tax_class_id, $store_id, $lang_id, $response_fields, $params, $exclude);
@@ -64,9 +64,9 @@ try {
 | **tax_class_id** | **string**| Retrieves taxes specified by class id | |
 | **store_id** | **string**| Store Id | [optional] |
 | **lang_id** | **string**| Language id | [optional] |
-| **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
-| **params** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;tax_class_id,name,avail&#39;] |
-| **exclude** | **string**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
+| **response_fields** | **string**| Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. | [optional] |
+| **params** | **string**| Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;tax_class_id,name,avail&#39;] |
+| **exclude** | **string**| Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 
 ### Return type
 
@@ -129,7 +129,7 @@ $created_to = 2100-08-29 13:45:52; // string | Retrieve entities to their creati
 $created_from = 2010-07-29 13:45:52; // string | Retrieve entities from their creation date
 $modified_to = 2100-08-29 13:45:52; // string | Retrieve entities to their modification date
 $modified_from = 2010-07-29 13:45:52; // string | Retrieve entities from their modification date
-$response_fields = {result}; // string | Set this parameter in order to choose which entity fields you want to retrieve
+$response_fields = {result}; // string | Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.
 
 try {
     $result = $apiInstance->taxClassList($count, $start, $page_cursor, $store_id, $find_value, $find_where, $created_to, $created_from, $modified_to, $modified_from, $response_fields);
@@ -153,7 +153,7 @@ try {
 | **created_from** | **string**| Retrieve entities from their creation date | [optional] |
 | **modified_to** | **string**| Retrieve entities to their modification date | [optional] |
 | **modified_from** | **string**| Retrieve entities from their modification date | [optional] |
-| **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;{return_code,return_message,pagination,result}&#39;] |
+| **response_fields** | **string**| Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. | [optional] [default to &#39;{return_code,return_message,pagination,result}&#39;] |
 
 ### Return type
 

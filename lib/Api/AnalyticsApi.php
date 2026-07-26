@@ -144,7 +144,7 @@ class AnalyticsApi
      * @param  string|null $sort_by Set field to sort by (optional, default to 'total_spend')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'desc')
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['analyticsCustomerReport'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -172,7 +172,7 @@ class AnalyticsApi
      * @param  string|null $sort_by Set field to sort by (optional, default to 'total_spend')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'desc')
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['analyticsCustomerReport'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -307,7 +307,7 @@ class AnalyticsApi
      * @param  string|null $sort_by Set field to sort by (optional, default to 'total_spend')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'desc')
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['analyticsCustomerReport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -338,7 +338,7 @@ class AnalyticsApi
      * @param  string|null $sort_by Set field to sort by (optional, default to 'total_spend')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'desc')
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['analyticsCustomerReport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -398,7 +398,7 @@ class AnalyticsApi
      * @param  string|null $sort_by Set field to sort by (optional, default to 'total_spend')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'desc')
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['analyticsCustomerReport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -607,7 +607,7 @@ class AnalyticsApi
      * @param  string|null $sort_by Set field to sort by (optional, default to 'items_sold')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'desc')
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['analyticsProductReport'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -635,7 +635,7 @@ class AnalyticsApi
      * @param  string|null $sort_by Set field to sort by (optional, default to 'items_sold')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'desc')
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['analyticsProductReport'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -770,7 +770,7 @@ class AnalyticsApi
      * @param  string|null $sort_by Set field to sort by (optional, default to 'items_sold')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'desc')
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['analyticsProductReport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -801,7 +801,7 @@ class AnalyticsApi
      * @param  string|null $sort_by Set field to sort by (optional, default to 'items_sold')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'desc')
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['analyticsProductReport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -861,7 +861,7 @@ class AnalyticsApi
      * @param  string|null $sort_by Set field to sort by (optional, default to 'items_sold')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'desc')
      * @param  string|null $page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['analyticsProductReport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1069,7 +1069,7 @@ class AnalyticsApi
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $sort_by Set field to sort by (optional, default to 'date')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'asc')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['analyticsReport'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1096,7 +1096,7 @@ class AnalyticsApi
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $sort_by Set field to sort by (optional, default to 'date')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'asc')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['analyticsReport'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1230,7 +1230,7 @@ class AnalyticsApi
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $sort_by Set field to sort by (optional, default to 'date')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'asc')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['analyticsReport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1260,7 +1260,7 @@ class AnalyticsApi
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $sort_by Set field to sort by (optional, default to 'date')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'asc')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['analyticsReport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1319,7 +1319,7 @@ class AnalyticsApi
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $sort_by Set field to sort by (optional, default to 'date')
      * @param  string|null $sort_direction Set sorting direction (optional, default to 'asc')
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['analyticsReport'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

@@ -134,9 +134,9 @@ class TaxApi
      * @param  string $tax_class_id Retrieves taxes specified by class id (required)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'tax_class_id,name,avail')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'tax_class_id,name,avail')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['taxClassInfo'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -157,9 +157,9 @@ class TaxApi
      * @param  string $tax_class_id Retrieves taxes specified by class id (required)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'tax_class_id,name,avail')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'tax_class_id,name,avail')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['taxClassInfo'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -287,9 +287,9 @@ class TaxApi
      * @param  string $tax_class_id Retrieves taxes specified by class id (required)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'tax_class_id,name,avail')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'tax_class_id,name,avail')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['taxClassInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -313,9 +313,9 @@ class TaxApi
      * @param  string $tax_class_id Retrieves taxes specified by class id (required)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'tax_class_id,name,avail')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'tax_class_id,name,avail')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['taxClassInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -368,9 +368,9 @@ class TaxApi
      * @param  string $tax_class_id Retrieves taxes specified by class id (required)
      * @param  string|null $store_id Store Id (optional)
      * @param  string|null $lang_id Language id (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param  string|null $params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'tax_class_id,name,avail')
-     * @param  string|null $exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
+     * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'tax_class_id,name,avail')
+     * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['taxClassInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -535,7 +535,7 @@ class TaxApi
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional, default to '{return_code,return_message,pagination,result}')
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional, default to '{return_code,return_message,pagination,result}')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['taxClassList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -563,7 +563,7 @@ class TaxApi
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional, default to '{return_code,return_message,pagination,result}')
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional, default to '{return_code,return_message,pagination,result}')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['taxClassList'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -698,7 +698,7 @@ class TaxApi
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional, default to '{return_code,return_message,pagination,result}')
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional, default to '{return_code,return_message,pagination,result}')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['taxClassList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -729,7 +729,7 @@ class TaxApi
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional, default to '{return_code,return_message,pagination,result}')
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional, default to '{return_code,return_message,pagination,result}')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['taxClassList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -789,7 +789,7 @@ class TaxApi
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $modified_to Retrieve entities to their modification date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
-     * @param  string|null $response_fields Set this parameter in order to choose which entity fields you want to retrieve (optional, default to '{return_code,return_message,pagination,result}')
+     * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional, default to '{return_code,return_message,pagination,result}')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['taxClassList'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

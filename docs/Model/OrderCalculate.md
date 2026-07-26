@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 **bill_country** | **string** | Specifies billing country code | [optional]
 **bill_company** | **string** | Specifies billing company | [optional]
 **bill_phone** | **string** | Specifies billing phone | [optional]
-**response_fields** | **string** | Set this parameter in order to choose which entity fields you want to retrieve | [optional]
+**response_fields** | **string** | Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. | [optional]
 **idempotency_key** | **string** | A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional]
 **order_item** | [**\OpenAPI\Client\Model\OrderCalculateOrderItemInner[]**](OrderCalculateOrderItemInner.md) |  |
 

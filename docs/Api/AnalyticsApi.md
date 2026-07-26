@@ -53,7 +53,7 @@ $email = mail@example.com; // string | Filter analytics customers by email
 $sort_by = total_spend; // string | Set field to sort by
 $sort_direction = asc; // string | Set sorting direction
 $page_cursor = ; // string | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
-$response_fields = {result}; // string | Set this parameter in order to choose which entity fields you want to retrieve
+$response_fields = {result}; // string | Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.
 
 try {
     $result = $apiInstance->analyticsCustomerReport($date_from, $date_to, $count, $currency_id, $store_id, $customer_type, $email, $sort_by, $sort_direction, $page_cursor, $response_fields);
@@ -77,7 +77,7 @@ try {
 | **sort_by** | **string**| Set field to sort by | [optional] [default to &#39;total_spend&#39;] |
 | **sort_direction** | **string**| Set sorting direction | [optional] [default to &#39;desc&#39;] |
 | **page_cursor** | **string**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
-| **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **response_fields** | **string**| Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. | [optional] |
 
 ### Return type
 
@@ -140,7 +140,7 @@ $categories_ids = 23,56; // string | Defines product add that is specified by co
 $sort_by = items_sold; // string | Set field to sort by
 $sort_direction = asc; // string | Set sorting direction
 $page_cursor = ; // string | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
-$response_fields = {result}; // string | Set this parameter in order to choose which entity fields you want to retrieve
+$response_fields = {result}; // string | Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.
 
 try {
     $result = $apiInstance->analyticsProductReport($date_from, $date_to, $count, $product_ids, $currency_id, $store_id, $categories_ids, $sort_by, $sort_direction, $page_cursor, $response_fields);
@@ -164,7 +164,7 @@ try {
 | **sort_by** | **string**| Set field to sort by | [optional] [default to &#39;items_sold&#39;] |
 | **sort_direction** | **string**| Set sorting direction | [optional] [default to &#39;desc&#39;] |
 | **page_cursor** | **string**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
-| **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **response_fields** | **string**| Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. | [optional] |
 
 ### Return type
 
@@ -226,7 +226,7 @@ $currency_id = usd; // string | Currency Id
 $store_id = 1; // string | Store Id
 $sort_by = date; // string | Set field to sort by
 $sort_direction = asc; // string | Set sorting direction
-$response_fields = {result}; // string | Set this parameter in order to choose which entity fields you want to retrieve
+$response_fields = {result}; // string | Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.
 
 try {
     $result = $apiInstance->analyticsReport($date_from, $date_to, $interval, $order_status, $financial_status, $currency_id, $store_id, $sort_by, $sort_direction, $response_fields);
@@ -249,7 +249,7 @@ try {
 | **store_id** | **string**| Store Id | [optional] |
 | **sort_by** | **string**| Set field to sort by | [optional] [default to &#39;date&#39;] |
 | **sort_direction** | **string**| Set sorting direction | [optional] [default to &#39;asc&#39;] |
-| **response_fields** | **string**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **response_fields** | **string**| Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. | [optional] |
 
 ### Return type
 
