@@ -60,7 +60,8 @@ class ParamDefinitionFilteringConditionsFilterRule implements ModelInterface, Ar
     protected static $openAPITypes = [
         'field' => 'string',
         'operator' => 'string',
-        'value' => '\OpenAPI\Client\Model\ParamDefinitionFilteringConditionsFilterRuleValue'
+        'value' => '\OpenAPI\Client\Model\ParamDefinitionFilteringConditionsFilterRuleValue',
+        'match_items' => 'string'
     ];
 
     /**
@@ -73,7 +74,8 @@ class ParamDefinitionFilteringConditionsFilterRule implements ModelInterface, Ar
     protected static $openAPIFormats = [
         'field' => null,
         'operator' => null,
-        'value' => null
+        'value' => null,
+        'match_items' => null
     ];
 
     /**
@@ -84,7 +86,8 @@ class ParamDefinitionFilteringConditionsFilterRule implements ModelInterface, Ar
     protected static array $openAPINullables = [
         'field' => false,
         'operator' => false,
-        'value' => false
+        'value' => false,
+        'match_items' => true
     ];
 
     /**
@@ -175,7 +178,8 @@ class ParamDefinitionFilteringConditionsFilterRule implements ModelInterface, Ar
     protected static $attributeMap = [
         'field' => 'field',
         'operator' => 'operator',
-        'value' => 'value'
+        'value' => 'value',
+        'match_items' => 'match_items'
     ];
 
     /**
@@ -186,7 +190,8 @@ class ParamDefinitionFilteringConditionsFilterRule implements ModelInterface, Ar
     protected static $setters = [
         'field' => 'setField',
         'operator' => 'setOperator',
-        'value' => 'setValue'
+        'value' => 'setValue',
+        'match_items' => 'setMatchItems'
     ];
 
     /**
@@ -197,7 +202,8 @@ class ParamDefinitionFilteringConditionsFilterRule implements ModelInterface, Ar
     protected static $getters = [
         'field' => 'getField',
         'operator' => 'getOperator',
-        'value' => 'getValue'
+        'value' => 'getValue',
+        'match_items' => 'getMatchItems'
     ];
 
     /**
@@ -260,6 +266,7 @@ class ParamDefinitionFilteringConditionsFilterRule implements ModelInterface, Ar
         $this->setIfExists('field', $data ?? [], null);
         $this->setIfExists('operator', $data ?? [], null);
         $this->setIfExists('value', $data ?? [], null);
+        $this->setIfExists('match_items', $data ?? [], null);
     }
 
     /**
@@ -381,6 +388,40 @@ class ParamDefinitionFilteringConditionsFilterRule implements ModelInterface, Ar
             throw new \InvalidArgumentException('non-nullable value cannot be null');
         }
         $this->container['value'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets match_items
+     *
+     * @return string|null
+     */
+    public function getMatchItems()
+    {
+        return $this->container['match_items'];
+    }
+
+    /**
+     * Sets match_items
+     *
+     * @param string|null $match_items match_items
+     *
+     * @return self
+     */
+    public function setMatchItems($match_items)
+    {
+        if (is_null($match_items)) {
+            array_push($this->openAPINullablesSetToNull, 'match_items');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('match_items', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['match_items'] = $match_items;
 
         return $this;
     }

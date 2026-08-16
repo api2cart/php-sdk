@@ -63,7 +63,8 @@ class ParamDefinitionFilteringConditionsFilterCondition implements ModelInterfac
         'not' => 'object',
         'field' => 'string',
         'operator' => 'string',
-        'value' => '\OpenAPI\Client\Model\ParamDefinitionFilteringConditionsFilterRuleValue'
+        'value' => '\OpenAPI\Client\Model\ParamDefinitionFilteringConditionsFilterRuleValue',
+        'match_items' => 'string'
     ];
 
     /**
@@ -79,7 +80,8 @@ class ParamDefinitionFilteringConditionsFilterCondition implements ModelInterfac
         'not' => null,
         'field' => null,
         'operator' => null,
-        'value' => null
+        'value' => null,
+        'match_items' => null
     ];
 
     /**
@@ -93,7 +95,8 @@ class ParamDefinitionFilteringConditionsFilterCondition implements ModelInterfac
         'not' => false,
         'field' => false,
         'operator' => false,
-        'value' => false
+        'value' => false,
+        'match_items' => false
     ];
 
     /**
@@ -187,7 +190,8 @@ class ParamDefinitionFilteringConditionsFilterCondition implements ModelInterfac
         'not' => 'not',
         'field' => 'field',
         'operator' => 'operator',
-        'value' => 'value'
+        'value' => 'value',
+        'match_items' => 'match_items'
     ];
 
     /**
@@ -201,7 +205,8 @@ class ParamDefinitionFilteringConditionsFilterCondition implements ModelInterfac
         'not' => 'setNot',
         'field' => 'setField',
         'operator' => 'setOperator',
-        'value' => 'setValue'
+        'value' => 'setValue',
+        'match_items' => 'setMatchItems'
     ];
 
     /**
@@ -215,7 +220,8 @@ class ParamDefinitionFilteringConditionsFilterCondition implements ModelInterfac
         'not' => 'getNot',
         'field' => 'getField',
         'operator' => 'getOperator',
-        'value' => 'getValue'
+        'value' => 'getValue',
+        'match_items' => 'getMatchItems'
     ];
 
     /**
@@ -281,6 +287,7 @@ class ParamDefinitionFilteringConditionsFilterCondition implements ModelInterfac
         $this->setIfExists('field', $data ?? [], null);
         $this->setIfExists('operator', $data ?? [], null);
         $this->setIfExists('value', $data ?? [], null);
+        $this->setIfExists('match_items', $data ?? [], null);
     }
 
     /**
@@ -483,6 +490,33 @@ class ParamDefinitionFilteringConditionsFilterCondition implements ModelInterfac
             throw new \InvalidArgumentException('non-nullable value cannot be null');
         }
         $this->container['value'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets match_items
+     *
+     * @return string|null
+     */
+    public function getMatchItems()
+    {
+        return $this->container['match_items'];
+    }
+
+    /**
+     * Sets match_items
+     *
+     * @param string|null $match_items match_items
+     *
+     * @return self
+     */
+    public function setMatchItems($match_items)
+    {
+        if (is_null($match_items)) {
+            throw new \InvalidArgumentException('non-nullable match_items cannot be null');
+        }
+        $this->container['match_items'] = $match_items;
 
         return $this;
     }

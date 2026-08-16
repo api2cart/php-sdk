@@ -133,4 +133,13 @@ class ParamDefinitionFilteringConditionsFilterConditionTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "match_items"
+     */
+    public function testPropertyMatchItems()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

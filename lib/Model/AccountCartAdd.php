@@ -122,6 +122,8 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'walmart_environment' => 'string',
         'walmart_channel_type' => 'string',
         'walmart_region' => 'string',
+        'walmart_refresh_token' => 'string',
+        'walmart_seller_id' => 'string',
         'ecwid_acess_token' => 'string',
         'ecwid_store_id' => 'string',
         'lazada_app_id' => 'string',
@@ -318,6 +320,8 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'walmart_environment' => null,
         'walmart_channel_type' => null,
         'walmart_region' => null,
+        'walmart_refresh_token' => null,
+        'walmart_seller_id' => null,
         'ecwid_acess_token' => null,
         'ecwid_store_id' => null,
         'lazada_app_id' => null,
@@ -512,6 +516,8 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'walmart_environment' => false,
         'walmart_channel_type' => false,
         'walmart_region' => false,
+        'walmart_refresh_token' => false,
+        'walmart_seller_id' => false,
         'ecwid_acess_token' => false,
         'ecwid_store_id' => false,
         'lazada_app_id' => false,
@@ -786,6 +792,8 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'walmart_environment' => 'walmart_environment',
         'walmart_channel_type' => 'walmart_channel_type',
         'walmart_region' => 'walmart_region',
+        'walmart_refresh_token' => 'walmart_refresh_token',
+        'walmart_seller_id' => 'walmart_seller_id',
         'ecwid_acess_token' => 'ecwid_acess_token',
         'ecwid_store_id' => 'ecwid_store_id',
         'lazada_app_id' => 'lazada_app_id',
@@ -980,6 +988,8 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'walmart_environment' => 'setWalmartEnvironment',
         'walmart_channel_type' => 'setWalmartChannelType',
         'walmart_region' => 'setWalmartRegion',
+        'walmart_refresh_token' => 'setWalmartRefreshToken',
+        'walmart_seller_id' => 'setWalmartSellerId',
         'ecwid_acess_token' => 'setEcwidAcessToken',
         'ecwid_store_id' => 'setEcwidStoreId',
         'lazada_app_id' => 'setLazadaAppId',
@@ -1174,6 +1184,8 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'walmart_environment' => 'getWalmartEnvironment',
         'walmart_channel_type' => 'getWalmartChannelType',
         'walmart_region' => 'getWalmartRegion',
+        'walmart_refresh_token' => 'getWalmartRefreshToken',
+        'walmart_seller_id' => 'getWalmartSellerId',
         'ecwid_acess_token' => 'getEcwidAcessToken',
         'ecwid_store_id' => 'getEcwidStoreId',
         'lazada_app_id' => 'getLazadaAppId',
@@ -1351,7 +1363,6 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
     public const CART_ID_BOL = 'Bol';
     public const CART_ID_COMMERCE_HQ = 'CommerceHQ';
     public const CART_ID_CRELOADED = 'Creloaded';
-    public const CART_ID_CSCART = 'Cscart';
     public const CART_ID_CUBECART = 'Cubecart';
     public const CART_ID_DEMANDWARE = 'Demandware';
     public const CART_ID_E_BAY = 'EBay';
@@ -1431,7 +1442,6 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             self::CART_ID_BOL,
             self::CART_ID_COMMERCE_HQ,
             self::CART_ID_CRELOADED,
-            self::CART_ID_CSCART,
             self::CART_ID_CUBECART,
             self::CART_ID_DEMANDWARE,
             self::CART_ID_E_BAY,
@@ -1572,6 +1582,8 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('walmart_environment', $data ?? [], 'production');
         $this->setIfExists('walmart_channel_type', $data ?? [], null);
         $this->setIfExists('walmart_region', $data ?? [], 'us');
+        $this->setIfExists('walmart_refresh_token', $data ?? [], null);
+        $this->setIfExists('walmart_seller_id', $data ?? [], null);
         $this->setIfExists('ecwid_acess_token', $data ?? [], null);
         $this->setIfExists('ecwid_store_id', $data ?? [], null);
         $this->setIfExists('lazada_app_id', $data ?? [], null);
@@ -3488,6 +3500,60 @@ class AccountCartAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable walmart_region cannot be null');
         }
         $this->container['walmart_region'] = $walmart_region;
+
+        return $this;
+    }
+
+    /**
+     * Gets walmart_refresh_token
+     *
+     * @return string|null
+     */
+    public function getWalmartRefreshToken()
+    {
+        return $this->container['walmart_refresh_token'];
+    }
+
+    /**
+     * Sets walmart_refresh_token
+     *
+     * @param string|null $walmart_refresh_token Walmart refresh token received by a Solution Provider application through the Walmart App Store authorization. When it is set, walmart_client_id and walmart_client_secret are the credentials of that application, not of the seller. Must be used together with walmart_seller_id and is supported only for walmart_region = 'us'
+     *
+     * @return self
+     */
+    public function setWalmartRefreshToken($walmart_refresh_token)
+    {
+        if (is_null($walmart_refresh_token)) {
+            throw new \InvalidArgumentException('non-nullable walmart_refresh_token cannot be null');
+        }
+        $this->container['walmart_refresh_token'] = $walmart_refresh_token;
+
+        return $this;
+    }
+
+    /**
+     * Gets walmart_seller_id
+     *
+     * @return string|null
+     */
+    public function getWalmartSellerId()
+    {
+        return $this->container['walmart_seller_id'];
+    }
+
+    /**
+     * Sets walmart_seller_id
+     *
+     * @param string|null $walmart_seller_id Walmart seller id the refresh token was issued for, sent as the WM_PARTNER.ID header. Must be used together with walmart_refresh_token and is supported only for walmart_region = 'us'
+     *
+     * @return self
+     */
+    public function setWalmartSellerId($walmart_seller_id)
+    {
+        if (is_null($walmart_seller_id)) {
+            throw new \InvalidArgumentException('non-nullable walmart_seller_id cannot be null');
+        }
+        $this->container['walmart_seller_id'] = $walmart_seller_id;
 
         return $this;
     }

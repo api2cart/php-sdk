@@ -657,6 +657,24 @@ class AccountCartAddTest extends TestCase
     }
 
     /**
+     * Test attribute "walmart_refresh_token"
+     */
+    public function testPropertyWalmartRefreshToken()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "walmart_seller_id"
+     */
+    public function testPropertyWalmartSellerId()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "ecwid_acess_token"
      */
     public function testPropertyEcwidAcessToken()
