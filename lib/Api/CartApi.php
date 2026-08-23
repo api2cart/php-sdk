@@ -4785,15 +4785,16 @@ class CartApi
      * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
      * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'store_name,store_url,db_prefix')
      * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartInfo'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CartInfo200Response
      */
-    public function cartInfo($response_fields = null, $params = 'store_name,store_url,db_prefix', $exclude = null, string $contentType = self::contentTypes['cartInfo'][0])
+    public function cartInfo($response_fields = null, $params = 'store_name,store_url,db_prefix', $exclude = null, $use_latest_api_version = false, string $contentType = self::contentTypes['cartInfo'][0])
     {
-        list($response) = $this->cartInfoWithHttpInfo($response_fields, $params, $exclude, $contentType);
+        list($response) = $this->cartInfoWithHttpInfo($response_fields, $params, $exclude, $use_latest_api_version, $contentType);
         return $response;
     }
 
@@ -4805,15 +4806,16 @@ class CartApi
      * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
      * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'store_name,store_url,db_prefix')
      * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartInfo'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CartInfo200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cartInfoWithHttpInfo($response_fields = null, $params = 'store_name,store_url,db_prefix', $exclude = null, string $contentType = self::contentTypes['cartInfo'][0])
+    public function cartInfoWithHttpInfo($response_fields = null, $params = 'store_name,store_url,db_prefix', $exclude = null, $use_latest_api_version = false, string $contentType = self::contentTypes['cartInfo'][0])
     {
-        $request = $this->cartInfoRequest($response_fields, $params, $exclude, $contentType);
+        $request = $this->cartInfoRequest($response_fields, $params, $exclude, $use_latest_api_version, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4932,14 +4934,15 @@ class CartApi
      * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
      * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'store_name,store_url,db_prefix')
      * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartInfoAsync($response_fields = null, $params = 'store_name,store_url,db_prefix', $exclude = null, string $contentType = self::contentTypes['cartInfo'][0])
+    public function cartInfoAsync($response_fields = null, $params = 'store_name,store_url,db_prefix', $exclude = null, $use_latest_api_version = false, string $contentType = self::contentTypes['cartInfo'][0])
     {
-        return $this->cartInfoAsyncWithHttpInfo($response_fields, $params, $exclude, $contentType)
+        return $this->cartInfoAsyncWithHttpInfo($response_fields, $params, $exclude, $use_latest_api_version, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4955,15 +4958,16 @@ class CartApi
      * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
      * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'store_name,store_url,db_prefix')
      * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cartInfoAsyncWithHttpInfo($response_fields = null, $params = 'store_name,store_url,db_prefix', $exclude = null, string $contentType = self::contentTypes['cartInfo'][0])
+    public function cartInfoAsyncWithHttpInfo($response_fields = null, $params = 'store_name,store_url,db_prefix', $exclude = null, $use_latest_api_version = false, string $contentType = self::contentTypes['cartInfo'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CartInfo200Response';
-        $request = $this->cartInfoRequest($response_fields, $params, $exclude, $contentType);
+        $request = $this->cartInfoRequest($response_fields, $params, $exclude, $use_latest_api_version, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5007,13 +5011,15 @@ class CartApi
      * @param  string|null $response_fields Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. (optional)
      * @param  string|null $params Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve (optional, default to 'store_name,store_url,db_prefix')
      * @param  string|null $exclude Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param  bool|null $use_latest_api_version Use the latest platform API version (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cartInfo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function cartInfoRequest($response_fields = null, $params = 'store_name,store_url,db_prefix', $exclude = null, string $contentType = self::contentTypes['cartInfo'][0])
+    public function cartInfoRequest($response_fields = null, $params = 'store_name,store_url,db_prefix', $exclude = null, $use_latest_api_version = false, string $contentType = self::contentTypes['cartInfo'][0])
     {
+
 
 
 
@@ -5049,6 +5055,15 @@ class CartApi
             $exclude,
             'exclude', // param base name
             'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $use_latest_api_version,
+            'use_latest_api_version', // param base name
+            'boolean', // openApiType
             'form', // style
             true, // explode
             false // required

@@ -939,7 +939,7 @@ try {
 ## `cartInfo()`
 
 ```php
-cartInfo($response_fields, $params, $exclude): \OpenAPI\Client\Model\CartInfo200Response
+cartInfo($response_fields, $params, $exclude, $use_latest_api_version): \OpenAPI\Client\Model\CartInfo200Response
 ```
 
 cart.info
@@ -973,9 +973,10 @@ $apiInstance = new OpenAPI\Client\Api\CartApi(
 $response_fields = {result{name,url,stores_info{store_id,name,currency{id,iso3},store_owner_info}}}; // string | Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields.
 $params = name,url; // string | Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve
 $exclude = name,url; // string | Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+$use_latest_api_version = true; // bool | Use the latest platform API version
 
 try {
-    $result = $apiInstance->cartInfo($response_fields, $params, $exclude);
+    $result = $apiInstance->cartInfo($response_fields, $params, $exclude, $use_latest_api_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CartApi->cartInfo: ', $e->getMessage(), PHP_EOL;
@@ -989,6 +990,7 @@ try {
 | **response_fields** | **string**| Set this parameter to choose which entity fields to retrieve. Use comma-separated field names in curly braces, nested to match the response structure, e.g. {result{product{id,name}}}. The wildcard * returns every field at a level: {*} gives the whole response, {result{product{*}}} all product fields. | [optional] |
 | **params** | **string**| Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &#39;store_name,store_url,db_prefix&#39;] |
 | **exclude** | **string**| Important! Parameter deprecated, use response_fields instead. Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
+| **use_latest_api_version** | **bool**| Use the latest platform API version | [optional] [default to false] |
 
 ### Return type
 
