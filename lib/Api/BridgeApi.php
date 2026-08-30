@@ -134,15 +134,16 @@ class BridgeApi
      *
      * bridge.delete
      *
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bridgeDelete'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\AttributeValueDelete200Response
      */
-    public function bridgeDelete(string $contentType = self::contentTypes['bridgeDelete'][0])
+    public function bridgeDelete($idempotency_key = null, string $contentType = self::contentTypes['bridgeDelete'][0])
     {
-        list($response) = $this->bridgeDeleteWithHttpInfo($contentType);
+        list($response) = $this->bridgeDeleteWithHttpInfo($idempotency_key, $contentType);
         return $response;
     }
 
@@ -151,15 +152,16 @@ class BridgeApi
      *
      * bridge.delete
      *
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bridgeDelete'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\AttributeValueDelete200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function bridgeDeleteWithHttpInfo(string $contentType = self::contentTypes['bridgeDelete'][0])
+    public function bridgeDeleteWithHttpInfo($idempotency_key = null, string $contentType = self::contentTypes['bridgeDelete'][0])
     {
-        $request = $this->bridgeDeleteRequest($contentType);
+        $request = $this->bridgeDeleteRequest($idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -275,14 +277,15 @@ class BridgeApi
      *
      * bridge.delete
      *
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bridgeDelete'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function bridgeDeleteAsync(string $contentType = self::contentTypes['bridgeDelete'][0])
+    public function bridgeDeleteAsync($idempotency_key = null, string $contentType = self::contentTypes['bridgeDelete'][0])
     {
-        return $this->bridgeDeleteAsyncWithHttpInfo($contentType)
+        return $this->bridgeDeleteAsyncWithHttpInfo($idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -295,15 +298,16 @@ class BridgeApi
      *
      * bridge.delete
      *
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bridgeDelete'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function bridgeDeleteAsyncWithHttpInfo(string $contentType = self::contentTypes['bridgeDelete'][0])
+    public function bridgeDeleteAsyncWithHttpInfo($idempotency_key = null, string $contentType = self::contentTypes['bridgeDelete'][0])
     {
         $returnType = '\OpenAPI\Client\Model\AttributeValueDelete200Response';
-        $request = $this->bridgeDeleteRequest($contentType);
+        $request = $this->bridgeDeleteRequest($idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -344,13 +348,15 @@ class BridgeApi
     /**
      * Create request for operation 'bridgeDelete'
      *
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bridgeDelete'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function bridgeDeleteRequest(string $contentType = self::contentTypes['bridgeDelete'][0])
+    public function bridgeDeleteRequest($idempotency_key = null, string $contentType = self::contentTypes['bridgeDelete'][0])
     {
+
 
 
         $resourcePath = '/bridge.delete.json';
@@ -360,6 +366,15 @@ class BridgeApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idempotency_key,
+            'idempotency_key', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
 
 
 
@@ -745,15 +760,16 @@ class BridgeApi
      *
      * bridge.update
      *
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bridgeUpdate'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\AttributeUpdate200Response
      */
-    public function bridgeUpdate(string $contentType = self::contentTypes['bridgeUpdate'][0])
+    public function bridgeUpdate($idempotency_key = null, string $contentType = self::contentTypes['bridgeUpdate'][0])
     {
-        list($response) = $this->bridgeUpdateWithHttpInfo($contentType);
+        list($response) = $this->bridgeUpdateWithHttpInfo($idempotency_key, $contentType);
         return $response;
     }
 
@@ -762,15 +778,16 @@ class BridgeApi
      *
      * bridge.update
      *
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bridgeUpdate'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\AttributeUpdate200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function bridgeUpdateWithHttpInfo(string $contentType = self::contentTypes['bridgeUpdate'][0])
+    public function bridgeUpdateWithHttpInfo($idempotency_key = null, string $contentType = self::contentTypes['bridgeUpdate'][0])
     {
-        $request = $this->bridgeUpdateRequest($contentType);
+        $request = $this->bridgeUpdateRequest($idempotency_key, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -886,14 +903,15 @@ class BridgeApi
      *
      * bridge.update
      *
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bridgeUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function bridgeUpdateAsync(string $contentType = self::contentTypes['bridgeUpdate'][0])
+    public function bridgeUpdateAsync($idempotency_key = null, string $contentType = self::contentTypes['bridgeUpdate'][0])
     {
-        return $this->bridgeUpdateAsyncWithHttpInfo($contentType)
+        return $this->bridgeUpdateAsyncWithHttpInfo($idempotency_key, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -906,15 +924,16 @@ class BridgeApi
      *
      * bridge.update
      *
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bridgeUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function bridgeUpdateAsyncWithHttpInfo(string $contentType = self::contentTypes['bridgeUpdate'][0])
+    public function bridgeUpdateAsyncWithHttpInfo($idempotency_key = null, string $contentType = self::contentTypes['bridgeUpdate'][0])
     {
         $returnType = '\OpenAPI\Client\Model\AttributeUpdate200Response';
-        $request = $this->bridgeUpdateRequest($contentType);
+        $request = $this->bridgeUpdateRequest($idempotency_key, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -955,13 +974,15 @@ class BridgeApi
     /**
      * Create request for operation 'bridgeUpdate'
      *
+     * @param  string|null $idempotency_key A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['bridgeUpdate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function bridgeUpdateRequest(string $contentType = self::contentTypes['bridgeUpdate'][0])
+    public function bridgeUpdateRequest($idempotency_key = null, string $contentType = self::contentTypes['bridgeUpdate'][0])
     {
+
 
 
         $resourcePath = '/bridge.update.json';
@@ -971,6 +992,15 @@ class BridgeApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $idempotency_key,
+            'idempotency_key', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
 
 
 

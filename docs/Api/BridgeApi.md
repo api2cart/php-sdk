@@ -12,7 +12,7 @@ All URIs are relative to https://api.api2cart.local.com/v1.1, except if the oper
 ## `bridgeDelete()`
 
 ```php
-bridgeDelete(): \OpenAPI\Client\Model\AttributeValueDelete200Response
+bridgeDelete($idempotency_key): \OpenAPI\Client\Model\AttributeValueDelete200Response
 ```
 
 bridge.delete
@@ -43,9 +43,10 @@ $apiInstance = new OpenAPI\Client\Api\BridgeApi(
     new GuzzleHttp\Client(),
     $config
 );
+$idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->bridgeDelete();
+    $result = $apiInstance->bridgeDelete($idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BridgeApi->bridgeDelete: ', $e->getMessage(), PHP_EOL;
@@ -54,7 +55,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
 
@@ -143,7 +146,7 @@ try {
 ## `bridgeUpdate()`
 
 ```php
-bridgeUpdate(): \OpenAPI\Client\Model\AttributeUpdate200Response
+bridgeUpdate($idempotency_key): \OpenAPI\Client\Model\AttributeUpdate200Response
 ```
 
 bridge.update
@@ -174,9 +177,10 @@ $apiInstance = new OpenAPI\Client\Api\BridgeApi(
     new GuzzleHttp\Client(),
     $config
 );
+$idempotency_key = 098f6bcd4621d373cade4e832627b4f6; // string | A unique identifier associated with a specific request. Repeated requests with the same <strong>idempotency_key</strong> return a cached response without re-executing the business logic. <strong>Please note that the cache lifetime is 15 minutes.</strong>
 
 try {
-    $result = $apiInstance->bridgeUpdate();
+    $result = $apiInstance->bridgeUpdate($idempotency_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BridgeApi->bridgeUpdate: ', $e->getMessage(), PHP_EOL;
@@ -185,7 +189,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **idempotency_key** | **string**| A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional] |
 
 ### Return type
 
