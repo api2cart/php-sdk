@@ -130,6 +130,9 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'clear_cache' => 'bool',
         'origin' => 'string',
         'fee_price' => 'float',
+        'shipp_national_address' => 'string',
+        'shipp_building_number' => 'string',
+        'shipp_additional_number' => 'string',
         'idempotency_key' => 'string',
         'order_item' => '\OpenAPI\Client\Model\OrderAddOrderItemInner[]'
     ];
@@ -214,6 +217,9 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'clear_cache' => null,
         'origin' => null,
         'fee_price' => null,
+        'shipp_national_address' => null,
+        'shipp_building_number' => null,
+        'shipp_additional_number' => null,
         'idempotency_key' => null,
         'order_item' => null
     ];
@@ -296,6 +302,9 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'clear_cache' => false,
         'origin' => false,
         'fee_price' => false,
+        'shipp_national_address' => false,
+        'shipp_building_number' => false,
+        'shipp_additional_number' => false,
         'idempotency_key' => false,
         'order_item' => false
     ];
@@ -458,6 +467,9 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'clear_cache' => 'clear_cache',
         'origin' => 'origin',
         'fee_price' => 'fee_price',
+        'shipp_national_address' => 'shipp_national_address',
+        'shipp_building_number' => 'shipp_building_number',
+        'shipp_additional_number' => 'shipp_additional_number',
         'idempotency_key' => 'idempotency_key',
         'order_item' => 'order_item'
     ];
@@ -540,6 +552,9 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'clear_cache' => 'setClearCache',
         'origin' => 'setOrigin',
         'fee_price' => 'setFeePrice',
+        'shipp_national_address' => 'setShippNationalAddress',
+        'shipp_building_number' => 'setShippBuildingNumber',
+        'shipp_additional_number' => 'setShippAdditionalNumber',
         'idempotency_key' => 'setIdempotencyKey',
         'order_item' => 'setOrderItem'
     ];
@@ -622,6 +637,9 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         'clear_cache' => 'getClearCache',
         'origin' => 'getOrigin',
         'fee_price' => 'getFeePrice',
+        'shipp_national_address' => 'getShippNationalAddress',
+        'shipp_building_number' => 'getShippBuildingNumber',
+        'shipp_additional_number' => 'getShippAdditionalNumber',
         'idempotency_key' => 'getIdempotencyKey',
         'order_item' => 'getOrderItem'
     ];
@@ -755,6 +773,9 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('clear_cache', $data ?? [], true);
         $this->setIfExists('origin', $data ?? [], null);
         $this->setIfExists('fee_price', $data ?? [], null);
+        $this->setIfExists('shipp_national_address', $data ?? [], null);
+        $this->setIfExists('shipp_building_number', $data ?? [], null);
+        $this->setIfExists('shipp_additional_number', $data ?? [], null);
         $this->setIfExists('idempotency_key', $data ?? [], null);
         $this->setIfExists('order_item', $data ?? [], null);
     }
@@ -2780,6 +2801,87 @@ class OrderAdd implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable fee_price cannot be null');
         }
         $this->container['fee_price'] = $fee_price;
+
+        return $this;
+    }
+
+    /**
+     * Gets shipp_national_address
+     *
+     * @return string|null
+     */
+    public function getShippNationalAddress()
+    {
+        return $this->container['shipp_national_address'];
+    }
+
+    /**
+     * Sets shipp_national_address
+     *
+     * @param string|null $shipp_national_address Specifies short national address code of a shipping address
+     *
+     * @return self
+     */
+    public function setShippNationalAddress($shipp_national_address)
+    {
+        if (is_null($shipp_national_address)) {
+            throw new \InvalidArgumentException('non-nullable shipp_national_address cannot be null');
+        }
+        $this->container['shipp_national_address'] = $shipp_national_address;
+
+        return $this;
+    }
+
+    /**
+     * Gets shipp_building_number
+     *
+     * @return string|null
+     */
+    public function getShippBuildingNumber()
+    {
+        return $this->container['shipp_building_number'];
+    }
+
+    /**
+     * Sets shipp_building_number
+     *
+     * @param string|null $shipp_building_number Specifies building number of a shipping address
+     *
+     * @return self
+     */
+    public function setShippBuildingNumber($shipp_building_number)
+    {
+        if (is_null($shipp_building_number)) {
+            throw new \InvalidArgumentException('non-nullable shipp_building_number cannot be null');
+        }
+        $this->container['shipp_building_number'] = $shipp_building_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets shipp_additional_number
+     *
+     * @return string|null
+     */
+    public function getShippAdditionalNumber()
+    {
+        return $this->container['shipp_additional_number'];
+    }
+
+    /**
+     * Sets shipp_additional_number
+     *
+     * @param string|null $shipp_additional_number Specifies additional number of a shipping address
+     *
+     * @return self
+     */
+    public function setShippAdditionalNumber($shipp_additional_number)
+    {
+        if (is_null($shipp_additional_number)) {
+            throw new \InvalidArgumentException('non-nullable shipp_additional_number cannot be null');
+        }
+        $this->container['shipp_additional_number'] = $shipp_additional_number;
 
         return $this;
     }

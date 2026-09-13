@@ -729,6 +729,33 @@ class OrderAddTest extends TestCase
     }
 
     /**
+     * Test attribute "shipp_national_address"
+     */
+    public function testPropertyShippNationalAddress()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "shipp_building_number"
+     */
+    public function testPropertyShippBuildingNumber()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "shipp_additional_number"
+     */
+    public function testPropertyShippAdditionalNumber()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "idempotency_key"
      */
     public function testPropertyIdempotencyKey()

@@ -76,6 +76,9 @@ Name | Type | Description | Notes
 **clear_cache** | **bool** | Is cache clear required | [optional] [default to true]
 **origin** | **string** | The source of the order | [optional]
 **fee_price** | **float** | Specifies refund&#39;s fee price | [optional]
+**shipp_national_address** | **string** | Specifies short national address code of a shipping address | [optional]
+**shipp_building_number** | **string** | Specifies building number of a shipping address | [optional]
+**shipp_additional_number** | **string** | Specifies additional number of a shipping address | [optional]
 **idempotency_key** | **string** | A unique identifier associated with a specific request. Repeated requests with the same &lt;strong&gt;idempotency_key&lt;/strong&gt; return a cached response without re-executing the business logic. &lt;strong&gt;Please note that the cache lifetime is 15 minutes.&lt;/strong&gt; | [optional]
 **order_item** | [**\OpenAPI\Client\Model\OrderAddOrderItemInner[]**](OrderAddOrderItemInner.md) |  |
 
