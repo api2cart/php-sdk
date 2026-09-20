@@ -1923,7 +1923,7 @@ $admin_private_comment = Test admin private comment; // string | Specifies priva
 $invoice_admin_comment = Test admin comment; // string | Specifies admin's order invoice comment
 $date_modified = 2014-05-05 05:05:00; // string | Specifies order's  modification date
 $date_finished = 2014-06-05 05:05:00; // string | Specifies order's  finished date
-$send_notifications = true; // bool | Send notifications to customer after order was created
+$send_notifications = true; // bool | Send notifications to customer after order status was changed
 $create_invoice = true; // bool | Determines whether an invoice should be created if it has not already been created
 $origin = newsletter; // string | The source of the order
 $tags = tag1,tag2; // string | Order tags
@@ -1954,7 +1954,7 @@ try {
 | **invoice_admin_comment** | **string**| Specifies admin&#39;s order invoice comment | [optional] |
 | **date_modified** | **string**| Specifies order&#39;s  modification date | [optional] |
 | **date_finished** | **string**| Specifies order&#39;s  finished date | [optional] |
-| **send_notifications** | **bool**| Send notifications to customer after order was created | [optional] [default to false] |
+| **send_notifications** | **bool**| Send notifications to customer after order status was changed | [optional] [default to false] |
 | **create_invoice** | **bool**| Determines whether an invoice should be created if it has not already been created | [optional] |
 | **origin** | **string**| The source of the order | [optional] |
 | **tags** | **string**| Order tags | [optional] |
