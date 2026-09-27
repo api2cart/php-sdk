@@ -856,7 +856,7 @@ $store_id = 1; // string | Counts products specified by store id
 $vendor_id = 1; // string | Counts products specified by vendor id
 $lang_id = 3; // string | Counts products specified by language id
 $avail_view = true; // bool | Specifies the set of visible/invisible products
-$avail_sale = false; // bool | Specifies the set of available/not available products for sale
+$avail_sale = false; // bool | Specifies the set of available/not available products for sale.<br/>On BigCommerce the count checks only whether the product is set as purchasable and ignores stock (pre-order products are counted neither as true nor as false), so it can differ from product.list with the same value, which also checks stock at all inventory locations
 $created_from = 2010-07-29 13:45:52; // string | Retrieve entities from their creation date
 $created_to = 2100-08-29 13:45:52; // string | Retrieve entities to their creation date
 $modified_from = 2010-07-29 13:45:52; // string | Retrieve entities from their modification date
@@ -895,7 +895,7 @@ try {
 | **vendor_id** | **string**| Counts products specified by vendor id | [optional] |
 | **lang_id** | **string**| Counts products specified by language id | [optional] |
 | **avail_view** | **bool**| Specifies the set of visible/invisible products | [optional] |
-| **avail_sale** | **bool**| Specifies the set of available/not available products for sale | [optional] |
+| **avail_sale** | **bool**| Specifies the set of available/not available products for sale.&lt;br/&gt;On BigCommerce the count checks only whether the product is set as purchasable and ignores stock (pre-order products are counted neither as true nor as false), so it can differ from product.list with the same value, which also checks stock at all inventory locations | [optional] |
 | **created_from** | **string**| Retrieve entities from their creation date | [optional] |
 | **created_to** | **string**| Retrieve entities to their creation date | [optional] |
 | **modified_from** | **string**| Retrieve entities from their modification date | [optional] |
