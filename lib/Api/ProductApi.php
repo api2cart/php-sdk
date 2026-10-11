@@ -4310,6 +4310,7 @@ class ProductApi
      * @param  string|null $lang_id Counts products specified by language id (optional)
      * @param  bool|null $avail_view Specifies the set of visible/invisible products (optional)
      * @param  bool|null $avail_sale Specifies the set of available/not available products for sale.&lt;br/&gt;On BigCommerce the count checks only whether the product is set as purchasable and ignores stock (pre-order products are counted neither as true nor as false), so it can differ from product.list with the same value, which also checks stock at all inventory locations (optional)
+     * @param  bool|null $is_partial_or_full_out_of_stock Specifies the set of products that are out of stock completely or partially. Only true is supported: it returns products tracked per product that have no stock, and products tracked per variant that have at least one out-of-stock variant, even while other variants of the same product still have stock. Stock is checked at the default inventory location only, so a product that still has stock at another location can be returned, and a product whose only variant is the base one is not matched. Unlike avail_sale, which answers for the product as a whole, this catches a product that still sells overall because some of its variants do (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
@@ -4332,9 +4333,9 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseProductCount
      */
-    public function productCount($sku = null, $product_ids = null, $since_id = null, $categories_ids = null, $category_id = null, $store_id = null, $vendor_id = null, $lang_id = null, $avail_view = null, $avail_sale = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $brand_name = null, $manufacturer_id = null, $product_attributes = null, $status = null, $type = null, $visible = 'everywhere', $find_value = null, $find_where = null, $report_request_id = null, $return_global = false, $disable_report_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['productCount'][0])
+    public function productCount($sku = null, $product_ids = null, $since_id = null, $categories_ids = null, $category_id = null, $store_id = null, $vendor_id = null, $lang_id = null, $avail_view = null, $avail_sale = null, $is_partial_or_full_out_of_stock = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $brand_name = null, $manufacturer_id = null, $product_attributes = null, $status = null, $type = null, $visible = 'everywhere', $find_value = null, $find_where = null, $report_request_id = null, $return_global = false, $disable_report_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['productCount'][0])
     {
-        list($response) = $this->productCountWithHttpInfo($sku, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $vendor_id, $lang_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $brand_name, $manufacturer_id, $product_attributes, $status, $type, $visible, $find_value, $find_where, $report_request_id, $return_global, $disable_report_cache, $use_latest_api_version, $contentType);
+        list($response) = $this->productCountWithHttpInfo($sku, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $vendor_id, $lang_id, $avail_view, $avail_sale, $is_partial_or_full_out_of_stock, $created_from, $created_to, $modified_from, $modified_to, $brand_name, $manufacturer_id, $product_attributes, $status, $type, $visible, $find_value, $find_where, $report_request_id, $return_global, $disable_report_cache, $use_latest_api_version, $contentType);
         return $response;
     }
 
@@ -4353,6 +4354,7 @@ class ProductApi
      * @param  string|null $lang_id Counts products specified by language id (optional)
      * @param  bool|null $avail_view Specifies the set of visible/invisible products (optional)
      * @param  bool|null $avail_sale Specifies the set of available/not available products for sale.&lt;br/&gt;On BigCommerce the count checks only whether the product is set as purchasable and ignores stock (pre-order products are counted neither as true nor as false), so it can differ from product.list with the same value, which also checks stock at all inventory locations (optional)
+     * @param  bool|null $is_partial_or_full_out_of_stock Specifies the set of products that are out of stock completely or partially. Only true is supported: it returns products tracked per product that have no stock, and products tracked per variant that have at least one out-of-stock variant, even while other variants of the same product still have stock. Stock is checked at the default inventory location only, so a product that still has stock at another location can be returned, and a product whose only variant is the base one is not matched. Unlike avail_sale, which answers for the product as a whole, this catches a product that still sells overall because some of its variants do (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
@@ -4375,9 +4377,9 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseProductCount, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productCountWithHttpInfo($sku = null, $product_ids = null, $since_id = null, $categories_ids = null, $category_id = null, $store_id = null, $vendor_id = null, $lang_id = null, $avail_view = null, $avail_sale = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $brand_name = null, $manufacturer_id = null, $product_attributes = null, $status = null, $type = null, $visible = 'everywhere', $find_value = null, $find_where = null, $report_request_id = null, $return_global = false, $disable_report_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['productCount'][0])
+    public function productCountWithHttpInfo($sku = null, $product_ids = null, $since_id = null, $categories_ids = null, $category_id = null, $store_id = null, $vendor_id = null, $lang_id = null, $avail_view = null, $avail_sale = null, $is_partial_or_full_out_of_stock = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $brand_name = null, $manufacturer_id = null, $product_attributes = null, $status = null, $type = null, $visible = 'everywhere', $find_value = null, $find_where = null, $report_request_id = null, $return_global = false, $disable_report_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['productCount'][0])
     {
-        $request = $this->productCountRequest($sku, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $vendor_id, $lang_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $brand_name, $manufacturer_id, $product_attributes, $status, $type, $visible, $find_value, $find_where, $report_request_id, $return_global, $disable_report_cache, $use_latest_api_version, $contentType);
+        $request = $this->productCountRequest($sku, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $vendor_id, $lang_id, $avail_view, $avail_sale, $is_partial_or_full_out_of_stock, $created_from, $created_to, $modified_from, $modified_to, $brand_name, $manufacturer_id, $product_attributes, $status, $type, $visible, $find_value, $find_where, $report_request_id, $return_global, $disable_report_cache, $use_latest_api_version, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4503,6 +4505,7 @@ class ProductApi
      * @param  string|null $lang_id Counts products specified by language id (optional)
      * @param  bool|null $avail_view Specifies the set of visible/invisible products (optional)
      * @param  bool|null $avail_sale Specifies the set of available/not available products for sale.&lt;br/&gt;On BigCommerce the count checks only whether the product is set as purchasable and ignores stock (pre-order products are counted neither as true nor as false), so it can differ from product.list with the same value, which also checks stock at all inventory locations (optional)
+     * @param  bool|null $is_partial_or_full_out_of_stock Specifies the set of products that are out of stock completely or partially. Only true is supported: it returns products tracked per product that have no stock, and products tracked per variant that have at least one out-of-stock variant, even while other variants of the same product still have stock. Stock is checked at the default inventory location only, so a product that still has stock at another location can be returned, and a product whose only variant is the base one is not matched. Unlike avail_sale, which answers for the product as a whole, this catches a product that still sells overall because some of its variants do (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
@@ -4524,9 +4527,9 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productCountAsync($sku = null, $product_ids = null, $since_id = null, $categories_ids = null, $category_id = null, $store_id = null, $vendor_id = null, $lang_id = null, $avail_view = null, $avail_sale = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $brand_name = null, $manufacturer_id = null, $product_attributes = null, $status = null, $type = null, $visible = 'everywhere', $find_value = null, $find_where = null, $report_request_id = null, $return_global = false, $disable_report_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['productCount'][0])
+    public function productCountAsync($sku = null, $product_ids = null, $since_id = null, $categories_ids = null, $category_id = null, $store_id = null, $vendor_id = null, $lang_id = null, $avail_view = null, $avail_sale = null, $is_partial_or_full_out_of_stock = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $brand_name = null, $manufacturer_id = null, $product_attributes = null, $status = null, $type = null, $visible = 'everywhere', $find_value = null, $find_where = null, $report_request_id = null, $return_global = false, $disable_report_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['productCount'][0])
     {
-        return $this->productCountAsyncWithHttpInfo($sku, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $vendor_id, $lang_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $brand_name, $manufacturer_id, $product_attributes, $status, $type, $visible, $find_value, $find_where, $report_request_id, $return_global, $disable_report_cache, $use_latest_api_version, $contentType)
+        return $this->productCountAsyncWithHttpInfo($sku, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $vendor_id, $lang_id, $avail_view, $avail_sale, $is_partial_or_full_out_of_stock, $created_from, $created_to, $modified_from, $modified_to, $brand_name, $manufacturer_id, $product_attributes, $status, $type, $visible, $find_value, $find_where, $report_request_id, $return_global, $disable_report_cache, $use_latest_api_version, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4549,6 +4552,7 @@ class ProductApi
      * @param  string|null $lang_id Counts products specified by language id (optional)
      * @param  bool|null $avail_view Specifies the set of visible/invisible products (optional)
      * @param  bool|null $avail_sale Specifies the set of available/not available products for sale.&lt;br/&gt;On BigCommerce the count checks only whether the product is set as purchasable and ignores stock (pre-order products are counted neither as true nor as false), so it can differ from product.list with the same value, which also checks stock at all inventory locations (optional)
+     * @param  bool|null $is_partial_or_full_out_of_stock Specifies the set of products that are out of stock completely or partially. Only true is supported: it returns products tracked per product that have no stock, and products tracked per variant that have at least one out-of-stock variant, even while other variants of the same product still have stock. Stock is checked at the default inventory location only, so a product that still has stock at another location can be returned, and a product whose only variant is the base one is not matched. Unlike avail_sale, which answers for the product as a whole, this catches a product that still sells overall because some of its variants do (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
@@ -4570,10 +4574,10 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productCountAsyncWithHttpInfo($sku = null, $product_ids = null, $since_id = null, $categories_ids = null, $category_id = null, $store_id = null, $vendor_id = null, $lang_id = null, $avail_view = null, $avail_sale = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $brand_name = null, $manufacturer_id = null, $product_attributes = null, $status = null, $type = null, $visible = 'everywhere', $find_value = null, $find_where = null, $report_request_id = null, $return_global = false, $disable_report_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['productCount'][0])
+    public function productCountAsyncWithHttpInfo($sku = null, $product_ids = null, $since_id = null, $categories_ids = null, $category_id = null, $store_id = null, $vendor_id = null, $lang_id = null, $avail_view = null, $avail_sale = null, $is_partial_or_full_out_of_stock = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $brand_name = null, $manufacturer_id = null, $product_attributes = null, $status = null, $type = null, $visible = 'everywhere', $find_value = null, $find_where = null, $report_request_id = null, $return_global = false, $disable_report_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['productCount'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseProductCount';
-        $request = $this->productCountRequest($sku, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $vendor_id, $lang_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $brand_name, $manufacturer_id, $product_attributes, $status, $type, $visible, $find_value, $find_where, $report_request_id, $return_global, $disable_report_cache, $use_latest_api_version, $contentType);
+        $request = $this->productCountRequest($sku, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $vendor_id, $lang_id, $avail_view, $avail_sale, $is_partial_or_full_out_of_stock, $created_from, $created_to, $modified_from, $modified_to, $brand_name, $manufacturer_id, $product_attributes, $status, $type, $visible, $find_value, $find_where, $report_request_id, $return_global, $disable_report_cache, $use_latest_api_version, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4624,6 +4628,7 @@ class ProductApi
      * @param  string|null $lang_id Counts products specified by language id (optional)
      * @param  bool|null $avail_view Specifies the set of visible/invisible products (optional)
      * @param  bool|null $avail_sale Specifies the set of available/not available products for sale.&lt;br/&gt;On BigCommerce the count checks only whether the product is set as purchasable and ignores stock (pre-order products are counted neither as true nor as false), so it can differ from product.list with the same value, which also checks stock at all inventory locations (optional)
+     * @param  bool|null $is_partial_or_full_out_of_stock Specifies the set of products that are out of stock completely or partially. Only true is supported: it returns products tracked per product that have no stock, and products tracked per variant that have at least one out-of-stock variant, even while other variants of the same product still have stock. Stock is checked at the default inventory location only, so a product that still has stock at another location can be returned, and a product whose only variant is the base one is not matched. Unlike avail_sale, which answers for the product as a whole, this catches a product that still sells overall because some of its variants do (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
@@ -4645,8 +4650,9 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function productCountRequest($sku = null, $product_ids = null, $since_id = null, $categories_ids = null, $category_id = null, $store_id = null, $vendor_id = null, $lang_id = null, $avail_view = null, $avail_sale = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $brand_name = null, $manufacturer_id = null, $product_attributes = null, $status = null, $type = null, $visible = 'everywhere', $find_value = null, $find_where = null, $report_request_id = null, $return_global = false, $disable_report_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['productCount'][0])
+    public function productCountRequest($sku = null, $product_ids = null, $since_id = null, $categories_ids = null, $category_id = null, $store_id = null, $vendor_id = null, $lang_id = null, $avail_view = null, $avail_sale = null, $is_partial_or_full_out_of_stock = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $brand_name = null, $manufacturer_id = null, $product_attributes = null, $status = null, $type = null, $visible = 'everywhere', $find_value = null, $find_where = null, $report_request_id = null, $return_global = false, $disable_report_cache = false, $use_latest_api_version = false, string $contentType = self::contentTypes['productCount'][0])
     {
+
 
 
 
@@ -4767,6 +4773,15 @@ class ProductApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $avail_sale,
             'avail_sale', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $is_partial_or_full_out_of_stock,
+            'is_partial_or_full_out_of_stock', // param base name
             'boolean', // openApiType
             'form', // style
             true, // explode
@@ -8510,6 +8525,7 @@ class ProductApi
      * @param  string|null $currency_id Currency Id (optional)
      * @param  bool|null $avail_view Specifies the set of visible/invisible products (optional)
      * @param  bool|null $avail_sale Specifies the set of available/not available products for sale (optional)
+     * @param  bool|null $is_partial_or_full_out_of_stock Specifies the set of products that are out of stock completely or partially. Only true is supported: it returns products tracked per product that have no stock, and products tracked per variant that have at least one out-of-stock variant, even while other variants of the same product still have stock. Stock is checked at the default inventory location only, so a product that still has stock at another location can be returned, and a product whose only variant is the base one is not matched. Unlike avail_sale, which answers for the product as a whole, this catches a product that still sells overall because some of its variants do (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
@@ -8540,9 +8556,9 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ModelResponseProductList
      */
-    public function productList($start = 0, $count = 10, $page_cursor = null, $product_ids = null, $since_id = null, $categories_ids = null, $category_id = null, $store_id = null, $vendor_id = null, $lang_id = null, $currency_id = null, $avail_view = null, $avail_sale = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $sku = null, $brand_name = null, $product_attributes = null, $manufacturer_id = null, $status = null, $type = null, $visible = 'everywhere', $find_value = null, $find_where = null, $return_global = false, $params = 'id,name,description,price,categories_ids', $response_fields = null, $exclude = null, $sort_by = 'id', $sort_direction = 'asc', $report_request_id = null, $disable_cache = false, $disable_report_cache = false, $use_latest_api_version = false, $product_type = null, string $contentType = self::contentTypes['productList'][0])
+    public function productList($start = 0, $count = 10, $page_cursor = null, $product_ids = null, $since_id = null, $categories_ids = null, $category_id = null, $store_id = null, $vendor_id = null, $lang_id = null, $currency_id = null, $avail_view = null, $avail_sale = null, $is_partial_or_full_out_of_stock = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $sku = null, $brand_name = null, $product_attributes = null, $manufacturer_id = null, $status = null, $type = null, $visible = 'everywhere', $find_value = null, $find_where = null, $return_global = false, $params = 'id,name,description,price,categories_ids', $response_fields = null, $exclude = null, $sort_by = 'id', $sort_direction = 'asc', $report_request_id = null, $disable_cache = false, $disable_report_cache = false, $use_latest_api_version = false, $product_type = null, string $contentType = self::contentTypes['productList'][0])
     {
-        list($response) = $this->productListWithHttpInfo($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $vendor_id, $lang_id, $currency_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $manufacturer_id, $status, $type, $visible, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version, $product_type, $contentType);
+        list($response) = $this->productListWithHttpInfo($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $vendor_id, $lang_id, $currency_id, $avail_view, $avail_sale, $is_partial_or_full_out_of_stock, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $manufacturer_id, $status, $type, $visible, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version, $product_type, $contentType);
         return $response;
     }
 
@@ -8564,6 +8580,7 @@ class ProductApi
      * @param  string|null $currency_id Currency Id (optional)
      * @param  bool|null $avail_view Specifies the set of visible/invisible products (optional)
      * @param  bool|null $avail_sale Specifies the set of available/not available products for sale (optional)
+     * @param  bool|null $is_partial_or_full_out_of_stock Specifies the set of products that are out of stock completely or partially. Only true is supported: it returns products tracked per product that have no stock, and products tracked per variant that have at least one out-of-stock variant, even while other variants of the same product still have stock. Stock is checked at the default inventory location only, so a product that still has stock at another location can be returned, and a product whose only variant is the base one is not matched. Unlike avail_sale, which answers for the product as a whole, this catches a product that still sells overall because some of its variants do (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
@@ -8594,9 +8611,9 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ModelResponseProductList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productListWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $product_ids = null, $since_id = null, $categories_ids = null, $category_id = null, $store_id = null, $vendor_id = null, $lang_id = null, $currency_id = null, $avail_view = null, $avail_sale = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $sku = null, $brand_name = null, $product_attributes = null, $manufacturer_id = null, $status = null, $type = null, $visible = 'everywhere', $find_value = null, $find_where = null, $return_global = false, $params = 'id,name,description,price,categories_ids', $response_fields = null, $exclude = null, $sort_by = 'id', $sort_direction = 'asc', $report_request_id = null, $disable_cache = false, $disable_report_cache = false, $use_latest_api_version = false, $product_type = null, string $contentType = self::contentTypes['productList'][0])
+    public function productListWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $product_ids = null, $since_id = null, $categories_ids = null, $category_id = null, $store_id = null, $vendor_id = null, $lang_id = null, $currency_id = null, $avail_view = null, $avail_sale = null, $is_partial_or_full_out_of_stock = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $sku = null, $brand_name = null, $product_attributes = null, $manufacturer_id = null, $status = null, $type = null, $visible = 'everywhere', $find_value = null, $find_where = null, $return_global = false, $params = 'id,name,description,price,categories_ids', $response_fields = null, $exclude = null, $sort_by = 'id', $sort_direction = 'asc', $report_request_id = null, $disable_cache = false, $disable_report_cache = false, $use_latest_api_version = false, $product_type = null, string $contentType = self::contentTypes['productList'][0])
     {
-        $request = $this->productListRequest($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $vendor_id, $lang_id, $currency_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $manufacturer_id, $status, $type, $visible, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version, $product_type, $contentType);
+        $request = $this->productListRequest($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $vendor_id, $lang_id, $currency_id, $avail_view, $avail_sale, $is_partial_or_full_out_of_stock, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $manufacturer_id, $status, $type, $visible, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version, $product_type, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -8725,6 +8742,7 @@ class ProductApi
      * @param  string|null $currency_id Currency Id (optional)
      * @param  bool|null $avail_view Specifies the set of visible/invisible products (optional)
      * @param  bool|null $avail_sale Specifies the set of available/not available products for sale (optional)
+     * @param  bool|null $is_partial_or_full_out_of_stock Specifies the set of products that are out of stock completely or partially. Only true is supported: it returns products tracked per product that have no stock, and products tracked per variant that have at least one out-of-stock variant, even while other variants of the same product still have stock. Stock is checked at the default inventory location only, so a product that still has stock at another location can be returned, and a product whose only variant is the base one is not matched. Unlike avail_sale, which answers for the product as a whole, this catches a product that still sells overall because some of its variants do (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
@@ -8754,9 +8772,9 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productListAsync($start = 0, $count = 10, $page_cursor = null, $product_ids = null, $since_id = null, $categories_ids = null, $category_id = null, $store_id = null, $vendor_id = null, $lang_id = null, $currency_id = null, $avail_view = null, $avail_sale = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $sku = null, $brand_name = null, $product_attributes = null, $manufacturer_id = null, $status = null, $type = null, $visible = 'everywhere', $find_value = null, $find_where = null, $return_global = false, $params = 'id,name,description,price,categories_ids', $response_fields = null, $exclude = null, $sort_by = 'id', $sort_direction = 'asc', $report_request_id = null, $disable_cache = false, $disable_report_cache = false, $use_latest_api_version = false, $product_type = null, string $contentType = self::contentTypes['productList'][0])
+    public function productListAsync($start = 0, $count = 10, $page_cursor = null, $product_ids = null, $since_id = null, $categories_ids = null, $category_id = null, $store_id = null, $vendor_id = null, $lang_id = null, $currency_id = null, $avail_view = null, $avail_sale = null, $is_partial_or_full_out_of_stock = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $sku = null, $brand_name = null, $product_attributes = null, $manufacturer_id = null, $status = null, $type = null, $visible = 'everywhere', $find_value = null, $find_where = null, $return_global = false, $params = 'id,name,description,price,categories_ids', $response_fields = null, $exclude = null, $sort_by = 'id', $sort_direction = 'asc', $report_request_id = null, $disable_cache = false, $disable_report_cache = false, $use_latest_api_version = false, $product_type = null, string $contentType = self::contentTypes['productList'][0])
     {
-        return $this->productListAsyncWithHttpInfo($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $vendor_id, $lang_id, $currency_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $manufacturer_id, $status, $type, $visible, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version, $product_type, $contentType)
+        return $this->productListAsyncWithHttpInfo($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $vendor_id, $lang_id, $currency_id, $avail_view, $avail_sale, $is_partial_or_full_out_of_stock, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $manufacturer_id, $status, $type, $visible, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version, $product_type, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -8782,6 +8800,7 @@ class ProductApi
      * @param  string|null $currency_id Currency Id (optional)
      * @param  bool|null $avail_view Specifies the set of visible/invisible products (optional)
      * @param  bool|null $avail_sale Specifies the set of available/not available products for sale (optional)
+     * @param  bool|null $is_partial_or_full_out_of_stock Specifies the set of products that are out of stock completely or partially. Only true is supported: it returns products tracked per product that have no stock, and products tracked per variant that have at least one out-of-stock variant, even while other variants of the same product still have stock. Stock is checked at the default inventory location only, so a product that still has stock at another location can be returned, and a product whose only variant is the base one is not matched. Unlike avail_sale, which answers for the product as a whole, this catches a product that still sells overall because some of its variants do (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
@@ -8811,10 +8830,10 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productListAsyncWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $product_ids = null, $since_id = null, $categories_ids = null, $category_id = null, $store_id = null, $vendor_id = null, $lang_id = null, $currency_id = null, $avail_view = null, $avail_sale = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $sku = null, $brand_name = null, $product_attributes = null, $manufacturer_id = null, $status = null, $type = null, $visible = 'everywhere', $find_value = null, $find_where = null, $return_global = false, $params = 'id,name,description,price,categories_ids', $response_fields = null, $exclude = null, $sort_by = 'id', $sort_direction = 'asc', $report_request_id = null, $disable_cache = false, $disable_report_cache = false, $use_latest_api_version = false, $product_type = null, string $contentType = self::contentTypes['productList'][0])
+    public function productListAsyncWithHttpInfo($start = 0, $count = 10, $page_cursor = null, $product_ids = null, $since_id = null, $categories_ids = null, $category_id = null, $store_id = null, $vendor_id = null, $lang_id = null, $currency_id = null, $avail_view = null, $avail_sale = null, $is_partial_or_full_out_of_stock = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $sku = null, $brand_name = null, $product_attributes = null, $manufacturer_id = null, $status = null, $type = null, $visible = 'everywhere', $find_value = null, $find_where = null, $return_global = false, $params = 'id,name,description,price,categories_ids', $response_fields = null, $exclude = null, $sort_by = 'id', $sort_direction = 'asc', $report_request_id = null, $disable_cache = false, $disable_report_cache = false, $use_latest_api_version = false, $product_type = null, string $contentType = self::contentTypes['productList'][0])
     {
         $returnType = '\OpenAPI\Client\Model\ModelResponseProductList';
-        $request = $this->productListRequest($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $vendor_id, $lang_id, $currency_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $manufacturer_id, $status, $type, $visible, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version, $product_type, $contentType);
+        $request = $this->productListRequest($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $vendor_id, $lang_id, $currency_id, $avail_view, $avail_sale, $is_partial_or_full_out_of_stock, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $manufacturer_id, $status, $type, $visible, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version, $product_type, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -8868,6 +8887,7 @@ class ProductApi
      * @param  string|null $currency_id Currency Id (optional)
      * @param  bool|null $avail_view Specifies the set of visible/invisible products (optional)
      * @param  bool|null $avail_sale Specifies the set of available/not available products for sale (optional)
+     * @param  bool|null $is_partial_or_full_out_of_stock Specifies the set of products that are out of stock completely or partially. Only true is supported: it returns products tracked per product that have no stock, and products tracked per variant that have at least one out-of-stock variant, even while other variants of the same product still have stock. Stock is checked at the default inventory location only, so a product that still has stock at another location can be returned, and a product whose only variant is the base one is not matched. Unlike avail_sale, which answers for the product as a whole, this catches a product that still sells overall because some of its variants do (optional)
      * @param  string|null $created_from Retrieve entities from their creation date (optional)
      * @param  string|null $created_to Retrieve entities to their creation date (optional)
      * @param  string|null $modified_from Retrieve entities from their modification date (optional)
@@ -8897,8 +8917,9 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function productListRequest($start = 0, $count = 10, $page_cursor = null, $product_ids = null, $since_id = null, $categories_ids = null, $category_id = null, $store_id = null, $vendor_id = null, $lang_id = null, $currency_id = null, $avail_view = null, $avail_sale = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $sku = null, $brand_name = null, $product_attributes = null, $manufacturer_id = null, $status = null, $type = null, $visible = 'everywhere', $find_value = null, $find_where = null, $return_global = false, $params = 'id,name,description,price,categories_ids', $response_fields = null, $exclude = null, $sort_by = 'id', $sort_direction = 'asc', $report_request_id = null, $disable_cache = false, $disable_report_cache = false, $use_latest_api_version = false, $product_type = null, string $contentType = self::contentTypes['productList'][0])
+    public function productListRequest($start = 0, $count = 10, $page_cursor = null, $product_ids = null, $since_id = null, $categories_ids = null, $category_id = null, $store_id = null, $vendor_id = null, $lang_id = null, $currency_id = null, $avail_view = null, $avail_sale = null, $is_partial_or_full_out_of_stock = null, $created_from = null, $created_to = null, $modified_from = null, $modified_to = null, $sku = null, $brand_name = null, $product_attributes = null, $manufacturer_id = null, $status = null, $type = null, $visible = 'everywhere', $find_value = null, $find_where = null, $return_global = false, $params = 'id,name,description,price,categories_ids', $response_fields = null, $exclude = null, $sort_by = 'id', $sort_direction = 'asc', $report_request_id = null, $disable_cache = false, $disable_report_cache = false, $use_latest_api_version = false, $product_type = null, string $contentType = self::contentTypes['productList'][0])
     {
+
 
 
 
@@ -9057,6 +9078,15 @@ class ProductApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $avail_sale,
             'avail_sale', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $is_partial_or_full_out_of_stock,
+            'is_partial_or_full_out_of_stock', // param base name
             'boolean', // openApiType
             'form', // style
             true, // explode

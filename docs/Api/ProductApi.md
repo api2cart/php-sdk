@@ -816,7 +816,7 @@ try {
 ## `productCount()`
 
 ```php
-productCount($sku, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $vendor_id, $lang_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $brand_name, $manufacturer_id, $product_attributes, $status, $type, $visible, $find_value, $find_where, $report_request_id, $return_global, $disable_report_cache, $use_latest_api_version): \OpenAPI\Client\Model\ModelResponseProductCount
+productCount($sku, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $vendor_id, $lang_id, $avail_view, $avail_sale, $is_partial_or_full_out_of_stock, $created_from, $created_to, $modified_from, $modified_to, $brand_name, $manufacturer_id, $product_attributes, $status, $type, $visible, $find_value, $find_where, $report_request_id, $return_global, $disable_report_cache, $use_latest_api_version): \OpenAPI\Client\Model\ModelResponseProductCount
 ```
 
 product.count
@@ -857,6 +857,7 @@ $vendor_id = 1; // string | Counts products specified by vendor id
 $lang_id = 3; // string | Counts products specified by language id
 $avail_view = true; // bool | Specifies the set of visible/invisible products
 $avail_sale = false; // bool | Specifies the set of available/not available products for sale.<br/>On BigCommerce the count checks only whether the product is set as purchasable and ignores stock (pre-order products are counted neither as true nor as false), so it can differ from product.list with the same value, which also checks stock at all inventory locations
+$is_partial_or_full_out_of_stock = true; // bool | Specifies the set of products that are out of stock completely or partially. Only true is supported: it returns products tracked per product that have no stock, and products tracked per variant that have at least one out-of-stock variant, even while other variants of the same product still have stock. Stock is checked at the default inventory location only, so a product that still has stock at another location can be returned, and a product whose only variant is the base one is not matched. Unlike avail_sale, which answers for the product as a whole, this catches a product that still sells overall because some of its variants do
 $created_from = 2010-07-29 13:45:52; // string | Retrieve entities from their creation date
 $created_to = 2100-08-29 13:45:52; // string | Retrieve entities to their creation date
 $modified_from = 2010-07-29 13:45:52; // string | Retrieve entities from their modification date
@@ -875,7 +876,7 @@ $disable_report_cache = false; // bool | Disable report cache for current reques
 $use_latest_api_version = true; // bool | Use the latest platform API version
 
 try {
-    $result = $apiInstance->productCount($sku, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $vendor_id, $lang_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $brand_name, $manufacturer_id, $product_attributes, $status, $type, $visible, $find_value, $find_where, $report_request_id, $return_global, $disable_report_cache, $use_latest_api_version);
+    $result = $apiInstance->productCount($sku, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $vendor_id, $lang_id, $avail_view, $avail_sale, $is_partial_or_full_out_of_stock, $created_from, $created_to, $modified_from, $modified_to, $brand_name, $manufacturer_id, $product_attributes, $status, $type, $visible, $find_value, $find_where, $report_request_id, $return_global, $disable_report_cache, $use_latest_api_version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productCount: ', $e->getMessage(), PHP_EOL;
@@ -896,6 +897,7 @@ try {
 | **lang_id** | **string**| Counts products specified by language id | [optional] |
 | **avail_view** | **bool**| Specifies the set of visible/invisible products | [optional] |
 | **avail_sale** | **bool**| Specifies the set of available/not available products for sale.&lt;br/&gt;On BigCommerce the count checks only whether the product is set as purchasable and ignores stock (pre-order products are counted neither as true nor as false), so it can differ from product.list with the same value, which also checks stock at all inventory locations | [optional] |
+| **is_partial_or_full_out_of_stock** | **bool**| Specifies the set of products that are out of stock completely or partially. Only true is supported: it returns products tracked per product that have no stock, and products tracked per variant that have at least one out-of-stock variant, even while other variants of the same product still have stock. Stock is checked at the default inventory location only, so a product that still has stock at another location can be returned, and a product whose only variant is the base one is not matched. Unlike avail_sale, which answers for the product as a whole, this catches a product that still sells overall because some of its variants do | [optional] |
 | **created_from** | **string**| Retrieve entities from their creation date | [optional] |
 | **created_to** | **string**| Retrieve entities to their creation date | [optional] |
 | **modified_from** | **string**| Retrieve entities from their modification date | [optional] |
@@ -1620,7 +1622,7 @@ try {
 ## `productList()`
 
 ```php
-productList($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $vendor_id, $lang_id, $currency_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $manufacturer_id, $status, $type, $visible, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version, $product_type): \OpenAPI\Client\Model\ModelResponseProductList
+productList($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $vendor_id, $lang_id, $currency_id, $avail_view, $avail_sale, $is_partial_or_full_out_of_stock, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $manufacturer_id, $status, $type, $visible, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version, $product_type): \OpenAPI\Client\Model\ModelResponseProductList
 ```
 
 product.list
@@ -1664,6 +1666,7 @@ $lang_id = 3; // string | Retrieves products specified by language id
 $currency_id = usd; // string | Currency Id
 $avail_view = true; // bool | Specifies the set of visible/invisible products
 $avail_sale = false; // bool | Specifies the set of available/not available products for sale
+$is_partial_or_full_out_of_stock = true; // bool | Specifies the set of products that are out of stock completely or partially. Only true is supported: it returns products tracked per product that have no stock, and products tracked per variant that have at least one out-of-stock variant, even while other variants of the same product still have stock. Stock is checked at the default inventory location only, so a product that still has stock at another location can be returned, and a product whose only variant is the base one is not matched. Unlike avail_sale, which answers for the product as a whole, this catches a product that still sells overall because some of its variants do
 $created_from = 2010-07-29 13:45:52; // string | Retrieve entities from their creation date
 $created_to = 2100-08-29 13:45:52; // string | Retrieve entities to their creation date
 $modified_from = 2010-07-29 13:45:52; // string | Retrieve entities from their modification date
@@ -1690,7 +1693,7 @@ $use_latest_api_version = true; // bool | Use the latest platform API version
 $product_type = BICYCLE; // string | A categorization for the product
 
 try {
-    $result = $apiInstance->productList($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $vendor_id, $lang_id, $currency_id, $avail_view, $avail_sale, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $manufacturer_id, $status, $type, $visible, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version, $product_type);
+    $result = $apiInstance->productList($start, $count, $page_cursor, $product_ids, $since_id, $categories_ids, $category_id, $store_id, $vendor_id, $lang_id, $currency_id, $avail_view, $avail_sale, $is_partial_or_full_out_of_stock, $created_from, $created_to, $modified_from, $modified_to, $sku, $brand_name, $product_attributes, $manufacturer_id, $status, $type, $visible, $find_value, $find_where, $return_global, $params, $response_fields, $exclude, $sort_by, $sort_direction, $report_request_id, $disable_cache, $disable_report_cache, $use_latest_api_version, $product_type);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productList: ', $e->getMessage(), PHP_EOL;
@@ -1714,6 +1717,7 @@ try {
 | **currency_id** | **string**| Currency Id | [optional] |
 | **avail_view** | **bool**| Specifies the set of visible/invisible products | [optional] |
 | **avail_sale** | **bool**| Specifies the set of available/not available products for sale | [optional] |
+| **is_partial_or_full_out_of_stock** | **bool**| Specifies the set of products that are out of stock completely or partially. Only true is supported: it returns products tracked per product that have no stock, and products tracked per variant that have at least one out-of-stock variant, even while other variants of the same product still have stock. Stock is checked at the default inventory location only, so a product that still has stock at another location can be returned, and a product whose only variant is the base one is not matched. Unlike avail_sale, which answers for the product as a whole, this catches a product that still sells overall because some of its variants do | [optional] |
 | **created_from** | **string**| Retrieve entities from their creation date | [optional] |
 | **created_to** | **string**| Retrieve entities to their creation date | [optional] |
 | **modified_from** | **string**| Retrieve entities from their modification date | [optional] |
