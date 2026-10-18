@@ -2084,7 +2084,7 @@ class ProductUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets reduce_quantity
      *
-     * @param float|null $reduce_quantity Defines the decrement changes in product quantity. Effective only when manage_stock is true — otherwise the value is ignored.
+     * @param float|null $reduce_quantity Defines the decrement changes in product quantity. Effective only when manage_stock is true.
      *
      * @return self
      */
