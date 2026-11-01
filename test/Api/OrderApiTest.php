@@ -157,6 +157,18 @@ class OrderApiTest extends TestCase
     }
 
     /**
+     * Test case for orderInvoiceAdd
+     *
+     * order.invoice.add.
+     *
+     */
+    public function testOrderInvoiceAdd()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for orderList
      *
      * order.list.

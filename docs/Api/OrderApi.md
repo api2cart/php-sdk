@@ -11,6 +11,7 @@ All URIs are relative to https://api.api2cart.local.com/v1.1, except if the oper
 | [**orderFinancialStatusList()**](OrderApi.md#orderFinancialStatusList) | **GET** /order.financial_status.list.json | order.financial_status.list |
 | [**orderFulfillmentStatusList()**](OrderApi.md#orderFulfillmentStatusList) | **GET** /order.fulfillment_status.list.json | order.fulfillment_status.list |
 | [**orderInfo()**](OrderApi.md#orderInfo) | **GET** /order.info.json | order.info |
+| [**orderInvoiceAdd()**](OrderApi.md#orderInvoiceAdd) | **POST** /order.invoice.add.json | order.invoice.add |
 | [**orderList()**](OrderApi.md#orderList) | **GET** /order.list.json | order.list |
 | [**orderPreestimateShippingList()**](OrderApi.md#orderPreestimateShippingList) | **POST** /order.preestimate_shipping.list.json | order.preestimate_shipping.list |
 | [**orderRefundAdd()**](OrderApi.md#orderRefundAdd) | **POST** /order.refund.add.json | order.refund.add |
@@ -579,6 +580,73 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `orderInvoiceAdd()`
+
+```php
+orderInvoiceAdd($order_invoice_add): \OpenAPI\Client\Model\AttributeAdd200Response
+```
+
+order.invoice.add
+
+Upload a PDF invoice or credit note of the order to the store. The store checks the document after the upload, so a successful response means it was received, not accepted. Use the returned id to find the result of the check in the store.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: StoreKeyAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-store-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-store-key', 'Bearer');
+
+// Configure API key authorization: ApiKeyAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+
+
+$apiInstance = new OpenAPI\Client\Api\OrderApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$order_invoice_add = new \OpenAPI\Client\Model\OrderInvoiceAdd(); // \OpenAPI\Client\Model\OrderInvoiceAdd
+
+try {
+    $result = $apiInstance->orderInvoiceAdd($order_invoice_add);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderInvoiceAdd: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **order_invoice_add** | [**\OpenAPI\Client\Model\OrderInvoiceAdd**](../Model/OrderInvoiceAdd.md)|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\AttributeAdd200Response**](../Model/AttributeAdd200Response.md)
+
+### Authorization
+
+[StoreKeyAuth](../../README.md#StoreKeyAuth), [ApiKeyAuth](../../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

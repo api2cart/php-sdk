@@ -232,6 +232,7 @@ docs/Model/OrderCalculateShippingRate.md
 docs/Model/OrderCalculateSubtotal.md
 docs/Model/OrderCalculateTax.md
 docs/Model/OrderInfo200Response.md
+docs/Model/OrderInvoiceAdd.md
 docs/Model/OrderItem.md
 docs/Model/OrderItemOption.md
 docs/Model/OrderPaymentMethod.md
@@ -707,6 +708,7 @@ lib/Model/OrderCalculateShippingRate.php
 lib/Model/OrderCalculateSubtotal.php
 lib/Model/OrderCalculateTax.php
 lib/Model/OrderInfo200Response.php
+lib/Model/OrderInvoiceAdd.php
 lib/Model/OrderItem.php
 lib/Model/OrderItemOption.php
 lib/Model/OrderPaymentMethod.php
@@ -1178,6 +1180,7 @@ test/Model/OrderCalculateSubtotalTest.php
 test/Model/OrderCalculateTaxTest.php
 test/Model/OrderCalculateTest.php
 test/Model/OrderInfo200ResponseTest.php
+test/Model/OrderInvoiceAddTest.php
 test/Model/OrderItemOptionTest.php
 test/Model/OrderItemTest.php
 test/Model/OrderPaymentMethodTest.php
